@@ -184,13 +184,13 @@ Além do grande conjunto de ícones da biblioteca padrão, é possível carregar
 Ícones podem ser carregados individualmente através do atributo `src`. Apenas arquivos em formato SVG são aceitos, devendo estar acessíveis localmente junto à sua aplicação, ou através de um endereço habilitado para CORS, com seu domínio atual explicitamente permitido.
 
 ```html preview
-<cps-icon src="/assets/images/brick.svg" style="font-size: 4rem"></cps-icon>
+<cps-icon src="./assets/images/brick.svg" style="font-size: 4rem"></cps-icon>
 ```
 
 ```jsx react
 import { CpsIcon } from '@cps/elements/dist/react';
 
-const App = () => <CpsIcon src="/assets/images/brick.svg" style={{ fontSize: '4rem' }} />;
+const App = () => <CpsIcon src="./assets/images/brick.svg" style={{ fontSize: '4rem' }} />;
 ```
 
 ## Bibliotecas padrão
@@ -207,7 +207,7 @@ Este exemplo carregará a biblioteca [Bootstrap Icons](#bootstrap-icons), sobres
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('default', {
     resolver: name => `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/icons/${name}.svg`
@@ -225,7 +225,7 @@ Portanto, se você quiser alterar ícones internos dos componentes CPS Elements,
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('system', {
     resolver: name => `/path/to/custom/icons/${name}.svg`
@@ -261,7 +261,7 @@ Aqui está um exemplo que registra uma biblioteca fictícia a partir de arquivos
 Após registrada, basta definir os atributos `library` e `name` do elemento `<cps-icon>`. Se um ícone é usado antes do registro da biblioteca ocorrer, ele será mantido vazio no _layout_ renderizado, até que o registro aconteça.
 
 ```html
-<!-- Isto exibiria um ícone fisicamente localizado em '/assets/icons/smile.svg' -->
+<!-- Isto exibiria um ícone fisicamente localizado em './assets/icons/smile.svg' -->
 <cps-icon library="example" name="smile"></cps-icon>
 ```
 
@@ -301,7 +301,7 @@ Distribuída sob [licença MIT](https://github.com/twbs/icons/blob/main/LICENSE.
 </div>
 
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('bi', {
     resolver: name => `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/icons/${name}.svg`,
@@ -320,7 +320,7 @@ Distribuída sob [licença Simple License](https://github.com/Iconscout/unicons/
 
 ```html preview
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('uil', {
     resolver: name => {
@@ -385,7 +385,7 @@ Distribuída sob [licença MIT](https://github.com/iconoir-icons/iconoir/blob/ma
 
 ```html preview
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('iconoir', {
     resolver: name => `https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@6.3.0/icons/${name}.svg`,
@@ -415,7 +415,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
 
 ```html preview
 <script type="module">
-  import { registerIconLibrary } from '/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/utilities/icon-library.js';
 
   registerIconLibrary('heroicons', {
     resolver: name => {
@@ -479,7 +479,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
     requestAnimationFrame(() => tooltip.dispatchEvent(new MouseEvent('mouseover')));
   }
 
-  fetch('/dist/assets/icons/icons.json')
+  fetch('./dist/assets/icons/icons.json')
     .then(res => res.json())  
     .then(icons => {
       const container = document.querySelector('.icon-search');
@@ -499,7 +499,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
         item.setAttribute('data-terms', [i.name, i.title, ...(i.tags || []), ...(i.categories || [])].join(' '));
         item.innerHTML = `
           <svg width="1em" height="1em" fill="currentColor">
-            <use xlink:href="/assets/icons/sprite.svg#${i.name}"></use>
+            <use xlink:href="./assets/icons/sprite.svg#${i.name}"></use>
           </svg>      
         `;
         list.appendChild(item);

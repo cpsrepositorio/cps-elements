@@ -1,6 +1,6 @@
 <div class="splash">
 <div class="splash-start">
-<img class="splash-logo" src="/assets/images/wordmark.svg" alt="CPS Elements">
+<img class="splash-logo" src="./assets/images/wordmark.svg" alt="CPS Elements">
 
 # Web Components de ponta, sem complicação.
 
@@ -18,7 +18,7 @@
 </div>
 
 <div class="splash-end">
-<img class="splash-image" src="/assets/images/illustration-building-blocks.svg" alt="Ilustração lúdica de pessoa encaixando peças coloridas em um monitor gigante.">
+<img class="splash-image" src="./assets/images/illustration-building-blocks.svg" alt="Ilustração lúdica de pessoa encaixando peças coloridas em um monitor gigante.">
 </div>
 </div>
 
@@ -121,11 +121,11 @@ Não importa se CPS Elements vai lhe respaldar em um projeto novo (ou atualizaç
 
 CPS Elements utiliza padrões estáveis e testados nas versões mais recentes dos navegadores:
 
-<img src="/assets/images/chrome.png" alt="Chrome" title="Chrome" width="64" height="64" />
-<img src="/assets/images/edge.png" alt="Edge" title="Edge" width="64" height="64" />
-<img src="/assets/images/firefox.png" alt="Firefox" title="Firefox" width="64" height="64" />
-<img src="/assets/images/opera.png" alt="Opera" title="Opera" width="64" height="64" />
-<img src="/assets/images/safari.png" alt="Safari" title="Safari" width="64" height="64" />
+<img src="./assets/images/chrome.png" alt="Chrome" title="Chrome" width="64" height="64" />
+<img src="./assets/images/edge.png" alt="Edge" title="Edge" width="64" height="64" />
+<img src="./assets/images/firefox.png" alt="Firefox" title="Firefox" width="64" height="64" />
+<img src="./assets/images/opera.png" alt="Opera" title="Opera" width="64" height="64" />
+<img src="./assets/images/safari.png" alt="Safari" title="Safari" width="64" height="64" />
 
 Na eventual necessidade de correções críticas para versões novas destes navegadores, a priorização sempre será realizada a partir no impacto sobre aqueles [com mais usuários](https://gs.statcounter.com/browser-version-partially-combined-market-share/all/brazil) em potencial.
 

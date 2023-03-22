@@ -308,7 +308,7 @@ Isto também permitirá que todos os comportamentos padrão que o navegador prov
 <cps-button href="/components/icon">Redirecionamento interno</cps-button>
 <cps-button href="https://example.com/">Página externa</cps-button>
 <cps-button href="https://example.com/" target="_blank">Em nova janela</cps-button>
-<cps-button href="/assets/images/wordmark.svg" download="cps-elements.svg">Baixar arquivo</cps-button>
+<cps-button href="./assets/images/wordmark.svg" download="cps-elements.svg">Baixar arquivo</cps-button>
 <cps-button href="https://example.com/" disabled>Desabilitado</cps-button>
 ```
 
@@ -322,7 +322,7 @@ const App = () => (
     <CpsButton href="https://example.com/" target="_blank">
       Em nova janela
     </CpsButton>
-    <CpsButton href="/assets/images/wordmark.svg" download="cps-elements.svg">
+    <CpsButton href="./assets/images/wordmark.svg" download="cps-elements.svg">
       Baixar arquivo
     </CpsButton>
     <CpsButton href="https://example.com/" disabled>
