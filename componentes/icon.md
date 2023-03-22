@@ -8,7 +8,7 @@ Esteticamente, segue princípios de minimalismo, harmonia e metaforismo, tendo s
 
 Contando com mais de 2100 ícones únicos na variação _outline_ (a padrão), bem como aproximadamente a mesma quantia na variação _fill_ (extensão `-fill` após o nome). Sendo assim, é muito provável que suas necessidades diversas de iconografia possam ser atendidas diretamente por esta biblioteca padrão.
 
-?> Dependendo de como você está instalando e carregando CPS Elements, você pode precisar manualmente copiar os arquivos de ícone para um diretório de acesso público em seu servidor Web, bem como pode ser preciso [definir o caminho base](fundamentos/instalação#setting-the-base-path) para estes arquivos, para que este componente possa carregá-los sob demanda. Caso contrário, ícones não aparecerão e você verá muitos erros `404 Not Found` no _console_ do navegador.
+?> Dependendo de como você está instalando e carregando CPS Elements, você pode precisar manualmente copiar os arquivos de ícone para um diretório de acesso público em seu servidor Web, bem como pode ser preciso [definir o caminho base](fundamentos/instalação#definindo-o-caminho-base) para estes arquivos, para que este componente possa carregá-los sob demanda. Caso contrário, ícones não aparecerão e você verá muitos erros `404 Not Found` no _console_ do navegador.
 
 ## Lista de ícones
 
@@ -19,7 +19,7 @@ Todos os ícones disponíveis na biblioteca `default` são exibidos a seguir. Cl
 ```
 
 <div class="icon-search">
-  <div class="icon-search-controls">
+  <!-- <div class="icon-search-controls">
     <cps-input placeholder="Pesquisar ícones" clearable>
       <cps-icon slot="prefix" name="search"></cps-icon>
     </cps-input>
@@ -28,7 +28,7 @@ Todos os ícones disponíveis na biblioteca `default` são exibidos a seguir. Cl
       <cps-option value="fill">Preenchido</cps-option>
       <cps-option value="all">Todos</cps-option>
     </cps-select>
-  </div>
+  </div> -->
   <div class="icon-list"></div>
   <input type="text" class="icon-copy-input" aria-hidden="true" tabindex="-1">
 </div>
@@ -325,19 +325,18 @@ Distribuída sob [licença Simple License](https://github.com/Iconscout/unicons/
   registerIconLibrary('uil', {
     resolver: name => {
       const [_, file, mode] = name.match(/^(.*?)(-fill|-mono|-thin)?$/);
-      return `https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.5/svg/${
-        { '-fill': 'solid', '-mono': 'monochrome', '-thin': 'thinline' }[mode] ?? 'line'
-      }/${file}.svg`;
+      const folder = { '-fill': 'solid', '-mono': 'monochrome', '-thin': 'thinline' }[mode] ?? 'line';
+      return `https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.5/svg/${folder}/${file}.svg`;
     },
     mutator: svg => {
       svg.setAttribute('fill', 'currentColor');
       svg.removeAttribute('id');
       svg.removeAttribute('data-name');
       svg.innerHTML = svg.innerHTML
-        .replaceAll('class="uim-primary"', 'style="color: rgb(var(--cps-color-neutral-600)"'))
-        .replaceAll('class="uim-secondary"', 'style="color: rgb(var(--cps-color-neutral-500)"'))
-        .replaceAll('class="uim-tertiary"', 'style="color: rgb(var(--cps-color-neutral-400)"'))
-        .replaceAll('class="uim-quaternary"', 'style="color: rgb(var(--cps-color-neutral-300)"'));
+        .replaceAll('class="uim-primary"', 'style="color: rgb(var(--cps-color-neutral-600)"')
+        .replaceAll('class="uim-secondary"', 'style="color: rgb(var(--cps-color-neutral-500)"')
+        .replaceAll('class="uim-tertiary"', 'style="color: rgb(var(--cps-color-neutral-400)"')
+        .replaceAll('class="uim-quaternary"', 'style="color: rgb(var(--cps-color-neutral-300)"');
     }
   });
 </script>
@@ -480,7 +479,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
   }
 
   fetch('./dist/assets/icons/icons.json')
-    .then(res => res.json())  
+    .then(res => res.json())
     .then(icons => {
       const container = document.querySelector('.icon-search');
       const input = container.querySelector('cps-input');
@@ -495,16 +494,18 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
       icons.map(i => {
         const item = document.createElement('div');
         item.classList.add('icon-list-item');
+        item.setAttribute('title', i.name);
         item.setAttribute('data-name', i.name);
         item.setAttribute('data-terms', [i.name, i.title, ...(i.tags || []), ...(i.categories || [])].join(' '));
         item.innerHTML = `
           <svg width="1em" height="1em" fill="currentColor">
             <use xlink:href="./assets/icons/sprite.svg#${i.name}"></use>
-          </svg>      
+          </svg>
         `;
         list.appendChild(item);
 
-        // Wrap it with a tooltip the first time the mouse lands on it. We do this instead of baking them into the DOM 
+        /*
+        // Wrap it with a tooltip the first time the mouse lands on it. We do this instead of baking them into the DOM
         // to improve this page's performance. See: https://github.com/cpsrepositorio/cps-elements/issues/1122
         item.addEventListener('mouseover', () => wrapWithTooltip(item), { once: true });
 
@@ -520,8 +521,10 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
             setTimeout(() => tooltip.content = i.name, 1000);
           }
         });
+        */
       });
 
+      /*
       // Filter as the user types
       input.addEventListener('cps-input', () => {
         clearTimeout(inputTimeout);
@@ -537,7 +540,9 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
           });
         }, 250);
       });
+      */
 
+      /*
       // Sort by type and remember preference
       const iconType = localStorage.getItem('cps-icon:type') || 'outline';
       select.value = iconType;
@@ -546,6 +551,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
         list.setAttribute('data-type', select.value);
         localStorage.setItem('cps-icon:type', select.value);
       });
+      */
     });
 </script>
 
@@ -553,7 +559,6 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
   .icon-search {
     border: solid 1px var(--cps-panel-border-color);
     border-radius: var(--cps-border-radius-medium);
-    padding: var(--cps-spacing-4);
   }
 
   .icon-search [hidden] {
@@ -585,7 +590,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     position: relative;
-    margin-top: 1rem;
+    padding: var(--cps-spacing-4);
     max-height: 480px;
     overflow-y: auto;
   }
@@ -612,7 +617,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
     width: 2em;
     height: 2em;
     margin: 0 auto;
-    cursor: copy;
+    /* cursor: copy; */
     transition: var(--cps-transition-medium) all;
   }
 

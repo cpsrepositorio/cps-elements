@@ -40,12 +40,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" />
 
-    <!-- Import CPS Elements -->
+    <!-- Import local CPS Elements copy -->
     <link rel="stylesheet" href="./dist/themes/light.css" />
     <link rel="stylesheet" href="./dist/themes/dark.css" />
     <script type="module" src="./dist/elements.js"></script>
   </head>
-  <body data-elements="./dist">
+  <body>
     <div id="app">Carregando...</div>
 
     <script>
@@ -59,14 +59,11 @@
     </script>
 
     <script>
-      const basePath = location.pathname.startsWith('/cps-elements/') ? '/cps-elements/' : '/';
+      const basePath = location.pathname.startsWith('/cps-elements/') ? `${location.origin}/cps-elements/` : '/';
 
       window.$docsify = {
         alias: {
-          '/.*/_sidebar.md': `${basePath}_sidebar.md`,
-          [`${basePath}(.*)/(.*).md'`]: '$1/$2.md',
-          '/(.*)/(.*).md': `${basePath}$1/$2.md`,
-          '/(.*).md': `${basePath}$1.md`
+          '/.*/_sidebar.md': '_sidebar.md'
         },
         auto2top: true,
         basePath,
@@ -80,18 +77,27 @@
         homepage: '/fundamentos/introdução.md',
         loadSidebar: true,
         logo: './assets/images/wordmark.svg',
+        markdown: {
+          renderer: {
+            heading: function (...args) {
+              const level = args[1];
+              if (level === 1) return `<h1>${args[0]}</h1>`;
+              return this.origin.heading.apply(this, args);
+            }
+          }
+        },
         maxLevel: 3,
-        subMaxLevel: 2,
         name: 'CPS Elements',
-        nameLink: '/',
+        nameLink: `${basePath}#/`,
         notFoundPage: '404.md',
         pagination: {
-          previousText: 'Anterior',
-          nextText: 'Próximo',
           crossChapter: true,
-          crossChapterText: false
+          crossChapterText: false,
+          nextText: 'Próximo',
+          previousText: 'Anterior'
         },
-        routerMode: 'history',
+        routerMode: 'hash',
+        subMaxLevel: 2,
         themeColor: 'rgb(var(--cps-color-accent-500))'
       };
     </script>
@@ -105,8 +111,8 @@
     <script src="./assets/plugins/code-block/code-block.js"></script>
     <script src="./assets/plugins/metadata/metadata.js"></script>
     <script src="./assets/plugins/scroll-position/scroll-position.js"></script>
-    <script src="./assets/plugins/search/lunr.min.js"></script>
-    <script src="./assets/plugins/search/search.js"></script>
+    <!-- <script src="./assets/plugins/search/lunr.min.js"></script>
+    <script src="./assets/plugins/search/search.js"></script> -->
     <script src="./assets/plugins/theme-picker/theme-picker.js"></script>
   </body>
 </html>
