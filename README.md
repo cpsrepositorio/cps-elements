@@ -3,8 +3,8 @@
 **Web Components de ponta, sem complicação.**
 
 - Componentes no navegador, sem _frameworks_; 🌐
-- E nativamente em _frameworks_ como [Vue](http://localhost:4000/frameworks/vue) e [Angular](http://localhost:4000/frameworks/angular); 🧩
-- Ou com _wrappers_ inclusos para suportar [React](http://localhost:4000/frameworks/react); ⚛️
+- E nativamente em _frameworks_ como [Vue](/frameworks/vue) e [Angular](/frameworks/angular); 🧩
+- Ou com _wrappers_ inclusos para suportar [React](/frameworks/react); ⚛️
 - Empacotado para acesso direto por [CDN](https://www.cloudflare.com/pt-br/learning/cdn/what-is-a-cdn/); 📦
 - Totalmente aderente ao [CPS Design System](https://cpsrepositorio.github.io/cps-design-system/); 🎨
 - Incluindo tema para modo escuro; 😎
@@ -17,9 +17,9 @@ CPS Elements é parte do projeto de UI/UX institucional, que também sustenta o 
 
 ---
 
-Documentação: [cpsrepositorio.github.io/cps-elements](https://cpsrepositorio.github.io/cps-elements)
+Documentação: [cpsrepositorio.github.io/cps-elements](https://cpsrepositorio.github.io/cps-elements/)
 
-Código-fonte: [github.com/cpsrepositorio/cps-elements](https://github.com/cpsrepositorio/cps-elements)
+Código-fonte: [github.com/cpsrepositorio/cps-elements](https://github.com/cpsrepositorio/cps-elements/)
 
 ---
 
