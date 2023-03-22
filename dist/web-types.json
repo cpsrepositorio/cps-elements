@@ -405,86 +405,6 @@
           ]
         },
         {
-          "name": "cps-include",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/include",
-          "js": {
-            "properties": [
-              {
-                "name": "src",
-                "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "mode",
-                "description": "The fetch mode to use.",
-                "value": {
-                  "type": "'cors' | 'no-cors' | 'same-origin'"
-                }
-              },
-              {
-                "name": "allowScripts",
-                "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "executeScript",
-                "value": {}
-              },
-              {
-                "name": "handleSrcChange",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-load",
-                "description": "Emitted when the included file is loaded."
-              },
-              {
-                "name": "cps-error",
-                "description": "Emitted when the included file fails to load due to an error."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "src",
-              "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "mode",
-              "description": "The fetch mode to use.",
-              "value": {
-                "type": "'cors' | 'no-cors' | 'same-origin'"
-              }
-            },
-            {
-              "name": "allow-scripts",
-              "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
           "name": "cps-icon",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/icon",
@@ -659,6 +579,86 @@
                 "value": {}
               }
             ],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-include",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/include",
+          "js": {
+            "properties": [
+              {
+                "name": "src",
+                "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "mode",
+                "description": "The fetch mode to use.",
+                "value": {
+                  "type": "'cors' | 'no-cors' | 'same-origin'"
+                }
+              },
+              {
+                "name": "allowScripts",
+                "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "executeScript",
+                "value": {}
+              },
+              {
+                "name": "handleSrcChange",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-load",
+                "description": "Emitted when the included file is loaded."
+              },
+              {
+                "name": "cps-error",
+                "description": "Emitted when the included file fails to load due to an error."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "src",
+              "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "mode",
+              "description": "The fetch mode to use.",
+              "value": {
+                "type": "'cors' | 'no-cors' | 'same-origin'"
+              }
+            },
+            {
+              "name": "allow-scripts",
+              "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
             "events": []
           },
           "attributes": []

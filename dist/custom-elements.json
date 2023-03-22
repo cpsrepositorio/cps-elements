@@ -607,177 +607,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/include/include.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsInclude",
-          "members": [
-            {
-              "kind": "field",
-              "name": "src",
-              "type": {
-                "text": "string"
-              },
-              "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
-              "attribute": "src"
-            },
-            {
-              "kind": "field",
-              "name": "mode",
-              "type": {
-                "text": "'cors' | 'no-cors' | 'same-origin'"
-              },
-              "default": "'cors'",
-              "description": "The fetch mode to use.",
-              "attribute": "mode"
-            },
-            {
-              "kind": "field",
-              "name": "allowScripts",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
-              "attribute": "allow-scripts"
-            },
-            {
-              "kind": "method",
-              "name": "executeScript",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "script",
-                  "type": {
-                    "text": "HTMLScriptElement"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleSrcChange"
-            }
-          ],
-          "events": [
-            {
-              "description": "Emitted when the included file is loaded.",
-              "name": "cps-load",
-              "reactName": "onCpsLoad"
-            },
-            {
-              "type": {
-                "text": "{ status: number }"
-              },
-              "description": "Emitted when the included file fails to load due to an error.",
-              "name": "cps-error",
-              "reactName": "onCpsError"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "src",
-              "type": {
-                "text": "string"
-              },
-              "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
-              "fieldName": "src"
-            },
-            {
-              "name": "mode",
-              "type": {
-                "text": "'cors' | 'no-cors' | 'same-origin'"
-              },
-              "default": "'cors'",
-              "description": "The fetch mode to use.",
-              "fieldName": "mode"
-            },
-            {
-              "name": "allow-scripts",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
-              "fieldName": "allowScripts"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element"
-          },
-          "summary": "Includes give you the power to embed external HTML files into the page.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/include",
-          "status": "stable",
-          "since": "0.1",
-          "tagName": "cps-include",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsInclude",
-            "module": "components/include/include.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-include",
-          "declaration": {
-            "name": "CpsInclude",
-            "module": "components/include/include.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/include/request.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "requestInclude",
-          "return": {
-            "type": {
-              "text": "Promise<IncludeFile>"
-            }
-          },
-          "parameters": [
-            {
-              "name": "src",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "name": "mode",
-              "default": "'cors'",
-              "type": {
-                "text": "'cors' | 'no-cors' | 'same-origin'"
-              }
-            }
-          ],
-          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once."
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "requestInclude",
-          "declaration": {
-            "name": "requestInclude",
-            "module": "components/include/request.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/icon/icon.js",
       "declarations": [
         {
@@ -1195,6 +1024,177 @@
           "declaration": {
             "name": "CpsSpinner",
             "module": "components/spinner/spinner.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/include/include.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsInclude",
+          "members": [
+            {
+              "kind": "field",
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "attribute": "src"
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "type": {
+                "text": "'cors' | 'no-cors' | 'same-origin'"
+              },
+              "default": "'cors'",
+              "description": "The fetch mode to use.",
+              "attribute": "mode"
+            },
+            {
+              "kind": "field",
+              "name": "allowScripts",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "attribute": "allow-scripts"
+            },
+            {
+              "kind": "method",
+              "name": "executeScript",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "script",
+                  "type": {
+                    "text": "HTMLScriptElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleSrcChange"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitted when the included file is loaded.",
+              "name": "cps-load",
+              "reactName": "onCpsLoad"
+            },
+            {
+              "type": {
+                "text": "{ status: number }"
+              },
+              "description": "Emitted when the included file fails to load due to an error.",
+              "name": "cps-error",
+              "reactName": "onCpsError"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "fieldName": "src"
+            },
+            {
+              "name": "mode",
+              "type": {
+                "text": "'cors' | 'no-cors' | 'same-origin'"
+              },
+              "default": "'cors'",
+              "description": "The fetch mode to use.",
+              "fieldName": "mode"
+            },
+            {
+              "name": "allow-scripts",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "fieldName": "allowScripts"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Includes give you the power to embed external HTML files into the page.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/include",
+          "status": "stable",
+          "since": "0.1",
+          "tagName": "cps-include",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsInclude",
+            "module": "components/include/include.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-include",
+          "declaration": {
+            "name": "CpsInclude",
+            "module": "components/include/include.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/include/request.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "requestInclude",
+          "return": {
+            "type": {
+              "text": "Promise<IncludeFile>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "src",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "mode",
+              "default": "'cors'",
+              "type": {
+                "text": "'cors' | 'no-cors' | 'same-origin'"
+              }
+            }
+          ],
+          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "requestInclude",
+          "declaration": {
+            "name": "requestInclude",
+            "module": "components/include/request.js"
           }
         }
       ]
