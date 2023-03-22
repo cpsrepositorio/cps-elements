@@ -1,0 +1,669 @@
+{
+  "$schema": "http://json.schemastore.org/web-types",
+  "name": "@cps/elements",
+  "version": "0.1.0",
+  "description-markup": "markdown",
+  "framework-config": {
+    "enable-when": {
+      "node-packages": [
+        "@cps/elements"
+      ]
+    }
+  },
+  "contributions": {
+    "html": {
+      "elements": [
+        {
+          "name": "cps-button",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/button",
+          "js": {
+            "properties": [
+              {
+                "name": "formControlController",
+                "value": {}
+              },
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "button",
+                "value": {
+                  "type": "HTMLButtonElement | HTMLLinkElement"
+                }
+              },
+              {
+                "name": "isFocused",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "title",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "variant",
+                "description": "A variante visual para apresentação do botão.",
+                "value": {
+                  "type": "'default' | 'accent' | 'transparent'"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do botão.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "caret",
+                "description": "Apresenta um sinalizador de menu ao final do botão. Usado para indicar que o botão dispara um menu de contexto ou algum comportamento similar.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o botão.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "waiting",
+                "description": "Apresenta o botão em estado de carregamento.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "rounded",
+                "description": "Arredondamento dos cantos do botão, com o padrão sendo bordas arredondas em `4px`.",
+                "value": {
+                  "type": "'default' | 'corner' | 'full'"
+                }
+              },
+              {
+                "name": "type",
+                "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+                "value": {
+                  "type": "'button' | 'submit' | 'reset'"
+                }
+              },
+              {
+                "name": "name",
+                "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "href",
+                "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "target",
+                "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+                "value": {
+                  "type": "'_blank' | '_parent' | '_self' | '_top'"
+                }
+              },
+              {
+                "name": "download",
+                "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "form",
+                "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "formAction",
+                "description": "Usado para sobrescrever o atributo `action` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "formEnctype",
+                "description": "Usado para sobrescrever o atributo `enctype` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain'"
+                }
+              },
+              {
+                "name": "formMethod",
+                "description": "Usado para sobrescrever o atributo `method` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "'post' | 'get'"
+                }
+              },
+              {
+                "name": "formNoValidate",
+                "description": "Usado para sobrescrever o atributo `novalidate` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "formTarget",
+                "description": "Usado para sobrescrever o atributo `target` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "'_self' | '_blank' | '_parent' | '_top' | string"
+                }
+              },
+              {
+                "name": "validity",
+                "description": "Obtém o objeto de estado de validade do botão.",
+                "value": {}
+              },
+              {
+                "name": "validationMessage",
+                "description": "Obtém a mensagem de validação do botão.",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleHostClick",
+                "value": {}
+              },
+              {
+                "name": "handleInvalid",
+                "value": {}
+              },
+              {
+                "name": "isButton",
+                "value": {}
+              },
+              {
+                "name": "isLink",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no botão.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no botão.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do botão.",
+                "value": {}
+              },
+              {
+                "name": "checkValidity",
+                "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.",
+                "value": {}
+              },
+              {
+                "name": "reportValidity",
+                "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.",
+                "value": {}
+              },
+              {
+                "name": "setCustomValidity",
+                "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o botão perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o botão obtém o foco."
+              },
+              {
+                "name": "cps-invalid",
+                "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "variant",
+              "description": "A variante visual para apresentação do botão.",
+              "value": {
+                "type": "'default' | 'accent' | 'transparent'"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do botão.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "caret",
+              "description": "Apresenta um sinalizador de menu ao final do botão. Usado para indicar que o botão dispara um menu de contexto ou algum comportamento similar.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o botão.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "waiting",
+              "description": "Apresenta o botão em estado de carregamento.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "rounded",
+              "description": "Arredondamento dos cantos do botão, com o padrão sendo bordas arredondas em `4px`.",
+              "value": {
+                "type": "'default' | 'corner' | 'full'"
+              }
+            },
+            {
+              "name": "type",
+              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+              "value": {
+                "type": "'button' | 'submit' | 'reset'"
+              }
+            },
+            {
+              "name": "name",
+              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "href",
+              "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "target",
+              "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+              "value": {
+                "type": "'_blank' | '_parent' | '_self' | '_top'"
+              }
+            },
+            {
+              "name": "download",
+              "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "form",
+              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "formaction",
+              "description": "Usado para sobrescrever o atributo `action` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "formenctype",
+              "description": "Usado para sobrescrever o atributo `enctype` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain'"
+              }
+            },
+            {
+              "name": "formmethod",
+              "description": "Usado para sobrescrever o atributo `method` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "'post' | 'get'"
+              }
+            },
+            {
+              "name": "formnovalidate",
+              "description": "Usado para sobrescrever o atributo `novalidate` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "formtarget",
+              "description": "Usado para sobrescrever o atributo `target` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "'_self' | '_blank' | '_parent' | '_top' | string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-icon",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/icon",
+          "js": {
+            "properties": [
+              {
+                "name": "svg",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "src",
+                "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "label",
+                "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "library",
+                "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "getUrl",
+                "value": {}
+              },
+              {
+                "name": "handleLabelChange",
+                "value": {}
+              },
+              {
+                "name": "setIcon",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-load",
+                "description": "Emitido quando o ícone foi carregado."
+              },
+              {
+                "name": "cps-error",
+                "description": "Emitido quando o ícone falha para carregar devido a um erro."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "name",
+              "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "src",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "label",
+              "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "library",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "value": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Adds an icon to the list of watched icons.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Removes an icon from the list of watched icons.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Returns a library from the registry.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Adds an icon library to the registry, or overrides an existing one.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Removes an icon library from the registry.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-include",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/include",
+          "js": {
+            "properties": [
+              {
+                "name": "src",
+                "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "mode",
+                "description": "The fetch mode to use.",
+                "value": {
+                  "type": "'cors' | 'no-cors' | 'same-origin'"
+                }
+              },
+              {
+                "name": "allowScripts",
+                "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "executeScript",
+                "value": {}
+              },
+              {
+                "name": "handleSrcChange",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-load",
+                "description": "Emitted when the included file is loaded."
+              },
+              {
+                "name": "cps-error",
+                "description": "Emitted when the included file fails to load due to an error."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "src",
+              "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "mode",
+              "description": "The fetch mode to use.",
+              "value": {
+                "type": "'cors' | 'no-cors' | 'same-origin'"
+              }
+            },
+            {
+              "name": "allow-scripts",
+              "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-spinner",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/spinner",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": []
+        }
+      ]
+    }
+  }
+}

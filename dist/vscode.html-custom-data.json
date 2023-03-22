@@ -1,0 +1,192 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "cps-button",
+      "description": "Botões representam ações que estão disponíveis ao usuário.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - _default_ - O texto interno do botão.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o _label_ do botão.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.\n- **caret** - O elemento de sinalização de menu, normalmente um `<cps-icon>` com o ícone de circunflexo para baixo.",
+      "attributes": [
+        { "name": "title", "values": [] },
+        {
+          "name": "variant",
+          "description": "A variante visual para apresentação do botão.",
+          "values": [
+            { "name": "default" },
+            { "name": "accent" },
+            { "name": "transparent" }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do botão.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "caret",
+          "description": "Apresenta um sinalizador de menu ao final do botão. Usado para indicar que o botão dispara um menu de contexto ou algum comportamento similar.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o botão.",
+          "values": []
+        },
+        {
+          "name": "waiting",
+          "description": "Apresenta o botão em estado de carregamento.",
+          "values": []
+        },
+        {
+          "name": "rounded",
+          "description": "Arredondamento dos cantos do botão, com o padrão sendo bordas arredondas em `4px`.",
+          "values": [
+            { "name": "default" },
+            { "name": "corner" },
+            { "name": "full" }
+          ]
+        },
+        {
+          "name": "type",
+          "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+          "values": [
+            { "name": "button" },
+            { "name": "submit" },
+            { "name": "reset" }
+          ]
+        },
+        {
+          "name": "name",
+          "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+          "values": []
+        },
+        {
+          "name": "href",
+          "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+          "values": []
+        },
+        {
+          "name": "target",
+          "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+          "values": [
+            { "name": "_blank" },
+            { "name": "_parent" },
+            { "name": "_self" },
+            { "name": "_top" }
+          ]
+        },
+        {
+          "name": "download",
+          "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+          "values": []
+        },
+        {
+          "name": "form",
+          "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+          "values": []
+        },
+        {
+          "name": "formaction",
+          "description": "Usado para sobrescrever o atributo `action` do formulário \"dono\" deste botão.",
+          "values": []
+        },
+        {
+          "name": "formenctype",
+          "description": "Usado para sobrescrever o atributo `enctype` do formulário \"dono\" deste botão.",
+          "values": [
+            { "name": "application/x-www-form-urlencoded" },
+            { "name": "multipart/form-data" },
+            { "name": "text/plain" }
+          ]
+        },
+        {
+          "name": "formmethod",
+          "description": "Usado para sobrescrever o atributo `method` do formulário \"dono\" deste botão.",
+          "values": [{ "name": "post" }, { "name": "get" }]
+        },
+        {
+          "name": "formnovalidate",
+          "description": "Usado para sobrescrever o atributo `novalidate` do formulário \"dono\" deste botão.",
+          "values": []
+        },
+        {
+          "name": "formtarget",
+          "description": "Usado para sobrescrever o atributo `target` do formulário \"dono\" deste botão.",
+          "values": [
+            { "name": "_self" },
+            { "name": "_blank" },
+            { "name": "_parent" },
+            { "name": "_top" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-icon",
+      "description": "Ícones são símbolos gráficos para representação de ações ou informações em uma interface.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o ícone foi carregado.\n- **cps-error** - Emitido quando o ícone falha para carregar devido a um erro.",
+      "attributes": [
+        {
+          "name": "name",
+          "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+          "values": []
+        },
+        {
+          "name": "src",
+          "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+          "values": []
+        },
+        {
+          "name": "label",
+          "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+          "values": []
+        },
+        {
+          "name": "library",
+          "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-include",
+      "description": "Includes give you the power to embed external HTML files into the page.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitted when the included file is loaded.\n- **cps-error** - Emitted when the included file fails to load due to an error.",
+      "attributes": [
+        {
+          "name": "src",
+          "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+          "values": []
+        },
+        {
+          "name": "mode",
+          "description": "The fetch mode to use.",
+          "values": [
+            { "name": "cors" },
+            { "name": "no-cors" },
+            { "name": "same-origin" }
+          ]
+        },
+        {
+          "name": "allow-scripts",
+          "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-spinner",
+      "description": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--track-width** - A espessura da linha de apresentação do indicador. _(default: undefined)_\n- **--track-color** - A cor da linha de caminho ao fundo do _spinner_. _(default: undefined)_\n- **--indicator-color** - A cor do indicador giratório do _spinner_. _(default: undefined)_\n- **--speed** - O tempo que leva para o indicador completa um ciclo de animação giratório. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<svg>`).",
+      "attributes": [],
+      "references": []
+    }
+  ]
+}
