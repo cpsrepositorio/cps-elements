@@ -13,7 +13,7 @@
 - Em português, mas com suporte a outros idiomas; 💬
 - E totalmente _open-source_! 🔓
 
-CPS Elements é parte do projeto de UI/UX institucional, que também sustenta o CPS Design System, projetados originalmente pelo professor [Erick Petrucelli](https://twitter.com/ErickPetru). Independentemente de suas origens e motivações iniciais, é um projeto totalmente _open-source_ disponível sob os termos da [licença MIT](LICENSE.md).
+CPS Elements é parte do projeto de UI/UX institucional, que também sustenta o CPS Design System, projetados originalmente pelo professor [Erick Petrucelli](https://github.com/ErickPetru). Independentemente de suas origens e motivações iniciais, é um projeto totalmente _open-source_ disponível sob os termos da [licença MIT](LICENSE.md).
 
 ---
 
@@ -102,4 +102,4 @@ Qualquer tipo de suporte que você oferecer, será muito apreciado! 👇
 
 ## Licença
 
-CPS Elements foi projetado inicialmente pelo professor [Erick Petrucelli](https://twitter.com/ErickPetru). Está disponível sob os termos da [licença MIT](LICENSE.md).
+CPS Elements foi projetado inicialmente pelo professor [Erick Petrucelli](https://github.com/ErickPetru). Está disponível sob os termos da [licença MIT](LICENSE.md).

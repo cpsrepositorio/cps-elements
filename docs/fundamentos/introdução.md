@@ -133,4 +133,4 @@ Se você procura suporte a Internet Explorer ou Edge pré-Chromium (mesmo sabend
 
 ## Licença
 
-CPS Elements é parte do projeto de UI/UX institucional, que também sustenta o CPS Design System, projetados originalmente pelo professor [Erick Petrucelli](https://twitter.com/ErickPetru). Independentemente de suas origens e motivações iniciais, é um projeto totalmente _open-source_ disponível sob os termos da [licença MIT](http://escolhaumalicenca.com.br/licencas/mit/).
+CPS Elements é parte do projeto de UI/UX institucional, que também sustenta o CPS Design System, projetados originalmente pelo professor [Erick Petrucelli](https://github.com/ErickPetru). Independentemente de suas origens e motivações iniciais, é um projeto totalmente _open-source_ disponível sob os termos da [licença MIT](http://escolhaumalicenca.com.br/licencas/mit/).
