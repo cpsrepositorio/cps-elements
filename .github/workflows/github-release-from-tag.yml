@@ -1,5 +1,5 @@
 # This workflow will create a GitHub release every time a tag is pushed
-name: Create GitHub Release
+name: Create GitHub Release from Tag
 
 on:
   push:
