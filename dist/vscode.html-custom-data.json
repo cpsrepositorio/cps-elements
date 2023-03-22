@@ -130,6 +130,32 @@
       "references": []
     },
     {
+      "name": "cps-include",
+      "description": "Includes give you the power to embed external HTML files into the page.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitted when the included file is loaded.\n- **cps-error** - Emitted when the included file fails to load due to an error.",
+      "attributes": [
+        {
+          "name": "src",
+          "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+          "values": []
+        },
+        {
+          "name": "mode",
+          "description": "The fetch mode to use.",
+          "values": [
+            { "name": "cors" },
+            { "name": "no-cors" },
+            { "name": "same-origin" }
+          ]
+        },
+        {
+          "name": "allow-scripts",
+          "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-icon",
       "description": "Ícones são símbolos gráficos para representação de ações ou informações em uma interface.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o ícone foi carregado.\n- **cps-error** - Emitido quando o ícone falha para carregar devido a um erro.",
       "attributes": [
@@ -151,32 +177,6 @@
         {
           "name": "library",
           "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-include",
-      "description": "Includes give you the power to embed external HTML files into the page.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitted when the included file is loaded.\n- **cps-error** - Emitted when the included file fails to load due to an error.",
-      "attributes": [
-        {
-          "name": "src",
-          "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
-          "values": []
-        },
-        {
-          "name": "mode",
-          "description": "The fetch mode to use.",
-          "values": [
-            { "name": "cors" },
-            { "name": "no-cors" },
-            { "name": "same-origin" }
-          ]
-        },
-        {
-          "name": "allow-scripts",
-          "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
           "values": []
         }
       ],

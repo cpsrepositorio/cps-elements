@@ -34,4 +34,4 @@
   - [Internacionalização <small>(em breve)</small>](/saiba-mais/internacionalização)
   - [Acessibilidade <small>(em breve)</small>](/saiba-mais/acessibilidade)
   - [Contribuindo <small>(em breve)</small>](/saiba-mais/contribuindo)
-  - [Changelog <small>(em breve)</small>](/saiba-mais/changelog)
+  - [Changelog](/saiba-mais/changelog)
