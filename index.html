@@ -46,7 +46,8 @@
     <script type="module" src="./dist/elements.js"></script>
   </head>
   <body data-elements="./dist">
-    <div id="app"></div>
+    <div id="app">Carregando...</div>
+
     <script>
       // Set the initial theme to prevent flashing
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -56,13 +57,17 @@
         theme === 'dark' || (theme === 'auto' && prefersDark)
       );
     </script>
+
     <script>
+      const basePath = location.pathname.startsWith('/cps-elements/') ? '/cps-elements/' : '/';
+
       window.$docsify = {
         alias: {
-          '/.*/_sidebar.md': '/_sidebar.md'
+          '/.*/_sidebar.md': `${basePath}/_sidebar.md`,
+          [`${basePath}(.*)/(.*).md'`]: '$1/$2.md'
         },
         auto2top: true,
-        basePath: location.host === 'cpsrepositorio.github.io' ? '/cps-elements/' : '/',
+        basePath,
         copyCode: {
           buttonText: 'Copiar',
           errorText: 'Falha ao copiar',
@@ -88,7 +93,8 @@
         themeColor: 'rgb(var(--cps-color-accent-500))'
       };
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-bash.min.js"></script>

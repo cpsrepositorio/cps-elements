@@ -2,7 +2,7 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
 
 (() => {
   const isDev = location.hostname === 'localhost';
-  const customElements = fetch('/dist/custom-elements.json')
+  const customElements = fetch('./dist/custom-elements.json')
     .then(res => res.json())
     .catch(err => console.error(err));
 
