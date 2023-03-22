@@ -63,8 +63,10 @@
 
       window.$docsify = {
         alias: {
-          '/.*/_sidebar.md': `${basePath}/_sidebar.md`,
-          [`${basePath}(.*)/(.*).md'`]: '$1/$2.md'
+          '/.*/_sidebar.md': `${basePath}_sidebar.md`,
+          [`${basePath}(.*)/(.*).md'`]: '$1/$2.md',
+          '/(.*)/(.*).md': `${basePath}$1/$2.md`,
+          '/(.*).md': `${basePath}$1.md`
         },
         auto2top: true,
         basePath,
