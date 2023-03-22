@@ -40,13 +40,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" />
 
-    <!-- Import CPS Elements -->
+    <!-- Import local CPS Elements copy -->
     <link rel="stylesheet" href="./dist/themes/light.css" />
     <link rel="stylesheet" href="./dist/themes/dark.css" />
     <script type="module" src="./dist/elements.js"></script>
   </head>
-  <body data-elements="./dist">
-    <div id="app"></div>
+  <body>
+    <div id="app">Carregando...</div>
+
     <script>
       // Set the initial theme to prevent flashing
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -56,13 +57,16 @@
         theme === 'dark' || (theme === 'auto' && prefersDark)
       );
     </script>
+
     <script>
+      const basePath = location.pathname.startsWith('/cps-elements/') ? `${location.origin}/cps-elements/` : '/';
+
       window.$docsify = {
         alias: {
-          '/.*/_sidebar.md': '/_sidebar.md'
+          '/.*/_sidebar.md': '_sidebar.md'
         },
         auto2top: true,
-        basePath: location.host === 'cpsrepositorio.github.io' ? '/cps-elements/' : '/',
+        basePath,
         copyCode: {
           buttonText: 'Copiar',
           errorText: 'Falha ao copiar',
@@ -73,22 +77,32 @@
         homepage: '/fundamentos/introdução.md',
         loadSidebar: true,
         logo: './assets/images/wordmark.svg',
+        markdown: {
+          renderer: {
+            heading: function (...args) {
+              const level = args[1];
+              if (level === 1) return `<h1>${args[0]}</h1>`;
+              return this.origin.heading.apply(this, args);
+            }
+          }
+        },
         maxLevel: 3,
-        subMaxLevel: 2,
         name: 'CPS Elements',
-        nameLink: '/',
+        nameLink: `${basePath}#/`,
         notFoundPage: '404.md',
         pagination: {
-          previousText: 'Anterior',
-          nextText: 'Próximo',
           crossChapter: true,
-          crossChapterText: false
+          crossChapterText: false,
+          nextText: 'Próximo',
+          previousText: 'Anterior'
         },
-        routerMode: 'history',
+        routerMode: 'hash',
+        subMaxLevel: 2,
         themeColor: 'rgb(var(--cps-color-accent-500))'
       };
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-bash.min.js"></script>
@@ -97,8 +111,8 @@
     <script src="./assets/plugins/code-block/code-block.js"></script>
     <script src="./assets/plugins/metadata/metadata.js"></script>
     <script src="./assets/plugins/scroll-position/scroll-position.js"></script>
-    <script src="./assets/plugins/search/lunr.min.js"></script>
-    <script src="./assets/plugins/search/search.js"></script>
+    <!-- <script src="./assets/plugins/search/lunr.min.js"></script>
+    <script src="./assets/plugins/search/search.js"></script> -->
     <script src="./assets/plugins/theme-picker/theme-picker.js"></script>
   </body>
 </html>

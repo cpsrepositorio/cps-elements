@@ -2,7 +2,7 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
 
 (() => {
   const isDev = location.hostname === 'localhost';
-  const customElements = fetch('/dist/custom-elements.json')
+  const customElements = fetch('./dist/custom-elements.json')
     .then(res => res.json())
     .catch(err => console.error(err));
 
@@ -425,10 +425,12 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             ## Importação
 
             <cps-tab-group>
+            <!--
             <cps-tab slot="nav" panel="script">Script</cps-tab>
             <cps-tab slot="nav" panel="import">Import</cps-tab>
             <cps-tab slot="nav" panel="bundler">Bundler</cps-tab>
             <cps-tab slot="nav" panel="react">React</cps-tab>
+            -->
 
             <cps-tab-panel name="script">\n
             Para importar este componente a partir de [um CDN](https://www.jsdelivr.com/package/npm/@cps/elements) usando uma _tag_ \`<script>\`:

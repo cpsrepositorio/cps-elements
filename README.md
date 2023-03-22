@@ -58,7 +58,7 @@ npm install
 Assim que clonado o repositório, execute o comando:
 
 ```bash
-npm start
+npm run dev
 ```
 
 Isto iniciará o servidor de desenvolvimento local do CPS Elements. Após a construção inicial (que pode demorar um pouco mais do que as posteriores), seu navegador padrão abrirá automaticamente.
@@ -73,6 +73,12 @@ Para gerar uma compilação para produção, execute o comando:
 
 ```bash
 npm run build
+```
+
+A compilação para produção pode ser testada localmente em seguida, com:
+
+```bash
+npm start
 ```
 
 ### Criando novos componentes

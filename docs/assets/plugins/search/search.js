@@ -102,7 +102,7 @@
     let map;
 
     // Load search data
-    fetch('../../../search.json')
+    fetch('./search.json')
       .then(res => res.json())
       .then(data => {
         searchIndex = lunr.Index.load(data.searchIndex);
@@ -259,7 +259,7 @@
           if (page.url.includes('fundamentos/')) {
             icon = 'lightbulb';
           }
-          if (page.url.includes('outros-recursos/')) {
+          if (page.url.includes('saiba-mais/')) {
             icon = 'book';
           }
           if (page.url.includes('components/')) {

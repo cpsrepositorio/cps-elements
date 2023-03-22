@@ -3,6 +3,7 @@
 docs/dist
 docs/search.json
 dist
+cps-elements
 examples
 node_modules
 src/react
