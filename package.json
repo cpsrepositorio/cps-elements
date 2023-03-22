@@ -46,7 +46,6 @@
     "prestart": "symlink-dir docs cps-elements",
     "start": "http-server . -a localhost -g -o cps-elements && unlink cps-elements",
     "verify": "npm run prettier:check && npm run lint:check && npm run build && npm run test",
-    "prepublishOnly": "npm run verify",
     "prettier:check": "prettier --check --loglevel warn .",
     "prettier:fix": "prettier --write --loglevel warn .",
     "lint:check": "eslint src --max-warnings 0",
