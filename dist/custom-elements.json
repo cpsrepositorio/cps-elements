@@ -959,77 +959,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/spinner/spinner.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsSpinner",
-          "cssProperties": [
-            {
-              "description": "A espessura da linha de apresentação do indicador.",
-              "name": "--track-width"
-            },
-            {
-              "description": "A cor da linha de caminho ao fundo do _spinner_.",
-              "name": "--track-color"
-            },
-            {
-              "description": "A cor do indicador giratório do _spinner_.",
-              "name": "--indicator-color"
-            },
-            {
-              "description": "O tempo que leva para o indicador completa um ciclo de animação giratório.",
-              "name": "--speed"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<svg>`).",
-              "name": "base"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "localize",
-              "privacy": "private",
-              "default": "new LocalizeController(this)"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element"
-          },
-          "summary": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/spinner",
-          "status": "stable",
-          "since": "0.1",
-          "tagName": "cps-spinner",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsSpinner",
-            "module": "components/spinner/spinner.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-spinner",
-          "declaration": {
-            "name": "CpsSpinner",
-            "module": "components/spinner/spinner.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/include/include.js",
       "declarations": [
         {
@@ -1195,6 +1124,77 @@
           "declaration": {
             "name": "requestInclude",
             "module": "components/include/request.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/spinner/spinner.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsSpinner",
+          "cssProperties": [
+            {
+              "description": "A espessura da linha de apresentação do indicador.",
+              "name": "--track-width"
+            },
+            {
+              "description": "A cor da linha de caminho ao fundo do _spinner_.",
+              "name": "--track-color"
+            },
+            {
+              "description": "A cor do indicador giratório do _spinner_.",
+              "name": "--indicator-color"
+            },
+            {
+              "description": "O tempo que leva para o indicador completa um ciclo de animação giratório.",
+              "name": "--speed"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<svg>`).",
+              "name": "base"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/spinner",
+          "status": "stable",
+          "since": "0.1",
+          "tagName": "cps-spinner",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsSpinner",
+            "module": "components/spinner/spinner.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-spinner",
+          "declaration": {
+            "name": "CpsSpinner",
+            "module": "components/spinner/spinner.js"
           }
         }
       ]

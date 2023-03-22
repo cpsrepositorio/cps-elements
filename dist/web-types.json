@@ -569,21 +569,6 @@
           "attributes": []
         },
         {
-          "name": "cps-spinner",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/spinner",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
           "name": "cps-include",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/include",
@@ -659,6 +644,21 @@
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
           "js": {
             "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-spinner",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/spinner",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              }
+            ],
             "events": []
           },
           "attributes": []

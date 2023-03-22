@@ -157,12 +157,6 @@
       "references": []
     },
     {
-      "name": "cps-spinner",
-      "description": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--track-width** - A espessura da linha de apresentação do indicador. _(default: undefined)_\n- **--track-color** - A cor da linha de caminho ao fundo do _spinner_. _(default: undefined)_\n- **--indicator-color** - A cor do indicador giratório do _spinner_. _(default: undefined)_\n- **--speed** - O tempo que leva para o indicador completa um ciclo de animação giratório. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<svg>`).",
-      "attributes": [],
-      "references": []
-    },
-    {
       "name": "cps-include",
       "description": "Includes give you the power to embed external HTML files into the page.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitted when the included file is loaded.\n- **cps-error** - Emitted when the included file fails to load due to an error.",
       "attributes": [
@@ -186,6 +180,12 @@
           "values": []
         }
       ],
+      "references": []
+    },
+    {
+      "name": "cps-spinner",
+      "description": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--track-width** - A espessura da linha de apresentação do indicador. _(default: undefined)_\n- **--track-color** - A cor da linha de caminho ao fundo do _spinner_. _(default: undefined)_\n- **--indicator-color** - A cor do indicador giratório do _spinner_. _(default: undefined)_\n- **--speed** - O tempo que leva para o indicador completa um ciclo de animação giratório. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<svg>`).",
+      "attributes": [],
       "references": []
     }
   ]
