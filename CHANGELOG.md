@@ -8,7 +8,11 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Changed
 
-- Documentação apropriada do `<cps-include>`.
+- Documentação e exportação do `<cps-include>`.
+
+### Fixed
+
+- Corrigido processo de entrega não publicando `dist`.
 
 ## 0.1.1 - 2023-03-23
 

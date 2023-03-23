@@ -1,8 +1,10 @@
 .DS_Store
 .cache
-docs/dist
-docs/search.json
-dist
+.github
+.husky
+.vscode
 cps-elements
+docs
 node_modules
-src/react
+scripts
+src

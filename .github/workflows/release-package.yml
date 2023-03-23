@@ -22,6 +22,14 @@ jobs:
           registry-url: https://registry.npmjs.org/
           node-version: '14.17'
 
+      # Install dependencies and run test
+      - name: Install dependencies
+        run: npm ci
+
+      # Build the project 'dist'
+      - name: Generate build
+        run: npm run build
+
       # Git configuration
       - name: Git configuration
         run: |
