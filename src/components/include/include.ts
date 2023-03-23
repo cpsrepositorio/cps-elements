@@ -7,30 +7,32 @@ import styles from './include.styles';
 import type { CSSResultGroup } from 'lit';
 
 /**
- * @summary Includes give you the power to embed external HTML files into the page.
+ * @summary Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.
  * @documentation https://cpsrepositorio.github.io/cps-elements/components/include
  * @status stable
  * @since 0.1
  *
- * @event cps-load - Emitted when the included file is loaded.
- * @event {{ status: number }} cps-error - Emitted when the included file fails to load due to an error.
+ * @event cps-load - Emitido quando o arquivo incluído foi carregado.
+ * @event {{ status: number }} cps-error - Emitido quando o arquivo incluído falha durante o carregamento.
  */
 @customElement('cps-include')
 export default class CpsInclude extends BaseElement {
   static styles: CSSResultGroup = styles;
 
   /**
-   * The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as
-   * code and can result in XSS attacks.
+   * A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo
+   * que você está incluindo, já que será executado como código no navegador após o carregamento,
+   * o que implica em possíveis ataques XSS.
    */
   @property() src: string;
 
-  /** The fetch mode to use. */
+  /** O modo _cross origin_ a ser utilizado para o carregamento do arquivo. */
   @property() mode: 'cors' | 'no-cors' | 'same-origin' = 'cors';
 
   /**
-   * Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as
-   * code and can result in XSS attacks.
+   * Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode
+   * confiar no conteúdo que você está incluindo, já que será executado como código no navegador
+   * após o carregamento, o que implica em possíveis ataques XSS.
    */
   @property({ attribute: 'allow-scripts', type: Boolean }) allowScripts = false;
 
