@@ -67,7 +67,7 @@ Todos os ícones disponíveis na biblioteca `default` são exibidos a seguir. Cl
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps/elements/dist/react';
+import { CpsIcon } from '@cps-elements/web/dist/react';
 
 const App = () => (
   <>
@@ -131,7 +131,7 @@ const App = () => (
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps/elements/dist/react';
+import { CpsIcon } from '@cps-elements/web/dist/react';
 
 const App = () => (
   <div style={{ fontSize: '1.5rem' }}>
@@ -172,7 +172,7 @@ Para tal, ícones não decorativos podem se utilizar do atributo `label` para qu
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps/elements/dist/react';
+import { CpsIcon } from '@cps-elements/web/dist/react';
 
 const App = () => <CpsIcon name="star-fill" label="Adicionar aos favoritos" />;
 ```
@@ -188,7 +188,7 @@ Além do grande conjunto de ícones da biblioteca padrão, é possível carregar
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps/elements/dist/react';
+import { CpsIcon } from '@cps-elements/web/dist/react';
 
 const App = () => <CpsIcon src="./assets/images/brick.svg" style={{ fontSize: '4rem' }} />;
 ```
@@ -249,7 +249,7 @@ Aqui está um exemplo que registra uma biblioteca fictícia a partir de arquivos
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '@cps/elements/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from '@cps-elements/web/dist/utilities/icon-library.js';
 
   registerIconLibrary('example', {
     resolver: name => `/assets/icons/${name}.svg`,
