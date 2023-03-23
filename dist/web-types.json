@@ -1,12 +1,12 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
-  "name": "@cps/elements",
-  "version": "0.1.0",
+  "name": "@cps-elements/web",
+  "version": "0.1.1",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
       "node-packages": [
-        "@cps/elements"
+        "@cps-elements/web"
       ]
     }
   },

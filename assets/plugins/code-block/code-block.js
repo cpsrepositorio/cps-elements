@@ -17,7 +17,7 @@
     const version = sessionStorage.getItem('cps-version');
 
     html = html
-      .replace(/@cps\/elements/g, `https://cdn.skypack.dev/@cps/elements@${version}`)
+      .replace(/@cps\/elements/g, `https://cdn.skypack.dev/@cps-elements/web@${version}`)
       .replace(/from 'react'/g, `from 'https://cdn.skypack.dev/react@${reactVersion}'`)
       .replace(/from "react"/g, `from "https://cdn.skypack.dev/react@${reactVersion}"`)
       .replace(/from 'vue'/g, `from 'https://cdnjs.cloudflare.com/ajax/libs/vue/${vueVersion}/vue.global.prod.min.js'`)
@@ -50,7 +50,7 @@
       .sort((a, b) => a.localeCompare(b));
     const imports = components
       .map(c => c.replace(/^cps-/g, ''))
-      .map(c => `import '@cps/elements/dist/components/${c}/${c}.js';`)
+      .map(c => `import '@cps-elements/web/dist/components/${c}/${c}.js';`)
       .join('\n');
 
     newCode.className = 'vue language-html';
@@ -415,7 +415,7 @@
       // HTML templates
       if (!isReact && !isVue) {
         htmlTemplate =
-          `<script type="module" src="https://cdn.jsdelivr.net/npm/@cps/elements@${version}/dist/elements.js"></script>\n` +
+          `<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web@${version}/dist/elements.js"></script>\n` +
           `\n${htmlExample}`;
         jsTemplate = '';
       }
@@ -426,10 +426,10 @@
         jsTemplate =
           `import React from 'https://cdn.skypack.dev/react@${reactVersion}';\n` +
           `import ReactDOM from 'https://cdn.skypack.dev/react-dom@${reactVersion}';\n` +
-          `import { setBasePath } from 'https://cdn.skypack.dev/@cps/elements@${version}/dist/utilities/base-path';\n` +
+          `import { setBasePath } from 'https://cdn.skypack.dev/@cps-elements/web@${version}/dist/utilities/base-path';\n` +
           `\n` +
           `// Set the base path for CPS Elements assets\n` +
-          `setBasePath('https://cdn.skypack.dev/@cps/elements@${version}/dist/')\n` +
+          `setBasePath('https://cdn.skypack.dev/@cps-elements/web@${version}/dist/')\n` +
           `\n${convertModuleLinks(reactExample)}\n` +
           `\n` +
           `ReactDOM.render(<App />, document.getElementById('root'));`;
@@ -442,7 +442,7 @@
 
       // CSS templates
       cssTemplate =
-        `@import 'https://cdn.jsdelivr.net/npm/@cps/elements@${version}/dist/themes/${
+        `@import 'https://cdn.jsdelivr.net/npm/@cps-elements/web@${version}/dist/themes/${
           isDark ? 'dark' : 'light'
         }.css';\n` +
         '\n' +

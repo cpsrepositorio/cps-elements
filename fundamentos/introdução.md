@@ -22,8 +22,8 @@
 </div>
 </div>
 
-[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@cps/elements/badge)](https://www.jsdelivr.com/package/npm/@cps/elements)
-[![npm](https://img.shields.io/npm/dw/@cps/elements?label=npm&style=flat-square)](https://www.npmjs.com/package/@cps/elements)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@cps-elements/web/badge)](https://www.jsdelivr.com/package/npm/@cps-elements/web)
+[![npm](https://img.shields.io/npm/dw/@cps-elements/web?label=npm&style=flat-square)](https://www.npmjs.com/package/@cps-elements/web)
 <br />
 [![Licença](https://img.shields.io/badge/license-MIT-232323.svg?style=flat-square)](https://github.com/cpsrepositorio/cps-elements/blob/next/LICENSE.md)
 [![Repositório](https://img.shields.io/badge/GitHub-Code-232323.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/cpsrepositorio/cps-elements)
@@ -34,8 +34,8 @@
 Adicione o seguinte código ao `<head>` de sua página.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps/elements@%VERSION%/dist/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@cps/elements@%VERSION%/dist/elements.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web@%VERSION%/dist/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web@%VERSION%/dist/elements.js"></script>
 ```
 
 Agora você tem acesso a todos os componentes CPS Elements! Tente adicionar um botão:
@@ -56,9 +56,9 @@ Embora apenas carregar o tema claro e o _script_ principal permita uso básico, 
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps/elements@%VERSION%/dist/themes/light.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps/elements@%VERSION%/dist/themes/dark.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@cps/elements@%VERSION%/dist/elements.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web@%VERSION%/dist/themes/light.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web@%VERSION%/dist/themes/dark.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web@%VERSION%/dist/elements.js"></script>
 ```
 
 Desta vez, registramos também para carregamento pelo navegador do usuário a fonte [Open Sans Variável](https://fonts.google.com/specimen/Open+Sans), para aderência máxima à [tipografia](https://cpsrepositorio.github.io/cps-design-system/guia-visual/tipografia.html), e o tema para modo escuro, para aderência máxima aos [modos de cor](https://cpsrepositorio.github.io/cps-design-system/guia-visual/cores.html#modos-de-cor) do Design System.
