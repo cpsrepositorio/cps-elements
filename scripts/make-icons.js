@@ -36,7 +36,7 @@ const iconDir = path.join(outdir, '/assets/icons');
               .replace(/-(\d+)(-filled|-regular)/, '$2')
               .replace('-regular', '')
               .replace('-filled', '-fill');
-            const title = name.replaceAll('-', ' ').replace(/^\w/, w => w.toUpperCase());
+            const title = name.replace(/\-/g, ' ').replace(/^\w/, w => w.toUpperCase());
             const categories = [title.split(' ')[0]];
             const tags = key.endsWith('-filled') ? ['fill', 'filled'] : ['regular', 'outline', 'outlined'];
             const path = icon.body;
