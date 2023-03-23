@@ -1,7 +1,7 @@
 {
   "name": "@cps-elements/web",
   "description": "Web Components de ponta, sem complicação.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/cpsrepositorio/cps-elements",
   "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
   "license": "MIT",

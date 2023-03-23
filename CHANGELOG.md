@@ -6,6 +6,8 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+## 0.1.3 - 2023-03-23
+
 ## 0.1.2 - 2023-03-23
 ### Changed
 - Documentação e exportação do `<cps-include>`.
