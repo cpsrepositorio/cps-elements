@@ -6,37 +6,28 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+## 0.1.4 - 2023-03-23
 ### Fixed
-
 - Publicação dos ícones em `dist`.
 
 ## 0.1.3 - 2023-03-23
-
 ### Changed
-
 - Republicação para reforçar atualização do pacote.
 
 ## 0.1.2 - 2023-03-23
-
 ### Changed
-
 - Documentação e exportação do `<cps-include>`.
 
 ### Fixed
-
 - Corrigido processo de entrega não publicando `dist`.
 
 ## 0.1.1 - 2023-03-23
-
 ### Added
-
 - Criação do componente `<cps-button>`.
 - Criação do componente `<cps-icon>`.
 - Criação do componente `<cps-include>`.
 - Criação do componente `<cps-spinner>`.
 
 ## 0.1.0 - 2023-03-23
-
 ### Added
-
 - Estrutura inicial do projeto.
