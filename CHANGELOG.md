@@ -16,7 +16,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Republicação para reforçar atualização do pacote.
 
-## 0.1.2 - 2023-03-23 [YANKED]
+## 0.1.2 - 2023-03-23
 
 ### Changed
 
