@@ -972,7 +972,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
               "attribute": "src"
             },
             {
@@ -982,7 +982,7 @@
                 "text": "'cors' | 'no-cors' | 'same-origin'"
               },
               "default": "'cors'",
-              "description": "The fetch mode to use.",
+              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
               "attribute": "mode"
             },
             {
@@ -992,7 +992,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
               "attribute": "allow-scripts"
             },
             {
@@ -1015,7 +1015,7 @@
           ],
           "events": [
             {
-              "description": "Emitted when the included file is loaded.",
+              "description": "Emitido quando o arquivo incluído foi carregado.",
               "name": "cps-load",
               "reactName": "onCpsLoad"
             },
@@ -1023,7 +1023,7 @@
               "type": {
                 "text": "{ status: number }"
               },
-              "description": "Emitted when the included file fails to load due to an error.",
+              "description": "Emitido quando o arquivo incluído falha durante o carregamento.",
               "name": "cps-error",
               "reactName": "onCpsError"
             }
@@ -1034,7 +1034,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
               "fieldName": "src"
             },
             {
@@ -1043,7 +1043,7 @@
                 "text": "'cors' | 'no-cors' | 'same-origin'"
               },
               "default": "'cors'",
-              "description": "The fetch mode to use.",
+              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
               "fieldName": "mode"
             },
             {
@@ -1052,7 +1052,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
               "fieldName": "allowScripts"
             }
           ],
@@ -1060,7 +1060,7 @@
             "name": "BaseElement",
             "module": "/src/internal/base-element"
           },
-          "summary": "Includes give you the power to embed external HTML files into the page.",
+          "summary": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.",
           "documentation": "https://cpsrepositorio.github.io/cps-elements/components/include",
           "status": "stable",
           "since": "0.1",
@@ -1203,7 +1203,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.1.1",
+    "version": "0.1.3",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

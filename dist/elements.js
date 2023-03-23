@@ -1,5 +1,9 @@
 import "./chunks/chunk.HAL7R4WT.js";
 import {
+  CpsInclude
+} from "./chunks/chunk.UACVX4U3.js";
+import "./chunks/chunk.K3DUMMUS.js";
+import {
   CpsButton
 } from "./chunks/chunk.GSDNTDI5.js";
 import "./chunks/chunk.WAIVLZ43.js";
@@ -15,8 +19,8 @@ import {
 } from "./chunks/chunk.QAVYTXS2.js";
 import "./chunks/chunk.P52GZVKG.js";
 import "./chunks/chunk.C7FWPEOY.js";
-import "./chunks/chunk.RPB53XXV.js";
 import "./chunks/chunk.KLFQZSBV.js";
+import "./chunks/chunk.RPB53XXV.js";
 import "./chunks/chunk.MOH7ZJHY.js";
 import "./chunks/chunk.JQQCW4UB.js";
 import {
@@ -33,6 +37,7 @@ import "./chunks/chunk.6M63UXML.js";
 export {
   CpsButton,
   CpsIcon,
+  CpsInclude,
   CpsSpinner,
   getBasePath,
   registerIconLibrary,

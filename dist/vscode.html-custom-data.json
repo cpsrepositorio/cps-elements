@@ -158,16 +158,16 @@
     },
     {
       "name": "cps-include",
-      "description": "Includes give you the power to embed external HTML files into the page.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitted when the included file is loaded.\n- **cps-error** - Emitted when the included file fails to load due to an error.",
+      "description": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o arquivo incluído foi carregado.\n- **cps-error** - Emitido quando o arquivo incluído falha durante o carregamento.",
       "attributes": [
         {
           "name": "src",
-          "description": "The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+          "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
           "values": []
         },
         {
           "name": "mode",
-          "description": "The fetch mode to use.",
+          "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
           "values": [
             { "name": "cors" },
             { "name": "no-cors" },
@@ -176,7 +176,7 @@
         },
         {
           "name": "allow-scripts",
-          "description": "Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as\r\ncode and can result in XSS attacks.",
+          "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
           "values": []
         }
       ],
