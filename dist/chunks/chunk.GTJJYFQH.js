@@ -1,11 +1,11 @@
 import {
   getBasePath
-} from "./chunk.ZIGLDJG4.js";
+} from "./chunk.GDEIOUTL.js";
 
 // src/components/icon/library.default.ts
 var library = {
   name: "default",
-  resolver: (name) => `${getBasePath()}/assets/icons/${name}.svg`
+  resolver: (name) => getBasePath(`assets/icons/${name}.svg`)
 };
 var library_default_default = library;
 

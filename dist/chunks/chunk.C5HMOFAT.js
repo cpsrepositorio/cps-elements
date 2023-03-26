@@ -1,4 +1,9 @@
 import {
+  getIconLibrary,
+  unwatchIcon,
+  watchIcon
+} from "./chunk.EVAUWNUP.js";
+import {
   requestIcon
 } from "./chunk.P52GZVKG.js";
 import {
@@ -9,20 +14,15 @@ import {
   e,
   e2,
   t
-} from "./chunk.KLFQZSBV.js";
+} from "./chunk.ULXAVQYL.js";
 import {
   icon_styles_default
-} from "./chunk.MOH7ZJHY.js";
+} from "./chunk.AMISQ2KG.js";
 import {
-  b,
-  x,
-  y
-} from "./chunk.JQQCW4UB.js";
-import {
-  getIconLibrary,
-  unwatchIcon,
-  watchIcon
-} from "./chunk.2IWOKBWM.js";
+  A,
+  T,
+  x
+} from "./chunk.N4SU3NRW.js";
 import {
   __decorateClass
 } from "./chunk.6M63UXML.js";
@@ -50,13 +50,13 @@ var i = class {
 // node_modules/lit-html/directives/unsafe-html.js
 var e4 = class extends i {
   constructor(i2) {
-    if (super(i2), this.it = b, i2.type !== t2.CHILD)
+    if (super(i2), this.it = A, i2.type !== t2.CHILD)
       throw Error(this.constructor.directiveName + "() can only be used in child bindings");
   }
   render(r) {
-    if (r === b || null == r)
+    if (r === A || null == r)
       return this._t = void 0, this.it = r;
-    if (r === x)
+    if (r === T)
       return r;
     if ("string" != typeof r)
       throw Error(this.constructor.directiveName + "() called with a non-string value");
@@ -76,7 +76,7 @@ var t3 = class extends e4 {
 t3.directiveName = "unsafeSVG", t3.resultType = 2;
 var o2 = e3(t3);
 
-// src/components/icon/icon.ts
+// src/components/icon/index.ts
 var parser;
 var CpsIcon = class extends BaseElement {
   constructor() {
@@ -150,7 +150,7 @@ var CpsIcon = class extends BaseElement {
     }
   }
   render() {
-    return y` ${o2(this.svg)} `;
+    return x` ${o2(this.svg)} `;
   }
 };
 CpsIcon.styles = icon_styles_default;

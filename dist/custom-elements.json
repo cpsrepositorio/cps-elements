@@ -4,7 +4,7 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "components/button/button.js",
+      "path": "components/button/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -51,7 +51,7 @@
               "kind": "field",
               "name": "formControlController",
               "privacy": "private",
-              "default": "new FormControlController(this, {\n    form: (input: BaseFormControl) => {\n      // Buttons support a form attribute that points to an arbitrary form, so if this attribute is set we need to query\n      // the form from the same root using its id\n      if (input.hasAttribute('form')) {\n        const doc = input.getRootNode() as Document | ShadowRoot;\n        const formId = input.getAttribute('form')!;\n        return doc.getElementById(formId) as HTMLFormElement;\n      }\n\n      // Fall back to the closest containing form\n      return input.closest<HTMLFormElement>('form');\n    },\n    assumeInteractionOn: ['click']\n  })"
+              "default": "new FormControlController(this, {\r\n    form: (input: BaseFormControl) => {\r\n      // Buttons support a form attribute that points to an arbitrary form, so if this attribute is set we need to query\r\n      // the form from the same root using its id\r\n      if (input.hasAttribute('form')) {\r\n        const doc = input.getRootNode() as Document | ShadowRoot;\r\n        const formId = input.getAttribute('form')!;\r\n        return doc.getElementById(formId) as HTMLFormElement;\r\n      }\r\n\r\n      // Fall back to the closest containing form\r\n      return input.closest<HTMLFormElement>('form');\r\n    },\r\n    assumeInteractionOn: ['click']\r\n  })"
             },
             {
               "kind": "field",
@@ -171,7 +171,7 @@
                 "text": "'button' | 'submit' | 'reset'"
               },
               "default": "'button'",
-              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\r\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
               "attribute": "type"
             },
             {
@@ -181,7 +181,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "attribute": "name"
             },
             {
@@ -191,7 +191,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "attribute": "value"
             },
             {
@@ -228,7 +228,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
               "attribute": "form"
             },
             {
@@ -475,7 +475,7 @@
                 "text": "'button' | 'submit' | 'reset'"
               },
               "default": "'button'",
-              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\r\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
               "fieldName": "type"
             },
             {
@@ -484,7 +484,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "fieldName": "name"
             },
             {
@@ -493,7 +493,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "fieldName": "value"
             },
             {
@@ -526,7 +526,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
               "fieldName": "form"
             },
             {
@@ -592,7 +592,7 @@
           "name": "default",
           "declaration": {
             "name": "CpsButton",
-            "module": "components/button/button.js"
+            "module": "components/button/index.js"
           }
         },
         {
@@ -600,14 +600,14 @@
           "name": "cps-button",
           "declaration": {
             "name": "CpsButton",
-            "module": "components/button/button.js"
+            "module": "components/button/index.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "components/icon/icon.js",
+      "path": "components/icon/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -639,7 +639,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
               "attribute": "src"
             },
             {
@@ -649,7 +649,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+              "description": "Descrição alternativa para ferramentas de acessibilidade.\r\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
               "attribute": "label"
             },
             {
@@ -659,7 +659,7 @@
                 "text": "string"
               },
               "default": "'default'",
-              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
               "attribute": "library",
               "reflects": true
             },
@@ -703,7 +703,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
               "fieldName": "src"
             },
             {
@@ -712,7 +712,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+              "description": "Descrição alternativa para ferramentas de acessibilidade.\r\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
               "fieldName": "label"
             },
             {
@@ -721,7 +721,7 @@
                 "text": "string"
               },
               "default": "'default'",
-              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
               "fieldName": "library"
             }
           ],
@@ -743,7 +743,7 @@
           "name": "default",
           "declaration": {
             "name": "CpsIcon",
-            "module": "components/icon/icon.js"
+            "module": "components/icon/index.js"
           }
         },
         {
@@ -751,7 +751,7 @@
           "name": "cps-icon",
           "declaration": {
             "name": "CpsIcon",
-            "module": "components/icon/icon.js"
+            "module": "components/icon/index.js"
           }
         }
       ]
@@ -766,7 +766,7 @@
           "type": {
             "text": "IconLibrary"
           },
-          "default": "{\n  name: 'default',\n  resolver: name => `${getBasePath()}/assets/icons/${name}.svg`\n}"
+          "default": "{\r\n  name: 'default',\r\n  resolver: name => getBasePath(`assets/icons/${name}.svg`)\r\n}"
         }
       ],
       "exports": [
@@ -790,7 +790,7 @@
           "type": {
             "text": "IconLibrary"
           },
-          "default": "{\n  name: 'system',\n  resolver: (name: keyof typeof icons) => {\n    if (name in icons) {\n      return `data:image/svg+xml,${encodeURIComponent(icons[name])}`;\n    }\n    return '';\n  }\n}"
+          "default": "{\r\n  name: 'system',\r\n  resolver: (name: keyof typeof icons) => {\r\n    if (name in icons) {\r\n      return `data:image/svg+xml,${encodeURIComponent(icons[name])}`;\r\n    }\r\n    return '';\r\n  }\r\n}"
         }
       ],
       "exports": [
@@ -959,7 +959,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/include/include.js",
+      "path": "components/include/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -1074,7 +1074,7 @@
           "name": "default",
           "declaration": {
             "name": "CpsInclude",
-            "module": "components/include/include.js"
+            "module": "components/include/index.js"
           }
         },
         {
@@ -1082,7 +1082,7 @@
           "name": "cps-include",
           "declaration": {
             "name": "CpsInclude",
-            "module": "components/include/include.js"
+            "module": "components/include/index.js"
           }
         }
       ]
@@ -1130,7 +1130,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/spinner/spinner.js",
+      "path": "components/spinner/index.js",
       "declarations": [
         {
           "kind": "class",
@@ -1186,7 +1186,7 @@
           "name": "default",
           "declaration": {
             "name": "CpsSpinner",
-            "module": "components/spinner/spinner.js"
+            "module": "components/spinner/index.js"
           }
         },
         {
@@ -1194,7 +1194,7 @@
           "name": "cps-spinner",
           "declaration": {
             "name": "CpsSpinner",
-            "module": "components/spinner/spinner.js"
+            "module": "components/spinner/index.js"
           }
         }
       ]
@@ -1203,7 +1203,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

@@ -1,7 +1,6 @@
 import {
-  icon_default
-} from "../../chunks/chunk.MNUBEYVM.js";
-import "../../chunks/chunk.C5HMOFAT.js";
+  CpsIcon
+} from "../../chunks/chunk.C5HMOFAT.js";
 import "../../chunks/chunk.EVAUWNUP.js";
 import "../../chunks/chunk.P52GZVKG.js";
 import "../../chunks/chunk.C7FWPEOY.js";
@@ -14,5 +13,5 @@ import "../../chunks/chunk.GDEIOUTL.js";
 import "../../chunks/chunk.UUNJERUO.js";
 import "../../chunks/chunk.6M63UXML.js";
 export {
-  icon_default as default
+  CpsIcon as default
 };

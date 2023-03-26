@@ -1,4 +1,4 @@
-import type CpsIcon from '../icon/icon';
+import type CpsIcon from './index';
 export type IconLibraryResolver = (name: string) => string;
 export type IconLibraryMutator = (svg: SVGElement) => void;
 export interface IconLibrary {

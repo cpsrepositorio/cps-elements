@@ -1,6 +1,6 @@
 import {
   include_styles_default
-} from "./chunk.K3DUMMUS.js";
+} from "./chunk.WW46SW6R.js";
 import {
   watch
 } from "./chunk.C7FWPEOY.js";
@@ -11,15 +11,15 @@ import {
   BaseElement,
   e,
   e2
-} from "./chunk.KLFQZSBV.js";
+} from "./chunk.ULXAVQYL.js";
 import {
-  y
-} from "./chunk.JQQCW4UB.js";
+  x
+} from "./chunk.N4SU3NRW.js";
 import {
   __decorateClass
 } from "./chunk.6M63UXML.js";
 
-// src/components/include/include.ts
+// src/components/include/index.ts
 var CpsInclude = class extends BaseElement {
   constructor() {
     super(...arguments);
@@ -53,7 +53,7 @@ var CpsInclude = class extends BaseElement {
     }
   }
   render() {
-    return y`<slot></slot>`;
+    return x`<slot></slot>`;
   }
 };
 CpsInclude.styles = include_styles_default;

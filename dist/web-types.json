@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -16,7 +16,7 @@
         {
           "name": "cps-button",
           "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/button",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button",
           "js": {
             "properties": [
               {
@@ -99,21 +99,21 @@
               },
               {
                 "name": "type",
-                "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+                "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\r\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
                 "value": {
                   "type": "'button' | 'submit' | 'reset'"
                 }
               },
               {
                 "name": "name",
-                "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+                "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
                 "value": {
                   "type": "string"
                 }
               },
               {
                 "name": "value",
-                "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+                "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
                 "value": {
                   "type": "string"
                 }
@@ -141,7 +141,7 @@
               },
               {
                 "name": "form",
-                "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+                "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
                 "value": {
                   "type": "string"
                 }
@@ -320,21 +320,21 @@
             },
             {
               "name": "type",
-              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\r\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
               "value": {
                 "type": "'button' | 'submit' | 'reset'"
               }
             },
             {
               "name": "name",
-              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "value": {
                 "type": "string"
               }
             },
             {
               "name": "value",
-              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "value": {
                 "type": "string"
               }
@@ -362,7 +362,7 @@
             },
             {
               "name": "form",
-              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
               "value": {
                 "type": "string"
               }
@@ -407,7 +407,7 @@
         {
           "name": "cps-icon",
           "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/icon",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon",
           "js": {
             "properties": [
               {
@@ -425,21 +425,21 @@
               },
               {
                 "name": "src",
-                "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+                "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
                 "value": {
                   "type": "string | undefined"
                 }
               },
               {
                 "name": "label",
-                "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+                "description": "Descrição alternativa para ferramentas de acessibilidade.\r\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
                 "value": {
                   "type": "string"
                 }
               },
               {
                 "name": "library",
-                "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+                "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
                 "value": {
                   "type": "string"
                 }
@@ -478,21 +478,21 @@
             },
             {
               "name": "src",
-              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
               "value": {
                 "type": "string | undefined"
               }
             },
             {
               "name": "label",
-              "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+              "description": "Descrição alternativa para ferramentas de acessibilidade.\r\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
               "value": {
                 "type": "string"
               }
             },
             {
               "name": "library",
-              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
               "value": {
                 "type": "string"
               }
@@ -500,7 +500,7 @@
           ]
         },
         {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []
@@ -508,7 +508,7 @@
           "attributes": []
         },
         {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []
@@ -517,7 +517,7 @@
         },
         {
           "description": "Adds an icon to the list of watched icons.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []
@@ -526,7 +526,7 @@
         },
         {
           "description": "Removes an icon from the list of watched icons.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []
@@ -535,7 +535,7 @@
         },
         {
           "description": "Returns a library from the registry.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []
@@ -544,7 +544,7 @@
         },
         {
           "description": "Adds an icon library to the registry, or overrides an existing one.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []
@@ -553,7 +553,7 @@
         },
         {
           "description": "Removes an icon library from the registry.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []
@@ -561,7 +561,7 @@
           "attributes": []
         },
         {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []
@@ -571,7 +571,7 @@
         {
           "name": "cps-include",
           "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/include",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/include",
           "js": {
             "properties": [
               {
@@ -641,7 +641,7 @@
         },
         {
           "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []
@@ -651,7 +651,7 @@
         {
           "name": "cps-spinner",
           "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/components/spinner",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
           "js": {
             "properties": [
               {

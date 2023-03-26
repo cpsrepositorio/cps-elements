@@ -1,7 +1,7 @@
 import {
   getBasePath,
   setBasePath
-} from "../chunks/chunk.ZIGLDJG4.js";
+} from "../chunks/chunk.GDEIOUTL.js";
 import "../chunks/chunk.6M63UXML.js";
 export {
   getBasePath,

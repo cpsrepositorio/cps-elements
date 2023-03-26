@@ -1,5 +1,5 @@
-import '../icon/icon';
-import '../spinner/spinner';
+import '../icon';
+import '../spinner';
 import BaseElement from '../../internal/base-element';
 import type { BaseFormControl } from '../../internal/base-form-control';
 import type { CSSResultGroup } from 'lit';

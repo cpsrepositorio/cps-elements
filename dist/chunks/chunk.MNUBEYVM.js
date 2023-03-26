@@ -1,6 +1,6 @@
 import {
   CpsIcon
-} from "./chunk.QAVYTXS2.js";
+} from "./chunk.C5HMOFAT.js";
 
 // src/react/icon/index.ts
 import * as React from "react";

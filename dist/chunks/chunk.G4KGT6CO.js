@@ -1,6 +1,6 @@
 import {
   CpsButton
-} from "./chunk.GSDNTDI5.js";
+} from "./chunk.2Y3TLXJM.js";
 
 // src/react/button/index.ts
 import * as React from "react";

@@ -1,6 +1,6 @@
 import {
   CpsSpinner
-} from "./chunk.A5IG3Y7M.js";
+} from "./chunk.CRDFEQO5.js";
 
 // src/react/spinner/index.ts
 import * as React from "react";

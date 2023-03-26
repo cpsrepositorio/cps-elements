@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => <CpsButton>Botão</CpsButton>;
 ```
@@ -25,7 +25,7 @@ Use o atributo `variant` para definir a variação visual do botão.
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -47,7 +47,7 @@ Use o atributo `size` para alterar o tamanho do botão.
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -119,7 +119,7 @@ Use os _slots_ `prefix` e `suffix` para adicionar ícones.
 ```
 
 ```jsx react
-import { CpsButton, CpsIcon } from '@cps-elements/web/dist/react';
+import { CpsButton, CpsIcon } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -193,7 +193,7 @@ Use o atributo `rounded` como `default` (ou simplesmente não informe tal atribu
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -219,7 +219,7 @@ Use arrendondamento `corner` para manter a aparência retangular, mas arredondar
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -251,7 +251,7 @@ Use arredondamento `full` para garantir um botão completamente circular, o qual
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -281,7 +281,7 @@ Use o atributo `caret` para forçar um sinalizador de menu ao final do botão, e
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -313,7 +313,7 @@ Isto também permitirá que todos os comportamentos padrão que o navegador prov
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -347,7 +347,7 @@ Assim, as medidas horizontais (ou mesmo outras coisas, como margens e reposicion
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -387,7 +387,7 @@ Como também é de se esperar, se você estiver construindo um _layout_ complexo
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '1rem' }}>
@@ -431,7 +431,7 @@ Ainda que o conteúdo do botão fique oculto para exibição do `<cps-spinner>`,
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -474,7 +474,7 @@ Use o atributo `disabled` para desabilitar o botão. Cliques serão suprimidos, 
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/dist/react';
+import { CpsButton } from '@cps-elements/web/react';
 
 const App = () => (
   <>

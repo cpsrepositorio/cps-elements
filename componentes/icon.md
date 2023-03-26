@@ -67,7 +67,7 @@ Todos os ícones disponíveis na biblioteca `default` são exibidos a seguir. Cl
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/dist/react';
+import { CpsIcon } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -131,7 +131,7 @@ const App = () => (
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/dist/react';
+import { CpsIcon } from '@cps-elements/web/react';
 
 const App = () => (
   <div style={{ fontSize: '1.5rem' }}>
@@ -172,7 +172,7 @@ Para tal, ícones não decorativos podem se utilizar do atributo `label` para qu
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/dist/react';
+import { CpsIcon } from '@cps-elements/web/react';
 
 const App = () => <CpsIcon name="star-fill" label="Adicionar aos favoritos" />;
 ```
@@ -188,7 +188,7 @@ Além do grande conjunto de ícones da biblioteca padrão, é possível carregar
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/dist/react';
+import { CpsIcon } from '@cps-elements/web/react';
 
 const App = () => <CpsIcon src="./assets/images/brick.svg" style={{ fontSize: '4rem' }} />;
 ```
@@ -207,7 +207,7 @@ Este exemplo carregará a biblioteca [Bootstrap Icons](#bootstrap-icons), sobres
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from './dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/index.js';
 
   registerIconLibrary('default', {
     resolver: name => `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/icons/${name}.svg`
@@ -225,7 +225,7 @@ Portanto, se você quiser alterar ícones internos dos componentes CPS Elements,
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from './dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/index.js';
 
   registerIconLibrary('system', {
     resolver: name => `/path/to/custom/icons/${name}.svg`
@@ -241,7 +241,7 @@ Se você optar por esta estratégica de sobrescrita da biblioteca de sistema, se
 
 É possível registrar bibliotecas de ícones adicionais, para facilitar o uso com o `<cps-icon>`. Arquivos de ícone das bibliotecas podem existir localmente ou em endereços com CORS habilitado (por exemplo, em um CDN que entregue os arquivos de ícone). Não há limite a quantas bibliotecas de ícones registrar, e não há custo de desempenho associado a registrá-las, já que ícones individuais são baixados somente quando explicitamente utilizados em um `<cps-icon>`.
 
-Para registrar uma biblioteca de ícones adicional, utilize a função `registerIconLibrary()` exportada por `utilities/icon-library.js`. No mínimo, tal função precisa receber como argumentos um nome para a biblioteca, e uma função resolvedora. Tal função `resolver` traduz o nome do ícone para uma URL correspondente ao arquivo SVG do ícone.
+Para registrar uma biblioteca de ícones adicional, utilize a função `registerIconLibrary()` exportada por `utilities/icon-library`. No mínimo, tal função precisa receber como argumentos um nome para a biblioteca, e uma função resolvedora. Tal função `resolver` traduz o nome do ícone para uma URL correspondente ao arquivo SVG do ícone.
 
 Se necessário, uma função `mutator` também está disponível, para manipular o elemento raiz `<svg>` antes de renderizá-lo. Bibliotecas de ícones podem ser criadas com diferentes estratégias de "desenho" dos SVG. Por exemplo, algumas bibliotecas não foram feitas para colorir o ícone pela cor de texto atual. Habilitar isto exige uma mutação que aplica `fill="currentColor` ou `stroke="currentColor"` ao elemento SVG (e qual destes vai depender de como os ícones foram desenhados naquela biblioteca, por exemplo, se usando caminhos preenchidos ou contornos em caminhos vazios).
 
@@ -249,7 +249,7 @@ Aqui está um exemplo que registra uma biblioteca fictícia a partir de arquivos
 
 ```html
 <script type="module">
-  import { registerIconLibrary } from '@cps-elements/web/dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/index.js';
 
   registerIconLibrary('example', {
     resolver: name => `/assets/icons/${name}.svg`,
@@ -301,7 +301,7 @@ Distribuída sob [licença MIT](https://github.com/twbs/icons/blob/main/LICENSE.
 </div>
 
 <script type="module">
-  import { registerIconLibrary } from './dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/index.js';
 
   registerIconLibrary('bi', {
     resolver: name => `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/icons/${name}.svg`,
@@ -320,7 +320,7 @@ Distribuída sob [licença Simple License](https://github.com/Iconscout/unicons/
 
 ```html preview
 <script type="module">
-  import { registerIconLibrary } from './dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/index.js';
 
   registerIconLibrary('uil', {
     resolver: name => {
@@ -384,7 +384,7 @@ Distribuída sob [licença MIT](https://github.com/iconoir-icons/iconoir/blob/ma
 
 ```html preview
 <script type="module">
-  import { registerIconLibrary } from './dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/index.js';
 
   registerIconLibrary('iconoir', {
     resolver: name => `https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@6.3.0/icons/${name}.svg`,
@@ -414,7 +414,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
 
 ```html preview
 <script type="module">
-  import { registerIconLibrary } from './dist/utilities/icon-library.js';
+  import { registerIconLibrary } from './dist/index.js';
 
   registerIconLibrary('heroicons', {
     resolver: name => {
