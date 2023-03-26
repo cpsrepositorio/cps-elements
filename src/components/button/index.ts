@@ -1,5 +1,5 @@
-import '../icon/icon';
-import '../spinner/spinner';
+import '../icon';
+import '../spinner';
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { FormControlController, validValidityState } from '../../internal/form';

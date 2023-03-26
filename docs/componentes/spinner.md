@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsSpinner } from '@cps-elements/web/dist/react';
+import { CpsSpinner } from '@cps-elements/web/react';
 
 const App = () => <CpsSpinner />;
 ```
@@ -29,7 +29,7 @@ Para alterar, basta aplicar um atributo CSS `font-size` definindo outra medida, 
 ```
 
 ```jsx react
-import { CpsSpinner } from '@cps-elements/web/dist/react';
+import { CpsSpinner } from '@cps-elements/web/react';
 
 const App = () => (
   <>
@@ -51,7 +51,7 @@ A espessura da linha de caminho ao fundo do _spinner_ pode ser ajustada através
 ```
 
 ```jsx react
-import { CpsSpinner } from '@cps-elements/web/dist/react';
+import { CpsSpinner } from '@cps-elements/web/react';
 
 const App = () => (
   <CpsSpinner
@@ -72,7 +72,7 @@ Por padrão, um _spinner_ vem adequadamente ajustando nos temas claro e escuro, 
 ```
 
 ```jsx react
-import { CpsSpinner } from '@cps-elements/web/dist/react';
+import { CpsSpinner } from '@cps-elements/web/react';
 
 const App = () => (
   <CpsSpinner

@@ -11,7 +11,7 @@ O conteúdo incluído será inserido no _slot_ padrão do elemento `<cps-include
 ```
 
 ```jsx react
-import { CpsInclude } from '@cps-elements/web/dist/react';
+import { CpsInclude } from '@cps-elements/web/react';
 
 const App = () => <CpsInclude src="https://cpsrepositorio.github.io/cps-elements/assets/examples/include.html" />;
 ```
@@ -31,7 +31,7 @@ Use o atributo `allow-scripts` se você quiser permitir a execução de _scripts
 ```
 
 ```jsx react
-import { CpsInclude } from '@cps-elements/web/dist/react';
+import { CpsInclude } from '@cps-elements/web/react';
 
 const App = () => (
   <CpsInclude

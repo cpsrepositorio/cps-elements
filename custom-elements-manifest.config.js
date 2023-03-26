@@ -129,11 +129,11 @@ export default {
           //
           // CEM paths look like this:
           //
-          //  src/components/button/button.ts
+          //  src/components/button/index.ts
           //
           // But we want them to look like this:
           //
-          //  components/button/button.js
+          //  components/button/index.js
           //
           const terms = [
             { from: /^src\//, to: '' }, // Strip the src/ prefix

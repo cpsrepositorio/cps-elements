@@ -29,7 +29,7 @@ const jsonataExprString = `{
         modules.declarations.{
           "name": tagName,
           "description": description,
-          "doc-url": $join(["https://cpsrepositorio.github.io/cps-elements/components/", $substringAfter(tagName, 'cps-')]),
+          "doc-url": $join(["https://cpsrepositorio.github.io/cps-elements/#/componentes/", $substringAfter(tagName, 'cps-')]),
           "js": {
             "properties": [
               members.{

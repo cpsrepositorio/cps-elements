@@ -50,7 +50,9 @@ fs.mkdirSync(outdir, { recursive: true });
         // NOTE: Entry points must be mapped in package.json > exports, otherwise users won't be able to import them!
         //
         // The whole shebang
-        './src/elements.ts',
+        './src/index.ts',
+        // The autoloader
+        './src/autoloader.ts',
         // Components
         ...(await globby('./src/components/**/!(*.(style|test)).ts')),
         // Translations

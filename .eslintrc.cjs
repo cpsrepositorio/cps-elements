@@ -171,10 +171,6 @@ module.exports = {
           {
             name: '.',
             message: 'Usage of local index imports is not allowed.'
-          },
-          {
-            name: './index',
-            message: 'Import from the source file instead.'
           }
         ]
       }

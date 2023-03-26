@@ -313,8 +313,7 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
       module.declarations?.forEach(declaration => {
         if (declaration.customElement) {
           // Generate the dist path based on the src path and attach it to the component
-          declaration.path = module.path.replace(/^src\//, 'dist/').replace(/\.ts$/, '.js');
-
+          declaration.path = module.path.replace(/^src\//, '').replace(/\/index\.(ts|js)$/, '');
           allComponents.push(declaration);
         }
       });
@@ -436,7 +435,7 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             Para importar este componente a partir de [um CDN](https://www.jsdelivr.com/package/npm/@cps-elements/web) usando uma _tag_ \`<script>\`:
 
             \`\`\`html
-            <script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web@${metadata.package.version}/dist/${component.path}"></script>
+            <script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/${component.path}"></script>
             \`\`\`
             </cps-tab-panel>
 
@@ -444,21 +443,21 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             Para importar este componente a partir de [um CDN](https://www.jsdelivr.com/package/npm/@cps-elements/web) usando um \`import\` JavaScript:
 
             \`\`\`js
-            import 'https://cdn.jsdelivr.net/npm/@cps-elements/web@${metadata.package.version}/dist/${component.path}';
+            import 'https://cdn.jsdelivr.net/npm/@cps-elements/web/${component.path}';
             \`\`\`
             </cps-tab-panel>
 
             <cps-tab-panel name="bundler">\n
             Para importar este componente em uma instalação usando [um _bundler_](/fundamentos/instalação#bundling):
             \`\`\`js
-            import '@cps-elements/web/dist/${component.path}';
+            import ${component.name} from '@cps-elements/web/${component.path}';
             \`\`\`
             </cps-tab-panel>
 
             <cps-tab-panel name="react">\n
             Para importar este componente como um [componente React](/frameworks/react):
             \`\`\`js
-            import { ${component.name} } from '@cps-elements/web/dist/react';
+            import { ${component.name} } from '@cps-elements/web/react';
             \`\`\`
             </cps-tab-panel>
             </cps-tab-group>

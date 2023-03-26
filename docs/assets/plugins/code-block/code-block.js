@@ -50,7 +50,10 @@
       .sort((a, b) => a.localeCompare(b));
     const imports = components
       .map(c => c.replace(/^cps-/g, ''))
-      .map(c => `import '@cps-elements/web/dist/components/${c}/${c}.js';`)
+      .map(c => {
+        const camel = c.replace(/\b\w/g, w => w[0].toUpperCase() + w.substring(1)).replace(/-/g, '');
+        return `import Cps${camel} from '@cps-elements/web/components/${c}';`;
+      })
       .join('\n');
 
     newCode.className = 'vue language-html';
@@ -389,7 +392,6 @@
   // Open in CodePen
   document.addEventListener('click', event => {
     const button = event.target.closest('button');
-    const version = sessionStorage.getItem('cps-version');
 
     if (button?.classList.contains('code-block__button--codepen')) {
       const codeBlock = button.closest('.code-block');
@@ -414,9 +416,7 @@
 
       // HTML templates
       if (!isReact && !isVue) {
-        htmlTemplate =
-          `<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web@${version}/dist/elements.js"></script>\n` +
-          `\n${htmlExample}`;
+        htmlTemplate = `<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web"></script>\n\n${htmlExample}`;
         jsTemplate = '';
       }
 
@@ -426,10 +426,10 @@
         jsTemplate =
           `import React from 'https://cdn.skypack.dev/react@${reactVersion}';\n` +
           `import ReactDOM from 'https://cdn.skypack.dev/react-dom@${reactVersion}';\n` +
-          `import { setBasePath } from 'https://cdn.skypack.dev/@cps-elements/web@${version}/dist/utilities/base-path';\n` +
+          `import { setBasePath } from 'https://cdn.skypack.dev/@cps-elements/web/utilities/base-path';\n` +
           `\n` +
           `// Set the base path for CPS Elements assets\n` +
-          `setBasePath('https://cdn.skypack.dev/@cps-elements/web@${version}/dist/')\n` +
+          `setBasePath('https://cdn.skypack.dev/@cps-elements/web')\n` +
           `\n${convertModuleLinks(reactExample)}\n` +
           `\n` +
           `ReactDOM.render(<App />, document.getElementById('root'));`;
@@ -442,9 +442,7 @@
 
       // CSS templates
       cssTemplate =
-        `@import 'https://cdn.jsdelivr.net/npm/@cps-elements/web@${version}/dist/themes/${
-          isDark ? 'dark' : 'light'
-        }.css';\n` +
+        `@import 'https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/${isDark ? 'dark' : 'light'}.css';\n` +
         '\n' +
         'body {\n' +
         '  font: 16px sans-serif;\n' +
