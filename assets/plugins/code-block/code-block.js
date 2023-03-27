@@ -14,15 +14,13 @@
   }
 
   function convertModuleLinks(html) {
-    const version = sessionStorage.getItem('cps-version');
-
     html = html
-      .replace(/@cps\/elements/g, `https://cdn.skypack.dev/@cps-elements/web@${version}`)
+      .replace(/@cps-elements\/web/g, `https://cdn.jsdelivr.net/npm/@cps-elements/web`)
+      .replace(/@cps-elements\/web\/(utilities|translations)\/([\w|-]+)(?!\.js)('|")/gim, '@cps-elements/web/$1/$2.js$3')
       .replace(/from 'react'/g, `from 'https://cdn.skypack.dev/react@${reactVersion}'`)
       .replace(/from "react"/g, `from "https://cdn.skypack.dev/react@${reactVersion}"`)
       .replace(/from 'vue'/g, `from 'https://cdnjs.cloudflare.com/ajax/libs/vue/${vueVersion}/vue.global.prod.min.js'`)
       .replace(/from "vue"/g, `from "https://cdnjs.cloudflare.com/ajax/libs/vue/${vueVersion}/vue.global.prod.min.js"`);
-
     return html;
   }
 
@@ -110,7 +108,9 @@
 
     if (script.type === 'module') {
       newScript.type = 'module';
-      newScript.textContent = script.innerHTML;
+      newScript.textContent = script.innerHTML
+      .replace(/(https:\/\/cdn\.jsdelivr\.net\/npm\/)*@cps-elements\/web/g, `./dist`)
+      .replace(/\.\/dist\/(utilities|translations)\/([\w|-]+)(?!\.js)('|")/gim, './dist/$1/$2.js$3');
     } else {
       newScript.appendChild(document.createTextNode(`(() => { ${script.innerHTML} })();`));
     }
@@ -416,7 +416,7 @@
 
       // HTML templates
       if (!isReact && !isVue) {
-        htmlTemplate = `<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web"></script>\n\n${htmlExample}`;
+        htmlTemplate = `<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/all.js"></script>\n\n${convertModuleLinks(htmlExample)}`;
         jsTemplate = '';
       }
 
@@ -445,9 +445,9 @@
         `@import 'https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/${isDark ? 'dark' : 'light'}.css';\n` +
         '\n' +
         'body {\n' +
-        '  font: 16px sans-serif;\n' +
-        '  background-color: rgb(var(--cps-color-neutral-0));\n' +
-        '  color: rgb(var(--cps-color-neutral-900));\n' +
+        '  font: var(--cps-text-body);\n' +
+        '  background-color: var(--cps-fill-solid-primary);\n' +
+        '  color: var(--cps-foreground-primary);\n' +
         '  padding: 1rem;\n' +
         '}';
 

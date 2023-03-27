@@ -305,7 +305,7 @@ Muitas vezes você pode querer visualmente um botão, mas cujo funciona se trata
 Isto também permitirá que todos os comportamentos padrão que o navegador provê para _links_ funcionem. Por exemplo, a ação de _click_ combinado com teclas <kbd>⌘</kbd>, <kbd>Ctrl</kbd> ou <kbd>Shift</kbd>, e ainda o suporte aos atributos `target` e `download`.
 
 ```html preview
-<cps-button href="/components/icon">Redirecionamento interno</cps-button>
+<cps-button href="#/componentes/icon">Redirecionamento interno</cps-button>
 <cps-button href="https://example.com/">Página externa</cps-button>
 <cps-button href="https://example.com/" target="_blank">Em nova janela</cps-button>
 <cps-button href="./assets/images/wordmark.svg" download="cps-elements.svg">Baixar arquivo</cps-button>
@@ -503,8 +503,8 @@ Através de uma mistura de técnicas com partes CSS e variáveis CSS com valores
 <style>
   cps-button.fancy::part(base) {
     /* Sobrescrevendo variáveis CSS do tema global, para este visual específico */
-    --cps-input-height-medium: 48px;
-    --cps-input-border-width: 4px;
+    --cps-button-height-medium: 48px;
+    --cps-button-border-width: 4px;
 
     /* Definindo atributos CSS conforme desejado */
     border-radius: 0;

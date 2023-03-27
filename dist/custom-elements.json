@@ -4,7 +4,7 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "components/button/index.js",
+      "path": "components/button.js",
       "declarations": [
         {
           "kind": "class",
@@ -592,7 +592,7 @@
           "name": "default",
           "declaration": {
             "name": "CpsButton",
-            "module": "components/button/index.js"
+            "module": "components/button.js"
           }
         },
         {
@@ -600,14 +600,14 @@
           "name": "cps-button",
           "declaration": {
             "name": "CpsButton",
-            "module": "components/button/index.js"
+            "module": "components/button.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "components/icon/index.js",
+      "path": "components/icon.js",
       "declarations": [
         {
           "kind": "class",
@@ -743,7 +743,7 @@
           "name": "default",
           "declaration": {
             "name": "CpsIcon",
-            "module": "components/icon/index.js"
+            "module": "components/icon.js"
           }
         },
         {
@@ -751,7 +751,208 @@
           "name": "cps-icon",
           "declaration": {
             "name": "CpsIcon",
-            "module": "components/icon/index.js"
+            "module": "components/icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/include.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsInclude",
+          "members": [
+            {
+              "kind": "field",
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
+              "attribute": "src"
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "type": {
+                "text": "'cors' | 'no-cors' | 'same-origin'"
+              },
+              "default": "'cors'",
+              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
+              "attribute": "mode"
+            },
+            {
+              "kind": "field",
+              "name": "allowScripts",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
+              "attribute": "allow-scripts"
+            },
+            {
+              "kind": "method",
+              "name": "executeScript",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "script",
+                  "type": {
+                    "text": "HTMLScriptElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleSrcChange"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o arquivo incluído foi carregado.",
+              "name": "cps-load",
+              "reactName": "onCpsLoad"
+            },
+            {
+              "type": {
+                "text": "{ status: number }"
+              },
+              "description": "Emitido quando o arquivo incluído falha durante o carregamento.",
+              "name": "cps-error",
+              "reactName": "onCpsError"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
+              "fieldName": "src"
+            },
+            {
+              "name": "mode",
+              "type": {
+                "text": "'cors' | 'no-cors' | 'same-origin'"
+              },
+              "default": "'cors'",
+              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
+              "fieldName": "mode"
+            },
+            {
+              "name": "allow-scripts",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
+              "fieldName": "allowScripts"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/include",
+          "status": "stable",
+          "since": "0.1",
+          "tagName": "cps-include",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsInclude",
+            "module": "components/include.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-include",
+          "declaration": {
+            "name": "CpsInclude",
+            "module": "components/include.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/spinner.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsSpinner",
+          "cssProperties": [
+            {
+              "description": "A espessura da linha de apresentação do indicador.",
+              "name": "--track-width"
+            },
+            {
+              "description": "A cor da linha de caminho ao fundo do _spinner_.",
+              "name": "--track-color"
+            },
+            {
+              "description": "A cor do indicador giratório do _spinner_.",
+              "name": "--indicator-color"
+            },
+            {
+              "description": "O tempo que leva para o indicador completa um ciclo de animação giratório.",
+              "name": "--speed"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<svg>`).",
+              "name": "base"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/spinner",
+          "status": "stable",
+          "since": "0.1",
+          "tagName": "cps-spinner",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsSpinner",
+            "module": "components/spinner.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-spinner",
+          "declaration": {
+            "name": "CpsSpinner",
+            "module": "components/spinner.js"
           }
         }
       ]
@@ -959,136 +1160,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/include/index.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsInclude",
-          "members": [
-            {
-              "kind": "field",
-              "name": "src",
-              "type": {
-                "text": "string"
-              },
-              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
-              "attribute": "src"
-            },
-            {
-              "kind": "field",
-              "name": "mode",
-              "type": {
-                "text": "'cors' | 'no-cors' | 'same-origin'"
-              },
-              "default": "'cors'",
-              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
-              "attribute": "mode"
-            },
-            {
-              "kind": "field",
-              "name": "allowScripts",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
-              "attribute": "allow-scripts"
-            },
-            {
-              "kind": "method",
-              "name": "executeScript",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "script",
-                  "type": {
-                    "text": "HTMLScriptElement"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleSrcChange"
-            }
-          ],
-          "events": [
-            {
-              "description": "Emitido quando o arquivo incluído foi carregado.",
-              "name": "cps-load",
-              "reactName": "onCpsLoad"
-            },
-            {
-              "type": {
-                "text": "{ status: number }"
-              },
-              "description": "Emitido quando o arquivo incluído falha durante o carregamento.",
-              "name": "cps-error",
-              "reactName": "onCpsError"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "src",
-              "type": {
-                "text": "string"
-              },
-              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
-              "fieldName": "src"
-            },
-            {
-              "name": "mode",
-              "type": {
-                "text": "'cors' | 'no-cors' | 'same-origin'"
-              },
-              "default": "'cors'",
-              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
-              "fieldName": "mode"
-            },
-            {
-              "name": "allow-scripts",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
-              "fieldName": "allowScripts"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element"
-          },
-          "summary": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/include",
-          "status": "stable",
-          "since": "0.1",
-          "tagName": "cps-include",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsInclude",
-            "module": "components/include/index.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-include",
-          "declaration": {
-            "name": "CpsInclude",
-            "module": "components/include/index.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/include/request.js",
       "declarations": [
         {
@@ -1127,83 +1198,12 @@
           }
         }
       ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/spinner/index.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsSpinner",
-          "cssProperties": [
-            {
-              "description": "A espessura da linha de apresentação do indicador.",
-              "name": "--track-width"
-            },
-            {
-              "description": "A cor da linha de caminho ao fundo do _spinner_.",
-              "name": "--track-color"
-            },
-            {
-              "description": "A cor do indicador giratório do _spinner_.",
-              "name": "--indicator-color"
-            },
-            {
-              "description": "O tempo que leva para o indicador completa um ciclo de animação giratório.",
-              "name": "--speed"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<svg>`).",
-              "name": "base"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "localize",
-              "privacy": "private",
-              "default": "new LocalizeController(this)"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element"
-          },
-          "summary": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/spinner",
-          "status": "stable",
-          "since": "0.1",
-          "tagName": "cps-spinner",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsSpinner",
-            "module": "components/spinner/index.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-spinner",
-          "declaration": {
-            "name": "CpsSpinner",
-            "module": "components/spinner/index.js"
-          }
-        }
-      ]
     }
   ],
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

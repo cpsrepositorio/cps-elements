@@ -40,7 +40,7 @@ body.site-search-visible {
   flex-direction: column;
   max-width: 460px;
   max-height: calc(100vh - 20rem);
-  background-color: var(--cps-panel-background-color);
+  background-color: var(--cps-fill-solid-primary);
   border-radius: var(--cps-border-radius-large);
   box-shadow: var(--cps-shadow-xl);
   margin: 10rem auto;

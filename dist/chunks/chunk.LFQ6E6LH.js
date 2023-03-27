@@ -1,0 +1,1 @@
+import{a as o}from"./chunk.BUONXF7U.js";import*as e from"react";import{createComponent as r}from"@lit-labs/react";var a=r({tagName:"cps-include",elementClass:o,react:e,events:{onCpsLoad:"cps-load",onCpsError:"cps-error"}});export{a};

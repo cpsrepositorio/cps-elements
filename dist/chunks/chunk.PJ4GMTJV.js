@@ -1,0 +1,1 @@
+import{c as o}from"./chunk.V5GSCVDY.js";var n=new Map;function r(t,s="cors"){if(n.has(t))return n.get(t);let i=fetch(t,{mode:s}).then(async e=>({ok:e.ok,status:e.status,html:await e.text()}));return n.set(t,i),i}o(r,"requestInclude");export{r as a};

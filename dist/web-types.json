@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -500,75 +500,6 @@
           ]
         },
         {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Adds an icon to the list of watched icons.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Removes an icon from the list of watched icons.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Returns a library from the registry.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Adds an icon library to the registry, or overrides an existing one.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Removes an icon library from the registry.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
           "name": "cps-include",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/include",
@@ -640,15 +571,6 @@
           ]
         },
         {
-          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
           "name": "cps-spinner",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
@@ -659,6 +581,84 @@
                 "value": {}
               }
             ],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Adds an icon to the list of watched icons.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Removes an icon from the list of watched icons.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Returns a library from the registry.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Adds an icon library to the registry, or overrides an existing one.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Removes an icon library from the registry.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
             "events": []
           },
           "attributes": []
