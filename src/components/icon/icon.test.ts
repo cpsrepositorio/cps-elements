@@ -1,6 +1,6 @@
 import { elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
-import { registerIconLibrary } from '../../../dist/index.js';
-import type CpsIcon from './index';
+import { registerIconLibrary } from '../../../dist/utilities/icon-library.js';
+import type CpsIcon from '../icon';
 
 const testLibraryIcons = {
   'test-icon1': `

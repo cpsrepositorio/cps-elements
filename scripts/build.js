@@ -50,7 +50,7 @@ fs.mkdirSync(outdir, { recursive: true });
         // NOTE: Entry points must be mapped in package.json > exports, otherwise users won't be able to import them!
         //
         // The whole shebang
-        './src/index.ts',
+        './src/all.ts',
         // The autoloader
         './src/autoloader.ts',
         // Components
@@ -72,6 +72,8 @@ fs.mkdirSync(outdir, { recursive: true });
         'process.env.NODE_ENV': '"production"'
       },
       bundle: true,
+      minify: true,
+      keepNames: true,
       //
       // We don't bundle certain dependencies in the unbundled build. This ensures we ship bare module specifiers,
       // allowing end users to better optimize when using a bundler. (Only packages that ship ESM can be external.)

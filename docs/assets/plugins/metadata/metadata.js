@@ -313,7 +313,11 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
       module.declarations?.forEach(declaration => {
         if (declaration.customElement) {
           // Generate the dist path based on the src path and attach it to the component
-          declaration.path = module.path.replace(/^src\//, '').replace(/\/index\.(ts|js)$/, '');
+          const name = declaration.tagName.replace(/cps-/, '');
+          declaration.path = module.path
+            .replace(/^src\//, '')
+            .replace(/\.(ts|js)$/, '.js')
+            .replace(new RegExp(`/${name}/`), '/');
           allComponents.push(declaration);
         }
       });
@@ -450,7 +454,7 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             <cps-tab-panel name="bundler">\n
             Para importar este componente em uma instalação usando [um _bundler_](/fundamentos/instalação#bundling):
             \`\`\`js
-            import ${component.name} from '@cps-elements/web/${component.path}';
+            import ${component.name} from '@cps-elements/web/${component.path.replace('.js', '')}';
             \`\`\`
             </cps-tab-panel>
 

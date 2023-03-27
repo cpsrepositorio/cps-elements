@@ -8,6 +8,8 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Changed
 
+- Atualização das importações na documentação.
+- Reorganização da localização dos componentes.
 - Redução dos arquivos de tema eliminando algumas variáveis.
 
 ## 0.1.5 - 2023-03-26

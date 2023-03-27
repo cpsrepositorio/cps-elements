@@ -36,7 +36,7 @@ export async function discover(root: Element | ShadowRoot) {
  */
 function register(tagName: string): Promise<void> {
   const tagWithoutPrefix = tagName.replace(/^cps-/i, '');
-  const path = getBasePath(`components/${tagWithoutPrefix}`);
+  const path = getBasePath(`components/${tagWithoutPrefix}.js`);
 
   // If the element is already defined, there's nothing more to do
   if (customElements.get(tagName)) {

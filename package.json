@@ -8,15 +8,16 @@
   "type": "module",
   "customElements": "custom-elements.json",
   "web-types": "web-types.json",
-  "types": "index.d.ts",
+  "types": "all.d.ts",
+  "main": "all.js",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "import": "./index.js"
+      "types": "./all.d.ts",
+      "import": "./all.js"
     },
     "./autoloader": "./autoloader.js",
     "./themes/*": "./themes/*",
-    "./components/*": "./components/*/index.js",
+    "./components/*": "./components/*",
     "./utilities/*": "./utilities/*",
     "./react": "./react/index.js",
     "./react/*": "./react/*",
@@ -35,8 +36,8 @@
     "autoloader.d.ts",
     "autoloader.js",
     "custom-elements.json",
-    "index.d.ts",
-    "index.js",
+    "all.d.ts",
+    "all.js",
     "vscode.html-custom-data.json",
     "web-types.json"
   ],

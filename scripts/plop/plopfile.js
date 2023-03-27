@@ -32,7 +32,7 @@ export default function (plop) {
     actions: [
       {
         type: 'add',
-        path: '../../src/components/{{ tagWithoutPrefix tag }}/{{ tagWithoutPrefix tag }}.ts',
+        path: '../../src/components/{{ tagWithoutPrefix tag }}.ts',
         templateFile: 'templates/component/component.hbs'
       },
       {
@@ -47,20 +47,20 @@ export default function (plop) {
       },
       {
         type: 'add',
-        path: '../../docs/components/{{ tagWithoutPrefix tag }}.md',
+        path: '../../docs/componentes/{{ tagWithoutPrefix tag }}.md',
         templateFile: 'templates/component/docs.hbs'
       },
       {
         type: 'modify',
         path: '../../docs/_sidebar.md',
         pattern: /<!--plop:component-->/,
-        template: `- [{{ tagToTitle tag }}](/components/{{ tagWithoutPrefix tag }})\n  <!--plop:component-->`
+        template: `- [{{ tagToTitle tag }}](/componentes/{{ tagWithoutPrefix tag }})\n  <!--plop:component-->`
       },
       {
         type: 'modify',
-        path: '../../src/elements.ts',
+        path: '../../src/all.ts',
         pattern: /\/\* plop:component \*\//,
-        template: `export { default as {{ properCase tag }} } from './components/{{ tagWithoutPrefix tag }}/{{ tagWithoutPrefix tag }}';\n/* plop:component */`
+        template: `export { default as {{ properCase tag }} } from './components/{{ tagWithoutPrefix tag }}';\n/* plop:component */`
       }
     ]
   });

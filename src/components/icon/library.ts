@@ -1,6 +1,6 @@
 import defaultLibrary from './library.default';
 import systemLibrary from './library.system';
-import type CpsIcon from './index';
+import type CpsIcon from '../icon';
 
 export type IconLibraryResolver = (name: string) => string;
 export type IconLibraryMutator = (svg: SVGElement) => void;

@@ -1,11 +1,11 @@
 import { customElement, property, state } from 'lit/decorators.js';
-import { getIconLibrary, unwatchIcon, watchIcon } from './library';
+import { getIconLibrary, unwatchIcon, watchIcon } from './icon/library';
 import { html } from 'lit';
-import { requestIcon } from './request';
+import { requestIcon } from './icon/request';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-import { watch } from '../../internal/watch';
-import BaseElement from '../../internal/base-element';
-import styles from './icon.styles';
+import { watch } from '../internal/watch';
+import BaseElement from '../internal/base-element';
+import styles from './icon/icon.styles';
 import type { CSSResultGroup } from 'lit';
 
 let parser: DOMParser;

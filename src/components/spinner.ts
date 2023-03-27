@@ -1,8 +1,8 @@
 import { customElement } from 'lit/decorators.js';
 import { html } from 'lit';
-import { LocalizeController } from '../../utilities/localize';
-import BaseElement from '../../internal/base-element';
-import styles from './spinner.styles';
+import { LocalizeController } from '../utilities/localize';
+import BaseElement from '../internal/base-element';
+import styles from './spinner/spinner.styles';
 import type { CSSResultGroup } from 'lit';
 
 /**

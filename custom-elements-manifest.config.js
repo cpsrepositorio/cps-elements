@@ -129,11 +129,11 @@ export default {
           //
           // CEM paths look like this:
           //
-          //  src/components/button/index.ts
+          //  src/components/button.ts
           //
           // But we want them to look like this:
           //
-          //  components/button/index.js
+          //  components/button.js
           //
           const terms = [
             { from: /^src\//, to: '' }, // Strip the src/ prefix
@@ -158,9 +158,11 @@ export default {
         });
       }
     },
+
     // Generate custom VS Code data
     generateCustomData({
       outdir,
+      descriptionSrc: 'summary',
       cssFileName: null
     })
   ]
