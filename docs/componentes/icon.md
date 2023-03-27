@@ -557,7 +557,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
 
 <style>
   .icon-search {
-    border: solid 1px var(--cps-panel-border-color);
+    border: solid 1px var(--cps-stroke-card-primary);
     border-radius: var(--cps-border-radius-medium);
   }
 

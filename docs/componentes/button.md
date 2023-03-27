@@ -503,8 +503,8 @@ Através de uma mistura de técnicas com partes CSS e variáveis CSS com valores
 <style>
   cps-button.fancy::part(base) {
     /* Sobrescrevendo variáveis CSS do tema global, para este visual específico */
-    --cps-input-height-medium: 48px;
-    --cps-input-border-width: 4px;
+    --cps-button-height-medium: 48px;
+    --cps-button-border-width: 4px;
 
     /* Definindo atributos CSS conforme desejado */
     border-radius: 0;

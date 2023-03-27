@@ -17,8 +17,8 @@ export default css`
     justify-content: center;
     width: 100%;
     border-style: solid;
-    border-width: var(--cps-input-border-width);
-    border-radius: var(--cps-input-border-radius-medium);
+    border-width: var(--cps-button-border-width);
+    border-radius: var(--cps-border-radius-medium);
     font-family: var(--cps-font-sans);
     font-weight: var(--cps-font-weight-normal);
     text-decoration: none;
@@ -195,19 +195,19 @@ export default css`
   .button--small {
     font-size: var(--cps-button-font-size-small);
     height: var(--cps-button-height-small);
-    line-height: calc(var(--cps-button-height-small) - var(--cps-input-border-width) * 2);
+    line-height: calc(var(--cps-button-height-small) - var(--cps-button-border-width) * 2);
   }
 
   .button--medium {
     font-size: var(--cps-button-font-size-medium);
     height: var(--cps-button-height-medium);
-    line-height: calc(var(--cps-button-height-medium) - var(--cps-input-border-width) * 2);
+    line-height: calc(var(--cps-button-height-medium) - var(--cps-button-border-width) * 2);
   }
 
   .button--large {
     font-size: var(--cps-button-font-size-large);
     height: var(--cps-button-height-large);
-    line-height: calc(var(--cps-button-height-large) - var(--cps-input-border-width) * 2);
+    line-height: calc(var(--cps-button-height-large) - var(--cps-button-border-width) * 2);
   }
 
   /*
@@ -439,7 +439,7 @@ export default css`
 
   /* All except the first */
   :host(.cps-button-group__button:not(.cps-button-group__button--first)) {
-    margin-inline-start: calc(-1 * var(--cps-input-border-width));
+    margin-inline-start: calc(-1 * var(--cps-button-border-width));
   }
 
   /* Add a visual separator between solid buttons */
