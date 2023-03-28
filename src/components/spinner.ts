@@ -34,6 +34,8 @@ export default class CpsSpinner extends BaseElement {
   }
 }
 
+export { CpsSpinner };
+
 declare global {
   interface HTMLElementTagNameMap {
     'cps-spinner': CpsSpinner;

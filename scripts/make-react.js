@@ -26,20 +26,17 @@ const index = [];
 
 components.map(component => {
   const tagWithoutPrefix = component.tagName.replace(/^cps-/, '');
-  const componentDir = path.join(reactDir, tagWithoutPrefix);
-  const componentFile = path.join(componentDir, 'index.ts');
+  const componentFile = path.join(reactDir, `${tagWithoutPrefix}.ts`);
   const importPath = component.path;
   const events = (component.events || []).map(event => `${event.reactName}: '${event.name}'`).join(',\n');
-
-  fs.mkdirSync(componentDir, { recursive: true });
 
   const source = prettier.format(
     `
       import * as React from 'react';
       import { createComponent } from '@lit-labs/react';
-      import Component from '../../${importPath}';
+      import Component from '../${importPath}';
 
-      export default createComponent({
+      export const ${component.name} = createComponent({
         tagName: '${component.tagName}',
         elementClass: Component,
         react: React,
@@ -47,13 +44,15 @@ components.map(component => {
           ${events}
         }
       });
+
+      export default ${component.name};
     `,
     Object.assign(prettierConfig, {
       parser: 'babel-ts'
     })
   );
 
-  index.push(`export { default as ${component.name} } from './${tagWithoutPrefix}';`);
+  index.push(`export { ${component.name} } from './${tagWithoutPrefix}';`);
 
   fs.writeFileSync(componentFile, source, 'utf8');
 });

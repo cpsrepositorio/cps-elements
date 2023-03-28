@@ -77,6 +77,8 @@ export default class CpsInclude extends BaseElement {
   }
 }
 
+export { CpsInclude };
+
 declare global {
   interface HTMLElementTagNameMap {
     'cps-include': CpsInclude;

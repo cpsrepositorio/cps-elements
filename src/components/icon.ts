@@ -131,6 +131,8 @@ export default class CpsIcon extends BaseElement {
   }
 }
 
+export { CpsIcon };
+
 declare global {
   interface HTMLElementTagNameMap {
     'cps-icon': CpsIcon;

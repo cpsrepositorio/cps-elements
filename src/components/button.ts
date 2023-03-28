@@ -321,6 +321,8 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
   }
 }
 
+export { CpsButton };
+
 declare global {
   interface HTMLElementTagNameMap {
     'cps-button': CpsButton;

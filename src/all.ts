@@ -1,8 +1,8 @@
 // Components
-export { default as CpsButton } from './components/button';
-export { default as CpsIcon } from './components/icon';
-export { default as CpsInclude } from './components/include';
-export { default as CpsSpinner } from './components/spinner';
+export { CpsButton } from './components/button';
+export { CpsIcon } from './components/icon';
+export { CpsInclude } from './components/include';
+export { CpsSpinner } from './components/spinner';
 /* plop:component */
 
 // Utilities
