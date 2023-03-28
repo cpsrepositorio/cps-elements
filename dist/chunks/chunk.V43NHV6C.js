@@ -1,1 +1,0 @@
-import{d as o}from"./chunk.N5UHFOF3.js";import*as e from"react";import{createComponent as r}from"@lit-labs/react";var a=r({tagName:"cps-icon",elementClass:o,react:e,events:{onCpsLoad:"cps-load",onCpsError:"cps-error"}});export{a};

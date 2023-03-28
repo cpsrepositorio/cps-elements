@@ -5,6 +5,7 @@ export default class CpsSpinner extends BaseElement {
     private readonly localize;
     render(): import("lit-html").TemplateResult<1>;
 }
+export { CpsSpinner };
 declare global {
     interface HTMLElementTagNameMap {
         'cps-spinner': CpsSpinner;

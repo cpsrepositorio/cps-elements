@@ -15,6 +15,7 @@ export default class CpsIcon extends BaseElement {
     setIcon(): Promise<void>;
     render(): import("lit-html").TemplateResult<1>;
 }
+export { CpsIcon };
 declare global {
     interface HTMLElementTagNameMap {
         'cps-icon': CpsIcon;

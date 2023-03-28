@@ -602,6 +602,14 @@
             "name": "CpsButton",
             "module": "components/button.js"
           }
+        },
+        {
+          "kind": "js",
+          "name": "CpsButton",
+          "declaration": {
+            "name": "CpsButton",
+            "module": "components/button.js"
+          }
         }
       ]
     },
@@ -753,6 +761,14 @@
             "name": "CpsIcon",
             "module": "components/icon.js"
           }
+        },
+        {
+          "kind": "js",
+          "name": "CpsIcon",
+          "declaration": {
+            "name": "CpsIcon",
+            "module": "components/icon.js"
+          }
         }
       ]
     },
@@ -883,6 +899,14 @@
             "name": "CpsInclude",
             "module": "components/include.js"
           }
+        },
+        {
+          "kind": "js",
+          "name": "CpsInclude",
+          "declaration": {
+            "name": "CpsInclude",
+            "module": "components/include.js"
+          }
         }
       ]
     },
@@ -950,6 +974,14 @@
         {
           "kind": "custom-element-definition",
           "name": "cps-spinner",
+          "declaration": {
+            "name": "CpsSpinner",
+            "module": "components/spinner.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsSpinner",
           "declaration": {
             "name": "CpsSpinner",
             "module": "components/spinner.js"
@@ -1203,7 +1235,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

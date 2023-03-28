@@ -9,6 +9,7 @@ export default class CpsInclude extends BaseElement {
     handleSrcChange(): Promise<void>;
     render(): import("lit-html").TemplateResult<1>;
 }
+export { CpsInclude };
 declare global {
     interface HTMLElementTagNameMap {
         'cps-include': CpsInclude;

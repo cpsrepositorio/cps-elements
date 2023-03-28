@@ -1,4 +1,4 @@
-export { default as CpsButton } from './button';
-export { default as CpsIcon } from './icon';
-export { default as CpsInclude } from './include';
-export { default as CpsSpinner } from './spinner';
+export { CpsButton } from './button';
+export { CpsIcon } from './icon';
+export { CpsInclude } from './include';
+export { CpsSpinner } from './spinner';
