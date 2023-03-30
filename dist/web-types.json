@@ -133,6 +133,13 @@
                 }
               },
               {
+                "name": "rel",
+                "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
                 "name": "download",
                 "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
                 "value": {
@@ -244,6 +251,11 @@
                 "value": {}
               },
               {
+                "name": "getForm",
+                "description": "Obtém o formulário associado com este componente, se algum estiver.",
+                "value": {}
+              },
+              {
                 "name": "reportValidity",
                 "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.",
                 "value": {}
@@ -351,6 +363,13 @@
               "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
               "value": {
                 "type": "'_blank' | '_parent' | '_self' | '_top'"
+              }
+            },
+            {
+              "name": "rel",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "value": {
+                "type": "string"
               }
             },
             {

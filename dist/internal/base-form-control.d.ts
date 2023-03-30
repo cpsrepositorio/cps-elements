@@ -16,6 +16,7 @@ export interface BaseFormControl extends BaseElement {
     readonly validity: ValidityState;
     readonly validationMessage: string;
     checkValidity: () => boolean;
+    getForm: () => HTMLFormElement | null;
     reportValidity: () => boolean;
     setCustomValidity: (message: string) => void;
 }

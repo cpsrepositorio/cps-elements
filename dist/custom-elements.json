@@ -215,6 +215,16 @@
             },
             {
               "kind": "field",
+              "name": "rel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'noreferrer noopener'",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "attribute": "rel"
+            },
+            {
+              "kind": "field",
               "name": "download",
               "type": {
                 "text": "string | undefined"
@@ -372,6 +382,16 @@
             },
             {
               "kind": "method",
+              "name": "getForm",
+              "return": {
+                "type": {
+                  "text": "HTMLFormElement | null"
+                }
+              },
+              "description": "Obtém o formulário associado com este componente, se algum estiver."
+            },
+            {
+              "kind": "method",
               "name": "reportValidity",
               "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido."
             },
@@ -514,6 +534,15 @@
               "fieldName": "target"
             },
             {
+              "name": "rel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'noreferrer noopener'",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "fieldName": "rel"
+            },
+            {
               "name": "download",
               "type": {
                 "text": "string | undefined"
@@ -621,6 +650,12 @@
           "kind": "class",
           "description": "",
           "name": "CpsIcon",
+          "cssParts": [
+            {
+              "description": "O elemento SVG renderizado.",
+              "name": "svg"
+            }
+          ],
           "members": [
             {
               "kind": "field",

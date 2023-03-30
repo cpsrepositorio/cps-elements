@@ -7,7 +7,7 @@
 <cps-icon name="globe"></cps-icon> Componentes no navegador, sem _frameworks_;<br />
 <cps-icon name="plug-connected-fill"></cps-icon> E nativamente em _frameworks_ como [Vue](/frameworks/vue) e [Angular](/frameworks/angular);<br />
 <cps-icon src="assets/images/react.svg"></cps-icon> Ou com _wrappers_ inclusos para suportar [React](/frameworks/react);<br />
-<cps-icon name="box"></cps-icon> Empacotado para acesso direto por [CDN](https://www.cloudflare.com/pt-br/learning/cdn/what-is-a-cdn/);<br />
+<cps-icon name="box"></cps-icon> Empacotado para acesso direto por [CDN](/fundamentos/instalação.md#através-de-cdn);<br />
 <cps-icon src="assets/images/art.svg"></cps-icon> Totalmente aderente ao [CPS Design System](https://cpsrepositorio.github.io/cps-design-system/);<br />
 <cps-icon name="glasses-fill"></cps-icon> Incluindo tema para modo escuro;<br />
 <cps-icon name="document-css"></cps-icon> Mas totalmente personalizável com CSS;<br />

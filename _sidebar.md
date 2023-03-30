@@ -1,7 +1,7 @@
 - Fundamentos
 
   - [Introdução](/)
-  - [Instalação <small>(em breve)</small>](/fundamentos/instalação)
+  - [Instalação](/fundamentos/instalação)
   - [Utilização <small>(em breve)</small>](/fundamentos/utilização)
   - [Temas <small>(em breve)</small>](/fundamentos/temas)
   - [Personalizando <small>(em breve)</small>](/fundamentos/personalizando)
@@ -9,9 +9,9 @@
 
 - Frameworks
 
-  - [React <small>(em breve)</small>](/frameworks/react)
-  - [Vue <small>(em breve)</small>](/frameworks/vue)
-  - [Angular <small>(em breve)</small>](/frameworks/angular)
+  - [React](/frameworks/react)
+  - [Vue](/frameworks/vue)
+  - [Angular](/frameworks/angular)
 
 - Componentes
 

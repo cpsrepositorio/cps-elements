@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "cps-button",
-      "description": "Botões representam ações que estão disponíveis ao usuário.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - _default_ - O texto interno do botão.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o _label_ do botão.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.\n- **caret** - O elemento de sinalização de menu, normalmente um `<cps-icon>` com o ícone de circunflexo para baixo.",
+      "description": "Botões representam ações que estão disponíveis ao usuário.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - _default_ - O texto interno do botão.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o _label_ do botão.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.\n- **caret** - O elemento de sinalização de menu, normalmente um `<cps-icon>` com o ícone de circunflexo para baixo.",
       "attributes": [
         { "name": "title", "values": [] },
         {
@@ -83,6 +83,11 @@
           ]
         },
         {
+          "name": "rel",
+          "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+          "values": []
+        },
+        {
           "name": "download",
           "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
           "values": []
@@ -131,7 +136,7 @@
     },
     {
       "name": "cps-icon",
-      "description": "Ícones são símbolos gráficos para representação de ações ou informações em uma interface.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o ícone foi carregado.\n- **cps-error** - Emitido quando o ícone falha para carregar devido a um erro.",
+      "description": "Ícones são símbolos gráficos para representação de ações ou informações em uma interface.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o ícone foi carregado.\n- **cps-error** - Emitido quando o ícone falha para carregar devido a um erro.\n\n### **CSS Parts:**\n - **svg** - O elemento SVG renderizado.",
       "attributes": [
         {
           "name": "name",

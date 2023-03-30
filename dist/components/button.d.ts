@@ -23,6 +23,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
     value: string;
     href: string;
     target: '_blank' | '_parent' | '_self' | '_top';
+    rel: string;
     download?: string;
     form: string;
     formAction: string;
@@ -47,6 +48,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
     focus(options?: FocusOptions): void;
     blur(): void;
     checkValidity(): boolean;
+    getForm(): HTMLFormElement | null;
     reportValidity(): boolean;
     setCustomValidity(message: string): void;
     render(): import("lit-html").TemplateResult<1 | 2>;
