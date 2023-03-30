@@ -18,6 +18,8 @@ let parser: DOMParser;
  *
  * @event cps-load - Emitido quando o ícone foi carregado.
  * @event cps-error - Emitido quando o ícone falha para carregar devido a um erro.
+ *
+ * @csspart svg - O elemento SVG renderizado.
  */
 @customElement('cps-icon')
 export default class CpsIcon extends BaseElement {
@@ -106,6 +108,7 @@ export default class CpsIcon extends BaseElement {
           const svgEl = doc.body.querySelector('svg');
 
           if (svgEl !== null) {
+            svgEl.part.add('svg');
             library?.mutator?.(svgEl);
             this.svg = svgEl.outerHTML;
             this.emit('cps-load');
