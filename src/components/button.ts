@@ -109,6 +109,14 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
   /** Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente. */
   @property() target: '_blank' | '_parent' | '_self' | '_top';
 
+  /**
+   * Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor
+   * padrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`
+   * para apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.
+   * Para este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.
+   */
+  @property() rel = 'noreferrer noopener';
+
   /** Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente. */
   @property() download?: string;
 
@@ -296,7 +304,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
         href=${ifDefined(isLink ? this.href : undefined)}
         target=${ifDefined(isLink ? this.target : undefined)}
         download=${ifDefined(isLink ? this.download : undefined)}
-        rel=${ifDefined(isLink && this.target ? 'noreferrer noopener' : undefined)}
+        rel=${ifDefined(isLink ? this.rel : undefined)}
         role=${ifDefined(isLink ? undefined : 'button')}
         aria-disabled=${this.disabled ? 'true' : 'false'}
         tabindex=${this.disabled ? '-1' : '0'}
