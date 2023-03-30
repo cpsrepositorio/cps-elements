@@ -3,9 +3,9 @@
 **Web Components de ponta, sem complicação.**
 
 - Componentes no navegador, sem _frameworks_; 🌐
-- E nativamente em _frameworks_ como [Vue](/frameworks/vue) e [Angular](/frameworks/angular); 🧩
-- Ou com _wrappers_ inclusos para suportar [React](/frameworks/react); ⚛️
-- Empacotado para acesso direto por [CDN](https://www.cloudflare.com/pt-br/learning/cdn/what-is-a-cdn/); 📦
+- E nativamente em _frameworks_ como [Vue](./docs/frameworks/vue) e [Angular](./docs/frameworks/angular); 🧩
+- Ou com _wrappers_ inclusos para suportar [React](./docs/frameworks/react); ⚛️
+- Empacotado para acesso direto por [CDN](./docs/fundamentos/instalação.md#através-de-cdn); 📦
 - Totalmente aderente ao [CPS Design System](https://cpsrepositorio.github.io/cps-design-system/); 🎨
 - Incluindo tema para modo escuro; 😎
 - Mas totalmente personalizável com CSS; 📝
