@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Added
 
 - Atributo `rel` ao `<cps-button>` para permitir criar _links_ que apontam para alvos específicos.
+- Método `getForm()` ao `<cps-button>` para permitir manipulação de formulário associado ao botão.
 
 ## 0.1.7 - 2023-03-28
 

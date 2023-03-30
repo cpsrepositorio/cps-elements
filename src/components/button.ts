@@ -251,6 +251,11 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
     return true;
   }
 
+  /** Obtém o formulário associado com este componente, se algum estiver. */
+  getForm(): HTMLFormElement | null {
+    return this.formControlController.getForm();
+  }
+
   /** Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido. */
   reportValidity() {
     if (this.isButton()) {

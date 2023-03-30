@@ -24,6 +24,7 @@ export interface BaseFormControl extends BaseElement {
 
   // Form validation methods
   checkValidity: () => boolean;
+  getForm: () => HTMLFormElement | null;
   reportValidity: () => boolean;
   setCustomValidity: (message: string) => void;
 }
