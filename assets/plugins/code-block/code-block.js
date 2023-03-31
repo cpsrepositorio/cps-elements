@@ -16,7 +16,10 @@
   function convertModuleLinks(html) {
     html = html
       .replace(/@cps-elements\/web/g, `https://cdn.jsdelivr.net/npm/@cps-elements/web`)
-      .replace(/@cps-elements\/web\/(utilities|translations)\/([\w|-]+)(?!\.js)('|")/gim, '@cps-elements/web/$1/$2.js$3')
+      .replace(
+        /@cps-elements\/web\/(utilities|translations)\/([\w|-]+)(?!\.js)('|")/gim,
+        '@cps-elements/web/$1/$2.js$3'
+      )
       .replace(/from 'react'/g, `from 'https://cdn.skypack.dev/react@${reactVersion}'`)
       .replace(/from "react"/g, `from "https://cdn.skypack.dev/react@${reactVersion}"`)
       .replace(/from 'vue'/g, `from 'https://cdnjs.cloudflare.com/ajax/libs/vue/${vueVersion}/vue.global.prod.min.js'`)
@@ -109,8 +112,8 @@
     if (script.type === 'module') {
       newScript.type = 'module';
       newScript.textContent = script.innerHTML
-      .replace(/(https:\/\/cdn\.jsdelivr\.net\/npm\/)*@cps-elements\/web/g, `./dist`)
-      .replace(/\.\/dist\/(utilities|translations)\/([\w|-]+)(?!\.js)('|")/gim, './dist/$1/$2.js$3');
+        .replace(/(https:\/\/cdn\.jsdelivr\.net\/npm\/)*@cps-elements\/web/g, `./dist`)
+        .replace(/\.\/dist\/(utilities|translations)\/([\w|-]+)(?!\.js)('|")/gim, './dist/$1/$2.js$3');
     } else {
       newScript.appendChild(document.createTextNode(`(() => { ${script.innerHTML} })();`));
     }
@@ -416,7 +419,9 @@
 
       // HTML templates
       if (!isReact && !isVue) {
-        htmlTemplate = `<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/all.js"></script>\n\n${convertModuleLinks(htmlExample)}`;
+        htmlTemplate = `<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/all.js"></script>\n\n${convertModuleLinks(
+          htmlExample
+        )}`;
         jsTemplate = '';
       }
 
