@@ -624,7 +624,23 @@ kbd,
 
 /* Iframes */
 .markdown-section iframe {
+  border-radius: var(--cps-border-radius-medium);
+  border: solid 1px var(--cps-stroke-card-secondary);
+  background-color: var(--cps-fill-solid-quarternary);
+  width: 100%;
+}
+
+.markdown-section .codepen {
+  position: relative;
+  border-radius: var(--cps-border-radius-medium);
+  border: solid 1px var(--cps-stroke-card-secondary);
+  overflow: hidden;
+}
+
+.markdown-section .codepen iframe {
+  position: absolute;
   border: none;
+  inset: -1px;
 }
 
 /* Tips & Warnings */
