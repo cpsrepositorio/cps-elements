@@ -190,16 +190,24 @@ Observe que alguns componentes têm dependências a outros, e estas são importa
 
 CPS Elements é uma coleção de [módulos JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Modules) nativos (também conhecidos como _ES modules_) que [todos os navegadores modernos entendem](https://caniuse.com/es6-module). No entanto, importar muitos módulos pode resultar em muitas requisições HTTP simultâneas, e tempos de carregamento potencialmente mais longos. O uso de um CDN pode aliviar isso, mas alguns desenvolvedores podem desejar otimizar ainda mais suas importações com um empacotador (em inglês, _bundler_).
 
-Em geral, independente do _bundler_ que escolher, primeiro instalará CPS Elements (o que o registrará no `package.json` de seu projeto), seguindo com os passos de instalação do _bundler_ desejado.
+Independentemente do _bundler_ que escolher, você começará instalando CPS Elements e o _bundler_ desejado em si como dependências do projeto (o que os registrará no `package.json`). Em seguida, será hora de configurar seu _bundler_ para a utilização de Web Components e para a manipulação geral dos arquivos HTML, CSS e JavaScript do projeto. Dependendo da sua escolha de _bundler_, a configuração pode ser mínima (ou mesmo inexistente), ou pode necessitar de mais passos.
+
+Além disso, observe que muitas ferramentas de empacotamento possuem grande flexibilidade, portanto nenhuma configuração em especial é inquestionável para todos os casos. Tome as instruções a seguir como pontos de partida, os quais eventualmente podem precisar de configurações adicionais para seu caso de uso específico.
+
+!> Os módulos dos componentes incluem efeitos colaterais para fins de registro. Por isso, importar com desestruturação, diretamente de `@cps-elements/web` ou `@cps-elements/web/all.js`, pode resultar em um tamanho de pacote maior do que o necessário. Para otimizar o processo de _three-shaking_ realizado pelos empacotadores, sempre opte por [importações individuais](#importações-individuais), ou seja, importe componentes e utilitários de seus respectivos arquivos.
+
+### Empacotando com Vite
+
+[Vite](https://vitejs.dev/) é um empacotador moderno, que usa tecnologias Web de ponta para entregar excelentes funcionalidades e alto desempenho, tanto no empacotamento em desenvolvimento quanto para produção. Construído sobre Rollup, oferece um conjunto de funcionalidades altamente opinativas, ou seja, configuradas _out-of-the-box_ para o uso mais típico na Web moderna. Em cenários comuns, não é requerida nenhuma configuração adicional para usar Vite com CPS Elements!
+
+Fundamentalmente, instalar CPS Elements e Vite como dependências de seu projeto (sendo Vite uma dependência de desenvolvimento), são os únicos requisitos mínimos para funcionar.
 
 ```bash
 npm install @cps-elements/web
-
-# Por exemplo, se você quiser usar Vite:
 npm install -D vite
 ```
 
-Em seguida, é hora de configurar o _bundler_ para a utilização de Web Components. As configurações podem variar drasticamente entre as ferramentas, por exemplo, [Vite](https://vitejs.dev/) não requer nenhuma configuração adicional. Com ele, você pode seguir diretamente para as importações de estilos e _scripts_ do CPS Elements (basicamente, tudo que já foi explicado anteriormente nesta página). Veja o exemplo a seguir.
+Com isto feito, basta importar os arquivos desejados do CPS Elements (já que é uma [instalação local](#instalação-local)), inclusive realizando [importações individuais](#importações-individuais), e as coisas simplesmente funcionarão. Veja o [repositório de exemplo de CPS Elements com Vite](https://github.com/ErickPetru/cps-elements-example-vite) para mais detalhes, também incorporado abaixo para sua pré-visualização ao vivo.
 
 <iframe
   title="CPS Elements - Exemplo - Vite"
@@ -215,24 +223,41 @@ Em seguida, é hora de configurar o _bundler_ para a utilização de Web Compone
   <a href="https://stackblitz.com">StackBlitz</a>.
 </iframe>
 
-Mas, se você estiver usando empacotadores como [Webpack](https://webpack.js.org/) ou [Rollup](https://rollupjs.org/), você precisará configurar o _bundler_ para que ele entenda como lidar com módulos JavaScript nativos para a importação dos Web Components ser bem sucedida.
+_Opcionalmente_, recursos extras como [ícones da biblioteca padrão](../componentes/icon#bibliotecas-padrão) podem ser mantidos em carregamento por CDN, ou podem ser copiados da instalação local e carregados com o _bundler_. No caso do Vite, se trata de copiar `node_modules/@cps-elements/web/assets` para `assets` de seu próprio projeto, com `vite-plugin-static-copy` para automação da tarefa.
 
-Assim que seu empacotador estiver configurado, você poderá importar os componentes e utilitários do CPS Elements.
-
-```js
-import '@cps-elements/web/themes/light.css';
-import '@cps-elements/web/components/button.js';
-import '@cps-elements/web/components/icon.js';
-import '@cps-elements/web/components/include.js';
-
-// Você pode definir o caminho base para que os componentes possam encontrar seus recursos.
-import { setBasePath } from '@cps-elements/web/utilities/base-path.js';
-setBasePath('/path/to/cps-elements/web');
-
-// Usar o caminho por CDN também é uma opção, se não quiser lidar com cópia de recursos localmente.
-// setBasePath('https://cdn.jsdelivr.net/npm/@cps-elements/web');
-
-// <cps-button>, <cps-icon> e <cps-include> prontos para utilização no HTML!
+```bash
+# Instalar 'vite-plugin-static-copy' como uma dependência adicional.
+npm install -D vite-plugin-static-copy
 ```
 
-!> Os módulos dos componentes incluem efeitos colaterais para fins de registro. Por isso, importar com desestruturação, diretamente de `@cps-elements/web` ou `@cps-elements/web/all.js`, pode resultar em um tamanho de pacote maior do que o necessário. Para otimizar o processo de _three-shaking_ realizado pelos empacotadores, sempre opte por [importações individuais](#importações-individuais), ou seja, importe componentes e utilitários de seus respectivos arquivos.
+Por fim, tal _plugin_ recém-instalado será configurado no `vite.config.js` da raiz de seu projeto (ou `vite.config.ts`, para um projeto Vite com TypeScript), como apresentado a seguir.
+
+```js
+import { viteStaticCopy as copy } from 'vite-plugin-static-copy';
+
+export default {
+  plugins: [
+    copy({
+      targets: [{ src: 'node_modules/@cps-elements/web/assets/icons', dest: 'assets' }]
+    })
+  ]
+};
+```
+
+?> Copiar os _assets_ localmente pode ser útil se você quiser garantir que todos sejam consumidos por sua aplicação a partir das mesmas requisições ao endereço de seu próprio servidor. Em alguns cenários isto pode ser relevante, como no caso de uma aplicação servida em modo _offline_. Entretanto, lembre-se que isto significa que [as vantagens de utilização de um CDN](#através-de-cdn) não serão aproveitadas nem mesmo para os recursos extras utilizados.
+
+### Empacotando com Webpack
+
+[Webpack](https://webpack.js.org/) é um empacotador de módulos JavaScript tradicional, extremamente extensível e poderoso. Foi por muitos anos uma espécie de _opção padrão_ nesta área, e ainda hoje é usado por grandes projetos, como o _framework_ [Angular](/frameworks/angular). Também é uma opção válida para empacotar projetos com tecnologias Web nativas, ou seja, HTML, CSS e JavaScript puros (o que inclui os nativos Web Components).
+
+Em sua versão 5, o Webpack avançou no suporte a módulos JavaScript nativos (_ES modules_), sem necessitar de configurações em especial para o uso dos Web Components do CPS Elements. Assim, fundamentalmente basta instalá-lo e configurá-lo apropriadamente como com qualquer outro projeto Web moderno, e ele funcionará.
+
+Como mesmo as configurações básicas com Webpack podem ser extensas e confusas para quem está iniciando, disponibilizamos um [repositório de exemplo de CPS Elements com Webpack](https://github.com/ErickPetru/cps-elements-example-webpack) para mais detalhes.
+
+### Empacotando com Rollup
+
+[Rollup](https://rollupjs.org/) é um empacotador de módulos JavaScript que revolucionou a construção de bibliotecas com modularizadas em JavaScript alguns anos atrás, tendo inclusive servido como inspiração (e, de fato, também como base tecnológica) para o surgimento do Vite. Ainda que Vite seja uma solução mais pré-configurada, pronta para desenvolvimento Web moderno, é possível utilizar diretamente Rollup para empacotamento de projetos com tecnologias Web nativas, ou seja, HTML, CSS e JavaScript puros (o que inclui os nativos Web Components).
+
+Em sua versão 3, o Rollup avançou no suporte a módulos JavaScript nativos (_ES modules_), sem necessitar de configurações em especial para o uso dos Web Components do CPS Elements. Assim, fundamentalmente basta instalá-lo e configurá-lo apropriadamente como com qualquer outro projeto Web moderno, e ele funcionará.
+
+Observe que a filosofia por trás do Rollup é inversa a ser opinativo, ou seja, prefere configurações explícitas para tudo. Assim, cada funcionalidade desejada, como carregamento de HTML, CSS, SVG, bem como o empacotamento JavaScript propriamente dito, depende de configurações. Como tais configurações podem soar confusas para quem está iniciando, disponibilizamos um [repositório de exemplo de CPS Elements com Rollup](https://github.com/ErickPetru/cps-elements-example-rollup) para mais detalhes.
