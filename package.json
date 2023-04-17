@@ -75,7 +75,7 @@
     "test:watch": "web-test-runner --watch --group default",
     "list-outdated-dependencies": "npm-check-updates --format repo --peer",
     "update-dependencies": "npm-check-updates --peer -u && npm install",
-    "predeploy": "npm rum build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d docs"
   },
   "engines": {
