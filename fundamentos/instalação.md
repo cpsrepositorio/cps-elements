@@ -23,7 +23,7 @@ Já foi abordado no [início rápido](/#início-rápido), mas vale reforçar: ca
 E também reforçando, em projetos reais aderentes ao [CPS Design System](https://cpsrepositorio.github.io/cps-design-system/) é provável que se queira carregar também a tipografia e o tema de modo de cor escuro.
 
 ```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/light.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/dark.css" />
 ```
