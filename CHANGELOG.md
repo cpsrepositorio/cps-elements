@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Tipografia alterada para [Roboto Flex](https://fonts.google.com/specimen/Roboto+Flex), aderindo às recentes mudanças no CPS Design System.
+
 ### Added
 
 - Atributo `rel` ao `<cps-button>` para permitir criar _links_ que apontam para alvos específicos.

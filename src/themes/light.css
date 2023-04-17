@@ -521,7 +521,7 @@
    */
 
   /* Fonts */
-  --cps-font-sans: 'Open Sans', 'Segoe UI', Verdana, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  --cps-font-sans: 'Roboto Flex', 'Segoe UI', Verdana, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
   --cps-font-serif: Georgia, 'Times New Roman', serif;
   --cps-font-mono: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;

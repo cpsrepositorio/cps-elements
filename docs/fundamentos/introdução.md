@@ -55,13 +55,13 @@ Agora você tem acesso a todos os componentes CPS Elements! Tente adicionar um b
 Embora apenas carregar o tema claro e o _script_ principal permita uso básico, uma importação de arquivos um pouco mais extensa é provavelmente o cenário típico desejado para aplicações aderentes ao [CPS Design System](https://cpsrepositorio.github.io/cps-design-system/):
 
 ```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/light.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/dark.css" />
 <script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/all.js"></script>
 ```
 
-Desta vez, registramos também para carregamento pelo navegador do usuário a fonte [Open Sans Variável](https://fonts.google.com/specimen/Open+Sans), para aderência máxima à [tipografia](https://cpsrepositorio.github.io/cps-design-system/guia-visual/tipografia.html), e o tema para modo escuro, para aderência máxima aos [modos de cor](https://cpsrepositorio.github.io/cps-design-system/guia-visual/cores.html#modos-de-cor) do Design System.
+Desta vez, registramos também para carregamento pelo navegador do usuário a fonte [Roboto Flex](https://fonts.google.com/specimen/Roboto+Flex), para aderência máxima à [tipografia](https://cpsrepositorio.github.io/cps-design-system/guia-visual/tipografia.html), e o tema para modo escuro, para aderência máxima aos [modos de cor](https://cpsrepositorio.github.io/cps-design-system/guia-visual/cores.html#modos-de-cor) do Design System.
 
 <div class="cps-theme-dark">
 
