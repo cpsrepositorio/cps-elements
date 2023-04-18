@@ -8,6 +8,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Added
 
+- Documentação de uso do CPS Elements com [React](https://react.dev/).
 - Documentação de uso do CPS Elements com [Vue](https://vuejs.org/).
 
 ## 0.1.8 - 2023-04-17
