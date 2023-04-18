@@ -1,6 +1,6 @@
 # Vue
 
-[Vue](https://vuejs.org/) é um _framework_ JavaScript progressivo que [funciona bem](https://custom-elements-everywhere.com/#vue) com elementos customizados, então usar CPS Elements em seus aplicativos Vue ocorre com facilidade.
+[Vue](https://vuejs.org/) é um _framework_ JavaScript progressivo que [funciona bem](https://custom-elements-everywhere.com/#vue) com elementos customizados, então usar CPS Elements em seus aplicativos Vue ocorre com facilidade. Inclusive, você pode facilmente alternar entre códigos em HTML ou Vue, para quase todos os exemplos de código desta documentação.
 
 Observe que por _framework_ progressivo, entende-se que utilizado desde como uma simples biblioteca diretamente em uma página HTML simples, até como um _framework_ completo para construção de aplicativos complexos. CPS Elements é compatível com ambos os cenários, sendo a utilização [através de CDN](/fundamentos/instalação#através-de-cdn) a base para integração com Vue como uma simples biblioteca, como você pode ver neste [exemplo de integração com Vue como um biblioteca](https://codepen.io/ErickPetru/pen/bGmeLxw), diretamente no CodePen.
 
@@ -16,7 +16,7 @@ Já o restante desta página se concentra em projetos complexos envolvendo Vue e
 
 ## Instalação
 
-Para começar com CPS Elements e Vue, primeiramente você precisa instalar seu pacote NPM.
+Para começar com CPS Elements e Vue, primeiramente você precisa instalar nosso pacote NPM.
 
 ```bash
 npm install @cps-elements/web
@@ -38,7 +38,6 @@ setBasePath('https://cdn.jsdelivr.net/npm/@cps-elements/web');
 A única configuração adicional que você precisará fazer é informar ao Vite (através do `vite.config.js` ou `.ts`) para ignorar os componentes CPS Elements de serem tratados como componentes Vue, explicitando que tratam-se de elementos customizados HTML. Isso é muito fácil, já que as _tags_ deles sempre começam com `cps-`.
 
 ```js
-import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
@@ -51,12 +50,7 @@ export default defineConfig({
         }
       }
     })
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
+  ]
 });
 ```
 
@@ -67,6 +61,24 @@ Agora você já pode usar os componentes CPS Elements diretamente nos `<template
 Usar CPS Elements com Vue é certamente familiar para quem está acostumado com tal _framework_, sendo que tanto [Options API](https://vuejs.org/guide/introduction.html#api-styles) quanto [Composition API](https://vuejs.org/guide/introduction.html#api-styles) são suportadas (inclusive com `<script setup>`) e não sofrem qualquer divergência de uso.
 
 Não é de se surpreender, afinal CPS Elements é baseado em Web Components, informados diretamente no `<template>` e que, após carregados pelo navegador, operam como elementos HTML tradicionais.
+
+### Importando componentes
+
+Cada componente CPS Elements está disponível para importação individual no pacote NPM instalado, podendo então ser utilizado no `<template>` Vue do mesmo arquivo em que estiver sendo importado.
+
+```html
+<script setup>
+  import { CpsButton } from '@cps-elements/web/components/button';
+</script>
+
+<template>
+  <cps-button variant="accent">Clique</cps-button>
+</template>
+```
+
+Você pode encontrar a linha de importação de um componente, pronta para apenas _copiar e colar_, na seção _"Importação"_ da própria documentação de cada componente.
+
+!> Assim como descrito em [importações individuais](/fundamentos/instalação#importações-individuais), é possível importar componentes diretamente por desestruturação do diretório raiz (por exemplo, `import { CpsButton } from '@cps-elements/web'`). Isso não é necessariamente incorreto quando se usa um empacotador, mas deixará para ele a responsabilidade de varrer e eliminar importações desnecessárias do diretório raiz (processo conhecido como _three-shaking_).<br><br>Escolher a dedo os arquivos específicos dos componentes, como demonstrado acima, garante que o funcionamento e as configurações do empacotador não interfiram na exata inclusão, em seu _bundle_ final, de apenas os _scripts_ mínimos necessários dos componentes CPS Elements que você efetivamente está usando.
 
 ### Vinculando dados e eventos
 
@@ -96,7 +108,7 @@ Tudo que você já sabe sobre a [sintaxe de `<template>`](https://vuejs.org/guid
 </script>
 
 <template>
-  <!-- CPS Elements no template sem ressalvas, com bind de dados e eventos. -->
+  <!-- CPS Elements no template sem ressalvas, com vínculo reativo de dados e eventos. -->
   <cps-button variant="accent" :waiting="isWaiting" @click="onClick">
     <cps-icon slot="prefix" name="arrow-right" />
     Clique
