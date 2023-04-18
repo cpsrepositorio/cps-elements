@@ -10,7 +10,7 @@
 - Frameworks
 
   - [Angular <small>(em breve)</small>](/frameworks/angular)
-  - [React <small>(em breve)</small>](/frameworks/react)
+  - [React](/frameworks/react)
   - [Vue](/frameworks/vue)
 
 - Componentes
