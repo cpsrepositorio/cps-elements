@@ -15,7 +15,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Botões representam ações que estão disponíveis ao usuário.
- * @documentation https://cpsrepositorio.github.io/cps-elements/components/button
+ * @documentation https://cpsrepositorio.github.io/cps-elements/#/componentes/button
  * @status stable
  * @since 0.1
  *
