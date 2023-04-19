@@ -12,7 +12,7 @@ let parser: DOMParser;
 
 /**
  * @summary Ícones são símbolos gráficos para representação de ações ou informações em uma interface.
- * @documentation https://cpsrepositorio.github.io/cps-elements/components/icon
+ * @documentation https://cpsrepositorio.github.io/cps-elements/#/componentes/icon
  * @status stable
  * @since 0.1
  *
