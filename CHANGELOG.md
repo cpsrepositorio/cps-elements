@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Fixed
+
+- Endereço da documentação de `<cps-button>`, `<cps-icon>`, `<cps-include>` e `<cps-spinner>`.
+
 ### Added
 
 - Documentação de uso do CPS Elements com [Angular](https://angular.io/).
