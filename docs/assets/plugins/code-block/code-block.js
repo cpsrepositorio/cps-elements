@@ -53,7 +53,7 @@
       .map(c => c.replace(/^cps-/g, ''))
       .map(c => {
         const camel = c.replace(/\b\w/g, w => w[0].toUpperCase() + w.substring(1)).replace(/-/g, '');
-        return `import Cps${camel} from '@cps-elements/web/components/${c}';`;
+        return `import { Cps${camel} } from '@cps-elements/web/components/${c}';`;
       })
       .join('\n');
 
