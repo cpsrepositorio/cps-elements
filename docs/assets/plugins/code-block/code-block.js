@@ -95,6 +95,7 @@
 
     newCode.textContent = newCode.textContent
       .replace('</script><template>', '</script>\n\n<template>')
+      .replace(/;(\n)*<\/script>/gm, ';\r</script>')
       .replace(/(import.*;\n(?!import))\s*(.?)/gm, '$1\n$2');
 
     newPre.setAttribute('data-lang', 'html vue');
