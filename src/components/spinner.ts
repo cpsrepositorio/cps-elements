@@ -7,7 +7,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary _Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.
- * @documentation https://cpsrepositorio.github.io/cps-elements/components/spinner
+ * @documentation https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner
  * @status stable
  * @since 0.1
  *
