@@ -8,7 +8,7 @@ import type { CSSResultGroup } from 'lit';
 
 /**
  * @summary Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.
- * @documentation https://cpsrepositorio.github.io/cps-elements/components/include
+ * @documentation https://cpsrepositorio.github.io/cps-elements/#/componentes/include
  * @status stable
  * @since 0.1
  *
