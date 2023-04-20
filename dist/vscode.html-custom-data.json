@@ -2,6 +2,18 @@
   "version": 1.1,
   "tags": [
     {
+      "name": "cps-button-group",
+      "description": "Grupos de botões podem ser usados para agrupar botões relacionados em seções.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - Um ou mais elementos `<cps-button>` a exibir dentro do grupo de botões.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o grupo.",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\r\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-button",
       "description": "Botões representam ações que estão disponíveis ao usuário.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - _default_ - O texto interno do botão.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o _label_ do botão.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.\n- **caret** - O elemento de sinalização de menu, normalmente um `<cps-icon>` com o ícone de circunflexo para baixo.",
       "attributes": [

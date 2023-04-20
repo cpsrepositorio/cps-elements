@@ -1,5 +1,5 @@
 import { sendMouse } from '@web/test-runner-commands';
-export async function clickOnElement(el, position = 'center', offsetX = 0, offsetY = 0) {
+function determineMousePosition(el, position, offsetX, offsetY) {
     const { x, y, width, height } = el.getBoundingClientRect();
     const centerX = Math.floor(x + window.pageXOffset + width / 2);
     const centerY = Math.floor(y + window.pageYOffset + height / 2);
@@ -28,5 +28,13 @@ export async function clickOnElement(el, position = 'center', offsetX = 0, offse
     }
     clickX += offsetX;
     clickY += offsetY;
+    return { clickX, clickY };
+}
+export async function clickOnElement(el, position = 'center', offsetX = 0, offsetY = 0) {
+    const { clickX, clickY } = determineMousePosition(el, position, offsetX, offsetY);
     await sendMouse({ type: 'click', position: [clickX, clickY] });
+}
+export async function moveMouseOnElement(el, position = 'center', offsetX = 0, offsetY = 0) {
+    const { clickX, clickY } = determineMousePosition(el, position, offsetX, offsetY);
+    await sendMouse({ type: 'move', position: [clickX, clickY] });
 }

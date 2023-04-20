@@ -67,7 +67,7 @@ Todos os ícones disponíveis na biblioteca `default` são exibidos a seguir. Cl
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react';
+import { CpsIcon } from '@cps-elements/web/react/icon';
 
 const App = () => (
   <>
@@ -131,7 +131,7 @@ const App = () => (
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react';
+import { CpsIcon } from '@cps-elements/web/react/icon';
 
 const App = () => (
   <div style={{ fontSize: '1.5rem' }}>
@@ -172,7 +172,7 @@ Para tal, ícones não decorativos podem se utilizar do atributo `label` para qu
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react';
+import { CpsIcon } from '@cps-elements/web/react/icon';
 
 const App = () => <CpsIcon name="star-fill" label="Adicionar aos favoritos" />;
 ```
@@ -188,7 +188,7 @@ Além do grande conjunto de ícones da biblioteca padrão, é possível carregar
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react';
+import { CpsIcon } from '@cps-elements/web/react/icon';
 
 const App = () => <CpsIcon src="./assets/images/brick.svg" style={{ fontSize: '4rem' }} />;
 ```
@@ -277,7 +277,7 @@ Esteticamente, ambas as variações possuem semelhança visual com a biblioteca 
 
 Distribuída sob [licença MIT](https://github.com/twbs/icons/blob/main/LICENSE.md), é adequada para utilização em aplicações Web, sejam elas públicas ou privadas. Este exemplo registra tal biblioteca usando o CDN jsDelivr e apresenta alguns de seus ícones em ambas as variações.
 
-```html preview
+```html preview no-vue
 <div style="font-size: 24px">
   <cps-icon library="bi" name="clock"></cps-icon>
   <cps-icon library="bi" name="lock"></cps-icon>
@@ -318,7 +318,7 @@ Esteticamente, a variação _line_ (a padrão) possui semelhança visual com a b
 
 Distribuída sob [licença Simple License](https://github.com/Iconscout/unicons/blob/master/LICENSE), é adequada para utilização em aplicações Web, sejam elas públicas ou privadas. Este exemplo registra tal biblioteca usando o CDN jsDelivr e apresenta alguns de seus ícones em todas as suas variações.
 
-```html preview
+```html preview no-vue
 <script type="module">
   import { registerIconLibrary } from '@cps-elements/web/utilities/icon-library';
 
@@ -382,7 +382,7 @@ Esteticamente, possuem semelhança visual com a biblioteca Fluent UI System Icon
 
 Distribuída sob [licença MIT](https://github.com/iconoir-icons/iconoir/blob/main/LICENSE), é adequada para utilização em aplicações Web, sejam elas públicas ou privadas. Este exemplo registra tal biblioteca usando o CDN jsDelivr e apresenta uma configuração personalizada de `stroke-width`.
 
-```html preview
+```html preview no-vue
 <script type="module">
   import { registerIconLibrary } from '@cps-elements/web/utilities/icon-library';
 
@@ -412,7 +412,7 @@ Esteticamente, todas as variações possuem semelhança visual com a biblioteca 
 
 Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/master/LICENSE), é adequada para utilização em aplicações Web, sejam elas públicas ou privadas. Este exemplo registra tal biblioteca usando o CDN jsDelivr e apresenta alguns de seus ícones em suas as variações.
 
-```html preview
+```html preview no-vue
 <script type="module">
   import { registerIconLibrary } from '@cps-elements/web/utilities/icon-library';
 
@@ -557,7 +557,8 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
 
 <style>
   .icon-search {
-    border: solid 1px var(--cps-stroke-card-primary);
+    background-color: var(--cps-fill-solid-primary);
+    border: solid 1px var(--cps-stroke-card-secondary);
     border-radius: var(--cps-border-radius-medium);
   }
 

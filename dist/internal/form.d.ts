@@ -1,4 +1,4 @@
-import type { BaseFormControl } from '../internal/base-form-control';
+import type { BaseFormControl } from './base-form-control';
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
 import type CpsButton from '../components/button';
 export declare const formCollections: WeakMap<HTMLFormElement, Set<BaseFormControl>>;
@@ -30,8 +30,8 @@ export declare class FormControlController implements ReactiveController {
     private setUserInteracted;
     private doAction;
     getForm(): HTMLFormElement | null;
-    reset(invoker?: HTMLInputElement | CpsButton): void;
-    submit(invoker?: HTMLInputElement | CpsButton): void;
+    reset(submitter?: HTMLInputElement | CpsButton): void;
+    submit(submitter?: HTMLInputElement | CpsButton): void;
     setValidity(isValid: boolean): void;
     updateValidity(): void;
     emitInvalidEvent(originalInvalidEvent?: Event): void;

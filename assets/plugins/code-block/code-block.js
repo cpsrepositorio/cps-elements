@@ -53,7 +53,7 @@
       .map(c => c.replace(/^cps-/g, ''))
       .map(c => {
         const camel = c.replace(/\b\w/g, w => w[0].toUpperCase() + w.substring(1)).replace(/-/g, '');
-        return `import Cps${camel} from '@cps-elements/web/components/${c}';`;
+        return `import { Cps${camel} } from '@cps-elements/web/components/${c}';`;
       })
       .join('\n');
 
@@ -95,6 +95,7 @@
 
     newCode.textContent = newCode.textContent
       .replace('</script><template>', '</script>\n\n<template>')
+      .replace(/;(\n)*<\/script>/gm, ';\r</script>')
       .replace(/(import.*;\n(?!import))\s*(.?)/gm, '$1\n$2');
 
     newPre.setAttribute('data-lang', 'html vue');

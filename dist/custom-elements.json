@@ -4,6 +4,160 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "components/button-group.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsButtonGroup",
+          "cssParts": [
+            {
+              "description": "O elemento base que embrulha o grupo.",
+              "name": "base"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Um ou mais elementos `<cps-button>` a exibir dentro do grupo de botões.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disableRole",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\r\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "attribute": "label"
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseOver",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseOut",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\r\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "fieldName": "label"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Grupos de botões podem ser usados para agrupar botões relacionados em seções.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button-group",
+          "status": "stable",
+          "since": "0.1",
+          "tagName": "cps-button-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsButtonGroup",
+            "module": "components/button-group.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-button-group",
+          "declaration": {
+            "name": "CpsButtonGroup",
+            "module": "components/button-group.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsButtonGroup",
+          "declaration": {
+            "name": "CpsButtonGroup",
+            "module": "components/button-group.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/button.js",
       "declarations": [
         {
@@ -51,7 +205,7 @@
               "kind": "field",
               "name": "formControlController",
               "privacy": "private",
-              "default": "new FormControlController(this, {\r\n    form: (input: BaseFormControl) => {\r\n      // Buttons support a form attribute that points to an arbitrary form, so if this attribute is set we need to query\r\n      // the form from the same root using its id\r\n      if (input.hasAttribute('form')) {\r\n        const doc = input.getRootNode() as Document | ShadowRoot;\r\n        const formId = input.getAttribute('form')!;\r\n        return doc.getElementById(formId) as HTMLFormElement;\r\n      }\r\n\r\n      // Fall back to the closest containing form\r\n      return input.closest<HTMLFormElement>('form');\r\n    },\r\n    assumeInteractionOn: ['click']\r\n  })"
+              "default": "new FormControlController(this, {\r\n    form: input => {\r\n      // Buttons support a form attribute that points to an arbitrary form, so if this attribute is set we need to query\r\n      // the form from the same root using its id\r\n      if (input.hasAttribute('form')) {\r\n        const doc = input.getRootNode() as Document | ShadowRoot;\r\n        const formId = input.getAttribute('form')!;\r\n        return doc.getElementById(formId) as HTMLFormElement;\r\n      }\r\n\r\n      // Fall back to the closest containing form\r\n      return input.closest('form');\r\n    },\r\n    assumeInteractionOn: ['click']\r\n  })"
             },
             {
               "kind": "field",
@@ -604,7 +758,7 @@
             "module": "/src/internal/base-element"
           },
           "summary": "Botões representam ações que estão disponíveis ao usuário.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/button",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button",
           "status": "stable",
           "since": "0.1",
           "dependencies": [
@@ -773,7 +927,7 @@
             "module": "/src/internal/base-element"
           },
           "summary": "Ícones são símbolos gráficos para representação de ações ou informações em uma interface.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/icon",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon",
           "status": "stable",
           "since": "0.1",
           "tagName": "cps-icon",
@@ -911,7 +1065,7 @@
             "module": "/src/internal/base-element"
           },
           "summary": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/include",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/include",
           "status": "stable",
           "since": "0.1",
           "tagName": "cps-include",
@@ -990,7 +1144,7 @@
             "module": "/src/internal/base-element"
           },
           "summary": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/components/spinner",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
           "status": "stable",
           "since": "0.1",
           "tagName": "cps-spinner",
@@ -1270,7 +1424,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

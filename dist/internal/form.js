@@ -1,6 +1,6 @@
 export const formCollections = new WeakMap();
 const reportValidityOverloads = new WeakMap();
-const userInteractedControls = new Set();
+const userInteractedControls = new WeakSet();
 const interactions = new WeakMap();
 export class FormControlController {
     constructor(host, options) {
@@ -152,7 +152,7 @@ export class FormControlController {
         }
         el.requestUpdate();
     }
-    doAction(type, invoker) {
+    doAction(type, submitter) {
         if (this.form) {
             const button = document.createElement('button');
             button.type = type;
@@ -162,12 +162,12 @@ export class FormControlController {
             button.style.clipPath = 'inset(50%)';
             button.style.overflow = 'hidden';
             button.style.whiteSpace = 'nowrap';
-            if (invoker) {
-                button.name = invoker.name;
-                button.value = invoker.value;
+            if (submitter) {
+                button.name = submitter.name;
+                button.value = submitter.value;
                 ['formaction', 'formenctype', 'formmethod', 'formnovalidate', 'formtarget'].forEach(attr => {
-                    if (invoker.hasAttribute(attr)) {
-                        button.setAttribute(attr, invoker.getAttribute(attr));
+                    if (submitter.hasAttribute(attr)) {
+                        button.setAttribute(attr, submitter.getAttribute(attr));
                     }
                 });
             }
@@ -180,11 +180,11 @@ export class FormControlController {
         var _a;
         return (_a = this.form) !== null && _a !== void 0 ? _a : null;
     }
-    reset(invoker) {
-        this.doAction('reset', invoker);
+    reset(submitter) {
+        this.doAction('reset', submitter);
     }
-    submit(invoker) {
-        this.doAction('submit', invoker);
+    submit(submitter) {
+        this.doAction('submit', submitter);
     }
     setValidity(isValid) {
         const host = this.host;
@@ -205,7 +205,8 @@ export class FormControlController {
         const slInvalidEvent = new CustomEvent('cps-invalid', {
             bubbles: false,
             composed: false,
-            cancelable: true
+            cancelable: true,
+            detail: {}
         });
         if (!originalInvalidEvent) {
             slInvalidEvent.preventDefault();

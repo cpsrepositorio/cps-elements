@@ -16,7 +16,7 @@ export function unlockBodyScrolling(lockingEl) {
     locks.delete(lockingEl);
     if (locks.size === 0) {
         document.body.classList.remove('cps-scroll-lock');
-        document.body.style.removeProperty('--cps-scrollbar-width');
+        document.body.style.removeProperty('--cps-scroll-lock-size');
     }
 }
 export function scrollIntoView(element, container, direction = 'vertical', behavior = 'smooth') {
