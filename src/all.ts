@@ -1,5 +1,6 @@
 // Components
 export { CpsButton } from './components/button';
+export { CpsButtonGroup } from './components/button-group';
 export { CpsIcon } from './components/icon';
 export { CpsInclude } from './components/include';
 export { CpsSpinner } from './components/spinner';
@@ -8,3 +9,6 @@ export { CpsSpinner } from './components/spinner';
 // Utilities
 export * from './utilities/base-path';
 export * from './utilities/icon-library';
+
+// Events
+export * from './events';
