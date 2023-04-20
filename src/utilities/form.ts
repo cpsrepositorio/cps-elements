@@ -35,10 +35,9 @@ export function getFormControls(form: HTMLFormElement) {
   const formControls = [...form.elements];
   const collection = formCollections.get(form);
   const customFormControls = collection ? Array.from(collection) : [];
-  const combined = [...formControls, ...customFormControls];
 
   // To return form controls in the right order, we sort by DOM index
-  return combined.sort((a: Element, b: Element) => {
+  return [...formControls, ...customFormControls].sort((a: Element, b: Element) => {
     if (allNodes.indexOf(a) < allNodes.indexOf(b)) return -1;
     if (allNodes.indexOf(a) > allNodes.indexOf(b)) return 1;
     return 0;

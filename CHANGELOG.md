@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Atualizações em alguns módulos internos, sem efeito direto nos componentes pré-existentes.
+
 ### Fixed
 
 - Endereço da documentação de `<cps-button>`, `<cps-icon>`, `<cps-include>` e `<cps-spinner>`.

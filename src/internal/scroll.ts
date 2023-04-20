@@ -32,7 +32,7 @@ export function unlockBodyScrolling(lockingEl: HTMLElement) {
 
   if (locks.size === 0) {
     document.body.classList.remove('cps-scroll-lock');
-    document.body.style.removeProperty('--cps-scrollbar-width');
+    document.body.style.removeProperty('--cps-scroll-lock-size');
   }
 }
 

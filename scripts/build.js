@@ -112,7 +112,7 @@ fs.mkdirSync(outdir, { recursive: true });
       startPath: '/',
       port,
       logLevel: 'silent',
-      logPrefix: '[elements]',
+      logPrefix: '[cps-elements]',
       logFileChanges: true,
       notify: false,
       single: true,

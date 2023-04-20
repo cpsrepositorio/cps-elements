@@ -31,7 +31,7 @@ export default {
   plugins: [
     // Append package data
     {
-      name: 'elements-package-data',
+      name: 'cps-elements-package-data',
       packageLinkPhase({ customElementsManifest }) {
         customElementsManifest.package = { name, description, version, author, homepage, license };
       }
@@ -39,7 +39,7 @@ export default {
 
     // Parse custom jsDoc tags
     {
-      name: 'elements-custom-tags',
+      name: 'cps-elements-custom-tags',
       analyzePhase({ ts, node, moduleDoc }) {
         switch (node.kind) {
           case ts.SyntaxKind.ClassDeclaration: {
@@ -106,7 +106,7 @@ export default {
       }
     },
     {
-      name: 'elements-react-event-names',
+      name: 'cps-elements-react-event-names',
       analyzePhase({ ts, node, moduleDoc }) {
         switch (node.kind) {
           case ts.SyntaxKind.ClassDeclaration: {
@@ -123,7 +123,7 @@ export default {
       }
     },
     {
-      name: 'elements-translate-module-paths',
+      name: 'cps-elements-translate-module-paths',
       packageLinkPhase({ customElementsManifest }) {
         customElementsManifest?.modules?.forEach(mod => {
           //
