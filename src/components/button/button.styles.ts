@@ -74,7 +74,8 @@ export default css`
   /* Default */
   .button--default {
     background-color: var(--cps-fill-control-primary);
-    border-color: var(--cps-stroke-control-primary);
+    border-left-color: var(--cps-stroke-control-primary);
+    border-right-color: var(--cps-stroke-control-primary);
     border-top-color: var(--cps-color-elevation-top-control);
     border-bottom-color: var(--cps-color-elevation-bottom-control);
     color: var(--cps-foreground-primary);
@@ -82,7 +83,8 @@ export default css`
 
   .button--default:hover:not(.button--disabled):not(.button--waiting) {
     background-color: var(--cps-fill-control-secondary);
-    border-color: var(--cps-stroke-control-primary);
+    border-left-color: var(--cps-stroke-control-primary);
+    border-right-color: var(--cps-stroke-control-primary);
     border-top-color: var(--cps-color-elevation-top-control);
     border-bottom-color: var(--cps-color-elevation-bottom-control);
     color: var(--cps-foreground-primary);
@@ -103,7 +105,8 @@ export default css`
   /* Accent */
   .button--accent {
     background-color: var(--cps-fill-accent-primary);
-    border-color: var(--cps-stroke-control-inverted-primary);
+    border-left-color: var(--cps-stroke-control-inverted-primary);
+    border-right-color: var(--cps-stroke-control-inverted-primary);
     border-top-color: var(--cps-color-elevation-top-accent-control);
     border-bottom-color: var(--cps-color-elevation-bottom-accent-control);
     color: var(--cps-foreground-inverted-primary);
@@ -111,7 +114,8 @@ export default css`
 
   .button--accent:hover:not(.button--disabled):not(.button--waiting) {
     background-color: var(--cps-fill-accent-secondary);
-    border-color: var(--cps-stroke-control-inverted-primary);
+    border-left-color: var(--cps-stroke-control-inverted-primary);
+    border-right-color: var(--cps-stroke-control-inverted-primary);
     border-top-color: var(--cps-color-elevation-top-accent-control);
     border-bottom-color: var(--cps-color-elevation-bottom-accent-control);
     color: var(--cps-foreground-inverted-primary);
@@ -442,7 +446,63 @@ export default css`
     margin-inline-start: calc(-1 * var(--cps-button-border-width));
   }
 
+  :host(.cps-button-group__button:not(.cps-button-group__button--first)) .button {
+    border-left: 0 none transparent;
+  }
+
+  :host(.cps-button-group__button:not(.cps-button-group__button--last)) .button {
+    border-right: 0 none transparent;
+  }
+
+  /*
+  :host(.cps-button-group__button:not(.cps-button-group__button--first)) {
+    margin-inline-start: calc(-1 * var(--cps-button-border-width));
+  }
+  */
+
   /* Add a visual separator between solid buttons */
+  :host(.cps-button-group__button:not(.cps-button-group__button--first, .cps-button-group__button--radio))
+    .button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-left: 1px solid;
+    z-index: 3;
+  }
+
+  :host(
+      .cps-button-group__button[variant='default']:not(
+          .cps-button-group__button--first,
+          .cps-button-group__button--radio
+        )
+    )
+    .button:before {
+    border-left-color: var(--cps-stroke-control-primary);
+  }
+
+  :host(
+      .cps-button-group__button[variant='transparent']:not(
+          .cps-button-group__button--first,
+          .cps-button-group__button--radio
+        )
+    )
+    .button:before {
+    border-left-color: var(--cps-stroke-divider);
+  }
+
+  :host(
+      .cps-button-group__button[variant='accent']:not(
+          .cps-button-group__button--first,
+          .cps-button-group__button--radio
+        )
+    )
+    .button:before {
+    border-left-color: var(--cps-stroke-control-inverted-primary);
+  }
+
+  /*
   :host(
       .cps-button-group__button:not(
           .cps-button-group__button--first,
@@ -456,14 +516,17 @@ export default css`
     top: 0;
     inset-inline-start: 0;
     bottom: 0;
-    border-left: solid 1px rgb(128 128 128 / 33%);
+    border-left: var(--cps-stroke-control-primary);
     mix-blend-mode: multiply;
   }
+  */
 
   /* Bump hovered, focused, and checked buttons up so their focus ring isn't clipped */
+  /*
   :host(.cps-button-group__button--hover) {
     z-index: 1;
   }
+  */
 
   /* Focus and checked are always on top */
   :host(.cps-button-group__button--focus),

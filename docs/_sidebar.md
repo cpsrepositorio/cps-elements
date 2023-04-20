@@ -16,6 +16,7 @@
 - Componentes
 
   - [Button](/componentes/button)
+  - [Button Group](/componentes/button-group)
   - [Icon](/componentes/icon)
   - [Spinner](/componentes/spinner)
   - [<code>...</code> <small>(em breve)</small>](/404)

@@ -16,6 +16,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Added
 
+- Criação do componente `<cps-button-group>`.
 - Definição e exportação de tipos explícitos para os eventos personalizados dos componentes.
 - Documentação de uso do CPS Elements com [Angular](https://angular.io/).
 - Documentação de uso do CPS Elements com [React](https://react.dev/).
