@@ -41,7 +41,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
   static styles: CSSResultGroup = styles;
 
   private readonly formControlController = new FormControlController(this, {
-    form: (input: BaseFormControl) => {
+    form: input => {
       // Buttons support a form attribute that points to an arbitrary form, so if this attribute is set we need to query
       // the form from the same root using its id
       if (input.hasAttribute('form')) {
@@ -51,7 +51,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
       }
 
       // Fall back to the closest containing form
-      return input.closest<HTMLFormElement>('form');
+      return input.closest('form');
     },
     assumeInteractionOn: ['click']
   });
@@ -64,7 +64,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
   @state() private isFocused = false;
   @state() invalid = false;
 
-  /* An empty title prevents browser validation tooltips from appearing on hover */
+  /* Um valor vazio previne que as dicas de validação do navegador apareçam ao passar o mouse. */
   @property() title = '';
 
   /** A variante visual para apresentação do botão. */
