@@ -387,7 +387,7 @@
   --cps-fill-solid-primary: rgb(243 243 243);
   --cps-fill-solid-secondary: rgb(238 238 238);
   --cps-fill-solid-tertiary: rgb(249 249 249);
-  --cps-fill-solid-quarternary: rgb(254 254 254);
+  --cps-fill-solid-quaternary: rgb(3, 3, 3);
 
   /* Control fill colors */
   --cps-fill-control-primary: rgb(var(--cps-color-neutral-0) / 70%);
@@ -397,7 +397,7 @@
 
   --cps-fill-control-alt-secondary: rgb(var(--cps-color-neutral-1000) / 2.41%);
   --cps-fill-control-alt-tertiary: rgb(var(--cps-color-neutral-1000) / 5.78%);
-  --cps-fill-control-alt-quarternary: rgb(var(--cps-color-neutral-1000) / 9.24%);
+  --cps-fill-control-alt-quaternary: rgb(var(--cps-color-neutral-1000) / 9.24%);
 
   /* Control fill subtle colors */
   --cps-fill-control-subtle-secondary: rgb(var(--cps-color-neutral-1000) / 3.73%);
