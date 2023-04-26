@@ -679,14 +679,14 @@ kbd,
 }
 
 .markdown-section p.tip {
-  border-left-color: rgb(var(--cps-color-danger-600));
+  border-left-color: var(--cps-fill-system-critical);
 }
 
 .markdown-section p.tip:before {
   content: '!';
   font-size: 16px;
   line-height: 18px;
-  background-color: rgb(var(--cps-color-danger-600));
+  background-color: var(--cps-fill-system-critical);
 }
 
 .markdown-section p.tip code,
@@ -697,7 +697,7 @@ kbd,
 
 /* Component headers */
 .component-header {
-  margin-top: -1rem;
+  margin-top: -0.5rem;
 }
 
 .component-header__tag {

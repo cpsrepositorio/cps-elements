@@ -1,0 +1,112 @@
+import { css } from 'lit';
+import componentStyles from '../../styles/component.styles';
+
+export default css`
+  ${componentStyles}
+
+  :host {
+    display: inline-flex;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font: var(--cps-text-caption);
+    border-radius: var(--cps-border-radius-large);
+    white-space: nowrap;
+    padding: var(--cps-spacing-px);
+    user-select: none;
+    cursor: inherit;
+    box-sizing: border-box;
+    min-width: var(--cps-spacing-1);
+    min-height: var(--cps-spacing-1);
+  }
+
+  .badge--has-icon,
+  .badge--has-content {
+    min-width: var(--cps-spacing-3-5);
+    min-height: var(--cps-spacing-3-5);
+  }
+
+  .badge--has-icon {
+    padding: 0;
+    font: var(--cps-text-label);
+  }
+
+  .badge--has-content:not(.badge--has-icon).badge--has-single-character {
+    padding: var(--cps-spacing-px) var(--cps-spacing-1);
+  }
+
+  .badge--has-content:not(.badge--has-icon):not(.badge--has-single-character) {
+    padding: var(--cps-spacing-px) var(--cps-spacing-1-5);
+  }
+
+  /* Variant modifiers */
+  .badge--neutral {
+    background-color: var(--cps-fill-system-neutral);
+    color: rgb(var(--cps-color-neutral-0));
+  }
+
+  .badge--informative {
+    background-color: var(--cps-fill-system-informative);
+    color: rgb(var(--cps-color-neutral-0));
+  }
+
+  .badge--warning {
+    background-color: var(--cps-fill-system-warning);
+    color: rgb(var(--cps-color-neutral-0));
+  }
+
+  .badge--critical {
+    background-color: var(--cps-fill-system-critical);
+    color: rgb(var(--cps-color-neutral-0));
+  }
+
+  .badge--success {
+    background-color: var(--cps-fill-system-success);
+    color: rgb(var(--cps-color-neutral-0));
+  }
+
+  /* Square modifier */
+  .badge--square {
+    border-radius: var(--cps-border-radius-small);
+  }
+
+  /* Pulse modifier */
+  .badge--pulse {
+    animation: pulse 1.5s infinite;
+  }
+
+  .badge--pulse.badge--neutral {
+    --pulse-color: var(--cps-fill-system-neutral);
+  }
+
+  .badge--pulse.badge--informative {
+    --pulse-color: var(--cps-fill-system-informative);
+  }
+
+  .badge--pulse.badge--warning {
+    --pulse-color: var(--cps-fill-system-warning);
+  }
+
+  .badge--pulse.badge--critical {
+    --pulse-color: var(--cps-fill-system-critical);
+  }
+
+  .badge--pulse.badge--success {
+    --pulse-color: var(--cps-fill-system-success);
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 var(--pulse-color);
+    }
+    70% {
+      box-shadow: 0 0 0 0.375rem transparent;
+    }
+    100% {
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+`;

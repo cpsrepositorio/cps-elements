@@ -326,7 +326,7 @@
   --cps-color-rose-950: 106 15 43;
 
   /*
-   * Theme Tokens
+   * Theme Colors
    */
 
   /* Brand */
@@ -355,44 +355,33 @@
   --cps-color-accent-900: var(--cps-color-petrol-900);
   --cps-color-accent-950: var(--cps-color-petrol-950);
 
-  /* Success */
-  --cps-color-success-50: var(--cps-color-green-50);
-  --cps-color-success-100: var(--cps-color-green-100);
-  --cps-color-success-200: var(--cps-color-green-200);
-  --cps-color-success-300: var(--cps-color-green-300);
-  --cps-color-success-400: var(--cps-color-green-400);
-  --cps-color-success-500: var(--cps-color-green-500);
-  --cps-color-success-600: var(--cps-color-green-600);
-  --cps-color-success-700: var(--cps-color-green-700);
-  --cps-color-success-800: var(--cps-color-green-800);
-  --cps-color-success-900: var(--cps-color-green-900);
-  --cps-color-success-950: var(--cps-color-green-950);
+  /*
+   * System Colors
+   */
+
+  /* Neutral */
+  --cps-fill-system-neutral: rgb(138 138 138);
+  --cps-fill-system-subtle-neutral: rgb(0 0 0 / 2.41%);
+
+  /* Informative */
+  --cps-fill-system-informative: rgb(0 95 183);
+  --cps-fill-system-subtle-informative: rgba(246 246 246 / 50%);
 
   /* Warning */
-  --cps-color-warning-50: var(--cps-color-amber-50);
-  --cps-color-warning-100: var(--cps-color-amber-100);
-  --cps-color-warning-200: var(--cps-color-amber-200);
-  --cps-color-warning-300: var(--cps-color-amber-300);
-  --cps-color-warning-400: var(--cps-color-amber-400);
-  --cps-color-warning-500: var(--cps-color-amber-500);
-  --cps-color-warning-600: var(--cps-color-amber-600);
-  --cps-color-warning-700: var(--cps-color-amber-700);
-  --cps-color-warning-800: var(--cps-color-amber-800);
-  --cps-color-warning-900: var(--cps-color-amber-900);
-  --cps-color-warning-950: var(--cps-color-amber-950);
+  --cps-fill-system-warning: rgb(157 93 0);
+  --cps-fill-system-subtle-warning: rgb(255 244 206);
 
-  /* Danger */
-  --cps-color-danger-50: var(--cps-color-red-50);
-  --cps-color-danger-100: var(--cps-color-red-100);
-  --cps-color-danger-200: var(--cps-color-red-200);
-  --cps-color-danger-300: var(--cps-color-red-300);
-  --cps-color-danger-400: var(--cps-color-red-400);
-  --cps-color-danger-500: var(--cps-color-red-500);
-  --cps-color-danger-600: var(--cps-color-red-600);
-  --cps-color-danger-700: var(--cps-color-red-700);
-  --cps-color-danger-800: var(--cps-color-red-800);
-  --cps-color-danger-900: var(--cps-color-red-900);
-  --cps-color-danger-950: var(--cps-color-red-950);
+  /* Critical */
+  --cps-fill-system-critical: rgb(196 43 28);
+  --cps-fill-system-subtle-critical: rgb(253 231 233);
+
+  /* Success */
+  --cps-fill-system-success: rgb(15 123 15);
+  --cps-fill-system-subtle-success: rgb(113 201 105);
+
+  /*
+   * Colors Tokens
+   */
 
   /* Background solid fill colors */
   --cps-fill-solid-primary: rgb(243 243 243);

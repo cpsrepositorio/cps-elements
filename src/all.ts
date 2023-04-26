@@ -1,4 +1,5 @@
 // Components
+export { CpsBadge } from './components/badge';
 export { CpsButton } from './components/button';
 export { CpsButtonGroup } from './components/button-group';
 export { CpsIcon } from './components/icon';

@@ -15,6 +15,7 @@
 
 - Componentes
 
+  - [Badge](/componentes/badge)
   - [Button](/componentes/button)
   - [Button Group](/componentes/button-group)
   - [Icon](/componentes/icon)

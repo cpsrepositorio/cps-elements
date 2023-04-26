@@ -314,15 +314,15 @@ export default css`
 
   .button ::slotted(cps-badge) {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2px;
+    right: 1.5px;
     translate: 50% -50%;
     pointer-events: none;
   }
 
   .button--rtl ::slotted(cps-badge) {
     right: auto;
-    left: 0;
+    left: 1.5px;
     translate: -50% -50%;
   }
 
