@@ -197,20 +197,23 @@ export default css`
   */
 
   .button--small {
+    height: auto;
+    min-height: var(--cps-button-height-small);
     font-size: var(--cps-button-font-size-small);
-    height: var(--cps-button-height-small);
     line-height: calc(var(--cps-button-height-small) - var(--cps-button-border-width) * 2);
   }
 
   .button--medium {
+    height: auto;
+    min-height: var(--cps-button-height-medium);
     font-size: var(--cps-button-font-size-medium);
-    height: var(--cps-button-height-medium);
     line-height: calc(var(--cps-button-height-medium) - var(--cps-button-border-width) * 2);
   }
 
   .button--large {
+    height: auto;
+    min-height: var(--cps-button-height-large);
     font-size: var(--cps-button-font-size-large);
-    height: var(--cps-button-height-large);
     line-height: calc(var(--cps-button-height-large) - var(--cps-button-border-width) * 2);
   }
 

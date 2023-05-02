@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Suporte a elementos de tamanho variável no `<cps-button>`.
+
 ### Added
 
 - Criação do componente `<cps-badge>`.
