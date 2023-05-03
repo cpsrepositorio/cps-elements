@@ -19,6 +19,7 @@
   - [Button](/componentes/button)
   - [Button Group](/componentes/button-group)
   - [Icon](/componentes/icon)
+  - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
   - [<code>...</code> <small>(em breve)</small>](/404)
   <!--plop:component-->

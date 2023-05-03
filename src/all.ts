@@ -4,6 +4,7 @@ export { CpsButton } from './components/button';
 export { CpsButtonGroup } from './components/button-group';
 export { CpsIcon } from './components/icon';
 export { CpsInclude } from './components/include';
+export { CpsSkeleton } from './components/skeleton';
 export { CpsSpinner } from './components/spinner';
 /* plop:component */
 

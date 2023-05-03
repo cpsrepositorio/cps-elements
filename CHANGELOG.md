@@ -13,6 +13,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Added
 
 - Criação do componente `<cps-badge>`.
+- Criação do componente `<cps-skeleton>`.
 
 ## 0.1.9 - 2023-04-20
 
