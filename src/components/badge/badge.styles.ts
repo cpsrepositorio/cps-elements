@@ -9,18 +9,18 @@ export default css`
   }
 
   .badge {
+    box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font: var(--cps-text-caption);
     border-radius: var(--cps-border-radius-large);
-    white-space: nowrap;
-    padding: var(--cps-spacing-px);
-    user-select: none;
     cursor: inherit;
-    box-sizing: border-box;
+    padding: var(--cps-spacing-px);
     min-width: var(--cps-spacing-1);
     min-height: var(--cps-spacing-1);
+    white-space: nowrap;
+    font: var(--cps-text-caption);
+    user-select: none;
   }
 
   .badge--has-icon,

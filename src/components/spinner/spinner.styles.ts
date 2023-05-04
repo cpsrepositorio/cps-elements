@@ -17,8 +17,8 @@ export default css`
 
   .spinner {
     flex: 1 1 auto;
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
 
   .spinner__track,

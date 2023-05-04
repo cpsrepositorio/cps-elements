@@ -342,8 +342,8 @@ Assim como elementos HTML nativos, os componentes CPS Elements podem ser estiliz
 Assim, as medidas horizontais (ou mesmo outras coisas, como margens e reposicionamentos) podem ser facilmente ajustadas. Por exemplo, atributos CSS `width` e `margin` são aceitos normalmente (seja com `style` ou com `class`).
 
 ```html preview
-<cps-button size="small" style="width: 100%; margin-bottom: 1rem">Pequeno</cps-button>
-<cps-button size="medium" style="width: 100%; margin-bottom: 1rem">Médio</cps-button>
+<cps-button size="small" style="margin-bottom: 1rem; width: 100%">Pequeno</cps-button>
+<cps-button size="medium" style="margin-bottom: 1rem; width: 100%">Médio</cps-button>
 <cps-button size="large" style="width: 100%">Grande</cps-button>
 ```
 
@@ -508,16 +508,16 @@ Através de uma mistura de técnicas com partes CSS e variáveis CSS com valores
     --cps-button-border-width: 4px;
 
     /* Definindo atributos CSS conforme desejado */
+    transition: var(--cps-transition-medium) transform ease, var(--cps-transition-medium) border ease;
     border-radius: 0;
-    background-color: #ff1493;
     border-top-color: #ff7ac1;
-    border-left-color: #ff7ac1;
-    border-bottom-color: #ad005c;
     border-right-color: #ad005c;
+    border-bottom-color: #ad005c;
+    border-left-color: #ff7ac1;
+    box-shadow: 0 2px 10px #0002;
+    background-color: #ff1493;
     color: white;
     font-size: 1.125rem;
-    box-shadow: 0 2px 10px #0002;
-    transition: var(--cps-transition-medium) transform ease, var(--cps-transition-medium) border ease;
   }
 
   cps-button.fancy::part(base):hover {
@@ -525,11 +525,11 @@ Através de uma mistura de técnicas com partes CSS e variáveis CSS com valores
   }
 
   cps-button.fancy::part(base):active {
+    transform: scale(1.05) rotate(-1deg) translateY(2px);
     border-top-color: #ad005c;
     border-right-color: #ff7ac1;
     border-bottom-color: #ff7ac1;
     border-left-color: #ad005c;
-    transform: scale(1.05) rotate(-1deg) translateY(2px);
   }
 
   cps-button.fancy::part(base):focus-visible {

@@ -15,8 +15,8 @@ export default css`
   .skeleton {
     display: flex;
     width: 100%;
-    height: 100%;
     min-width: 0.5rem;
+    height: 100%;
     min-height: 0.5rem;
   }
 

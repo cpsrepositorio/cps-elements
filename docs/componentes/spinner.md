@@ -47,7 +47,7 @@ const App = () => (
 A espessura da linha de caminho ao fundo do _spinner_ pode ser ajustada através da variável CSS `--track-width`. A linha giratória sobre ele automaticamente se ajusta para a mesma medida.
 
 ```html preview
-<cps-spinner style="font-size: 3rem; --track-width: 1rem"></cps-spinner>
+<cps-spinner style="--track-width: 1rem; font-size: 3rem"></cps-spinner>
 ```
 
 ```jsx react
@@ -56,8 +56,8 @@ import { CpsSpinner } from '@cps-elements/web/react/spinner';
 const App = () => (
   <CpsSpinner
     style={{
-      fontSize: '3rem',
-      '--track-width': '1rem'
+      '--track-width': '1rem',
+      fontSize: '3rem'
     }}
   />
 );
@@ -68,7 +68,7 @@ const App = () => (
 Por padrão, um _spinner_ vem adequadamente ajustando nos temas claro e escuro, de acordo com o CPS Design System. Entretanto, é possível ajustar completamente suas cores através da variáveis CSS `--indicator-color` e `--track-color`.
 
 ```html preview
-<cps-spinner style="font-size: 3rem; --indicator-color: deeppink; --track-color: pink"></cps-spinner>
+<cps-spinner style="--indicator-color: deeppink; --track-color: pink; font-size: 3rem"></cps-spinner>
 ```
 
 ```jsx react
@@ -77,9 +77,9 @@ import { CpsSpinner } from '@cps-elements/web/react/spinner';
 const App = () => (
   <CpsSpinner
     style={{
-      fontSize: '3rem',
       '--indicator-color': 'deeppink',
-      '--track-color': 'pink'
+      '--track-color': 'pink',
+      fontSize: '3rem'
     }}
   />
 );

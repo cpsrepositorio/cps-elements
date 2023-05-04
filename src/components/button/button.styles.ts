@@ -7,28 +7,28 @@ export default css`
   :host {
     display: inline-block;
     position: relative;
-    width: auto;
     cursor: pointer;
+    width: auto;
   }
 
   .button {
     display: inline-flex;
     align-items: stretch;
     justify-content: center;
-    width: 100%;
-    border-style: solid;
-    border-width: var(--cps-button-border-width);
-    border-radius: var(--cps-border-radius-medium);
-    font-family: var(--cps-font-sans);
-    font-weight: var(--cps-font-weight-normal);
-    text-decoration: none;
-    user-select: none;
-    white-space: nowrap;
-    vertical-align: middle;
-    padding: 0;
     transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) color,
       var(--cps-transition-fast) border;
+    border-width: var(--cps-button-border-width);
+    border-style: solid;
+    border-radius: var(--cps-border-radius-medium);
     cursor: inherit;
+    padding: 0;
+    width: 100%;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: var(--cps-font-sans);
+    font-weight: var(--cps-font-weight-normal);
+    user-select: none;
   }
 
   .button::-moz-focus-inner {
@@ -55,8 +55,8 @@ export default css`
 
   .button__prefix,
   .button__suffix {
-    flex: 0 0 auto;
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
     pointer-events: none;
   }
@@ -73,70 +73,70 @@ export default css`
 
   /* Default */
   .button--default {
-    background-color: var(--cps-fill-control-primary);
-    border-left-color: var(--cps-stroke-control-primary);
-    border-right-color: var(--cps-stroke-control-primary);
     border-top-color: var(--cps-color-elevation-top-control);
+    border-right-color: var(--cps-stroke-control-primary);
     border-bottom-color: var(--cps-color-elevation-bottom-control);
+    border-left-color: var(--cps-stroke-control-primary);
+    background-color: var(--cps-fill-control-primary);
     color: var(--cps-foreground-primary);
   }
 
   .button--default:hover:not(.button--disabled):not(.button--waiting) {
-    background-color: var(--cps-fill-control-secondary);
-    border-left-color: var(--cps-stroke-control-primary);
-    border-right-color: var(--cps-stroke-control-primary);
     border-top-color: var(--cps-color-elevation-top-control);
+    border-right-color: var(--cps-stroke-control-primary);
     border-bottom-color: var(--cps-color-elevation-bottom-control);
+    border-left-color: var(--cps-stroke-control-primary);
+    background-color: var(--cps-fill-control-secondary);
     color: var(--cps-foreground-primary);
   }
 
   .button--default:active:not(.button--disabled):not(.button--waiting) {
-    background-color: var(--cps-fill-control-tertiary);
     border-color: var(--cps-stroke-control-primary);
+    background-color: var(--cps-fill-control-tertiary);
     color: var(--cps-foreground-tertiary);
   }
 
   .button--default.button--disabled {
-    background-color: var(--cps-fill-control-disabled);
     border-color: var(--cps-stroke-control-primary);
+    background-color: var(--cps-fill-control-disabled);
     color: var(--cps-foreground-disabled);
   }
 
   /* Accent */
   .button--accent {
-    background-color: var(--cps-fill-accent-primary);
-    border-left-color: var(--cps-stroke-control-inverted-primary);
-    border-right-color: var(--cps-stroke-control-inverted-primary);
     border-top-color: var(--cps-color-elevation-top-accent-control);
+    border-right-color: var(--cps-stroke-control-inverted-primary);
     border-bottom-color: var(--cps-color-elevation-bottom-accent-control);
+    border-left-color: var(--cps-stroke-control-inverted-primary);
+    background-color: var(--cps-fill-accent-primary);
     color: var(--cps-foreground-inverted-primary);
   }
 
   .button--accent:hover:not(.button--disabled):not(.button--waiting) {
-    background-color: var(--cps-fill-accent-secondary);
-    border-left-color: var(--cps-stroke-control-inverted-primary);
-    border-right-color: var(--cps-stroke-control-inverted-primary);
     border-top-color: var(--cps-color-elevation-top-accent-control);
+    border-right-color: var(--cps-stroke-control-inverted-primary);
     border-bottom-color: var(--cps-color-elevation-bottom-accent-control);
+    border-left-color: var(--cps-stroke-control-inverted-primary);
+    background-color: var(--cps-fill-accent-secondary);
     color: var(--cps-foreground-inverted-primary);
   }
 
   .button--accent:active:not(.button--disabled):not(.button--waiting) {
-    background-color: var(--cps-fill-accent-tertiary);
     border-color: var(--cps-stroke-control-inverted-primary);
+    background-color: var(--cps-fill-accent-tertiary);
     color: var(--cps-foreground-inverted-secondary);
   }
 
   .button--accent.button--disabled {
-    background-color: var(--cps-fill-accent-disabled);
     border-color: transparent;
+    background-color: var(--cps-fill-accent-disabled);
     color: var(--cps-foreground-inverted-disabled);
   }
 
   /* Transparent */
   .button--transparent {
-    background-color: transparent;
     border-color: transparent;
+    background-color: transparent;
   }
 
   .button--transparent.button--circle {
@@ -199,22 +199,22 @@ export default css`
   .button--small {
     height: auto;
     min-height: var(--cps-button-height-small);
-    font-size: var(--cps-button-font-size-small);
     line-height: calc(var(--cps-button-height-small) - var(--cps-button-border-width) * 2);
+    font-size: var(--cps-button-font-size-small);
   }
 
   .button--medium {
     height: auto;
     min-height: var(--cps-button-height-medium);
-    font-size: var(--cps-button-font-size-medium);
     line-height: calc(var(--cps-button-height-medium) - var(--cps-button-border-width) * 2);
+    font-size: var(--cps-button-font-size-medium);
   }
 
   .button--large {
     height: auto;
     min-height: var(--cps-button-height-large);
-    font-size: var(--cps-button-font-size-large);
     line-height: calc(var(--cps-button-height-large) - var(--cps-button-border-width) * 2);
+    font-size: var(--cps-button-font-size-large);
   }
 
   /*
@@ -238,9 +238,9 @@ export default css`
   */
 
   .button--circle {
-    padding-left: 0;
-    padding-right: 0;
     border-radius: var(--cps-border-radius-full);
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .button--circle.button--small {
@@ -304,11 +304,11 @@ export default css`
   .button--waiting cps-spinner {
     --indicator-color: currentColor;
     position: absolute;
-    font-size: 1em;
-    height: 1em;
-    width: 1em;
     top: calc(50% - 0.5em);
     left: calc(50% - 0.5em);
+    width: 1em;
+    height: 1em;
+    font-size: 1em;
   }
 
   /*
@@ -466,13 +466,13 @@ export default css`
   /* Add a visual separator between solid buttons */
   :host(.cps-button-group__button:not(.cps-button-group__button--first, .cps-button-group__button--radio))
     .button:before {
-    content: '';
     position: absolute;
     top: 0;
-    left: 0;
     bottom: 0;
-    border-left: 1px solid;
+    left: 0;
     z-index: 3;
+    border-left: 1px solid;
+    content: '';
   }
 
   :host(

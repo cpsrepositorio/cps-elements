@@ -37,11 +37,11 @@ Indicadores esqueleto tentam não ser excessivamente opinativos, pois há infini
 
   .sample-layout header {
     display: grid;
-    gap: 1rem;
     grid-template-areas:
       'avatar title'
       'avatar subtitle';
     grid-template-columns: 3rem 1fr;
+    gap: 1rem;
   }
 
   .sample-layout header > cps-skeleton:nth-child(1) {
@@ -61,18 +61,18 @@ Indicadores esqueleto tentam não ser excessivamente opinativos, pois há infini
   }
 
   .sample-layout header div > cps-skeleton {
-    height: 1rem;
     display: inline-block;
+    height: 1rem;
   }
 
   .sample-layout header div > cps-skeleton:nth-child(even) {
-    width: 15%;
     margin-right: 1rem;
+    width: 15%;
   }
 
   .sample-layout header div > cps-skeleton:nth-child(odd) {
-    width: 1rem;
     margin-right: 0.5rem;
+    width: 1rem;
   }
 
   .sample-layout > cps-skeleton:is(:nth-child(2), :nth-child(5)) {
@@ -96,11 +96,11 @@ const css = `
 
   .sample-layout header {
     display: grid;
-    gap: 1rem;
     grid-template-areas:
       'avatar title'
       'avatar subtitle';
     grid-template-columns: 3rem 1fr;
+    gap: 1rem;
   }
 
   .sample-layout header > cps-skeleton:nth-child(1) {
@@ -120,18 +120,18 @@ const css = `
   }
 
   .sample-layout header div > cps-skeleton {
-    height: 1rem;
     display: inline-block;
+    height: 1rem;
   }
 
   .sample-layout header div > cps-skeleton:nth-child(even) {
-    width: 15%;
     margin-right: 1rem;
+    width: 15%;
   }
 
   .sample-layout header div > cps-skeleton:nth-child(odd) {
-    width: 1rem;
     margin-right: 0.5rem;
+    width: 1rem;
   }
 
   .sample-layout > cps-skeleton:is(:nth-child(2), :nth-child(5)) {
@@ -378,9 +378,9 @@ Medidas `width` e `height` iguais criam um indicador esqueleto que simula um ava
 <style>
   .skeleton-avatars cps-skeleton {
     display: inline-block;
+    margin-right: 1rem;
     width: 3rem;
     height: 3rem;
-    margin-right: 1rem;
   }
 </style>
 ```
@@ -391,9 +391,9 @@ import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
 const css = `
   .skeleton-avatars cps-skeleton {
     display: inline-block;
+    margin-right: 1rem;
     width: 3rem;
     height: 3rem;
-    margin-right: 1rem;
   }
 `;
 
@@ -414,6 +414,7 @@ const App = () => (
 
 Através do atributo `rounded` é possível criar formas personalizadas simples, como círculos, quadrados e retângulos. Para formas mais complexas, é possível aplicar CSS `clip-path` normalmente (como a qualquer outro elemento HTML). Experimente a ferramenta [Clippy](https://bennettfeely.com/clippy/) se precisar de ajuda para gerar formas personalizadas.
 
+<!-- prettier-ignore-start -->
 ```html preview
 <div class="skeleton-shapes">
   <cps-skeleton class="triangle"></cps-skeleton>
@@ -424,9 +425,9 @@ Através do atributo `rounded` é possível criar formas personalizadas simples,
 <style>
   .skeleton-shapes cps-skeleton {
     display: inline-block;
+    margin-right: 1rem;
     width: 3rem;
     height: 3rem;
-    margin-right: 1rem;
   }
 
   .skeleton-shapes .triangle {
@@ -434,9 +435,7 @@ Através do atributo `rounded` é possível criar formas personalizadas simples,
   }
 
   .skeleton-shapes .cross {
-    <!-- prettier-ignore-start -->
     clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-    <!-- prettier-ignore-end -->
   }
 
   .skeleton-shapes .comment {
@@ -444,6 +443,7 @@ Através do atributo `rounded` é possível criar formas personalizadas simples,
   }
 </style>
 ```
+<!-- prettier-ignore-end -->
 
 ```jsx react
 import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
@@ -451,9 +451,9 @@ import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
 const css = `
   .skeleton-shapes cps-skeleton {
     display: inline-block;
+    margin-right: 1rem;
     width: 3rem;
     height: 3rem;
-    margin-right: 1rem;
   }
 
   .skeleton-shapes .triangle {
@@ -503,11 +503,11 @@ const App = () => <CpsSkeleton style={{ '--color': 'tomato', '--accent-color': '
 <style>
   .skeleton-effect,
   .skeleton-rounded {
-    font: var(--cps-text-label);
     display: grid;
     grid-template-columns: auto 1fr;
-    align-items: center;
     gap: 1rem;
+    align-items: center;
+    font: var(--cps-text-label);
   }
 
   .skeleton-effect span,
