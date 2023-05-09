@@ -6,15 +6,22 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Removed
+
+- Ícones não utilizados da biblioteca de ícones `system`.
+
 ### Changed
 
 - Suporte a elementos de tamanho variável no `<cps-button>`.
+- Atualizada tipagem do _core_ de localização.
 
 ### Added
 
 - Criação do componente `<cps-badge>`.
+- Criação do componente `<cps-chip>`.
 - Criação do componente `<cps-icon-button>`.
 - Criação do componente `<cps-skeleton>`.
+- Definição do tipo de evento `cps-remove`.
 
 ## 0.1.9 - 2023-04-20
 

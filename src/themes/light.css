@@ -361,6 +361,7 @@
 
   /* Neutral */
   --cps-fill-system-neutral: rgb(138 138 138);
+  --cps-fill-system-transparent-neutral: rgb(0 0 0 / 44.58%);
   --cps-fill-system-subtle-neutral: rgb(0 0 0 / 2.41%);
 
   /* Informative */
