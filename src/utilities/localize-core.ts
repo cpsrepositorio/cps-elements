@@ -1,7 +1,7 @@
 /* eslint-disable no-var */
 import type { LitElement, ReactiveController, ReactiveControllerHost } from 'lit';
 
-export type FunctionParams<T> = T extends (...args: infer U) => string ? U : never;
+export type FunctionParams<T> = T extends (...args: infer U) => string ? U : [];
 
 export interface Translation {
   $code: string; // e.g. en, en-GB
@@ -158,25 +158,25 @@ export class LocalizeController<UserTranslation extends Translation = DefaultTra
   /** Outputs a translated term. */
   term<K extends keyof UserTranslation>(key: K, ...args: FunctionParams<UserTranslation[K]>): string {
     const { primary, secondary } = this.getTranslationData(this.lang());
-    let term;
+    let matched;
 
     // Look for a matching term using regionCode, code, then the fallback
     if (primary?.[key]) {
-      term = primary[key];
+      matched = primary[key];
     } else if (secondary?.[key]) {
-      term = secondary[key];
+      matched = secondary[key];
     } else if (fallback && fallback[key as keyof Translation]) {
-      term = fallback[key as keyof Translation];
+      matched = fallback[key as keyof Translation];
     } else {
       console.error(`No translation found for: ${String(key)}`);
       return String(key);
     }
 
-    if (typeof term === 'function') {
-      return term(...args) as string;
+    if (typeof matched === 'function') {
+      return (matched as (...args: FunctionParams<UserTranslation[K]>) => string)(...args);
     }
 
-    return term as string;
+    return matched as string;
   }
 
   /** Outputs a localized date in the specified format. */
