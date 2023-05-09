@@ -11,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
  * @summary _Chips_ são usados como etiquetas para organizar coisas ou para indicar uma seleção.
  * @documentation https://cpsrepositorio.github.io/cps-elements/#/componentes/tag
  * @status stable
- * @since 2.0
+ * @since 0.2
  *
  * @dependency cps-icon-button
  *

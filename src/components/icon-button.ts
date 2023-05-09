@@ -12,7 +12,7 @@ import type { CSSResultGroup } from 'lit';
  *          normalmente para uso dentro de outros componentes.
  * @documentation https://cpsrepositorio.github.io/cps-elements/#/componentes/icon-button
  * @status stable
- * @since 2.0
+ * @since 0.2
  *
  * @dependency cps-icon
  *
