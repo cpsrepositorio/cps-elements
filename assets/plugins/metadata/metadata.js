@@ -379,11 +379,39 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
           return next(content);
         }
 
+        const badge = { text: '', variant: '' };
+        if (component.status === 'stable') {
+          badge.text = 'Publicado';
+          badge.variant = 'informative';
+        }
+        if (component.status === 'experimental') {
+          badge.text = 'Experimental';
+          badge.variant = 'warning';
+        }
+        if (component.status === 'developing') {
+          badge.text = 'Desenvolvimento';
+          badge.variant = 'neutral';
+        }
+        if (component.status === 'deprecated') {
+          badge.text = 'Depreciado';
+          badge.variant = 'critical';
+        }
+
         result += `
           <div class="component-header">
             <div class="component-header__tag">
               <code>&lt;${component.tagName}&gt;</code>
               <code>&lt;${component.title ?? component.name}&gt;</code>
+            </div>
+
+            <div class="component-header__info">
+              <cps-badge variant="neutral" pill>
+                Desde ${component.since || '?'}
+              </cps-badge>
+
+              <cps-badge variant="${badge.variant}" pill style="text-transform: capitalize;">
+                ${badge.text}
+              </cps-badge>
             </div>
 
             <div class="component-header__summary">

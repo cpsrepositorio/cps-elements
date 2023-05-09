@@ -4,6 +4,168 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "components/badge.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsBadge",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito.",
+              "name": "base"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo do _badge_.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, '[default]')"
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+              },
+              "default": "'neutral'",
+              "description": "A variante temática do _badge_.",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Exibe ícone automático de acordo com a variante, ao invés de permitir conteúdo arbitrário no _badge_.",
+              "attribute": "icon",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "square",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Força o _badge_ a um formato retangular, sem arredondamento de bordas.",
+              "attribute": "square",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "pulse",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Efeito pulsante para chamar atenção extra.",
+              "attribute": "pulse",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "hasSingleCharacter",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hasIcon",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+              },
+              "default": "'neutral'",
+              "description": "A variante temática do _badge_.",
+              "fieldName": "variant"
+            },
+            {
+              "name": "icon",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Exibe ícone automático de acordo com a variante, ao invés de permitir conteúdo arbitrário no _badge_.",
+              "fieldName": "icon"
+            },
+            {
+              "name": "square",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Força o _badge_ a um formato retangular, sem arredondamento de bordas.",
+              "fieldName": "square"
+            },
+            {
+              "name": "pulse",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Efeito pulsante para chamar atenção extra.",
+              "fieldName": "pulse"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Distintivos (_badges_) são usados para chamar atenção de forma sutil\r\ne não intrusiva, comumente para exibição de notificações de _status_,\r\nindicação de novo conteúdo ou contagens.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/badge",
+          "status": "stable",
+          "since": "0.2",
+          "dependencies": [
+            "cps-icon"
+          ],
+          "tagName": "cps-badge",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsBadge",
+            "module": "components/badge.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-badge",
+          "declaration": {
+            "name": "CpsBadge",
+            "module": "components/badge.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsBadge",
+          "declaration": {
+            "name": "CpsBadge",
+            "module": "components/badge.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/button-group.js",
       "declarations": [
         {
@@ -798,6 +960,486 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/chip.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsChip",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<span>`).",
+              "name": "base"
+            },
+            {
+              "description": "O `<slot>` de conteúdo interno do _chip_.",
+              "name": "content"
+            },
+            {
+              "description": "O botão de remoção do _chip_ (um `<cps-icon-button>`).",
+              "name": "remove-button"
+            },
+            {
+              "description": "A parte `base` re-exportada do botão de remoção.",
+              "name": "remove-button__base"
+            },
+            {
+              "description": "A parte `icon` re-exportada do botão de remoção.",
+              "name": "remove-button__icon"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo do _chip_.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+              },
+              "default": "'neutral'",
+              "description": "A variante visual para apresentação do _chip_.",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do _chip_.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "removable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Marca o _chip_ como removível, exibindo-se um botão de remoção junto ao conteúdo interno.",
+              "attribute": "removable"
+            },
+            {
+              "kind": "method",
+              "name": "handleRemoveClick",
+              "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o botão de remoção do _chip_ `removable` é acionado.",
+              "name": "cps-remove",
+              "reactName": "onCpsRemove"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+              },
+              "default": "'neutral'",
+              "description": "A variante visual para apresentação do _chip_.",
+              "fieldName": "variant"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do _chip_.",
+              "fieldName": "size"
+            },
+            {
+              "name": "removable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Marca o _chip_ como removível, exibindo-se um botão de remoção junto ao conteúdo interno.",
+              "fieldName": "removable"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "_Chips_ são usados como etiquetas para organizar coisas ou para indicar uma seleção.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tag",
+          "status": "stable",
+          "since": "2.0",
+          "dependencies": [
+            "cps-icon-button"
+          ],
+          "tagName": "cps-chip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsChip",
+            "module": "components/chip.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-chip",
+          "declaration": {
+            "name": "CpsChip",
+            "module": "components/chip.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsChip",
+          "declaration": {
+            "name": "CpsChip",
+            "module": "components/chip.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/icon-button.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsIconButton",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).",
+              "name": "base"
+            },
+            {
+              "description": "O ícone do botão (um `<cps-icon>`).",
+              "name": "icon"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "button",
+              "type": {
+                "text": "HTMLButtonElement | HTMLLinkElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "isFocused",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do botão.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\r\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\r\npor ferramentas de acessibilidade.",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "library",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "attribute": "library"
+            },
+            {
+              "kind": "field",
+              "name": "src",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+              "attribute": "src"
+            },
+            {
+              "kind": "field",
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+              "attribute": "href"
+            },
+            {
+              "kind": "field",
+              "name": "target",
+              "type": {
+                "text": "'_blank' | '_parent' | '_self' | '_top'"
+              },
+              "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+              "attribute": "target"
+            },
+            {
+              "kind": "field",
+              "name": "rel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'noreferrer noopener'",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "attribute": "rel"
+            },
+            {
+              "kind": "field",
+              "name": "download",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+              "attribute": "download"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o botão.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "click",
+              "description": "Simula um _click_ no botão."
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Coloca o foco no botão."
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Remove o foco do botão."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o botão perde o foco.",
+              "name": "cps-blur",
+              "reactName": "onCpsBlur"
+            },
+            {
+              "description": "Emitido quando o botão obtém o foco.",
+              "name": "cps-focus",
+              "reactName": "onCpsFocus"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do botão.",
+              "fieldName": "size"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\r\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\r\npor ferramentas de acessibilidade.",
+              "fieldName": "label"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+              "fieldName": "name"
+            },
+            {
+              "name": "library",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "fieldName": "library"
+            },
+            {
+              "name": "src",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+              "fieldName": "src"
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+              "fieldName": "href"
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "'_blank' | '_parent' | '_self' | '_top'"
+              },
+              "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+              "fieldName": "target"
+            },
+            {
+              "name": "rel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'noreferrer noopener'",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "fieldName": "rel"
+            },
+            {
+              "name": "download",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+              "fieldName": "download"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o botão.",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Botões de ícone são simples, apenas um ícone dentro,\r\nnormalmente para uso dentro de outros componentes.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon-button",
+          "status": "stable",
+          "since": "2.0",
+          "dependencies": [
+            "cps-icon"
+          ],
+          "tagName": "cps-icon-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsIconButton",
+            "module": "components/icon-button.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-icon-button",
+          "declaration": {
+            "name": "CpsIconButton",
+            "module": "components/icon-button.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsIconButton",
+          "declaration": {
+            "name": "CpsIconButton",
+            "module": "components/icon-button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/icon.js",
       "declarations": [
         {
@@ -1095,6 +1737,116 @@
           "declaration": {
             "name": "CpsInclude",
             "module": "components/include.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/skeleton.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsSkeleton",
+          "cssProperties": [
+            {
+              "description": "A cor base do indicador.",
+              "name": "--color"
+            },
+            {
+              "description": "A cor de destaque (ou brilho) a ser usada como efeito de carregamento.",
+              "name": "--accent-color"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento principal que sustenta o indicador (um `<div>`).",
+              "name": "base"
+            },
+            {
+              "description": "O elemento que representa o indicador em si, o qual recebe cor e animação.",
+              "name": "indicator"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "effect",
+              "type": {
+                "text": "'sheen' | 'pulse' | 'none'"
+              },
+              "default": "'sheen'",
+              "description": "Determina o efeito visual de carregamento do indicador.",
+              "attribute": "effect"
+            },
+            {
+              "kind": "field",
+              "name": "rounded",
+              "type": {
+                "text": "'default' | 'corner' | 'full' | 'none'"
+              },
+              "default": "'default'",
+              "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
+              "attribute": "rounded",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "effect",
+              "type": {
+                "text": "'sheen' | 'pulse' | 'none'"
+              },
+              "default": "'sheen'",
+              "description": "Determina o efeito visual de carregamento do indicador.",
+              "fieldName": "effect"
+            },
+            {
+              "name": "rounded",
+              "type": {
+                "text": "'default' | 'corner' | 'full' | 'none'"
+              },
+              "default": "'default'",
+              "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
+              "fieldName": "rounded"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Indicador usado para apresentação visual de conteúdo que potencialmente ainda será exibido.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/skeleton",
+          "status": "stable",
+          "since": "0.2",
+          "tagName": "cps-skeleton",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsSkeleton",
+            "module": "components/skeleton.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-skeleton",
+          "declaration": {
+            "name": "CpsSkeleton",
+            "module": "components/skeleton.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsSkeleton",
+          "declaration": {
+            "name": "CpsSkeleton",
+            "module": "components/skeleton.js"
           }
         }
       ]
@@ -1424,7 +2176,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.1.9",
+    "version": "0.2.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

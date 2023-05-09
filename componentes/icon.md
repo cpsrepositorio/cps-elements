@@ -557,9 +557,9 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
 
 <style>
   .icon-search {
-    background-color: var(--cps-fill-solid-primary);
     border: solid 1px var(--cps-stroke-card-secondary);
     border-radius: var(--cps-border-radius-medium);
+    background-color: var(--cps-fill-solid-primary);
   }
 
   .icon-search [hidden] {
@@ -575,9 +575,9 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
   }
 
   .icon-search-controls cps-select {
-    width: 10rem;
     flex: 0 0 auto;
     margin-left: 1rem;
+    width: 10rem;
   }
 
   .icon-loader {
@@ -589,8 +589,8 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
 
   .icon-list {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
     position: relative;
+    grid-template-columns: repeat(12, 1fr);
     padding: var(--cps-spacing-4);
     max-height: 480px;
     overflow-y: auto;
@@ -613,13 +613,13 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--cps-border-radius-medium);
-    font-size: 24px;
-    width: 2em;
-    height: 2em;
-    margin: 0 auto;
     /* cursor: copy; */
     transition: var(--cps-transition-medium) all;
+    margin: 0 auto;
+    border-radius: var(--cps-border-radius-medium);
+    width: 2em;
+    height: 2em;
+    font-size: 24px;
   }
 
   .icon-list-item:hover {
@@ -655,8 +655,8 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
     }
 
     .icon-search-controls cps-select {
-      width: auto;
       margin: 1rem 0 0 0;
+      width: auto;
     }
   }
 

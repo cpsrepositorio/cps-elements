@@ -11,8 +11,8 @@ export default css `
   /* Label */
   .form-control--has-label .form-control__label {
     display: inline-block;
-    color: inherit;
     margin-bottom: var(--cps-spacing-1);
+    color: inherit;
   }
 
   .form-control--has-label.form-control--small .form-control__label {
@@ -28,16 +28,16 @@ export default css `
   }
 
   :host([required]) .form-control--has-label .form-control__label::after {
-    content: var(--cps-input-required-content);
     margin-inline-start: var(--cps-input-required-content-offset);
     color: var(--cps-input-required-content-color);
+    content: var(--cps-input-required-content);
   }
 
   /* Help text */
   .form-control--has-help-text .form-control__help-text {
     display: block;
-    color: var(--cps-foreground-secondary);
     margin-top: var(--cps-spacing-0-5);
+    color: var(--cps-foreground-secondary);
   }
 
   .form-control--has-help-text.form-control--small .form-control__help-text {

@@ -1,5 +1,9 @@
+export { CpsBadge } from './badge';
 export { CpsButtonGroup } from './button-group';
 export { CpsButton } from './button';
+export { CpsChip } from './chip';
+export { CpsIconButton } from './icon-button';
 export { CpsIcon } from './icon';
 export { CpsInclude } from './include';
+export { CpsSkeleton } from './skeleton';
 export { CpsSpinner } from './spinner';

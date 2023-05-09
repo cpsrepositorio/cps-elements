@@ -123,17 +123,17 @@ Tudo que você já sabe sobre a [sintaxe de `<template>`](https://vuejs.org/guid
 <style scoped>
   /* Estilos CSS com variáveis CSS importadas do tema CPS Elements. */
   :global(body) {
-    font: var(--cps-text-body);
     background-color: var(--cps-fill-solid-primary);
-    color: var(--cps-foreground-primary);
     padding: 1rem;
+    color: var(--cps-foreground-primary);
+    font: var(--cps-text-body);
   }
 
   /* Estilizar componentes CPS Elements também funciona. */
   p cps-icon {
-    font-size: 1rem;
-    vertical-align: middle;
     margin-top: -2px;
+    vertical-align: middle;
+    font-size: 1rem;
   }
 </style>
 ```

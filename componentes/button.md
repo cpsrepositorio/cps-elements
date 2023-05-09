@@ -237,9 +237,21 @@ const App = () => (
 );
 ```
 
-Use arredondamento `full` para garantir um botão completamente circular, o qual, além de arredondado, possui sua medida `width` automaticamente equivalente ao seu `height`. Para aderência ao visão dos botões [somente ícone](https://cpsrepositorio.github.io/cps-design-system/componentes/button.html#icone) do CPS Design System, utilize em conjunto com a variação `transparent`.
+Use arredondamento `full` para garantir um botão completamente circular, o qual, além de arredondado, possui sua medida `width` automaticamente equivalente ao seu `height`.
 
 ```html preview
+<cps-button size="small" rounded="full" variant="default">
+  <cps-icon name="settings-fill" label="Configurações"></cps-icon>
+</cps-button>
+<cps-button size="medium" rounded="full" variant="default">
+  <cps-icon name="settings-fill" label="Configurações"></cps-icon>
+</cps-button>
+<cps-button size="large" rounded="full" variant="default">
+  <cps-icon name="settings-fill" label="Configurações"></cps-icon>
+</cps-button>
+
+<br /><br />
+
 <cps-button size="small" rounded="full" variant="transparent">
   <cps-icon name="settings-fill" label="Configurações"></cps-icon>
 </cps-button>
@@ -249,6 +261,18 @@ Use arredondamento `full` para garantir um botão completamente circular, o qual
 <cps-button size="large" rounded="full" variant="transparent">
   <cps-icon name="settings-fill" label="Configurações"></cps-icon>
 </cps-button>
+
+<br /><br />
+
+<cps-button size="small" rounded="full" variant="accent">
+  <cps-icon name="settings-fill" label="Configurações"></cps-icon>
+</cps-button>
+<cps-button size="medium" rounded="full" variant="accent">
+  <cps-icon name="settings-fill" label="Configurações"></cps-icon>
+</cps-button>
+<cps-button size="large" rounded="full" variant="accent">
+  <cps-icon name="settings-fill" label="Configurações"></cps-icon>
+</cps-button>
 ```
 
 ```jsx react
@@ -256,6 +280,19 @@ import { CpsButton } from '@cps-elements/web/react/button';
 
 const App = () => (
   <>
+    <CpsButton size="small" rounded="full" variant="default">
+      <CpsIcon name="settings-fill" label="Configurações" />
+    </CpsButton>
+    <CpsButton size="medium" rounded="full" variant="default">
+      <CpsIcon name="settings-fill" label="Configurações" />
+    </CpsButton>
+    <CpsButton size="large" rounded="full" variant="default">
+      <CpsIcon name="settings-fill" label="Configurações" />
+    </CpsButton>
+
+    <br />
+    <br />
+
     <CpsButton size="small" rounded="full" variant="transparent">
       <CpsIcon name="settings-fill" label="Configurações" />
     </CpsButton>
@@ -265,11 +302,24 @@ const App = () => (
     <CpsButton size="large" rounded="full" variant="transparent">
       <CpsIcon name="settings-fill" label="Configurações" />
     </CpsButton>
+
+    <br />
+    <br />
+
+    <CpsButton size="small" rounded="full" variant="accent">
+      <CpsIcon name="settings-fill" label="Configurações" />
+    </CpsButton>
+    <CpsButton size="medium" rounded="full" variant="accent">
+      <CpsIcon name="settings-fill" label="Configurações" />
+    </CpsButton>
+    <CpsButton size="large" rounded="full" variant="accent">
+      <CpsIcon name="settings-fill" label="Configurações" />
+    </CpsButton>
   </>
 );
 ```
 
-?> Quando utilizar o arrendondamento `full`, o único conteúdo do botão deve ser um `<cps-icon>` aplicado diretamente no _slot_ padrão, ou seja, declarado como um elemento filho direto.
+?> Se você pretende utilizar botões com arredondamento `full`, contendo somente um ícone como conteúdo, para aderência ao visual dos botões [somente ícone](https://cpsrepositorio.github.io/cps-design-system/componentes/button.html#icone) do CPS Design System, é mais recomendado utilizar o componente [Icon Button](/componentes/icon-button), tanto pela sua facilidade de utilização, quanto por sua otimização para este caso de uso específico.
 
 ### Sinalizador de menu
 
@@ -301,7 +351,7 @@ const App = () => (
 
 ### Botões como âncoras
 
-Muitas vezes você pode querer visualmente um botão, mas cujo funciona se trata apenas de redirecionar o usuário para outro endereço (outra rota de sua aplicação, ou mesmo um _link_ externo). Isto é possível ao utilizar o atributo `href`, o qual garante que o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um `<button>`, enquanto manterá todas as características visuais de um botão.
+Muitas vezes você pode querer visualmente um botão, mas cujo funcionamento se trata de redirecionar o usuário para outro endereço (outra rota de sua aplicação, ou mesmo um _link_ externo). Isto é possível ao utilizar o atributo `href`, o qual garante que o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um `<button>`, enquanto manterá todas as características visuais de um botão.
 
 Isto também permitirá que todos os comportamentos padrão que o navegador provê para _links_ funcionem. Por exemplo, a ação de _click_ combinado com teclas <kbd>⌘</kbd>, <kbd>Ctrl</kbd> ou <kbd>Shift</kbd>, e ainda o suporte aos atributos `target` e `download`.
 
@@ -342,8 +392,8 @@ Assim como elementos HTML nativos, os componentes CPS Elements podem ser estiliz
 Assim, as medidas horizontais (ou mesmo outras coisas, como margens e reposicionamentos) podem ser facilmente ajustadas. Por exemplo, atributos CSS `width` e `margin` são aceitos normalmente (seja com `style` ou com `class`).
 
 ```html preview
-<cps-button size="small" style="width: 100%; margin-bottom: 1rem">Pequeno</cps-button>
-<cps-button size="medium" style="width: 100%; margin-bottom: 1rem">Médio</cps-button>
+<cps-button size="small" style="margin-bottom: 1rem; width: 100%">Pequeno</cps-button>
+<cps-button size="medium" style="margin-bottom: 1rem; width: 100%">Médio</cps-button>
 <cps-button size="large" style="width: 100%">Grande</cps-button>
 ```
 
@@ -508,16 +558,16 @@ Através de uma mistura de técnicas com partes CSS e variáveis CSS com valores
     --cps-button-border-width: 4px;
 
     /* Definindo atributos CSS conforme desejado */
+    transition: var(--cps-transition-medium) transform ease, var(--cps-transition-medium) border ease;
     border-radius: 0;
-    background-color: #ff1493;
     border-top-color: #ff7ac1;
-    border-left-color: #ff7ac1;
-    border-bottom-color: #ad005c;
     border-right-color: #ad005c;
+    border-bottom-color: #ad005c;
+    border-left-color: #ff7ac1;
+    box-shadow: 0 2px 10px #0002;
+    background-color: #ff1493;
     color: white;
     font-size: 1.125rem;
-    box-shadow: 0 2px 10px #0002;
-    transition: var(--cps-transition-medium) transform ease, var(--cps-transition-medium) border ease;
   }
 
   cps-button.fancy::part(base):hover {
@@ -525,11 +575,11 @@ Através de uma mistura de técnicas com partes CSS e variáveis CSS com valores
   }
 
   cps-button.fancy::part(base):active {
+    transform: scale(1.05) rotate(-1deg) translateY(2px);
     border-top-color: #ad005c;
     border-right-color: #ff7ac1;
     border-bottom-color: #ff7ac1;
     border-left-color: #ad005c;
-    transform: scale(1.05) rotate(-1deg) translateY(2px);
   }
 
   cps-button.fancy::part(base):focus-visible {

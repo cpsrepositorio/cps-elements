@@ -193,6 +193,8 @@
 
       [...doc.querySelectorAll('code[class^="lang-"]')].forEach(code => {
         if (code.classList.contains('preview')) {
+          code.textContent = code.textContent.replace(/^(\s)*<!-- prettier-ignore-(start|end) -->\n/gm, '');
+
           const isExpanded = code.classList.contains('expanded');
           const pre = code.closest('pre');
           const sourceGroupId = `code-block-source-group-${count}`;

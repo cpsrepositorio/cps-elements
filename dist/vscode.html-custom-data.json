@@ -2,6 +2,39 @@
   "version": 1.1,
   "tags": [
     {
+      "name": "cps-badge",
+      "description": "Distintivos (_badges_) são usados para chamar atenção de forma sutil\r\ne não intrusiva, comumente para exibição de notificações de _status_,\r\nindicação de novo conteúdo ou contagens.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do _badge_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito.",
+      "attributes": [
+        {
+          "name": "variant",
+          "description": "A variante temática do _badge_.",
+          "values": [
+            { "name": "neutral" },
+            { "name": "informative" },
+            { "name": "warning" },
+            { "name": "critical" },
+            { "name": "success" }
+          ]
+        },
+        {
+          "name": "icon",
+          "description": "Exibe ícone automático de acordo com a variante, ao invés de permitir conteúdo arbitrário no _badge_.",
+          "values": []
+        },
+        {
+          "name": "square",
+          "description": "Força o _badge_ a um formato retangular, sem arredondamento de bordas.",
+          "values": []
+        },
+        {
+          "name": "pulse",
+          "description": "Efeito pulsante para chamar atenção extra.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-button-group",
       "description": "Grupos de botões podem ser usados para agrupar botões relacionados em seções.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - Um ou mais elementos `<cps-button>` a exibir dentro do grupo de botões.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o grupo.",
       "attributes": [
@@ -147,6 +180,104 @@
       "references": []
     },
     {
+      "name": "cps-chip",
+      "description": "_Chips_ são usados como etiquetas para organizar coisas ou para indicar uma seleção.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-remove** - Emitido quando o botão de remoção do _chip_ `removable` é acionado.\n\n### **Slots:**\n - _default_ - O conteúdo do _chip_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<span>`).\n- **content** - O `<slot>` de conteúdo interno do _chip_.\n- **remove-button** - O botão de remoção do _chip_ (um `<cps-icon-button>`).\n- **remove-button__base** - A parte `base` re-exportada do botão de remoção.\n- **remove-button__icon** - A parte `icon` re-exportada do botão de remoção.",
+      "attributes": [
+        {
+          "name": "variant",
+          "description": "A variante visual para apresentação do _chip_.",
+          "values": [
+            { "name": "neutral" },
+            { "name": "informative" },
+            { "name": "warning" },
+            { "name": "critical" },
+            { "name": "success" }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do _chip_.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "removable",
+          "description": "Marca o _chip_ como removível, exibindo-se um botão de remoção junto ao conteúdo interno.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-icon-button",
+      "description": "Botões de ícone são simples, apenas um ícone dentro,\r\nnormalmente para uso dentro de outros componentes.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).\n- **icon** - O ícone do botão (um `<cps-icon>`).",
+      "attributes": [
+        {
+          "name": "size",
+          "description": "O tamanho do botão.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "label",
+          "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\r\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\r\npor ferramentas de acessibilidade.",
+          "values": []
+        },
+        {
+          "name": "name",
+          "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+          "values": []
+        },
+        {
+          "name": "library",
+          "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+          "values": []
+        },
+        {
+          "name": "src",
+          "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+          "values": []
+        },
+        {
+          "name": "href",
+          "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+          "values": []
+        },
+        {
+          "name": "target",
+          "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+          "values": [
+            { "name": "_blank" },
+            { "name": "_parent" },
+            { "name": "_self" },
+            { "name": "_top" }
+          ]
+        },
+        {
+          "name": "rel",
+          "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+          "values": []
+        },
+        {
+          "name": "download",
+          "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o botão.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-icon",
       "description": "Ícones são símbolos gráficos para representação de ações ou informações em uma interface.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o ícone foi carregado.\n- **cps-error** - Emitido quando o ícone falha para carregar devido a um erro.\n\n### **CSS Parts:**\n - **svg** - O elemento SVG renderizado.",
       "attributes": [
@@ -195,6 +326,32 @@
           "name": "allow-scripts",
           "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
           "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-skeleton",
+      "description": "Indicador usado para apresentação visual de conteúdo que potencialmente ainda será exibido.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--color** - A cor base do indicador. _(default: undefined)_\n- **--accent-color** - A cor de destaque (ou brilho) a ser usada como efeito de carregamento. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal que sustenta o indicador (um `<div>`).\n- **indicator** - O elemento que representa o indicador em si, o qual recebe cor e animação.",
+      "attributes": [
+        {
+          "name": "effect",
+          "description": "Determina o efeito visual de carregamento do indicador.",
+          "values": [
+            { "name": "sheen" },
+            { "name": "pulse" },
+            { "name": "none" }
+          ]
+        },
+        {
+          "name": "rounded",
+          "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
+          "values": [
+            { "name": "default" },
+            { "name": "corner" },
+            { "name": "full" },
+            { "name": "none" }
+          ]
         }
       ],
       "references": []

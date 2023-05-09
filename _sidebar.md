@@ -15,9 +15,13 @@
 
 - Componentes
 
+  - [Badge](/componentes/badge)
   - [Button](/componentes/button)
   - [Button Group](/componentes/button-group)
+  - [Chip](/componentes/chip)
   - [Icon](/componentes/icon)
+  - [Icon Button](/componentes/icon-button)
+  - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
   - [<code>...</code> <small>(em breve)</small>](/404)
   <!--plop:component-->

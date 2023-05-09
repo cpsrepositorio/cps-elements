@@ -1,9 +1,9 @@
 .code-block {
   position: relative;
-  border-radius: var(--cps-border-radius-medium);
-  border: solid 1px var(--cps-stroke-card-secondary);
-  background-color: var(--cps-fill-solid-quarternary);
   margin-bottom: 1.5rem;
+  border: solid 1px var(--cps-stroke-card-secondary);
+  border-radius: var(--cps-border-radius-medium);
+  background-color: var(--cps-fill-solid-quaternary);
 }
 
 .code-block__preview {
@@ -11,39 +11,39 @@
   border-top-left-radius: var(--cps-border-radius-medium);
   border-top-right-radius: var(--cps-border-radius-medium);
   background-color: var(--cps-fill-solid-tertiary);
+  padding: 1.5rem 3.25rem 1.5rem 1.5rem;
   min-width: 20rem;
   max-width: 100%;
-  padding: 1.5rem 3.25rem 1.5rem 1.5rem;
 }
 
 /* Block the preview while dragging to prevent iframes from intercepting drag events */
 .code-block__preview--dragging:after {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   opacity: 0;
   cursor: ew-resize;
+  width: 100%;
+  height: 100%;
+  content: '';
 }
 
 .code-block__resizer {
   display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
   top: 0;
   right: -1px;
   bottom: 0;
-  width: calc(1.75rem + 1px);
-  font-size: 20px;
-  background-color: var(--cps-fill-control-primary);
-  border-left: solid 1px var(--cps-stroke-card-secondary);
+  align-items: center;
+  justify-content: center;
   border-right: solid 1px var(--cps-stroke-card-secondary);
+  border-left: solid 1px var(--cps-stroke-card-secondary);
   border-top-right-radius: var(--cps-border-radius-medium);
-  color: var(--cps-foreground-secondary);
+  background-color: var(--cps-fill-control-primary);
   cursor: ew-resize;
+  width: calc(1.75rem + 1px);
+  color: var(--cps-foreground-secondary);
+  font-size: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -57,26 +57,23 @@
 }
 
 .code-block__source {
-  border-radius: 0 !important;
   display: none;
+  border-radius: 0 !important;
 }
 
 .code-block--expanded .code-block__source {
   display: block;
-}
-
-.code-block--expanded .code-block__source {
   position: relative;
   padding-top: 1px;
 }
 
 .code-block--expanded .code-block__source::before {
   position: absolute;
-  content: '';
   top: 0;
-  height: 1px;
-  width: 100%;
   background-color: var(--cps-stroke-card-secondary);
+  width: 100%;
+  height: 1px;
+  content: '';
 }
 
 .code-block__source pre {
@@ -84,31 +81,31 @@
 }
 
 .code-block__source pre > code {
-  background-color: var(--cps-fill-solid-primary);
+  margin: 0;
   border: none;
   border-radius: 0;
-  margin: 0;
+  background-color: var(--cps-fill-solid-primary);
 }
 
 .code-block__buttons {
-  position: relative;
   display: flex;
+  position: relative;
   border-top: solid 1px var(--cps-stroke-card-secondary);
 }
 
 .code-block__button {
   flex: 0 0 auto;
-  height: 2.5rem;
-  min-width: 2.5rem;
+  transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) color,
+    var(--cps-transition-fast) border;
   border: none;
   border-radius: 0;
   background-color: var(--cps-fill-control-primary);
-  font: var(--cps-text-body);
-  color: var(--cps-foreground-primary);
-  padding: 0 1rem;
   cursor: pointer;
-  transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) color,
-    var(--cps-transition-fast) border;
+  padding: 0 1rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  color: var(--cps-foreground-primary);
+  font: var(--cps-text-body);
 }
 
 .code-block__button:not(:last-of-type) {
@@ -124,8 +121,8 @@
 }
 
 .code-block__button--selected {
-  font-weight: var(--cps-font-weight-semibold);
   color: rgb(var(--cps-color-accent-600));
+  font-weight: var(--cps-font-weight-semibold);
 }
 
 .code-block__button--codepen {
@@ -143,38 +140,39 @@
 }
 
 .code-block__button:hover {
+  z-index: 1;
   background-color: var(--cps-fill-control-secondary);
   color: var(--cps-foreground-primary);
-  z-index: 1;
 }
 
 .code-block__button:active {
+  z-index: 1;
   background-color: var(--cps-fill-control-tertiary);
   color: var(--cps-foreground-tertiary);
-  z-index: 1;
 }
 
 .code-block__button:focus-visible {
+  z-index: 2;
   outline: none;
   outline: var(--cps-focus-ring);
-  z-index: 2;
 }
 
 .code-block__toggle {
-  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
   display: flex;
+  position: relative;
   flex: 1 1 auto;
   align-items: center;
   justify-content: center;
-  width: 100%;
   cursor: pointer;
-  -webkit-appearance: none;
+  width: 100%;
 }
 
 .code-block__toggle svg {
+  margin-left: 0.25rem;
   width: 1em;
   height: 1em;
-  margin-left: 0.25rem;
 }
 
 .code-block--expanded .code-block__toggle svg {
@@ -185,14 +183,14 @@
 .markdown-section .docsify-copy-code-button {
   top: 4px;
   right: 4px;
-  background-color: rgb(var(--cps-color-neutral-500));
+  transition: 0.1s all;
   border-radius: var(--cps-border-radius-medium);
+  background-color: rgb(var(--cps-color-neutral-500));
+  padding: 6px 8px;
   font-family: var(--cps-font-sans);
   font-size: var(--cps-font-size-xs);
   font-weight: var(--cps-font-weight-semibold);
-  padding: 6px 8px;
   user-select: none;
-  transition: 0.1s all;
 }
 
 .markdown-section .docsify-copy-code-button.copied {
@@ -227,8 +225,8 @@
 }
 
 .markdown-section .docsify-copy-code-button:active {
-  background-color: rgb(var(--cps-color-neutral-600));
   transform: scale(0.92);
+  background-color: rgb(var(--cps-color-neutral-600));
 }
 
 /* We can apply data-flavor="html|react|vue" to any element on the page to toggle it when the user's flavor changes */

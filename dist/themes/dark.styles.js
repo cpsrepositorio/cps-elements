@@ -320,46 +320,26 @@ export default css`
     --cps-color-accent-900: var(--cps-color-petrol-900);
     --cps-color-accent-950: var(--cps-color-petrol-950);
 
-    --cps-color-success-50: var(--cps-color-green-50);
-    --cps-color-success-100: var(--cps-color-green-100);
-    --cps-color-success-200: var(--cps-color-green-200);
-    --cps-color-success-300: var(--cps-color-green-300);
-    --cps-color-success-400: var(--cps-color-green-400);
-    --cps-color-success-500: var(--cps-color-green-500);
-    --cps-color-success-600: var(--cps-color-green-600);
-    --cps-color-success-700: var(--cps-color-green-700);
-    --cps-color-success-800: var(--cps-color-green-800);
-    --cps-color-success-900: var(--cps-color-green-900);
-    --cps-color-success-950: var(--cps-color-green-950);
+    --cps-fill-system-neutral: rgb(157 157 157);
+    --cps-fill-system-transparent-neutral: rgb(255 255 255 / 54.42%);
+    --cps-fill-system-subtle-neutral: rgb(255 255 255 / 3.26%);
 
-    --cps-color-warning-50: var(--cps-color-amber-50);
-    --cps-color-warning-100: var(--cps-color-amber-100);
-    --cps-color-warning-200: var(--cps-color-amber-200);
-    --cps-color-warning-300: var(--cps-color-amber-300);
-    --cps-color-warning-400: var(--cps-color-amber-400);
-    --cps-color-warning-500: var(--cps-color-amber-500);
-    --cps-color-warning-600: var(--cps-color-amber-600);
-    --cps-color-warning-700: var(--cps-color-amber-700);
-    --cps-color-warning-800: var(--cps-color-amber-800);
-    --cps-color-warning-900: var(--cps-color-amber-900);
-    --cps-color-warning-950: var(--cps-color-amber-950);
+    --cps-fill-system-informative: rgb(96 205 255);
+    --cps-fill-system-subtle-informative: rgba(255 255 255 / 3.26%);
 
-    --cps-color-danger-50: var(--cps-color-red-50);
-    --cps-color-danger-100: var(--cps-color-red-100);
-    --cps-color-danger-200: var(--cps-color-red-200);
-    --cps-color-danger-300: var(--cps-color-red-300);
-    --cps-color-danger-400: var(--cps-color-red-400);
-    --cps-color-danger-500: var(--cps-color-red-500);
-    --cps-color-danger-600: var(--cps-color-red-600);
-    --cps-color-danger-700: var(--cps-color-red-700);
-    --cps-color-danger-800: var(--cps-color-red-800);
-    --cps-color-danger-900: var(--cps-color-red-900);
-    --cps-color-danger-950: var(--cps-color-red-950);
+    --cps-fill-system-warning: rgb(252 225 0);
+    --cps-fill-system-subtle-warning: rgb(67 53 25);
+
+    --cps-fill-system-critical: rgb(255 153 164);
+    --cps-fill-system-subtle-critical: rgb(68 39 38);
+
+    --cps-fill-system-success: rgb(108 203 95);
+    --cps-fill-system-subtle-success: rgb(57 61 27);
 
     --cps-fill-solid-primary: rgb(32 32 32);
     --cps-fill-solid-secondary: rgb(28 28 28);
     --cps-fill-solid-tertiary: rgb(40 40 40);
-    --cps-fill-solid-quarternary: rgb(44 44 44);
+    --cps-fill-solid-quaternary: rgb(44 44 44);
 
     --cps-fill-control-primary: rgb(var(--cps-color-neutral-1000) / 6.05%);
     --cps-fill-control-secondary: rgb(var(--cps-color-neutral-1000) / 8.37%);
@@ -368,7 +348,7 @@ export default css`
 
     --cps-fill-control-alt-secondary: rgb(var(--cps-color-neutral-0) / 10%);
     --cps-fill-control-alt-tertiary: rgb(var(--cps-color-neutral-1000) / 5.78%);
-    --cps-fill-control-alt-quarternary: rgb(
+    --cps-fill-control-alt-quaternary: rgb(
       var(--cps-color-neutral-1000) / 6.98%
     );
 
@@ -533,7 +513,7 @@ export default css`
     --cps-tracking-tighter: -0.05em;
     --cps-tracking-tight: -0.025em;
     --cps-tracking-normal: 0em;
-    --cps-tracking-wider: 0.025em;
+    --cps-tracking-wide: 0.025em;
     --cps-tracking-wider: 0.05em;
     --cps-tracking-widest: 0.1em;
 
@@ -554,6 +534,10 @@ export default css`
     --cps-button-height-large: 2.5rem;
 
     --cps-button-border-width: 1px;
+
+    --cps-icon-button-height-small: 1rem;
+    --cps-icon-button-height-medium: 1.375rem;
+    --cps-icon-button-height-large: 2.375rem;
 
     --cps-input-height-small: 1.5rem;
     --cps-input-height-medium: 2rem;

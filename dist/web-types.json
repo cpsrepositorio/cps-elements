@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -13,6 +13,86 @@
   "contributions": {
     "html": {
       "elements": [
+        {
+          "name": "cps-badge",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/badge",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "variant",
+                "description": "A variante temática do _badge_.",
+                "value": {
+                  "type": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+                }
+              },
+              {
+                "name": "icon",
+                "description": "Exibe ícone automático de acordo com a variante, ao invés de permitir conteúdo arbitrário no _badge_.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "square",
+                "description": "Força o _badge_ a um formato retangular, sem arredondamento de bordas.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "pulse",
+                "description": "Efeito pulsante para chamar atenção extra.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "hasSingleCharacter",
+                "value": {}
+              },
+              {
+                "name": "hasIcon",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "A variante temática do _badge_.",
+              "value": {
+                "type": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+              }
+            },
+            {
+              "name": "icon",
+              "description": "Exibe ícone automático de acordo com a variante, ao invés de permitir conteúdo arbitrário no _badge_.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "square",
+              "description": "Força o _badge_ a um formato retangular, sem arredondamento de bordas.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "pulse",
+              "description": "Efeito pulsante para chamar atenção extra.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
         {
           "name": "cps-button-group",
           "description": "",
@@ -482,6 +562,273 @@
           ]
         },
         {
+          "name": "cps-chip",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/chip",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "variant",
+                "description": "A variante visual para apresentação do _chip_.",
+                "value": {
+                  "type": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do _chip_.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "removable",
+                "description": "Marca o _chip_ como removível, exibindo-se um botão de remoção junto ao conteúdo interno.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleRemoveClick",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-remove",
+                "description": "Emitido quando o botão de remoção do _chip_ `removable` é acionado."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "A variante visual para apresentação do _chip_.",
+              "value": {
+                "type": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do _chip_.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "removable",
+              "description": "Marca o _chip_ como removível, exibindo-se um botão de remoção junto ao conteúdo interno.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-icon-button",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon-button",
+          "js": {
+            "properties": [
+              {
+                "name": "button",
+                "value": {
+                  "type": "HTMLButtonElement | HTMLLinkElement"
+                }
+              },
+              {
+                "name": "isFocused",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do botão.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "label",
+                "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\r\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\r\npor ferramentas de acessibilidade.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "library",
+                "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "src",
+                "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "href",
+                "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "target",
+                "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+                "value": {
+                  "type": "'_blank' | '_parent' | '_self' | '_top'"
+                }
+              },
+              {
+                "name": "rel",
+                "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "download",
+                "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o botão.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no botão.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no botão.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do botão.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o botão perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o botão obtém o foco."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "size",
+              "description": "O tamanho do botão.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "label",
+              "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\r\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\r\npor ferramentas de acessibilidade.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "library",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "src",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "href",
+              "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "target",
+              "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+              "value": {
+                "type": "'_blank' | '_parent' | '_self' | '_top'"
+              }
+            },
+            {
+              "name": "rel",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "download",
+              "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o botão.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-icon",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon",
@@ -643,6 +990,46 @@
               "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
               "value": {
                 "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-skeleton",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/skeleton",
+          "js": {
+            "properties": [
+              {
+                "name": "effect",
+                "description": "Determina o efeito visual de carregamento do indicador.",
+                "value": {
+                  "type": "'sheen' | 'pulse' | 'none'"
+                }
+              },
+              {
+                "name": "rounded",
+                "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
+                "value": {
+                  "type": "'default' | 'corner' | 'full' | 'none'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "effect",
+              "description": "Determina o efeito visual de carregamento do indicador.",
+              "value": {
+                "type": "'sheen' | 'pulse' | 'none'"
+              }
+            },
+            {
+              "name": "rounded",
+              "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
+              "value": {
+                "type": "'default' | 'corner' | 'full' | 'none'"
               }
             }
           ]

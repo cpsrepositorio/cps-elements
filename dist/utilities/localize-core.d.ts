@@ -1,5 +1,5 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
-export type FunctionParams<T> = T extends (...args: infer U) => string ? U : never;
+export type FunctionParams<T> = T extends (...args: infer U) => string ? U : [];
 export interface Translation {
     $code: string;
     $name: string;
