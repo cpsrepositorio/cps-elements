@@ -121,7 +121,7 @@
 }
 
 .code-block__button--selected {
-  color: rgb(var(--cps-color-accent-600));
+  color: rgb(var(--cps-color-accent-800));
   font-weight: var(--cps-font-weight-semibold);
 }
 

@@ -5,5 +5,6 @@ export { CpsChip } from './chip';
 export { CpsIconButton } from './icon-button';
 export { CpsIcon } from './icon';
 export { CpsInclude } from './include';
+export { CpsInput } from './input';
 export { CpsSkeleton } from './skeleton';
 export { CpsSpinner } from './spinner';

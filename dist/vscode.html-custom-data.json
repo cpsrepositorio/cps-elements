@@ -331,6 +331,198 @@
       "references": []
     },
     {
+      "name": "cps-input",
+      "description": "Caixas de entrada (_inputs_) coletam dados preenchidos pelos usuários.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n- **select()** - Seleciona todo o texto existente no campo.\n- **setSelectionRange(selectionStart: _number_, selectionEnd: _number_, selectionDirection: _'forward' | 'backward' | 'none'_)** - Define as posições de início e término da seleção de texto do campo (índices baseados em `0`).\n- **setRangeText(replacement: _string_, start: _number_, end: _number_, selectMode: _'select' | 'start' | 'end' | 'preserve'_)** - Atualiza um intervalo de texto do campo com o novo valor informado (índices baseados em `0`).\n- **showPicker()** - Exibe o menu seletor de opções nativo do navegador, de acordo com o `type` do campo (funciona apenas se o navegador suportar um menu seletor para o tipo de entrada em questão).\n- **stepUp()** - Incrementa o valor de um campo numérico pelo valor do atributo `step` (somente se o `type` definido for `number`).\n- **stepDown()** - Decrementa o valor de um campo numérico pelo valor do atributo `step` (somente se o `type` definido for `number`).\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **base** - O elemento base que embrulha o `<input>` e eventuais prefixo e sufixo.\n- **input** - O controle `<input>` interno propriamente dito.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **password-toggle-button** - O botão de alternar visibilidade de senha (caso `password-toggle` esteja em uso).\n- **password-toggle-button__base** - A parte `base` re-exportada do botão de visibilidade de senha.\n- **password-toggle-button__icon** - A parte `icon` re-exportada do botão de visibilidade de senha.",
+      "attributes": [
+        { "name": "title", "values": [] },
+        {
+          "name": "type",
+          "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\r\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
+          "values": [
+            { "name": "date" },
+            { "name": "datetime-local" },
+            { "name": "email" },
+            { "name": "number" },
+            { "name": "password" },
+            { "name": "search" },
+            { "name": "tel" },
+            { "name": "text" },
+            { "name": "time" },
+            { "name": "url" }
+          ]
+        },
+        {
+          "name": "id",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "values": []
+        },
+        {
+          "name": "name",
+          "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do campo.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "label",
+          "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "help-text",
+          "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "clearable",
+          "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o campo.",
+          "values": []
+        },
+        {
+          "name": "placeholder",
+          "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+          "values": []
+        },
+        {
+          "name": "readonly",
+          "description": "Torna o campo somente leitura.",
+          "values": []
+        },
+        {
+          "name": "password-toggle",
+          "description": "Adiciona um botão de alternância de visibilidade de senha. Aplicável somente se `type` for `password`.",
+          "values": []
+        },
+        {
+          "name": "password-visible",
+          "description": "Determina se uma senha em preenchimento está visível como texto plano neste momento. Aplicável somente se `type` for `password`.",
+          "values": []
+        },
+        {
+          "name": "no-spin-buttons",
+          "description": "Força ocultar os botões de incremento/decremento nativos do navegador para entradas numéricas. Aplicável somente se `type` for `number`.",
+          "values": []
+        },
+        {
+          "name": "form",
+          "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+          "values": []
+        },
+        {
+          "name": "required",
+          "description": "Torna o campo como sendo de preenchimento obrigatório.",
+          "values": []
+        },
+        {
+          "name": "pattern",
+          "description": "Uma expressão regular para validar a entrada do campo.",
+          "values": []
+        },
+        {
+          "name": "minlength",
+          "description": "O tamanho mínimo de caracteres que serão considerados válidos.",
+          "values": []
+        },
+        {
+          "name": "maxlength",
+          "description": "O tamanho máximo de caracteres que serão considerados válidos.",
+          "values": []
+        },
+        {
+          "name": "min",
+          "description": "O valor mínimo que será considerado válido. Aplicável somente se `type` for `date` ou `number`.",
+          "values": []
+        },
+        {
+          "name": "max",
+          "description": "O valor máximo que será considerado válido. Aplicável somente se `type` for `date` ou `number`.",
+          "values": []
+        },
+        {
+          "name": "step",
+          "description": "Especifica a granularidade que o valor deve obedecer, ou o valor especial `any` que significa que nenhum passo é\r\nimplicado, permitindo qualquer valor numérico. Aplicável somente se `type` for `date` ou `number`.",
+          "values": [{ "name": "any" }]
+        },
+        {
+          "name": "autocapitalize",
+          "description": "Controla se e como a entrada de texto é capitalizada enquanto inserida pelo usuário.",
+          "values": [
+            { "name": "off" },
+            { "name": "none" },
+            { "name": "on" },
+            { "name": "sentences" },
+            { "name": "words" },
+            { "name": "characters" }
+          ]
+        },
+        {
+          "name": "autocorrect",
+          "description": "Indica se o recurso de correção automática do navegador deve ser utilizado.",
+          "values": [{ "name": "off" }, { "name": "on" }]
+        },
+        {
+          "name": "autocomplete",
+          "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+          "values": []
+        },
+        {
+          "name": "autofocus",
+          "description": "Indica que o campo deve receber foco assim que a página for carregada.",
+          "values": []
+        },
+        {
+          "name": "enterkeyhint",
+          "description": "Utilizado para definir a aparência e o comportamento da tela `Enter` em teclados virtuais.",
+          "values": [
+            { "name": "enter" },
+            { "name": "done" },
+            { "name": "go" },
+            { "name": "next" },
+            { "name": "previous" },
+            { "name": "search" },
+            { "name": "send" }
+          ]
+        },
+        {
+          "name": "spellcheck",
+          "description": "Habilita correção ortográfica no campo.",
+          "values": []
+        },
+        {
+          "name": "inputmode",
+          "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+          "values": [
+            { "name": "none" },
+            { "name": "text" },
+            { "name": "decimal" },
+            { "name": "numeric" },
+            { "name": "tel" },
+            { "name": "search" },
+            { "name": "email" },
+            { "name": "url" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-skeleton",
       "description": "Indicador usado para apresentação visual de conteúdo que potencialmente ainda será exibido.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--color** - A cor base do indicador. _(default: undefined)_\n- **--accent-color** - A cor de destaque (ou brilho) a ser usada como efeito de carregamento. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal que sustenta o indicador (um `<div>`).\n- **indicator** - O elemento que representa o indicador em si, o qual recebe cor e animação.",
       "attributes": [

@@ -543,6 +543,19 @@ export default css`
     --cps-input-height-medium: 2rem;
     --cps-input-height-large: 2.5rem;
 
+    --cps-input-spacing-small: var(--cps-spacing-2);
+    --cps-input-spacing-medium: calc(var(--cps-spacing-3) - 1px);
+    --cps-input-spacing-large: var(--cps-spacing-3-5);
+
+    --cps-input-border-width: 1px;
+    --cps-input-border-color: var(--cps-fill-control-alt-tertiary);
+    --cps-input-border-bottom-color: var(--cps-foreground-tertiary);
+
+    --cps-input-background: var(--cps-fill-control-primary);
+    --cps-input-background-hover: var(--cps-fill-control-secondary);
+    --cps-input-background-active: rgb(var(--cps-color-neutral-200) / 70%);
+    --cps-input-background-disabled: var(--cps-fill-control-disabled);
+
     --cps-input-required-content: "*";
     --cps-input-required-content-offset: -2px;
     --cps-input-required-content-color: inherit;

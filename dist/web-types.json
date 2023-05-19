@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -990,6 +990,634 @@
               "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
               "value": {
                 "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-input",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/input",
+          "js": {
+            "properties": [
+              {
+                "name": "formControlController",
+                "value": {}
+              },
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "input",
+                "value": {
+                  "type": "HTMLInputElement"
+                }
+              },
+              {
+                "name": "hasFocus",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "generatedId",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "title",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "type",
+                "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\r\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
+                "value": {
+                  "type": "'date' | 'datetime-local' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url'"
+                }
+              },
+              {
+                "name": "id",
+                "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "defaultValue",
+                "description": "O valor padrão do controle de formulário. Usado principalmente para redefinir o campo.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do campo.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "label",
+                "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "helpText",
+                "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "clearable",
+                "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o campo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "placeholder",
+                "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "readonly",
+                "description": "Torna o campo somente leitura.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "passwordToggle",
+                "description": "Adiciona um botão de alternância de visibilidade de senha. Aplicável somente se `type` for `password`.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "passwordVisible",
+                "description": "Determina se uma senha em preenchimento está visível como texto plano neste momento. Aplicável somente se `type` for `password`.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "noSpinButtons",
+                "description": "Força ocultar os botões de incremento/decremento nativos do navegador para entradas numéricas. Aplicável somente se `type` for `number`.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "form",
+                "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "required",
+                "description": "Torna o campo como sendo de preenchimento obrigatório.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "pattern",
+                "description": "Uma expressão regular para validar a entrada do campo.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "minlength",
+                "description": "O tamanho mínimo de caracteres que serão considerados válidos.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "maxlength",
+                "description": "O tamanho máximo de caracteres que serão considerados válidos.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "min",
+                "description": "O valor mínimo que será considerado válido. Aplicável somente se `type` for `date` ou `number`.",
+                "value": {
+                  "type": "number | string"
+                }
+              },
+              {
+                "name": "max",
+                "description": "O valor máximo que será considerado válido. Aplicável somente se `type` for `date` ou `number`.",
+                "value": {
+                  "type": "number | string"
+                }
+              },
+              {
+                "name": "step",
+                "description": "Especifica a granularidade que o valor deve obedecer, ou o valor especial `any` que significa que nenhum passo é\r\nimplicado, permitindo qualquer valor numérico. Aplicável somente se `type` for `date` ou `number`.",
+                "value": {
+                  "type": "number | 'any'"
+                }
+              },
+              {
+                "name": "autocapitalize",
+                "description": "Controla se e como a entrada de texto é capitalizada enquanto inserida pelo usuário.",
+                "value": {
+                  "type": "'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'"
+                }
+              },
+              {
+                "name": "autocorrect",
+                "description": "Indica se o recurso de correção automática do navegador deve ser utilizado.",
+                "value": {
+                  "type": "'off' | 'on'"
+                }
+              },
+              {
+                "name": "autocomplete",
+                "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "autofocus",
+                "description": "Indica que o campo deve receber foco assim que a página for carregada.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "enterkeyhint",
+                "description": "Utilizado para definir a aparência e o comportamento da tela `Enter` em teclados virtuais.",
+                "value": {
+                  "type": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'"
+                }
+              },
+              {
+                "name": "spellcheck",
+                "description": "Habilita correção ortográfica no campo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "inputmode",
+                "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+                "value": {
+                  "type": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
+                }
+              },
+              {
+                "name": "valueAsDate",
+                "description": "Obtém ou define o valor atual como um objeto `Date`. Retorna `null` se o valor não puder ser convertido.",
+                "value": {}
+              },
+              {
+                "name": "valueAsNumber",
+                "description": "Obtém ou define o valor atual como um número. Retorna `NaN` se o valor não puder ser convertido.",
+                "value": {}
+              },
+              {
+                "name": "validity",
+                "description": "Obtém o objeto de estado de validade do botão.",
+                "value": {}
+              },
+              {
+                "name": "validationMessage",
+                "description": "Obtém a mensagem de validação do botão.",
+                "value": {}
+              },
+              {
+                "name": "handleIdChange",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleChange",
+                "value": {}
+              },
+              {
+                "name": "handleClearClick",
+                "value": {}
+              },
+              {
+                "name": "handleBaseClick",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleInput",
+                "value": {}
+              },
+              {
+                "name": "handleInvalid",
+                "value": {}
+              },
+              {
+                "name": "handleKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handlePasswordToggle",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "handleStepChange",
+                "value": {}
+              },
+              {
+                "name": "handleValueChange",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no botão.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do botão.",
+                "value": {}
+              },
+              {
+                "name": "select",
+                "description": "Seleciona todo o texto existente no campo.",
+                "value": {}
+              },
+              {
+                "name": "setSelectionRange",
+                "description": "Define as posições de início e término da seleção de texto do campo (índices baseados em `0`).",
+                "value": {}
+              },
+              {
+                "name": "setRangeText",
+                "description": "Atualiza um intervalo de texto do campo com o novo valor informado (índices baseados em `0`).",
+                "value": {}
+              },
+              {
+                "name": "showPicker",
+                "description": "Exibe o menu seletor de opções nativo do navegador, de acordo com o `type` do campo (funciona apenas se o navegador suportar um menu seletor para o tipo de entrada em questão).",
+                "value": {}
+              },
+              {
+                "name": "stepUp",
+                "description": "Incrementa o valor de um campo numérico pelo valor do atributo `step` (somente se o `type` definido for `number`).",
+                "value": {}
+              },
+              {
+                "name": "stepDown",
+                "description": "Decrementa o valor de um campo numérico pelo valor do atributo `step` (somente se o `type` definido for `number`).",
+                "value": {}
+              },
+              {
+                "name": "checkValidity",
+                "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.",
+                "value": {}
+              },
+              {
+                "name": "getForm",
+                "description": "Obtém o formulário associado com este componente, se algum estiver.",
+                "value": {}
+              },
+              {
+                "name": "reportValidity",
+                "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.",
+                "value": {}
+              },
+              {
+                "name": "setCustomValidity",
+                "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o controle perde o foco."
+              },
+              {
+                "name": "cps-change",
+                "description": "Emitido quando a alteração do valor do controle é confirmada pelo usuário."
+              },
+              {
+                "name": "cps-clear",
+                "description": "Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso)."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o controle obtém o foco."
+              },
+              {
+                "name": "cps-input",
+                "description": "Emitido quando o controle recebe entrada de dados."
+              },
+              {
+                "name": "cps-invalid",
+                "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "type",
+              "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\r\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
+              "value": {
+                "type": "'date' | 'datetime-local' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url'"
+              }
+            },
+            {
+              "name": "id",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do campo.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "label",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "help-text",
+              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "clearable",
+              "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o campo.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "placeholder",
+              "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "readonly",
+              "description": "Torna o campo somente leitura.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "password-toggle",
+              "description": "Adiciona um botão de alternância de visibilidade de senha. Aplicável somente se `type` for `password`.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "password-visible",
+              "description": "Determina se uma senha em preenchimento está visível como texto plano neste momento. Aplicável somente se `type` for `password`.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "no-spin-buttons",
+              "description": "Força ocultar os botões de incremento/decremento nativos do navegador para entradas numéricas. Aplicável somente se `type` for `number`.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "form",
+              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "required",
+              "description": "Torna o campo como sendo de preenchimento obrigatório.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "pattern",
+              "description": "Uma expressão regular para validar a entrada do campo.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "minlength",
+              "description": "O tamanho mínimo de caracteres que serão considerados válidos.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "maxlength",
+              "description": "O tamanho máximo de caracteres que serão considerados válidos.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "min",
+              "description": "O valor mínimo que será considerado válido. Aplicável somente se `type` for `date` ou `number`.",
+              "value": {
+                "type": "number | string"
+              }
+            },
+            {
+              "name": "max",
+              "description": "O valor máximo que será considerado válido. Aplicável somente se `type` for `date` ou `number`.",
+              "value": {
+                "type": "number | string"
+              }
+            },
+            {
+              "name": "step",
+              "description": "Especifica a granularidade que o valor deve obedecer, ou o valor especial `any` que significa que nenhum passo é\r\nimplicado, permitindo qualquer valor numérico. Aplicável somente se `type` for `date` ou `number`.",
+              "value": {
+                "type": "number | 'any'"
+              }
+            },
+            {
+              "name": "autocapitalize",
+              "description": "Controla se e como a entrada de texto é capitalizada enquanto inserida pelo usuário.",
+              "value": {
+                "type": "'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'"
+              }
+            },
+            {
+              "name": "autocorrect",
+              "description": "Indica se o recurso de correção automática do navegador deve ser utilizado.",
+              "value": {
+                "type": "'off' | 'on'"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "autofocus",
+              "description": "Indica que o campo deve receber foco assim que a página for carregada.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "enterkeyhint",
+              "description": "Utilizado para definir a aparência e o comportamento da tela `Enter` em teclados virtuais.",
+              "value": {
+                "type": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'"
+              }
+            },
+            {
+              "name": "spellcheck",
+              "description": "Habilita correção ortográfica no campo.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "inputmode",
+              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+              "value": {
+                "type": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
               }
             }
           ]
