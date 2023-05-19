@@ -21,7 +21,8 @@
               "custom-elements"
             ],
             "ignoreTypes": [
-              "POSTCSS_LIT_0"
+              "POSTCSS_LIT_0",
+              "POSTCSS_LIT_1"
             ]
           }
         ]

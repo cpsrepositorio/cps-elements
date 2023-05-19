@@ -21,6 +21,7 @@
   - [Chip](/componentes/chip)
   - [Icon](/componentes/icon)
   - [Icon Button](/componentes/icon-button)
+  - [Input](/componentes/input)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
   - [<code>...</code> <small>(em breve)</small>](/404)

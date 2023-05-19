@@ -37,7 +37,7 @@ export default css`
   /* Help text */
   .form-control--has-help-text .form-control__help-text {
     display: block;
-    margin-top: var(--cps-spacing-0-5);
+    margin-top: var(--cps-spacing-1);
     color: var(--cps-foreground-secondary);
   }
 
