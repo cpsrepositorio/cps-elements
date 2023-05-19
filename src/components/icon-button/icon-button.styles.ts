@@ -19,9 +19,8 @@ export default css`
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) color;
     border: none;
-    border-radius: var(--cps-border-radius-full);
+    border-radius: 25%;
     background-color: transparent;
     cursor: pointer;
     padding: 0;
