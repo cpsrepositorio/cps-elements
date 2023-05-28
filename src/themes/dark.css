@@ -609,6 +609,7 @@
 
   --cps-input-border-width: 1px;
   --cps-input-border-color: var(--cps-fill-control-alt-tertiary);
+  --cps-input-border-bottom-width: 2px;
   --cps-input-border-bottom-color: var(--cps-foreground-tertiary);
 
   --cps-input-background: var(--cps-fill-control-primary);

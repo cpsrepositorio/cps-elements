@@ -87,7 +87,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
   @property() name = '';
 
   /**
-   * O valor do botão, submetido em par _name_/_value_ com os dados do formulário.
+   * O valor do campo, submetido em par _name_/_value_ com os dados do formulário.
    */
   @property() value = '';
 
@@ -125,8 +125,8 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
   @property({ attribute: 'no-spin-buttons', type: Boolean }) noSpinButtons = false;
 
   /**
-   * O formulário "dono" deste botão. Se não informado, o formulário mais próximo na hierarquia
-   * até este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário
+   * O formulário "dono" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia
+   * até este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário
    * existente no documento.
    */
   @property({ reflect: true }) form = '';
@@ -238,12 +238,12 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
     this.value = input.value;
   }
 
-  /** Obtém o objeto de estado de validade do botão. */
+  /** Obtém o objeto de estado de validade do campo. */
   get validity() {
     return this.input.validity;
   }
 
-  /** Obtém a mensagem de validação do botão. */
+  /** Obtém a mensagem de validação do campo. */
   get validationMessage() {
     return this.input.validationMessage;
   }
@@ -348,12 +348,12 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
     this.formControlController.updateValidity();
   }
 
-  /** Coloca o foco no botão. */
+  /** Coloca o foco no campo. */
   focus(options?: FocusOptions) {
     this.input.focus(options);
   }
 
-  /** Remove o foco do botão. */
+  /** Remove o foco do campo. */
   blur() {
     this.input.blur();
   }
@@ -438,6 +438,8 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
     const hasHelpText = this.helpText ? true : !!hasHelpTextSlot;
     const hasClearIcon =
       this.clearable && !this.disabled && !this.readonly && (typeof this.value === 'number' || this.value.length > 0);
+    const hasPasswordToggle = this.type === 'password' && this.passwordToggle && !this.disabled && !this.readonly;
+    const hasCalendarIcon = this.type === 'date' && !this.disabled && !this.readonly;
 
     return html`
       <div
@@ -476,7 +478,12 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
               'input--disabled': this.disabled,
               'input--focused': this.hasFocus,
               'input--empty': !this.value,
-              'input--no-spin-buttons': this.noSpinButtons
+              'input--no-spin-buttons': this.noSpinButtons,
+
+              // Internal states
+              'input--has-prefix': this.hasSlotController.test('prefix'),
+              'input--has-suffix':
+                this.hasSlotController.test('suffix') || hasClearIcon || hasPasswordToggle || hasCalendarIcon
             })}
             @click=${this.handleBaseClick}
           >
@@ -534,7 +541,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
             }
 
             ${
-              this.passwordToggle && !this.disabled
+              hasPasswordToggle
                 ? html`
                     <cps-icon-button
                       part="password-toggle-button"
@@ -542,7 +549,9 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
                       name=${this.passwordVisible ? 'eye-off' : 'eye'}
                       library="system"
                       class="input__password-toggle"
-                      aria-label=${this.localize.term(this.passwordVisible ? 'hidePassword' : 'showPassword')}
+                      aria-label=${this.passwordVisible
+                        ? this.localize.term('hidePassword')
+                        : this.localize.term('showPassword')}
                       @click=${this.handlePasswordToggle}
                       size=${this.size}
                     ></cps-icon-button>
@@ -551,13 +560,13 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
             }
 
             ${
-              this.type === 'date'
+              hasCalendarIcon
                 ? html`
                     <cps-icon-button
                       name="calendar"
                       library="system"
                       class="input__date-picker"
-                      aria-label=${this.localize.term('clearEntry')}
+                      aria-label=${this.localize.term('showCalendar')}
                       @click=${this.showPicker}
                       size=${this.size}
                     ></cps-icon-button>
