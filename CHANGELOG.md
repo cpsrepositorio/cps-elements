@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Added
 
 - Criação do componente `<cps-textarea>`.
+- Documentação detalhando os fundamentos de utilização de elementos customizados.
 
 ### Changed
 
