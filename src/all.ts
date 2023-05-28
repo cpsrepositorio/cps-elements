@@ -9,6 +9,7 @@ export { CpsInclude } from './components/include';
 export { CpsInput } from './components/input';
 export { CpsSkeleton } from './components/skeleton';
 export { CpsSpinner } from './components/spinner';
+export { CpsTextarea } from './components/textarea';
 /* plop:component */
 
 // Utilities

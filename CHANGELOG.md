@@ -6,12 +6,17 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-textarea>`.
+
 ### Changed
 
 - Melhorias diversas na estratégia de renderização do `<cps-input>`.
 
 ### Fixed
 
+- Adiciona tradução faltante em `aria-label` do botão de exibição de calendário no `<cps-input>`.
 - Garantir que _host_ do `<cps-icon-button>` não recebe eventos de ponteiro, mas seu `<button>` interno sim.
 
 ## 0.3.0 - 2023-05-19

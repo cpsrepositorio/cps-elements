@@ -24,6 +24,7 @@
   - [Input](/componentes/input)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
+  - [Textarea](/componentes/textarea)
   - [<code>...</code> <small>(em breve)</small>](/404)
   <!--plop:component-->
 
