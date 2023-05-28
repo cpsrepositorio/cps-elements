@@ -10,6 +10,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Melhorias diversas na estratégia de renderização do `<cps-input>`.
 
+### Fixed
+
+- Garantir que _host_ do `<cps-icon-button>` não recebe eventos de ponteiro, mas seu `<button>` interno sim.
+
 ## 0.3.0 - 2023-05-19
 
 ### Added

@@ -7,6 +7,7 @@ export default css`
   :host {
     display: inline-block;
     color: var(--cps-foreground-secondary);
+    pointer-events: none;
   }
 
   :host::part(base) {
@@ -30,6 +31,7 @@ export default css`
     color: inherit;
     font: inherit;
     user-select: none;
+    pointer-events: auto;
   }
 
   .icon-button::-moz-focus-inner {
