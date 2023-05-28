@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: 'Scroll naar begin',
   selectAColorFromTheScreen: 'Selecteer een kleur van het scherm',
   showPassword: 'Laat wachtwoord zien',
-  toggleColorFormat: 'Wissel kleurnotatie'
+  toggleColorFormat: 'Wissel kleurnotatie',
+  showCalendar: 'Kalender weergeven'
 };
 
 registerTranslation(translation);

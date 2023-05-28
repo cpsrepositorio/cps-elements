@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: 'Görgessen az elejére',
   selectAColorFromTheScreen: 'Szín választása a képernyőről',
   showPassword: 'Jelszó megjelenítése',
-  toggleColorFormat: 'Színformátum változtatása'
+  toggleColorFormat: 'Színformátum változtatása',
+  showCalendar: 'Naptár megjelenítése'
 };
 
 registerTranslation(translation);

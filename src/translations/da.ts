@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: 'Scroll til start',
   selectAColorFromTheScreen: 'Vælg en farve fra skærmen',
   showPassword: 'Vis adgangskode',
-  toggleColorFormat: 'Skift farveformat'
+  toggleColorFormat: 'Skift farveformat',
+  showCalendar: 'Vis kalender'
 };
 
 registerTranslation(translation);

@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: 'Başa kay',
   selectAColorFromTheScreen: 'Ekrandan bir renk seçin',
   showPassword: 'Şifreyi göster',
-  toggleColorFormat: 'Renk biçimini değiştir'
+  toggleColorFormat: 'Renk biçimini değiştir',
+  showCalendar: 'Takvimi göster'
 };
 
 registerTranslation(translation);

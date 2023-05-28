@@ -28,4 +28,5 @@ export interface Translation extends DefaultTranslation {
   selectAColorFromTheScreen: string;
   showPassword: string;
   toggleColorFormat: string;
+  showCalendar: string;
 }

@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: 'גלול להתחלה',
   selectAColorFromTheScreen: 'בחור צבע מהמסך',
   showPassword: 'הראה סיסמה',
-  toggleColorFormat: 'החלף פורמט צבע'
+  toggleColorFormat: 'החלף פורמט צבע',
+  showCalendar: 'הצג לוח שנה'
 };
 
 registerTranslation(translation);

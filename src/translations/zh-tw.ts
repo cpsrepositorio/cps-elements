@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: '捲至頁首',
   selectAColorFromTheScreen: '從螢幕中選擇一種顏色',
   showPassword: '顯示密碼',
-  toggleColorFormat: '切換顏色格式'
+  toggleColorFormat: '切換顏色格式',
+  showCalendar: '顯示日曆'
 };
 
 registerTranslation(translation);

@@ -23,8 +23,9 @@ const translation: Translation = {
   scrollToEnd: 'Rolar até o final',
   scrollToStart: 'Rolar até o começo',
   selectAColorFromTheScreen: 'Selecionar uma cor da tela',
-  showPassword: 'Mostrar senhaShow password',
-  toggleColorFormat: 'Trocar o formato de cor'
+  showPassword: 'Mostrar senha',
+  toggleColorFormat: 'Trocar o formato de cor',
+  showCalendar: 'Mostrar calendário'
 };
 
 registerTranslation(translation);

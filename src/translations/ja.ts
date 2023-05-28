@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: '最初にスクロールする',
   selectAColorFromTheScreen: '画面から色を選択してください',
   showPassword: 'パスワードを表示',
-  toggleColorFormat: '色のフォーマットを切り替える'
+  toggleColorFormat: '色のフォーマットを切り替える',
+  showCalendar: 'カレンダーを表示'
 };
 
 registerTranslation(translation);

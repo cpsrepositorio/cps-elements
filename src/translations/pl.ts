@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: 'Przewiń do początku',
   selectAColorFromTheScreen: 'Próbkuj z ekranu',
   showPassword: 'Pokaż hasło',
-  toggleColorFormat: 'Przełącz format'
+  toggleColorFormat: 'Przełącz format',
+  showCalendar: 'Pokaż kalendarz'
 };
 
 registerTranslation(translation);

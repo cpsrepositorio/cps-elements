@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: 'Пролистать к началу',
   selectAColorFromTheScreen: 'Выберите цвет на экране',
   showPassword: 'Показать пароль',
-  toggleColorFormat: 'Переключить цветовую модель'
+  toggleColorFormat: 'Переключить цветовую модель',
+  showCalendar: 'Показать календарь'
 };
 
 registerTranslation(translation);

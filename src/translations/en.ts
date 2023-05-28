@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: 'Scroll to start',
   selectAColorFromTheScreen: 'Select a color from the screen',
   showPassword: 'Show password',
-  toggleColorFormat: 'Toggle color format'
+  toggleColorFormat: 'Toggle color format',
+  showCalendar: 'Show calendar'
 };
 
 registerTranslation(translation);

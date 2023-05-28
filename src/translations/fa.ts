@@ -24,7 +24,8 @@ const translation: Translation = {
   scrollToStart: 'پیمایش به ابتدا',
   selectAColorFromTheScreen: 'انتخاب یک رنگ از صفحه نمایش',
   showPassword: 'نمایش رمز',
-  toggleColorFormat: 'تغییر قالب رنگ'
+  toggleColorFormat: 'تغییر قالب رنگ',
+  showCalendar: 'نمایش تقویم'
 };
 
 registerTranslation(translation);
