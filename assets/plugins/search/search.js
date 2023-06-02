@@ -7,7 +7,7 @@
   window.$docsify.plugins.push(hook => {
     // Append the search box to the sidebar
     hook.mounted(() => {
-      // const appName = document.querySelector('.sidebar .app-name');
+      const appName = document.querySelector('.sidebar .app-name');
       const searchBox = document.createElement('div');
       searchBox.classList.add('search-box');
       searchBox.innerHTML = `
@@ -18,8 +18,7 @@
       `;
       const searchBoxInput = searchBox.querySelector('cps-input');
 
-      // TODO: Activate search when form controls available.
-      // appName.insertAdjacentElement('afterend', searchBox);
+      appName.insertAdjacentElement('afterend', searchBox);
 
       // Show the search panel when the search is clicked
       searchBoxInput.addEventListener('mousedown', event => {
@@ -87,8 +86,7 @@
       </div>
     `;
 
-    // TODO: Activate search when form controls available.
-    // document.body.append(siteSearch);
+    document.body.append(siteSearch);
 
     const overlay = siteSearch.querySelector('.site-search__overlay');
     const panel = siteSearch.querySelector('.site-search__panel');
@@ -257,23 +255,26 @@
           a.setAttribute('id', `search-result-item-${match.ref}`);
 
           if (page.url.includes('fundamentos/')) {
-            icon = 'lightbulb';
+            icon = 'book-information';
           }
           if (page.url.includes('saiba-mais/')) {
-            icon = 'book';
+            icon = 'lightbulb';
           }
-          if (page.url.includes('components/')) {
-            icon = 'puzzle';
+          if (page.url.includes('componentes/')) {
+            icon = 'puzzle-cube-piece';
           }
-          if (page.url.includes('tokens/')) {
-            icon = 'palette2';
+          if (page.url.includes('variáveis-de-estilo/')) {
+            icon = 'color';
           }
-          if (page.url.includes('utilities/')) {
+          if (page.url.includes('utilitários/')) {
             icon = 'wrench';
           }
-          if (page.url.includes('tutorials/')) {
-            icon = 'joystick';
+          if (page.url.includes('frameworks/')) {
+            icon = 'shape-intersect';
           }
+
+          const title =
+            page.title?.trim() === 'Web Components de ponta, sem complicação.' ? 'Introdução' : page.title.trim();
 
           a.href = window.$docsify.routerMode === 'hash' ? `/#/${page.url}` : `/${page.url}`;
           a.innerHTML = `
@@ -281,7 +282,7 @@
               <cps-icon name="${icon}" aria-hidden="true"></cps-icon>
             </div>
             <div class="site-search__result__details">
-              <h3>${page.title}</h3>
+              <h3>${title}</h3>
               <small>${page.url}</small>
             </div>
           `;

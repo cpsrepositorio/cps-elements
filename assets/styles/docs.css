@@ -100,6 +100,7 @@ strong {
 }
 
 .sidebar .app-name {
+  margin: 0 auto;
   padding: 0 1.5rem;
 }
 
@@ -120,7 +121,7 @@ strong {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
   text-align: center;
 }
 
@@ -162,7 +163,7 @@ strong {
 
 /* Sidebar searchbox */
 .sidebar div.search-box {
-  margin: 1.25rem 1.5rem;
+  margin: 0 1.5rem 1.5rem;
 }
 
 /* Sidebar nav */

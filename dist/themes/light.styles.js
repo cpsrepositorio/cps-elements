@@ -548,6 +548,7 @@ export default css`
 
     --cps-input-border-width: 1px;
     --cps-input-border-color: var(--cps-fill-control-alt-tertiary);
+    --cps-input-border-bottom-width: 2px;
     --cps-input-border-bottom-color: var(--cps-foreground-tertiary);
 
     --cps-input-background: var(--cps-fill-control-primary);
@@ -558,6 +559,10 @@ export default css`
     --cps-input-required-content: "*";
     --cps-input-required-content-offset: -2px;
     --cps-input-required-content-color: inherit;
+
+    --cps-toggle-size-small: 1rem;
+    --cps-toggle-size-medium: 1.25rem;
+    --cps-toggle-size-large: 1.5rem;
 
     --cps-overlay-background-color: rgba(113, 113, 122, 0.33);
 

@@ -4,6 +4,7 @@ import{f as o,i as n}from"./chunk.7AWEOCKJ.js";var i=o`
   :host {
     display: inline-block;
     color: var(--cps-foreground-secondary);
+    pointer-events: none;
   }
 
   :host::part(base) {
@@ -27,6 +28,7 @@ import{f as o,i as n}from"./chunk.7AWEOCKJ.js";var i=o`
     color: inherit;
     font: inherit;
     user-select: none;
+    pointer-events: auto;
   }
 
   .icon-button::-moz-focus-inner {

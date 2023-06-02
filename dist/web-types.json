@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -562,6 +562,301 @@
           ]
         },
         {
+          "name": "cps-checkbox",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/checkbox",
+          "js": {
+            "properties": [
+              {
+                "name": "formControlController",
+                "value": {}
+              },
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "input",
+                "value": {
+                  "type": "HTMLInputElement"
+                }
+              },
+              {
+                "name": "hasFocus",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "generatedId",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "title",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "id",
+                "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "label",
+                "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do campo.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o campo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "checked",
+                "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "indeterminate",
+                "description": "Apresenta o campo em estado indeterminado.\r\nIsso é geralmente aplicado a caixas de seleção que representam o cabeçalho\r\nde um comportamento \"Selecionar todos/nenhum\", quando as caixas de seleção\r\nassociadas podem ter mistura de estados marcados e desmarcados.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "defaultChecked",
+                "description": "O valor padrão do controle de formulário. Usado principalmente para redefinir o campo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "form",
+                "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "required",
+                "description": "Torna o campo como sendo de preenchimento obrigatório.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "validity",
+                "description": "Obtém o objeto de estado de validade do campo.",
+                "value": {}
+              },
+              {
+                "name": "validationMessage",
+                "description": "Obtém a mensagem de validação do campo.",
+                "value": {}
+              },
+              {
+                "name": "handleIdChange",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleInput",
+                "value": {}
+              },
+              {
+                "name": "handleInvalid",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "handleStateChange",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no campo.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no campo.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do campo.",
+                "value": {}
+              },
+              {
+                "name": "checkValidity",
+                "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.",
+                "value": {}
+              },
+              {
+                "name": "getForm",
+                "description": "Obtém o formulário associado com este componente, se algum estiver.",
+                "value": {}
+              },
+              {
+                "name": "reportValidity",
+                "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.",
+                "value": {}
+              },
+              {
+                "name": "setCustomValidity",
+                "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o controle perde o foco."
+              },
+              {
+                "name": "cps-change",
+                "description": "Emitido quando a alteração do valor do controle é confirmada pelo usuário."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o controle obtém o foco."
+              },
+              {
+                "name": "cps-input",
+                "description": "Emitido quando o controle recebe entrada de dados."
+              },
+              {
+                "name": "cps-invalid",
+                "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "id",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "label",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do campo.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o campo.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "checked",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "indeterminate",
+              "description": "Apresenta o campo em estado indeterminado.\r\nIsso é geralmente aplicado a caixas de seleção que representam o cabeçalho\r\nde um comportamento \"Selecionar todos/nenhum\", quando as caixas de seleção\r\nassociadas podem ter mistura de estados marcados e desmarcados.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "form",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "required",
+              "description": "Torna o campo como sendo de preenchimento obrigatório.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-chip",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/chip",
@@ -1059,7 +1354,7 @@
               },
               {
                 "name": "value",
-                "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário.",
+                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
                 "value": {
                   "type": "string"
                 }
@@ -1143,7 +1438,7 @@
               },
               {
                 "name": "form",
-                "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+                "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
                 "value": {
                   "type": "string"
                 }
@@ -1258,12 +1553,12 @@
               },
               {
                 "name": "validity",
-                "description": "Obtém o objeto de estado de validade do botão.",
+                "description": "Obtém o objeto de estado de validade do campo.",
                 "value": {}
               },
               {
                 "name": "validationMessage",
-                "description": "Obtém a mensagem de validação do botão.",
+                "description": "Obtém a mensagem de validação do campo.",
                 "value": {}
               },
               {
@@ -1324,12 +1619,12 @@
               },
               {
                 "name": "focus",
-                "description": "Coloca o foco no botão.",
+                "description": "Coloca o foco no campo.",
                 "value": {}
               },
               {
                 "name": "blur",
-                "description": "Remove o foco do botão.",
+                "description": "Remove o foco do campo.",
                 "value": {}
               },
               {
@@ -1440,7 +1735,7 @@
             },
             {
               "name": "value",
-              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário.",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
               "value": {
                 "type": "string"
               }
@@ -1517,7 +1812,7 @@
             },
             {
               "name": "form",
-              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
               "value": {
                 "type": "string"
               }
@@ -1676,6 +1971,498 @@
             "events": []
           },
           "attributes": []
+        },
+        {
+          "name": "cps-textarea",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/textarea",
+          "js": {
+            "properties": [
+              {
+                "name": "formControlController",
+                "value": {}
+              },
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "resizeObserver",
+                "value": {
+                  "type": "ResizeObserver"
+                }
+              },
+              {
+                "name": "textarea",
+                "value": {
+                  "type": "HTMLTextAreaElement"
+                }
+              },
+              {
+                "name": "hasFocus",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "generatedId",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "title",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "id",
+                "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "defaultValue",
+                "description": "O valor padrão do controle de formulário. Usado principalmente para redefinir o campo.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do campo.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "label",
+                "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "helpText",
+                "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "placeholder",
+                "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "rows",
+                "description": "O número de linhas para exibir por padrão.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "resize",
+                "description": "Controla como o campo pode ser redimensionado.",
+                "value": {
+                  "type": "'none' | 'vertical' | 'auto'"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o campo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "readonly",
+                "description": "Torna o campo somente leitura.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "form",
+                "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "required",
+                "description": "Torna o campo como sendo de preenchimento obrigatório.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "minlength",
+                "description": "O tamanho mínimo de caracteres que serão considerados válidos.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "maxlength",
+                "description": "O tamanho máximo de caracteres que serão considerados válidos.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "autocapitalize",
+                "description": "Controla se e como a entrada de texto é capitalizada enquanto inserida pelo usuário.",
+                "value": {
+                  "type": "'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'"
+                }
+              },
+              {
+                "name": "autocorrect",
+                "description": "Indica se o recurso de correção automática do navegador deve ser utilizado.",
+                "value": {
+                  "type": "'off' | 'on'"
+                }
+              },
+              {
+                "name": "autocomplete",
+                "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "autofocus",
+                "description": "Indica que o campo deve receber foco assim que a página for carregada.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "enterkeyhint",
+                "description": "Utilizado para definir a aparência e o comportamento da tela `Enter` em teclados virtuais.",
+                "value": {
+                  "type": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'"
+                }
+              },
+              {
+                "name": "spellcheck",
+                "description": "Habilita correção ortográfica no campo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "inputmode",
+                "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+                "value": {
+                  "type": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
+                }
+              },
+              {
+                "name": "validity",
+                "description": "Obtém o objeto de estado de validade do campo.",
+                "value": {}
+              },
+              {
+                "name": "validationMessage",
+                "description": "Obtém a mensagem de validação do campo.",
+                "value": {}
+              },
+              {
+                "name": "handleIdChange",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleChange",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleInput",
+                "value": {}
+              },
+              {
+                "name": "handleInvalid",
+                "value": {}
+              },
+              {
+                "name": "setTextareaHeight",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "handleRowsChange",
+                "value": {}
+              },
+              {
+                "name": "handleValueChange",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no campo.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do campo.",
+                "value": {}
+              },
+              {
+                "name": "select",
+                "description": "Seleciona todo o texto existente no campo.",
+                "value": {}
+              },
+              {
+                "name": "scrollPosition",
+                "description": "Obtém ou atribui a posição de rolagem do campo.",
+                "value": {}
+              },
+              {
+                "name": "setSelectionRange",
+                "description": "Define as posições de início e término da seleção de texto do campo (índices baseados em `0`).",
+                "value": {}
+              },
+              {
+                "name": "setRangeText",
+                "description": "Atualiza um intervalo de texto do campo com o novo valor informado (índices baseados em `0`).",
+                "value": {}
+              },
+              {
+                "name": "checkValidity",
+                "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.",
+                "value": {}
+              },
+              {
+                "name": "getForm",
+                "description": "Obtém o formulário associado com este componente, se algum estiver.",
+                "value": {}
+              },
+              {
+                "name": "reportValidity",
+                "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.",
+                "value": {}
+              },
+              {
+                "name": "setCustomValidity",
+                "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o controle perde o foco."
+              },
+              {
+                "name": "cps-change",
+                "description": "Emitido quando a alteração do valor do controle é confirmada pelo usuário."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o controle obtém o foco."
+              },
+              {
+                "name": "cps-input",
+                "description": "Emitido quando o controle recebe entrada de dados."
+              },
+              {
+                "name": "cps-invalid",
+                "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "id",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do campo.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "label",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "help-text",
+              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "placeholder",
+              "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "rows",
+              "description": "O número de linhas para exibir por padrão.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "resize",
+              "description": "Controla como o campo pode ser redimensionado.",
+              "value": {
+                "type": "'none' | 'vertical' | 'auto'"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o campo.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "readonly",
+              "description": "Torna o campo somente leitura.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "form",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "required",
+              "description": "Torna o campo como sendo de preenchimento obrigatório.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "minlength",
+              "description": "O tamanho mínimo de caracteres que serão considerados válidos.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "maxlength",
+              "description": "O tamanho máximo de caracteres que serão considerados válidos.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "autocapitalize",
+              "description": "Controla se e como a entrada de texto é capitalizada enquanto inserida pelo usuário.",
+              "value": {
+                "type": "'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'"
+              }
+            },
+            {
+              "name": "autocorrect",
+              "description": "Indica se o recurso de correção automática do navegador deve ser utilizado.",
+              "value": {
+                "type": "'off' | 'on'"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "autofocus",
+              "description": "Indica que o campo deve receber foco assim que a página for carregada.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "enterkeyhint",
+              "description": "Utilizado para definir a aparência e o comportamento da tela `Enter` em teclados virtuais.",
+              "value": {
+                "type": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'"
+              }
+            },
+            {
+              "name": "spellcheck",
+              "description": "Habilita correção ortográfica no campo.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "inputmode",
+              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+              "value": {
+                "type": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
+              }
+            }
+          ]
         },
         {
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",

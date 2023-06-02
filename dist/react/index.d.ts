@@ -1,6 +1,7 @@
 export { CpsBadge } from './badge';
 export { CpsButtonGroup } from './button-group';
 export { CpsButton } from './button';
+export { CpsCheckbox } from './checkbox';
 export { CpsChip } from './chip';
 export { CpsIconButton } from './icon-button';
 export { CpsIcon } from './icon';
@@ -8,3 +9,4 @@ export { CpsInclude } from './include';
 export { CpsInput } from './input';
 export { CpsSkeleton } from './skeleton';
 export { CpsSpinner } from './spinner';
+export { CpsTextarea } from './textarea';
