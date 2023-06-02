@@ -25,7 +25,6 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react/icon';
 import { CpsInput } from '@cps-elements/web/react/input';
 
 const App = () => <CpsInput label="Qual seu nome?" />;
