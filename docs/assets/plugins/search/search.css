@@ -2,13 +2,9 @@ body.site-search-visible {
   overflow: hidden;
 }
 
-.sidebar .search-box {
-  margin: 1.25rem 26px;
-}
-
 .sidebar .search-box kbd {
   margin-top: 2px;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 /* Site search */
@@ -58,11 +54,6 @@ body.site-search-visible {
   border: none;
   border-radius: var(--cps-border-radius-large);
   background: transparent;
-}
-
-.site-search__input:focus-within::part(base) {
-  outline: none;
-  box-shadow: none;
 }
 
 .site-search__input {

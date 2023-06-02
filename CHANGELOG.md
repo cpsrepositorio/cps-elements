@@ -11,6 +11,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 - Criação do componente `<cps-checkbox>`.
 - Criação do componente `<cps-textarea>`.
 - Documentação detalhando os fundamentos de utilização de elementos customizados.
+- Ferramenta de pesquisa embutida na documentação.
 
 ### Changed
 
