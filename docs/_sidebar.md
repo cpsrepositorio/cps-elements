@@ -18,6 +18,7 @@
   - [Badge](/componentes/badge)
   - [Button](/componentes/button)
   - [Button Group](/componentes/button-group)
+  - [Checkbox](/componentes/checkbox)
   - [Chip](/componentes/chip)
   - [Icon](/componentes/icon)
   - [Icon Button](/componentes/icon-button)
