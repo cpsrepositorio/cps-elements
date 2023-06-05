@@ -1,6 +1,7 @@
 :host,
 .cps-theme-dark {
   color-scheme: dark;
+  accent-color: var(--cps-fill-accent-primary);
 
   /*
    * Color Primitives
