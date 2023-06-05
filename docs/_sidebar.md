@@ -32,6 +32,7 @@
 - Utilitários
 
   - [Include](/utilitários/include)
+  - [Popover](/utilitários/popover)
   - [<code>...</code> <small>(em breve)</small>](/404)
 
 - Variáveis de estilo

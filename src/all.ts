@@ -8,6 +8,7 @@ export { CpsIcon } from './components/icon';
 export { CpsIconButton } from './components/icon-button';
 export { CpsInclude } from './components/include';
 export { CpsInput } from './components/input';
+export { CpsPopover } from './components/popover';
 export { CpsSkeleton } from './components/skeleton';
 export { CpsSpinner } from './components/spinner';
 export { CpsTextarea } from './components/textarea';

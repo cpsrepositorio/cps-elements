@@ -86,6 +86,7 @@
   "dependencies": {
     "@floating-ui/dom": "^1.2.1",
     "@lit-labs/react": "^1.1.1",
+    "composed-offset-position": "^0.0.4",
     "lit": "^2.7.0"
   },
   "devDependencies": {
