@@ -26,7 +26,8 @@ import type { CSSResultGroup } from 'lit';
  * @csspart container - O elemento base do _popover_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _popover_, como cor de fundo, sombras, etc.
  *
  * @cssproperty [--arrow-size=7px] - Tamanho da seta. Observe que independentemente desta variável, a seta não será exibida a menos que o atributo `arrow` seja utilizado.
- * @cssproperty [--arrow-color=transparent] - A cor da seta.
+ * @cssproperty [--background-color=rgb(var(--cps-color-neutral-500))] - A cor de fundo do _popover_ e de sua eventual seta (caso esteja sendo exibido em estilo balão).
+ * @cssproperty [--border-color=transparent] - A bordar externa contornando o _popover_ e sua eventual seta (caso esteja sendo exibido em estilo balão).
  * @cssproperty [--auto-size-available-width] - Uma variável somente leitura que determina a largura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.
  * @cssproperty [--auto-size-available-height] - Uma variável somente leitura que determina a altura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.
  */
@@ -438,20 +439,36 @@ export default class CpsPopover extends BaseElement {
           bottom = typeof arrowY === 'number' ? `calc(${this.arrowPadding}px - var(--arrow-padding-offset))` : '';
         } else if (this.arrowPlacement === 'center') {
           // Center
-          left = typeof arrowX === 'number' ? `calc(50% - var(--arrow-size-diagonal))` : '';
-          top = typeof arrowY === 'number' ? `calc(50% - var(--arrow-size-diagonal))` : '';
+          left =
+            typeof arrowX === 'number'
+              ? `calc(50% - var(--arrow-size) * 0.75${['left', 'right'].includes(staticSide) ? ' + 1px' : ''})`
+              : '';
+          top =
+            typeof arrowY === 'number'
+              ? `calc(50% - var(--arrow-size) * 0.75${['left', 'right'].includes(staticSide) ? ' + 1px' : ''})`
+              : '';
         } else {
           // Anchor (default)
           left = typeof arrowX === 'number' ? `${arrowX}px` : '';
           top = typeof arrowY === 'number' ? `${arrowY}px` : '';
         }
 
+        const transform = {
+          top: 'rotate(180deg)',
+          bottom: 'rotate(0deg)',
+          left: 'rotate(90deg)',
+          right: 'rotate(-90deg)'
+        }[staticSide];
+
+        const staticSideValue = `calc(var(--arrow-size) * -1${['left', 'right'].includes(staticSide) ? ' - 1px' : ''})`;
+
         Object.assign(this.arrowElement.style, {
           top,
           right,
           bottom,
           left,
-          [staticSide]: 'calc(var(--arrow-size-diagonal) * -1)'
+          transform,
+          [staticSide]: staticSideValue
         });
       }
     });

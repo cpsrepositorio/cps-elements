@@ -70,8 +70,6 @@ O utilitário _popover_ não provê estilização, apenas posicionamento! O posi
   }
 
   .popover-overview .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -121,8 +119,6 @@ const css = `
   }
 
   .popover-overview .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -253,8 +249,6 @@ _Popovers_ são inativos e ocultos até que o atributo `active` seja aplicado. R
   }
 
   .popover-active .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -284,8 +278,6 @@ const css = `
   }
 
   .popover-active .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -335,8 +327,6 @@ Por padrão, âncoras são injetadas no _popover_ através do _slot_ `anchor`. S
   }
 
   #external-anchor ~ cps-popover .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -356,8 +346,6 @@ const css = `
   }
 
   #external-anchor ~ cps-popover .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -418,8 +406,6 @@ Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode
   }
 
   .popover-placement .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -453,8 +439,6 @@ const css = `
   }
 
   .popover-placement .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -524,8 +508,6 @@ Use o atributo `distance` para alterar a distância entre o _popover_ e sua ânc
   }
 
   .popover-distance .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -558,8 +540,6 @@ const css = `
   }
 
   .popover-distance .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -622,8 +602,6 @@ Use o atributo `skidding` para alterar o deslocamento do _popover_ ao longo do e
   }
 
   .popover-skidding .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -656,8 +634,6 @@ const css = `
   }
 
   .popover-skidding .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -698,8 +674,6 @@ const App = () => {
 ### Estilo balão
 
 Use o atributo `arrow` para adicionar uma seta ao seu _popover_. É uma boa ideia definir um valor em `distance` condizente com o tamanho da seta, para dar espaço para que esta não fique cobrindo o elemento alvo.
-
-Para ajustar a cor e o tamanho da seta, use as variáveis CSS customizadas `--arrow-color` e `--arrow-size`, respectivamente. Você também pode usar o seletor `arrow` para ajustar estilos adicionais, como sombras e bordas.
 
 Por padrão, a seta será alinhada o mais próximo possível do centro da âncora, considerando o espaço disponível e o `arrow-padding`. Você pode usar o atributo `arrow-placement` para forçar a seta a se alinhar ao início, fim ou centro do _popover_.
 
@@ -752,10 +726,6 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
 </script>
 
 <style>
-  .popover-arrow cps-popover {
-    --arrow-color: var(--cps-fill-accent-primary);
-  }
-
   .popover-arrow span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
@@ -765,8 +735,6 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
   }
 
   .popover-arrow .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -791,13 +759,10 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
 
 ```jsx react
 import { useState } from 'react';
-import { CpsPopover, select, option, CpsCheckbox } from '@cps-elements/web/react';
+import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
+import { CpsPopover } from '@cps-elements/web/react/popover';
 
 const css = `
-  .popover-arrow cps-popover {
-    --arrow-color: var(--cps-fill-accent-primary);
-  }
-
   .popover-arrow span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
@@ -807,8 +772,6 @@ const css = `
   }
 
   .popover-arrow .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -884,6 +847,222 @@ const App = () => {
 };
 ```
 
+### Personalizando a aparência
+
+A cor de fundo do _popover_ pode ser definida através da variável CSS `--background-color`. A cor da borda pode ser definida através da variável CSS `--border-color`. Você também pode usar o seletor de parte CSS `container` para ajustar estilos adicionais, como filtros, sombras e arredondamento de bordas. Observe que, para não afetar o posicionamento dinâmico do _popover_, a borda é renderizada fora da caixa de conteúdo do elemento, comportando-se como um `outline`.
+
+Caso esteja utilizando o _popover_ com estilo balão, a seta automaticamente utilizará as mesmas cores de fundo e de borda do corpo do _popover_. Adicionalmente, o tamanho da seta também pode ser controlado através da variável CSS `--arrow-size`. Se você precisar estilizar a seta de forma diferenciada, ou ainda informar estilos adicionais nela, também pode usar o seletor de parte CSS `arrow` para ajustá-la diretamente, até mesmo alterando seu formato através de `clip-path`.
+
+```html preview
+<div class="popover-custom">
+  <cps-popover placement="top" arrow arrow-placement="anchor" distance="16" active>
+    <span slot="anchor"></span>
+    <div class="box"></div>
+  </cps-popover>
+
+  <div class="popover-custom-options">
+    <select name="placement" value="top">
+      <option value="top">Superior</option>
+      <option value="top-start">Superior inicial</option>
+      <option value="top-end">Superior final</option>
+      <option value="bottom">Inferior</option>
+      <option value="bottom-start">Inferior inicial</option>
+      <option value="bottom-end">Inferior final</option>
+      <option value="right">Direita</option>
+      <option value="right-start">Direita inicial</option>
+      <option value="right-end">Direita final</option>
+      <option value="left">Esquerda</option>
+      <option value="left-start">Esquerda inicial</option>
+      <option value="left-end">Esquerda final</option>
+    </select>
+
+    <select name="arrow-placement" value="anchor">
+      <option value="anchor">Seta âncora</option>
+      <option value="start">Seta início</option>
+      <option value="end">Seta final</option>
+      <option value="center">Seta centro</option>
+    </select>
+  </div>
+
+  <div class="popover-custom-options">
+    <cps-checkbox name="arrow" checked>Estilo balão</cps-checkbox>
+  </div>
+</div>
+
+<script>
+  const container = document.querySelector('.popover-custom');
+  const popover = container.querySelector('cps-popover');
+  const placement = container.querySelector('[name="placement"]');
+  const arrowPlacement = container.querySelector('[name="arrow-placement"]');
+  const arrow = container.querySelector('[name="arrow"]');
+
+  placement.addEventListener('change', () => (popover.placement = placement.value));
+  arrowPlacement.addEventListener('change', () => (popover.arrowPlacement = arrowPlacement.value));
+  arrow.addEventListener('cps-change', () => (popover.arrow = arrow.checked));
+</script>
+
+<style>
+  .popover-custom cps-popover {
+    --background-color: cyan;
+    --border-color: darkcyan;
+    --arrow-size: 15px;
+  }
+
+  .popover-custom cps-popover::part(container) {
+    border-radius: 16px;
+    filter: drop-shadow(0 4px 6px #2266ff66);
+    box-shadow: inset 0 3px 9px white;
+  }
+
+  .popover-custom cps-popover[data-current-placement='bottom']::part(container) {
+    box-shadow: inset 0 -3px 9px white;
+  }
+
+  .popover-custom cps-popover::part(arrow) {
+    clip-path: polygon(25% 15%, 0 0, 100% 0, 75% 15%, 62% 30%, 55% 60%, 50% 100%, 45% 60%, 38% 30%);
+  }
+
+  .popover-custom span[slot='anchor'] {
+    display: inline-block;
+    margin: 50px;
+    border: dashed 2px var(--cps-stroke-card-secondary);
+    width: 150px;
+    height: 150px;
+  }
+
+  .popover-custom .box {
+    width: 100px;
+    height: 50px;
+  }
+
+  .popover-custom-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: end;
+  }
+
+  .popover-custom-options select {
+    width: 117px;
+    height: 30px;
+  }
+
+  .popover-custom-options + .popover-custom-options {
+    margin-top: 1rem;
+  }
+</style>
+```
+
+```jsx react
+import { useState } from 'react';
+import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
+import { CpsPopover } from '@cps-elements/web/react/popover';
+
+const css = `
+  .popover-custom cps-popover {
+    --background-color: cyan;
+    --border-color: darkcyan;
+    --arrow-size: 15px;
+  }
+
+  .popover-custom cps-popover::part(container) {
+    border-radius: 16px;
+    filter: drop-shadow(0 4px 6px #2266ff66);
+    box-shadow: inset 0 3px 9px white;
+  }
+
+  .popover-custom cps-popover[data-current-placement='bottom']::part(container) {
+    box-shadow: inset 0 -3px 9px white;
+  }
+
+  .popover-custom cps-popover::part(arrow) {
+    clip-path: polygon(25% 15%, 0 0, 100% 0, 75% 15%, 62% 30%, 55% 60%, 50% 100%, 45% 60%, 38% 30%);
+  }
+
+  .popover-custom span[slot='anchor'] {
+    display: inline-block;
+    margin: 50px;
+    border: dashed 2px var(--cps-stroke-card-secondary);
+    width: 150px;
+    height: 150px;
+  }
+
+  .popover-custom .box {
+    width: 100px;
+    height: 50px;
+  }
+
+  .popover-custom-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: end;
+  }
+
+  .popover-custom-options select {
+    width: 117px;
+    height: 30px;
+  }
+
+  .popover-custom-options + .popover-custom-options {
+    margin-top: 1rem;
+  }
+`;
+
+const App = () => {
+  const [placement, setPlacement] = useState('top');
+  const [arrowPlacement, setArrowPlacement] = useState('anchor');
+  const [arrow, setArrow] = useState(true);
+
+  return (
+    <>
+      <div className="popover-arrow">
+        <CpsPopover placement={placement} arrow={arrow || null} arrow-placement={arrowPlacement} distance="16" active>
+          <span slot="anchor" />
+          <div className="box" />
+        </CpsPopover>
+
+        <div className="popover-arrow-options">
+          <select name="placement" value={placement} onchange={event => setPlacement(event.target.value)}>
+            <option value="top">Superior</option>
+            <option value="top-start">Superior inicial</option>
+            <option value="top-end">Superior final</option>
+            <option value="bottom">Inferior</option>
+            <option value="bottom-start">Inferior inicial</option>
+            <option value="bottom-end">Inferior final</option>
+            <option value="right">Direita</option>
+            <option value="right-start">Direita inicial</option>
+            <option value="right-end">Direita final</option>
+            <option value="left">Esquerda</option>
+            <option value="left-start">Esquerda inicial</option>
+            <option value="left-end">Esquerda final</option>
+          </select>
+
+          <select
+            name="arrow-placement"
+            value={arrowPlacement}
+            onchange={event => setArrowPlacement(event.target.value)}
+          >
+            <option value="anchor">Seta âncora</option>
+            <option value="start">Seta início</option>
+            <option value="end">Seta final</option>
+            <option value="center">Seta centro</option>
+          </select>
+        </div>
+
+        <div className="popover-arrow-options">
+          <CpsCheckbox name="arrow" checked={arrow} onchange={event => setArrow(event.target.checked)}>
+            Estilo balão
+          </CpsCheckbox>
+        </div>
+      </div>
+
+      <style>{css}</style>
+    </>
+  );
+};
+```
+
 ### Sincronizando com a dimensão da âncora
 
 Use o atributo `sync` para fazer com que o _popover_ tenha a mesma largura ou altura que o elemento âncora. Isso é útil para controles que precisam garantir que o elemento flutuante subjacente acompanhe as medidas da âncora.
@@ -914,8 +1093,6 @@ Use o atributo `sync` para fazer com que o _popover_ tenha a mesma largura ou al
   }
 
   .popover-sync .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100%;
     min-width: 50px;
     height: 100%;
@@ -940,7 +1117,7 @@ Use o atributo `sync` para fazer com que o _popover_ tenha a mesma largura ou al
 
 ```jsx react
 import { useState } from 'react';
-import { CpsPopover, select, option } from '@cps-elements/web/react';
+import { CpsPopover } from '@cps-elements/web/react';
 
 const css = `
   .popover-sync span[slot='anchor'] {
@@ -952,8 +1129,6 @@ const css = `
   }
 
   .popover-sync .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100%;
     min-width: 50px;
     height: 100%;
@@ -1030,8 +1205,6 @@ Alterne a estratégia de posicionamento e role o contêiner para ver a diferenç
   }
 
   .popover-strategy .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -1071,8 +1244,6 @@ const css = `
   }
 
   .popover-strategy .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -1141,8 +1312,6 @@ Role o contêiner para ver como o _popover_ gira para evitar seu corte.
   }
 
   .popover-flip .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -1178,8 +1347,6 @@ const css = `
   }
 
   .popover-flip .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -1246,8 +1413,6 @@ Role o contêiner para ver como o _popover_ vai mudando para seus posicionamento
   }
 
   .popover-flip-fallbacks .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -1273,8 +1438,6 @@ const css = `
   }
 
   .popover-flip-fallbacks .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     height: 50px;
   }
@@ -1337,8 +1500,6 @@ Alterne a caixa de seleção para ver a diferença.
   }
 
   .popover-shift .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 300px;
     height: 50px;
   }
@@ -1377,8 +1538,6 @@ const css = `
   }
 
   .popover-shift .box {
-    border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-primary);
     width: 300px;
     height: 50px;
   }
@@ -1450,7 +1609,6 @@ Role o contêiner para ver o _popover_ se auto-dimensionar conforme o espaço di
 
   .popover-auto-size .box {
     border-radius: var(--cps-border-radius-full);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     max-width: var(--auto-size-available-width);
     height: 150px;
@@ -1489,7 +1647,6 @@ const css = `
 
   .popover-auto-size .box {
     border-radius: var(--cps-border-radius-full);
-    background: var(--cps-fill-accent-primary);
     width: 100px;
     max-width: var(--auto-size-available-width);
     height: 150px;
