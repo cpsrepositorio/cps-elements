@@ -15,6 +15,7 @@ export { CpsTextarea } from './components/textarea';
 /* plop:component */
 
 // Utilities
+export * from './utilities/animation';
 export * from './utilities/base-path';
 export * from './utilities/icon-library';
 
