@@ -445,6 +445,8 @@
 
   --cps-stroke-divider: rgb(var(--cps-color-neutral-1000) / 8.37%);
 
+  --cps-stroke-surface: rgb(117 117 117 / 40%);
+
   /* Control elevation colors */
   --cps-color-elevation-top-control: var(--cps-stroke-control-secondary);
   --cps-color-elevation-bottom-control: var(--cps-stroke-control-primary);
@@ -637,6 +639,11 @@
    */
 
   --cps-overlay-background-color: rgba(0, 0, 0, 0.43);
+
+  /*
+   * Tooltips
+   */
+  --cps-tooltip-arrow-size: 7px;
 
   /*
    * Z-indexes

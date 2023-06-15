@@ -8,8 +8,11 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Added
 
+- Criação do componente `<cps-tooltip>`.
 - Criação do componente utilitário `<cps-popover>`.
-- Definição do tipos de evento `cps-reposition`.
+- Criação de camada com textura acrílica nos temas base.
+- Inclusão de utilitários com diversas animações do projeto `animate.css`, na forma de _mixins_ JavaScript.
+- Definição dos tipos de evento `cps-show`, `cps-hide`, `cps-after-show`, `cps-after-hide`, e `cps-reposition`.
 
 ## 0.4.0 - 2023-06-02
 

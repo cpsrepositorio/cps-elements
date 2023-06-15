@@ -12,6 +12,7 @@ export { CpsPopover } from './components/popover';
 export { CpsSkeleton } from './components/skeleton';
 export { CpsSpinner } from './components/spinner';
 export { CpsTextarea } from './components/textarea';
+export { CpsTooltip } from './components/tooltip';
 /* plop:component */
 
 // Utilities
