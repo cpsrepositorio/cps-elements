@@ -199,12 +199,22 @@
           const pre = code.closest('pre');
           const sourceGroupId = `code-block-source-group-${count}`;
           const toggleId = `code-block-toggle-${count}`;
+
           const reactPre = getAdjacentExample('react', pre);
-          const vuePre = code.classList.contains('no-vue') ? null : createVueExample(pre);
           const hasReact = reactPre !== null;
+
+          let vuePre = getAdjacentExample('vue', pre);
+          vuePre = vuePre ? vuePre : code.classList.contains('no-vue') ? null : createVueExample(pre);
           const hasVue = vuePre !== null;
 
-          pre.setAttribute('data-lang', pre.getAttribute('data-lang').replace(/ preview$/, ''));
+          pre.setAttribute(
+            'data-lang',
+            pre
+              .getAttribute('data-lang')
+              .replace(/ preview$/, '')
+              .replace(/ no-vue$/, '')
+          );
+
           pre.setAttribute('aria-labelledby', toggleId);
 
           const codeBlock = `
