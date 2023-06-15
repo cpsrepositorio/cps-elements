@@ -8,6 +8,7 @@
 
 .code-block__preview {
   position: relative;
+  z-index: 1;
   border-top-left-radius: var(--cps-border-radius-medium);
   border-top-right-radius: var(--cps-border-radius-medium);
   background-color: var(--cps-fill-solid-tertiary);
@@ -36,6 +37,7 @@
   bottom: 0;
   align-items: center;
   justify-content: center;
+  z-index: -1;
   border-right: solid 1px var(--cps-stroke-card-secondary);
   border-left: solid 1px var(--cps-stroke-card-secondary);
   border-top-right-radius: var(--cps-border-radius-medium);
@@ -140,7 +142,7 @@
 }
 
 .code-block__button:hover {
-  z-index: 1;
+  z-index: 0.5;
   background-color: var(--cps-fill-control-secondary);
   color: var(--cps-foreground-primary);
 }

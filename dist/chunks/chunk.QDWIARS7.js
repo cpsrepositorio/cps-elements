@@ -1,0 +1,1 @@
+import{a as o}from"./chunk.2A6KFAO2.js";import*as e from"react";import{createComponent as t}from"@lit-labs/react";var p=t({tagName:"cps-popover",elementClass:o,react:e,events:{onCpsReposition:"cps-reposition"}}),m=p;export{p as a,m as b};

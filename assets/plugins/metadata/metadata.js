@@ -297,6 +297,9 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
 
     return html
       .toString()
+      .replace(/\n/g, '')
+      .replace(/\s+/g, ' ')
+      .replace(/^\|\s/g, '')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')

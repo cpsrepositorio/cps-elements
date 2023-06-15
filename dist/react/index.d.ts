@@ -7,6 +7,8 @@ export { CpsIconButton } from './icon-button';
 export { CpsIcon } from './icon';
 export { CpsInclude } from './include';
 export { CpsInput } from './input';
+export { CpsPopover } from './popover';
 export { CpsSkeleton } from './skeleton';
 export { CpsSpinner } from './spinner';
 export { CpsTextarea } from './textarea';
+export { CpsTooltip } from './tooltip';

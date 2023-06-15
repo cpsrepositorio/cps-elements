@@ -1,0 +1,1 @@
+import{a as l,c as d}from"./chunk.K3RV6SX6.js";function U(e,o){let r=l({waitUntilFirstUpdate:!1},o);return(s,c)=>{let{update:f}=s,p=Array.isArray(e)?e:[e];s.update=function(t){p.forEach(u=>{let n=u;if(t.has(n)){let a=t.get(n),i=this[n];a!==i&&(!r.waitUntilFirstUpdate||this.hasUpdated)&&this[c](a,i)}}),f.call(this,t)}}}d(U,"watch");export{U as a};

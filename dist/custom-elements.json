@@ -2193,7 +2193,7 @@
             "module": "/src/internal/base-element"
           },
           "summary": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/include",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/include",
           "status": "stable",
           "since": "0.1",
           "tagName": "cps-include",
@@ -3251,6 +3251,556 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/popover.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsPopover",
+          "cssProperties": [
+            {
+              "description": "Tamanho da seta. Observe que independentemente desta variável, a seta não será exibida a menos que o atributo `arrow` seja utilizado.",
+              "name": "--arrow-size",
+              "default": "7px"
+            },
+            {
+              "description": "A cor de fundo do _popover_ e de sua eventual seta (caso esteja sendo exibido em estilo balão).",
+              "name": "--background-color",
+              "default": "rgb(var(--cps-color-neutral-500))"
+            },
+            {
+              "description": "A bordar externa contornando o _popover_ e sua eventual seta (caso esteja sendo exibido em estilo balão).",
+              "name": "--border-color",
+              "default": "transparent"
+            },
+            {
+              "description": "Uma variável somente leitura que determina a largura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.",
+              "name": "--auto-size-available-width"
+            },
+            {
+              "description": "Uma variável somente leitura que determina a altura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.",
+              "name": "--auto-size-available-height"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "A seta do _popover_, caso seja em estilo balão. Evite definir propriedades `top|bottom|left|right`, já que estes valores são atribuídos automaticamente conforme o )_popover_ se move. Esta parte CSS é mais relevante para aplicar cores que combinam com seu _popover_ personalizado, ou talvez bordas ou sombras diferenciadas.",
+              "name": "arrow"
+            },
+            {
+              "description": "O elemento base do _popover_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _popover_, como cor de fundo, sombras, etc.",
+              "name": "container"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo do _popover_.",
+              "name": ""
+            },
+            {
+              "description": "O elemento que o _popover_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _popover_, use o _slot_ `anchor` em vez disso.",
+              "name": "anchor"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "anchorEl",
+              "type": {
+                "text": "Element | null"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "cleanup",
+              "type": {
+                "text": "ReturnType<typeof autoUpdate> | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "container",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "description": "A referência ao elemento _popover_ interno. Útil para animar e estilizar o popover com JavaScript."
+            },
+            {
+              "kind": "field",
+              "name": "arrowElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "anchor",
+              "type": {
+                "text": "Element | string"
+              },
+              "description": "O elemento que o _popover_ será ancorado.\r\nSe o elemento estiver fora da estrutura hierárquica do _popover_,\r\nvocê pode fornecer o `id` deste elemento ou mesmo uma instância direta dele, atribuindo a esta propriedade.\r\nCaso contrário, se a âncora pode ser contida junto ao _popover_, use o _slot_ `anchor` em vez disso.",
+              "attribute": "anchor"
+            },
+            {
+              "kind": "field",
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Ativa a lógica de posicionamento e mostra o _popover_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _popover_ será ocultado.",
+              "attribute": "active",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+              },
+              "default": "'top'",
+              "description": "O posicionamento preferido do _popover_ em relação à âncora.\r\nObserve que o posicionamento real poderá variar conforme configurado para manter o painel dentro da janela de visualização.",
+              "attribute": "placement",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "strategy",
+              "type": {
+                "text": "'absolute' | 'fixed'"
+              },
+              "default": "'absolute'",
+              "description": "Determinar como o _popover_ é posicionado.\r\nA estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do _popover_, usar uma estratégia de posição `fixed` pode contorná-lo.",
+              "attribute": "strategy",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "distance",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _popover_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.",
+              "attribute": "distance"
+            },
+            {
+              "kind": "field",
+              "name": "skidding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _popover_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.",
+              "attribute": "skidding"
+            },
+            {
+              "kind": "field",
+              "name": "arrow",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Anexa uma seta ao _popover_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
+              "attribute": "arrow"
+            },
+            {
+              "kind": "field",
+              "name": "arrowPlacement",
+              "type": {
+                "text": "'start' | 'end' | 'center' | 'anchor'"
+              },
+              "default": "'anchor'",
+              "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _popover_.",
+              "attribute": "arrow-placement"
+            },
+            {
+              "kind": "field",
+              "name": "arrowPadding",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "description": "A quantidade de espaço entre a seta e as bordas do _popover_.\r\nSe o _popover_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
+              "attribute": "arrow-padding"
+            },
+            {
+              "kind": "field",
+              "name": "flip",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Quando definido, o _popover_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
+              "attribute": "flip"
+            },
+            {
+              "kind": "field",
+              "name": "flipFallbackPlacements",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Se o posicionamento preferido não atender, o _popover_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
+              "attribute": "flip-fallback-placements"
+            },
+            {
+              "kind": "field",
+              "name": "flipFallbackStrategy",
+              "type": {
+                "text": "'best-fit' | 'initial'"
+              },
+              "default": "'best-fit'",
+              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _popover_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
+              "attribute": "flip-fallback-strategy"
+            },
+            {
+              "kind": "field",
+              "name": "flipBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _popover_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
+              "attribute": "flipBoundary"
+            },
+            {
+              "kind": "field",
+              "name": "flipPadding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o comportamento de giro ocorra.",
+              "attribute": "flip-padding"
+            },
+            {
+              "kind": "field",
+              "name": "shift",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Permite reposicionar o _popover_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _popover_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _popover_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
+              "attribute": "shift"
+            },
+            {
+              "kind": "field",
+              "name": "shiftBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _popover_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "attribute": "shiftBoundary"
+            },
+            {
+              "kind": "field",
+              "name": "shiftPadding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o reposicionamento no eixo ocorra.",
+              "attribute": "shift-padding"
+            },
+            {
+              "kind": "field",
+              "name": "autoSize",
+              "type": {
+                "text": "'horizontal' | 'vertical' | 'both'"
+              },
+              "description": "Quando definido, permite que o _popover_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
+              "attribute": "auto-size"
+            },
+            {
+              "kind": "field",
+              "name": "sync",
+              "type": {
+                "text": "'width' | 'height' | 'both'"
+              },
+              "description": "Sincroniza a largura ou altura (ou ambos) do _popover_ com a do seu elemento âncora.",
+              "attribute": "sync"
+            },
+            {
+              "kind": "field",
+              "name": "autoSizeBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _popover_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "attribute": "autoSizeBoundary"
+            },
+            {
+              "kind": "field",
+              "name": "autoSizePadding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o auto-dimensionamento ocorra.",
+              "attribute": "auto-size-padding"
+            },
+            {
+              "kind": "method",
+              "name": "handleAnchorChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "start",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "stop",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "reposition",
+              "description": "Força o _popover_ a se recalcular e se reposicionar."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o _popover_ é reposicionado. Este evento pode disparar numerosas vezes, evite colocar operações custosas em seu _listener_, ou alternativamente considere usar uma estratégia de _debouce_ neste evento.",
+              "name": "cps-reposition",
+              "reactName": "onCpsReposition"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "anchor",
+              "type": {
+                "text": "Element | string"
+              },
+              "description": "O elemento que o _popover_ será ancorado.\r\nSe o elemento estiver fora da estrutura hierárquica do _popover_,\r\nvocê pode fornecer o `id` deste elemento ou mesmo uma instância direta dele, atribuindo a esta propriedade.\r\nCaso contrário, se a âncora pode ser contida junto ao _popover_, use o _slot_ `anchor` em vez disso.",
+              "fieldName": "anchor"
+            },
+            {
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Ativa a lógica de posicionamento e mostra o _popover_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _popover_ será ocultado.",
+              "fieldName": "active"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+              },
+              "default": "'top'",
+              "description": "O posicionamento preferido do _popover_ em relação à âncora.\r\nObserve que o posicionamento real poderá variar conforme configurado para manter o painel dentro da janela de visualização.",
+              "fieldName": "placement"
+            },
+            {
+              "name": "strategy",
+              "type": {
+                "text": "'absolute' | 'fixed'"
+              },
+              "default": "'absolute'",
+              "description": "Determinar como o _popover_ é posicionado.\r\nA estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do _popover_, usar uma estratégia de posição `fixed` pode contorná-lo.",
+              "fieldName": "strategy"
+            },
+            {
+              "name": "distance",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _popover_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.",
+              "fieldName": "distance"
+            },
+            {
+              "name": "skidding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _popover_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.",
+              "fieldName": "skidding"
+            },
+            {
+              "name": "arrow",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Anexa uma seta ao _popover_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
+              "fieldName": "arrow"
+            },
+            {
+              "name": "arrow-placement",
+              "type": {
+                "text": "'start' | 'end' | 'center' | 'anchor'"
+              },
+              "default": "'anchor'",
+              "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _popover_.",
+              "fieldName": "arrowPlacement"
+            },
+            {
+              "name": "arrow-padding",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "description": "A quantidade de espaço entre a seta e as bordas do _popover_.\r\nSe o _popover_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
+              "fieldName": "arrowPadding"
+            },
+            {
+              "name": "flip",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Quando definido, o _popover_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
+              "fieldName": "flip"
+            },
+            {
+              "name": "flip-fallback-placements",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Se o posicionamento preferido não atender, o _popover_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
+              "fieldName": "flipFallbackPlacements"
+            },
+            {
+              "name": "flip-fallback-strategy",
+              "type": {
+                "text": "'best-fit' | 'initial'"
+              },
+              "default": "'best-fit'",
+              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _popover_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
+              "fieldName": "flipFallbackStrategy"
+            },
+            {
+              "name": "flipBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _popover_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
+              "fieldName": "flipBoundary"
+            },
+            {
+              "name": "flip-padding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o comportamento de giro ocorra.",
+              "fieldName": "flipPadding"
+            },
+            {
+              "name": "shift",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Permite reposicionar o _popover_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _popover_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _popover_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
+              "fieldName": "shift"
+            },
+            {
+              "name": "shiftBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _popover_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "fieldName": "shiftBoundary"
+            },
+            {
+              "name": "shift-padding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o reposicionamento no eixo ocorra.",
+              "fieldName": "shiftPadding"
+            },
+            {
+              "name": "auto-size",
+              "type": {
+                "text": "'horizontal' | 'vertical' | 'both'"
+              },
+              "description": "Quando definido, permite que o _popover_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
+              "fieldName": "autoSize"
+            },
+            {
+              "name": "sync",
+              "type": {
+                "text": "'width' | 'height' | 'both'"
+              },
+              "description": "Sincroniza a largura ou altura (ou ambos) do _popover_ com a do seu elemento âncora.",
+              "fieldName": "sync"
+            },
+            {
+              "name": "autoSizeBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _popover_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "fieldName": "autoSizeBoundary"
+            },
+            {
+              "name": "auto-size-padding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o auto-dimensionamento ocorra.",
+              "fieldName": "autoSizePadding"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "_Popover_ é um utilitário que permite ancorar caixas flutuantes declarativamente a outro elemento.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/popover",
+          "status": "stable",
+          "since": "0.5",
+          "tagName": "cps-popover",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsPopover",
+            "module": "components/popover.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-popover",
+          "declaration": {
+            "name": "CpsPopover",
+            "module": "components/popover.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsPopover",
+          "declaration": {
+            "name": "CpsPopover",
+            "module": "components/popover.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/skeleton.js",
       "declarations": [
         {
@@ -4235,6 +4785,396 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/tooltip.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsTooltip",
+          "cssProperties": [
+            {
+              "description": "O tamanho máximo da dica de ferramenta, antes que seu conteúdo seja quebrado em outra linha.",
+              "name": "--max-width"
+            },
+            {
+              "description": "A quantidade de tempo a esperar antes de ocultar a dica de ferramenta, ao tirar o ponteiro.",
+              "name": "--hide-delay"
+            },
+            {
+              "description": "A quantidade de tempo a esperar antes de exibir a dica de ferramenta, ao colocar o ponteiro sobre.",
+              "name": "--show-delay"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento base que embrulha o componente (um elemento `<cps-popover>`).",
+              "name": "base"
+            },
+            {
+              "description": "A parte CSS `container` exportada do _popover_ base. Use-a para atingir o contêiner do elemento `<cps-popover>` base, para estilizações avançadas deste.",
+              "name": "base__container"
+            },
+            {
+              "description": "A parte CSS `arrow` exportada do _popover_ base. Use-a para atingir a seta do elemento `<cps-popover>` base, para estilizações avançadas desta.",
+              "name": "base__container"
+            },
+            {
+              "description": "O corpo da dica de ferramenta, onde seu conteúdo é renderizado.",
+              "name": "body"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O elemento alvo da dica de ferramenta. Evite ter mais de um elemento alvo na hierarquia, pois os subsequentes serão ignorados (neste caso, embrulhe os vários elementos em uma _tag_ principal, como `<span>` ou `<div>`).",
+              "name": ""
+            },
+            {
+              "description": "O conteúdo a ser renderizado na dica de ferramenta. Alternativamente, você pode usar o atributo `content`.",
+              "name": "content"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hoverTimeout",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "defaultSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "body",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "popover",
+              "type": {
+                "text": "CpsPopover"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "content",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O conteúdo da dica de ferramenta. Se precisar exibir conteúdo HTML ao invés de texto simples, use o _slot_ `content` em vez deste atributo.",
+              "attribute": "content"
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+              },
+              "default": "'top'",
+              "description": "O posicionamento preferido da dica de ferramenta.\r\nObserve que o posicionamento real pode variar conforme necessário,\r\npara manter a dica de ferramenta dentro da janela de visualização.",
+              "attribute": "placement"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita a dica de ferramenta, para que ela não seja exibida quando o elemento alvo é interagido.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "distance",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "description": "A distância em pixels do _popover_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.",
+              "attribute": "distance"
+            },
+            {
+              "kind": "field",
+              "name": "skidding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _popover_ no eixo de deslocamento de seu elemento alvo.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.",
+              "attribute": "skidding"
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se a dica de ferramenta está ou não visível atualmente.\r\nVocê pode usar isso declarativamente e reativamente, ao invés de precisar\r\nimperativamente dos métodos `show` e `hide`.",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "trigger",
+              "type": {
+                "text": "string"
+              },
+              "default": "'hover focus'",
+              "description": "Controla como a dica de ferramenta é ativada. As opções possíveis incluem `click`, `hover`, `focus` e `manual`.\r\nMúltiplas opções podem ser passadas, separando-as com um espaço, exceto o valor `manual`.\r\nQuando `manual` é usado, a dica de ferramenta deve ser exclusivamente manipulada programaticamente.",
+              "attribute": "trigger"
+            },
+            {
+              "kind": "field",
+              "name": "hoist",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\r\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\r\n\r\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\r\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\r\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\r\n\r\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\r\nmas não em todos, então teste com cautela se precisar habilitar.",
+              "attribute": "hoist"
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseOver",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseOut",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "hasTrigger",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "triggerType",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleOpenChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleOptionsChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "description": "Força a exibição imediata da dica de ferramenta."
+            },
+            {
+              "kind": "method",
+              "name": "hide",
+              "description": "Força a ocultação imediata da dica de ferramenta."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando a dica de ferramenta começa a ser exibida.",
+              "name": "cps-show",
+              "reactName": "onCpsShow"
+            },
+            {
+              "description": "Emitido após a dica de ferramenta ser exibida e todas as animações terem sido concluídas.",
+              "name": "cps-after-show",
+              "reactName": "onCpsAfterShow"
+            },
+            {
+              "description": "Emitido quando a dica de ferramenta começa a ser ocultada.",
+              "name": "cps-hide",
+              "reactName": "onCpsHide"
+            },
+            {
+              "description": "Emitido após a dica de ferramenta ser ocultada e todas as animações terem sido concluídas.",
+              "name": "cps-after-hide",
+              "reactName": "onCpsAfterHide"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "content",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O conteúdo da dica de ferramenta. Se precisar exibir conteúdo HTML ao invés de texto simples, use o _slot_ `content` em vez deste atributo.",
+              "fieldName": "content"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+              },
+              "default": "'top'",
+              "description": "O posicionamento preferido da dica de ferramenta.\r\nObserve que o posicionamento real pode variar conforme necessário,\r\npara manter a dica de ferramenta dentro da janela de visualização.",
+              "fieldName": "placement"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita a dica de ferramenta, para que ela não seja exibida quando o elemento alvo é interagido.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "distance",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "description": "A distância em pixels do _popover_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.",
+              "fieldName": "distance"
+            },
+            {
+              "name": "skidding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _popover_ no eixo de deslocamento de seu elemento alvo.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.",
+              "fieldName": "skidding"
+            },
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se a dica de ferramenta está ou não visível atualmente.\r\nVocê pode usar isso declarativamente e reativamente, ao invés de precisar\r\nimperativamente dos métodos `show` e `hide`.",
+              "fieldName": "open"
+            },
+            {
+              "name": "trigger",
+              "type": {
+                "text": "string"
+              },
+              "default": "'hover focus'",
+              "description": "Controla como a dica de ferramenta é ativada. As opções possíveis incluem `click`, `hover`, `focus` e `manual`.\r\nMúltiplas opções podem ser passadas, separando-as com um espaço, exceto o valor `manual`.\r\nQuando `manual` é usado, a dica de ferramenta deve ser exclusivamente manipulada programaticamente.",
+              "fieldName": "trigger"
+            },
+            {
+              "name": "hoist",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\r\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\r\n\r\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\r\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\r\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\r\n\r\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\r\nmas não em todos, então teste com cautela se precisar habilitar.",
+              "fieldName": "hoist"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Dicas de ferramenta (_tooltips_) exibem informações adicionais contextuais.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tooltip",
+          "status": "stable",
+          "since": "0.5",
+          "dependencies": [
+            "cps-popover"
+          ],
+          "animations": [
+            {
+              "name": "tooltip.show",
+              "description": "A animação a ser usada ao exibir a dica de ferramenta."
+            },
+            {
+              "name": "tooltip.hide",
+              "description": "A animação a ser usada ao ocultar a dica de ferramenta."
+            }
+          ],
+          "tagName": "cps-tooltip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsTooltip",
+            "module": "components/tooltip.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-tooltip",
+          "declaration": {
+            "name": "CpsTooltip",
+            "module": "components/tooltip.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsTooltip",
+          "declaration": {
+            "name": "CpsTooltip",
+            "module": "components/tooltip.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/icon/library.default.js",
       "declarations": [
         {
@@ -4479,7 +5419,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

@@ -1,6 +1,7 @@
 :host,
 .cps-theme-dark {
   color-scheme: dark;
+  accent-color: var(--cps-fill-accent-primary);
 
   --cps-color-neutral-0: 0 0 0;
   --cps-color-neutral-1000: 255 255 255;
@@ -338,6 +339,15 @@
   --cps-fill-solid-tertiary: rgb(40 40 40);
   --cps-fill-solid-quaternary: rgb(44 44 44);
 
+  --cps-fill-acrylic-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.2' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  --cps-fill-acrylic: linear-gradient(rgb(44 44 44 / 91%), rgb(44 44 44 / 91%)),
+    var(--cps-fill-acrylic-texture);
+  --cps-fill-acrylic-base: linear-gradient(
+      rgb(32 32 32 / 96%),
+      rgb(32 32 32 / 96%)
+    ),
+    var(--cps-fill-acrylic-texture);
+
   --cps-fill-control-primary: rgb(var(--cps-color-neutral-1000) / 6.05%);
   --cps-fill-control-secondary: rgb(var(--cps-color-neutral-1000) / 8.37%);
   --cps-fill-control-tertiary: rgb(var(--cps-color-neutral-1000) / 3.26%);
@@ -392,6 +402,8 @@
   --cps-stroke-card-secondary: rgb(var(--cps-color-neutral-0) / 36.28%);
 
   --cps-stroke-divider: rgb(var(--cps-color-neutral-1000) / 8.37%);
+
+  --cps-stroke-surface: rgb(117 117 117 / 40%);
 
   --cps-color-elevation-top-control: var(--cps-stroke-control-secondary);
   --cps-color-elevation-bottom-control: var(--cps-stroke-control-primary);
@@ -558,6 +570,8 @@
   --cps-toggle-size-large: 1.5rem;
 
   --cps-overlay-background-color: rgba(0, 0, 0, 0.43);
+
+  --cps-tooltip-arrow-size: 7px;
 
   --cps-z-index-drawer: 700;
   --cps-z-index-dialog: 800;
