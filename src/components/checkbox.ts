@@ -22,7 +22,7 @@ import type { CSSResultGroup } from 'lit';
  *
  * @dependency cps-icon
  *
- * @slot [default] - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.
+ * @slot - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.
  *
  * @event cps-blur - Emitido quando o controle perde o foco.
  * @event cps-change - Emitido quando a alteração do valor do controle é confirmada pelo usuário.
