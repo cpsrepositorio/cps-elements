@@ -549,7 +549,7 @@
   --cps-text-caption: var(--cps-font-size-2xs) / var(--cps-font-size-xs) var(--cps-font-sans);
   --cps-text-label: var(--cps-font-size-xs) / var(--cps-font-size-sm) var(--cps-font-sans);
   --cps-text-body: var(--cps-font-size-sm) / var(--cps-font-size-base) var(--cps-font-sans);
-  --cps-text-body-little: var(--cps-font-size-lt) / var(--cps-font-size-base) var(--cps-font-sans);
+  --cps-text-body-em: var(--cps-font-size-lt) / var(--cps-font-size-base) var(--cps-font-sans);
   --cps-text-body-strong: var(--cps-font-weight-semibold) var(--cps-font-size-lt) / var(--cps-font-size-base)
     var(--cps-font-sans);
   --cps-text-body-large: var(--cps-font-size-base) / var(--cps-font-size-lg) var(--cps-font-sans);

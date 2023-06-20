@@ -23,6 +23,7 @@
   - [Icon](/componentes/icon)
   - [Icon Button](/componentes/icon-button)
   - [Input](/componentes/input)
+  - [Label](/componentes/label)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
   - [Textarea](/componentes/textarea)

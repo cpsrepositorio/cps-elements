@@ -231,7 +231,7 @@ strong {
 .sidebar-nav ul ul:not(.app-sub-sidebar) > li > a {
   border-left: 0.25rem solid transparent;
   padding-left: 1.75rem;
-  font: var(--cps-text-body-little);
+  font: var(--cps-text-body-em);
 }
 
 .sidebar-nav ul ul:not(.app-sub-sidebar) > li.collapse > a,
