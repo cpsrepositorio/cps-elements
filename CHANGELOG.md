@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Added
 
 - Criação do componente `<cps-label>`.
+- Criação do componente `<cps-radio>`.
 
 ## 0.5.0 - 2023-06-15
 

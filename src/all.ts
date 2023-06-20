@@ -10,6 +10,7 @@ export { CpsInclude } from './components/include';
 export { CpsInput } from './components/input';
 export { CpsLabel } from './components/label';
 export { CpsPopover } from './components/popover';
+export { CpsRadio } from './components/radio';
 export { CpsSkeleton } from './components/skeleton';
 export { CpsSpinner } from './components/spinner';
 export { CpsTextarea } from './components/textarea';

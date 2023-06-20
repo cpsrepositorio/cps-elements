@@ -24,6 +24,7 @@
   - [Icon Button](/componentes/icon-button)
   - [Input](/componentes/input)
   - [Label](/componentes/label)
+  - [Radio](/componentes/radio)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
   - [Textarea](/componentes/textarea)
