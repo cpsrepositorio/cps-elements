@@ -60,7 +60,10 @@ export default class CpsButtonGroup extends BaseElement {
         button.classList.toggle('cps-button-group__button--first', index === 0);
         button.classList.toggle('cps-button-group__button--inner', index > 0 && index < slottedElements.length - 1);
         button.classList.toggle('cps-button-group__button--last', index === slottedElements.length - 1);
-        button.classList.toggle('cps-button-group__button--radio', button.tagName.toLowerCase() === 'cps-radio-button');
+        button.classList.toggle(
+          'cps-button-group__button--radio',
+          button.tagName.toLowerCase() === 'cps-toggle-button'
+        );
       }
     });
   }
@@ -84,7 +87,7 @@ export default class CpsButtonGroup extends BaseElement {
 }
 
 function findButton(el: HTMLElement) {
-  const selector = 'cps-button, cps-radio-button';
+  const selector = 'cps-button, cps-toggle-button';
 
   // The button could be the target element or a child of it (e.g. a dropdown or tooltip anchor)
   return el.closest(selector) ?? el.querySelector(selector);

@@ -10,6 +10,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Criação do componente `<cps-label>`.
 - Criação do componente `<cps-radio>`.
+- Criação do componente `<cps-toggle-button>`.
 
 ### Fixed
 

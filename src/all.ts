@@ -14,6 +14,7 @@ export { CpsRadio } from './components/radio';
 export { CpsSkeleton } from './components/skeleton';
 export { CpsSpinner } from './components/spinner';
 export { CpsTextarea } from './components/textarea';
+export { CpsToggleButton } from './components/toggle-button';
 export { CpsTooltip } from './components/tooltip';
 /* plop:component */
 

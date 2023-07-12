@@ -28,6 +28,7 @@
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
   - [Textarea](/componentes/textarea)
+  - [Toggle Button](/componentes/toggle-button)
   - [Tooltip](/componentes/tooltip)
   - [<code>...</code> <small>(em breve)</small>](/404)
   <!--plop:component-->
