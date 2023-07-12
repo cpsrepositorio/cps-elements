@@ -105,7 +105,6 @@ export default class CpsRadio extends BaseElement {
 
   private handleClick() {
     if (!this.disabled) {
-      console.log('clicked');
       this.checked = true;
     }
   }
