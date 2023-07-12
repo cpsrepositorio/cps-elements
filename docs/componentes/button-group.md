@@ -253,31 +253,66 @@ const App = () => (
 
 ### Exemplo de barra de tarefas
 
-Crie barras de ferramentas interativas com grupos de botões.
+Crie barras de ferramentas interativas misturando grupos de botões, [botões comuns](/componentes/button), [grupos de opções](/componentes/radio-group) e [botões alternáveis](/componentes/toggle-button).
 
 ```html preview
 <div class="button-group-toolbar">
   <cps-button-group label="Histórico">
-    <cps-button title="Desfazer"><cps-icon name="arrow-counterclockwise" label="Desfazer"></cps-icon></cps-button>
-    <cps-button title="Refazer"><cps-icon name="arrow-clockwise" label="Refazer"></cps-icon></cps-button>
+    <cps-tooltip content="Desfazer">
+      <cps-button><cps-icon name="arrow-counterclockwise" label="Desfazer"></cps-icon></cps-button>
+    </cps-tooltip>
+
+    <cps-tooltip content="Refazer">
+      <cps-button><cps-icon name="arrow-clockwise" label="Refazer"></cps-icon></cps-button>
+    </cps-tooltip>
   </cps-button-group>
 
   <cps-button-group label="Formatação">
-    <cps-button title="Negrito"><cps-icon name="text-bold" label="Negrito"></cps-icon></cps-button>
-    <cps-button title="Itálico"><cps-icon name="text-italic" label="Itálico"></cps-icon></cps-button>
-    <cps-button title="Sublinhado"><cps-icon name="text-underline" label="Sublinhado"></cps-icon></cps-button>
+    <cps-tooltip content="Negrito">
+      <cps-toggle-button><cps-icon name="text-bold" label="Negrito"></cps-icon></cps-toggle-button>
+    </cps-tooltip>
+
+    <cps-tooltip content="Itálico">
+      <cps-toggle-button><cps-icon name="text-italic" label="Itálico"></cps-icon></cps-toggle-button>
+    </cps-tooltip>
+
+    <cps-tooltip content="Sublinhado">
+      <cps-toggle-button><cps-icon name="text-underline" label="Sublinhado"></cps-icon></cps-toggle-button>
+    </cps-tooltip>
   </cps-button-group>
 
-  <cps-button-group label="Alinhamento">
-    <cps-button title="À esquerda"><cps-icon name="text-align-left" label="À esquerda"></cps-icon></cps-button>
-    <cps-button title="Centralizado"><cps-icon name="text-align-center" label="Centralizado"></cps-icon></cps-button>
-    <cps-button title="À direita"><cps-icon name="text-align-right" label="À direita"></cps-icon></cps-button>
-  </cps-button-group>
+  <cps-radio-group value="left">
+    <cps-tooltip content="À esquerda">
+      <cps-toggle-button value="left">
+        <cps-icon name="text-align-left" label="Alinhamento à esquerda"></cps-icon>
+      </cps-toggle-button>
+    </cps-tooltip>
+
+    <cps-tooltip content="Centralizado">
+      <cps-toggle-button value="center">
+        <cps-icon name="text-align-center" label="Alinhamento centralizado"></cps-icon>
+      </cps-toggle-button>
+    </cps-tooltip>
+
+    <cps-tooltip content="À direita">
+      <cps-toggle-button value="right">
+        <cps-icon name="text-align-right" label="Alinhamento à direita"></cps-icon>
+      </cps-toggle-button>
+    </cps-tooltip>
+
+    <cps-tooltip content="Justificado">
+      <cps-toggle-button value="justify">
+        <cps-icon name="text-align-justify" label="Justificado"></cps-icon>
+      </cps-toggle-button>
+    </cps-tooltip>
+  </cps-radio-group>
 </div>
 
 <style>
-  .button-group-toolbar cps-button-group:not(:last-of-type) {
-    margin-right: var(--cps-spacing-2);
+  .button-group-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--cps-spacing-2);
   }
 </style>
 ```
@@ -286,48 +321,80 @@ Crie barras de ferramentas interativas com grupos de botões.
 import { CpsButton } from '@cps-elements/web/react/button';
 import { CpsButtonGroup } from '@cps-elements/web/react/button-group';
 import { CpsIcon } from '@cps-elements/web/react/icon';
+import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
+import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsTooltip } from '@cps-elements/web/react/tooltip';
 
 const css = `
-  .button-group-toolbar cps-button-group:not(:last-of-type) {
-    margin-right: var(--cps-spacing-2);
+  .button-group-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--cps-spacing-2);
   }
 `;
 
 const App = () => (
   <>
-    <div className="button-group-toolbar">
+    <div class="button-group-toolbar">
       <CpsButtonGroup label="Histórico">
-        <CpsButton title="Desfazer">
-          <CpsIcon name="arrow-counterclockwise" label="Desfazer" />
-        </CpsButton>
-        <CpsButton title="Refazer">
-          <CpsIcon name="arrow-clockwise" label="Refazer" />
-        </CpsButton>
+        <CpsTooltip content="Desfazer">
+          <CpsButton>
+            <CpsIcon name="arrow-counterclockwise" label="Desfazer" />
+          </CpsButton>
+        </CpsTooltip>
+
+        <CpsTooltip content="Refazer">
+          <CpsButton>
+            <CpsIcon name="arrow-clockwise" label="Refazer" />
+          </CpsButton>
+        </CpsTooltip>
       </CpsButtonGroup>
 
       <CpsButtonGroup label="Formatação">
-        <CpsButton title="Negrito">
-          <CpsIcon name="text-bold" label="Negrito" />
-        </CpsButton>
-        <CpsButton title="Itálico">
-          <CpsIcon name="text-italic" label="Itálico" />
-        </CpsButton>
-        <CpsButton title="Sublinhado">
-          <CpsIcon name="text-underline" label="Sublinhado" />
-        </CpsButton>
+        <CpsTooltip content="Negrito">
+          <CpsToggleButton>
+            <CpsIcon name="text-bold" label="Negrito" />
+          </CpsToggleButton>
+        </CpsTooltip>
+
+        <CpsTooltip content="Itálico">
+          <CpsToggleButton>
+            <CpsIcon name="text-italic" label="Itálico" />
+          </CpsToggleButton>
+        </CpsTooltip>
+
+        <CpsTooltip content="Sublinhado">
+          <CpsToggleButton>
+            <CpsIcon name="text-underline" label="Sublinhado" />
+          </CpsToggleButton>
+        </CpsTooltip>
       </CpsButtonGroup>
 
-      <CpsButtonGroup label="Alinhamento">
-        <CpsButton title="À esquerda">
-          <CpsIcon name="text-align-left" label="À esquerda" />
-        </CpsButton>
-        <CpsButton title="Centralizado">
-          <CpsIcon name="text-align-center" label="Centralizado" />
-        </CpsButton>
-        <CpsButton title="À direita">
-          <CpsIcon name="text-align-right" label="À direita" />
-        </CpsButton>
-      </CpsButtonGroup>
+      <CpsRadioGroup value="left">
+        <CpsTooltip content="À esquerda">
+          <CpsToggleButton value="left">
+            <CpsIcon name="text-align-left" label="Alinhamento à esquerda" />
+          </CpsToggleButton>
+        </CpsTooltip>
+
+        <CpsTooltip content="Centralizado">
+          <CpsToggleButton value="center">
+            <CpsIcon name="text-align-center" label="Alinhamento centralizado" />
+          </CpsToggleButton>
+        </CpsTooltip>
+
+        <CpsTooltip content="À direita">
+          <CpsToggleButton value="right">
+            <CpsIcon name="text-align-right" label="Alinhamento à direita" />
+          </CpsToggleButton>
+        </CpsTooltip>
+
+        <CpsTooltip content="Justificado">
+          <CpsToggleButton value="justify">
+            <CpsIcon name="text-align-justify" label="Justificado" />
+          </CpsToggleButton>
+        </CpsTooltip>
+      </CpsRadioGroup>
     </div>
 
     <style>{css}</style>
