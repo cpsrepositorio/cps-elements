@@ -15,6 +15,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Fixed
 
 - Correção em exemplos de código React e Vue, sobre a utilização programática do `<cps-tooltip>`.
+- Definição da cor de texto de _label_ correta no `<cps-checkbox>` em estado `disabled`.
 
 ## 0.5.0 - 2023-06-15
 

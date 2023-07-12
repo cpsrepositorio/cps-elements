@@ -165,6 +165,7 @@ export default css`
 
   .checkbox.checkbox--disabled .checkbox__label {
     cursor: not-allowed;
+    color: var(--cps-foreground-disabled);
   }
 
   .checkbox--has-label .checkbox__label {
