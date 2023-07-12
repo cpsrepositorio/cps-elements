@@ -25,6 +25,7 @@
   - [Input](/componentes/input)
   - [Label](/componentes/label)
   - [Radio](/componentes/radio)
+  - [Radio Group](/componentes/radio-group)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
   - [Textarea](/componentes/textarea)

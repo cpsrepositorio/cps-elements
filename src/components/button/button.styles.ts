@@ -462,8 +462,7 @@ export default css`
   }
 
   /* Add a visual separator between solid buttons */
-  :host(.cps-button-group__button:not(.cps-button-group__button--first, .cps-button-group__button--radio))
-    .button:before {
+  :host(.cps-button-group__button:not(.cps-button-group__button--first)) .button:before {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -471,6 +470,14 @@ export default css`
     z-index: 3;
     border-left: 1px solid;
     content: '';
+  }
+
+  :host(.cps-button-group__button:not(.cps-button-group__button--first, [checked])) .button:before {
+    border-left-color: var(--cps-stroke-control-primary);
+  }
+
+  :host(.cps-button-group__button[checked]:not(.cps-button-group__button--first)) .button:before {
+    border-left-color: var(--cps-stroke-control-inverted-primary);
   }
 
   :host(
