@@ -11,6 +11,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 - Criação do componente `<cps-label>`.
 - Criação do componente `<cps-radio>`.
 
+### Fixed
+
+- Correção em exemplos de código React e Vue, sobre a utilização programática do `<cps-tooltip>`.
+
 ## 0.5.0 - 2023-06-15
 
 ### Added

@@ -279,18 +279,20 @@ const App = () => {
 
   return (
     <div class="manual-tooltip">
-      <CpsTooltip content="Aqui está sua dica!" trigger="manual">
+      <CpsTooltip open={open} content="Aqui está sua dica!" trigger="manual">
         <span>Preciso de uma dica...</span>
       </CpsTooltip>
 
-      <CpsCheckbox style="margin-left: 1rem">Mostrar dica</CpsCheckbox>
+      <CpsCheckbox style="margin-left: 1rem" cps-change={setOpen(!open)}>
+        Mostrar dica
+      </CpsCheckbox>
     </div>
   );
 };
 ```
 
 ```html vue
-<script>
+<script setup>
   import { ref, computed } from 'vue';
   import { CpsCheckbox } from '@cps-elements/web/components/checkbox';
   import { CpsTooltip } from '@cps-elements/web/components/tooltip';
@@ -305,7 +307,7 @@ const App = () => {
       <span>Preciso de uma dica...</span>
     </cps-tooltip>
 
-    <cps-checkbox :checked="isChecked" style="margin-left: 1rem">Mostrar dica</cps-checkbox>
+    <cps-checkbox v-model="isChecked" style="margin-left: 1rem">Mostrar dica</cps-checkbox>
   </div>
 </template>
 ```
