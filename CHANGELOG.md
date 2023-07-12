@@ -13,6 +13,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 - Criação do componente `<cps-radio-group>`.
 - Criação do componente `<cps-toggle-button>`.
 
+### Changed
+
+- Definição de cor crítica para marcador automático de campo obrigatório, nos temas claro e escuro.
+
 ### Fixed
 
 - Correção em exemplos de código React e Vue, sobre a utilização programática do `<cps-tooltip>`.

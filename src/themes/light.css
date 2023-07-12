@@ -630,7 +630,7 @@
 
   --cps-input-required-content: '*';
   --cps-input-required-content-offset: -2px;
-  --cps-input-required-content-color: inherit;
+  --cps-input-required-content-color: var(--cps-fill-system-critical);
 
   /* Toggles (checkboxes, radios, switches) */
   --cps-toggle-size-small: 1rem; /* 16px */
