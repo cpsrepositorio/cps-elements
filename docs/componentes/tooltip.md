@@ -283,7 +283,7 @@ const App = () => {
         <span>Preciso de uma dica...</span>
       </CpsTooltip>
 
-      <CpsCheckbox style="margin-left: 1rem" cps-change={setOpen(!open)}>
+      <CpsCheckbox style="margin-left: 1rem" checked={open} onCpsChange={setOpen(!open)}>
         Mostrar dica
       </CpsCheckbox>
     </div>
@@ -293,12 +293,11 @@ const App = () => {
 
 ```html vue
 <script setup>
-  import { ref, computed } from 'vue';
+  import { ref } from 'vue';
   import { CpsCheckbox } from '@cps-elements/web/components/checkbox';
   import { CpsTooltip } from '@cps-elements/web/components/tooltip';
 
-  const isChecked = ref(false);
-  const isOpen = computed(() => isChecked.value);
+  const isOpen = ref(false);
 </script>
 
 <template>
@@ -307,7 +306,7 @@ const App = () => {
       <span>Preciso de uma dica...</span>
     </cps-tooltip>
 
-    <cps-checkbox v-model="isChecked" style="margin-left: 1rem">Mostrar dica</cps-checkbox>
+    <cps-checkbox v-model="isOpen" style="margin-left: 1rem">Mostrar dica</cps-checkbox>
   </div>
 </template>
 ```
