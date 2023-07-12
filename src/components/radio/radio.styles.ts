@@ -199,6 +199,7 @@ export default css`
 
   .radio.radio--disabled .radio__label {
     cursor: not-allowed;
+    color: var(--cps-foreground-disabled);
   }
 
   .radio--has-label .radio__label {
