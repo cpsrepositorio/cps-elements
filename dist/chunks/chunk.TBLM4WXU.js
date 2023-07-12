@@ -1,0 +1,1 @@
+import{c as e}from"./chunk.K3RV6SX6.js";function o(r){let x=new Date().getTime();return r||"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,n=>{let t=(x+Math.random()*16)%16|0;return x=Math.floor(x/16),(n==="x"?t:t&3|8).toString(16)})}e(o,"uuid");export{o as a};

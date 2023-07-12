@@ -999,7 +999,7 @@
           "slots": [
             {
               "description": "Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.",
-              "name": "default"
+              "name": ""
             }
           ],
           "members": [
@@ -3251,6 +3251,133 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/label.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsLabel",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (por padrão um `<span>`, podendo ser modificado com o atributo `tag`).",
+              "name": "base"
+            },
+            {
+              "description": "O `<slot>` de conteúdo interno do _label_.",
+              "name": "content"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo do _label_.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "| 'primary'\r\n    | 'secondary'\r\n    | 'tertiary'\r\n    | 'disabled'\r\n    | 'brand-primary'\r\n    | 'brand-secondary'\r\n    | 'brand-tertiary'\r\n    | 'inverted-primary'\r\n    | 'inverted-secondary'\r\n    | 'inverted-disabled'"
+              },
+              "default": "'primary'",
+              "description": "A variante temática do _label_.",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "| 'stamp'\r\n    | 'caption'\r\n    | 'label'\r\n    | 'body'\r\n    | 'body-emphasized'\r\n    | 'body-strong'\r\n    | 'body-large'\r\n    | 'subtitle'\r\n    | 'title'\r\n    | 'heading'\r\n    | 'display'"
+              },
+              "default": "'body'",
+              "description": "O tamanho do _label_.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "tag",
+              "type": {
+                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+              },
+              "default": "'span'",
+              "description": "O elemento HTML desejado para a renderização do _label_.",
+              "attribute": "tag",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "| 'primary'\r\n    | 'secondary'\r\n    | 'tertiary'\r\n    | 'disabled'\r\n    | 'brand-primary'\r\n    | 'brand-secondary'\r\n    | 'brand-tertiary'\r\n    | 'inverted-primary'\r\n    | 'inverted-secondary'\r\n    | 'inverted-disabled'"
+              },
+              "default": "'primary'",
+              "description": "A variante temática do _label_.",
+              "fieldName": "variant"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "| 'stamp'\r\n    | 'caption'\r\n    | 'label'\r\n    | 'body'\r\n    | 'body-emphasized'\r\n    | 'body-strong'\r\n    | 'body-large'\r\n    | 'subtitle'\r\n    | 'title'\r\n    | 'heading'\r\n    | 'display'"
+              },
+              "default": "'body'",
+              "description": "O tamanho do _label_.",
+              "fieldName": "size"
+            },
+            {
+              "name": "tag",
+              "type": {
+                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+              },
+              "default": "'span'",
+              "description": "O elemento HTML desejado para a renderização do _label_.",
+              "fieldName": "tag"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Rótulos (_labels_) representam uma etiqueta textual para um item na interface.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
+          "status": "stable",
+          "since": "0.6",
+          "tagName": "cps-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsLabel",
+            "module": "components/label.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-label",
+          "declaration": {
+            "name": "CpsLabel",
+            "module": "components/label.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsLabel",
+          "declaration": {
+            "name": "CpsLabel",
+            "module": "components/label.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/popover.js",
       "declarations": [
         {
@@ -3795,6 +3922,781 @@
           "declaration": {
             "name": "CpsPopover",
             "module": "components/popover.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/radio-group.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsRadioGroup",
+          "cssParts": [
+            {
+              "description": "O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.",
+              "name": "form-control"
+            },
+            {
+              "description": "Elemento que embrulha o rótulo do controle de formulário.",
+              "name": "form-control-label"
+            },
+            {
+              "description": "Elemento que embrulha o campo do controle de formulário.",
+              "name": "form-control-input"
+            },
+            {
+              "description": "Elemento que embrulha o texto de apoio do controle de formulário.",
+              "name": "form-control-help-text"
+            },
+            {
+              "description": "O componente de grupo de botões que embrulha botões alternáveis (um `<cps-button-group>`).",
+              "name": "button-group"
+            },
+            {
+              "description": "A parte `base` re-exportada do grupo de botões.",
+              "name": "button-group__base"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O _slot_ padrão onde elementos `<cps-radio>` ou `<cps-toggle-button>` são colocados.",
+              "name": ""
+            },
+            {
+              "description": "Rótulo informativo do campo. Obrigatório para acessibilidade adequada. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.",
+              "name": "label"
+            },
+            {
+              "description": "Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.",
+              "name": "help-text"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formControlController",
+              "privacy": "protected",
+              "default": "new FormControlController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, 'help-text', 'label')"
+            },
+            {
+              "kind": "field",
+              "name": "customValidityMessage",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "validationTimeout",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "defaultSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationInput",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasButtonGroup",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "errorMessage",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "generatedId",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "defaultValue",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "id",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "attribute": "id"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo do campo. Obrigatório para acessibilidade adequada. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "helpText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+              "attribute": "help-text"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "'option'",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo. Este tamanho será aplicado a todos os elementos filhos `<cps-radio>` ou `<cps-toggle-button>`.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "attribute": "form",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Torna o campo como sendo de preenchimento obrigatório, garantindo que um `<cps-radio>` ou um `<cps-toggle-button>` internos esteja marcado.",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "description": "Obtém o objeto de estado de validade do campo."
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "description": "Obtém a mensagem de validação do campo."
+            },
+            {
+              "kind": "method",
+              "name": "handleIdChange"
+            },
+            {
+              "kind": "method",
+              "name": "getAllRadios",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleRadioClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleLabelClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleInvalid",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "adjustFocusableRadios",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "syncRadios",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateCheckedRadio",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleSizeChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleValueChange"
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido."
+            },
+            {
+              "kind": "method",
+              "name": "getForm",
+              "return": {
+                "type": {
+                  "text": "HTMLFormElement | null"
+                }
+              },
+              "description": "Obtém o formulário associado com este componente, se algum estiver."
+            },
+            {
+              "kind": "method",
+              "name": "reportValidity",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido."
+            },
+            {
+              "kind": "method",
+              "name": "setCustomValidity",
+              "parameters": [
+                {
+                  "name": "message",
+                  "default": "''"
+                }
+              ],
+              "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando a alteração do valor do controle é confirmada pelo usuário.",
+              "name": "cps-change",
+              "reactName": "onCpsChange"
+            },
+            {
+              "description": "Emitido quando o controle recebe entrada de dados.",
+              "name": "cps-input",
+              "reactName": "onCpsInput"
+            },
+            {
+              "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.",
+              "name": "cps-invalid",
+              "reactName": "onCpsInvalid"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "id",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "fieldName": "id"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo do campo. Obrigatório para acessibilidade adequada. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "fieldName": "label"
+            },
+            {
+              "name": "help-text",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+              "fieldName": "helpText"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "'option'",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "fieldName": "name"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "fieldName": "value"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo. Este tamanho será aplicado a todos os elementos filhos `<cps-radio>` ou `<cps-toggle-button>`.",
+              "fieldName": "size"
+            },
+            {
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "fieldName": "form"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Torna o campo como sendo de preenchimento obrigatório, garantindo que um `<cps-radio>` ou um `<cps-toggle-button>` internos esteja marcado.",
+              "fieldName": "required"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Grupos de opções englobam múltiplos [Radio](/componentes/radio) ou [Toggle Button](/componentes/toggle-button) para que funcionem como um único controle.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/radio-group",
+          "status": "stable",
+          "since": "0.6",
+          "dependencies": [
+            "cps-button-group"
+          ],
+          "tagName": "cps-radio-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsRadioGroup",
+            "module": "components/radio-group.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-radio-group",
+          "declaration": {
+            "name": "CpsRadioGroup",
+            "module": "components/radio-group.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsRadioGroup",
+          "declaration": {
+            "name": "CpsRadioGroup",
+            "module": "components/radio-group.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/radio.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsRadio",
+          "cssParts": [
+            {
+              "description": "O elemento base que embrulha o `<input>` e eventuais elementos de apoio para sua renderização.",
+              "name": "base"
+            },
+            {
+              "description": "O elemento circular que embrulha o estado checagem do campo.",
+              "name": "control"
+            },
+            {
+              "description": "Obtém para estilização o elemento `control`, somente quando o campo está marcado.",
+              "name": "control--checked"
+            },
+            {
+              "description": "O identificador de estado checado, um elemento `<span>` com estilização circular.",
+              "name": "checked-handle"
+            },
+            {
+              "description": "O elemento que embrulha o rótulo do campo, um elemento `<label>`.",
+              "name": "label"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "generatedId",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "title"
+            },
+            {
+              "kind": "field",
+              "name": "id",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "attribute": "id"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o campo.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
+              "attribute": "checked",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleIdChange"
+            },
+            {
+              "kind": "method",
+              "name": "addEventListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "removeEventListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "setInitialAttributes",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleCheckedChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o controle perde o foco.",
+              "name": "cps-blur",
+              "reactName": "onCpsBlur"
+            },
+            {
+              "description": "Emitido quando o controle obtém o foco.",
+              "name": "cps-focus",
+              "reactName": "onCpsFocus"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "title"
+            },
+            {
+              "name": "id",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "fieldName": "id"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "fieldName": "value"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "fieldName": "label"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo.",
+              "fieldName": "size"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o campo.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
+              "fieldName": "checked"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Campos de opção (_radio_) permitem que o usuário selecione uma única opção de um grupo.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/radio",
+          "status": "stable",
+          "since": "0.6",
+          "tagName": "cps-radio",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsRadio",
+            "module": "components/radio.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-radio",
+          "declaration": {
+            "name": "CpsRadio",
+            "module": "components/radio.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsRadio",
+          "declaration": {
+            "name": "CpsRadio",
+            "module": "components/radio.js"
           }
         }
       ]
@@ -4785,6 +5687,286 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/toggle-button.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsToggleButton",
+          "cssParts": [
+            {
+              "description": "O elemento base que embrulha o botão (um `<div>`).",
+              "name": "base"
+            },
+            {
+              "description": "O elemento principal propriamente dito (um `<button>`).",
+              "name": "button"
+            },
+            {
+              "description": "Obtém para estilização o elemento `button`, somente quando o este está marcado.",
+              "name": "button--checked"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
+              "name": "prefix"
+            },
+            {
+              "description": "O elemento que embrulha o conteúdo principal, normalmente o _label_ do botão.",
+              "name": "content"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `suffix`.",
+              "name": "suffix"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O texto interno do botão.",
+              "name": ""
+            },
+            {
+              "description": "Um ícone ou elemento similar antes do conteúdo principal.",
+              "name": "prefix"
+            },
+            {
+              "description": "Um ícone ou elemento similar após o conteúdo principal.",
+              "name": "suffix"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, '[default]', 'prefix', 'suffix')"
+            },
+            {
+              "kind": "field",
+              "name": "input",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hiddenInput",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
+              "attribute": "checked",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o botão alternável.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do botão alternável.\r\n\r\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "rounded",
+              "type": {
+                "text": "'default' | 'corner' | 'full'"
+              },
+              "default": "'default'",
+              "description": "Arredondamento dos cantos do botão alternável, com o padrão sendo bordas arredondas em `4px`.",
+              "attribute": "rounded",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            },
+            {
+              "kind": "method",
+              "name": "click",
+              "description": "Simula um _click_ no botão alternável."
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Coloca o foco no botão alternável."
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Remove o foco do botão alternável."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o botão perde o foco.",
+              "name": "cps-blur",
+              "reactName": "onCpsBlur"
+            },
+            {
+              "description": "Emitido quando o botão obtém o foco.",
+              "name": "cps-focus",
+              "reactName": "onCpsFocus"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
+              "fieldName": "checked"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
+              "fieldName": "value"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o botão alternável.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do botão alternável.\r\n\r\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
+              "fieldName": "size"
+            },
+            {
+              "name": "rounded",
+              "type": {
+                "text": "'default' | 'corner' | 'full'"
+              },
+              "default": "'default'",
+              "description": "Arredondamento dos cantos do botão alternável, com o padrão sendo bordas arredondas em `4px`.",
+              "fieldName": "rounded"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element"
+          },
+          "summary": "Botões alternáveis permitem marcar e desmarcar uma opção, individualmente ou como parte de um grupo.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/toggle-button",
+          "status": "stable",
+          "since": "0.6",
+          "tagName": "cps-toggle-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsToggleButton",
+            "module": "components/toggle-button.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-toggle-button",
+          "declaration": {
+            "name": "CpsToggleButton",
+            "module": "components/toggle-button.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsToggleButton",
+          "declaration": {
+            "name": "CpsToggleButton",
+            "module": "components/toggle-button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/tooltip.js",
       "declarations": [
         {
@@ -5419,7 +6601,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

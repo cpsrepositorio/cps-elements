@@ -503,7 +503,7 @@ export default css`
       var(--cps-font-sans);
     --cps-text-body: var(--cps-font-size-sm) / var(--cps-font-size-base)
       var(--cps-font-sans);
-    --cps-text-body-little: var(--cps-font-size-lt) / var(--cps-font-size-base)
+    --cps-text-body-em: var(--cps-font-size-lt) / var(--cps-font-size-base)
       var(--cps-font-sans);
     --cps-text-body-strong: var(--cps-font-weight-semibold)
       var(--cps-font-size-lt) / var(--cps-font-size-base) var(--cps-font-sans);
@@ -574,7 +574,7 @@ export default css`
 
     --cps-input-required-content: "*";
     --cps-input-required-content-offset: -2px;
-    --cps-input-required-content-color: inherit;
+    --cps-input-required-content-color: var(--cps-fill-system-critical);
 
     --cps-toggle-size-small: 1rem;
     --cps-toggle-size-medium: 1.25rem;

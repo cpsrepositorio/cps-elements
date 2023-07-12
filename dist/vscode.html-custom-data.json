@@ -181,7 +181,7 @@
     },
     {
       "name": "cps-checkbox",
-      "description": "Caixas de seleção (_checkboxes_) permitem alternar entre estados marcado ou desmarcado.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **click()** - Simula um _click_ no campo.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - **default** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o `<input>` e eventuais elementos de apoio para sua renderização.\n- **control** - O elemento quadrado que embrulha o estado checagem do campo.\n- **control--checked** - Obtém para estilização o elemento `control`, somente quando o campo está marcado.\n- **control--indeterminate** - Obtém para estilização o elemento `control`, somente quando o campo está em estado indeterminado.\n- **checked-icon** - O ícone de estado checado, um elemento `<cps-icon>`.\n- **indeterminate-icon** - O ícone de estado indeterminado, um elemento `<cps-icon>`.\n- **label** - O elemento que embrulha o rótulo do campo, um elemento `<label>`.",
+      "description": "Caixas de seleção (_checkboxes_) permitem alternar entre estados marcado ou desmarcado.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **click()** - Simula um _click_ no campo.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - _default_ - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o `<input>` e eventuais elementos de apoio para sua renderização.\n- **control** - O elemento quadrado que embrulha o estado checagem do campo.\n- **control--checked** - Obtém para estilização o elemento `control`, somente quando o campo está marcado.\n- **control--indeterminate** - Obtém para estilização o elemento `control`, somente quando o campo está em estado indeterminado.\n- **checked-icon** - O ícone de estado checado, um elemento `<cps-icon>`.\n- **indeterminate-icon** - O ícone de estado indeterminado, um elemento `<cps-icon>`.\n- **label** - O elemento que embrulha o rótulo do campo, um elemento `<label>`.",
       "attributes": [
         { "name": "title", "values": [] },
         {
@@ -585,6 +585,63 @@
       "references": []
     },
     {
+      "name": "cps-label",
+      "description": "Rótulos (_labels_) representam uma etiqueta textual para um item na interface.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do _label_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (por padrão um `<span>`, podendo ser modificado com o atributo `tag`).\n- **content** - O `<slot>` de conteúdo interno do _label_.",
+      "attributes": [
+        {
+          "name": "variant",
+          "description": "A variante temática do _label_.",
+          "values": [
+            { "name": "" },
+            { "name": "primary" },
+            { "name": "secondary" },
+            { "name": "tertiary" },
+            { "name": "disabled" },
+            { "name": "brand-primary" },
+            { "name": "brand-secondary" },
+            { "name": "brand-tertiary" },
+            { "name": "inverted-primary" },
+            { "name": "inverted-secondary" },
+            { "name": "inverted-disabled" }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do _label_.",
+          "values": [
+            { "name": "" },
+            { "name": "stamp" },
+            { "name": "caption" },
+            { "name": "label" },
+            { "name": "body" },
+            { "name": "body-emphasized" },
+            { "name": "body-strong" },
+            { "name": "body-large" },
+            { "name": "subtitle" },
+            { "name": "title" },
+            { "name": "heading" },
+            { "name": "display" }
+          ]
+        },
+        {
+          "name": "tag",
+          "description": "O elemento HTML desejado para a renderização do _label_.",
+          "values": [
+            { "name": "span" },
+            { "name": "small" },
+            { "name": "i" },
+            { "name": "b" },
+            { "name": "em" },
+            { "name": "strong" },
+            { "name": "label" },
+            { "name": "p" },
+            { "name": "div" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-popover",
       "description": "_Popover_ é um utilitário que permite ancorar caixas flutuantes declarativamente a outro elemento.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-reposition** - Emitido quando o _popover_ é reposicionado. Este evento pode disparar numerosas vezes, evite colocar operações custosas em seu _listener_, ou alternativamente considere usar uma estratégia de _debouce_ neste evento.\n\n### **Methods:**\n - **reposition()** - Força o _popover_ a se recalcular e se reposicionar.\n\n### **Slots:**\n - _default_ - O conteúdo do _popover_.\n- **anchor** - O elemento que o _popover_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _popover_, use o _slot_ `anchor` em vez disso.\n\n### **CSS Properties:**\n - **--arrow-size** - Tamanho da seta. Observe que independentemente desta variável, a seta não será exibida a menos que o atributo `arrow` seja utilizado. _(default: 7px)_\n- **--background-color** - A cor de fundo do _popover_ e de sua eventual seta (caso esteja sendo exibido em estilo balão). _(default: rgb(var(--cps-color-neutral-500)))_\n- **--border-color** - A bordar externa contornando o _popover_ e sua eventual seta (caso esteja sendo exibido em estilo balão). _(default: transparent)_\n- **--auto-size-available-width** - Uma variável somente leitura que determina a largura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado. _(default: undefined)_\n- **--auto-size-available-height** - Uma variável somente leitura que determina a altura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado. _(default: undefined)_\n\n### **CSS Parts:**\n - **arrow** - A seta do _popover_, caso seja em estilo balão. Evite definir propriedades `top|bottom|left|right`, já que estes valores são atribuídos automaticamente conforme o )_popover_ se move. Esta parte CSS é mais relevante para aplicar cores que combinam com seu _popover_ personalizado, ou talvez bordas ou sombras diferenciadas.\n- **container** - O elemento base do _popover_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _popover_, como cor de fundo, sombras, etc.",
       "attributes": [
@@ -718,6 +775,104 @@
         {
           "name": "auto-size-padding",
           "description": "A quantidade de espaço, em pixels, a ser excedido antes que o auto-dimensionamento ocorra.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-radio-group",
+      "description": "Grupos de opções englobam múltiplos [Radio](/componentes/radio) ou [Toggle Button](/componentes/toggle-button) para que funcionem como um único controle.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity(): _boolean_** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - _default_ - O _slot_ padrão onde elementos `<cps-radio>` ou `<cps-toggle-button>` são colocados.\n- **label** - Rótulo informativo do campo. Obrigatório para acessibilidade adequada. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **button-group** - O componente de grupo de botões que embrulha botões alternáveis (um `<cps-button-group>`).\n- **button-group__base** - A parte `base` re-exportada do grupo de botões.",
+      "attributes": [
+        {
+          "name": "id",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "values": []
+        },
+        {
+          "name": "label",
+          "description": "O rótulo do campo. Obrigatório para acessibilidade adequada. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "help-text",
+          "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "name",
+          "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do campo. Este tamanho será aplicado a todos os elementos filhos `<cps-radio>` ou `<cps-toggle-button>`.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "form",
+          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+          "values": []
+        },
+        {
+          "name": "required",
+          "description": "Torna o campo como sendo de preenchimento obrigatório, garantindo que um `<cps-radio>` ou um `<cps-toggle-button>` internos esteja marcado.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-radio",
+      "description": "Campos de opção (_radio_) permitem que o usuário selecione uma única opção de um grupo.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n\n### **Slots:**\n - _default_ - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o `<input>` e eventuais elementos de apoio para sua renderização.\n- **control** - O elemento circular que embrulha o estado checagem do campo.\n- **control--checked** - Obtém para estilização o elemento `control`, somente quando o campo está marcado.\n- **checked-handle** - O identificador de estado checado, um elemento `<span>` com estilização circular.\n- **label** - O elemento que embrulha o rótulo do campo, um elemento `<label>`.",
+      "attributes": [
+        { "name": "title", "values": [] },
+        {
+          "name": "id",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "name",
+          "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "label",
+          "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do campo.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o campo.",
+          "values": []
+        },
+        {
+          "name": "checked",
+          "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
           "values": []
         }
       ],
@@ -900,6 +1055,46 @@
             { "name": "search" },
             { "name": "email" },
             { "name": "url" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-toggle-button",
+      "description": "Botões alternáveis permitem marcar e desmarcar uma opção, individualmente ou como parte de um grupo.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão alternável.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão alternável.\n- **blur()** - Remove o foco do botão alternável.\n\n### **Slots:**\n - _default_ - O texto interno do botão.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o botão (um `<div>`).\n- **button** - O elemento principal propriamente dito (um `<button>`).\n- **button--checked** - Obtém para estilização o elemento `button`, somente quando o este está marcado.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o _label_ do botão.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o botão alternável.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do botão alternável.\r\n\r\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "rounded",
+          "description": "Arredondamento dos cantos do botão alternável, com o padrão sendo bordas arredondas em `4px`.",
+          "values": [
+            { "name": "default" },
+            { "name": "corner" },
+            { "name": "full" }
           ]
         }
       ],
