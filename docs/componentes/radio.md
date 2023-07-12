@@ -175,6 +175,6 @@ const App = () => (
 );
 ```
 
-?> É possível controlar o tamanho de diversos campos de opção de uma só vez, ao usar o atributo `size` do [Radio Group](/components/radio-group) que embrulhar as opções. Confira a documentação de _radio groups_ para mais informações.
+?> É possível controlar o tamanho de diversos campos de opção de uma só vez, ao usar o atributo `size` de um [Radio Group](/components/radio-group) que embrulhe as opções. Confira a documentação de _radio groups_ para mais informações.
 
 [component-metadata:cps-radio]
