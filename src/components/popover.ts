@@ -3,8 +3,8 @@ import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query } from 'lit/decorators.js';
 import { html } from 'lit';
 import { offsetParent } from 'composed-offset-position';
-import BaseElement from '../internal/base-element';
-import styles from './popover/popover.styles';
+import BaseElement from '../internal/base-element.js';
+import styles from './popover/popover.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**

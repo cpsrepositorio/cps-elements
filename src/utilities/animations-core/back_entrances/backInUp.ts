@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const backInUp = [
   { offset: 0, transform: 'translateY(1200px) scale(0.7)', opacity: '0.7' },

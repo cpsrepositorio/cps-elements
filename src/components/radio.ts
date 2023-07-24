@@ -1,13 +1,13 @@
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, state } from 'lit/decorators.js';
-import { HasSlotController } from '../internal/slot';
+import { HasSlotController } from '../internal/slot.js';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { live } from 'lit/directives/live.js';
-import { uuid } from '../internal/uuid';
-import { watch } from '../internal/watch';
-import BaseElement from '../internal/base-element';
-import styles from './radio/radio.styles';
+import { uuid } from '../internal/uuid.js';
+import { watch } from '../internal/watch.js';
+import BaseElement from '../internal/base-element.js';
+import styles from './radio/radio.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**

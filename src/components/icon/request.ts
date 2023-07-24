@@ -1,4 +1,4 @@
-import { requestInclude } from '../include/request';
+import { requestInclude } from '../include/request.js';
 
 type IconFile =
   | {

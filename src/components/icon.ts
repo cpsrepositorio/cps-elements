@@ -1,11 +1,11 @@
 import { customElement, property, state } from 'lit/decorators.js';
-import { getIconLibrary, unwatchIcon, watchIcon } from './icon/library';
+import { getIconLibrary, unwatchIcon, watchIcon } from './icon/library.js';
 import { html } from 'lit';
-import { requestIcon } from './icon/request';
+import { requestIcon } from './icon/request.js';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-import { watch } from '../internal/watch';
-import BaseElement from '../internal/base-element';
-import styles from './icon/icon.styles';
+import { watch } from '../internal/watch.js';
+import BaseElement from '../internal/base-element.js';
+import styles from './icon/icon.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 let parser: DOMParser;
@@ -100,25 +100,25 @@ export default class CpsIcon extends BaseElement {
     if (url) {
       try {
         const file = await requestIcon(url);
-        if (url !== this.getUrl()) {
-          // If the url has changed while fetching the icon, ignore this request
-          return;
-        } else if (file.ok) {
-          const doc = parser.parseFromString(file.svg, 'text/html');
-          const svgEl = doc.body.querySelector('svg');
+        // If the url didn't change while fetching the icon
+        if (url === this.getUrl()) {
+          if (file.ok) {
+            const doc = parser.parseFromString(file.svg, 'text/html');
+            const svgEl = doc.body.querySelector('svg');
 
-          if (svgEl !== null) {
-            svgEl.part.add('svg');
-            library?.mutator?.(svgEl);
-            this.svg = svgEl.outerHTML;
-            this.emit('cps-load');
+            if (svgEl !== null) {
+              svgEl.part.add('svg');
+              library?.mutator?.(svgEl);
+              this.svg = svgEl.outerHTML;
+              this.emit('cps-load');
+            } else {
+              this.svg = '';
+              this.emit('cps-error');
+            }
           } else {
             this.svg = '';
             this.emit('cps-error');
           }
-        } else {
-          this.svg = '';
-          this.emit('cps-error');
         }
       } catch {
         this.emit('cps-error');

@@ -1,4 +1,4 @@
-import './button-group';
+import './button-group.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import {
@@ -6,17 +6,17 @@ import {
   FormControlController,
   validValidityState,
   valueMissingValidityState
-} from '../internal/form';
-import { HasSlotController } from '../internal/slot';
+} from '../internal/form.js';
+import { HasSlotController } from '../internal/slot.js';
 import { html } from 'lit';
-import { uuid } from '../internal/uuid';
-import { watch } from '../internal/watch';
-import BaseElement from '../internal/base-element';
-import styles from './radio-group/radio-group.styles';
-import type { BaseFormControl } from '../internal/base-form-control';
+import { uuid } from '../internal/uuid.js';
+import { watch } from '../internal/watch.js';
+import BaseElement from '../internal/base-element.js';
+import styles from './radio-group/radio-group.styles.js';
+import type { BaseFormControl } from '../internal/base-form-control.js';
 import type { CSSResultGroup } from 'lit';
-import type CpsRadio from './radio';
-import type CpsToggleButton from './toggle-button';
+import type CpsRadio from './radio.js';
+import type CpsToggleButton from './toggle-button.js';
 
 /**
  * @summary Grupos de opções englobam múltiplos [Radio](/componentes/radio) ou [Toggle Button](/componentes/toggle-button) para que funcionem como um único controle.

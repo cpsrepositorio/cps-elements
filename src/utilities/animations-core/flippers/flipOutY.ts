@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const flipOutY = [
   { offset: 0, transform: 'perspective(400px)' },

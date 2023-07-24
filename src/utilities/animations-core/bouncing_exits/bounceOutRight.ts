@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const bounceOutRight = [
   { offset: 0.2, opacity: '1', transform: 'translate3d(-20px, 0, 0) scaleX(0.9)' },

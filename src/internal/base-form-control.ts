@@ -1,4 +1,4 @@
-import type BaseElement from './base-element';
+import type BaseElement from './base-element.js';
 
 export interface BaseFormControl extends BaseElement {
   // Form attributes

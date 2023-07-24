@@ -1,10 +1,10 @@
-import './icon';
+import './icon.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { html, literal } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import BaseElement from '../internal/base-element';
-import styles from './icon-button/icon-button.styles';
+import BaseElement from '../internal/base-element.js';
+import styles from './icon-button/icon-button.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**

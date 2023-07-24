@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const swing = [
   { offset: 0.2, transform: 'rotate3d(0, 0, 1, 15deg)' },

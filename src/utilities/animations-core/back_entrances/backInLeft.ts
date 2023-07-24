@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const backInLeft = [
   { offset: 0, transform: 'translateX(-2000px) scale(0.7)', opacity: '0.7' },

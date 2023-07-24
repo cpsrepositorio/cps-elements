@@ -1,5 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import type CpsSkeleton from '../skeleton';
+import type CpsSkeleton from '../skeleton.js';
 
 describe('<cps-skeleton>', () => {
   it('should render default skeleton', async () => {

@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const zoomIn = [
   { offset: 0, opacity: '0', transform: 'scale3d(0.3, 0.3, 0.3)' },

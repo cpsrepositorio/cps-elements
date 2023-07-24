@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const bounceOutDown = [
   { offset: 0.2, transform: 'translate3d(0, 10px, 0) scaleY(0.985)' },

@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const heartBeat = [
   { offset: 0, transform: 'scale(1)' },

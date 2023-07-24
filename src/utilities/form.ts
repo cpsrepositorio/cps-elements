@@ -1,10 +1,10 @@
-import { formCollections } from '../internal/form';
+import { formCollections } from '../internal/form.js';
 
 /**
  * Serializes a form and returns a plain object. If a form control with the same name appears more than once, the
  * property will be converted to an array.
  */
-export function serialize(form: HTMLFormElement) {
+export function serialize(form: HTMLFormElement): Record<string, unknown> {
   const formData = new FormData(form);
   const object: Record<string, unknown> = {};
 

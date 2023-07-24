@@ -1,12 +1,12 @@
-import '../translations/pt';
-import { LocalizeController as DefaultLocalizationController } from './localize-core'; // Register English as the default/fallback language
-import type { Translation as DefaultTranslation } from './localize-core';
+import '../translations/pt.js';
+import { LocalizeController as DefaultLocalizationController } from './localize-core.js'; // Register English as the default/fallback language
+import type { Translation as DefaultTranslation } from './localize-core.js';
 
 // Extend the controller and apply our own translation interface for better typings
 export class LocalizeController extends DefaultLocalizationController<Translation> {}
 
 // Export functions from the localize core so we have one central place to import them from
-export { registerTranslation } from './localize-core';
+export { registerTranslation } from './localize-core.js';
 
 export interface Translation extends DefaultTranslation {
   $code: string; // e.g. en, en-GB

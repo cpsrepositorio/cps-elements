@@ -1,7 +1,7 @@
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
-import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests';
+import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';
 import sinon from 'sinon';
-import type CpsButton from '../button';
+import type CpsButton from '../button.js';
 
 const variants = ['default', 'accent', 'transparent'];
 

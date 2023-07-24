@@ -1,14 +1,14 @@
 import { elementUpdated, expect, fixture, html } from '@open-wc/testing';
-import type CpsButtonGroup from '../button-group';
+import type CpsButtonGroup from '../button-group.js';
 
 describe('<cps-button-group>', () => {
   describe('defaults ', () => {
     it('passes accessibility test', async () => {
       const group = await fixture<CpsButtonGroup>(html`
         <cps-button-group>
-          <cps-button>Button 1 Label</sl-button>
-          <cps-button>Button 2 Label</sl-button>
-          <cps-button>Button 3 Label</sl-button>
+          <cps-button>Button 1 Label</cps-button>
+          <cps-button>Button 2 Label</cps-button>
+          <cps-button>Button 3 Label</cps-button>
         </cps-button-group>
       `);
       await expect(group).to.be.accessible();
@@ -17,9 +17,9 @@ describe('<cps-button-group>', () => {
     it('default label empty', async () => {
       const group = await fixture<CpsButtonGroup>(html`
         <cps-button-group>
-          <cps-button>Button 1 Label</sl-button>
-          <cps-button>Button 2 Label</sl-button>
-          <cps-button>Button 3 Label</sl-button>
+          <cps-button>Button 1 Label</cps-button>
+          <cps-button>Button 2 Label</cps-button>
+          <cps-button>Button 3 Label</cps-button>
         </cps-button-group>
       `);
       expect(group.label).to.equal('');
@@ -30,13 +30,13 @@ describe('<cps-button-group>', () => {
     it('slotted buttons have the right classes applied based on their order', async () => {
       const group = await fixture<CpsButtonGroup>(html`
         <cps-button-group>
-          <cps-button>Button 1 Label</sl-button>
-          <cps-button>Button 2 Label</sl-button>
-          <cps-button>Button 3 Label</sl-button>
+          <cps-button>Button 1 Label</cps-button>
+          <cps-button>Button 2 Label</cps-button>
+          <cps-button>Button 3 Label</cps-button>
         </cps-button-group>
       `);
 
-      const allButtons = group.querySelectorAll('sl-button');
+      const allButtons = group.querySelectorAll('cps-button');
       const hasGroupClass = Array.from(allButtons).every(button =>
         button.classList.contains('cps-button-group__button')
       );
@@ -52,13 +52,13 @@ describe('<cps-button-group>', () => {
     it('toggles focus class to slotted buttons on focus/blur', async () => {
       const group = await fixture<CpsButtonGroup>(html`
         <cps-button-group>
-          <cps-button>Button 1 Label</sl-button>
-          <cps-button>Button 2 Label</sl-button>
-          <cps-button>Button 3 Label</sl-button>
+          <cps-button>Button 1 Label</cps-button>
+          <cps-button>Button 2 Label</cps-button>
+          <cps-button>Button 3 Label</cps-button>
         </cps-button-group>
       `);
 
-      const allButtons = group.querySelectorAll('sl-button');
+      const allButtons = group.querySelectorAll('cps-button');
       allButtons[0].dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
 
       await elementUpdated(allButtons[0]);
@@ -74,13 +74,13 @@ describe('<cps-button-group>', () => {
     it('toggles hover class to slotted buttons on mouseover/mouseout', async () => {
       const group = await fixture<CpsButtonGroup>(html`
         <cps-button-group>
-          <cps-button>Button 1 Label</sl-button>
-          <cps-button>Button 2 Label</sl-button>
-          <cps-button>Button 3 Label</sl-button>
+          <cps-button>Button 1 Label</cps-button>
+          <cps-button>Button 2 Label</cps-button>
+          <cps-button>Button 3 Label</cps-button>
         </cps-button-group>
       `);
 
-      const allButtons = group.querySelectorAll('sl-button');
+      const allButtons = group.querySelectorAll('cps-button');
 
       allButtons[0].dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
       await elementUpdated(allButtons[0]);

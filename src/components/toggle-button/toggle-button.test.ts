@@ -1,6 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import type CpsToggleButton from '../toggle-button';
-import type CpsRadioGroup from '../radio-group';
+import type CpsRadioGroup from '../radio-group.js';
+import type CpsToggleButton from '../toggle-button.js';
 
 describe('<cps-toggle-button>', () => {
   it('should not get checked when disabled', async () => {

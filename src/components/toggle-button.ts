@@ -1,11 +1,11 @@
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query, state } from 'lit/decorators.js';
-import { HasSlotController } from '../internal/slot';
+import { HasSlotController } from '../internal/slot.js';
 import { html } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { watch } from '../internal/watch';
-import BaseElement from '../internal/base-element';
-import styles from './toggle-button/toggle-button.styles';
+import { watch } from '../internal/watch.js';
+import BaseElement from '../internal/base-element.js';
+import styles from './toggle-button/toggle-button.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**

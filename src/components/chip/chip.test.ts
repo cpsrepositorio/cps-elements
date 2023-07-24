@@ -1,6 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import sinon from 'sinon';
-import type CpsChip from '../chip';
+import type CpsChip from '../chip.js';
 
 describe('<cps-chip>', () => {
   it('should render default chip', async () => {

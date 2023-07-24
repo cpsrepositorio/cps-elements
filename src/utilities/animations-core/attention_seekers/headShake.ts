@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const headShake = [
   { offset: 0, transform: 'translateX(0)' },

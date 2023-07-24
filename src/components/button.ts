@@ -1,16 +1,16 @@
-import './icon';
-import './spinner';
+import './icon.js';
+import './spinner.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query, state } from 'lit/decorators.js';
-import { FormControlController, validValidityState } from '../internal/form';
-import { HasSlotController } from '../internal/slot';
+import { FormControlController, validValidityState } from '../internal/form.js';
+import { HasSlotController } from '../internal/slot.js';
 import { html, literal } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { LocalizeController } from '../utilities/localize';
-import { watch } from '../internal/watch';
-import BaseElement from '../internal/base-element';
-import styles from './button/button.styles';
-import type { BaseFormControl } from '../internal/base-form-control';
+import { LocalizeController } from '../utilities/localize.js';
+import { watch } from '../internal/watch.js';
+import BaseElement from '../internal/base-element.js';
+import styles from './button/button.styles.js';
+import type { BaseFormControl } from '../internal/base-form-control.js';
 import type { CSSResultGroup } from 'lit';
 
 /**

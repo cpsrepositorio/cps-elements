@@ -144,11 +144,7 @@ export class LocalizeController<UserTranslation extends Translation = DefaultTra
       ...options
     };
 
-    if (
-      primary?.[key] ||
-      secondary?.[key] ||
-      (options.includeFallback && fallback && fallback[key as keyof Translation])
-    ) {
+    if (primary?.[key] || secondary?.[key] || (options.includeFallback && fallback?.[key as keyof Translation])) {
       return true;
     }
 
@@ -165,7 +161,7 @@ export class LocalizeController<UserTranslation extends Translation = DefaultTra
       matched = primary[key];
     } else if (secondary?.[key]) {
       matched = secondary[key];
-    } else if (fallback && fallback[key as keyof Translation]) {
+    } else if (fallback?.[key as keyof Translation]) {
       matched = fallback[key as keyof Translation];
     } else {
       console.error(`No translation found for: ${String(key)}`);
@@ -176,7 +172,7 @@ export class LocalizeController<UserTranslation extends Translation = DefaultTra
       return (matched as (...args: FunctionParams<UserTranslation[K]>) => string)(...args);
     }
 
-    return matched as string;
+    return matched;
   }
 
   /** Outputs a localized date in the specified format. */

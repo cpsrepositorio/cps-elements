@@ -1,16 +1,16 @@
-import './popover';
-import { animateTo, parseDuration, stopAnimations } from '../internal/animate';
+import './popover.js';
+import { animateTo, parseDuration, stopAnimations } from '../internal/animate.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query } from 'lit/decorators.js';
-import { getAnimation, setDefaultAnimation } from '../utilities/animation-registry';
+import { getAnimation, setDefaultAnimation } from '../utilities/animation-registry.js';
 import { html } from 'lit';
-import { LocalizeController } from '../utilities/localize';
-import { waitForEvent } from '../internal/event';
-import { watch } from '../internal/watch';
-import BaseElement from '../internal/base-element';
-import styles from './tooltip/tooltip.styles';
+import { LocalizeController } from '../utilities/localize.js';
+import { waitForEvent } from '../internal/event.js';
+import { watch } from '../internal/watch.js';
+import BaseElement from '../internal/base-element.js';
+import styles from './tooltip/tooltip.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type CpsPopover from './popover';
+import type CpsPopover from './popover.js';
 
 /**
  * @summary Dicas de ferramenta (_tooltips_) exibem informações adicionais contextuais.

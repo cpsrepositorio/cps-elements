@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const rotateInUpRight = [
   { offset: 0, transform: 'rotate3d(0, 0, 1, -90deg)', opacity: '0' },

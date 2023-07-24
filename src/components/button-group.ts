@@ -1,7 +1,7 @@
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { html } from 'lit';
-import BaseElement from '../internal/base-element';
-import styles from './button-group/button-group.styles';
+import BaseElement from '../internal/base-element.js';
+import styles from './button-group/button-group.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**

@@ -1,11 +1,11 @@
 import { aTimeout, expect, fixture, html, oneEvent, waitUntil } from '@open-wc/testing';
-import { clickOnElement } from '../../internal/test';
-import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests';
+import { clickOnElement } from '../../internal/test.js';
+import { runFormControlBaseTests } from '../../internal/test/form-control-base-tests.js';
 import { sendKeys } from '@web/test-runner-commands';
 import sinon from 'sinon';
-import type CpsChangeEvent from '../../events/cps-change';
-import type CpsRadio from '../radio';
-import type CpsRadioGroup from '../radio-group';
+import type CpsChangeEvent from '../../events/cps-change.js';
+import type CpsRadio from '../radio.js';
+import type CpsRadioGroup from '../radio-group.js';
 
 describe('<cps-radio-group>', () => {
   describe('validation tests', () => {

@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const hinge = [
   { offset: 0, easing: 'ease-in-out' },

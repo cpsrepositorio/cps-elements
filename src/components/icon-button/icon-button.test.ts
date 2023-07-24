@@ -1,6 +1,6 @@
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type CpsIconButton from '../icon-button';
+import type CpsIconButton from '../icon-button.js';
 
 type LinkTarget = '_self' | '_blank' | '_parent' | '_top';
 

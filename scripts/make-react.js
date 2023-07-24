@@ -52,7 +52,7 @@ components.map(component => {
     })
   );
 
-  index.push(`export { ${component.name} } from './${tagWithoutPrefix}';`);
+  index.push(`export { ${component.name} } from './${tagWithoutPrefix}.js';`);
 
   fs.writeFileSync(componentFile, source, 'utf8');
 });

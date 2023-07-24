@@ -1,28 +1,28 @@
 // Components
-export { CpsBadge } from './components/badge';
-export { CpsButton } from './components/button';
-export { CpsButtonGroup } from './components/button-group';
-export { CpsCheckbox } from './components/checkbox';
-export { CpsChip } from './components/chip';
-export { CpsIcon } from './components/icon';
-export { CpsIconButton } from './components/icon-button';
-export { CpsInclude } from './components/include';
-export { CpsInput } from './components/input';
-export { CpsLabel } from './components/label';
-export { CpsPopover } from './components/popover';
-export { CpsRadio } from './components/radio';
-export { CpsRadioGroup } from './components/radio-group';
-export { CpsSkeleton } from './components/skeleton';
-export { CpsSpinner } from './components/spinner';
-export { CpsTextarea } from './components/textarea';
-export { CpsToggleButton } from './components/toggle-button';
-export { CpsTooltip } from './components/tooltip';
+export { CpsBadge } from './components/badge.js';
+export { CpsButton } from './components/button.js';
+export { CpsButtonGroup } from './components/button-group.js';
+export { CpsCheckbox } from './components/checkbox.js';
+export { CpsChip } from './components/chip.js';
+export { CpsIcon } from './components/icon.js';
+export { CpsIconButton } from './components/icon-button.js';
+export { CpsInclude } from './components/include.js';
+export { CpsInput } from './components/input.js';
+export { CpsLabel } from './components/label.js';
+export { CpsPopover } from './components/popover.js';
+export { CpsRadio } from './components/radio.js';
+export { CpsRadioGroup } from './components/radio-group.js';
+export { CpsSkeleton } from './components/skeleton.js';
+export { CpsSpinner } from './components/spinner.js';
+export { CpsTextarea } from './components/textarea.js';
+export { CpsToggleButton } from './components/toggle-button.js';
+export { CpsTooltip } from './components/tooltip.js';
 /* plop:component */
 
 // Utilities
-export * from './utilities/animation';
-export * from './utilities/base-path';
-export * from './utilities/icon-library';
+export * from './utilities/animation.js';
+export * from './utilities/base-path.js';
+export * from './utilities/icon-library.js';
 
 // Events
-export * from './events';
+export * from './events/index.js';

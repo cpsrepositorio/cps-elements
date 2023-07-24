@@ -1,5 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import type CpsLabel from '../label';
+import type CpsLabel from '../label.js';
 
 describe('<cps-label>', () => {
   it('should render default label', async () => {

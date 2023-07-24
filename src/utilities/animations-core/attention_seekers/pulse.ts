@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const pulse = [
   { offset: 0, transform: 'scale3d(1, 1, 1)' },

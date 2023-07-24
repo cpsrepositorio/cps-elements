@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const fadeIn = [
   { offset: 0, opacity: '0' },

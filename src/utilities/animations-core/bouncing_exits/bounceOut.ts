@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const bounceOut = [
   { offset: 0.2, transform: 'scale3d(0.9, 0.9, 0.9)' },

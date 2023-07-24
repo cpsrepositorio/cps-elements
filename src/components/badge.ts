@@ -1,9 +1,9 @@
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property } from 'lit/decorators.js';
-import { HasSlotController } from '../internal/slot';
+import { HasSlotController } from '../internal/slot.js';
 import { html, literal } from 'lit/static-html.js';
-import BaseElement from '../internal/base-element';
-import styles from './badge/badge.styles';
+import BaseElement from '../internal/base-element.js';
+import styles from './badge/badge.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**

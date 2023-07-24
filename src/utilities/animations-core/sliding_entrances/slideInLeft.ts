@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const slideInLeft = [
   { offset: 0, transform: 'translate3d(-100%, 0, 0)', visibility: 'visible' },

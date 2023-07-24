@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const backOutLeft = [
   { offset: 0, transform: 'scale(1)', opacity: '1' },

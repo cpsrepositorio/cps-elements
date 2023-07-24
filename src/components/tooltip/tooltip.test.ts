@@ -1,7 +1,7 @@
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type CpsPopover from '../popover';
-import type CpsTooltip from '../tooltip';
+import type CpsPopover from '../popover.js';
+import type CpsTooltip from '../tooltip.js';
 
 describe('<cps-tooltip>', () => {
   it('should be visible with the open attribute', async () => {

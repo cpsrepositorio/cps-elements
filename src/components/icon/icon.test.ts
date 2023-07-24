@@ -1,6 +1,9 @@
-import { elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
+import { aTimeout, elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
 import { registerIconLibrary } from '../../../dist/utilities/icon-library.js';
-import type CpsIcon from '../icon';
+import type { registerIconLibrary as registerIconLibraryType } from '../../utilities/icon-library.js';
+import type CpsErrorEvent from '../../events/cps-error';
+import type CpsIcon from '../icon.js';
+import type CpsLoadEvent from '../../events/cps-load';
 
 const testLibraryIcons = {
   'test-icon1': `
@@ -46,7 +49,7 @@ describe('<cps-icon>', () => {
 
     it('renders pre-loaded system icons and emits cps-load event', async () => {
       const el = await fixture<CpsIcon>(html` <cps-icon library="system"></cps-icon> `);
-      const listener = oneEvent(el, 'cps-load') as Promise<CustomEvent>;
+      const listener = oneEvent(el, 'cps-load') as Promise<CpsLoadEvent>;
 
       el.name = 'check';
       const ev = await listener;
@@ -103,7 +106,7 @@ describe('<cps-icon>', () => {
   describe('new library', () => {
     it('renders icons from the new library and emits cps-load event', async () => {
       const el = await fixture<CpsIcon>(html` <cps-icon library="test-library"></cps-icon> `);
-      const listener = oneEvent(el, 'cps-load') as Promise<CustomEvent>;
+      const listener = oneEvent(el, 'cps-load') as Promise<CpsLoadEvent>;
 
       el.name = 'test-icon1';
       const ev = await listener;
@@ -132,7 +135,7 @@ describe('<cps-icon>', () => {
 
     it('emits cps-error when the file cant be retrieved', async () => {
       const el = await fixture<CpsIcon>(html` <cps-icon library="test-library"></cps-icon> `);
-      const listener = oneEvent(el, 'cps-error') as Promise<CustomEvent>;
+      const listener = oneEvent(el, 'cps-error') as Promise<CpsErrorEvent>;
 
       el.name = 'bad-request';
       const ev = await listener;
@@ -144,13 +147,85 @@ describe('<cps-icon>', () => {
 
     it("emits cps-error when there isn't an svg element in the registered icon", async () => {
       const el = await fixture<CpsIcon>(html` <cps-icon library="test-library"></cps-icon> `);
-      const listener = oneEvent(el, 'cps-error') as Promise<CustomEvent>;
+      const listener = oneEvent(el, 'cps-error') as Promise<CpsErrorEvent>;
 
       el.name = 'bad-icon';
       const ev = await listener;
       await elementUpdated(el);
 
       expect(el.shadowRoot?.querySelector('svg')).to.be.null;
+      expect(ev).to.exist;
+    });
+  });
+
+  describe('svg sprite sheets', () => {
+    it('Should properly grab an SVG and render it from bootstrap icons', async () => {
+      (registerIconLibrary as typeof registerIconLibraryType)('sprite', {
+        resolver: name => `/docs/assets/images/sprite.svg#${name}`,
+        mutator: svg => svg.setAttribute('fill', 'currentColor'),
+        spriteSheet: true
+      });
+
+      const el = await fixture<CpsIcon>(html` <cps-icon name="arrow-left" library="sprite"></cps-icon> `);
+
+      await elementUpdated(el);
+
+      const svg = el.shadowRoot?.querySelector("svg[part='svg']");
+      const use = svg?.querySelector(`use[href='/docs/assets/images/sprite.svg#arrow-left']`);
+
+      expect(svg).to.be.instanceof(SVGElement);
+      expect(use).to.be.instanceof(SVGUseElement);
+
+      // This is kind of hacky...but with no way to check "load", we just use a timeout
+      await aTimeout(1000);
+
+      // Theres no way to really test that the icon rendered properly. We just gotta trust the browser to do it's thing :)
+      // However, we can check the <use> size. It should be greater than 0x0 if loaded properly.
+      const rect = use?.getBoundingClientRect();
+      expect(rect?.width).to.be.greaterThan(0);
+      expect(rect?.width).to.be.greaterThan(0);
+    });
+
+    it('Should render nothing if the sprite hash is wrong', async () => {
+      (registerIconLibrary as typeof registerIconLibraryType)('sprite', {
+        resolver: name => `/docs/assets/images/sprite.svg#${name}`,
+        mutator: svg => svg.setAttribute('fill', 'currentColor'),
+        spriteSheet: true
+      });
+
+      const el = await fixture<CpsIcon>(html` <cps-icon name="non-existent" library="sprite"></cps-icon> `);
+
+      await elementUpdated(el);
+
+      const svg = el.shadowRoot?.querySelector("svg[part='svg']");
+      const use = svg?.querySelector('use');
+
+      // TODO: Theres no way to really test that the icon rendered properly. We just gotta trust the browser to do it's thing :)
+      // However, we can check the <use> size. If it never loaded, it should be 0x0. Ideally, we could have error tracking...
+      const rect = use?.getBoundingClientRect();
+      expect(rect?.width).to.equal(0);
+      expect(rect?.width).to.equal(0);
+    });
+
+    // TODO: <use> svg icons don't emit a "load" or "error" event...if we can figure out how to get the event to emit errors.
+    // Once we figure out how to emit errors / loading perhaps we can actually test this?
+    it.skip("Should produce an error if the icon doesn't exist.", async () => {
+      (registerIconLibrary as typeof registerIconLibraryType)('sprite', {
+        resolver(name) {
+          return `/docs/assets/images/sprite.svg#${name}`;
+        },
+        mutator(svg) {
+          return svg.setAttribute('fill', 'currentColor');
+        },
+        spriteSheet: true
+      });
+
+      const el = await fixture<CpsIcon>(html` <cps-icon name="bad-icon" library="sprite"></cps-icon> `);
+      const listener = oneEvent(el, 'cps-error') as Promise<CpsErrorEvent>;
+
+      el.name = 'bad-icon';
+      const ev = await listener;
+      await elementUpdated(el);
       expect(ev).to.exist;
     });
   });

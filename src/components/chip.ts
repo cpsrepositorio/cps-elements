@@ -1,10 +1,10 @@
-import './icon-button';
+import './icon-button.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property } from 'lit/decorators.js';
 import { html } from 'lit';
-import { LocalizeController } from '../utilities/localize';
-import BaseElement from '../internal/base-element';
-import styles from './chip/chip.styles';
+import { LocalizeController } from '../utilities/localize.js';
+import BaseElement from '../internal/base-element.js';
+import styles from './chip/chip.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**

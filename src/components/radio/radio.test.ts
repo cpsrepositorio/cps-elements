@@ -1,5 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import type CpsRadio from '../radio';
+import type CpsRadio from '../radio.js';
 
 describe('<cps-radio>', () => {
   it('should not get checked when disabled', async () => {

@@ -1,5 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import type CpsBadge from '../badge';
+import type CpsBadge from '../badge.js';
 
 describe('<cps-badge>', () => {
   let el: CpsBadge;

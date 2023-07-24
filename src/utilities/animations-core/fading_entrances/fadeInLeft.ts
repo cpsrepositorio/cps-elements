@@ -1,4 +1,4 @@
-import type { Animation } from '../types';
+import type { Animation } from '../types.js';
 
 export const fadeInLeft = [
   { offset: 0, opacity: '0', transform: 'translate3d(-100%, 0, 0)' },

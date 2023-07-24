@@ -1,5 +1,5 @@
 import { expect, fixture } from '@open-wc/testing';
-import type { BaseFormControl } from '../base-form-control';
+import type { BaseFormControl } from '../base-form-control.js';
 
 type CreateControlFn = () => Promise<BaseFormControl>;
 

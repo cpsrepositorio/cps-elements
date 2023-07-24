@@ -1,5 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import type CpsSpinner from '../spinner';
+import type CpsSpinner from '../spinner.js';
 
 describe('<cps-spinner>', () => {
   describe('when provided no parameters', () => {
