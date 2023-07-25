@@ -84,7 +84,7 @@ export default class CpsBadge extends BaseElement {
         })}
         role="status"
       >
-        ${this.icon ? html` <cps-icon library="system" .name=${`${this.variant}-badge`}></cps-icon> ` : ''}
+        ${this.icon ? html` <cps-icon library="system" .name=${`status-${this.variant}`}></cps-icon> ` : ''}
       </${tag}>
     `;
   }

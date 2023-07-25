@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Changed
 
 - Biblioteca atualizada para TypeScript 5.1.
+- Ícones de sistema generalizados de _badge_ para apresentação de _status_ em geral.
 
 ## 0.6.0 - 2023-07-12
 
