@@ -356,6 +356,9 @@
   --cps-color-accent-900: var(--cps-color-petrol-900);
   --cps-color-accent-950: var(--cps-color-petrol-950);
 
+  /* Textures */
+  --cps-texture-acrylic: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.2' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+
   /*
    * System Colors
    */
@@ -368,18 +371,26 @@
   /* Informative */
   --cps-fill-system-informative: rgb(0 95 183);
   --cps-fill-system-subtle-informative: rgba(246 246 246 / 50%);
+  --cps-fill-system-acrylic-informative: linear-gradient(rgb(246 246 246 / 90%), rgb(246 246 246 / 90%)),
+    var(--cps-texture-acrylic);
 
   /* Warning */
   --cps-fill-system-warning: rgb(157 93 0);
   --cps-fill-system-subtle-warning: rgb(255 244 206);
+  --cps-fill-system-acrylic-warning: linear-gradient(rgb(255 244 206 / 90%), rgb(255 244 206 / 90%)),
+    var(--cps-texture-acrylic);
 
   /* Critical */
   --cps-fill-system-critical: rgb(196 43 28);
   --cps-fill-system-subtle-critical: rgb(253 231 233);
+  --cps-fill-system-acrylic-critical: linear-gradient(rgb(253 231 233 / 90%), rgb(253 231 233 / 90%)),
+    var(--cps-texture-acrylic);
 
   /* Success */
   --cps-fill-system-success: rgb(15 123 15);
-  --cps-fill-system-subtle-success: rgb(113 201 105);
+  --cps-fill-system-subtle-success: rgb(223 246 221);
+  --cps-fill-system-acrylic-success: linear-gradient(rgb(223 246 221 / 90%), rgb(223 246 221 / 90%)),
+    var(--cps-texture-acrylic);
 
   /*
    * Colors Tokens
@@ -392,10 +403,8 @@
   --cps-fill-solid-quaternary: rgb(254 254 254);
 
   /* Special backgrounds */
-  --cps-fill-acrylic-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.2' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  --cps-fill-acrylic: linear-gradient(rgb(252 252 252 / 85%), rgb(252 252 252 / 85%)), var(--cps-fill-acrylic-texture);
-  --cps-fill-acrylic-base: linear-gradient(rgb(243 243 243 / 90%), rgb(243 243 243 / 90%)),
-    var(--cps-fill-acrylic-texture);
+  --cps-fill-acrylic: linear-gradient(rgb(252 252 252 / 85%), rgb(252 252 252 / 85%)), var(--cps-texture-acrylic);
+  --cps-fill-acrylic-base: linear-gradient(rgb(243 243 243 / 90%), rgb(243 243 243 / 90%)), var(--cps-texture-acrylic);
 
   /* Control fill colors */
   --cps-fill-control-primary: rgb(var(--cps-color-neutral-0) / 70%);

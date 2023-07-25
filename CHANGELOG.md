@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-notification>`.
+
 ### Changed
 
 - Biblioteca atualizada para TypeScript 5.1.
