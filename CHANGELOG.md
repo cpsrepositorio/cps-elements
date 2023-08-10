@@ -6,11 +6,6 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
-### Changed
-
-- Pequeno ajuste na opacidade das cores `--cps-fill-control-subtle` do tema claro.
-- Mudança de nomenclatura de `--cps-stroke-divider` para `--cps-stroke-separator` nos temas claro e escuro.
-
 ### Added
 
 - Criação do componente `<cps-notification>`.
@@ -19,6 +14,8 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Biblioteca atualizada para TypeScript 5.1.
 - Ícones de sistema generalizados de _badge_ para apresentação de _status_ em geral.
+- Pequeno ajuste na opacidade das cores `--cps-fill-control-subtle` do tema claro.
+- Mudança de nomenclatura de `--cps-stroke-divider` para `--cps-stroke-separator` nos temas claro e escuro.
 
 ## 0.6.0 - 2023-07-12
 
