@@ -1,9 +1,9 @@
-import '../translations/pt';
-import { LocalizeController as DefaultLocalizationController } from './localize-core';
-import type { Translation as DefaultTranslation } from './localize-core';
+import '../translations/pt.js';
+import { LocalizeController as DefaultLocalizationController } from './localize-core.js';
+import type { Translation as DefaultTranslation } from './localize-core.js';
 export declare class LocalizeController extends DefaultLocalizationController<Translation> {
 }
-export { registerTranslation } from './localize-core';
+export { registerTranslation } from './localize-core.js';
 export interface Translation extends DefaultTranslation {
     $code: string;
     $name: string;

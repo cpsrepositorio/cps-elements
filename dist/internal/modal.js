@@ -1,4 +1,4 @@
-import { getTabbableBoundary } from './tabbable';
+import { getTabbableBoundary } from './tabbable.js';
 let activeModals = [];
 export default class Modal {
     constructor(element) {

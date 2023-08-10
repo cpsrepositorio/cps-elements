@@ -1,7 +1,7 @@
-import './icon';
-import './spinner';
-import BaseElement from '../internal/base-element';
-import type { BaseFormControl } from '../internal/base-form-control';
+import './icon.js';
+import './spinner.js';
+import BaseElement from '../internal/base-element.js';
+import type { BaseFormControl } from '../internal/base-form-control.js';
 import type { CSSResultGroup } from 'lit';
 export default class CpsButton extends BaseElement implements BaseFormControl {
     static styles: CSSResultGroup;
@@ -51,7 +51,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
     getForm(): HTMLFormElement | null;
     reportValidity(): boolean;
     setCustomValidity(message: string): void;
-    render(): import("lit-html").TemplateResult<1 | 2>;
+    render(): import("lit-html").TemplateResult;
 }
 export { CpsButton };
 declare global {

@@ -1,6 +1,6 @@
-import type { BaseFormControl } from './base-form-control';
+import type { BaseFormControl } from './base-form-control.js';
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
-import type CpsButton from '../components/button';
+import type CpsButton from '../components/button.js';
 export declare const formCollections: WeakMap<HTMLFormElement, Set<BaseFormControl>>;
 export interface FormControlControllerOptions {
     form: (input: BaseFormControl) => HTMLFormElement | null;

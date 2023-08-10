@@ -1,4 +1,4 @@
-import { getOffset } from './offset';
+import { getOffset } from './offset.js';
 const locks = new Set();
 function getScrollbarWidth() {
     const documentWidth = document.documentElement.clientWidth;

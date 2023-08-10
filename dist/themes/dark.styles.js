@@ -321,38 +321,59 @@ export default css`
     --cps-color-accent-900: var(--cps-color-petrol-900);
     --cps-color-accent-950: var(--cps-color-petrol-950);
 
+    --cps-texture-acrylic: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.2' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+
     --cps-fill-system-neutral: rgb(157 157 157);
     --cps-fill-system-transparent-neutral: rgb(255 255 255 / 54.42%);
     --cps-fill-system-subtle-neutral: rgb(255 255 255 / 3.26%);
 
     --cps-fill-system-informative: rgb(96 205 255);
     --cps-fill-system-subtle-informative: rgba(255 255 255 / 3.26%);
+    --cps-fill-system-acrylic-informative: linear-gradient(
+        rgb(48 48 48 / 96%),
+        rgb(48 48 48 / 96%)
+      ),
+      var(--cps-texture-acrylic);
 
     --cps-fill-system-warning: rgb(252 225 0);
     --cps-fill-system-subtle-warning: rgb(67 53 25);
+    --cps-fill-system-acrylic-warning: linear-gradient(
+        rgb(67 53 25 / 96%),
+        rgb(67 53 25 / 96%)
+      ),
+      var(--cps-texture-acrylic);
 
     --cps-fill-system-critical: rgb(255 153 164);
     --cps-fill-system-subtle-critical: rgb(68 39 38);
+    --cps-fill-system-acrylic-critical: linear-gradient(
+        rgb(68 39 38 / 96%),
+        rgb(68 39 38 / 96%)
+      ),
+      var(--cps-texture-acrylic);
 
     --cps-fill-system-success: rgb(108 203 95);
     --cps-fill-system-subtle-success: rgb(57 61 27);
+    --cps-fill-system-acrylic-success: linear-gradient(
+        rgb(57 61 27 / 96%),
+        rgb(57 61 27 / 96%)
+      ),
+      var(--cps-texture-acrylic);
 
     --cps-fill-solid-primary: rgb(32 32 32);
     --cps-fill-solid-secondary: rgb(28 28 28);
     --cps-fill-solid-tertiary: rgb(40 40 40);
     --cps-fill-solid-quaternary: rgb(44 44 44);
 
-    --cps-fill-acrylic-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.2' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     --cps-fill-acrylic: linear-gradient(
         rgb(44 44 44 / 91%),
         rgb(44 44 44 / 91%)
       ),
-      var(--cps-fill-acrylic-texture);
+      var(--cps-texture-acrylic);
     --cps-fill-acrylic-base: linear-gradient(
         rgb(32 32 32 / 96%),
         rgb(32 32 32 / 96%)
       ),
-      var(--cps-fill-acrylic-texture);
+      var(--cps-texture-acrylic);
 
     --cps-fill-control-primary: rgb(var(--cps-color-neutral-1000) / 6.05%);
     --cps-fill-control-secondary: rgb(var(--cps-color-neutral-1000) / 8.37%);
@@ -411,7 +432,7 @@ export default css`
     --cps-stroke-card-primary: rgb(var(--cps-color-neutral-0) / 10%);
     --cps-stroke-card-secondary: rgb(var(--cps-color-neutral-0) / 36.28%);
 
-    --cps-stroke-divider: rgb(var(--cps-color-neutral-1000) / 8.37%);
+    --cps-stroke-separator: rgb(var(--cps-color-neutral-1000) / 8.37%);
 
     --cps-stroke-surface: rgb(117 117 117 / 40%);
 
@@ -607,11 +628,33 @@ export default css`
     overflow: auto;
   }
 
-  .cps-toast-stack cps-alert {
+  .cps-toast-stack cps-notification {
     margin: var(--cps-spacing-4);
   }
 
-  .cps-toast-stack cps-alert::part(base) {
-    box-shadow: var(--cps-shadow-lg);
+  .cps-toast-stack cps-notification::part(base) {
+    backdrop-filter: blur(6px);
+    filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
+  }
+
+  .cps-toast-stack cps-notification[variant="neutral"]::part(base),
+  .cps-toast-stack cps-notification:not([variant])::part(base) {
+    background: var(--cps-fill-acrylic);
+  }
+
+  .cps-toast-stack cps-notification[variant="informative"]::part(base) {
+    background: var(--cps-fill-system-acrylic-informative);
+  }
+
+  .cps-toast-stack cps-notification[variant="warning"]::part(base) {
+    background: var(--cps-fill-system-acrylic-warning);
+  }
+
+  .cps-toast-stack cps-notification[variant="critical"]::part(base) {
+    background: var(--cps-fill-system-acrylic-critical);
+  }
+
+  .cps-toast-stack cps-notification[variant="success"]::part(base) {
+    background: var(--cps-fill-system-acrylic-success);
   }
 `;

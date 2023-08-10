@@ -1,7 +1,7 @@
-import './button-group';
-import { FormControlController } from '../internal/form';
-import BaseElement from '../internal/base-element';
-import type { BaseFormControl } from '../internal/base-form-control';
+import './button-group.js';
+import { FormControlController } from '../internal/form.js';
+import BaseElement from '../internal/base-element.js';
+import type { BaseFormControl } from '../internal/base-form-control.js';
 import type { CSSResultGroup } from 'lit';
 export default class CpsRadioGroup extends BaseElement implements BaseFormControl {
     static styles: CSSResultGroup;

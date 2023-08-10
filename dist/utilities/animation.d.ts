@@ -1,4 +1,4 @@
-import { animations } from './animations-core';
+import { animations } from './animations-core/index.js';
 export type { Animation } from './animations-core/types';
 export { animations };
 export declare function getAnimationNames(): string[];

@@ -319,38 +319,59 @@
   --cps-color-accent-900: var(--cps-color-petrol-900);
   --cps-color-accent-950: var(--cps-color-petrol-950);
 
+  --cps-texture-acrylic: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.2' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+
   --cps-fill-system-neutral: rgb(138 138 138);
   --cps-fill-system-transparent-neutral: rgb(0 0 0 / 44.58%);
   --cps-fill-system-subtle-neutral: rgb(0 0 0 / 2.41%);
 
   --cps-fill-system-informative: rgb(0 95 183);
   --cps-fill-system-subtle-informative: rgba(246 246 246 / 50%);
+  --cps-fill-system-acrylic-informative: linear-gradient(
+      rgb(246 246 246 / 90%),
+      rgb(246 246 246 / 90%)
+    ),
+    var(--cps-texture-acrylic);
 
   --cps-fill-system-warning: rgb(157 93 0);
   --cps-fill-system-subtle-warning: rgb(255 244 206);
+  --cps-fill-system-acrylic-warning: linear-gradient(
+      rgb(255 244 206 / 90%),
+      rgb(255 244 206 / 90%)
+    ),
+    var(--cps-texture-acrylic);
 
   --cps-fill-system-critical: rgb(196 43 28);
   --cps-fill-system-subtle-critical: rgb(253 231 233);
+  --cps-fill-system-acrylic-critical: linear-gradient(
+      rgb(253 231 233 / 90%),
+      rgb(253 231 233 / 90%)
+    ),
+    var(--cps-texture-acrylic);
 
   --cps-fill-system-success: rgb(15 123 15);
-  --cps-fill-system-subtle-success: rgb(113 201 105);
+  --cps-fill-system-subtle-success: rgb(223 246 221);
+  --cps-fill-system-acrylic-success: linear-gradient(
+      rgb(223 246 221 / 90%),
+      rgb(223 246 221 / 90%)
+    ),
+    var(--cps-texture-acrylic);
 
   --cps-fill-solid-primary: rgb(243 243 243);
   --cps-fill-solid-secondary: rgb(238 238 238);
   --cps-fill-solid-tertiary: rgb(249 249 249);
   --cps-fill-solid-quaternary: rgb(254 254 254);
 
-  --cps-fill-acrylic-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.2' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   --cps-fill-acrylic: linear-gradient(
       rgb(252 252 252 / 85%),
       rgb(252 252 252 / 85%)
     ),
-    var(--cps-fill-acrylic-texture);
+    var(--cps-texture-acrylic);
   --cps-fill-acrylic-base: linear-gradient(
       rgb(243 243 243 / 90%),
       rgb(243 243 243 / 90%)
     ),
-    var(--cps-fill-acrylic-texture);
+    var(--cps-texture-acrylic);
 
   --cps-fill-control-primary: rgb(var(--cps-color-neutral-0) / 70%);
   --cps-fill-control-secondary: rgb(var(--cps-color-neutral-100) / 50%);
@@ -362,10 +383,10 @@
   --cps-fill-control-alt-quaternary: rgb(var(--cps-color-neutral-1000) / 9.24%);
 
   --cps-fill-control-subtle-secondary: rgb(
-    var(--cps-color-neutral-1000) / 3.73%
+    var(--cps-color-neutral-1000) / 6.05%
   );
   --cps-fill-control-subtle-tertiary: rgb(
-    var(--cps-color-neutral-1000) / 2.41%
+    var(--cps-color-neutral-1000) / 4.19%
   );
 
   --cps-fill-accent-primary: rgb(var(--cps-color-accent-800));
@@ -403,7 +424,7 @@
   --cps-stroke-card-primary: rgb(var(--cps-color-neutral-1000) / 5.78%);
   --cps-stroke-card-secondary: rgb(var(--cps-color-neutral-1000) / 11.56%);
 
-  --cps-stroke-divider: rgb(var(--cps-color-neutral-1000) / 8.03%);
+  --cps-stroke-separator: rgb(var(--cps-color-neutral-1000) / 8.03%);
 
   --cps-stroke-surface: rgb(117 117 117 / 40%);
 
@@ -598,10 +619,32 @@
   overflow: auto;
 }
 
-.cps-toast-stack cps-alert {
+.cps-toast-stack cps-notification {
   margin: var(--cps-spacing-4);
 }
 
-.cps-toast-stack cps-alert::part(base) {
-  box-shadow: var(--cps-shadow-lg);
+.cps-toast-stack cps-notification::part(base) {
+  backdrop-filter: blur(6px);
+  filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
+}
+
+.cps-toast-stack cps-notification[variant="neutral"]::part(base),
+.cps-toast-stack cps-notification:not([variant])::part(base) {
+  background: var(--cps-fill-acrylic);
+}
+
+.cps-toast-stack cps-notification[variant="informative"]::part(base) {
+  background: var(--cps-fill-system-acrylic-informative);
+}
+
+.cps-toast-stack cps-notification[variant="warning"]::part(base) {
+  background: var(--cps-fill-system-acrylic-warning);
+}
+
+.cps-toast-stack cps-notification[variant="critical"]::part(base) {
+  background: var(--cps-fill-system-acrylic-critical);
+}
+
+.cps-toast-stack cps-notification[variant="success"]::part(base) {
+  background: var(--cps-fill-system-acrylic-success);
 }

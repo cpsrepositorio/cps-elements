@@ -51,9 +51,24 @@ body.site-search-visible {
 }
 
 .site-search__input::part(base) {
-  border: none;
-  border-radius: var(--cps-border-radius-large);
-  background: transparent;
+  border-right: 0;
+  border-left: 0;
+  border-radius: var(--cps-border-radius-large) var(--cps-border-radius-large) 0 0;
+}
+
+.site-search__input::part(base)::before,
+.site-search__input::part(base)::after {
+  border-right: 0;
+  border-left: 0;
+  border-radius: var(--cps-border-radius-large) var(--cps-border-radius-large) 0 0;
+}
+
+.site-search__input::part(prefix) {
+  border-bottom-left-radius: 0;
+}
+
+.site-search__input::part(input) {
+  border-bottom-right-radius: 0;
 }
 
 .site-search__input {

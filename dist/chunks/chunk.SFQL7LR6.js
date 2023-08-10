@@ -1,0 +1,1 @@
+import{a as s}from"./chunk.DA7WBG7A.js";import{a as m,e as o}from"./chunk.JOTZQUUG.js";import{a as l}from"./chunk.XKNP6CD6.js";import{c as e,e as r}from"./chunk.K3RV6SX6.js";var t=class extends o{render(){return l` <slot part="base" class="menu-label"></slot> `}};e(t,"CpsMenuLabel"),t.styles=s,t=r([m("cps-menu-label")],t);export{t as a};

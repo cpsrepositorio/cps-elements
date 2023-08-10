@@ -1,4 +1,4 @@
-import BaseElement from '../internal/base-element';
+import BaseElement from '../internal/base-element.js';
 import type { CSSResultGroup } from 'lit';
 export default class CpsBadge extends BaseElement {
     static styles: CSSResultGroup;
@@ -9,7 +9,7 @@ export default class CpsBadge extends BaseElement {
     pulse: boolean;
     private hasSingleCharacter;
     private hasIcon;
-    render(): import("lit-html").TemplateResult<1 | 2>;
+    render(): import("lit-html").TemplateResult;
 }
 export { CpsBadge };
 declare global {

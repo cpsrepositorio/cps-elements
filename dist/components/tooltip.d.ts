@@ -1,7 +1,7 @@
-import './popover';
-import BaseElement from '../internal/base-element';
+import './popover.js';
+import BaseElement from '../internal/base-element.js';
 import type { CSSResultGroup } from 'lit';
-import type CpsPopover from './popover';
+import type CpsPopover from './popover.js';
 export default class CpsTooltip extends BaseElement {
     static styles: CSSResultGroup;
     private hoverTimeout;

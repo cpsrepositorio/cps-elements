@@ -1,5 +1,5 @@
-import './icon';
-import BaseElement from '../internal/base-element';
+import './icon.js';
+import BaseElement from '../internal/base-element.js';
 import type { CSSResultGroup } from 'lit';
 export default class CpsIconButton extends BaseElement {
     static styles: CSSResultGroup;
@@ -21,7 +21,7 @@ export default class CpsIconButton extends BaseElement {
     click(): void;
     focus(options?: FocusOptions): void;
     blur(): void;
-    render(): import("lit-html").TemplateResult<1 | 2>;
+    render(): import("lit-html").TemplateResult;
 }
 export { CpsIconButton };
 declare global {

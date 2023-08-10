@@ -1,6 +1,6 @@
-import './icon-button';
-import BaseElement from '../internal/base-element';
-import type { BaseFormControl } from '../internal/base-form-control';
+import './icon-button.js';
+import BaseElement from '../internal/base-element.js';
+import type { BaseFormControl } from '../internal/base-form-control.js';
 import type { CSSResultGroup } from 'lit';
 export default class CpsInput extends BaseElement implements BaseFormControl {
     static styles: CSSResultGroup;

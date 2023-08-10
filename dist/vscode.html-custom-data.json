@@ -642,6 +642,83 @@
       "references": []
     },
     {
+      "name": "cps-menu-item",
+      "description": "Itens de menu fornecem opções para o usuário escolher em um menu.\n\n\n---\n\n\n\n\n### **Methods:**\n - **getTextLabel()** - Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.\n\n### **Slots:**\n - _default_ - O texto interno do item de menu.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **check** - O elemento que embrulha o ícone de checagem (caso o item de menu seja do tipo `checkbox`), visível apenas quando o item de menu está marcado.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **label** - O elemento que embrulha o conteúdo principal, normalmente um texto literal.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
+      "attributes": [
+        {
+          "name": "type",
+          "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+          "values": [{ "name": "normal" }, { "name": "checkbox" }]
+        },
+        {
+          "name": "checked",
+          "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o item de menu.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-menu-label",
+      "description": "Rótulos de menu são usados para descrever um grupo de itens de menu.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O texto interno do rótulo de menu.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
+      "attributes": [],
+      "references": []
+    },
+    {
+      "name": "cps-menu",
+      "description": "Menus oferecem uma lista de opções para o usuário escolher.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-select** - Emitido quando um item de menu interno é selecionado.\n\n### **Slots:**\n - _default_ - Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
+      "attributes": [],
+      "references": []
+    },
+    {
+      "name": "cps-notification",
+      "description": "Notificações são usadas para exibir mensagens importantes de forma pontual, localmente ou como _toast_.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando a notificação aparece.\n- **cps-after-show** - Emitido após a notificação aparecer e todas as animações terem sido completadas.\n- **cps-hide** - Emitido quando a notificação some.\n- **cps-after-hide** - Emitido após a notificação sumir e todas as animações terem sido completadas.\n\n### **Methods:**\n - **show()** - Exibe a notificação, no local onde foi definida através de seu HTML e CSS.\n- **hide()** - Oculta a notificação, caso esta esteja visível.\n- **toast()** - Exibe a notificação como um _toast_. Isto irá mover a notificação para fora de sua posição no DOM e, quando ocultada, ela será removida do DOM completamente. Ao armazenar uma referência à notificação, você pode reutilizá-la chamando este método novamente. Retorna uma `Promise`que será resolvida após a notificação ser ocultada.\n\n### **Slots:**\n - _default_ - O conteúdo principal da notificação, usualmente uma mensagem a ser exibida.\n- **icon** - Um ícone personalizado a ser exibido junto à notificação (utilize um `<cps-icon>` para melhor apresentação). Não possui efeito se o atributo `icon` estiver em uso.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **icon** - O elemento que embrulha o ícone opcional (um `<div>`) no qual se aplica a cor de fundo de acordo com a variante da notificação, seja ele gerado automaticamente ou informado com _slot_.\n- **message** - O elemento que embrulha o conteúdo principal da notificação, usualmente contendo um ou mais elementos que definem a mensagem de exibição.\n- **close-button** - O botão de fechar a notificação (caso `closable` esteja em uso).\n- **close-button__base** - A parte `base` re-exportada do botão de fechar.\n- **close-button__icon** - A parte `icon` re-exportada do botão de fechar.",
+      "attributes": [
+        {
+          "name": "open",
+          "description": "Indica se a notificação está aberta. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar a notificação. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto da notificação em tempo real.",
+          "values": []
+        },
+        {
+          "name": "closable",
+          "description": "Habilita a exibição de um botão de fechar para que o usuário possa ocultar a notificação imediatamente.",
+          "values": []
+        },
+        {
+          "name": "variant",
+          "description": "A variante visual para apresentação da notificação.",
+          "values": [
+            { "name": "neutral" },
+            { "name": "informative" },
+            { "name": "warning" },
+            { "name": "critical" },
+            { "name": "success" }
+          ]
+        },
+        {
+          "name": "icon",
+          "description": "Exibe ícone automático de acordo com a variante, ao invés de utilizar o _slot_ `icon`.",
+          "values": []
+        },
+        {
+          "name": "duration",
+          "description": "A duração, em milissegundos, que a notificação será exibida antes de se ocultar automaticamente. Caso o usuário interaja com a notificação antes dela se ocultar (por exemplo, movendo o _mouse_ sobre ela), o temporizador será reiniciado. O padrão `Infinity` significa que a notificação não se ocultará automaticamente.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-popover",
       "description": "_Popover_ é um utilitário que permite ancorar caixas flutuantes declarativamente a outro elemento.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-reposition** - Emitido quando o _popover_ é reposicionado. Este evento pode disparar numerosas vezes, evite colocar operações custosas em seu _listener_, ou alternativamente considere usar uma estratégia de _debouce_ neste evento.\n\n### **Methods:**\n - **reposition()** - Força o _popover_ a se recalcular e se reposicionar.\n\n### **Slots:**\n - _default_ - O conteúdo do _popover_.\n- **anchor** - O elemento que o _popover_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _popover_, use o _slot_ `anchor` em vez disso.\n\n### **CSS Properties:**\n - **--arrow-size** - Tamanho da seta. Observe que independentemente desta variável, a seta não será exibida a menos que o atributo `arrow` seja utilizado. _(default: 7px)_\n- **--background-color** - A cor de fundo do _popover_ e de sua eventual seta (caso esteja sendo exibido em estilo balão). _(default: rgb(var(--cps-color-neutral-500)))_\n- **--border-color** - A bordar externa contornando o _popover_ e sua eventual seta (caso esteja sendo exibido em estilo balão). _(default: transparent)_\n- **--auto-size-available-width** - Uma variável somente leitura que determina a largura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado. _(default: undefined)_\n- **--auto-size-available-height** - Uma variável somente leitura que determina a altura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado. _(default: undefined)_\n\n### **CSS Parts:**\n - **arrow** - A seta do _popover_, caso seja em estilo balão. Evite definir propriedades `top|bottom|left|right`, já que estes valores são atribuídos automaticamente conforme o )_popover_ se move. Esta parte CSS é mais relevante para aplicar cores que combinam com seu _popover_ personalizado, ou talvez bordas ou sombras diferenciadas.\n- **container** - O elemento base do _popover_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _popover_, como cor de fundo, sombras, etc.",
       "attributes": [
@@ -873,6 +950,18 @@
         {
           "name": "checked",
           "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-separator",
+      "description": "Separadores são usados para dividir ou agrupar elementos visualmente.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo interno do separador, recomendado um texto literal ou um `<cps-icon>`.\n\n### **CSS Properties:**\n - **--color** - A cor do separador. _(default: undefined)_\n- **--thickness** - A espessura do separador. _(default: undefined)_\n- **--spacing** - O espaçamento do separador em relação aos elementos à sua volta. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).",
+      "attributes": [
+        {
+          "name": "vertical",
+          "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
           "values": []
         }
       ],

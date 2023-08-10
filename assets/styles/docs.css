@@ -217,7 +217,7 @@ strong {
 
 .sidebar li > p {
   margin: 0 0 0.5rem 1.5rem;
-  border-bottom: solid 1px var(--cps-stroke-divider);
+  border-bottom: solid 1px var(--cps-stroke-separator);
   padding-bottom: 0.375rem;
   font: var(--cps-text-body-large);
   font-weight: var(--cps-font-weight-semibold);
@@ -391,7 +391,7 @@ strong {
 }
 
 .docsify-pagination-container {
-  border-top-color: var(--cps-stroke-divider) !important;
+  border-top-color: var(--cps-stroke-separator) !important;
 }
 
 .pagination-item-label,
@@ -420,7 +420,7 @@ strong {
 
 .markdown-section h2 {
   margin-top: 3rem;
-  border-bottom: solid 1px var(--cps-stroke-divider);
+  border-bottom: solid 1px var(--cps-stroke-separator);
   padding-bottom: 0.375rem;
   font: var(--cps-text-title);
 }
@@ -708,7 +708,7 @@ kbd,
 
 .component-header__summary {
   margin-top: 2rem;
-  border-top: solid 1px var(--cps-stroke-divider);
+  border-top: solid 1px var(--cps-stroke-separator);
   line-height: 1.6;
   font-size: var(--cps-font-size-lg);
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -1972,6 +1972,331 @@
           ]
         },
         {
+          "name": "cps-menu-item",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-item",
+          "js": {
+            "properties": [
+              {
+                "name": "cachedTextLabel",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "menuItem",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "type",
+                "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+                "value": {
+                  "type": "'normal' | 'checkbox'"
+                }
+              },
+              {
+                "name": "checked",
+                "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "value",
+                "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o item de menu.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleHostClick",
+                "value": {}
+              },
+              {
+                "name": "handleDefaultSlotChange",
+                "value": {}
+              },
+              {
+                "name": "handleCheckedChange",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "handleTypeChange",
+                "value": {}
+              },
+              {
+                "name": "getTextLabel",
+                "description": "Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "type",
+              "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+              "value": {
+                "type": "'normal' | 'checkbox'"
+              }
+            },
+            {
+              "name": "checked",
+              "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "value",
+              "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o item de menu.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-menu-label",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-menu",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
+          "js": {
+            "properties": [
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handleMouseDown",
+                "value": {}
+              },
+              {
+                "name": "handleSlotChange",
+                "value": {}
+              },
+              {
+                "name": "isMenuItem",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-select",
+                "description": "Emitido quando um item de menu interno é selecionado."
+              }
+            ]
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-notification",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/notification",
+          "js": {
+            "properties": [
+              {
+                "name": "autoHideTimeout",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "base",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "open",
+                "description": "Indica se a notificação está aberta. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar a notificação. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto da notificação em tempo real.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "closable",
+                "description": "Habilita a exibição de um botão de fechar para que o usuário possa ocultar a notificação imediatamente.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "variant",
+                "description": "A variante visual para apresentação da notificação.",
+                "value": {
+                  "type": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+                }
+              },
+              {
+                "name": "icon",
+                "description": "Exibe ícone automático de acordo com a variante, ao invés de utilizar o _slot_ `icon`.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "duration",
+                "description": "A duração, em milissegundos, que a notificação será exibida antes de se ocultar automaticamente. Caso o usuário interaja com a notificação antes dela se ocultar (por exemplo, movendo o _mouse_ sobre ela), o temporizador será reiniciado. O padrão `Infinity` significa que a notificação não se ocultará automaticamente.",
+                "value": {}
+              },
+              {
+                "name": "restartAutoHide",
+                "value": {}
+              },
+              {
+                "name": "handleCloseClick",
+                "value": {}
+              },
+              {
+                "name": "handleMouseMove",
+                "value": {}
+              },
+              {
+                "name": "handleOpenChange",
+                "value": {}
+              },
+              {
+                "name": "handleDurationChange",
+                "value": {}
+              },
+              {
+                "name": "show",
+                "description": "Exibe a notificação, no local onde foi definida através de seu HTML e CSS.",
+                "value": {}
+              },
+              {
+                "name": "hide",
+                "description": "Oculta a notificação, caso esta esteja visível.",
+                "value": {}
+              },
+              {
+                "name": "toast",
+                "description": "Exibe a notificação como um _toast_. Isto irá mover a notificação para fora de sua posição no DOM e, quando ocultada, ela será removida do DOM completamente. Ao armazenar uma referência à notificação, você pode reutilizá-la chamando este método novamente. Retorna uma `Promise`que será resolvida após a notificação ser ocultada.",
+                "value": {}
+              },
+              {
+                "name": "hasIcon",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-show",
+                "description": "Emitido quando a notificação aparece."
+              },
+              {
+                "name": "cps-after-show",
+                "description": "Emitido após a notificação aparecer e todas as animações terem sido completadas."
+              },
+              {
+                "name": "cps-hide",
+                "description": "Emitido quando a notificação some."
+              },
+              {
+                "name": "cps-after-hide",
+                "description": "Emitido após a notificação sumir e todas as animações terem sido completadas."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "open",
+              "description": "Indica se a notificação está aberta. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar a notificação. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto da notificação em tempo real.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "closable",
+              "description": "Habilita a exibição de um botão de fechar para que o usuário possa ocultar a notificação imediatamente.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "variant",
+              "description": "A variante visual para apresentação da notificação.",
+              "value": {
+                "type": "'neutral' | 'informative' | 'warning' | 'critical' | 'success'"
+              }
+            },
+            {
+              "name": "icon",
+              "description": "Exibe ícone automático de acordo com a variante, ao invés de utilizar o _slot_ `icon`.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "duration",
+              "description": "A duração, em milissegundos, que a notificação será exibida antes de se ocultar automaticamente. Caso o usuário interaja com a notificação antes dela se ocultar (por exemplo, movendo o _mouse_ sobre ela), o temporizador será reiniciado. O padrão `Infinity` significa que a notificação não se ocultará automaticamente.",
+              "value": {}
+            }
+          ]
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
           "name": "cps-popover",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/popover",
@@ -2768,6 +3093,36 @@
             {
               "name": "checked",
               "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-separator",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/separator",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "vertical",
+                "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
+                "value": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "vertical",
+              "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
               "value": {
                 "type": "boolean"
               }
