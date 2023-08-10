@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Pequeno ajuste na opacidade das cores `--cps-fill-control-subtle` do tema claro.
+
 ### Added
 
 - Criação do componente `<cps-notification>`.
