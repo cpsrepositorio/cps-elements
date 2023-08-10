@@ -27,6 +27,7 @@
   - [Notification](/componentes/notification)
   - [Radio](/componentes/radio)
   - [Radio Group](/componentes/radio-group)
+  - [Separator](/componentes/separator)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
   - [Textarea](/componentes/textarea)

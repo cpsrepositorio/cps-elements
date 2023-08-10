@@ -13,6 +13,7 @@ export { CpsNotification } from './components/notification.js';
 export { CpsPopover } from './components/popover.js';
 export { CpsRadio } from './components/radio.js';
 export { CpsRadioGroup } from './components/radio-group.js';
+export { CpsSeparator } from './components/separator.js';
 export { CpsSkeleton } from './components/skeleton.js';
 export { CpsSpinner } from './components/spinner.js';
 export { CpsTextarea } from './components/textarea.js';
