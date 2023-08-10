@@ -9,6 +9,7 @@ export { CpsIconButton } from './components/icon-button.js';
 export { CpsInclude } from './components/include.js';
 export { CpsInput } from './components/input.js';
 export { CpsLabel } from './components/label.js';
+export { CpsMenu } from './components/menu.js';
 export { CpsMenuItem } from './components/menu-item.js';
 export { CpsMenuLabel } from './components/menu-label.js';
 export { CpsNotification } from './components/notification.js';
