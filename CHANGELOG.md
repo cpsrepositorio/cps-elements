@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Changed
 
 - Pequeno ajuste na opacidade das cores `--cps-fill-control-subtle` do tema claro.
+- Mudança de nomenclatura de `--cps-stroke-divider` para `--cps-stroke-separator` nos temas claro e escuro.
 
 ### Added
 

@@ -454,7 +454,7 @@
   --cps-stroke-card-primary: rgb(var(--cps-color-neutral-1000) / 5.78%);
   --cps-stroke-card-secondary: rgb(var(--cps-color-neutral-1000) / 11.56%);
 
-  --cps-stroke-divider: rgb(var(--cps-color-neutral-1000) / 8.03%);
+  --cps-stroke-separator: rgb(var(--cps-color-neutral-1000) / 8.03%);
 
   --cps-stroke-surface: rgb(117 117 117 / 40%);
 

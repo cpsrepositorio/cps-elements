@@ -497,7 +497,7 @@ export default css`
         )
     )
     .button:before {
-    border-left-color: var(--cps-stroke-divider);
+    border-left-color: var(--cps-stroke-separator);
   }
 
   :host(
