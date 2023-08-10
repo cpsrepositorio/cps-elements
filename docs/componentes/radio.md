@@ -2,9 +2,9 @@
 
 [component-header:cps-radio]
 
-Os campos de opção oferecem aos usuários uma maneira de selecionar entre opções mutuamente exclusivas, quando em seu formato circular (conhecido em inglês como _radio_, nome inspirado nos antigos aparelhos de rádio com botões redondos de regulagem de volume e sintonia). Caso suas opções não sejam mutuamente exclusivas, considere o uso de [Checkbox](/components/checkbox).
+Os campos de opção oferecem aos usuários uma maneira de selecionar entre opções mutuamente exclusivas, quando em seu formato circular (conhecido em inglês como _radio_, nome inspirado nos antigos aparelhos de rádio com botões redondos de regulagem de volume e sintonia). Caso suas opções não sejam mutuamente exclusivas, considere o uso de [Checkbox](/componentes/checkbox).
 
-Embora esta documentação apresente seus atributos fundamentais, _radios_ são projetados para serem usados em grupos, portanto a documentação de [Radio Group](/components/radio-group) pode fazer mais sentido para suas necessidades.
+Embora esta documentação apresente seus atributos fundamentais, _radios_ são projetados para serem usados em grupos, portanto a documentação de [Radio Group](/componentes/radio-group) pode fazer mais sentido para suas necessidades.
 
 ```html preview
 <cps-radio></cps-radio>
@@ -83,7 +83,7 @@ const App = () => (
 );
 ```
 
-?> A mutualidade exclusiva é definida pelo atributo `name` do [Radio Group](/components/radio-group) que embrulhar as opções, não pelos atributos `name` ou `value` de cada campo de opção individualmente. Recomendamos que você confira a documentação do _radio group_ para mais informações, pois utilizar somente _radio_ não costuma ser o suficiente.
+?> A mutualidade exclusiva é definida pelo atributo `name` do [Radio Group](/componentes/radio-group) que embrulhar as opções, não pelos atributos `name` ou `value` de cada campo de opção individualmente. Recomendamos que você confira a documentação do _radio group_ para mais informações, pois utilizar somente _radio_ não costuma ser o suficiente.
 
 ### Estado desabilitado
 
@@ -175,6 +175,6 @@ const App = () => (
 );
 ```
 
-?> É possível controlar o tamanho de diversos campos de opção de uma só vez, ao usar o atributo `size` de um [Radio Group](/components/radio-group) que embrulhe as opções. Confira a documentação de _radio groups_ para mais informações.
+?> É possível controlar o tamanho de diversos campos de opção de uma só vez, ao usar o atributo `size` de um [Radio Group](/componentes/radio-group) que embrulhe as opções. Confira a documentação de _radio groups_ para mais informações.
 
 [component-metadata:cps-radio]
