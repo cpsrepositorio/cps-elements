@@ -11,4 +11,5 @@ export { default as CpsInvalidEvent } from './cps-invalid.js';
 export { default as CpsLoadEvent } from './cps-load.js';
 export { default as CpsRemoveEvent } from './cps-remove.js';
 export { default as CpsReposition } from './cps-reposition.js';
+export { default as CpsSelect } from './cps-select.js';
 export { default as CpsShow } from './cps-show.js';
