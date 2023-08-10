@@ -8,6 +8,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Added
 
+- Criação do componente `<cps-menu-item>`.
 - Criação do componente `<cps-menu-label>`.
 - Criação do componente `<cps-notification>`.
 - Criação do componente `<cps-separator>`.
