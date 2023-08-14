@@ -28,6 +28,7 @@ export { CpsTooltip } from './components/tooltip.js';
 export * from './utilities/animation.js';
 export * from './utilities/base-path.js';
 export * from './utilities/icon-library.js';
+export * from './utilities/theme.js';
 
 // Events
 export * from './events/index.js';

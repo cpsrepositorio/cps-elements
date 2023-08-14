@@ -1,3 +1,5 @@
+import { getTheme, setTheme, toggleTheme } from '../../../dist/utilities/theme.js';
+
 (() => {
   if (!window.$docsify) {
     throw new Error('Docsify must be loaded before installing this plugin.');
@@ -5,39 +7,31 @@
 
   window.$docsify.plugins.push(hook => {
     hook.mounted(() => {
-      function getTheme() {
-        return localStorage.getItem('theme') || 'auto';
+      // Migrate old theme key to new one.
+      if (localStorage.getItem('theme') !== null) {
+        localStorage.setItem('cps-theme', localStorage.getItem('theme'));
+        localStorage.removeItem('theme');
       }
 
-      function isDark() {
-        if (theme === 'auto') {
-          return window.matchMedia('(prefers-color-scheme: dark)').matches;
-        }
-        return theme === 'dark';
-      }
+      function updateLayout() {
+        const theme = getTheme();
 
-      function setTheme(newTheme) {
         const noTransitions = Object.assign(document.createElement('style'), {
           textContent: '* { transition: none !important; }'
         });
 
-        theme = newTheme;
-        localStorage.setItem('theme', theme);
-
         // Update the UI
-        button.title = isDark() ? 'Modo escuro' : 'Modo claro';
+        button.title = theme === 'dark' ? 'Modo escuro' : 'Modo claro';
         buttonIcon.name = button.title === 'Modo escuro' ? 'weather-moon' : 'weather-sunny';
         buttonIcon.label = buttonIcon.name === 'weather-sunny' ? 'Claro' : 'Escuro';
 
         // Toggle the dark mode class without transitions
         document.body.appendChild(noTransitions);
         requestAnimationFrame(() => {
-          document.documentElement.classList.toggle('cps-theme-dark', isDark());
+          document.documentElement.classList.toggle('cps-theme-dark', theme === 'dark');
           requestAnimationFrame(() => document.body.removeChild(noTransitions));
         });
       }
-
-      let theme = getTheme();
 
       // Generate the theme picker dropdown
       const button = document.createElement('cps-button');
@@ -51,10 +45,7 @@
 
       // Listen for selections
       const buttonIcon = button.querySelector('cps-icon');
-      button.addEventListener('click', () => setTheme(isDark() ? 'light' : 'dark'));
-
-      // Update the theme when the preference changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => setTheme(theme));
+      button.addEventListener('click', () => updateLayout(toggleTheme()));
 
       // Toggle themes when pressing backslash
       document.addEventListener('keydown', event => {
@@ -63,13 +54,12 @@
           !event.composedPath().some(el => ['input', 'textarea'].includes(el?.tagName?.toLowerCase()))
         ) {
           event.preventDefault();
-
-          setTheme(isDark() ? 'light' : 'dark');
+          updateLayout(toggleTheme());
         }
       });
 
       // Set the initial theme and sync the UI
-      setTheme(theme);
+      updateLayout(setTheme('auto'));
     });
   });
 })();

@@ -416,7 +416,7 @@
       const vueExample = codeBlock.querySelector('.code-block__source--vue > pre > code')?.textContent;
       const isReact = flavor === 'react' && typeof reactExample === 'string';
       const isVue = flavor === 'vue' && typeof vueExample === 'string';
-      const theme = localStorage.getItem('theme');
+      const theme = localStorage.getItem('cps-theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const isDark = theme === 'dark' || (theme === 'auto' && prefersDark);
       const editors = isReact || isVue ? '0010' : '1000';
