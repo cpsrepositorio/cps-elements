@@ -540,10 +540,10 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
 
         if (component.cssProperties?.length) {
           result += `
-            ## Variáveis CSS
+            ## Propriedades CSS
             ${createCustomPropertiesTable(component.cssProperties)}
 
-            _Leia mais sobre [propriedades CSS personalizadas](/fundamentos/personalizando#custom-properties)._
+            _Leia mais sobre [propriedades CSS personalizadas](/fundamentos/personalizando#propriedades-css)._
           `;
         }
 
@@ -552,7 +552,7 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             ## Partes CSS
             ${createPartsTable(component.cssParts)}
 
-            _Leia mais sobre [personalização de partes CSS](/fundamentos/personalizando#component-parts)._
+            _Leia mais sobre [personalização de partes CSS](/fundamentos/personalizando#partes-css)._
           `;
         }
 
@@ -561,7 +561,7 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             ## Animações
             ${createAnimationsTable(component.animations)}
 
-            _Leia mais sobre [personalização de animações](/fundamentos/personalizando#animations)._
+            _Leia mais sobre [personalização de animações](/fundamentos/personalizando#animações)._
           `;
         }
 
