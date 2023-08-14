@@ -48,14 +48,9 @@
   <body>
     <div id="app">Carregando...</div>
 
-    <script>
-      // Set the initial theme to prevent flashing
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = localStorage.getItem('theme') || 'auto';
-      document.documentElement.classList.toggle(
-        'cps-theme-dark',
-        theme === 'dark' || (theme === 'auto' && prefersDark)
-      );
+    <script type="module">
+      import { setTheme } from './dist/utilities/theme.js';
+      setTheme('auto');
     </script>
 
     <script>
@@ -114,6 +109,6 @@
     <script src="./assets/plugins/scroll-position/scroll-position.js"></script>
     <script src="./assets/plugins/search/lunr.min.js"></script>
     <script src="./assets/plugins/search/search.js"></script>
-    <script src="./assets/plugins/theme-picker/theme-picker.js"></script>
+    <script src="./assets/plugins/theme-picker/theme-picker.js" type="module"></script>
   </body>
 </html>

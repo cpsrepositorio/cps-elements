@@ -71,7 +71,7 @@ Desta vez, registramos também para carregamento pelo navegador do usuário a fo
 
 </div>
 
-?> Carregar o tema para modo escuro permite que componentes sejam exibidos em modo escuro (como no exemplo acima), mas não habilita a alternância de temas por si só. Veja mais sobre o [tema de modo escuro](temas/modo-escuro).
+?> Carregar o tema para modo escuro permite que componentes sejam exibidos em modo escuro (como no exemplo acima), mas não habilita a alternância de temas por si só. Veja mais sobre o [tema de modo escuro](fundamentos/temas#modo-escuro).
 
 ## O que são Web Components?
 

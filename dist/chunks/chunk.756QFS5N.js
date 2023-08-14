@@ -1,0 +1,1 @@
+import{a as n}from"./chunk.K7NDQT5R.js";import{c as t}from"./chunk.K3RV6SX6.js";function r(){return Object.entries(n).filter(([e])=>e!=="easings").map(([e])=>e)}t(r,"getAnimationNames");function o(){return Object.entries(n.easings).map(([e])=>e)}t(o,"getEasingNames");export{r as a,o as b};

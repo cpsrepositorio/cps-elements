@@ -3,7 +3,7 @@
   - [Introdução](/)
   - [Instalação](/fundamentos/instalação)
   - [Utilização](/fundamentos/utilização)
-  - [Temas <small>(em breve)</small>](/fundamentos/temas)
+  - [Temas](/fundamentos/temas)
   - [Personalizando <small>(em breve)</small>](/fundamentos/personalizando)
   - [Formulários <small>(em breve)</small>](/fundamentos/formulários)
 

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
