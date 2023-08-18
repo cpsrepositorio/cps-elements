@@ -58,13 +58,13 @@ O utilitário _popover_ não provê estilização, apenas posicionamento! O posi
 
 <style>
   .popover-overview cps-popover {
-    --arrow-color: var(--cps-fill-accent-primary);
+    --arrow-color: var(--cps-color-fill-accent-primary);
   }
 
   .popover-overview span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -107,13 +107,13 @@ import { CpsPopover } from '@cps-elements/web/react/popover';
 
 const css = `
   .popover-overview cps-popover {
-    --arrow-color: var(--cps-fill-accent-primary);
+    --arrow-color: var(--cps-color-fill-accent-primary);
   }
 
   .popover-overview span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -243,7 +243,7 @@ _Popovers_ são inativos e ocultos até que o atributo `active` seja aplicado. R
   .popover-active span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -272,7 +272,7 @@ const css = `
   .popover-active span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -321,7 +321,7 @@ Por padrão, âncoras são injetadas no _popover_ através do _slot_ `anchor`. S
   #external-anchor {
     display: inline-block;
     margin: 50px 0 0 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -340,7 +340,7 @@ const css = `
   #external-anchor {
     display: inline-block;
     margin: 50px 0 0 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -400,7 +400,7 @@ Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode
   .popover-placement span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -433,7 +433,7 @@ const css = `
   .popover-placement span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -502,7 +502,7 @@ Use o atributo `distance` para alterar a distância entre o _popover_ e sua ânc
   .popover-distance span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -534,7 +534,7 @@ const css = `
   .popover-distance span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -596,7 +596,7 @@ Use o atributo `skidding` para alterar o deslocamento do _popover_ ao longo do e
   .popover-skidding span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -628,7 +628,7 @@ const css = `
   .popover-skidding span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -729,7 +729,7 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
   .popover-arrow span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -766,7 +766,7 @@ const css = `
   .popover-arrow span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -925,7 +925,7 @@ Caso esteja utilizando o _popover_ com estilo balão, a seta automaticamente uti
   .popover-custom span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -982,7 +982,7 @@ const css = `
   .popover-custom span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1087,7 +1087,7 @@ Use o atributo `sync` para fazer com que o _popover_ tenha a mesma largura ou al
   .popover-sync span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1123,7 +1123,7 @@ const css = `
   .popover-sync span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1199,7 +1199,7 @@ Alterne a estratégia de posicionamento e role o contêiner para ver a diferenç
   .popover-strategy span[slot='anchor'] {
     display: inline-block;
     margin: 80px 50px 150px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1238,7 +1238,7 @@ const css = `
   .popover-strategy span[slot='anchor'] {
     display: inline-block;
     margin: 80px 50px 150px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1306,7 +1306,7 @@ Role o contêiner para ver como o _popover_ gira para evitar seu corte.
   .popover-flip span[slot='anchor'] {
     display: inline-block;
     margin: 80px 50px 150px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1341,7 +1341,7 @@ const css = `
   .popover-flip span[slot='anchor'] {
     display: inline-block;
     margin: 80px 50px 150px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1407,7 +1407,7 @@ Role o contêiner para ver como o _popover_ vai mudando para seus posicionamento
   .popover-flip-fallbacks span[slot='anchor'] {
     display: inline-block;
     margin: 80px 250px 150px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 250px;
   }
@@ -1432,7 +1432,7 @@ const css = `
   .popover-flip-fallbacks span[slot='anchor'] {
     display: inline-block;
     margin: 80px 250px 150px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 250px;
   }
@@ -1494,7 +1494,7 @@ Alterne a caixa de seleção para ver a diferença.
   .popover-shift span[slot='anchor'] {
     display: inline-block;
     margin: 60px 0 0 10px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1532,7 +1532,7 @@ const css = `
   .popover-shift span[slot='anchor'] {
     display: inline-block;
     margin: 60px 0 0 10px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1602,7 +1602,7 @@ Role o contêiner para ver o _popover_ se auto-dimensionar conforme o espaço di
   .popover-auto-size span[slot='anchor'] {
     display: inline-block;
     margin: 200px 50px 120px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }
@@ -1640,7 +1640,7 @@ const css = `
   .popover-auto-size span[slot='anchor'] {
     display: inline-block;
     margin: 200px 50px 120px;
-    border: dashed 2px var(--cps-stroke-card-secondary);
+    border: dashed 2px var(--cps-color-stroke-card-secondary);
     width: 150px;
     height: 150px;
   }

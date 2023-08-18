@@ -89,7 +89,7 @@ Use o atributo `variant` para definir a variação visual do rótulo.
   .label-variants-example p:last-child {
     margin-top: 0.5rem;
     border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-tertiary);
+    background: var(--cps-color-fill-accent-tertiary);
   }
 </style>
 ```
@@ -116,7 +116,7 @@ const css = `
   .label-variants-example p:last-child {
     margin-top: 0.5rem;
     border-radius: var(--cps-border-radius-medium);
-    background: var(--cps-fill-accent-tertiary);
+    background: var(--cps-color-fill-accent-tertiary);
   }
 `;
 

@@ -123,10 +123,10 @@ Tudo que você já sabe sobre a [sintaxe de `<template>`](https://vuejs.org/guid
 <style scoped>
   /* Estilos CSS com variáveis CSS importadas do tema CPS Elements. */
   :global(body) {
-    background-color: var(--cps-fill-solid-primary);
+    background-color: var(--cps-color-background-solid-primary);
     padding: 1rem;
-    color: var(--cps-foreground-primary);
-    font: var(--cps-text-body);
+    color: var(--cps-color-text-primary);
+    font: var(--cps-font-body);
   }
 
   /* Estilizar componentes CPS Elements também funciona. */

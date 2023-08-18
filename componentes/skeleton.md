@@ -507,7 +507,7 @@ const App = () => <CpsSkeleton style={{ '--color': 'tomato', '--accent-color': '
     grid-template-columns: auto 1fr;
     gap: 1rem;
     align-items: center;
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .skeleton-effect span,
