@@ -19,7 +19,7 @@ export default css`
     min-width: var(--cps-spacing-1);
     min-height: var(--cps-spacing-1);
     white-space: nowrap;
-    font: var(--cps-text-caption);
+    font: var(--cps-font-caption);
     user-select: none;
   }
 
@@ -31,7 +31,7 @@ export default css`
 
   .badge--has-icon {
     padding: 0;
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .badge--has-content:not(.badge--has-icon).badge--has-single-character {
@@ -44,28 +44,28 @@ export default css`
 
   /* Variant modifiers */
   .badge--neutral {
-    background-color: var(--cps-fill-system-neutral);
-    color: rgb(var(--cps-color-neutral-0));
+    background-color: var(--cps-color-system-neutral);
+    color: var(--cps-palette-neutral-0);
   }
 
   .badge--informative {
-    background-color: var(--cps-fill-system-informative);
-    color: rgb(var(--cps-color-neutral-0));
+    background-color: var(--cps-color-system-informative);
+    color: var(--cps-palette-neutral-0);
   }
 
   .badge--warning {
-    background-color: var(--cps-fill-system-warning);
-    color: rgb(var(--cps-color-neutral-0));
+    background-color: var(--cps-color-system-warning);
+    color: var(--cps-palette-neutral-0);
   }
 
   .badge--critical {
-    background-color: var(--cps-fill-system-critical);
-    color: rgb(var(--cps-color-neutral-0));
+    background-color: var(--cps-color-system-critical);
+    color: var(--cps-palette-neutral-0);
   }
 
   .badge--success {
-    background-color: var(--cps-fill-system-success);
-    color: rgb(var(--cps-color-neutral-0));
+    background-color: var(--cps-color-system-success);
+    color: var(--cps-palette-neutral-0);
   }
 
   /* Square modifier */
@@ -79,23 +79,23 @@ export default css`
   }
 
   .badge--pulse.badge--neutral {
-    --pulse-color: var(--cps-fill-system-neutral);
+    --pulse-color: var(--cps-color-system-neutral);
   }
 
   .badge--pulse.badge--informative {
-    --pulse-color: var(--cps-fill-system-informative);
+    --pulse-color: var(--cps-color-system-informative);
   }
 
   .badge--pulse.badge--warning {
-    --pulse-color: var(--cps-fill-system-warning);
+    --pulse-color: var(--cps-color-system-warning);
   }
 
   .badge--pulse.badge--critical {
-    --pulse-color: var(--cps-fill-system-critical);
+    --pulse-color: var(--cps-color-system-critical);
   }
 
   .badge--pulse.badge--success {
-    --pulse-color: var(--cps-fill-system-success);
+    --pulse-color: var(--cps-color-system-success);
   }
 
   @keyframes pulse {

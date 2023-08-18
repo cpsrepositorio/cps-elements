@@ -21,17 +21,17 @@ export default css`
 
   .radio--small {
     --toggle-size: var(--cps-toggle-size-small);
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .radio--medium {
     --toggle-size: var(--cps-toggle-size-medium);
-    font: var(--cps-text-body);
+    font: var(--cps-font-body);
   }
 
   .radio--large {
     --toggle-size: var(--cps-toggle-size-large);
-    font: var(--cps-text-body-large);
+    font: var(--cps-font-body-large);
   }
 
   .radio__checked-icon {
@@ -47,10 +47,10 @@ export default css`
     place-items: center;
     transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) border-color,
       var(--cps-transition-fast) background-clip;
-    border: solid 1px var(--cps-foreground-tertiary);
-    border-radius: 50%;
+    border: solid 1px var(--cps-color-text-tertiary);
+    border-radius: var(--cps-border-radius-full);
     background-clip: content-box;
-    background-color: var(--cps-fill-control-alt-secondary);
+    background-color: var(--cps-color-fill-alt-secondary);
     width: var(--toggle-size);
     height: var(--toggle-size);
     overflow: hidden;
@@ -63,8 +63,8 @@ export default css`
     inset: 0;
     transition: var(--cps-transition-fast) border-color;
     z-index: 0;
-    border: solid 1px var(--cps-foreground-tertiary);
-    border-radius: 50%;
+    border: solid 1px var(--cps-color-text-tertiary);
+    border-radius: var(--cps-border-radius-full);
     width: 100%;
     height: 100%;
     content: '';
@@ -78,9 +78,9 @@ export default css`
     transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) border-width;
     z-index: 0;
     border: solid 1px transparent;
-    border-radius: 50%;
+    border-radius: var(--cps-border-radius-full);
     background-clip: content-box;
-    background-color: var(--cps-fill-control-alt-secondary);
+    background-color: var(--cps-color-fill-alt-secondary);
     width: 100%;
     height: 100%;
     content: '';
@@ -103,9 +103,9 @@ export default css`
     transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) transform;
     z-index: 1;
     border: solid 4px transparent;
-    border-radius: 50%;
+    border-radius: var(--cps-border-radius-full);
     background-clip: content-box;
-    background-color: var(--cps-foreground-inverted-primary);
+    background-color: var(--cps-color-text-inverted-primary);
     width: 100%;
     height: 100%;
     will-change: background-color, transform;
@@ -124,61 +124,61 @@ export default css`
 
   /* Unchecked + Enabled + Hover */
   .radio:not(.radio--checked):not(.radio--disabled):hover .radio__control {
-    background-color: var(--cps-fill-control-alt-tertiary);
+    background-color: var(--cps-color-fill-alt-tertiary);
   }
 
   /* Unchecked + Enabled + Active */
   .radio:not(.radio--checked):not(.radio--disabled):active .radio__control {
-    border-color: var(--cps-stroke-control-inverted-tertiary);
-    background-color: var(--cps-fill-control-alt-quaternary);
+    border-color: var(--cps-color-stroke-inverted-tertiary);
+    background-color: var(--cps-color-fill-alt-quaternary);
   }
 
   /* Unchecked + Disabled */
   .radio:not(.radio--checked).radio--disabled .radio__control {
-    border-color: var(--cps-fill-accent-disabled);
+    border-color: var(--cps-color-fill-accent-disabled);
     background-color: transparent;
   }
 
   /* Checked + Enabled */
   .radio.radio--checked:not(.radio--disabled) .radio__control {
-    border-color: var(--cps-fill-accent-primary);
+    border-color: var(--cps-color-fill-accent-primary);
     background-clip: border-box;
-    background-color: var(--cps-fill-accent-primary);
+    background-color: var(--cps-color-fill-accent-primary);
   }
 
   /* Checked + Enabled + Hover */
   .radio.radio--checked:not(.radio--disabled):hover .radio__control {
-    border-color: var(--cps-fill-accent-secondary);
+    border-color: var(--cps-color-fill-accent-secondary);
     background-clip: border-box;
-    background-color: var(--cps-fill-accent-secondary);
+    background-color: var(--cps-color-fill-accent-secondary);
   }
 
   .radio.radio--checked:not(.radio--disabled):hover .radio__checked-handle {
     transform: scale(1.1);
-    background-color: var(--cps-foreground-inverted-primary);
+    background-color: var(--cps-color-text-inverted-primary);
   }
 
   /* Checked + Enabled + Active */
   .radio.radio--checked:not(.radio--disabled):active .radio__control {
-    border-color: var(--cps-fill-accent-tertiary);
+    border-color: var(--cps-color-fill-accent-tertiary);
     background-clip: border-box;
-    background-color: var(--cps-fill-accent-tertiary);
+    background-color: var(--cps-color-fill-accent-tertiary);
   }
 
   .radio.radio--checked:not(.radio--disabled):active .radio__checked-handle {
     transform: scale(0.85);
-    background-color: var(--cps-foreground-inverted-secondary);
+    background-color: var(--cps-color-text-inverted-secondary);
   }
 
   /* Checked + Disabled */
   .radio.radio--checked.radio--disabled .radio__control {
-    border-color: var(--cps-fill-accent-disabled);
+    border-color: var(--cps-color-fill-accent-disabled);
     background-clip: border-box;
-    background-color: var(--cps-fill-accent-disabled);
+    background-color: var(--cps-color-fill-accent-disabled);
   }
 
   .radio.radio--checked.radio--disabled .radio__checked-handle {
-    background-color: var(--cps-foreground-inverted-primary);
+    background-color: var(--cps-color-text-inverted-primary);
   }
 
   /* Disabled */
@@ -189,7 +189,7 @@ export default css`
   .radio__label {
     display: inline-block;
     line-height: var(--toggle-size);
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
     user-select: none;
   }
 
@@ -199,7 +199,7 @@ export default css`
 
   .radio.radio--disabled .radio__label {
     cursor: not-allowed;
-    color: var(--cps-foreground-disabled);
+    color: var(--cps-color-text-disabled);
   }
 
   .radio--has-label .radio__label {

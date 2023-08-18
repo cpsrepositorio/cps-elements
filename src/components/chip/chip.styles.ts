@@ -24,33 +24,33 @@ export default css`
    */
 
   .chip--neutral {
-    border-color: var(--cps-fill-system-transparent-neutral);
-    background-color: var(--cps-fill-system-subtle-neutral);
-    color: var(--cps-color-neutral-800);
+    border-color: var(--cps-color-system-neutral-transparent);
+    background-color: var(--cps-color-system-neutral-subtle);
+    color: var(--cps-palette-neutral-800);
   }
 
   .chip--informative {
-    border-color: var(--cps-stroke-control-primary);
-    background-color: var(--cps-fill-system-informative);
-    color: rgb(var(--cps-color-neutral-0));
+    border-color: var(--cps-color-stroke-primary);
+    background-color: var(--cps-color-system-informative);
+    color: var(--cps-palette-neutral-0);
   }
 
   .chip--warning {
-    border-color: var(--cps-stroke-control-primary);
-    background-color: var(--cps-fill-system-warning);
-    color: rgb(var(--cps-color-neutral-0));
+    border-color: var(--cps-color-stroke-primary);
+    background-color: var(--cps-color-system-warning);
+    color: var(--cps-palette-neutral-0);
   }
 
   .chip--critical {
-    border-color: var(--cps-stroke-control-primary);
-    background-color: var(--cps-fill-system-critical);
-    color: rgb(var(--cps-color-neutral-0));
+    border-color: var(--cps-color-stroke-primary);
+    background-color: var(--cps-color-system-critical);
+    color: var(--cps-palette-neutral-0);
   }
 
   .chip--success {
-    border-color: var(--cps-stroke-control-primary);
-    background-color: var(--cps-fill-system-success);
-    color: rgb(var(--cps-color-neutral-0));
+    border-color: var(--cps-color-stroke-primary);
+    background-color: var(--cps-color-system-success);
+    color: var(--cps-palette-neutral-0);
   }
 
   /*
@@ -58,15 +58,15 @@ export default css`
    */
 
   .chip--small {
-    font: var(--cps-text-stamp);
+    font: var(--cps-font-stamp);
   }
 
   .chip--medium {
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .chip--large {
-    font: var(--cps-text-body);
+    font: var(--cps-font-body);
   }
 
   /*
@@ -104,18 +104,18 @@ export default css`
     margin: -1px 0;
     width: 1rem;
     height: 1rem;
-    font-size: var(--cps-text-stamp);
+    font-size: var(--cps-font-stamp);
   }
 
   .chip--medium .chip__remove::part(base) {
     width: 1.125rem;
     height: 1.125rem;
-    font-size: var(--cps-text-body);
+    font-size: var(--cps-font-body);
   }
 
   .chip--large .chip__remove::part(base) {
     width: 1.375rem;
     height: 1.375rem;
-    font-size: var(--cps-text-body);
+    font-size: var(--cps-font-body);
   }
 `;

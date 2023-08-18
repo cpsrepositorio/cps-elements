@@ -5,7 +5,7 @@ export default css`
   ${componentStyles}
 
   :host {
-    --background-color: rgb(var(--cps-color-neutral-500));
+    --background-color: var(--cps-palette-neutral-500);
     --border-color: transparent;
     --arrow-size: 7px;
 

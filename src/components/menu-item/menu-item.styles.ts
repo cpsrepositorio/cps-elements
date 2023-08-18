@@ -22,8 +22,8 @@ export default css`
     padding: var(--cps-spacing-3) var(--cps-spacing-4);
     letter-spacing: var(--cps-tracking-normal);
     white-space: nowrap;
-    color: var(--cps-foreground-primary);
-    font: var(--cps-text-body);
+    color: var(--cps-color-text-primary);
+    font: var(--cps-font-body);
     will-change: background-color, color;
     user-select: none;
   }
@@ -34,7 +34,7 @@ export default css`
 
   .menu-item.menu-item--disabled {
     outline: none;
-    color: var(--cps-foreground-disabled);
+    color: var(--cps-color-text-disabled);
     pointer-events: none;
   }
 
@@ -48,7 +48,7 @@ export default css`
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
   }
 
   .menu-item .menu-item__prefix::slotted(*) {
@@ -60,17 +60,17 @@ export default css`
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
   }
 
   .menu-item .menu-item__suffix::slotted(*) {
     margin-inline-start: var(--cps-spacing-2-5);
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .menu-item.menu-item--disabled .menu-item__prefix,
   .menu-item.menu-item--disabled .menu-item__suffix {
-    color: var(--cps-foreground-disabled);
+    color: var(--cps-color-text-disabled);
   }
 
   :host(:focus-visible) {
@@ -78,18 +78,18 @@ export default css`
   }
 
   :host(:hover:not([aria-disabled='true'], :focus-visible)) .menu-item {
-    background-color: var(--cps-fill-control-subtle-secondary);
+    background-color: var(--cps-color-fill-subtle-secondary);
   }
 
   .menu-item:not(.menu-item--disabled):active {
-    background-color: var(--cps-fill-control-subtle-tertiary);
-    color: var(--cps-foreground-secondary);
+    background-color: var(--cps-color-fill-subtle-tertiary);
+    color: var(--cps-color-text-secondary);
   }
 
   :host(:focus-visible) .menu-item {
     opacity: 1;
     outline: none;
-    background-color: var(--cps-fill-control-subtle-secondary);
+    background-color: var(--cps-color-fill-subtle-secondary);
   }
 
   .menu-item .menu-item__check {
@@ -100,7 +100,7 @@ export default css`
     visibility: hidden;
     margin-inline-end: var(--cps-spacing-2-5);
     width: 0.875rem;
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
   }
 
   .menu-item--checked .menu-item__check {

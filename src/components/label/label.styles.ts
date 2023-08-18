@@ -5,87 +5,87 @@ export default css`
   ${componentStyles}
 
   .label--primary {
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
   }
 
   .label--secondary {
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
   }
 
   .label--tertiary {
-    color: var(--cps-foreground-tertiary);
+    color: var(--cps-color-text-tertiary);
   }
 
   .label--disabled {
-    color: var(--cps-foreground-disabled);
+    color: var(--cps-color-text-disabled);
   }
 
   .label--brand-primary {
-    color: var(--cps-foreground-brand-primary);
+    color: var(--cps-color-text-brand-primary);
   }
 
   .label--brand-secondary {
-    color: var(--cps-foreground-brand-secondary);
+    color: var(--cps-color-text-brand-secondary);
   }
 
   .label--brand-tertiary {
-    color: var(--cps-foreground-brand-tertiary);
+    color: var(--cps-color-text-brand-tertiary);
   }
 
   .label--inverted-primary {
-    color: var(--cps-foreground-inverted-primary);
+    color: var(--cps-color-text-inverted-primary);
   }
 
   .label--inverted-secondary {
-    color: var(--cps-foreground-inverted-secondary);
+    color: var(--cps-color-text-inverted-secondary);
   }
 
   .label--inverted-disabled {
-    color: var(--cps-foreground-inverted-disabled);
+    color: var(--cps-color-text-inverted-disabled);
   }
 
   /* Size modifiers */
   .label--stamp {
-    font: var(--cps-text-stamp);
+    font: var(--cps-font-stamp);
   }
 
   .label--caption {
-    font: var(--cps-text-caption);
+    font: var(--cps-font-caption);
   }
 
   .label--label {
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .label--body {
-    font: var(--cps-text-body);
+    font: var(--cps-font-body);
   }
 
   .label--body-em {
-    font: var(--cps-text-body-em);
+    font: var(--cps-font-body-em);
   }
 
   .label--body-strong {
-    font: var(--cps-text-body-strong);
+    font: var(--cps-font-body-strong);
   }
 
   .label--body-large {
-    font: var(--cps-text-body-large);
+    font: var(--cps-font-body-large);
   }
 
   .label--subtitle {
-    font: var(--cps-text-subtitle);
+    font: var(--cps-font-subtitle);
   }
 
   .label--title {
-    font: var(--cps-text-title);
+    font: var(--cps-font-title);
   }
 
   .label--heading {
-    font: var(--cps-text-heading);
+    font: var(--cps-font-heading);
   }
 
   .label--display {
-    font: var(--cps-text-display);
+    font: var(--cps-font-display);
   }
 `;

@@ -50,7 +50,7 @@ export default css`
     background-image: linear-gradient(
       transparent 0,
       transparent calc(100% - var(--cps-input-border-bottom-width) * 2),
-      var(--cps-fill-accent-primary) 100%
+      var(--cps-color-fill-accent-primary) 100%
     );
     background-origin: border-box;
     content: '';
@@ -83,7 +83,7 @@ export default css`
     min-width: 0;
     height: 100%;
     letter-spacing: var(--cps-tracking-normal);
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -121,7 +121,7 @@ export default css`
   .input.input--focused:not(.input--disabled)
     :is(.input__control, .input__prefix, .input__suffix, .input__clear, .input__password-toggle, .input__date-picker) {
     background-color: var(--cps-input-background-active);
-    color: var(--cps-foreground-primary-focus);
+    color: var(--cps-color-text-primary-focus);
   }
 
   .input.input--focused:not(.input--disabled)::after {
@@ -134,18 +134,18 @@ export default css`
   }
 
   .input.input--disabled::before {
-    background-color: var(--cps-stroke-control-primary);
+    background-color: var(--cps-color-stroke-primary);
     cursor: not-allowed;
   }
 
   .input.input--disabled
     :is(.input__control, .input__prefix, .input__suffix, .input__clear, .input__password-toggle, .input__date-picker) {
-    background-color: var(--cps-stroke-control-primary);
-    color: var(--cps-foreground-disabled);
+    background-color: var(--cps-color-stroke-primary);
+    color: var(--cps-color-text-disabled);
   }
 
   .input.input--disabled .input__control::placeholder {
-    color: var(--cps-foreground-disabled);
+    color: var(--cps-color-text-disabled);
   }
 
   .input__control::-webkit-search-decoration,
@@ -161,17 +161,17 @@ export default css`
   .input__control:-webkit-autofill:active {
     box-shadow: 0 0 0 var(--cps-input-height-large) var(--cps-input-background-active) inset !important;
     background: transparent !important;
-    -webkit-text-fill-color: var(--cps-foreground-primary);
-    caret-color: var(--cps-foreground-primary);
+    -webkit-text-fill-color: var(--cps-color-text-primary);
+    caret-color: var(--cps-color-text-primary);
   }
 
   .input__control::placeholder {
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
     user-select: none;
   }
 
   .input--empty .input__control {
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
   }
 
   .input__control:focus {
@@ -201,7 +201,7 @@ export default css`
 
   .input__prefix::slotted(cps-icon),
   .input__suffix::slotted(cps-icon) {
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
   }
 
   /*
@@ -210,7 +210,7 @@ export default css`
 
   .input--small {
     height: var(--cps-input-height-small);
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .input--small .input__control {
@@ -233,7 +233,7 @@ export default css`
 
   .input--medium {
     height: var(--cps-input-height-medium);
-    font: var(--cps-text-body);
+    font: var(--cps-font-body);
   }
 
   .input--medium .input__control {
@@ -256,7 +256,7 @@ export default css`
 
   .input--large {
     height: var(--cps-input-height-large);
-    font: var(--cps-text-body-large);
+    font: var(--cps-font-body-large);
   }
 
   .input--large .input__control {

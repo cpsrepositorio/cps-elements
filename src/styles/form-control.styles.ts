@@ -17,15 +17,15 @@ export default css`
   }
 
   .form-control--has-label.form-control--small .form-control__label {
-    font: var(--cps-text-caption);
+    font: var(--cps-font-caption);
   }
 
   .form-control--has-label.form-control--medium .form-control__label {
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .form-control--has-label.form-control--large .form-control__label {
-    font: var(--cps-text-body);
+    font: var(--cps-font-body);
   }
 
   :host([required]) .form-control--has-label .form-control__label::after {
@@ -38,19 +38,19 @@ export default css`
   .form-control--has-help-text .form-control__help-text {
     display: block;
     margin-top: var(--cps-spacing-1);
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
   }
 
   .form-control--has-help-text.form-control--small .form-control__help-text {
-    font: var(--cps-text-caption);
+    font: var(--cps-font-caption);
   }
 
   .form-control--has-help-text.form-control--medium .form-control__help-text {
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .form-control--has-help-text.form-control--large .form-control__help-text {
-    font: var(--cps-text-body);
+    font: var(--cps-font-body);
   }
 
   .form-control--has-help-text.form-control--radio-group .form-control__help-text {

@@ -5,12 +5,12 @@ export default css`
   ${componentStyles}
 
   :host {
-    --color: var(--cps-stroke-separator);
+    --color: var(--cps-color-stroke-separator);
     --thickness: var(--cps-spacing-px);
     --spacing: var(--cps-spacing-4);
     align-items: center;
-    color: var(--cps-foreground-tertiary);
-    font: var(--cps-text-label);
+    color: var(--cps-color-text-tertiary);
+    font: var(--cps-font-label);
   }
 
   .separator--has-content {
@@ -20,8 +20,8 @@ export default css`
   .separator--has-content ::slotted(cps-icon) {
     position: relative;
     top: 1.5px;
-    color: var(--cps-foreground-tertiary);
-    font: var(--cps-text-body);
+    color: var(--cps-color-text-tertiary);
+    font: var(--cps-font-body);
   }
 
   :host::before,

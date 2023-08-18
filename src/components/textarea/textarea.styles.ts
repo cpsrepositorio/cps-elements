@@ -50,7 +50,7 @@ export default css`
     background-image: linear-gradient(
       transparent 0,
       transparent calc(100% - var(--cps-input-border-bottom-width) * 2),
-      var(--cps-fill-accent-primary) 100%
+      var(--cps-color-fill-accent-primary) 100%
     );
     background-origin: border-box;
     content: '';
@@ -84,7 +84,7 @@ export default css`
     min-width: 0;
     height: 100%;
     letter-spacing: var(--cps-tracking-normal);
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -109,7 +109,7 @@ export default css`
 
   .textarea.textarea--focused:not(.textarea--disabled) .textarea__control {
     background-color: var(--cps-input-background-active);
-    color: var(--cps-foreground-primary-focus);
+    color: var(--cps-color-text-primary-focus);
   }
 
   .textarea.textarea--focused:not(.textarea--disabled)::after {
@@ -122,17 +122,17 @@ export default css`
   }
 
   .textarea.textarea--disabled::before {
-    background-color: var(--cps-stroke-control-primary);
+    background-color: var(--cps-color-stroke-primary);
     cursor: not-allowed;
   }
 
   .textarea.textarea--disabled .textarea__control {
-    background-color: var(--cps-stroke-control-primary);
-    color: var(--cps-foreground-disabled);
+    background-color: var(--cps-color-stroke-primary);
+    color: var(--cps-color-text-disabled);
   }
 
   .textarea.textarea--disabled .input__control::placeholder {
-    color: var(--cps-foreground-disabled);
+    color: var(--cps-color-text-disabled);
   }
 
   .textarea__control::-webkit-search-decoration,
@@ -147,17 +147,17 @@ export default css`
   .textarea__control:-webkit-autofill:focus,
   .textarea__control:-webkit-autofill:active {
     box-shadow: 0 0 0 var(--cps-input-height-large) var(--cps-input-background-active) inset !important;
-    -webkit-text-fill-color: var(--cps-foreground-primary);
-    caret-color: var(--cps-foreground-primary);
+    -webkit-text-fill-color: var(--cps-color-text-primary);
+    caret-color: var(--cps-color-text-primary);
   }
 
   .textarea__control::placeholder {
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
     user-select: none;
   }
 
   .textarea--empty .textarea__control {
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
   }
 
   .textarea__control:focus {
@@ -169,7 +169,7 @@ export default css`
    */
 
   .textarea--small {
-    font: var(--cps-text-label);
+    font: var(--cps-font-label);
   }
 
   .textarea--small .textarea__control {
@@ -178,7 +178,7 @@ export default css`
   }
 
   .textarea--medium {
-    font: var(--cps-text-body);
+    font: var(--cps-font-body);
   }
 
   .textarea--medium .textarea__control {
@@ -187,7 +187,7 @@ export default css`
   }
 
   .textarea--large {
-    font: var(--cps-text-body-large);
+    font: var(--cps-font-body-large);
   }
 
   .textarea--large .textarea__control {
@@ -223,7 +223,7 @@ export default css`
       bottom: 0;
       width: var(--cps-spacing-5);
       height: var(--cps-spacing-5);
-      color: var(--cps-foreground-secondary);
+      color: var(--cps-color-text-secondary);
       pointer-events: none;
     }
   }

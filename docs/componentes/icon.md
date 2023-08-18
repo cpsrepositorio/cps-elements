@@ -333,10 +333,10 @@ Distribuída sob [licença Simple License](https://github.com/Iconscout/unicons/
       svg.removeAttribute('id');
       svg.removeAttribute('data-name');
       svg.innerHTML = svg.innerHTML
-        .replaceAll('class="uim-primary"', 'style="color: rgb(var(--cps-color-neutral-600)"')
-        .replaceAll('class="uim-secondary"', 'style="color: rgb(var(--cps-color-neutral-500)"')
-        .replaceAll('class="uim-tertiary"', 'style="color: rgb(var(--cps-color-neutral-400)"')
-        .replaceAll('class="uim-quaternary"', 'style="color: rgb(var(--cps-color-neutral-300)"');
+        .replaceAll('class="uim-primary"', 'style="color: var(--cps-palette-neutral-600)"')
+        .replaceAll('class="uim-secondary"', 'style="color: var(--cps-palette-neutral-500)"')
+        .replaceAll('class="uim-tertiary"', 'style="color: var(--cps-palette-neutral-400)"')
+        .replaceAll('class="uim-quaternary"', 'style="color: var(--cps-palette-neutral-300)"');
     }
   });
 </script>
@@ -557,9 +557,9 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
 
 <style>
   .icon-search {
-    border: solid 1px var(--cps-stroke-card-secondary);
+    border: solid 1px var(--cps-color-stroke-card-secondary);
     border-radius: var(--cps-border-radius-medium);
-    background-color: var(--cps-fill-solid-primary);
+    background-color: var(--cps-color-background-solid-primary);
   }
 
   .icon-search [hidden] {
@@ -623,8 +623,8 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
   }
 
   .icon-list-item:hover {
-    background-color: rgb(var(--cps-color-accent-50));
-    color: rgb(var(--cps-color-accent-600));
+    background-color: var(--cps-palette-accent-50);
+    color: var(--cps-palette-accent-600);
   }
 
   .icon-list[data-type="outline"] .icon-list-item[data-name$="-fill"] {

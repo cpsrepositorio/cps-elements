@@ -26,7 +26,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart container - O elemento base do _popover_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _popover_, como cor de fundo, sombras, etc.
  *
  * @cssproperty [--arrow-size=7px] - Tamanho da seta. Observe que independentemente desta variável, a seta não será exibida a menos que o atributo `arrow` seja utilizado.
- * @cssproperty [--background-color=rgb(var(--cps-color-neutral-500))] - A cor de fundo do _popover_ e de sua eventual seta (caso esteja sendo exibido em estilo balão).
+ * @cssproperty [--background-color=var(--cps-palette-neutral-500)] - A cor de fundo do _popover_ e de sua eventual seta (caso esteja sendo exibido em estilo balão).
  * @cssproperty [--border-color=transparent] - A bordar externa contornando o _popover_ e sua eventual seta (caso esteja sendo exibido em estilo balão).
  * @cssproperty [--auto-size-available-width] - Uma variável somente leitura que determina a largura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.
  * @cssproperty [--auto-size-available-height] - Uma variável somente leitura que determina a altura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.

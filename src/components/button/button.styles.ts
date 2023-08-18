@@ -26,7 +26,7 @@ export default css`
     vertical-align: middle;
     text-decoration: none;
     white-space: nowrap;
-    font-family: var(--cps-font-sans);
+    font-family: var(--cps-font-family-sans);
     font-weight: var(--cps-font-weight-normal);
     user-select: none;
   }
@@ -74,67 +74,67 @@ export default css`
   /* Default */
   .button--default {
     border-top-color: var(--cps-color-elevation-top-control);
-    border-right-color: var(--cps-stroke-control-primary);
+    border-right-color: var(--cps-color-stroke-primary);
     border-bottom-color: var(--cps-color-elevation-bottom-control);
-    border-left-color: var(--cps-stroke-control-primary);
-    background-color: var(--cps-fill-control-primary);
-    color: var(--cps-foreground-primary);
+    border-left-color: var(--cps-color-stroke-primary);
+    background-color: var(--cps-color-fill-primary);
+    color: var(--cps-color-text-primary);
   }
 
   .button--default:hover:not(.button--disabled):not(.button--waiting) {
     border-top-color: var(--cps-color-elevation-top-control);
-    border-right-color: var(--cps-stroke-control-primary);
+    border-right-color: var(--cps-color-stroke-primary);
     border-bottom-color: var(--cps-color-elevation-bottom-control);
-    border-left-color: var(--cps-stroke-control-primary);
-    background-color: var(--cps-fill-control-secondary);
-    color: var(--cps-foreground-primary);
+    border-left-color: var(--cps-color-stroke-primary);
+    background-color: var(--cps-color-fill-secondary);
+    color: var(--cps-color-text-primary);
   }
 
   .button--default:active:not(.button--disabled):not(.button--waiting) {
-    border-color: var(--cps-stroke-control-primary);
-    background-color: var(--cps-fill-control-tertiary);
-    color: var(--cps-foreground-tertiary);
+    border-color: var(--cps-color-stroke-primary);
+    background-color: var(--cps-color-fill-tertiary);
+    color: var(--cps-color-text-tertiary);
   }
 
   .button--default.button--disabled {
-    border-color: var(--cps-stroke-control-primary);
-    background-color: var(--cps-fill-control-disabled);
-    color: var(--cps-foreground-disabled);
+    border-color: var(--cps-color-stroke-primary);
+    background-color: var(--cps-color-fill-disabled);
+    color: var(--cps-color-text-disabled);
   }
 
   /* Accent (or Checked) */
   .button--accent,
   .button--checked {
     border-top-color: var(--cps-color-elevation-top-accent-control);
-    border-right-color: var(--cps-stroke-control-inverted-primary);
+    border-right-color: var(--cps-color-stroke-inverted-primary);
     border-bottom-color: var(--cps-color-elevation-bottom-accent-control);
-    border-left-color: var(--cps-stroke-control-inverted-primary);
-    background-color: var(--cps-fill-accent-primary);
-    color: var(--cps-foreground-inverted-primary);
+    border-left-color: var(--cps-color-stroke-inverted-primary);
+    background-color: var(--cps-color-fill-accent-primary);
+    color: var(--cps-color-text-inverted-primary);
   }
 
   .button--accent:hover:not(.button--disabled):not(.button--waiting),
   .button--checked:hover:not(.button--disabled):not(.button--waiting) {
     border-top-color: var(--cps-color-elevation-top-accent-control);
-    border-right-color: var(--cps-stroke-control-inverted-primary);
+    border-right-color: var(--cps-color-stroke-inverted-primary);
     border-bottom-color: var(--cps-color-elevation-bottom-accent-control);
-    border-left-color: var(--cps-stroke-control-inverted-primary);
-    background-color: var(--cps-fill-accent-secondary);
-    color: var(--cps-foreground-inverted-primary);
+    border-left-color: var(--cps-color-stroke-inverted-primary);
+    background-color: var(--cps-color-fill-accent-secondary);
+    color: var(--cps-color-text-inverted-primary);
   }
 
   .button--accent:active:not(.button--disabled):not(.button--waiting),
   .button--checked:active:not(.button--disabled):not(.button--waiting) {
-    border-color: var(--cps-stroke-control-inverted-primary);
-    background-color: var(--cps-fill-accent-tertiary);
-    color: var(--cps-foreground-inverted-secondary);
+    border-color: var(--cps-color-stroke-inverted-primary);
+    background-color: var(--cps-color-fill-accent-tertiary);
+    color: var(--cps-color-text-inverted-secondary);
   }
 
   .button--accent.button--disabled,
   .button--checked.button--disabled {
     border-color: transparent;
-    background-color: var(--cps-fill-accent-disabled);
-    color: var(--cps-foreground-inverted-disabled);
+    background-color: var(--cps-color-fill-accent-disabled);
+    color: var(--cps-color-text-inverted-disabled);
   }
 
   /* Transparent */
@@ -144,56 +144,56 @@ export default css`
   }
 
   .button--transparent.button--circle {
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
   }
 
   .button--transparent:not(.button--circle) {
-    color: var(--cps-foreground-brand-primary);
+    color: var(--cps-color-text-brand-primary);
   }
 
   .button--transparent:hover:not(.button--disabled):not(.button--waiting) {
-    background-color: var(--cps-fill-control-subtle-secondary);
+    background-color: var(--cps-color-fill-subtle-secondary);
   }
 
   .button--transparent.button--circle:hover:not(.button--disabled):not(.button--waiting) {
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
   }
 
   .button--transparent:not(.button--circle):hover:not(.button--disabled):not(.button--waiting) {
-    color: var(--cps-foreground-brand-secondary);
+    color: var(--cps-color-text-brand-secondary);
   }
 
   .button--transparent.button--circle:focus-visible:not(.button--disabled):not(.button--waiting) {
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
   }
 
   .button--transparent:not(.button--circle):focus-visible:not(.button--disabled):not(.button--waiting) {
-    color: var(--cps-foreground-brand-secondary);
+    color: var(--cps-color-text-brand-secondary);
   }
 
   .button--transparent:active:not(.button--disabled):not(.button--waiting) {
-    background-color: var(--cps-fill-control-subtle-tertiary);
+    background-color: var(--cps-color-fill-subtle-tertiary);
   }
 
   .button--transparent.button--circle:active:not(.button--disabled):not(.button--waiting) {
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
   }
 
   .button--transparent:not(.button--circle):active:not(.button--disabled):not(.button--waiting) {
-    color: var(--cps-foreground-brand-tertiary);
+    color: var(--cps-color-text-brand-tertiary);
   }
 
   .button--transparent:not(.button--disabled):not(.button--waiting) .button__prefix,
   .button--transparent:not(.button--disabled):not(.button--waiting) .button__suffix {
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
   }
 
   .button--transparent.button--waiting {
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
   }
 
   .button--transparent.button--disabled {
-    color: var(--cps-foreground-disabled);
+    color: var(--cps-color-text-disabled);
   }
 
   /*
@@ -473,11 +473,11 @@ export default css`
   }
 
   :host(.cps-button-group__button:not(.cps-button-group__button--first, [checked])) .button:before {
-    border-left-color: var(--cps-stroke-control-primary);
+    border-left-color: var(--cps-color-stroke-primary);
   }
 
   :host(.cps-button-group__button[checked]:not(.cps-button-group__button--first)) .button:before {
-    border-left-color: var(--cps-stroke-control-inverted-primary);
+    border-left-color: var(--cps-color-stroke-inverted-primary);
   }
 
   :host(
@@ -487,7 +487,7 @@ export default css`
         )
     )
     .button:before {
-    border-left-color: var(--cps-stroke-control-primary);
+    border-left-color: var(--cps-color-stroke-primary);
   }
 
   :host(
@@ -497,7 +497,7 @@ export default css`
         )
     )
     .button:before {
-    border-left-color: var(--cps-stroke-separator);
+    border-left-color: var(--cps-color-stroke-separator);
   }
 
   :host(
@@ -507,7 +507,7 @@ export default css`
         )
     )
     .button:before {
-    border-left-color: var(--cps-stroke-control-inverted-primary);
+    border-left-color: var(--cps-color-stroke-inverted-primary);
   }
 
   /* Focus and checked are always on top */

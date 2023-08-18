@@ -13,8 +13,8 @@ export default css`
   }
 
   .tooltip {
-    --background-color: var(--cps-fill-acrylic);
-    --border-color: var(--cps-stroke-surface);
+    --background-color: var(--cps-color-background-acrylic);
+    --border-color: var(--cps-color-stroke-surface);
     --arrow-size: var(--cps-tooltip-arrow-size);
   }
 
@@ -47,8 +47,8 @@ export default css`
     padding: var(--cps-spacing-2-5) var(--cps-spacing-3);
     width: max-content;
     max-width: var(--max-width);
-    color: var(--cps-foreground-primary);
-    font: var(--cps-text-body);
+    color: var(--cps-color-text-primary);
+    font: var(--cps-font-body);
     pointer-events: none;
   }
 `;

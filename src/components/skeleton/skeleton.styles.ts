@@ -5,8 +5,8 @@ export default css`
   ${componentStyles}
 
   :host {
-    --color: rgb(var(--cps-color-neutral-1000) / 3%);
-    --accent-color: rgb(var(--cps-color-neutral-1000) / 6%);
+    --color: var(--cps-color-stroke-skeleton);
+    --accent-color: var(--cps-color-stroke-skeleton-accent);
 
     display: block;
     position: relative;

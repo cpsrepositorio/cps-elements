@@ -7,9 +7,9 @@ export default css`
   :host {
     display: block;
     position: relative;
-    border: solid 1px var(--cps-stroke-card-primary);
+    border: solid 1px var(--cps-color-stroke-card-primary);
     border-radius: var(--cps-border-radius-large);
-    background: var(--cps-fill-acrylic);
+    background: var(--cps-color-background-acrylic);
     background-clip: padding-box;
     padding: var(--cps-spacing-0-5);
     overflow: auto;

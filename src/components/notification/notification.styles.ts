@@ -16,11 +16,11 @@ export default css`
     position: relative;
     align-items: stretch;
     margin: inherit;
-    border: solid 1px var(--cps-stroke-card-primary);
+    border: solid 1px var(--cps-color-stroke-card-primary);
     border-radius: var(--cps-border-radius-medium);
-    background-color: var(--cps-fill-system-subtle-neutral);
-    color: var(--cps-foreground-primary);
-    font: var(--cps-text-body);
+    background-color: var(--cps-color-system-neutral-subtle);
+    color: var(--cps-color-text-primary);
+    font: var(--cps-font-body);
   }
 
   .notification:not(.notification--has-icon) .notification__icon,
@@ -37,48 +37,48 @@ export default css`
     border-radius: var(--cps-border-radius-full);
     width: var(--cps-spacing-4);
     height: var(--cps-spacing-4);
-    color: rgb(var(--cps-color-neutral-0));
+    color: var(--cps-palette-neutral-0);
     font-size: var(--cps-font-size-xs);
   }
 
   .notification--neutral {
-    background: var(--cps-fill-system-subtle-neutral);
+    background: var(--cps-color-system-neutral-subtle);
   }
 
   .notification--neutral .notification__icon {
-    background: var(--cps-fill-system-neutral);
+    background: var(--cps-color-system-neutral);
   }
 
   .notification--informative {
-    background: var(--cps-fill-system-subtle-informative);
+    background: var(--cps-color-system-informative-subtle);
   }
 
   .notification--informative .notification__icon {
-    background: var(--cps-fill-system-informative);
+    background: var(--cps-color-system-informative);
   }
 
   .notification--warning {
-    background: var(--cps-fill-system-subtle-warning);
+    background: var(--cps-color-system-warning-subtle);
   }
 
   .notification--warning .notification__icon {
-    background: var(--cps-fill-system-warning);
+    background: var(--cps-color-system-warning);
   }
 
   .notification--critical {
-    background: var(--cps-fill-system-subtle-critical);
+    background: var(--cps-color-system-critical-subtle);
   }
 
   .notification--critical .notification__icon {
-    background: var(--cps-fill-system-critical);
+    background: var(--cps-color-system-critical);
   }
 
   .notification--success {
-    background: var(--cps-fill-system-subtle-success);
+    background: var(--cps-color-system-success-subtle);
   }
 
   .notification--success .notification__icon {
-    background: var(--cps-fill-system-success);
+    background: var(--cps-color-system-success);
   }
 
   .notification__message {

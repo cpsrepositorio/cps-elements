@@ -31,21 +31,21 @@
 
 .cps-toast-stack cps-notification[variant='neutral']::part(base),
 .cps-toast-stack cps-notification:not([variant])::part(base) {
-  background: var(--cps-fill-acrylic);
+  background: var(--cps-color-background-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant='informative']::part(base) {
-  background: var(--cps-fill-system-acrylic-informative);
+  background: var(--cps-color-system-informative-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant='warning']::part(base) {
-  background: var(--cps-fill-system-acrylic-warning);
+  background: var(--cps-color-system-warning-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant='critical']::part(base) {
-  background: var(--cps-fill-system-acrylic-critical);
+  background: var(--cps-color-system-critical-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant='success']::part(base) {
-  background: var(--cps-fill-system-acrylic-success);
+  background: var(--cps-color-system-success-acrylic);
 }

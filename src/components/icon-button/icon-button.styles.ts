@@ -6,7 +6,7 @@ export default css`
 
   :host {
     display: inline-block;
-    color: var(--cps-foreground-secondary);
+    color: var(--cps-color-text-secondary);
     pointer-events: none;
   }
 
@@ -80,20 +80,20 @@ export default css`
 
   /* Appearance */
   .icon-button:hover:not(.icon-button--disabled) {
-    background-color: var(--cps-fill-control-subtle-secondary);
-    color: var(--cps-foreground-primary);
+    background-color: var(--cps-color-fill-subtle-secondary);
+    color: var(--cps-color-text-primary);
   }
 
   .icon-button:focus-visible:not(.icon-button--disabled) {
-    color: var(--cps-foreground-primary);
+    color: var(--cps-color-text-primary);
   }
 
   .icon-button:active:not(.icon-button--disabled) {
-    background-color: var(--cps-fill-control-subtle-tertiary);
-    color: var(--cps-foreground-secondary);
+    background-color: var(--cps-color-fill-subtle-tertiary);
+    color: var(--cps-color-text-secondary);
   }
 
   .icon-button.icon-button--disabled {
-    color: var(--cps-foreground-disabled);
+    color: var(--cps-color-text-disabled);
   }
 `;

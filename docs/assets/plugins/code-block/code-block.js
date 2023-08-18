@@ -463,9 +463,9 @@
         `@import 'https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/${isDark ? 'dark' : 'light'}.css';\n` +
         '\n' +
         'body {\n' +
-        '  font: var(--cps-text-body);\n' +
-        '  background-color: var(--cps-fill-solid-primary);\n' +
-        '  color: var(--cps-foreground-primary);\n' +
+        '  font: var(--cps-font-body);\n' +
+        '  background-color: var(--cps-color-background-solid-primary);\n' +
+        '  color: var(--cps-color-text-primary);\n' +
         '  padding: 1rem;\n' +
         '}';
 
