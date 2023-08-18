@@ -4,7 +4,7 @@
   - [Instalação](/fundamentos/instalação)
   - [Utilização](/fundamentos/utilização)
   - [Temas](/fundamentos/temas)
-  - [Personalizando](/fundamentos/personalizando)
+  - [Personalizando <small>(em breve)</small>](/fundamentos/personalizando)
   - [Formulários <small>(em breve)</small>](/fundamentos/formulários)
 
 - Frameworks
@@ -48,7 +48,6 @@
 - Variáveis de estilo
 
   - [Visão geral](/variáveis-de-estilo/visão-geral)
-  - [Tipografia](/variáveis-de-estilo/tipografia)
   - [<code>...</code> <small>(em breve)</small>](/404)
 
 - Saiba mais
