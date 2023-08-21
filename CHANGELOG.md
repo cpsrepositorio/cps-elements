@@ -10,6 +10,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Criação do componente `<cps-avatar>`.
 
+### Changed
+
+- Incrementada a documentação do `<cps-badge>`, explicitando o uso com `<cps-avatar>`.
+
 ## 0.7.2 - 2023-08-18
 
 ### Changed
