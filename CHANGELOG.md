@@ -13,6 +13,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Changed
 
 - Incrementada a documentação do `<cps-badge>`, explicitando o uso com `<cps-avatar>`.
+- Melhorada a documentação do `<cps-button>`, explicitando o uso com `<cps-badge>`.
 
 ## 0.7.2 - 2023-08-18
 

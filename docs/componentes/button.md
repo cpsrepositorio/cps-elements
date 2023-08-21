@@ -544,6 +544,53 @@ const App = () => (
 );
 ```
 
+### Com distintivos
+
+Um dos casos de uso mais comuns para distintivos ([_badges_](/componentes/badge)) é anexá-los a botões. Para facilitar, os _badges_ serão posicionados automaticamente no canto superior direito quando forem filhos de um botão.
+
+```html preview
+<cps-button>
+  Lembretes
+  <cps-badge>30</cps-badge>
+</cps-button>
+
+<cps-button style="margin-inline-start: 1rem">
+  Avisos
+  <cps-badge variant="warning">8</cps-badge>
+</cps-button>
+
+<cps-button style="margin-inline-start: 1rem">
+  Problemas
+  <cps-badge variant="critical" pulse>6</cps-badge>
+</cps-button>
+```
+
+```jsx react
+import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsButton } from '@cps-elements/web/react/button';
+
+const App = () => (
+  <>
+    <CpsButton>
+      Lembretes
+      <CpsBadge>30</CpsBadge>
+    </CpsButton>
+
+    <CpsButton style={{ marginInlineStart: '1rem' }}>
+      Avisos
+      <CpsBadge variant="warning">8</CpsBadge>
+    </CpsButton>
+
+    <CpsButton style={{ marginInlineStart: '1rem' }}>
+      Problemas
+      <CpsBadge variant="critical" pulse>
+        6
+      </CpsBadge>
+    </CpsButton>
+  </>
+);
+```
+
 ### Estilizando botões
 
 Através de uma mistura de técnicas com partes CSS e variáveis CSS com valores personalizados, é possível sobrescrever fundamentalmente toda a aparência de um botão. Esta é uma forma simples de adicionar novas variações visuais. Para personalizar uma variação existente, basta modificar o seletor CSS para atingir o atributo `variant` do botão, ao invés de uma classe personalizada (por exemplo, `cps-button[variant="accent"]`).
