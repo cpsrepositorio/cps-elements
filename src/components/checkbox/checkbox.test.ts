@@ -276,7 +276,6 @@ describe('<cps-checkbox>', () => {
     });
 
     it('should not jump the page to the bottom when focusing a checkbox at the bottom of an element with overflow: auto;', async () => {
-      // https://github.com/shoelace-style/shoelace/issues/1169
       const el = await fixture<HTMLDivElement>(html`
         <div style="display: flex; flex-direction: column; overflow: auto; max-height: 400px; gap: 8px;">
           <cps-checkbox>Checkbox</cps-checkbox>
