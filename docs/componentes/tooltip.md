@@ -340,7 +340,7 @@ Se quiser sobrescrever globalmente, modifique para `0` tal variável CSS em uma 
 }
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com o [componente _callout_](https://cpsrepositorio.github.io/cps-design-system/componentes/callout.html) no qual as dicas de ferramenta se baseiam, nunca remova a seta de seus _tooltips_. Esta opção está disponível para situações que não exigem tal aderência.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com o [componente _callout_](https://cpsrepositorio.github.io/cps-design-system/documentacao/callout.html) no qual as dicas de ferramenta se baseiam, nunca remova a seta de seus _tooltips_. Esta opção está disponível para situações que não exigem tal aderência.
 
 ### HTML como conteúdo
 
@@ -373,7 +373,7 @@ const App = () => (
 );
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, pode necessitar da [variação de _callout_ com botão](https://cpsrepositorio.github.io/cps-design-system/componentes/callout.html#com-botao). Neste caso, recomenda-se `<cps-tooltip>` com [acionamento manual](#acionamento-manual), garantindo-se que ele não seja ocultado automaticamente enquanto o usuário tenta interagir com o botão interno. Ainda que este seja um caso de uso válido, use com cautela pois a interação com o botão pode ser prejudicada.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, pode necessitar da [variação de _callout_ com botão](https://cpsrepositorio.github.io/cps-design-system/documentacao/callout.html#com-botao). Neste caso, recomenda-se `<cps-tooltip>` com [acionamento manual](#acionamento-manual), garantindo-se que ele não seja ocultado automaticamente enquanto o usuário tenta interagir com o botão interno. Ainda que este seja um caso de uso válido, use com cautela pois a interação com o botão pode ser prejudicada.
 
 ### Definindo uma largura máxima
 

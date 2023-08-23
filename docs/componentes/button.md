@@ -319,7 +319,7 @@ const App = () => (
 );
 ```
 
-?> Se você pretende utilizar botões com arredondamento `full`, contendo somente um ícone como conteúdo, para aderência ao visual dos botões [somente ícone](https://cpsrepositorio.github.io/cps-design-system/componentes/button.html#icone) do CPS Design System, é mais recomendado utilizar o componente [Icon Button](/componentes/icon-button), tanto pela sua facilidade de utilização, quanto por sua otimização para este caso de uso específico.
+?> Se você pretende utilizar botões com arredondamento `full`, contendo somente um ícone como conteúdo, para aderência ao visual dos botões [somente ícone](https://cpsrepositorio.github.io/cps-design-system/documentacao/button.html#icone) do CPS Design System, é mais recomendado utilizar o componente [Icon Button](/componentes/icon-button), tanto pela sua facilidade de utilização, quanto por sua otimização para este caso de uso específico.
 
 ### Sinalizador de menu
 

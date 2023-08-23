@@ -98,7 +98,7 @@ const App = () => (
 );
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [variações de _badge_](https://cpsrepositorio.github.io/cps-design-system/componentes/badge.html#variacoes), não utilize o atributo `square`. Ele está disponível para situações que não exigem tal aderência.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [variações de _badge_](https://cpsrepositorio.github.io/cps-design-system/documentacao/badge.html#variacoes), não utilize o atributo `square`. Ele está disponível para situações que não exigem tal aderência.
 
 ### Ícone automático
 

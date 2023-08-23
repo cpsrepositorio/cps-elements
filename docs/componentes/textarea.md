@@ -72,7 +72,7 @@ import { CpsTextarea } from '@cps-elements/web/react/textarea';
 const App = () => <CpsTextarea placeholder="Informe o que você acha" />;
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [boas práticas de caixa de texto](https://cpsrepositorio.github.io/cps-design-system/componentes/text-field.html#boas-praticas), evite utilizar apenas `placeholder` em campos de formulário, preferindo utilizar `label`, ou então `label` e `placeholder` juntos. Raras exceções podem acontecer em casos onde o campo encontra-se sozinho em determinada área da interface e possui usabilidade bem clara. De fato, isto normalmente não ocorre com caixas de texto de múltiplas linhas.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [boas práticas de caixa de texto](https://cpsrepositorio.github.io/cps-design-system/documentacao/text-field.html#boas-praticas), evite utilizar apenas `placeholder` em campos de formulário, preferindo utilizar `label`, ou então `label` e `placeholder` juntos. Raras exceções podem acontecer em casos onde o campo encontra-se sozinho em determinada área da interface e possui usabilidade bem clara. De fato, isto normalmente não ocorre com caixas de texto de múltiplas linhas.
 
 ### Estado desabilitado
 

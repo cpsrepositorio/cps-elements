@@ -59,7 +59,7 @@ import { CpsInput } from '@cps-elements/web/react/input';
 const App = () => <CpsInput placeholder="O que você procura?" />;
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [boas práticas de caixa de texto](https://cpsrepositorio.github.io/cps-design-system/componentes/text-field.html#boas-praticas), evite utilizar apenas `placeholder` em campos de formulário, preferindo utilizar `label`, ou então `label` e `placeholder` juntos. Raras exceções podem acontecer em casos onde o campo encontra-se sozinho em determinada área da interface e possui usabilidade bem clara, por exemplo, em uma caixa de pesquisa onde um texto de espaço reservado como _"Pesquisar..."_ é o suficiente.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [boas práticas de caixa de texto](https://cpsrepositorio.github.io/cps-design-system/documentacao/text-field.html#boas-praticas), evite utilizar apenas `placeholder` em campos de formulário, preferindo utilizar `label`, ou então `label` e `placeholder` juntos. Raras exceções podem acontecer em casos onde o campo encontra-se sozinho em determinada área da interface e possui usabilidade bem clara, por exemplo, em uma caixa de pesquisa onde um texto de espaço reservado como _"Pesquisar..."_ é o suficiente.
 
 ### Limpável
 
@@ -139,7 +139,7 @@ const App = () => (
 );
 ```
 
-?> Na maioria dos casos, a melhor escolha visual é manter o `size` padrão `medium` (ou simplesmente não informar tal atributo). O valor `small` existe para casos raros em que o botão é utilizado dentro de outros componentes, e o valor `large` existe para casos extremos usualmente não aderentes à [documentação de caixas de texto](https://cpsrepositorio.github.io/cps-design-system/componentes/text-field.html) ao CPS Design System.
+?> Na maioria dos casos, a melhor escolha visual é manter o `size` padrão `medium` (ou simplesmente não informar tal atributo). O valor `small` existe para casos raros em que o botão é utilizado dentro de outros componentes, e o valor `large` existe para casos extremos usualmente não aderentes à [documentação de caixas de texto](https://cpsrepositorio.github.io/cps-design-system/documentacao/text-field.html) ao CPS Design System.
 
 ### Tipos de entrada
 
