@@ -109,7 +109,6 @@ export default css`
 
   .textarea.textarea--focused:not(.textarea--disabled) .textarea__control {
     background-color: var(--cps-input-background-active);
-    color: var(--cps-color-text-primary-focus);
   }
 
   .textarea.textarea--focused:not(.textarea--disabled)::after {

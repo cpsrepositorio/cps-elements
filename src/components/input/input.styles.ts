@@ -121,7 +121,6 @@ export default css`
   .input.input--focused:not(.input--disabled)
     :is(.input__control, .input__prefix, .input__suffix, .input__clear, .input__password-toggle, .input__date-picker) {
     background-color: var(--cps-input-background-active);
-    color: var(--cps-color-text-primary-focus);
   }
 
   .input.input--focused:not(.input--disabled)::after {
