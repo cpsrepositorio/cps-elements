@@ -100,7 +100,7 @@
   --cps-color-background-solid-tertiary: rgb(249 249 249);
   --cps-color-background-solid-quaternary: rgb(254 254 254);
 
-  --cps-color-background-acrylic: linear-gradient(rgb(252 252 252 / 85%), rgb(252 252 252 / 85%)),
+  --cps-color-background-acrylic: linear-gradient(rgb(252 252 252 / 80%), rgb(252 252 252 / 80%)),
     var(--cps-texture-acrylic);
   --cps-color-background-acrylic-base: linear-gradient(rgb(243 243 243 / 90%), rgb(243 243 243 / 90%)),
     var(--cps-texture-acrylic);
