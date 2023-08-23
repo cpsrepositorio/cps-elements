@@ -684,9 +684,9 @@ kbd,
 
 .markdown-section p.tip:before {
   background-color: var(--cps-color-system-critical);
+  padding-top: 1px;
   font: var(--cps-font-body-large);
   content: '!';
-  padding-top: 1px;
 }
 
 .markdown-section p.tip code,
