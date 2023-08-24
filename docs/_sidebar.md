@@ -32,6 +32,7 @@
   - [Option](/componentes/option)
   - [Radio](/componentes/radio)
   - [Radio Group](/componentes/radio-group)
+  - [Select](/componentes/select)
   - [Separator](/componentes/separator)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)

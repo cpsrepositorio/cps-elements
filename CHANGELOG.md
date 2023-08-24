@@ -10,6 +10,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Criação do componente `<cps-avatar>`.
 - Criação do componente `<cps-option>`.
+- Criação do componente `<cps-select>`.
 
 ### Changed
 

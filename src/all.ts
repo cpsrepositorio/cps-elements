@@ -18,6 +18,7 @@ export { CpsNotification } from './components/notification.js';
 export { CpsOption } from './components/option.js';
 export { CpsRadio } from './components/radio.js';
 export { CpsRadioGroup } from './components/radio-group.js';
+export { CpsSelect } from './components/select.js';
 export { CpsSeparator } from './components/separator.js';
 export { CpsSkeleton } from './components/skeleton.js';
 export { CpsSpinner } from './components/spinner.js';
