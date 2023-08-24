@@ -16,20 +16,20 @@ O utilitário _flyout_ não provê estilização, apenas posicionamento! O posic
   </cps-flyout>
 
   <div class="flyout-overview-options">
-    <select name="placement" value="top" class="flyout-overview-select">
-      <option value="top">Superior</option>
-      <option value="top-start">Superior inicial</option>
-      <option value="top-end">Superior final</option>
-      <option value="bottom">Inferior</option>
-      <option value="bottom-start">Inferior inicial</option>
-      <option value="bottom-end">Inferior final</option>
-      <option value="right">Direita</option>
-      <option value="right-start">Direita inicial</option>
-      <option value="right-end">Direita final</option>
-      <option value="left">Esquerda</option>
-      <option value="left-start">Esquerda inicial</option>
-      <option value="left-end">Esquerda final</option>
-    </select>
+    <cps-select name="placement" value="top" class="flyout-overview-select">
+      <cps-option value="top">Superior</cps-option>
+      <cps-option value="top-start">Superior inicial</cps-option>
+      <cps-option value="top-end">Superior final</cps-option>
+      <cps-option value="bottom">Inferior</cps-option>
+      <cps-option value="bottom-start">Inferior inicial</cps-option>
+      <cps-option value="bottom-end">Inferior final</cps-option>
+      <cps-option value="right">Direita</cps-option>
+      <cps-option value="right-start">Direita inicial</cps-option>
+      <cps-option value="right-end">Direita final</cps-option>
+      <cps-option value="left">Esquerda</cps-option>
+      <cps-option value="left-start">Esquerda inicial</cps-option>
+      <cps-option value="left-end">Esquerda final</cps-option>
+    </cps-select>
     <cps-input type="number" name="distance" label="Distância" value="0"></cps-input>
     <cps-input type="number" name="skidding" label="Deslocamento" value="0"></cps-input>
   </div>
@@ -43,13 +43,13 @@ O utilitário _flyout_ não provê estilização, apenas posicionamento! O posic
 <script>
   const container = document.querySelector('.flyout-overview');
   const flyout = container.querySelector('cps-flyout');
-  const select = container.querySelector('select[name="placement"]');
+  const select = container.querySelector('cps-select[name="placement"]');
   const distance = container.querySelector('cps-input[name="distance"]');
   const skidding = container.querySelector('cps-input[name="skidding"]');
   const active = container.querySelector('cps-checkbox[name="active"]');
   const arrow = container.querySelector('cps-checkbox[name="arrow"]');
 
-  select.addEventListener('change', () => (flyout.placement = select.value));
+  select.addEventListener('cps-change', () => (flyout.placement = select.value));
   distance.addEventListener('cps-input', () => (flyout.distance = distance.value));
   skidding.addEventListener('cps-input', () => (flyout.skidding = skidding.value));
   active.addEventListener('cps-change', () => (flyout.active = active.checked));
@@ -82,7 +82,7 @@ O utilitário _flyout_ não provê estilização, apenas posicionamento! O posic
     align-items: end;
   }
 
-  .flyout-overview-options select {
+  .flyout-overview-options cps-select {
     grid-column: 1 / span 2;
     width: 250px;
     height: 30px;
@@ -104,6 +104,8 @@ import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
 import { CpsFlyout } from '@cps-elements/web/react/flyout';
 import { CpsInput } from '@cps-elements/web/react/input';
+import { CpsOption } from '@cps-elements/web/react/option';
+import { CpsSelect } from '@cps-elements/web/react/select';
 
 const css = `
   .flyout-overview cps-flyout {
@@ -131,7 +133,7 @@ const css = `
     align-items: end;
   }
 
-  .flyout-overview-options select {
+  .flyout-overview-options cps-select {
     grid-column: 1 / span 2;
     width: 250px;
     height: 30px;
@@ -169,25 +171,25 @@ const App = () => {
         </CpsFlyout>
 
         <div className="flyout-overview-options">
-          <select
+          <CpsSelect
             name="placement"
             value={placement}
             className="flyout-overview-select"
-            onchange={event => setPlacement(event.target.value)}
+            onCpsChange={event => setPlacement(event.target.value)}
           >
-            <option value="top">Superior</option>
-            <option value="top-start">Superior inicial</option>
-            <option value="top-end">Superior final</option>
-            <option value="bottom">Inferior</option>
-            <option value="bottom-start">Inferior inicial</option>
-            <option value="bottom-end">Inferior final</option>
-            <option value="right">Direita</option>
-            <option value="right-start">Direita inicial</option>
-            <option value="right-end">Direita final</option>
-            <option value="left">Esquerda</option>
-            <option value="left-start">Esquerda inicial</option>
-            <option value="left-end">Esquerda final</option>
-          </select>
+            <cps-option value="top">Superior</cps-option>
+            <cps-option value="top-start">Superior inicial</cps-option>
+            <cps-option value="top-end">Superior final</cps-option>
+            <cps-option value="bottom">Inferior</cps-option>
+            <cps-option value="bottom-start">Inferior inicial</cps-option>
+            <cps-option value="bottom-end">Inferior final</cps-option>
+            <cps-option value="right">Direita</cps-option>
+            <cps-option value="right-start">Direita inicial</cps-option>
+            <cps-option value="right-end">Direita final</cps-option>
+            <cps-option value="left">Esquerda</cps-option>
+            <cps-option value="left-start">Esquerda inicial</cps-option>
+            <cps-option value="left-end">Esquerda final</cps-option>
+          </CpsSelect>
           <CpsInput
             type="number"
             name="distance"
@@ -205,10 +207,10 @@ const App = () => {
         </div>
 
         <div className="flyout-overview-options">
-          <CpsCheckbox checked={active} onchange={event => setActive(event.target.checked)}>
+          <CpsCheckbox checked={active} onCpsChange={event => setActive(event.target.checked)}>
             Habilitado
           </CpsCheckbox>
-          <CpsCheckbox checked={arrow} onchange={event => setArrow(event.target.checked)}>
+          <CpsCheckbox checked={arrow} onCpsChange={event => setArrow(event.target.checked)}>
             Estilo balão
           </CpsCheckbox>
         </div>
@@ -295,7 +297,7 @@ const App = () => {
         </CpsFlyout>
 
         <br />
-        <CpsCheckbox checked={active} onchange={event => setActive(event.target.checked)}>
+        <CpsCheckbox checked={active} onCpsChange={event => setActive(event.target.checked)}>
           Habilitado
         </CpsCheckbox>
       </div>
@@ -310,7 +312,7 @@ const App = () => {
 
 Por padrão, âncoras são injetadas no _flyout_ através do _slot_ `anchor`. Se sua âncora precisa existir fora do _flyout_ por alguma razão estrutural, você pode passar o `id` da âncora para o atributo `anchor`. Alternativamente, você pode passar uma referência de elemento para a propriedade `anchor` para obter o mesmo efeito sem usar um `id`.
 
-```html preview
+```html preview no-vue
 <span id="external-anchor"></span>
 
 <cps-flyout anchor="external-anchor" placement="top" active>
@@ -372,7 +374,7 @@ Use o atributo `placement` para informar ao _flyout_ o posicionamento preferido.
 
 Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode observar o posicionamento real do _flyout_ quando ele está ativo, olhando para o atributo `data-current-placement`. Este atributo será atualizado à medida que o _flyout_ gira para encontrar espaço disponível, e é removido quando o _flyout_ é desativado.
 
-```html preview
+```html preview no-vue
 <div class="flyout-placement">
   <cps-flyout placement="top" active>
     <span slot="anchor"></span>
@@ -380,20 +382,20 @@ Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode
   </cps-flyout>
 
   <br />
-  <select name="placement" value="top">
-    <option value="top">Superior</option>
-    <option value="top-start">Superior inicial</option>
-    <option value="top-end">Superior final</option>
-    <option value="bottom">Inferior</option>
-    <option value="bottom-start">Inferior inicial</option>
-    <option value="bottom-end">Inferior final</option>
-    <option value="right">Direita</option>
-    <option value="right-start">Direita inicial</option>
-    <option value="right-end">Direita final</option>
-    <option value="left">Esquerda</option>
-    <option value="left-start">Esquerda inicial</option>
-    <option value="left-end">Esquerda final</option>
-  </select>
+  <cps-select name="placement" value="top">
+    <cps-option value="top">Superior</cps-option>
+    <cps-option value="top-start">Superior inicial</cps-option>
+    <cps-option value="top-end">Superior final</cps-option>
+    <cps-option value="bottom">Inferior</cps-option>
+    <cps-option value="bottom-start">Inferior inicial</cps-option>
+    <cps-option value="bottom-end">Inferior final</cps-option>
+    <cps-option value="right">Direita</cps-option>
+    <cps-option value="right-start">Direita inicial</cps-option>
+    <cps-option value="right-end">Direita final</cps-option>
+    <cps-option value="left">Esquerda</cps-option>
+    <cps-option value="left-start">Esquerda inicial</cps-option>
+    <cps-option value="left-end">Esquerda final</cps-option>
+  </cps-select>
 </div>
 
 <style>
@@ -410,7 +412,7 @@ Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode
     height: 50px;
   }
 
-  .flyout-placement select {
+  .flyout-placement cps-select {
     width: 250px;
     height: 30px;
   }
@@ -419,15 +421,17 @@ Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode
 <script>
   const container = document.querySelector('.flyout-placement');
   const flyout = container.querySelector('cps-flyout');
-  const select = container.querySelector('select');
+  const select = container.querySelector('cps-select');
 
-  select.addEventListener('change', () => (flyout.placement = select.value));
+  select.addEventListener('cps-change', () => (flyout.placement = select.value));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
 import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsOption } from '@cps-elements/web/react/option';
+import { CpsSelect } from '@cps-elements/web/react/select';
 
 const css = `
   .flyout-placement span[slot='anchor'] {
@@ -443,7 +447,7 @@ const css = `
     height: 50px;
   }
 
-  .flyout-placement select {
+  .flyout-placement cps-select {
     width: 250px;
     height: 30px;
   }
@@ -461,20 +465,20 @@ const App = () => {
         </CpsFlyout>
 
         <br />
-        <select name="placement" value={placement} onchange={event => setPlacement(event.target.value)}>
-          <option value="top">Superior</option>
-          <option value="top-start">Superior inicial</option>
-          <option value="top-end">Superior final</option>
-          <option value="bottom">Inferior</option>
-          <option value="bottom-start">Inferior inicial</option>
-          <option value="bottom-end">Inferior final</option>
-          <option value="right">Direita</option>
-          <option value="right-start">Direita inicial</option>
-          <option value="right-end">Direita final</option>
-          <option value="left">Esquerda</option>
-          <option value="left-start">Esquerda inicial</option>
-          <option value="left-end">Esquerda final</option>
-        </select>
+        <CpsSelect name="placement" value={placement} onCpsChange={event => setPlacement(event.target.value)}>
+          <CpsOption value="top">Superior</CpsOption>
+          <CpsOption value="top-start">Superior inicial</CpsOption>
+          <CpsOption value="top-end">Superior final</CpsOption>
+          <CpsOption value="bottom">Inferior</CpsOption>
+          <CpsOption value="bottom-start">Inferior inicial</CpsOption>
+          <CpsOption value="bottom-end">Inferior final</CpsOption>
+          <CpsOption value="right">Direita</CpsOption>
+          <CpsOption value="right-start">Direita inicial</CpsOption>
+          <CpsOption value="right-end">Direita final</CpsOption>
+          <CpsOption value="left">Esquerda</CpsOption>
+          <CpsOption value="left-start">Esquerda inicial</CpsOption>
+          <CpsOption value="left-end">Esquerda final</CpsOption>
+        </CpsSelect>
       </div>
 
       <style>{css}</style>
@@ -487,7 +491,7 @@ const App = () => {
 
 Use o atributo `distance` para alterar a distância entre o _flyout_ e sua âncora. Um valor positivo moverá o _flyout_ para mais longe, e um valor negativo o moverá para mais perto.
 
-```html preview
+```html preview no-vue
 <div class="flyout-distance">
   <cps-flyout placement="top" distance="0" active>
     <span slot="anchor"></span>
@@ -567,7 +571,7 @@ const App = () => {
           max="50"
           step="1"
           value={distance}
-          onchange={event => setDistance(event.target.value)}
+          onCpsChange={event => setDistance(event.target.value)}
         />
       </div>
 
@@ -581,7 +585,7 @@ const App = () => {
 
 Use o atributo `skidding` para alterar o deslocamento do _flyout_ ao longo do eixo da âncora, de modo similar ao atributo `distance` porém movendo-o para os lados ao invés de aumentando ou diminuindo a distância em relação à âncora.
 
-```html preview
+```html preview no-vue
 <div class="flyout-skidding">
   <cps-flyout placement="top" skidding="0" active>
     <span slot="anchor"></span>
@@ -661,7 +665,7 @@ const App = () => {
           max="50"
           step="1"
           value={skidding}
-          onchange={event => setSkidding(event.target.value)}
+          onCpsChange={event => setSkidding(event.target.value)}
         />
       </div>
 
@@ -677,7 +681,7 @@ Use o atributo `arrow` para adicionar uma seta ao seu _flyout_. É uma boa ideia
 
 Por padrão, a seta será alinhada o mais próximo possível do centro da âncora, considerando o espaço disponível e o `arrow-padding`. Você pode usar o atributo `arrow-placement` para forçar a seta a se alinhar ao início, fim ou centro do _flyout_.
 
-```html preview
+```html preview no-vue
 <div class="flyout-arrow">
   <cps-flyout placement="top" arrow arrow-placement="anchor" distance="8" active>
     <span slot="anchor"></span>
@@ -685,27 +689,27 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
   </cps-flyout>
 
   <div class="flyout-arrow-options">
-    <select name="placement" value="top">
-      <option value="top">Superior</option>
-      <option value="top-start">Superior inicial</option>
-      <option value="top-end">Superior final</option>
-      <option value="bottom">Inferior</option>
-      <option value="bottom-start">Inferior inicial</option>
-      <option value="bottom-end">Inferior final</option>
-      <option value="right">Direita</option>
-      <option value="right-start">Direita inicial</option>
-      <option value="right-end">Direita final</option>
-      <option value="left">Esquerda</option>
-      <option value="left-start">Esquerda inicial</option>
-      <option value="left-end">Esquerda final</option>
-    </select>
+    <cps-select name="placement" value="top">
+      <cps-option value="top">Superior</cps-option>
+      <cps-option value="top-start">Superior inicial</cps-option>
+      <cps-option value="top-end">Superior final</cps-option>
+      <cps-option value="bottom">Inferior</cps-option>
+      <cps-option value="bottom-start">Inferior inicial</cps-option>
+      <cps-option value="bottom-end">Inferior final</cps-option>
+      <cps-option value="right">Direita</cps-option>
+      <cps-option value="right-start">Direita inicial</cps-option>
+      <cps-option value="right-end">Direita final</cps-option>
+      <cps-option value="left">Esquerda</cps-option>
+      <cps-option value="left-start">Esquerda inicial</cps-option>
+      <cps-option value="left-end">Esquerda final</cps-option>
+    </cps-select>
 
-    <select name="arrow-placement" value="anchor">
-      <option value="anchor">Seta âncora</option>
-      <option value="start">Seta início</option>
-      <option value="end">Seta final</option>
-      <option value="center">Seta centro</option>
-    </select>
+    <cps-select name="arrow-placement" value="anchor">
+      <cps-option value="anchor">Seta âncora</cps-option>
+      <cps-option value="start">Seta início</cps-option>
+      <cps-option value="end">Seta final</cps-option>
+      <cps-option value="center">Seta centro</cps-option>
+    </cps-select>
   </div>
 
   <div class="flyout-arrow-options">
@@ -716,12 +720,12 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
 <script>
   const container = document.querySelector('.flyout-arrow');
   const flyout = container.querySelector('cps-flyout');
-  const placement = container.querySelector('[name="placement"]');
-  const arrowPlacement = container.querySelector('[name="arrow-placement"]');
-  const arrow = container.querySelector('[name="arrow"]');
+  const placement = container.querySelector('cps-select[name="placement"]');
+  const arrowPlacement = container.querySelector('cps-select[name="arrow-placement"]');
+  const arrow = container.querySelector('cps-checkbox[name="arrow"]');
 
-  placement.addEventListener('change', () => (flyout.placement = placement.value));
-  arrowPlacement.addEventListener('change', () => (flyout.arrowPlacement = arrowPlacement.value));
+  placement.addEventListener('cps-change', () => (flyout.placement = placement.value));
+  arrowPlacement.addEventListener('cps-change', () => (flyout.arrowPlacement = arrowPlacement.value));
   arrow.addEventListener('cps-change', () => (flyout.arrow = arrow.checked));
 </script>
 
@@ -746,8 +750,8 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
     align-items: end;
   }
 
-  .flyout-arrow-options select {
-    width: 117px;
+  .flyout-arrow-options cps-select {
+    width: 150px;
     height: 30px;
   }
 
@@ -761,6 +765,8 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
 import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsOption } from '@cps-elements/web/react/option';
+import { CpsSelect } from '@cps-elements/web/react/select';
 
 const css = `
   .flyout-arrow span[slot='anchor'] {
@@ -783,8 +789,8 @@ const css = `
     align-items: end;
   }
 
-  .flyout-arrow-options select {
-    width: 117px;
+  .flyout-arrow-options cps-select {
+    width: 150px;
     height: 30px;
   }
 
@@ -807,35 +813,35 @@ const App = () => {
         </CpsFlyout>
 
         <div className="flyout-arrow-options">
-          <select name="placement" value={placement} onchange={event => setPlacement(event.target.value)}>
-            <option value="top">Superior</option>
-            <option value="top-start">Superior inicial</option>
-            <option value="top-end">Superior final</option>
-            <option value="bottom">Inferior</option>
-            <option value="bottom-start">Inferior inicial</option>
-            <option value="bottom-end">Inferior final</option>
-            <option value="right">Direita</option>
-            <option value="right-start">Direita inicial</option>
-            <option value="right-end">Direita final</option>
-            <option value="left">Esquerda</option>
-            <option value="left-start">Esquerda inicial</option>
-            <option value="left-end">Esquerda final</option>
-          </select>
+          <CpsSelect name="placement" value={placement} onCpsChange={event => setPlacement(event.target.value)}>
+            <CpsOption value="top">Superior</CpsOption>
+            <CpsOption value="top-start">Superior inicial</CpsOption>
+            <CpsOption value="top-end">Superior final</CpsOption>
+            <CpsOption value="bottom">Inferior</CpsOption>
+            <CpsOption value="bottom-start">Inferior inicial</CpsOption>
+            <CpsOption value="bottom-end">Inferior final</CpsOption>
+            <CpsOption value="right">Direita</CpsOption>
+            <CpsOption value="right-start">Direita inicial</CpsOption>
+            <CpsOption value="right-end">Direita final</CpsOption>
+            <CpsOption value="left">Esquerda</CpsOption>
+            <CpsOption value="left-start">Esquerda inicial</CpsOption>
+            <CpsOption value="left-end">Esquerda final</CpsOption>
+          </CpsSelect>
 
           <select
             name="arrow-placement"
             value={arrowPlacement}
-            onchange={event => setArrowPlacement(event.target.value)}
+            onCpsChange={event => setArrowPlacement(event.target.value)}
           >
-            <option value="anchor">Seta âncora</option>
-            <option value="start">Seta início</option>
-            <option value="end">Seta final</option>
-            <option value="center">Seta centro</option>
-          </select>
+            <CpsOption value="anchor">Seta âncora</CpsOption>
+            <CpsOption value="start">Seta início</CpsOption>
+            <CpsOption value="end">Seta final</CpsOption>
+            <CpsOption value="center">Seta centro</CpsOption>
+          </CpsSelect>
         </div>
 
         <div className="flyout-arrow-options">
-          <CpsCheckbox name="arrow" checked={arrow} onchange={event => setArrow(event.target.checked)}>
+          <CpsCheckbox name="arrow" checked={arrow} onCpsChange={event => setArrow(event.target.checked)}>
             Estilo balão
           </CpsCheckbox>
         </div>
@@ -853,7 +859,7 @@ A cor de fundo do _flyout_ pode ser definida através da variável CSS `--backgr
 
 Caso esteja utilizando o _flyout_ com estilo balão, a seta automaticamente utilizará as mesmas cores de fundo e de borda do corpo do _flyout_. Adicionalmente, o tamanho da seta também pode ser controlado através da variável CSS `--arrow-size`. Se você precisar estilizar a seta de forma diferenciada, ou ainda informar estilos adicionais nela, também pode usar o seletor de parte CSS `arrow` para ajustá-la diretamente, até mesmo alterando seu formato através de `clip-path`.
 
-```html preview
+```html preview no-vue
 <div class="flyout-custom">
   <cps-flyout placement="top" arrow arrow-placement="anchor" distance="16" active>
     <span slot="anchor"></span>
@@ -861,27 +867,27 @@ Caso esteja utilizando o _flyout_ com estilo balão, a seta automaticamente util
   </cps-flyout>
 
   <div class="flyout-custom-options">
-    <select name="placement" value="top">
-      <option value="top">Superior</option>
-      <option value="top-start">Superior inicial</option>
-      <option value="top-end">Superior final</option>
-      <option value="bottom">Inferior</option>
-      <option value="bottom-start">Inferior inicial</option>
-      <option value="bottom-end">Inferior final</option>
-      <option value="right">Direita</option>
-      <option value="right-start">Direita inicial</option>
-      <option value="right-end">Direita final</option>
-      <option value="left">Esquerda</option>
-      <option value="left-start">Esquerda inicial</option>
-      <option value="left-end">Esquerda final</option>
-    </select>
+    <cps-select name="placement" value="top">
+      <cps-option value="top">Superior</cps-option>
+      <cps-option value="top-start">Superior inicial</cps-option>
+      <cps-option value="top-end">Superior final</cps-option>
+      <cps-option value="bottom">Inferior</cps-option>
+      <cps-option value="bottom-start">Inferior inicial</cps-option>
+      <cps-option value="bottom-end">Inferior final</cps-option>
+      <cps-option value="right">Direita</cps-option>
+      <cps-option value="right-start">Direita inicial</cps-option>
+      <cps-option value="right-end">Direita final</cps-option>
+      <cps-option value="left">Esquerda</cps-option>
+      <cps-option value="left-start">Esquerda inicial</cps-option>
+      <cps-option value="left-end">Esquerda final</cps-option>
+    </cps-select>
 
-    <select name="arrow-placement" value="anchor">
-      <option value="anchor">Seta âncora</option>
-      <option value="start">Seta início</option>
-      <option value="end">Seta final</option>
-      <option value="center">Seta centro</option>
-    </select>
+    <cps-select name="arrow-placement" value="anchor">
+      <cps-option value="anchor">Seta âncora</cps-option>
+      <cps-option value="start">Seta início</cps-option>
+      <cps-option value="end">Seta final</cps-option>
+      <cps-option value="center">Seta centro</cps-option>
+    </cps-select>
   </div>
 
   <div class="flyout-custom-options">
@@ -892,12 +898,12 @@ Caso esteja utilizando o _flyout_ com estilo balão, a seta automaticamente util
 <script>
   const container = document.querySelector('.flyout-custom');
   const flyout = container.querySelector('cps-flyout');
-  const placement = container.querySelector('[name="placement"]');
-  const arrowPlacement = container.querySelector('[name="arrow-placement"]');
-  const arrow = container.querySelector('[name="arrow"]');
+  const placement = container.querySelector('cps-select[name="placement"]');
+  const arrowPlacement = container.querySelector('cps-select[name="arrow-placement"]');
+  const arrow = container.querySelector('cps-checkbox[name="arrow"]');
 
-  placement.addEventListener('change', () => (flyout.placement = placement.value));
-  arrowPlacement.addEventListener('change', () => (flyout.arrowPlacement = arrowPlacement.value));
+  placement.addEventListener('cps-change', () => (flyout.placement = placement.value));
+  arrowPlacement.addEventListener('cps-change', () => (flyout.arrowPlacement = arrowPlacement.value));
   arrow.addEventListener('cps-change', () => (flyout.arrow = arrow.checked));
 </script>
 
@@ -942,8 +948,8 @@ Caso esteja utilizando o _flyout_ com estilo balão, a seta automaticamente util
     align-items: end;
   }
 
-  .flyout-custom-options select {
-    width: 117px;
+  .flyout-custom-options cps-select {
+    width: 150px;
     height: 30px;
   }
 
@@ -957,6 +963,8 @@ Caso esteja utilizando o _flyout_ com estilo balão, a seta automaticamente util
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
 import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsOption } from '@cps-elements/web/react/option';
+import { CpsSelect } from '@cps-elements/web/react/select';
 
 const css = `
   .flyout-custom cps-flyout {
@@ -999,8 +1007,8 @@ const css = `
     align-items: end;
   }
 
-  .flyout-custom-options select {
-    width: 117px;
+  .flyout-custom-options cps-select {
+    width: 150px;
     height: 30px;
   }
 
@@ -1023,35 +1031,35 @@ const App = () => {
         </CpsFlyout>
 
         <div className="flyout-arrow-options">
-          <select name="placement" value={placement} onchange={event => setPlacement(event.target.value)}>
-            <option value="top">Superior</option>
-            <option value="top-start">Superior inicial</option>
-            <option value="top-end">Superior final</option>
-            <option value="bottom">Inferior</option>
-            <option value="bottom-start">Inferior inicial</option>
-            <option value="bottom-end">Inferior final</option>
-            <option value="right">Direita</option>
-            <option value="right-start">Direita inicial</option>
-            <option value="right-end">Direita final</option>
-            <option value="left">Esquerda</option>
-            <option value="left-start">Esquerda inicial</option>
-            <option value="left-end">Esquerda final</option>
-          </select>
+          <CpsSelect name="placement" value={placement} onCpsChange={event => setPlacement(event.target.value)}>
+            <CpsOption value="top">Superior</CpsOption>
+            <CpsOption value="top-start">Superior inicial</CpsOption>
+            <CpsOption value="top-end">Superior final</CpsOption>
+            <CpsOption value="bottom">Inferior</CpsOption>
+            <CpsOption value="bottom-start">Inferior inicial</CpsOption>
+            <CpsOption value="bottom-end">Inferior final</CpsOption>
+            <CpsOption value="right">Direita</CpsOption>
+            <CpsOption value="right-start">Direita inicial</CpsOption>
+            <CpsOption value="right-end">Direita final</CpsOption>
+            <CpsOption value="left">Esquerda</CpsOption>
+            <CpsOption value="left-start">Esquerda inicial</CpsOption>
+            <CpsOption value="left-end">Esquerda final</CpsOption>
+          </CpsSelect>
 
           <select
             name="arrow-placement"
             value={arrowPlacement}
-            onchange={event => setArrowPlacement(event.target.value)}
+            onCpsChange={event => setArrowPlacement(event.target.value)}
           >
-            <option value="anchor">Seta âncora</option>
-            <option value="start">Seta início</option>
-            <option value="end">Seta final</option>
-            <option value="center">Seta centro</option>
-          </select>
+            <CpsOption value="anchor">Seta âncora</CpsOption>
+            <CpsOption value="start">Seta início</CpsOption>
+            <CpsOption value="end">Seta final</CpsOption>
+            <CpsOption value="center">Seta centro</CpsOption>
+          </CpsSelect>
         </div>
 
         <div className="flyout-arrow-options">
-          <CpsCheckbox name="arrow" checked={arrow} onchange={event => setArrow(event.target.checked)}>
+          <CpsCheckbox name="arrow" checked={arrow} onCpsChange={event => setArrow(event.target.checked)}>
             Estilo balão
           </CpsCheckbox>
         </div>
@@ -1067,7 +1075,7 @@ const App = () => {
 
 Use o atributo `sync` para fazer com que o _flyout_ tenha a mesma largura ou altura que o elemento âncora. Isso é útil para controles que precisam garantir que o elemento flutuante subjacente acompanhe as medidas da âncora.
 
-```html preview
+```html preview no-vue
 <div class="flyout-sync">
   <cps-flyout placement="top" sync="width" active>
     <span slot="anchor"></span>
@@ -1075,12 +1083,12 @@ Use o atributo `sync` para fazer com que o _flyout_ tenha a mesma largura ou alt
   </cps-flyout>
 
   <br />
-  <select value="width">
-    <option value="width">Sincronizar largura</option>
-    <option value="height">Sincronizar altura</option>
-    <option value="both">Sincronizar ambos</option>
-    <option value="">Desativar sincronia</option>
-  </select>
+  <cps-select value="width">
+    <cps-option value="width">Sincronizar largura</cps-option>
+    <cps-option value="height">Sincronizar altura</cps-option>
+    <cps-option value="both">Sincronizar ambos</cps-option>
+    <cps-option value="">Desativar sincronia</cps-option>
+  </cps-select>
 </div>
 
 <style>
@@ -1099,7 +1107,7 @@ Use o atributo `sync` para fazer com que o _flyout_ tenha a mesma largura ou alt
     min-height: 50px;
   }
 
-  .flyout-sync select {
+  .flyout-sync cps-select {
     width: 250px;
     height: 30px;
   }
@@ -1109,15 +1117,17 @@ Use o atributo `sync` para fazer com que o _flyout_ tenha a mesma largura ou alt
   const container = document.querySelector('.flyout-sync');
   const flyout = container.querySelector('cps-flyout');
   const fixed = container.querySelector('cps-checkbox');
-  const sync = container.querySelector('select');
+  const sync = container.querySelector('cps-select');
 
-  sync.addEventListener('change', () => (flyout.sync = sync.value));
+  sync.addEventListener('cps-change', () => (flyout.sync = sync.value));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
 import { CpsFlyout } from '@cps-elements/web/react';
+import { CpsOption } from '@cps-elements/web/react/option';
+import { CpsSelect } from '@cps-elements/web/react/select';
 
 const css = `
   .flyout-sync span[slot='anchor'] {
@@ -1135,7 +1145,7 @@ const css = `
     min-height: 50px;
   }
 
-  .flyout-sync select {
+  .flyout-sync cps-select {
     width: 250px;
     height: 30px;
   }
@@ -1153,12 +1163,12 @@ const App = () => {
         </CpsFlyout>
 
         <br />
-        <select value={sync} onchange={event => setSync(event.target.value)}>
-          <option value="width">Sincronizar largura</option>
-          <option value="height">Sincronizar altura</option>
-          <option value="both">Sincronizar ambos</option>
-          <option value="">Desativar sincronia</option>
-        </select>
+        <CpsSelect value={sync} onCpsChange={event => setSync(event.target.value)}>
+          <CpsOption value="width">Sincronizar largura</CpsOption>
+          <CpsOption value="height">Sincronizar altura</CpsOption>
+          <CpsOption value="both">Sincronizar ambos</CpsOption>
+          <CpsOption value="">Desativar sincronia</CpsOption>
+        </CpsSelect>
       </div>
 
       <style>{css}</style>
@@ -1177,7 +1187,7 @@ Neste exemplo, você pode ver como o _flyout_ quebra os limites contêiner (mesm
 
 Alterne a estratégia de posicionamento e role o contêiner para ver a diferença.
 
-```html preview
+```html preview no-vue
 <div class="flyout-strategy">
   <div class="overflow">
     <cps-flyout placement="top" strategy="fixed" active>
@@ -1266,7 +1276,7 @@ const App = () => {
           </CpsFlyout>
         </div>
 
-        <CpsCheckbox checked={fixed} onchange={event => setFixed(event.target.checked)}>
+        <CpsCheckbox checked={fixed} onCpsChange={event => setFixed(event.target.checked)}>
           Posicionamento fixo
         </CpsCheckbox>
       </div>
@@ -1283,7 +1293,7 @@ Use o atributo `flip` para permitir que o _flyout_ gire automaticamente quando n
 
 Role o contêiner para ver como o _flyout_ gira para evitar seu corte.
 
-```html preview
+```html preview no-vue
 <div class="flyout-flip">
   <div class="overflow">
     <cps-flyout placement="top" flip active>
@@ -1366,7 +1376,7 @@ const App = () => {
         </div>
 
         <br />
-        <CpsCheckbox checked={flip} onchange={event => setFlip(event.target.checked)}>
+        <CpsCheckbox checked={flip} onCpsChange={event => setFlip(event.target.checked)}>
           Permite virar
         </CpsCheckbox>
       </div>
@@ -1387,7 +1397,7 @@ Se nenhuma alternativa de posicionamento funcionar, o posicionamento final será
 
 Role o contêiner para ver como o _flyout_ vai mudando para seus posicionamentos alternativos, para evitar seu corte.
 
-```html preview
+```html preview no-vue
 <div class="flyout-flip-fallbacks">
   <div class="overflow">
     <cps-flyout placement="top" flip flip-fallback-placements="right bottom" flip-fallback-strategy="initial" active>
@@ -1473,7 +1483,7 @@ Quando um _flyout_ é mais longo que sua âncora, ele corre o risco de ser corta
 
 Alterne a caixa de seleção para ver a diferença.
 
-```html preview
+```html preview no-vue
 <div class="flyout-shift">
   <div class="overflow">
     <cps-flyout placement="top" shift shift-padding="10" active>
@@ -1560,7 +1570,7 @@ const App = () => {
           </CpsFlyout>
         </div>
 
-        <CpsCheckbox checked={shift} onchange={event => setShift(event.target.checked)}>
+        <CpsCheckbox checked={shift} onCpsChange={event => setShift(event.target.checked)}>
           Reposicionamento no eixo
         </CpsCheckbox>
       </div>
@@ -1579,7 +1589,7 @@ Ao usar `auto-size`, um ou ambos `--auto-size-available-width` e `--auto-size-av
 
 Role o contêiner para ver o _flyout_ se auto-dimensionar conforme o espaço disponível muda.
 
-```html preview
+```html preview no-vue
 <div class="flyout-auto-size">
   <div class="overflow">
     <cps-flyout placement="top" auto-size="both" auto-size-padding="10" active>
@@ -1668,7 +1678,7 @@ const App = () => {
         </div>
 
         <br />
-        <CpsCheckbox checked={autoSize} onchange={event => setAutoSize(event.target.checked)}>
+        <CpsCheckbox checked={autoSize} onCpsChange={event => setAutoSize(event.target.checked)}>
           Auto-dimensionamento
         </CpsCheckbox>
       </div>
