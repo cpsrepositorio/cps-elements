@@ -19,7 +19,7 @@ Todos os ícones disponíveis na biblioteca `default` são exibidos a seguir. Cl
 ```
 
 <div class="icon-search">
-  <!-- <div class="icon-search-controls">
+  <div class="icon-search-controls">
     <cps-input placeholder="Pesquisar ícones" clearable>
       <cps-icon slot="prefix" name="search"></cps-icon>
     </cps-input>
@@ -28,7 +28,7 @@ Todos os ícones disponíveis na biblioteca `default` são exibidos a seguir. Cl
       <cps-option value="fill">Preenchido</cps-option>
       <cps-option value="all">Todos</cps-option>
     </cps-select>
-  </div> -->
+  </div>
   <div class="icon-list"></div>
   <input type="text" class="icon-copy-input" aria-hidden="true" tabindex="-1">
 </div>
@@ -465,19 +465,6 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
 
 <!-- Supporting scripts and styles for the search utility -->
 <script>
-  function wrapWithTooltip(item) {
-    const tooltip = document.createElement('cps-tooltip');
-    tooltip.content = item.getAttribute('data-name');
-
-    // Close open tooltips
-    document.querySelectorAll('.icon-list cps-tooltip[open]').forEach(tooltip => tooltip.hide());
-
-    // Wrap it with a tooltip and trick it into showing up
-    item.parentNode.insertBefore(tooltip, item);
-    tooltip.appendChild(item);
-    requestAnimationFrame(() => tooltip.dispatchEvent(new MouseEvent('mouseover')));
-  }
-
   fetch('./dist/assets/icons/icons.json')
     .then(res => res.json())
     .then(icons => {
@@ -494,7 +481,6 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
       icons.map(i => {
         const item = document.createElement('div');
         item.classList.add('icon-list-item');
-        item.setAttribute('title', i.name);
         item.setAttribute('data-name', i.name);
         item.setAttribute('data-terms', [i.name, i.title, ...(i.tags || []), ...(i.categories || [])].join(' '));
         item.innerHTML = `
@@ -504,9 +490,18 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
         `;
         list.appendChild(item);
 
-        /*
-        // Wrap it with a tooltip the first time the mouse lands on it. We do this instead of baking them into the DOM to improve this page's performance.
-        item.addEventListener('mouseover', () => wrapWithTooltip(item), { once: true });
+        // Wrap it with a tooltip the first time the mouse lands on it, to improve this page's performance.
+        item.addEventListener('mouseenter', () => {
+          const tooltip = document.createElement('cps-tooltip');
+          tooltip.content = item.getAttribute('data-name');
+
+          // Close open tooltips
+          document.querySelectorAll('.icon-list cps-tooltip[open]').forEach(tooltip => tooltip.hide());
+
+          // Wrap it with a tooltip and trick it into showing up
+          item.parentNode.insertBefore(tooltip, item);
+          tooltip.appendChild(item);
+        }, { once: true });
 
         // Copy on click
         item.addEventListener('click', () => {
@@ -520,10 +515,8 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
             setTimeout(() => tooltip.content = i.name, 1000);
           }
         });
-        */
       });
 
-      /*
       // Filter as the user types
       input.addEventListener('cps-input', () => {
         clearTimeout(inputTimeout);
@@ -539,9 +532,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
           });
         }, 250);
       });
-      */
 
-      /*
       // Sort by type and remember preference
       const iconType = localStorage.getItem('cps-icon:type') || 'outline';
       select.value = iconType;
@@ -550,7 +541,6 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
         list.setAttribute('data-type', select.value);
         localStorage.setItem('cps-icon:type', select.value);
       });
-      */
     });
 </script>
 
@@ -567,6 +557,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
 
   .icon-search-controls {
     display: flex;
+    padding: var(--cps-spacing-4) var(--cps-spacing-4) var(--cps-spacing-2);
   }
 
   .icon-search-controls cps-input {
@@ -590,7 +581,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
     display: grid;
     position: relative;
     grid-template-columns: repeat(12, 1fr);
-    padding: var(--cps-spacing-4);
+    padding: var(--cps-spacing-2);
     max-height: 480px;
     overflow-y: auto;
   }
@@ -612,10 +603,10 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    /* cursor: copy; */
     transition: var(--cps-transition-medium) all;
     margin: 0 auto;
     border-radius: var(--cps-border-radius-medium);
+    cursor: copy;
     width: 2em;
     height: 2em;
     font-size: 24px;
