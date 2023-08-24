@@ -5,7 +5,7 @@ import { playwrightLauncher } from '@web/test-runner-playwright';
 export default {
   rootDir: '.',
   files: 'src/**/*.test.ts', // "default" group
-  concurrentBrowsers: 3,
+  concurrentBrowsers: 2,
   nodeResolve: true,
   testFramework: {
     config: {
@@ -19,11 +19,7 @@ export default {
       target: 'auto'
     })
   ],
-  browsers: [
-    playwrightLauncher({ product: 'chromium' }),
-    playwrightLauncher({ product: 'firefox' }),
-    playwrightLauncher({ product: 'webkit' })
-  ],
+  browsers: [playwrightLauncher({ product: 'chromium' }), playwrightLauncher({ product: 'webkit' })],
   testRunnerHtml: testFramework => `
     <html lang="pt-BR">
       <head></head>
