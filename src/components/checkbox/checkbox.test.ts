@@ -96,9 +96,6 @@ describe('<cps-checkbox>', () => {
   });
 
   it('should hide the native input with the correct positioning to scroll correctly when contained in an overflow', async () => {
-    //
-    // See: https://github.com/cpsrepositorio/cps-elements/issues/1169
-    //
     const el = await fixture<CpsCheckbox>(html` <cps-checkbox></cps-checkbox> `);
     const label = el.shadowRoot!.querySelector('.checkbox')!;
     const input = el.shadowRoot!.querySelector('.checkbox__input')!;
