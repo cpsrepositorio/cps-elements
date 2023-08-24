@@ -48,7 +48,7 @@ export default css`
     --cps-palette-accent-950: rgb(9 50 60);
 
     --cps-color-system-neutral: rgb(138 138 138);
-    --cps-color-system-neutral-transparent: rgb(0 0 0 / 44.58%);
+    --cps-color-system-neutral-transparent: rgb(0 0 0 / 25%);
     --cps-color-system-neutral-subtle: rgb(0 0 0 / 2.41%);
 
     --cps-color-system-informative: rgb(0 95 183);
@@ -89,8 +89,8 @@ export default css`
     --cps-color-background-solid-quaternary: rgb(254 254 254);
 
     --cps-color-background-acrylic: linear-gradient(
-        rgb(252 252 252 / 85%),
-        rgb(252 252 252 / 85%)
+        rgb(252 252 252 / 80%),
+        rgb(252 252 252 / 80%)
       ),
       var(--cps-texture-acrylic);
     --cps-color-background-acrylic-base: linear-gradient(
@@ -364,7 +364,7 @@ export default css`
   }
 
   .cps-toast-stack cps-notification::part(base) {
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(12px);
     filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
   }
 

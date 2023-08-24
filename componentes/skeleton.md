@@ -228,7 +228,7 @@ const App = () => (
 );
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com a [especificação de _skeleton_](https://cpsrepositorio.github.io/cps-design-system/componentes/skeleton-indicator.html), utilize sempre com o efeito padrão `sheen`, ou seja, não é necessário utilizar o atributo `effect`.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com a [especificação de _skeleton_](https://cpsrepositorio.github.io/cps-design-system/documentacao/skeleton-indicator.html), utilize sempre com o efeito padrão `sheen`, ou seja, não é necessário utilizar o atributo `effect`.
 
 ### Arredondamento dos cantos
 

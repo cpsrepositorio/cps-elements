@@ -175,7 +175,7 @@ const App = () => (
 );
 ```
 
-?> Itens de menu do tipo _checkbox_ são quase visualmente indistinguíveis de itens de menu regulares, exceto pelo fato de que o espaço utilizado pelo ícone de checagem já encontra-se reservado mesmo quando não estão checados. Ainda assim, sua capacidade de serem selecionados é primariamente inferida do contexto, assim como você encontraria em um menu de um aplicativo nativo.
+?> Itens de menu do tipo _checkbox_ são bem parecidos visualmente com itens de menu regulares, exceto pelo fato de que o espaço utilizado pelo ícone de checagem já encontra-se reservado com um sutil marcador vazio. Ainda assim, sua usabilidade é primariamente inferida pelo contexto de uso. Entretanto, é uma usabilidade comum em aplicativos nativos de sistema, portanto provavelmente subentendida rapidamente pelos usuários.
 
 ### Valor da seleção
 

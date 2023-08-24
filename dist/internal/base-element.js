@@ -7,6 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 export default class BaseElement extends LitElement {
+    constructor() {
+        super(...arguments);
+        this.version = __CPS_ELEMENTS_VERSION__;
+    }
     emit(name, options) {
         const event = new CustomEvent(name, Object.assign({ bubbles: true, cancelable: false, composed: true, detail: {} }, options));
         this.dispatchEvent(event);
@@ -19,3 +23,6 @@ __decorate([
 __decorate([
     property()
 ], BaseElement.prototype, "lang", void 0);
+__decorate([
+    property({ reflect: false, noAccessor: true })
+], BaseElement.prototype, "version", void 0);

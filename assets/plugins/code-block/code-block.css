@@ -8,7 +8,6 @@
 
 .code-block__preview {
   position: relative;
-  z-index: 1;
   border-top-left-radius: var(--cps-border-radius-medium);
   border-top-right-radius: var(--cps-border-radius-medium);
   background-color: var(--cps-color-background-solid-tertiary);
@@ -37,7 +36,7 @@
   bottom: 0;
   align-items: center;
   justify-content: center;
-  z-index: -1;
+  z-index: 0;
   border-right: solid 1px var(--cps-color-stroke-card-secondary);
   border-left: solid 1px var(--cps-color-stroke-card-secondary);
   border-top-right-radius: var(--cps-border-radius-medium);

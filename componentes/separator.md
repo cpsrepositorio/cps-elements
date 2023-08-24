@@ -176,7 +176,7 @@ import { CpsSeparator } from '@cps-elements/web/react/separator';
 const App = () => <CpsSeparator style={{ '--thickness': '4px' }} />;
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [definições de separador](https://cpsrepositorio.github.io/cps-design-system/componentes/separator.html), não modifique a espessura. Esta opção está disponível para situações que não exigem tal aderência.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [definições de separador](https://cpsrepositorio.github.io/cps-design-system/documentacao/separator.html), não modifique a espessura. Esta opção está disponível para situações que não exigem tal aderência.
 
 ### Cor
 
@@ -192,6 +192,6 @@ import { CpsSeparator } from '@cps-elements/web/react/separator';
 const App = () => <CpsSeparator style={{ '--color': 'tomato' }} />;
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [definições de separador](https://cpsrepositorio.github.io/cps-design-system/componentes/separator.html), não modifique a cor. Esta opção está disponível para situações que não exigem tal aderência.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [definições de separador](https://cpsrepositorio.github.io/cps-design-system/documentacao/separator.html), não modifique a cor. Esta opção está disponível para situações que não exigem tal aderência.
 
 [component-metadata:cps-separator]

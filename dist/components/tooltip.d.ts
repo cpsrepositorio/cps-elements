@@ -1,14 +1,14 @@
-import './popover.js';
+import './flyout.js';
 import BaseElement from '../internal/base-element.js';
 import type { CSSResultGroup } from 'lit';
-import type CpsPopover from './popover.js';
+import type CpsFlyout from './flyout.js';
 export default class CpsTooltip extends BaseElement {
     static styles: CSSResultGroup;
     private hoverTimeout;
     private readonly localize;
     defaultSlot: HTMLSlotElement;
     body: HTMLElement;
-    popover: CpsPopover;
+    flyout: CpsFlyout;
     content: string;
     placement: 'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end';
     disabled: boolean;

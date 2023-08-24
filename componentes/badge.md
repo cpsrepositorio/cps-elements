@@ -98,7 +98,7 @@ const App = () => (
 );
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [variações de _badge_](https://cpsrepositorio.github.io/cps-design-system/componentes/badge.html#variacoes), não utilize o atributo `square`. Ele está disponível para situações que não exigem tal aderência.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, para garantir plena conformidade com as [variações de _badge_](https://cpsrepositorio.github.io/cps-design-system/documentacao/badge.html#variacoes), não utilize o atributo `square`. Ele está disponível para situações que não exigem tal aderência.
 
 ### Ícone automático
 
@@ -219,7 +219,7 @@ const App = () => (
 
 ### Com botões
 
-Um dos casos de uso mais comuns para _badges_ é anexá-los a botões. Para facilitar isso, os _badges_ serão posicionados automaticamente no canto superior direito quando forem filhos de um botão.
+Um dos casos de uso mais comuns para _badges_ é anexá-los a botões. Para facilitar, os _badges_ serão posicionados automaticamente no canto superior direito quando forem filhos de um botão.
 
 ```html preview
 <cps-button>
@@ -234,7 +234,7 @@ Um dos casos de uso mais comuns para _badges_ é anexá-los a botões. Para faci
 
 <cps-button style="margin-inline-start: 1rem">
   Problemas
-  <cps-badge variant="critical">6</cps-badge>
+  <cps-badge variant="critical" pulse>6</cps-badge>
 </cps-button>
 ```
 
@@ -256,8 +256,53 @@ const App = () => (
 
     <CpsButton style={{ marginInlineStart: '1rem' }}>
       Problemas
-      <CpsBadge variant="critical">6</CpsBadge>
+      <CpsBadge variant="critical" pulse>
+        6
+      </CpsBadge>
     </CpsButton>
+  </>
+);
+```
+
+### Com avatares
+
+Outro caso de uso comum para _badges_ é anexá-los a avatares. Para facilitar, os _badges_ serão posicionados automaticamente no canto superior direito quando forem filhos de um avatar. Utilize o _slot_ `badge` do avatar ao injetar este conteúdo, para não interferir no restante da renderização do avatar.
+
+```html preview
+<cps-avatar image="https://i.pravatar.cc/48?img=17" label="Sawyer Hawkins">
+  <cps-badge slot="badge">30</cps-badge>
+</cps-avatar>
+
+<cps-avatar label="João Ninguém" style="margin-inline-start: 1rem">
+  <cps-badge slot="badge" variant="warning">8</cps-badge>
+</cps-avatar>
+
+<cps-avatar label="Erick Petrucelli" initials="auto" style="margin-inline-start: 1rem">
+  <cps-badge slot="badge" variant="critical" pulse>6</cps-badge>
+</cps-avatar>
+```
+
+```jsx react
+import { CpsAvatar } from '@cps-elements/web/react/avatar';
+import { CpsBadge } from '@cps-elements/web/react/badge';
+
+const App = () => (
+  <>
+    <CpsAvatar image="https://i.pravatar.cc/48?img=17" label="Sawyer Hawkins">
+      <CpsBadge slot="badge">30</CpsBadge>
+    </CpsAvatar>
+
+    <CpsAvatar label="João Ninguém" style={{ marginInlineStart: '1rem' }}>
+      <CpsBadge slot="badge" variant="warning">
+        8
+      </CpsBadge>
+    </CpsAvatar>
+
+    <CpsAvatar label="Erick Petrucelli" initials="auto" style={{ marginInlineStart: '1rem' }}>
+      <CpsBadge slot="badge" variant="critical" pulse>
+        6
+      </CpsBadge>
+    </CpsAvatar>
   </>
 );
 ```

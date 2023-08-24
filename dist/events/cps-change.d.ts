@@ -1,4 +1,4 @@
-type CpsChangeEvent = CustomEvent<Record<PropertyKey, never>>;
+type CpsChangeEvent = CustomEvent<Record<PropertyKey, unknown>>;
 declare global {
     interface GlobalEventHandlersEventMap {
         'cps-change': CpsChangeEvent;

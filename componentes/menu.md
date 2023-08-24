@@ -85,7 +85,7 @@ const App = () => (
 );
 ```
 
-Embora menus possam ser diretamente apresentados no corpo da página, como o exemplo acima demonstrou, eles são frequentemente usados como parte de um menu de contexto dentro de um [popover](/utilitários/popover), como parte de um menu suspenso apresentado automaticamente por componentes como o [select](/componentes/select).
+Embora menus possam ser diretamente apresentados no corpo da página, como o exemplo acima demonstrou, eles são frequentemente usados como parte de um menu de contexto dentro de um [flyout](/utilitários/flyout), como parte de um menu suspenso apresentado automaticamente por componentes como o [select](/componentes/select).
 
 ?> O componente de menu é destinados a menus de sistema (menus suspensos, menus de seleção, menus de contexto, etc.). Eles não devem ser confundidos com menus de navegação, como a barra lateral de navegação desta documentação, que servem a um propósito diferente e têm um significado semântico diferente. Se você está construindo área de navegação em sua aplicação, use os elementos `<nav>` e `<a>` em vez disso.
 

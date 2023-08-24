@@ -17,5 +17,6 @@ export default class BaseElement extends LitElement {
     lang: string;
     emit<T extends string & keyof EventTypesWithoutRequiredDetail>(name: EventTypeDoesNotRequireDetail<T>, options?: CpsEventInit<T> | undefined): GetCustomEventType<T>;
     emit<T extends string & keyof EventTypesWithRequiredDetail>(name: EventTypeRequiresDetail<T>, options: CpsEventInit<T>): GetCustomEventType<T>;
+    version: string;
 }
 export {};

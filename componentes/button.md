@@ -319,11 +319,11 @@ const App = () => (
 );
 ```
 
-?> Se você pretende utilizar botões com arredondamento `full`, contendo somente um ícone como conteúdo, para aderência ao visual dos botões [somente ícone](https://cpsrepositorio.github.io/cps-design-system/componentes/button.html#icone) do CPS Design System, é mais recomendado utilizar o componente [Icon Button](/componentes/icon-button), tanto pela sua facilidade de utilização, quanto por sua otimização para este caso de uso específico.
+?> Se você pretende utilizar botões com arredondamento `full`, contendo somente um ícone como conteúdo, para aderência ao visual dos botões [somente ícone](https://cpsrepositorio.github.io/cps-design-system/documentacao/button.html#icone) do CPS Design System, é mais recomendado utilizar o componente [Icon Button](/componentes/icon-button), tanto pela sua facilidade de utilização, quanto por sua otimização para este caso de uso específico.
 
 ### Sinalizador de menu
 
-Use o atributo `caret` para forçar um sinalizador de menu ao final do botão, em formato de acento circunflexo para baixo. Significa que, ao ser acionado, o botão exibirá algum tipo de menu de contexto, como um _dropdown_ ou _popover_.
+Use o atributo `caret` para forçar um sinalizador de menu ao final do botão, em formato de acento circunflexo para baixo. Significa que, ao ser acionado, o botão exibirá algum tipo de menu de contexto, como um _dropdown_ ou _flyout_.
 
 ```html preview
 <cps-button size="small" caret>Pequeno</cps-button>
@@ -539,6 +539,53 @@ const App = () => (
 
     <CpsButton variant="accent" disabled>
       Acentuado
+    </CpsButton>
+  </>
+);
+```
+
+### Com distintivos
+
+Um dos casos de uso mais comuns para distintivos ([_badges_](/componentes/badge)) é anexá-los a botões. Para facilitar, os _badges_ serão posicionados automaticamente no canto superior direito quando forem filhos de um botão.
+
+```html preview
+<cps-button>
+  Lembretes
+  <cps-badge>30</cps-badge>
+</cps-button>
+
+<cps-button style="margin-inline-start: 1rem">
+  Avisos
+  <cps-badge variant="warning">8</cps-badge>
+</cps-button>
+
+<cps-button style="margin-inline-start: 1rem">
+  Problemas
+  <cps-badge variant="critical" pulse>6</cps-badge>
+</cps-button>
+```
+
+```jsx react
+import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsButton } from '@cps-elements/web/react/button';
+
+const App = () => (
+  <>
+    <CpsButton>
+      Lembretes
+      <CpsBadge>30</CpsBadge>
+    </CpsButton>
+
+    <CpsButton style={{ marginInlineStart: '1rem' }}>
+      Avisos
+      <CpsBadge variant="warning">8</CpsBadge>
+    </CpsButton>
+
+    <CpsButton style={{ marginInlineStart: '1rem' }}>
+      Problemas
+      <CpsBadge variant="critical" pulse>
+        6
+      </CpsBadge>
     </CpsButton>
   </>
 );

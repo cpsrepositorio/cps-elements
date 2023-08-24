@@ -15,6 +15,7 @@
 
 - Componentes
 
+  - [Avatar](/componentes/avatar)
   - [Badge](/componentes/badge)
   - [Button](/componentes/button)
   - [Button Group](/componentes/button-group)
@@ -28,8 +29,10 @@
   - [Menu Item](/componentes/menu-item)
   - [Menu Label](/componentes/menu-label)
   - [Notification](/componentes/notification)
+  - [Option](/componentes/option)
   - [Radio](/componentes/radio)
   - [Radio Group](/componentes/radio-group)
+  - [Select](/componentes/select)
   - [Separator](/componentes/separator)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
@@ -41,8 +44,8 @@
 
 - Utilitários
 
+  - [Flyout](/utilitários/flyout)
   - [Include](/utilitários/include)
-  - [Popover](/utilitários/popover)
   - [<code>...</code> <small>(em breve)</small>](/404)
 
 - Variáveis de estilo

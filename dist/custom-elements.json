@@ -4,6 +4,308 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "components/avatar.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsAvatar",
+          "cssProperties": [
+            {
+              "description": "A medida de tamanho do avatar, utilizada tanto como `width` quanto `height`.",
+              "name": "--avatar-size"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<div>`).",
+              "name": "base"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `icon`.",
+              "name": "icon"
+            },
+            {
+              "description": "O elemento que embrulha a renderização das iniciais.",
+              "name": "initials"
+            },
+            {
+              "description": "A imagem do avatar (um `<img>`). Exibido apenas quando o atributo `image` está presente.",
+              "name": "image"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O distintivo informativo atrelado a este avatar. Recomenda-se utilizar `<cps-badge>` como conteúdo.",
+              "name": "badge"
+            },
+            {
+              "description": "O ícone a ser usado quando nenhuma imagem ou iniciais estão presentes. Recomenda-se utilizar `<cps-icon>` como conteúdo.",
+              "name": "icon"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "hasError",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "generatedInitials",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "generatedBackground",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "image",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O caminho da imagem a ser utilizada como avatar.",
+              "attribute": "image"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um rótulo que descreve a imagem, comumente o nome da entidade representada pelo avatar (por exemplo, o nome de uma pessoa). Também é utilizado para geração de iniciais, caso `initials` seja `auto`. Mesmo que não seja, considere como um atributo obrigatório, para que o avatar tenha acessibilidade apropriada.",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "initials",
+              "type": {
+                "text": "'auto' | string"
+              },
+              "default": "''",
+              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+              "attribute": "initials"
+            },
+            {
+              "kind": "field",
+              "name": "loading",
+              "type": {
+                "text": "'eager' | 'lazy'"
+              },
+              "default": "'eager'",
+              "description": "O atributo `loading` do elemento `<img>` que exibe a imagem do avatar.",
+              "attribute": "loading"
+            },
+            {
+              "kind": "field",
+              "name": "shape",
+              "type": {
+                "text": "'circle' | 'square' | 'rounded'"
+              },
+              "default": "'circle'",
+              "description": "Define a forma do avatar, circular por padrão.",
+              "attribute": "shape",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "color",
+              "type": {
+                "text": "'auto' | 'none' | string"
+              },
+              "default": "'auto'",
+              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+              "attribute": "color",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleImageChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleImageError"
+            },
+            {
+              "kind": "method",
+              "name": "handleLabelChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleRangeChanges"
+            },
+            {
+              "kind": "method",
+              "name": "updateInitials",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateBackground",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "getHash",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "str",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "normalizeHash",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "hash",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "min",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "max",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "image",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O caminho da imagem a ser utilizada como avatar.",
+              "fieldName": "image"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um rótulo que descreve a imagem, comumente o nome da entidade representada pelo avatar (por exemplo, o nome de uma pessoa). Também é utilizado para geração de iniciais, caso `initials` seja `auto`. Mesmo que não seja, considere como um atributo obrigatório, para que o avatar tenha acessibilidade apropriada.",
+              "fieldName": "label"
+            },
+            {
+              "name": "initials",
+              "type": {
+                "text": "'auto' | string"
+              },
+              "default": "''",
+              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+              "fieldName": "initials"
+            },
+            {
+              "name": "loading",
+              "type": {
+                "text": "'eager' | 'lazy'"
+              },
+              "default": "'eager'",
+              "description": "O atributo `loading` do elemento `<img>` que exibe a imagem do avatar.",
+              "fieldName": "loading"
+            },
+            {
+              "name": "shape",
+              "type": {
+                "text": "'circle' | 'square' | 'rounded'"
+              },
+              "default": "'circle'",
+              "description": "Define a forma do avatar, circular por padrão.",
+              "fieldName": "shape"
+            },
+            {
+              "name": "color",
+              "type": {
+                "text": "'auto' | 'none' | string"
+              },
+              "default": "'auto'",
+              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+              "fieldName": "color"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Avatares são usados para iconograficamente representar uma pessoa ou objeto.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/avatar",
+          "status": "stable",
+          "since": "0.8",
+          "dependencies": [
+            "cps-icon",
+            "cps-tooltip"
+          ],
+          "tagName": "cps-avatar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsAvatar",
+            "module": "components/avatar.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-avatar",
+          "declaration": {
+            "name": "CpsAvatar",
+            "module": "components/avatar.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsAvatar",
+          "declaration": {
+            "name": "CpsAvatar",
+            "module": "components/avatar.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/badge.js",
       "declarations": [
         {
@@ -1599,6 +1901,556 @@
           "declaration": {
             "name": "CpsChip",
             "module": "components/chip.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/flyout.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsFlyout",
+          "cssProperties": [
+            {
+              "description": "Tamanho da seta. Observe que independentemente desta variável, a seta não será exibida a menos que o atributo `arrow` seja utilizado.",
+              "name": "--arrow-size",
+              "default": "7px"
+            },
+            {
+              "description": "A cor de fundo do _flyout_ e de sua eventual seta (caso esteja sendo exibido em estilo balão).",
+              "name": "--background-color",
+              "default": "var(--cps-palette-neutral-500)"
+            },
+            {
+              "description": "A bordar externa contornando o _flyout_ e sua eventual seta (caso esteja sendo exibido em estilo balão).",
+              "name": "--border-color",
+              "default": "transparent"
+            },
+            {
+              "description": "Uma variável somente leitura que determina a largura máxima que o _flyout_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.",
+              "name": "--auto-size-available-width"
+            },
+            {
+              "description": "Uma variável somente leitura que determina a altura máxima que o _flyout_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.",
+              "name": "--auto-size-available-height"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "A seta do _flyout_, caso seja em estilo balão. Evite definir propriedades `top|bottom|left|right`, já que estes valores são atribuídos automaticamente conforme o )_flyout_ se move. Esta parte CSS é mais relevante para aplicar cores que combinam com seu _flyout_ personalizado, ou talvez bordas ou sombras diferenciadas.",
+              "name": "arrow"
+            },
+            {
+              "description": "O elemento base do _flyout_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _flyout_, como cor de fundo, sombras, etc.",
+              "name": "container"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo do _flyout_.",
+              "name": ""
+            },
+            {
+              "description": "O elemento que o _flyout_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _flyout_, use o _slot_ `anchor` em vez disso.",
+              "name": "anchor"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "anchorElement",
+              "type": {
+                "text": "Element | VirtualElement | null"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "cleanup",
+              "type": {
+                "text": "ReturnType<typeof autoUpdate> | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "container",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "description": "A referência ao elemento _flyout_ interno. Útil para animar e estilizar o flyout com JavaScript."
+            },
+            {
+              "kind": "field",
+              "name": "arrowElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "anchor",
+              "type": {
+                "text": "Element | string | VirtualElement"
+              },
+              "description": "O elemento ao qual o _flyout_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _flyout_, você pode fornecer a esta propriedade o `id` deste elemento, uma instância direta dele no DOM, ou ainda um `VirtualElement`. Caso contrário, se a âncora pode ser contida junto à estrutura hierárquica do próprio _flyout_, use o _slot_ `anchor` em vez disso.",
+              "attribute": "anchor"
+            },
+            {
+              "kind": "field",
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
+              "attribute": "active",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+              },
+              "default": "'top'",
+              "description": "O posicionamento preferido do _flyout_ em relação à âncora. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+              "attribute": "placement",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "strategy",
+              "type": {
+                "text": "'absolute' | 'fixed'"
+              },
+              "default": "'absolute'",
+              "description": "Estratégia a nível de CSS do posicionamento do _flyout_. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do _flyout_ (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+              "attribute": "strategy",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "distance",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
+              "attribute": "distance"
+            },
+            {
+              "kind": "field",
+              "name": "skidding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
+              "attribute": "skidding"
+            },
+            {
+              "kind": "field",
+              "name": "arrow",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
+              "attribute": "arrow"
+            },
+            {
+              "kind": "field",
+              "name": "arrowPlacement",
+              "type": {
+                "text": "'start' | 'end' | 'center' | 'anchor'"
+              },
+              "default": "'anchor'",
+              "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
+              "attribute": "arrow-placement"
+            },
+            {
+              "kind": "field",
+              "name": "arrowPadding",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\r\nSe o _flyout_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
+              "attribute": "arrow-padding"
+            },
+            {
+              "kind": "field",
+              "name": "flip",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
+              "attribute": "flip"
+            },
+            {
+              "kind": "field",
+              "name": "flipFallbackPlacements",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
+              "attribute": "flip-fallback-placements"
+            },
+            {
+              "kind": "field",
+              "name": "flipFallbackStrategy",
+              "type": {
+                "text": "'best-fit' | 'initial'"
+              },
+              "default": "'best-fit'",
+              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
+              "attribute": "flip-fallback-strategy"
+            },
+            {
+              "kind": "field",
+              "name": "flipBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
+              "attribute": "flipBoundary"
+            },
+            {
+              "kind": "field",
+              "name": "flipPadding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o comportamento de giro ocorra.",
+              "attribute": "flip-padding"
+            },
+            {
+              "kind": "field",
+              "name": "shift",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
+              "attribute": "shift"
+            },
+            {
+              "kind": "field",
+              "name": "shiftBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "attribute": "shiftBoundary"
+            },
+            {
+              "kind": "field",
+              "name": "shiftPadding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o reposicionamento no eixo ocorra.",
+              "attribute": "shift-padding"
+            },
+            {
+              "kind": "field",
+              "name": "autoSize",
+              "type": {
+                "text": "'horizontal' | 'vertical' | 'both'"
+              },
+              "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
+              "attribute": "auto-size"
+            },
+            {
+              "kind": "field",
+              "name": "sync",
+              "type": {
+                "text": "'width' | 'height' | 'both'"
+              },
+              "description": "Sincroniza a largura ou altura (ou ambos) do _flyout_ com a do seu elemento âncora.",
+              "attribute": "sync"
+            },
+            {
+              "kind": "field",
+              "name": "autoSizeBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "attribute": "autoSizeBoundary"
+            },
+            {
+              "kind": "field",
+              "name": "autoSizePadding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o auto-dimensionamento ocorra.",
+              "attribute": "auto-size-padding"
+            },
+            {
+              "kind": "method",
+              "name": "handleAnchorChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "start",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "stop",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "reposition",
+              "description": "Força o _flyout_ a se recalcular e se reposicionar."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o _flyout_ é reposicionado. Este evento pode disparar numerosas vezes, evite colocar operações custosas em seu _listener_, ou alternativamente considere usar uma estratégia de _debouce_ neste evento.",
+              "name": "cps-reposition",
+              "reactName": "onCpsReposition"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "anchor",
+              "type": {
+                "text": "Element | string | VirtualElement"
+              },
+              "description": "O elemento ao qual o _flyout_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _flyout_, você pode fornecer a esta propriedade o `id` deste elemento, uma instância direta dele no DOM, ou ainda um `VirtualElement`. Caso contrário, se a âncora pode ser contida junto à estrutura hierárquica do próprio _flyout_, use o _slot_ `anchor` em vez disso.",
+              "fieldName": "anchor"
+            },
+            {
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
+              "fieldName": "active"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+              },
+              "default": "'top'",
+              "description": "O posicionamento preferido do _flyout_ em relação à âncora. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+              "fieldName": "placement"
+            },
+            {
+              "name": "strategy",
+              "type": {
+                "text": "'absolute' | 'fixed'"
+              },
+              "default": "'absolute'",
+              "description": "Estratégia a nível de CSS do posicionamento do _flyout_. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do _flyout_ (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+              "fieldName": "strategy"
+            },
+            {
+              "name": "distance",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
+              "fieldName": "distance"
+            },
+            {
+              "name": "skidding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
+              "fieldName": "skidding"
+            },
+            {
+              "name": "arrow",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
+              "fieldName": "arrow"
+            },
+            {
+              "name": "arrow-placement",
+              "type": {
+                "text": "'start' | 'end' | 'center' | 'anchor'"
+              },
+              "default": "'anchor'",
+              "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
+              "fieldName": "arrowPlacement"
+            },
+            {
+              "name": "arrow-padding",
+              "type": {
+                "text": "number"
+              },
+              "default": "10",
+              "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\r\nSe o _flyout_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
+              "fieldName": "arrowPadding"
+            },
+            {
+              "name": "flip",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
+              "fieldName": "flip"
+            },
+            {
+              "name": "flip-fallback-placements",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
+              "fieldName": "flipFallbackPlacements"
+            },
+            {
+              "name": "flip-fallback-strategy",
+              "type": {
+                "text": "'best-fit' | 'initial'"
+              },
+              "default": "'best-fit'",
+              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
+              "fieldName": "flipFallbackStrategy"
+            },
+            {
+              "name": "flipBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
+              "fieldName": "flipBoundary"
+            },
+            {
+              "name": "flip-padding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o comportamento de giro ocorra.",
+              "fieldName": "flipPadding"
+            },
+            {
+              "name": "shift",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
+              "fieldName": "shift"
+            },
+            {
+              "name": "shiftBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "fieldName": "shiftBoundary"
+            },
+            {
+              "name": "shift-padding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o reposicionamento no eixo ocorra.",
+              "fieldName": "shiftPadding"
+            },
+            {
+              "name": "auto-size",
+              "type": {
+                "text": "'horizontal' | 'vertical' | 'both'"
+              },
+              "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
+              "fieldName": "autoSize"
+            },
+            {
+              "name": "sync",
+              "type": {
+                "text": "'width' | 'height' | 'both'"
+              },
+              "description": "Sincroniza a largura ou altura (ou ambos) do _flyout_ com a do seu elemento âncora.",
+              "fieldName": "sync"
+            },
+            {
+              "name": "autoSizeBoundary",
+              "type": {
+                "text": "Element | Element[]"
+              },
+              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "fieldName": "autoSizeBoundary"
+            },
+            {
+              "name": "auto-size-padding",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o auto-dimensionamento ocorra.",
+              "fieldName": "autoSizePadding"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "_Flyout_ é um utilitário que permite ancorar caixas flutuantes declarativamente a outro elemento.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/flyout",
+          "status": "stable",
+          "since": "0.5",
+          "tagName": "cps-flyout",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsFlyout",
+            "module": "components/flyout.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-flyout",
+          "declaration": {
+            "name": "CpsFlyout",
+            "module": "components/flyout.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsFlyout",
+          "declaration": {
+            "name": "CpsFlyout",
+            "module": "components/flyout.js"
           }
         }
       ]
@@ -4107,524 +4959,176 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/popover.js",
+      "path": "components/option.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "CpsPopover",
-          "cssProperties": [
-            {
-              "description": "Tamanho da seta. Observe que independentemente desta variável, a seta não será exibida a menos que o atributo `arrow` seja utilizado.",
-              "name": "--arrow-size",
-              "default": "7px"
-            },
-            {
-              "description": "A cor de fundo do _popover_ e de sua eventual seta (caso esteja sendo exibido em estilo balão).",
-              "name": "--background-color",
-              "default": "var(--cps-palette-neutral-500)"
-            },
-            {
-              "description": "A bordar externa contornando o _popover_ e sua eventual seta (caso esteja sendo exibido em estilo balão).",
-              "name": "--border-color",
-              "default": "transparent"
-            },
-            {
-              "description": "Uma variável somente leitura que determina a largura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.",
-              "name": "--auto-size-available-width"
-            },
-            {
-              "description": "Uma variável somente leitura que determina a altura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.",
-              "name": "--auto-size-available-height"
-            }
-          ],
+          "name": "CpsOption",
           "cssParts": [
             {
-              "description": "A seta do _popover_, caso seja em estilo balão. Evite definir propriedades `top|bottom|left|right`, já que estes valores são atribuídos automaticamente conforme o )_popover_ se move. Esta parte CSS é mais relevante para aplicar cores que combinam com seu _popover_ personalizado, ou talvez bordas ou sombras diferenciadas.",
-              "name": "arrow"
+              "description": "O elemento principal propriamente dito (um `<div>`).",
+              "name": "base"
             },
             {
-              "description": "O elemento base do _popover_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _popover_, como cor de fundo, sombras, etc.",
-              "name": "container"
+              "description": "O elemento que embrulha o ícone de checagem (caso a opção esteja dentro de uma caixa de seleção múltipla), visível apenas quando a opção está marcada.",
+              "name": "check"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
+              "name": "prefix"
+            },
+            {
+              "description": "O elemento que embrulha o conteúdo principal, normalmente um texto literal.",
+              "name": "label"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `suffix`.",
+              "name": "suffix"
             }
           ],
           "slots": [
             {
-              "description": "O conteúdo do _popover_.",
+              "description": "O texto interno da opção.",
               "name": ""
             },
             {
-              "description": "O elemento que o _popover_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _popover_, use o _slot_ `anchor` em vez disso.",
-              "name": "anchor"
+              "description": "Um ícone ou elemento similar antes do conteúdo principal.",
+              "name": "prefix"
+            },
+            {
+              "description": "Um ícone ou elemento similar após o conteúdo principal.",
+              "name": "suffix"
             }
           ],
           "members": [
             {
               "kind": "field",
-              "name": "anchorEl",
+              "name": "cachedTextLabel",
               "type": {
-                "text": "Element | null"
+                "text": "string"
               },
               "privacy": "private"
             },
             {
               "kind": "field",
-              "name": "cleanup",
-              "type": {
-                "text": "ReturnType<typeof autoUpdate> | undefined"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "container",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "description": "A referência ao elemento _popover_ interno. Útil para animar e estilizar o popover com JavaScript."
-            },
-            {
-              "kind": "field",
-              "name": "arrowElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "anchor",
-              "type": {
-                "text": "Element | string"
-              },
-              "description": "O elemento que o _popover_ será ancorado.\r\nSe o elemento estiver fora da estrutura hierárquica do _popover_,\r\nvocê pode fornecer o `id` deste elemento ou mesmo uma instância direta dele, atribuindo a esta propriedade.\r\nCaso contrário, se a âncora pode ser contida junto ao _popover_, use o _slot_ `anchor` em vez disso.",
-              "attribute": "anchor"
-            },
-            {
-              "kind": "field",
-              "name": "active",
+              "name": "current",
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
-              "description": "Ativa a lógica de posicionamento e mostra o _popover_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _popover_ será ocultado.",
-              "attribute": "active",
-              "reflects": true
+              "default": "false"
             },
             {
               "kind": "field",
-              "name": "placement",
-              "type": {
-                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
-              },
-              "default": "'top'",
-              "description": "O posicionamento preferido do _popover_ em relação à âncora.\r\nObserve que o posicionamento real poderá variar conforme configurado para manter o painel dentro da janela de visualização.",
-              "attribute": "placement",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "strategy",
-              "type": {
-                "text": "'absolute' | 'fixed'"
-              },
-              "default": "'absolute'",
-              "description": "Determinar como o _popover_ é posicionado.\r\nA estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do _popover_, usar uma estratégia de posição `fixed` pode contorná-lo.",
-              "attribute": "strategy",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "distance",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A distância em pixels do _popover_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.",
-              "attribute": "distance"
-            },
-            {
-              "kind": "field",
-              "name": "skidding",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A distância em pixels do _popover_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.",
-              "attribute": "skidding"
-            },
-            {
-              "kind": "field",
-              "name": "arrow",
+              "name": "selected",
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
-              "description": "Anexa uma seta ao _popover_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
-              "attribute": "arrow"
+              "default": "false"
             },
             {
               "kind": "field",
-              "name": "arrowPlacement",
-              "type": {
-                "text": "'start' | 'end' | 'center' | 'anchor'"
-              },
-              "default": "'anchor'",
-              "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _popover_.",
-              "attribute": "arrow-placement"
-            },
-            {
-              "kind": "field",
-              "name": "arrowPadding",
-              "type": {
-                "text": "number"
-              },
-              "default": "10",
-              "description": "A quantidade de espaço entre a seta e as bordas do _popover_.\r\nSe o _popover_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
-              "attribute": "arrow-padding"
-            },
-            {
-              "kind": "field",
-              "name": "flip",
+              "name": "hasHover",
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
-              "description": "Quando definido, o _popover_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
-              "attribute": "flip"
+              "default": "false"
             },
             {
               "kind": "field",
-              "name": "flipFallbackPlacements",
+              "name": "type",
+              "type": {
+                "text": "'normal' | 'checkbox'"
+              },
+              "default": "'normal'"
+            },
+            {
+              "kind": "field",
+              "name": "value",
               "type": {
                 "text": "string"
               },
               "default": "''",
-              "description": "Se o posicionamento preferido não atender, o _popover_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
-              "attribute": "flip-fallback-placements"
+              "description": "Um valor único para identificar a opção. Quando é selecionada, o controle de formulário contendo a opção receberá este valor. O valor deve ser único dentre outras opções no mesmo controle. Os valores não podem conter espaços, pois espaços são usados como separadores em controles com seleção múltipla.",
+              "attribute": "value",
+              "reflects": true
             },
             {
               "kind": "field",
-              "name": "flipFallbackStrategy",
-              "type": {
-                "text": "'best-fit' | 'initial'"
-              },
-              "default": "'best-fit'",
-              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _popover_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
-              "attribute": "flip-fallback-strategy"
-            },
-            {
-              "kind": "field",
-              "name": "flipBoundary",
-              "type": {
-                "text": "Element | Element[]"
-              },
-              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _popover_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
-              "attribute": "flipBoundary"
-            },
-            {
-              "kind": "field",
-              "name": "flipPadding",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o comportamento de giro ocorra.",
-              "attribute": "flip-padding"
-            },
-            {
-              "kind": "field",
-              "name": "shift",
+              "name": "disabled",
               "type": {
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Permite reposicionar o _popover_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _popover_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _popover_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
-              "attribute": "shift"
-            },
-            {
-              "kind": "field",
-              "name": "shiftBoundary",
-              "type": {
-                "text": "Element | Element[]"
-              },
-              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _popover_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
-              "attribute": "shiftBoundary"
-            },
-            {
-              "kind": "field",
-              "name": "shiftPadding",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o reposicionamento no eixo ocorra.",
-              "attribute": "shift-padding"
-            },
-            {
-              "kind": "field",
-              "name": "autoSize",
-              "type": {
-                "text": "'horizontal' | 'vertical' | 'both'"
-              },
-              "description": "Quando definido, permite que o _popover_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
-              "attribute": "auto-size"
-            },
-            {
-              "kind": "field",
-              "name": "sync",
-              "type": {
-                "text": "'width' | 'height' | 'both'"
-              },
-              "description": "Sincroniza a largura ou altura (ou ambos) do _popover_ com a do seu elemento âncora.",
-              "attribute": "sync"
-            },
-            {
-              "kind": "field",
-              "name": "autoSizeBoundary",
-              "type": {
-                "text": "Element | Element[]"
-              },
-              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _popover_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
-              "attribute": "autoSizeBoundary"
-            },
-            {
-              "kind": "field",
-              "name": "autoSizePadding",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o auto-dimensionamento ocorra.",
-              "attribute": "auto-size-padding"
+              "description": "Desabilita a opção.",
+              "attribute": "disabled",
+              "reflects": true
             },
             {
               "kind": "method",
-              "name": "handleAnchorChange",
+              "name": "handleDefaultSlotChange",
               "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "start",
+              "name": "handleMouseEnter",
               "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "stop",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "Promise<void>"
-                }
-              }
+              "name": "handleMouseLeave",
+              "privacy": "private"
             },
             {
               "kind": "method",
-              "name": "reposition",
-              "description": "Força o _popover_ a se recalcular e se reposicionar."
-            }
-          ],
-          "events": [
+              "name": "handleDisabledChange"
+            },
             {
-              "description": "Emitido quando o _popover_ é reposicionado. Este evento pode disparar numerosas vezes, evite colocar operações custosas em seu _listener_, ou alternativamente considere usar uma estratégia de _debouce_ neste evento.",
-              "name": "cps-reposition",
-              "reactName": "onCpsReposition"
+              "kind": "method",
+              "name": "handleSelectedChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleValueChange"
+            },
+            {
+              "kind": "method",
+              "name": "getTextLabel",
+              "description": "Obtém o texto literal a partir do conteúdo do _slot_ padrão da opção."
             }
           ],
           "attributes": [
             {
-              "name": "anchor",
-              "type": {
-                "text": "Element | string"
-              },
-              "description": "O elemento que o _popover_ será ancorado.\r\nSe o elemento estiver fora da estrutura hierárquica do _popover_,\r\nvocê pode fornecer o `id` deste elemento ou mesmo uma instância direta dele, atribuindo a esta propriedade.\r\nCaso contrário, se a âncora pode ser contida junto ao _popover_, use o _slot_ `anchor` em vez disso.",
-              "fieldName": "anchor"
-            },
-            {
-              "name": "active",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Ativa a lógica de posicionamento e mostra o _popover_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _popover_ será ocultado.",
-              "fieldName": "active"
-            },
-            {
-              "name": "placement",
-              "type": {
-                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
-              },
-              "default": "'top'",
-              "description": "O posicionamento preferido do _popover_ em relação à âncora.\r\nObserve que o posicionamento real poderá variar conforme configurado para manter o painel dentro da janela de visualização.",
-              "fieldName": "placement"
-            },
-            {
-              "name": "strategy",
-              "type": {
-                "text": "'absolute' | 'fixed'"
-              },
-              "default": "'absolute'",
-              "description": "Determinar como o _popover_ é posicionado.\r\nA estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do _popover_, usar uma estratégia de posição `fixed` pode contorná-lo.",
-              "fieldName": "strategy"
-            },
-            {
-              "name": "distance",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A distância em pixels do _popover_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.",
-              "fieldName": "distance"
-            },
-            {
-              "name": "skidding",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A distância em pixels do _popover_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.",
-              "fieldName": "skidding"
-            },
-            {
-              "name": "arrow",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Anexa uma seta ao _popover_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
-              "fieldName": "arrow"
-            },
-            {
-              "name": "arrow-placement",
-              "type": {
-                "text": "'start' | 'end' | 'center' | 'anchor'"
-              },
-              "default": "'anchor'",
-              "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _popover_.",
-              "fieldName": "arrowPlacement"
-            },
-            {
-              "name": "arrow-padding",
-              "type": {
-                "text": "number"
-              },
-              "default": "10",
-              "description": "A quantidade de espaço entre a seta e as bordas do _popover_.\r\nSe o _popover_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
-              "fieldName": "arrowPadding"
-            },
-            {
-              "name": "flip",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Quando definido, o _popover_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
-              "fieldName": "flip"
-            },
-            {
-              "name": "flip-fallback-placements",
+              "name": "value",
               "type": {
                 "text": "string"
               },
               "default": "''",
-              "description": "Se o posicionamento preferido não atender, o _popover_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
-              "fieldName": "flipFallbackPlacements"
+              "description": "Um valor único para identificar a opção. Quando é selecionada, o controle de formulário contendo a opção receberá este valor. O valor deve ser único dentre outras opções no mesmo controle. Os valores não podem conter espaços, pois espaços são usados como separadores em controles com seleção múltipla.",
+              "fieldName": "value"
             },
             {
-              "name": "flip-fallback-strategy",
-              "type": {
-                "text": "'best-fit' | 'initial'"
-              },
-              "default": "'best-fit'",
-              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _popover_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
-              "fieldName": "flipFallbackStrategy"
-            },
-            {
-              "name": "flipBoundary",
-              "type": {
-                "text": "Element | Element[]"
-              },
-              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _popover_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
-              "fieldName": "flipBoundary"
-            },
-            {
-              "name": "flip-padding",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o comportamento de giro ocorra.",
-              "fieldName": "flipPadding"
-            },
-            {
-              "name": "shift",
+              "name": "disabled",
               "type": {
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Permite reposicionar o _popover_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _popover_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _popover_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
-              "fieldName": "shift"
-            },
-            {
-              "name": "shiftBoundary",
-              "type": {
-                "text": "Element | Element[]"
-              },
-              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _popover_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
-              "fieldName": "shiftBoundary"
-            },
-            {
-              "name": "shift-padding",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o reposicionamento no eixo ocorra.",
-              "fieldName": "shiftPadding"
-            },
-            {
-              "name": "auto-size",
-              "type": {
-                "text": "'horizontal' | 'vertical' | 'both'"
-              },
-              "description": "Quando definido, permite que o _popover_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
-              "fieldName": "autoSize"
-            },
-            {
-              "name": "sync",
-              "type": {
-                "text": "'width' | 'height' | 'both'"
-              },
-              "description": "Sincroniza a largura ou altura (ou ambos) do _popover_ com a do seu elemento âncora.",
-              "fieldName": "sync"
-            },
-            {
-              "name": "autoSizeBoundary",
-              "type": {
-                "text": "Element | Element[]"
-              },
-              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _popover_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
-              "fieldName": "autoSizeBoundary"
-            },
-            {
-              "name": "auto-size-padding",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "description": "A quantidade de espaço, em pixels, a ser excedido antes que o auto-dimensionamento ocorra.",
-              "fieldName": "autoSizePadding"
+              "description": "Desabilita a opção.",
+              "fieldName": "disabled"
             }
           ],
           "superclass": {
             "name": "BaseElement",
             "module": "/src/internal/base-element.js"
           },
-          "summary": "_Popover_ é um utilitário que permite ancorar caixas flutuantes declarativamente a outro elemento.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/popover",
+          "summary": "Opções definem os itens selecionáveis dentro de controles de formulário, como no [Select](/componentes/select).",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/option",
           "status": "stable",
-          "since": "0.5",
-          "tagName": "cps-popover",
+          "since": "0.8",
+          "dependencies": [
+            "cps-icon"
+          ],
+          "tagName": "cps-option",
           "customElement": true
         }
       ],
@@ -4633,24 +5137,24 @@
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "CpsPopover",
-            "module": "components/popover.js"
+            "name": "CpsOption",
+            "module": "components/option.js"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "cps-popover",
+          "name": "cps-option",
           "declaration": {
-            "name": "CpsPopover",
-            "module": "components/popover.js"
+            "name": "CpsOption",
+            "module": "components/option.js"
           }
         },
         {
           "kind": "js",
-          "name": "CpsPopover",
+          "name": "CpsOption",
           "declaration": {
-            "name": "CpsPopover",
-            "module": "components/popover.js"
+            "name": "CpsOption",
+            "module": "components/option.js"
           }
         }
       ]
@@ -5426,6 +5930,972 @@
           "declaration": {
             "name": "CpsRadio",
             "module": "components/radio.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/select.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsSelect",
+          "cssParts": [
+            {
+              "description": "O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.",
+              "name": "form-control"
+            },
+            {
+              "description": "Elemento que embrulha o rótulo do controle de formulário.",
+              "name": "form-control-label"
+            },
+            {
+              "description": "Elemento que embrulha o campo do controle de formulário.",
+              "name": "form-control-input"
+            },
+            {
+              "description": "Elemento que embrulha o texto de apoio do controle de formulário.",
+              "name": "form-control-help-text"
+            },
+            {
+              "description": "O elemento base que embrulha o campo de entrada de dados, o ícone de expansão, e eventuais prefixo e botão de limpar.",
+              "name": "field"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
+              "name": "prefix"
+            },
+            {
+              "description": "O controle interno propriamente dito (um `<input>`), o qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.",
+              "name": "input"
+            },
+            {
+              "description": "O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.",
+              "name": "menu"
+            },
+            {
+              "description": "O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiselect` está em uso.",
+              "name": "chips"
+            },
+            {
+              "description": "Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiselect` está em uso.",
+              "name": "chip"
+            },
+            {
+              "description": "A parte `base` re-exportada de cada _chip_ de seleção múltipla.",
+              "name": "chip__base"
+            },
+            {
+              "description": "A parte `content` re-exportada de cada _chip_ de seleção múltipla.",
+              "name": "chip__content"
+            },
+            {
+              "description": "O botão de remoção re-exportado de cada _chip_ de seleção múltipla.",
+              "name": "chip__remove-button"
+            },
+            {
+              "description": "A parte `base` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.",
+              "name": "chip__remove-button__base"
+            },
+            {
+              "description": "A parte `icon` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.",
+              "name": "chip__remove-button__icon"
+            },
+            {
+              "description": "O botão de limpar o campo (caso `clearable` esteja em uso).",
+              "name": "clear-button"
+            },
+            {
+              "description": "A parte `base` re-exportada do botão de limpar.",
+              "name": "clear-button__base"
+            },
+            {
+              "description": "A parte `icon` re-exportada do botão de limpar.",
+              "name": "clear-button__icon"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `expand-icon`.",
+              "name": "expand-icon"
+            }
+          ],
+          "slots": [
+            {
+              "description": "As opções da lista suspensa. Cada opção deve ser um `<cps-option>`. Opcionalmente, também pode conter `<cps-separator>` e `<cps-label>` para agrupar itens visualmente.",
+              "name": ""
+            },
+            {
+              "description": "Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.",
+              "name": "label"
+            },
+            {
+              "description": "Um ícone ou elemento similar antes do conteúdo principal.",
+              "name": "prefix"
+            },
+            {
+              "description": "Indicador que demonstra se o controle está expandido ou contraído (idealmente, um `<cps-icon>`). Se rotaciona de acordo com a abertura e o fechamento da lista suspensa.",
+              "name": "expand-icon"
+            },
+            {
+              "description": "Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.",
+              "name": "help-text"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formControlController",
+              "privacy": "private",
+              "default": "new FormControlController(this, {\r\n    assumeInteractionOn: ['cps-blur', 'cps-input']\r\n  })"
+            },
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, 'help-text', 'label')"
+            },
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "typeToSelectString",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "typeToSelectTimeout",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "flyout",
+              "type": {
+                "text": "CpsFlyout"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "field",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "displayInput",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueInput",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "menu",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "generatedId",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "displayLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "currentOption",
+              "type": {
+                "text": "CpsOption"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selectedOptions",
+              "type": {
+                "text": "CpsOption[]"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "id",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "attribute": "id"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | string[]"
+              },
+              "default": "''",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "defaultValue",
+              "type": {
+                "text": "string | string[]"
+              },
+              "default": "''",
+              "description": "O valor padrão do controle de formulário. Usado principalmente para redefinir o campo."
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+              "attribute": "placeholder"
+            },
+            {
+              "kind": "field",
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a possibilidade de selecionar mais de uma opção.",
+              "attribute": "multiple",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "maxOptionsVisible",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\r\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\r\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
+              "attribute": "max-options-visible"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o campo.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+              "attribute": "clearable"
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "strategy",
+              "type": {
+                "text": "'absolute' | 'fixed'"
+              },
+              "default": "'absolute'",
+              "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+              "attribute": "strategy",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'bottom'"
+              },
+              "default": "'bottom'",
+              "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+              "attribute": "placement",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "helpText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+              "attribute": "help-text"
+            },
+            {
+              "kind": "field",
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "attribute": "form",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Torna o campo como sendo de preenchimento obrigatório.",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "description": "Obtém o objeto de estado de validade do campo."
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "description": "Obtém a mensagem de validação do campo."
+            },
+            {
+              "kind": "method",
+              "name": "handleIdChange"
+            },
+            {
+              "kind": "method",
+              "name": "addOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "removeOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDocumentFocusIn",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleDocumentKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleDocumentMouseDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleComboboxMouseDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleComboboxKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleClearClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleClearMouseDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleOptionClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleDefaultSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleTagRemove",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "CpsRemoveEvent"
+                  }
+                },
+                {
+                  "name": "option",
+                  "type": {
+                    "text": "CpsOption"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getAllLabels",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "getAllOptions",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "getFirstOption",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "setCurrentOption",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "option",
+                  "type": {
+                    "text": "CpsOption | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "setSelectedOptions",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "option",
+                  "type": {
+                    "text": "CpsOption | CpsOption[]"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "toggleOptionSelection",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "option",
+                  "type": {
+                    "text": "CpsOption"
+                  }
+                },
+                {
+                  "name": "force",
+                  "optional": true,
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "selectionChanged",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleInvalid",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleValueChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleOpenChange"
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "description": "Exibe o menu seletor de opções."
+            },
+            {
+              "kind": "method",
+              "name": "hide",
+              "description": "Oculta o menu seletor de opções."
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido."
+            },
+            {
+              "kind": "method",
+              "name": "getForm",
+              "return": {
+                "type": {
+                  "text": "HTMLFormElement | null"
+                }
+              },
+              "description": "Obtém o formulário associado com este componente, se algum estiver."
+            },
+            {
+              "kind": "method",
+              "name": "reportValidity",
+              "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido."
+            },
+            {
+              "kind": "method",
+              "name": "setCustomValidity",
+              "parameters": [
+                {
+                  "name": "message",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento."
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Coloca o foco no campo."
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Remove o foco do campo."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando a alteração do valor do controle é confirmada pelo usuário.",
+              "name": "cps-change",
+              "reactName": "onCpsChange"
+            },
+            {
+              "description": "Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).",
+              "name": "cps-clear",
+              "reactName": "onCpsClear"
+            },
+            {
+              "description": "Emitido quando o controle recebe entrada de dados.",
+              "name": "cps-input",
+              "reactName": "onCpsInput"
+            },
+            {
+              "description": "Emitido quando o controle obtém o foco.",
+              "name": "cps-focus",
+              "reactName": "onCpsFocus"
+            },
+            {
+              "description": "Emitido quando o controle perde o foco.",
+              "name": "cps-blur",
+              "reactName": "onCpsBlur"
+            },
+            {
+              "description": "Emitido quando a lista suspensa de opções começa a ser exibida.",
+              "name": "cps-show",
+              "reactName": "onCpsShow"
+            },
+            {
+              "description": "Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas.",
+              "name": "cps-after-show",
+              "reactName": "onCpsAfterShow"
+            },
+            {
+              "description": "Emitido quando a lista suspensa de opções começa a ser ocultada.",
+              "name": "cps-hide",
+              "reactName": "onCpsHide"
+            },
+            {
+              "description": "Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas.",
+              "name": "cps-after-hide",
+              "reactName": "onCpsAfterHide"
+            },
+            {
+              "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.",
+              "name": "cps-invalid",
+              "reactName": "onCpsInvalid"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "id",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "fieldName": "id"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "fieldName": "name"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | string[]"
+              },
+              "default": "''",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
+              "fieldName": "value"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo.",
+              "fieldName": "size"
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+              "fieldName": "placeholder"
+            },
+            {
+              "name": "multiple",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a possibilidade de selecionar mais de uma opção.",
+              "fieldName": "multiple"
+            },
+            {
+              "name": "max-options-visible",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\r\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\r\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
+              "fieldName": "maxOptionsVisible"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o campo.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+              "fieldName": "clearable"
+            },
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
+              "fieldName": "open"
+            },
+            {
+              "name": "strategy",
+              "type": {
+                "text": "'absolute' | 'fixed'"
+              },
+              "default": "'absolute'",
+              "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+              "fieldName": "strategy"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "fieldName": "label"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'bottom'"
+              },
+              "default": "'bottom'",
+              "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+              "fieldName": "placement"
+            },
+            {
+              "name": "help-text",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+              "fieldName": "helpText"
+            },
+            {
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "fieldName": "form"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Torna o campo como sendo de preenchimento obrigatório.",
+              "fieldName": "required"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Caixas de seleção permitem escolher itens de um menu de opções predefinidas.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/select",
+          "status": "stable",
+          "since": "0.8",
+          "dependencies": [
+            "cps-icon",
+            "cps-icon-button",
+            "cps-flyout",
+            "cps-chip"
+          ],
+          "animations": [
+            {
+              "name": "select.show",
+              "description": "A animação a ser usada ao exibir a lista de opções."
+            },
+            {
+              "name": "select.hide",
+              "description": "A animação a ser usada ao ocultar a lista de opções."
+            }
+          ],
+          "tagName": "cps-select",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsSelect",
+            "module": "components/select.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-select",
+          "declaration": {
+            "name": "CpsSelect",
+            "module": "components/select.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsSelect",
+          "declaration": {
+            "name": "CpsSelect",
+            "module": "components/select.js"
           }
         }
       ]
@@ -6821,15 +8291,15 @@
           ],
           "cssParts": [
             {
-              "description": "O elemento base que embrulha o componente (um elemento `<cps-popover>`).",
+              "description": "O elemento base que embrulha o componente (um elemento `<cps-flyout>`).",
               "name": "base"
             },
             {
-              "description": "A parte CSS `container` exportada do _popover_ base. Use-a para atingir o contêiner do elemento `<cps-popover>` base, para estilizações avançadas deste.",
+              "description": "A parte CSS `container` exportada do _flyout_ base. Use-a para atingir o contêiner do elemento `<cps-flyout>` base, para estilizações avançadas deste.",
               "name": "base__container"
             },
             {
-              "description": "A parte CSS `arrow` exportada do _popover_ base. Use-a para atingir a seta do elemento `<cps-popover>` base, para estilizações avançadas desta.",
+              "description": "A parte CSS `arrow` exportada do _flyout_ base. Use-a para atingir a seta do elemento `<cps-flyout>` base, para estilizações avançadas desta.",
               "name": "base__container"
             },
             {
@@ -6878,9 +8348,9 @@
             },
             {
               "kind": "field",
-              "name": "popover",
+              "name": "flyout",
               "type": {
-                "text": "CpsPopover"
+                "text": "CpsFlyout"
               }
             },
             {
@@ -6921,7 +8391,7 @@
                 "text": "number"
               },
               "default": "10",
-              "description": "A distância em pixels do _popover_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.",
+              "description": "A distância em pixels do _flyout_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
               "attribute": "distance"
             },
             {
@@ -6931,7 +8401,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "A distância em pixels do _popover_ no eixo de deslocamento de seu elemento alvo.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.",
+              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de seu elemento alvo.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
               "attribute": "skidding"
             },
             {
@@ -7095,7 +8565,7 @@
                 "text": "number"
               },
               "default": "10",
-              "description": "A distância em pixels do _popover_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.",
+              "description": "A distância em pixels do _flyout_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
               "fieldName": "distance"
             },
             {
@@ -7104,7 +8574,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "A distância em pixels do _popover_ no eixo de deslocamento de seu elemento alvo.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.",
+              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de seu elemento alvo.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
               "fieldName": "skidding"
             },
             {
@@ -7144,7 +8614,7 @@
           "status": "stable",
           "since": "0.5",
           "dependencies": [
-            "cps-popover"
+            "cps-flyout"
           ],
           "animations": [
             {
@@ -7433,7 +8903,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.7.2",
+    "version": "0.8.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"
