@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Added
 
 - Criação do componente `<cps-avatar>`.
+- Criação do componente `<cps-option>`.
 
 ### Changed
 

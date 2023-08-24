@@ -29,6 +29,7 @@
   - [Menu Item](/componentes/menu-item)
   - [Menu Label](/componentes/menu-label)
   - [Notification](/componentes/notification)
+  - [Option](/componentes/option)
   - [Radio](/componentes/radio)
   - [Radio Group](/componentes/radio-group)
   - [Separator](/componentes/separator)
