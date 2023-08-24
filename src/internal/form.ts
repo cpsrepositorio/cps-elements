@@ -326,12 +326,7 @@ export class FormControlController implements ReactiveController {
     const hasInteracted = Boolean(userInteractedControls.has(host));
     const required = Boolean(host.required);
 
-    //
-    // We're mapping the following "states" to data attributes. In the future, we can use ElementInternals.states to
-    // create a similar mapping, but instead of [data-invalid] it will look like :--invalid.
-    //
-    // See this RFC for more details: https://github.com/cpsrepositorio/cps-elements/issues/1011
-    //
+    // We're mapping the following "states" to data attributes. In the future, we can use ElementInternals.states to create a similar mapping, but instead of [data-invalid] it will look like :--invalid.
     host.toggleAttribute('data-required', required);
     host.toggleAttribute('data-optional', !required);
     host.toggleAttribute('data-invalid', !isValid);

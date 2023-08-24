@@ -505,8 +505,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
         list.appendChild(item);
 
         /*
-        // Wrap it with a tooltip the first time the mouse lands on it. We do this instead of baking them into the DOM
-        // to improve this page's performance. See: https://github.com/cpsrepositorio/cps-elements/issues/1122
+        // Wrap it with a tooltip the first time the mouse lands on it. We do this instead of baking them into the DOM to improve this page's performance.
         item.addEventListener('mouseover', () => wrapWithTooltip(item), { once: true });
 
         // Copy on click
