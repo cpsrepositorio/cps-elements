@@ -19,6 +19,6 @@ export default css`
   }
 
   ::slotted(cps-separator) {
-    --spacing: var(--cps-spacing-1);
+    margin: var(--cps-spacing-0-5) calc(var(--cps-spacing-0-5) * -1);
   }
 `;
