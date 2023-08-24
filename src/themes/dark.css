@@ -60,7 +60,7 @@
 
   /* Neutral */
   --cps-color-system-neutral: rgb(157 157 157);
-  --cps-color-system-neutral-transparent: rgb(255 255 255 / 54.42%);
+  --cps-color-system-neutral-transparent: rgb(255 255 255 / 35%);
   --cps-color-system-neutral-subtle: rgb(255 255 255 / 3.26%);
 
   /* Informative */

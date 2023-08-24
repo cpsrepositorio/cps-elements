@@ -15,6 +15,7 @@ export default css`
     justify-content: center;
     border: solid 1px;
     border-radius: var(--cps-border-radius-small);
+    background-clip: padding-box;
     white-space: nowrap;
     user-select: none;
   }
