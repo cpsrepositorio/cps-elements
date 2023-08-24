@@ -323,7 +323,7 @@ const App = () => (
 
 ### Sinalizador de menu
 
-Use o atributo `caret` para forçar um sinalizador de menu ao final do botão, em formato de acento circunflexo para baixo. Significa que, ao ser acionado, o botão exibirá algum tipo de menu de contexto, como um _dropdown_ ou _popover_.
+Use o atributo `caret` para forçar um sinalizador de menu ao final do botão, em formato de acento circunflexo para baixo. Significa que, ao ser acionado, o botão exibirá algum tipo de menu de contexto, como um _dropdown_ ou _flyout_.
 
 ```html preview
 <cps-button size="small" caret>Pequeno</cps-button>

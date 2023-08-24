@@ -29,7 +29,7 @@ const App = () => (
 
 ### Posicionamento
 
-Use o atributo `placement` para informar ao _tooltip_ seu posicionamento preferido. Observe que a posição real poderá variar para garantir que permaneça na janela de visualização. Mais informações sobre posicionamento dinâmico no utilitário [`cps-popover`](/docs/utilitarios/popover), o qual é utilizado internamente pela dica de ferramenta.
+Use o atributo `placement` para informar ao _tooltip_ seu posicionamento preferido. Observe que a posição real poderá variar para garantir que permaneça na janela de visualização. Mais informações sobre posicionamento dinâmico no utilitário [`cps-flyout`](/docs/utilitarios/flyout), o qual é utilizado internamente pela dica de ferramenta.
 
 ```html preview
 <div class="tooltip-placement-example">

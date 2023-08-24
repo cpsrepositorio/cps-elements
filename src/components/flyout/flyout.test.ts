@@ -1,8 +1,8 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
-describe('<cps-popover>', () => {
+describe('<cps-flyout>', () => {
   it('should render a component', async () => {
-    const el = await fixture(html` <cps-popover></cps-popover> `);
+    const el = await fixture(html` <cps-flyout></cps-flyout> `);
 
     expect(el).to.exist;
   });

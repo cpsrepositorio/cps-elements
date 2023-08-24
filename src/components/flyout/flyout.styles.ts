@@ -15,7 +15,7 @@ export default css`
     display: contents;
   }
 
-  .popover {
+  .flyout {
     position: absolute;
     outline: 1px solid var(--border-color);
     isolation: isolate;
@@ -24,11 +24,11 @@ export default css`
     max-height: var(--auto-size-available-height, none);
   }
 
-  .popover--fixed {
+  .flyout--fixed {
     position: fixed;
   }
 
-  .popover:not(.popover--active) {
+  .flyout:not(.flyout--active) {
     display: none;
   }
 

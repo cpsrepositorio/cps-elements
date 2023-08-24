@@ -26,19 +26,19 @@ export default css`
     filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
   }
 
-  .tooltip[placement^='top']::part(popover) {
+  .tooltip[placement^='top']::part(flyout) {
     transform-origin: bottom;
   }
 
-  .tooltip[placement^='bottom']::part(popover) {
+  .tooltip[placement^='bottom']::part(flyout) {
     transform-origin: top;
   }
 
-  .tooltip[placement^='left']::part(popover) {
+  .tooltip[placement^='left']::part(flyout) {
     transform-origin: right;
   }
 
-  .tooltip[placement^='right']::part(popover) {
+  .tooltip[placement^='right']::part(flyout) {
     transform-origin: left;
   }
 

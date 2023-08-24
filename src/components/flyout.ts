@@ -4,62 +4,62 @@ import { customElement, property, query } from 'lit/decorators.js';
 import { html } from 'lit';
 import { offsetParent } from 'composed-offset-position';
 import BaseElement from '../internal/base-element.js';
-import styles from './popover/popover.styles.js';
+import styles from './flyout/flyout.styles.js';
 import type { CSSResultGroup } from 'lit';
 
+export interface VirtualElement {
+  getBoundingClientRect: () => DOMRect;
+}
+
+function isVirtualElement(e: unknown): e is VirtualElement {
+  return e !== null && typeof e === 'object' && 'getBoundingClientRect' in e;
+}
+
 /**
- * @summary _Popover_ é um utilitário que permite ancorar caixas flutuantes declarativamente a outro elemento.
- * @documentation https://cpsrepositorio.github.io/cps-elements/#/utilitários/popover
+ * @summary _Flyout_ é um utilitário que permite ancorar caixas flutuantes declarativamente a outro elemento.
+ * @documentation https://cpsrepositorio.github.io/cps-elements/#/utilitários/flyout
  * @status stable
  * @since 0.5
  *
- * @event cps-reposition - Emitido quando o _popover_ é reposicionado.
+ * @event cps-reposition - Emitido quando o _flyout_ é reposicionado.
  * Este evento pode disparar numerosas vezes, evite colocar operações custosas em seu _listener_,
  * ou alternativamente considere usar uma estratégia de _debouce_ neste evento.
  *
- * @slot - O conteúdo do _popover_.
- * @slot anchor - O elemento que o _popover_ será ancorado.
- * Se o elemento estiver fora da estrutura hierárquica do _popover_, use o _slot_ `anchor` em vez disso.
+ * @slot - O conteúdo do _flyout_.
+ * @slot anchor - O elemento que o _flyout_ será ancorado.
+ * Se o elemento estiver fora da estrutura hierárquica do _flyout_, use o _slot_ `anchor` em vez disso.
  *
- * @csspart arrow - A seta do _popover_, caso seja em estilo balão.
- * Evite definir propriedades `top|bottom|left|right`, já que estes valores são atribuídos automaticamente conforme o )_popover_ se move. Esta parte CSS é mais relevante para aplicar cores que combinam com seu _popover_ personalizado, ou talvez bordas ou sombras diferenciadas.
- * @csspart container - O elemento base do _popover_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _popover_, como cor de fundo, sombras, etc.
+ * @csspart arrow - A seta do _flyout_, caso seja em estilo balão.
+ * Evite definir propriedades `top|bottom|left|right`, já que estes valores são atribuídos automaticamente conforme o )_flyout_ se move. Esta parte CSS é mais relevante para aplicar cores que combinam com seu _flyout_ personalizado, ou talvez bordas ou sombras diferenciadas.
+ * @csspart container - O elemento base do _flyout_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _flyout_, como cor de fundo, sombras, etc.
  *
  * @cssproperty [--arrow-size=7px] - Tamanho da seta. Observe que independentemente desta variável, a seta não será exibida a menos que o atributo `arrow` seja utilizado.
- * @cssproperty [--background-color=var(--cps-palette-neutral-500)] - A cor de fundo do _popover_ e de sua eventual seta (caso esteja sendo exibido em estilo balão).
- * @cssproperty [--border-color=transparent] - A bordar externa contornando o _popover_ e sua eventual seta (caso esteja sendo exibido em estilo balão).
- * @cssproperty [--auto-size-available-width] - Uma variável somente leitura que determina a largura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.
- * @cssproperty [--auto-size-available-height] - Uma variável somente leitura que determina a altura máxima que o _popover_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.
+ * @cssproperty [--background-color=var(--cps-palette-neutral-500)] - A cor de fundo do _flyout_ e de sua eventual seta (caso esteja sendo exibido em estilo balão).
+ * @cssproperty [--border-color=transparent] - A bordar externa contornando o _flyout_ e sua eventual seta (caso esteja sendo exibido em estilo balão).
+ * @cssproperty [--auto-size-available-width] - Uma variável somente leitura que determina a largura máxima que o _flyout_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.
+ * @cssproperty [--auto-size-available-height] - Uma variável somente leitura que determina a altura máxima que o _flyout_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado.
  */
-@customElement('cps-popover')
-export default class CpsPopover extends BaseElement {
+@customElement('cps-flyout')
+export default class CpsFlyout extends BaseElement {
   static styles: CSSResultGroup = styles;
 
-  private anchorEl: Element | null;
+  private anchorElement: Element | VirtualElement | null;
   private cleanup: ReturnType<typeof autoUpdate> | undefined;
 
-  /** A referência ao elemento _popover_ interno. Útil para animar e estilizar o popover com JavaScript. */
-  @query('.popover') container: HTMLElement;
+  /** A referência ao elemento _flyout_ interno. Útil para animar e estilizar o flyout com JavaScript. */
+  @query('.flyout') container: HTMLElement;
   @query('.popup__arrow') private arrowElement: HTMLElement;
 
-  /**
-   * O elemento que o _popover_ será ancorado.
-   * Se o elemento estiver fora da estrutura hierárquica do _popover_,
-   * você pode fornecer o `id` deste elemento ou mesmo uma instância direta dele, atribuindo a esta propriedade.
-   * Caso contrário, se a âncora pode ser contida junto ao _popover_, use o _slot_ `anchor` em vez disso.
-   */
-  @property() anchor: Element | string;
+  /** O elemento ao qual o _flyout_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _flyout_, você pode fornecer a esta propriedade o `id` deste elemento, uma instância direta dele no DOM, ou ainda um `VirtualElement`. Caso contrário, se a âncora pode ser contida junto à estrutura hierárquica do próprio _flyout_, use o _slot_ `anchor` em vez disso. */
+  @property() anchor: Element | string | VirtualElement;
 
   /**
-   * Ativa a lógica de posicionamento e mostra o _popover_.
-   * Quando este atributo é removido, a lógica de posicionamento é desativada e o _popover_ será ocultado.
+   * Ativa a lógica de posicionamento e mostra o _flyout_.
+   * Quando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.
    */
   @property({ type: Boolean, reflect: true }) active = false;
 
-  /**
-   * O posicionamento preferido do _popover_ em relação à âncora.
-   * Observe que o posicionamento real poderá variar conforme configurado para manter o painel dentro da janela de visualização.
-   */
+  /** O posicionamento preferido do _flyout_ em relação à âncora. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização. */
   @property({ reflect: true }) placement:
     | 'top'
     | 'top-start'
@@ -75,25 +75,24 @@ export default class CpsPopover extends BaseElement {
     | 'left-end' = 'top';
 
   /**
-   * Determinar como o _popover_ é posicionado.
-   * A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do _popover_, usar uma estratégia de posição `fixed` pode contorná-lo.
+   * Estratégia a nível de CSS do posicionamento do _flyout_. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do _flyout_ (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.
    */
   @property({ reflect: true }) strategy: 'absolute' | 'fixed' = 'absolute';
 
   /**
-   * A distância em pixels do _popover_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.
-   * Por exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.
+   * A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.
+   * Por exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.
    */
   @property({ type: Number }) distance = 0;
 
   /**
-   * A distância em pixels do _popover_ no eixo de deslocamento de sua âncora.
-   * Por exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.
+   * A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.
+   * Por exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.
    */
   @property({ type: Number }) skidding = 0;
 
   /**
-   * Anexa uma seta ao _popover_, para que apresente um estilo balão.
+   * Anexa uma seta ao _flyout_, para que apresente um estilo balão.
    * O tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.
    * Para personalizações adicionais, você também pode selecionar a seta para estilização
    * usando `::part(arrow)` em sua folha de estilos.
@@ -104,25 +103,25 @@ export default class CpsPopover extends BaseElement {
    * O posicionamento da seta.
    * O padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,
    * considerando o espaço disponível e o `arrow-padding`.
-   * Um valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _popover_.
+   * Um valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.
    */
   @property({ attribute: 'arrow-placement' }) arrowPlacement: 'start' | 'end' | 'center' | 'anchor' = 'anchor';
 
   /**
-   * A quantidade de espaço entre a seta e as bordas do _popover_.
-   * Se o _popover_ tiver um `border-radius`, por exemplo,
+   * A quantidade de espaço entre a seta e as bordas do _flyout_.
+   * Se o _flyout_ tiver um `border-radius`, por exemplo,
    * isso evitará que a seta ultrapasse o início do arredondamento.
    */
   @property({ attribute: 'arrow-padding', type: Number }) arrowPadding = 10;
 
   /**
-   * Quando definido, o _popover_ será girado automaticamente para caber no espaço disponível.
+   * Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.
    * Você pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.
    */
   @property({ type: Boolean }) flip = false;
 
   /**
-   * Se o posicionamento preferido não atender, o _popover_ será testado nestes posicionamentos alternativos,
+   * Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,
    * até que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,
    * por exemplo, `"top bottom left"`. Se nenhum posicionamento atender,
    * a estratégia de posicionamento alternativo será usada em vez disso.
@@ -145,7 +144,7 @@ export default class CpsPopover extends BaseElement {
 
   /**
    * Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,
-   * este valor será usado para determinar se o _popover_ deve ser posicionado usando o
+   * este valor será usado para determinar se o _flyout_ deve ser posicionado usando o
    * melhor ajuste disponível com base no espaço disponível ou
    * como foi inicialmente definido por seu `placement`.
    */
@@ -153,7 +152,7 @@ export default class CpsPopover extends BaseElement {
 
   /**
    * A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,
-   * quando o _popover_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem
+   * quando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem
    * que fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma
    * referência à instância de um ou mais elementos nesta propriedade.
    */
@@ -163,16 +162,16 @@ export default class CpsPopover extends BaseElement {
   @property({ attribute: 'flip-padding', type: Number }) flipPadding = 0;
 
   /**
-   * Permite reposicionar o _popover_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.
-   * Por exemplo, um `placement` de `top` farão que o _popover_ esteja posicionado com seu eixo na horizontal.
-   * Se a posição do _popover_ neste eixo transpassar possíveis áreas de corte,
+   * Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.
+   * Por exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.
+   * Se a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,
    * ele se moverá para a esquerda ou para a direita, conforme necessário.
    */
   @property({ type: Boolean }) shift = false;
 
   /**
    * A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,
-   * quando o _popover_ precisar ser reposicionado no seu eixo para se acomodar.
+   * quando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.
    * Por padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.
    * Se necessário, você pode alterar a fronteira passando uma referência à instância de
    * um ou mais elementos nesta propriedade.
@@ -183,17 +182,17 @@ export default class CpsPopover extends BaseElement {
   @property({ attribute: 'shift-padding', type: Number }) shiftPadding = 0;
 
   /**
-   * Quando definido, permite que o _popover_ automaticamente se redimensione
+   * Quando definido, permite que o _flyout_ automaticamente se redimensione
    * para prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.
    */
   @property({ attribute: 'auto-size' }) autoSize: 'horizontal' | 'vertical' | 'both';
 
-  /** Sincroniza a largura ou altura (ou ambos) do _popover_ com a do seu elemento âncora. */
+  /** Sincroniza a largura ou altura (ou ambos) do _flyout_ com a do seu elemento âncora. */
   @property() sync: 'width' | 'height' | 'both';
 
   /**
    * A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados
-   * em casos de cortes, quando o _popover_ precisar ser redimensionado para se acomodar.
+   * em casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.
    * Por padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.
    * Se necessário, você pode alterar a fronteira passando uma referência à instância de
    * um ou mais elementos nesta propriedade.
@@ -245,22 +244,22 @@ export default class CpsPopover extends BaseElement {
     if (this.anchor && typeof this.anchor === 'string') {
       // Locate the anchor by id
       const root = this.getRootNode() as Document | ShadowRoot;
-      this.anchorEl = root.getElementById(this.anchor);
-    } else if (this.anchor instanceof Element) {
+      this.anchorElement = root.getElementById(this.anchor);
+    } else if (this.anchor instanceof Element || isVirtualElement(this.anchor)) {
       // Use the anchor's reference
-      this.anchorEl = this.anchor;
+      this.anchorElement = this.anchor;
     } else {
       // Look for a slotted anchor
-      this.anchorEl = this.querySelector<HTMLElement>('[slot="anchor"]');
+      this.anchorElement = this.querySelector<HTMLElement>('[slot="anchor"]');
     }
 
     // If the anchor is a <slot>, we'll use the first assigned element as the target since slots use `display: contents`
     // and positioning can't be calculated on them
-    if (this.anchorEl instanceof HTMLSlotElement) {
-      this.anchorEl = this.anchorEl.assignedElements({ flatten: true })[0] as HTMLElement;
+    if (this.anchorElement instanceof HTMLSlotElement) {
+      this.anchorElement = this.anchorElement.assignedElements({ flatten: true })[0] as HTMLElement;
     }
 
-    if (!this.anchorEl) {
+    if (!this.anchorElement) {
       throw new Error(
         'Invalid anchor element: no anchor could be found using the anchor slot or the anchor attribute.'
       );
@@ -271,11 +270,11 @@ export default class CpsPopover extends BaseElement {
 
   private start() {
     // We can't start the positioner without an anchor
-    if (!this.anchorEl) {
+    if (!this.anchorElement) {
       return;
     }
 
-    this.cleanup = autoUpdate(this.anchorEl, this.container, () => {
+    this.cleanup = autoUpdate(this.anchorElement, this.container, () => {
       this.reposition();
     });
   }
@@ -295,10 +294,10 @@ export default class CpsPopover extends BaseElement {
     });
   }
 
-  /** Força o _popover_ a se recalcular e se reposicionar. */
+  /** Força o _flyout_ a se recalcular e se reposicionar. */
   reposition() {
-    // Nothing to do if the popover is inactive or the anchor doesn't exist
-    if (!this.active || !this.anchorEl) {
+    // Nothing to do if the flyout is inactive or the anchor doesn't exist
+    if (!this.active || !this.anchorElement) {
       return;
     }
 
@@ -394,7 +393,7 @@ export default class CpsPopover extends BaseElement {
         ? (element: Element) => platform.getOffsetParent(element, offsetParent)
         : platform.getOffsetParent;
 
-    computePosition(this.anchorEl, this.container, {
+    computePosition(this.anchorElement, this.container, {
       placement: this.placement,
       middleware,
       strategy: this.strategy,
@@ -483,10 +482,10 @@ export default class CpsPopover extends BaseElement {
       <div
         part="container"
         class=${classMap({
-          popover: true,
-          'popover--active': this.active,
-          'popover--fixed': this.strategy === 'fixed',
-          'popover--has-arrow': this.arrow
+          flyout: true,
+          'flyout--active': this.active,
+          'flyout--fixed': this.strategy === 'fixed',
+          'flyout--has-arrow': this.arrow
         })}
       >
         <slot></slot>
@@ -496,10 +495,10 @@ export default class CpsPopover extends BaseElement {
   }
 }
 
-export { CpsPopover };
+export { CpsFlyout };
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cps-popover': CpsPopover;
+    'cps-flyout': CpsFlyout;
   }
 }

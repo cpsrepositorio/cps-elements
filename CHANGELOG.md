@@ -12,6 +12,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Changed
 
+- 🚨 **BREAKING**: Renomeado o componente `<cps-popover>` para `<cps-flyout>`, para desambiguação do [_popover_](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/popover) nativo, agora que começou a ser [liberado nos navegadores](https://caniuse.com/mdn-api_htmlelement_popover).
 - Incrementada a documentação do `<cps-badge>`, explicitando o uso com `<cps-avatar>`.
 - Melhorada a documentação do `<cps-button>`, explicitando o uso com `<cps-badge>`.
 - Intensificado o efeito _blur_ em superfícies acrílicas `<cps-menu>`, `<cps-tooltip>`, e `<cps-notification>`.

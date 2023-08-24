@@ -1,6 +1,6 @@
 import { expect, fixture, html, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import type CpsPopover from '../popover.js';
+import type CpsFlyout from '../flyout.js';
 import type CpsTooltip from '../tooltip.js';
 
 describe('<cps-tooltip>', () => {
@@ -154,8 +154,8 @@ describe('<cps-tooltip>', () => {
         <cps-button>Hover Me</cps-button>
       </cps-tooltip>
     `);
-    const popover = el.shadowRoot!.querySelector<CpsPopover>('cps-popover')!;
+    const flyout = el.shadowRoot!.querySelector<CpsFlyout>('cps-flyout')!;
 
-    expect(getComputedStyle(popover.container).pointerEvents).to.equal('none');
+    expect(getComputedStyle(flyout.container).pointerEvents).to.equal('none');
   });
 });

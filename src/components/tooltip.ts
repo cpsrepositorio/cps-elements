@@ -1,4 +1,4 @@
-import './popover.js';
+import './flyout.js';
 import { animateTo, parseDuration, stopAnimations } from '../internal/animate.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query } from 'lit/decorators.js';
@@ -10,7 +10,7 @@ import { watch } from '../internal/watch.js';
 import BaseElement from '../internal/base-element.js';
 import styles from './tooltip/tooltip.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type CpsPopover from './popover.js';
+import type CpsFlyout from './flyout.js';
 
 /**
  * @summary Dicas de ferramenta (_tooltips_) exibem informações adicionais contextuais.
@@ -18,7 +18,7 @@ import type CpsPopover from './popover.js';
  * @status stable
  * @since 0.5
  *
- * @dependency cps-popover
+ * @dependency cps-flyout
  *
  * @slot - O elemento alvo da dica de ferramenta. Evite ter mais de um elemento alvo na hierarquia, pois os subsequentes serão ignorados (neste caso, embrulhe os vários elementos em uma _tag_ principal, como `<span>` ou `<div>`).
  * @slot content - O conteúdo a ser renderizado na dica de ferramenta. Alternativamente, você pode usar o atributo `content`.
@@ -28,9 +28,9 @@ import type CpsPopover from './popover.js';
  * @event cps-hide - Emitido quando a dica de ferramenta começa a ser ocultada.
  * @event cps-after-hide - Emitido após a dica de ferramenta ser ocultada e todas as animações terem sido concluídas.
  *
- * @csspart base - O elemento base que embrulha o componente (um elemento `<cps-popover>`).
- * @csspart base__container - A parte CSS `container` exportada do _popover_ base. Use-a para atingir o contêiner do elemento `<cps-popover>` base, para estilizações avançadas deste.
- * @csspart base__container - A parte CSS `arrow` exportada do _popover_ base. Use-a para atingir a seta do elemento `<cps-popover>` base, para estilizações avançadas desta.
+ * @csspart base - O elemento base que embrulha o componente (um elemento `<cps-flyout>`).
+ * @csspart base__container - A parte CSS `container` exportada do _flyout_ base. Use-a para atingir o contêiner do elemento `<cps-flyout>` base, para estilizações avançadas deste.
+ * @csspart base__container - A parte CSS `arrow` exportada do _flyout_ base. Use-a para atingir a seta do elemento `<cps-flyout>` base, para estilizações avançadas desta.
  * @csspart body - O corpo da dica de ferramenta, onde seu conteúdo é renderizado.
  *
  * @cssproperty --max-width - O tamanho máximo da dica de ferramenta, antes que seu conteúdo seja quebrado em outra linha.
@@ -49,7 +49,7 @@ export default class CpsTooltip extends BaseElement {
 
   @query('slot:not([name])') defaultSlot: HTMLSlotElement;
   @query('.tooltip__body') body: HTMLElement;
-  @query('cps-popover') popover: CpsPopover;
+  @query('cps-flyout') flyout: CpsFlyout;
 
   /** O conteúdo da dica de ferramenta. Se precisar exibir conteúdo HTML ao invés de texto simples, use o _slot_ `content` em vez deste atributo. */
   @property() content = '';
@@ -77,14 +77,14 @@ export default class CpsTooltip extends BaseElement {
   @property({ type: Boolean, reflect: true }) disabled = false;
 
   /**
-   * A distância em pixels do _popover_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.
-   * Por exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _popover_ no eixo vertical.
+   * A distância em pixels do _flyout_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.
+   * Por exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.
    */
   @property({ type: Number }) distance = 10;
 
   /**
-   * A distância em pixels do _popover_ no eixo de deslocamento de seu elemento alvo.
-   * Por exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _popover_ no eixo horizontal.
+   * A distância em pixels do _flyout_ no eixo de deslocamento de seu elemento alvo.
+   * Por exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.
    */
   @property({ type: Number }) skidding = 0;
 
@@ -139,8 +139,8 @@ export default class CpsTooltip extends BaseElement {
 
     // If the tooltip is visible on init, update its position
     if (this.open) {
-      this.popover.active = true;
-      this.popover.reposition();
+      this.flyout.active = true;
+      this.flyout.reposition();
     }
   }
 
@@ -217,9 +217,9 @@ export default class CpsTooltip extends BaseElement {
 
       await stopAnimations(this.body);
       this.body.hidden = false;
-      this.popover.active = true;
+      this.flyout.active = true;
       const { keyframes, options } = getAnimation(this, 'tooltip.show', { dir: this.localize.dir() });
-      await animateTo(this.popover.container, keyframes, options);
+      await animateTo(this.flyout.container, keyframes, options);
 
       this.emit('cps-after-show');
     } else {
@@ -228,8 +228,8 @@ export default class CpsTooltip extends BaseElement {
 
       await stopAnimations(this.body);
       const { keyframes, options } = getAnimation(this, 'tooltip.hide', { dir: this.localize.dir() });
-      await animateTo(this.popover.container, keyframes, options);
-      this.popover.active = false;
+      await animateTo(this.flyout.container, keyframes, options);
+      this.flyout.active = false;
       this.body.hidden = true;
 
       this.emit('cps-after-hide');
@@ -240,7 +240,7 @@ export default class CpsTooltip extends BaseElement {
   async handleOptionsChange() {
     if (this.hasUpdated) {
       await this.updateComplete;
-      this.popover.reposition();
+      this.flyout.reposition();
     }
   }
 
@@ -273,7 +273,7 @@ export default class CpsTooltip extends BaseElement {
 
   render() {
     return html`
-      <cps-popover
+      <cps-flyout
         part="base"
         exportparts="
           container:base__container,
@@ -303,7 +303,7 @@ export default class CpsTooltip extends BaseElement {
         >
           ${this.content}
         </slot>
-      </cps-popover>
+      </cps-flyout>
     `;
   }
 }

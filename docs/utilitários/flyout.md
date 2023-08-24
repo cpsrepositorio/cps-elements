@@ -1,22 +1,22 @@
-# Popover
+# Flyout
 
-[component-header:cps-popover]
+[component-header:cps-flyout]
 
-O nome deste componente utilitário é inspirado no atributo [`popover`](https://html.spec.whatwg.org/multipage/popover.html) recentemente adicionado nativamente e suportado em alguns navegadores. Entretanto, apesar da inspiração no nome, este componente utilitário usa [Floating UI](https://floating-ui.com/) por baixo dos panos, visando fornecer mecanismo de posicionamento flutuante bem testado, leve e totalmente declarativo para dicas de ferramentas, menus suspensos, dentre outros.
+O nome deste componente utilitário é inspirado no [flyout](https://learn.microsoft.com/en-us/windows/apps/design/controls/dialogs-and-flyouts/flyouts) do Windows Design, variante do Fluent Design System, umas das inspirações do CPS Design System. Entretanto, apesar da inspiração no nome, este componente utilitário usa [Floating UI](https://floating-ui.com/) por baixo dos panos, visando fornecer mecanismo de posicionamento flutuante bem testado, leve e totalmente declarativo para dicas de ferramentas, menus suspensos, dentre outros.
 
-O utilitário _popover_ não provê estilização, apenas posicionamento! O posicionamento preferido do popover, distância e deslocamento podem ser configurados usando atributos. Uma seta que aponta para o âncora pode ser mostrada e customizada a seu gosto. Opções adicionais de posicionamento estão disponíveis e descritas em mais detalhes abaixo.
+O utilitário _flyout_ não provê estilização, apenas posicionamento! O posicionamento preferido do flyout, distância e deslocamento podem ser configurados usando atributos. Uma seta que aponta para o âncora pode ser mostrada e customizada a seu gosto. Opções adicionais de posicionamento estão disponíveis e descritas em mais detalhes abaixo.
 
-!> _Popover_ é um utilitário de baixo nível construído especificamente para posicionamento de elementos. Não o confunda com uma [dica de ferramenta](/componentes/tooltip) ou algo similar, pois _este utilitário não proporciona uma experiência acessível_ por padrão. Quase todo uso correto de `<cps-popover>` envolverá outras coisas em volta, adequadamente tratadas por outros componentes que o utilizam. Em geral, podemos instruir a não usá-lo diretamente no HTML de seus próprios projetos.
+!> _Flyout_ é um utilitário de baixo nível construído especificamente para posicionamento de elementos. Não o confunda com uma [dica de ferramenta](/componentes/tooltip) ou algo similar, pois _este utilitário não proporciona uma experiência acessível_ por padrão. Quase todo uso correto de `<cps-flyout>` envolverá outras coisas em volta, adequadamente tratadas por outros componentes que o utilizam. Em geral, podemos instruir a não usá-lo diretamente no HTML de seus próprios projetos.
 
 ```html preview no-vue
-<div class="popover-overview">
-  <cps-popover placement="top" active>
+<div class="flyout-overview">
+  <cps-flyout placement="top" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </cps-popover>
+  </cps-flyout>
 
-  <div class="popover-overview-options">
-    <select name="placement" value="top" class="popover-overview-select">
+  <div class="flyout-overview-options">
+    <select name="placement" value="top" class="flyout-overview-select">
       <option value="top">Superior</option>
       <option value="top-start">Superior inicial</option>
       <option value="top-end">Superior final</option>
@@ -34,34 +34,34 @@ O utilitário _popover_ não provê estilização, apenas posicionamento! O posi
     <cps-input type="number" name="skidding" label="Deslocamento" value="0"></cps-input>
   </div>
 
-  <div class="popover-overview-options">
+  <div class="flyout-overview-options">
     <cps-checkbox name="active" checked>Habilitado</cps-checkbox>
     <cps-checkbox name="arrow">Estilo balão</cps-checkbox>
   </div>
 </div>
 
 <script>
-  const container = document.querySelector('.popover-overview');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-overview');
+  const flyout = container.querySelector('cps-flyout');
   const select = container.querySelector('select[name="placement"]');
   const distance = container.querySelector('cps-input[name="distance"]');
   const skidding = container.querySelector('cps-input[name="skidding"]');
   const active = container.querySelector('cps-checkbox[name="active"]');
   const arrow = container.querySelector('cps-checkbox[name="arrow"]');
 
-  select.addEventListener('change', () => (popover.placement = select.value));
-  distance.addEventListener('cps-input', () => (popover.distance = distance.value));
-  skidding.addEventListener('cps-input', () => (popover.skidding = skidding.value));
-  active.addEventListener('cps-change', () => (popover.active = active.checked));
-  arrow.addEventListener('cps-change', () => (popover.arrow = arrow.checked));
+  select.addEventListener('change', () => (flyout.placement = select.value));
+  distance.addEventListener('cps-input', () => (flyout.distance = distance.value));
+  skidding.addEventListener('cps-input', () => (flyout.skidding = skidding.value));
+  active.addEventListener('cps-change', () => (flyout.active = active.checked));
+  arrow.addEventListener('cps-change', () => (flyout.arrow = arrow.checked));
 </script>
 
 <style>
-  .popover-overview cps-popover {
+  .flyout-overview cps-flyout {
     --arrow-color: var(--cps-color-fill-accent-primary);
   }
 
-  .popover-overview span[slot='anchor'] {
+  .flyout-overview span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -69,12 +69,12 @@ O utilitário _popover_ não provê estilização, apenas posicionamento! O posi
     height: 150px;
   }
 
-  .popover-overview .box {
+  .flyout-overview .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-overview-options {
+  .flyout-overview-options {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 117px);
@@ -82,18 +82,18 @@ O utilitário _popover_ não provê estilização, apenas posicionamento! O posi
     align-items: end;
   }
 
-  .popover-overview-options select {
+  .flyout-overview-options select {
     grid-column: 1 / span 2;
     width: 250px;
     height: 30px;
   }
 
-  .popover-overview-options cps-input {
+  .flyout-overview-options cps-input {
     grid-row: 2;
     width: 117px;
   }
 
-  .popover-overview-options + .popover-overview-options {
+  .flyout-overview-options + .flyout-overview-options {
     margin-top: 1rem;
   }
 </style>
@@ -102,15 +102,15 @@ O utilitário _popover_ não provê estilização, apenas posicionamento! O posi
 ```jsx react
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 import { CpsInput } from '@cps-elements/web/react/input';
-import { CpsPopover } from '@cps-elements/web/react/popover';
 
 const css = `
-  .popover-overview cps-popover {
+  .flyout-overview cps-flyout {
     --arrow-color: var(--cps-color-fill-accent-primary);
   }
 
-  .popover-overview span[slot='anchor'] {
+  .flyout-overview span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -118,12 +118,12 @@ const css = `
     height: 150px;
   }
 
-  .popover-overview .box {
+  .flyout-overview .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-overview-options {
+  .flyout-overview-options {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 117px);
@@ -131,18 +131,18 @@ const css = `
     align-items: end;
   }
 
-  .popover-overview-options select {
+  .flyout-overview-options select {
     grid-column: 1 / span 2;
     width: 250px;
     height: 30px;
   }
 
-  .popover-overview-options cps-input {
+  .flyout-overview-options cps-input {
     grid-row: 2;
     width: 117px;
   }
 
-  .popover-overview-options + .popover-overview-options {
+  .flyout-overview-options + .flyout-overview-options {
     margin-top: 1rem;
   }
 `;
@@ -156,8 +156,8 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-overview">
-        <CpsPopover
+      <div className="flyout-overview">
+        <CpsFlyout
           placement={placement}
           active={active || null}
           distance={distance}
@@ -166,13 +166,13 @@ const App = () => {
         >
           <span slot="anchor" />
           <div className="box" />
-        </CpsPopover>
+        </CpsFlyout>
 
-        <div className="popover-overview-options">
+        <div className="flyout-overview-options">
           <select
             name="placement"
             value={placement}
-            className="popover-overview-select"
+            className="flyout-overview-select"
             onchange={event => setPlacement(event.target.value)}
           >
             <option value="top">Superior</option>
@@ -204,7 +204,7 @@ const App = () => {
           />
         </div>
 
-        <div className="popover-overview-options">
+        <div className="flyout-overview-options">
           <CpsCheckbox checked={active} onchange={event => setActive(event.target.checked)}>
             Habilitado
           </CpsCheckbox>
@@ -220,27 +220,27 @@ const App = () => {
 };
 ```
 
-?> A âncora de um _popover_ não deve ser estilizada com `display: contents`, pois assim as coordenadas não seriam elegíveis para cálculo. No entanto, se a âncora for um elemento `<slot>`, o popover usará o primeiro elemento interno do _slot_ como âncora. Esse comportamento permite que outros componentes passem âncoras com mais facilidade por composição.
+?> A âncora de um _flyout_ não deve ser estilizada com `display: contents`, pois assim as coordenadas não seriam elegíveis para cálculo. No entanto, se a âncora for um elemento `<slot>`, o flyout usará o primeiro elemento interno do _slot_ como âncora. Esse comportamento permite que outros componentes passem âncoras com mais facilidade por composição.
 
 ## Exemplos
 
 ### Ativação e desativação
 
-_Popovers_ são inativos e ocultos até que o atributo `active` seja aplicado. Remover o atributo irá desmontar da memória toda a lógica de posicionamento e _listeners_ de eventos, o que significa que você pode ter muitos _popovers_ inativos na página sem afetar seu desempenho, e ativá-los sob demanda através de _script_ conforme a necessidade.
+_Flyouts_ são inativos e ocultos até que o atributo `active` seja aplicado. Remover o atributo irá desmontar da memória toda a lógica de posicionamento e _listeners_ de eventos, o que significa que você pode ter muitos _flyouts_ inativos na página sem afetar seu desempenho, e ativá-los sob demanda através de _script_ conforme a necessidade.
 
 ```html preview no-vue
-<div class="popover-active">
-  <cps-popover placement="top" active>
+<div class="flyout-active">
+  <cps-flyout placement="top" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </cps-popover>
+  </cps-flyout>
 
   <br />
   <cps-checkbox checked>Habilitado</cps-checkbox>
 </div>
 
 <style>
-  .popover-active span[slot='anchor'] {
+  .flyout-active span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -248,28 +248,28 @@ _Popovers_ são inativos e ocultos até que o atributo `active` seja aplicado. R
     height: 150px;
   }
 
-  .popover-active .box {
+  .flyout-active .box {
     width: 100px;
     height: 50px;
   }
 </style>
 
 <script>
-  const container = document.querySelector('.popover-active');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-active');
+  const flyout = container.querySelector('cps-flyout');
   const active = container.querySelector('cps-checkbox');
 
-  active.addEventListener('cps-change', () => (popover.active = active.checked));
+  active.addEventListener('cps-change', () => (flyout.active = active.checked));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-active span[slot='anchor'] {
+  .flyout-active span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -277,7 +277,7 @@ const css = `
     height: 150px;
   }
 
-  .popover-active .box {
+  .flyout-active .box {
     width: 100px;
     height: 50px;
   }
@@ -288,11 +288,11 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-active">
-        <CpsPopover placement="top" active={active}>
+      <div className="flyout-active">
+        <CpsFlyout placement="top" active={active}>
           <span slot="anchor" />
           <div className="box" />
-        </CpsPopover>
+        </CpsFlyout>
 
         <br />
         <CpsCheckbox checked={active} onchange={event => setActive(event.target.checked)}>
@@ -308,14 +308,14 @@ const App = () => {
 
 ### Âncoras externas
 
-Por padrão, âncoras são injetadas no _popover_ através do _slot_ `anchor`. Se sua âncora precisa existir fora do _popover_ por alguma razão estrutural, você pode passar o `id` da âncora para o atributo `anchor`. Alternativamente, você pode passar uma referência de elemento para a propriedade `anchor` para obter o mesmo efeito sem usar um `id`.
+Por padrão, âncoras são injetadas no _flyout_ através do _slot_ `anchor`. Se sua âncora precisa existir fora do _flyout_ por alguma razão estrutural, você pode passar o `id` da âncora para o atributo `anchor`. Alternativamente, você pode passar uma referência de elemento para a propriedade `anchor` para obter o mesmo efeito sem usar um `id`.
 
 ```html preview
 <span id="external-anchor"></span>
 
-<cps-popover anchor="external-anchor" placement="top" active>
+<cps-flyout anchor="external-anchor" placement="top" active>
   <div class="box"></div>
-</cps-popover>
+</cps-flyout>
 
 <style>
   #external-anchor {
@@ -326,7 +326,7 @@ Por padrão, âncoras são injetadas no _popover_ através do _slot_ `anchor`. S
     height: 150px;
   }
 
-  #external-anchor ~ cps-popover .box {
+  #external-anchor ~ cps-flyout .box {
     width: 100px;
     height: 50px;
   }
@@ -334,7 +334,7 @@ Por padrão, âncoras são injetadas no _popover_ através do _slot_ `anchor`. S
 ```
 
 ```jsx react
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
   #external-anchor {
@@ -345,7 +345,7 @@ const css = `
     height: 150px;
   }
 
-  #external-anchor ~ cps-popover .box {
+  #external-anchor ~ cps-flyout .box {
     width: 100px;
     height: 50px;
   }
@@ -356,9 +356,9 @@ const App = () => {
     <>
       <span id="external-anchor" />
 
-      <CpsPopover anchor="external-anchor" placement="top" active>
+      <CpsFlyout anchor="external-anchor" placement="top" active>
         <div class="box" />
-      </CpsPopover>
+      </CpsFlyout>
 
       <style>{css}</style>
     </>
@@ -368,16 +368,16 @@ const App = () => {
 
 ### Posicionamento
 
-Use o atributo `placement` para informar ao _popover_ o posicionamento preferido. Observe que a posição real irá variar para garantir que o painel permaneça na janela de visualização.
+Use o atributo `placement` para informar ao _flyout_ o posicionamento preferido. Observe que a posição real irá variar para garantir que o painel permaneça na janela de visualização.
 
-Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode observar o posicionamento real do _popover_ quando ele está ativo, olhando para o atributo `data-current-placement`. Este atributo será atualizado à medida que o _popover_ gira para encontrar espaço disponível, e é removido quando o _popover_ é desativado.
+Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode observar o posicionamento real do _flyout_ quando ele está ativo, olhando para o atributo `data-current-placement`. Este atributo será atualizado à medida que o _flyout_ gira para encontrar espaço disponível, e é removido quando o _flyout_ é desativado.
 
 ```html preview
-<div class="popover-placement">
-  <cps-popover placement="top" active>
+<div class="flyout-placement">
+  <cps-flyout placement="top" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </cps-popover>
+  </cps-flyout>
 
   <br />
   <select name="placement" value="top">
@@ -397,7 +397,7 @@ Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode
 </div>
 
 <style>
-  .popover-placement span[slot='anchor'] {
+  .flyout-placement span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -405,32 +405,32 @@ Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode
     height: 150px;
   }
 
-  .popover-placement .box {
+  .flyout-placement .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-placement select {
+  .flyout-placement select {
     width: 250px;
     height: 30px;
   }
 </style>
 
 <script>
-  const container = document.querySelector('.popover-placement');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-placement');
+  const flyout = container.querySelector('cps-flyout');
   const select = container.querySelector('select');
 
-  select.addEventListener('change', () => (popover.placement = select.value));
+  select.addEventListener('change', () => (flyout.placement = select.value));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-placement span[slot='anchor'] {
+  .flyout-placement span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -438,12 +438,12 @@ const css = `
     height: 150px;
   }
 
-  .popover-placement .box {
+  .flyout-placement .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-placement select {
+  .flyout-placement select {
     width: 250px;
     height: 30px;
   }
@@ -453,12 +453,12 @@ const App = () => {
   const [placement, setPlacement] = useState('top');
 
   return (
-    <div className="popover-active">
-      <div className="popover-placement">
-        <CpsPopover placement={placement} active>
+    <div className="flyout-active">
+      <div className="flyout-placement">
+        <CpsFlyout placement={placement} active>
           <span slot="anchor" />
           <div className="box" />
-        </CpsPopover>
+        </CpsFlyout>
 
         <br />
         <select name="placement" value={placement} onchange={event => setPlacement(event.target.value)}>
@@ -485,21 +485,21 @@ const App = () => {
 
 ### Distância
 
-Use o atributo `distance` para alterar a distância entre o _popover_ e sua âncora. Um valor positivo moverá o _popover_ para mais longe, e um valor negativo o moverá para mais perto.
+Use o atributo `distance` para alterar a distância entre o _flyout_ e sua âncora. Um valor positivo moverá o _flyout_ para mais longe, e um valor negativo o moverá para mais perto.
 
 ```html preview
-<div class="popover-distance">
-  <cps-popover placement="top" distance="0" active>
+<div class="flyout-distance">
+  <cps-flyout placement="top" distance="0" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </cps-popover>
+  </cps-flyout>
 
   <br />
   <input type="range" min="-50" max="50" step="1" value="0" />
 </div>
 
 <style>
-  .popover-distance span[slot='anchor'] {
+  .flyout-distance span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -507,31 +507,31 @@ Use o atributo `distance` para alterar a distância entre o _popover_ e sua ânc
     height: 150px;
   }
 
-  .popover-distance .box {
+  .flyout-distance .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-distance input {
+  .flyout-distance input {
     width: 250px;
   }
 </style>
 
 <script>
-  const container = document.querySelector('.popover-distance');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-distance');
+  const flyout = container.querySelector('cps-flyout');
   const distance = container.querySelector('input');
 
-  distance.addEventListener('input', () => (popover.distance = distance.value));
+  distance.addEventListener('input', () => (flyout.distance = distance.value));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-distance span[slot='anchor'] {
+  .flyout-distance span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -539,12 +539,12 @@ const css = `
     height: 150px;
   }
 
-  .popover-distance .box {
+  .flyout-distance .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-distance input {
+  .flyout-distance input {
     width: 250px;
   }
 `;
@@ -554,11 +554,11 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-distance">
-        <CpsPopover placement="top" distance={distance} active>
+      <div className="flyout-distance">
+        <CpsFlyout placement="top" distance={distance} active>
           <span slot="anchor" />
           <div class="box" />
-        </CpsPopover>
+        </CpsFlyout>
 
         <br />
         <input
@@ -579,21 +579,21 @@ const App = () => {
 
 ### Deslocamento
 
-Use o atributo `skidding` para alterar o deslocamento do _popover_ ao longo do eixo da âncora, de modo similar ao atributo `distance` porém movendo-o para os lados ao invés de aumentando ou diminuindo a distância em relação à âncora.
+Use o atributo `skidding` para alterar o deslocamento do _flyout_ ao longo do eixo da âncora, de modo similar ao atributo `distance` porém movendo-o para os lados ao invés de aumentando ou diminuindo a distância em relação à âncora.
 
 ```html preview
-<div class="popover-skidding">
-  <cps-popover placement="top" skidding="0" active>
+<div class="flyout-skidding">
+  <cps-flyout placement="top" skidding="0" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </cps-popover>
+  </cps-flyout>
 
   <br />
   <input type="range" min="-50" max="50" step="1" value="0" />
 </div>
 
 <style>
-  .popover-skidding span[slot='anchor'] {
+  .flyout-skidding span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -601,31 +601,31 @@ Use o atributo `skidding` para alterar o deslocamento do _popover_ ao longo do e
     height: 150px;
   }
 
-  .popover-skidding .box {
+  .flyout-skidding .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-skidding input {
+  .flyout-skidding input {
     width: 250px;
   }
 </style>
 
 <script>
-  const container = document.querySelector('.popover-skidding');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-skidding');
+  const flyout = container.querySelector('cps-flyout');
   const skidding = container.querySelector('input');
 
-  skidding.addEventListener('input', () => (popover.skidding = skidding.value));
+  skidding.addEventListener('input', () => (flyout.skidding = skidding.value));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-skidding span[slot='anchor'] {
+  .flyout-skidding span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -633,12 +633,12 @@ const css = `
     height: 150px;
   }
 
-  .popover-skidding .box {
+  .flyout-skidding .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-skidding input {
+  .flyout-skidding input {
     width: 250px;
   }
 `;
@@ -648,11 +648,11 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-skidding">
-        <CpsPopover placement="top" skidding={skidding} active>
+      <div className="flyout-skidding">
+        <CpsFlyout placement="top" skidding={skidding} active>
           <span slot="anchor"></span>
           <div className="box"></div>
-        </CpsPopover>
+        </CpsFlyout>
 
         <br />
         <input
@@ -673,18 +673,18 @@ const App = () => {
 
 ### Estilo balão
 
-Use o atributo `arrow` para adicionar uma seta ao seu _popover_. É uma boa ideia definir um valor em `distance` condizente com o tamanho da seta, para dar espaço para que esta não fique cobrindo o elemento alvo.
+Use o atributo `arrow` para adicionar uma seta ao seu _flyout_. É uma boa ideia definir um valor em `distance` condizente com o tamanho da seta, para dar espaço para que esta não fique cobrindo o elemento alvo.
 
-Por padrão, a seta será alinhada o mais próximo possível do centro da âncora, considerando o espaço disponível e o `arrow-padding`. Você pode usar o atributo `arrow-placement` para forçar a seta a se alinhar ao início, fim ou centro do _popover_.
+Por padrão, a seta será alinhada o mais próximo possível do centro da âncora, considerando o espaço disponível e o `arrow-padding`. Você pode usar o atributo `arrow-placement` para forçar a seta a se alinhar ao início, fim ou centro do _flyout_.
 
 ```html preview
-<div class="popover-arrow">
-  <cps-popover placement="top" arrow arrow-placement="anchor" distance="8" active>
+<div class="flyout-arrow">
+  <cps-flyout placement="top" arrow arrow-placement="anchor" distance="8" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </cps-popover>
+  </cps-flyout>
 
-  <div class="popover-arrow-options">
+  <div class="flyout-arrow-options">
     <select name="placement" value="top">
       <option value="top">Superior</option>
       <option value="top-start">Superior inicial</option>
@@ -708,25 +708,25 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
     </select>
   </div>
 
-  <div class="popover-arrow-options">
+  <div class="flyout-arrow-options">
     <cps-checkbox name="arrow" checked>Estilo balão</cps-checkbox>
   </div>
 </div>
 
 <script>
-  const container = document.querySelector('.popover-arrow');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-arrow');
+  const flyout = container.querySelector('cps-flyout');
   const placement = container.querySelector('[name="placement"]');
   const arrowPlacement = container.querySelector('[name="arrow-placement"]');
   const arrow = container.querySelector('[name="arrow"]');
 
-  placement.addEventListener('change', () => (popover.placement = placement.value));
-  arrowPlacement.addEventListener('change', () => (popover.arrowPlacement = arrowPlacement.value));
-  arrow.addEventListener('cps-change', () => (popover.arrow = arrow.checked));
+  placement.addEventListener('change', () => (flyout.placement = placement.value));
+  arrowPlacement.addEventListener('change', () => (flyout.arrowPlacement = arrowPlacement.value));
+  arrow.addEventListener('cps-change', () => (flyout.arrow = arrow.checked));
 </script>
 
 <style>
-  .popover-arrow span[slot='anchor'] {
+  .flyout-arrow span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -734,24 +734,24 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
     height: 150px;
   }
 
-  .popover-arrow .box {
+  .flyout-arrow .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-arrow-options {
+  .flyout-arrow-options {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: end;
   }
 
-  .popover-arrow-options select {
+  .flyout-arrow-options select {
     width: 117px;
     height: 30px;
   }
 
-  .popover-arrow-options + .popover-arrow-options {
+  .flyout-arrow-options + .flyout-arrow-options {
     margin-top: 1rem;
   }
 </style>
@@ -760,10 +760,10 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
 ```jsx react
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-arrow span[slot='anchor'] {
+  .flyout-arrow span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -771,24 +771,24 @@ const css = `
     height: 150px;
   }
 
-  .popover-arrow .box {
+  .flyout-arrow .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-arrow-options {
+  .flyout-arrow-options {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: end;
   }
 
-  .popover-arrow-options select {
+  .flyout-arrow-options select {
     width: 117px;
     height: 30px;
   }
 
-  .popover-arrow-options + .popover-arrow-options {
+  .flyout-arrow-options + .flyout-arrow-options {
     margin-top: 1rem;
   }
 `;
@@ -800,13 +800,13 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-arrow">
-        <CpsPopover placement={placement} arrow={arrow || null} arrow-placement={arrowPlacement} distance="8" active>
+      <div className="flyout-arrow">
+        <CpsFlyout placement={placement} arrow={arrow || null} arrow-placement={arrowPlacement} distance="8" active>
           <span slot="anchor" />
           <div className="box" />
-        </CpsPopover>
+        </CpsFlyout>
 
-        <div className="popover-arrow-options">
+        <div className="flyout-arrow-options">
           <select name="placement" value={placement} onchange={event => setPlacement(event.target.value)}>
             <option value="top">Superior</option>
             <option value="top-start">Superior inicial</option>
@@ -834,7 +834,7 @@ const App = () => {
           </select>
         </div>
 
-        <div className="popover-arrow-options">
+        <div className="flyout-arrow-options">
           <CpsCheckbox name="arrow" checked={arrow} onchange={event => setArrow(event.target.checked)}>
             Estilo balão
           </CpsCheckbox>
@@ -849,18 +849,18 @@ const App = () => {
 
 ### Personalizando a aparência
 
-A cor de fundo do _popover_ pode ser definida através da variável CSS `--background-color`. A cor da borda pode ser definida através da variável CSS `--border-color`. Você também pode usar o seletor de parte CSS `container` para ajustar estilos adicionais, como filtros, sombras e arredondamento de bordas. Observe que, para não afetar o posicionamento dinâmico do _popover_, a borda é renderizada fora da caixa de conteúdo do elemento, comportando-se como um `outline`.
+A cor de fundo do _flyout_ pode ser definida através da variável CSS `--background-color`. A cor da borda pode ser definida através da variável CSS `--border-color`. Você também pode usar o seletor de parte CSS `container` para ajustar estilos adicionais, como filtros, sombras e arredondamento de bordas. Observe que, para não afetar o posicionamento dinâmico do _flyout_, a borda é renderizada fora da caixa de conteúdo do elemento, comportando-se como um `outline`.
 
-Caso esteja utilizando o _popover_ com estilo balão, a seta automaticamente utilizará as mesmas cores de fundo e de borda do corpo do _popover_. Adicionalmente, o tamanho da seta também pode ser controlado através da variável CSS `--arrow-size`. Se você precisar estilizar a seta de forma diferenciada, ou ainda informar estilos adicionais nela, também pode usar o seletor de parte CSS `arrow` para ajustá-la diretamente, até mesmo alterando seu formato através de `clip-path`.
+Caso esteja utilizando o _flyout_ com estilo balão, a seta automaticamente utilizará as mesmas cores de fundo e de borda do corpo do _flyout_. Adicionalmente, o tamanho da seta também pode ser controlado através da variável CSS `--arrow-size`. Se você precisar estilizar a seta de forma diferenciada, ou ainda informar estilos adicionais nela, também pode usar o seletor de parte CSS `arrow` para ajustá-la diretamente, até mesmo alterando seu formato através de `clip-path`.
 
 ```html preview
-<div class="popover-custom">
-  <cps-popover placement="top" arrow arrow-placement="anchor" distance="16" active>
+<div class="flyout-custom">
+  <cps-flyout placement="top" arrow arrow-placement="anchor" distance="16" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </cps-popover>
+  </cps-flyout>
 
-  <div class="popover-custom-options">
+  <div class="flyout-custom-options">
     <select name="placement" value="top">
       <option value="top">Superior</option>
       <option value="top-start">Superior inicial</option>
@@ -884,45 +884,45 @@ Caso esteja utilizando o _popover_ com estilo balão, a seta automaticamente uti
     </select>
   </div>
 
-  <div class="popover-custom-options">
+  <div class="flyout-custom-options">
     <cps-checkbox name="arrow" checked>Estilo balão</cps-checkbox>
   </div>
 </div>
 
 <script>
-  const container = document.querySelector('.popover-custom');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-custom');
+  const flyout = container.querySelector('cps-flyout');
   const placement = container.querySelector('[name="placement"]');
   const arrowPlacement = container.querySelector('[name="arrow-placement"]');
   const arrow = container.querySelector('[name="arrow"]');
 
-  placement.addEventListener('change', () => (popover.placement = placement.value));
-  arrowPlacement.addEventListener('change', () => (popover.arrowPlacement = arrowPlacement.value));
-  arrow.addEventListener('cps-change', () => (popover.arrow = arrow.checked));
+  placement.addEventListener('change', () => (flyout.placement = placement.value));
+  arrowPlacement.addEventListener('change', () => (flyout.arrowPlacement = arrowPlacement.value));
+  arrow.addEventListener('cps-change', () => (flyout.arrow = arrow.checked));
 </script>
 
 <style>
-  .popover-custom cps-popover {
+  .flyout-custom cps-flyout {
     --background-color: cyan;
     --border-color: darkcyan;
     --arrow-size: 15px;
   }
 
-  .popover-custom cps-popover::part(container) {
+  .flyout-custom cps-flyout::part(container) {
     border-radius: 16px;
     filter: drop-shadow(0 4px 6px #2266ff66);
     box-shadow: inset 0 3px 9px white;
   }
 
-  .popover-custom cps-popover[data-current-placement='bottom']::part(container) {
+  .flyout-custom cps-flyout[data-current-placement='bottom']::part(container) {
     box-shadow: inset 0 -3px 9px white;
   }
 
-  .popover-custom cps-popover::part(arrow) {
+  .flyout-custom cps-flyout::part(arrow) {
     clip-path: polygon(25% 15%, 0 0, 100% 0, 75% 15%, 62% 30%, 55% 60%, 50% 100%, 45% 60%, 38% 30%);
   }
 
-  .popover-custom span[slot='anchor'] {
+  .flyout-custom span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -930,24 +930,24 @@ Caso esteja utilizando o _popover_ com estilo balão, a seta automaticamente uti
     height: 150px;
   }
 
-  .popover-custom .box {
+  .flyout-custom .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-custom-options {
+  .flyout-custom-options {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: end;
   }
 
-  .popover-custom-options select {
+  .flyout-custom-options select {
     width: 117px;
     height: 30px;
   }
 
-  .popover-custom-options + .popover-custom-options {
+  .flyout-custom-options + .flyout-custom-options {
     margin-top: 1rem;
   }
 </style>
@@ -956,30 +956,30 @@ Caso esteja utilizando o _popover_ com estilo balão, a seta automaticamente uti
 ```jsx react
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-custom cps-popover {
+  .flyout-custom cps-flyout {
     --background-color: cyan;
     --border-color: darkcyan;
     --arrow-size: 15px;
   }
 
-  .popover-custom cps-popover::part(container) {
+  .flyout-custom cps-flyout::part(container) {
     border-radius: 16px;
     filter: drop-shadow(0 4px 6px #2266ff66);
     box-shadow: inset 0 3px 9px white;
   }
 
-  .popover-custom cps-popover[data-current-placement='bottom']::part(container) {
+  .flyout-custom cps-flyout[data-current-placement='bottom']::part(container) {
     box-shadow: inset 0 -3px 9px white;
   }
 
-  .popover-custom cps-popover::part(arrow) {
+  .flyout-custom cps-flyout::part(arrow) {
     clip-path: polygon(25% 15%, 0 0, 100% 0, 75% 15%, 62% 30%, 55% 60%, 50% 100%, 45% 60%, 38% 30%);
   }
 
-  .popover-custom span[slot='anchor'] {
+  .flyout-custom span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -987,24 +987,24 @@ const css = `
     height: 150px;
   }
 
-  .popover-custom .box {
+  .flyout-custom .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-custom-options {
+  .flyout-custom-options {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: end;
   }
 
-  .popover-custom-options select {
+  .flyout-custom-options select {
     width: 117px;
     height: 30px;
   }
 
-  .popover-custom-options + .popover-custom-options {
+  .flyout-custom-options + .flyout-custom-options {
     margin-top: 1rem;
   }
 `;
@@ -1016,13 +1016,13 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-arrow">
-        <CpsPopover placement={placement} arrow={arrow || null} arrow-placement={arrowPlacement} distance="16" active>
+      <div className="flyout-arrow">
+        <CpsFlyout placement={placement} arrow={arrow || null} arrow-placement={arrowPlacement} distance="16" active>
           <span slot="anchor" />
           <div className="box" />
-        </CpsPopover>
+        </CpsFlyout>
 
-        <div className="popover-arrow-options">
+        <div className="flyout-arrow-options">
           <select name="placement" value={placement} onchange={event => setPlacement(event.target.value)}>
             <option value="top">Superior</option>
             <option value="top-start">Superior inicial</option>
@@ -1050,7 +1050,7 @@ const App = () => {
           </select>
         </div>
 
-        <div className="popover-arrow-options">
+        <div className="flyout-arrow-options">
           <CpsCheckbox name="arrow" checked={arrow} onchange={event => setArrow(event.target.checked)}>
             Estilo balão
           </CpsCheckbox>
@@ -1065,14 +1065,14 @@ const App = () => {
 
 ### Sincronizando com a dimensão da âncora
 
-Use o atributo `sync` para fazer com que o _popover_ tenha a mesma largura ou altura que o elemento âncora. Isso é útil para controles que precisam garantir que o elemento flutuante subjacente acompanhe as medidas da âncora.
+Use o atributo `sync` para fazer com que o _flyout_ tenha a mesma largura ou altura que o elemento âncora. Isso é útil para controles que precisam garantir que o elemento flutuante subjacente acompanhe as medidas da âncora.
 
 ```html preview
-<div class="popover-sync">
-  <cps-popover placement="top" sync="width" active>
+<div class="flyout-sync">
+  <cps-flyout placement="top" sync="width" active>
     <span slot="anchor"></span>
     <div class="box"></div>
-  </cps-popover>
+  </cps-flyout>
 
   <br />
   <select value="width">
@@ -1084,7 +1084,7 @@ Use o atributo `sync` para fazer com que o _popover_ tenha a mesma largura ou al
 </div>
 
 <style>
-  .popover-sync span[slot='anchor'] {
+  .flyout-sync span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1092,35 +1092,35 @@ Use o atributo `sync` para fazer com que o _popover_ tenha a mesma largura ou al
     height: 150px;
   }
 
-  .popover-sync .box {
+  .flyout-sync .box {
     width: 100%;
     min-width: 50px;
     height: 100%;
     min-height: 50px;
   }
 
-  .popover-sync select {
+  .flyout-sync select {
     width: 250px;
     height: 30px;
   }
 </style>
 
 <script>
-  const container = document.querySelector('.popover-sync');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-sync');
+  const flyout = container.querySelector('cps-flyout');
   const fixed = container.querySelector('cps-checkbox');
   const sync = container.querySelector('select');
 
-  sync.addEventListener('change', () => (popover.sync = sync.value));
+  sync.addEventListener('change', () => (flyout.sync = sync.value));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
-import { CpsPopover } from '@cps-elements/web/react';
+import { CpsFlyout } from '@cps-elements/web/react';
 
 const css = `
-  .popover-sync span[slot='anchor'] {
+  .flyout-sync span[slot='anchor'] {
     display: inline-block;
     margin: 50px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1128,14 +1128,14 @@ const css = `
     height: 150px;
   }
 
-  .popover-sync .box {
+  .flyout-sync .box {
     width: 100%;
     min-width: 50px;
     height: 100%;
     min-height: 50px;
   }
 
-  .popover-sync select {
+  .flyout-sync select {
     width: 250px;
     height: 30px;
   }
@@ -1146,11 +1146,11 @@ const App = () => {
 
   return (
     <>
-      <div class="popover-sync">
-        <CpsPopover placement="top" sync={sync} active>
+      <div class="flyout-sync">
+        <CpsFlyout placement="top" sync={sync} active>
           <span slot="anchor" />
           <div class="box" />
-        </CpsPopover>
+        </CpsFlyout>
 
         <br />
         <select value={sync} onchange={event => setSync(event.target.value)}>
@@ -1169,34 +1169,34 @@ const App = () => {
 
 ### Estratégia de posicionamento
 
-Por padrão, o _popover_ é posicionado usando uma estratégia de posicionamento absoluto. No entanto, se sua âncora for fixa ou existir dentro de um contêiner que tenha `overflow: auto|hidden`, o _popover_ corre o risco de ser cortado. Para contornar isso, você pode usar uma estratégia de posicionamento fixo definindo o atributo `strategy` como `fixed`.
+Por padrão, o _flyout_ é posicionado usando uma estratégia de posicionamento absoluto. No entanto, se sua âncora for fixa ou existir dentro de um contêiner que tenha `overflow: auto|hidden`, o _flyout_ corre o risco de ser cortado. Para contornar isso, você pode usar uma estratégia de posicionamento fixo definindo o atributo `strategy` como `fixed`.
 
-O posicionamento fixo reduz changes de "pulos" quando a âncora é fixa e permite que o _popover_ "quebre" os contêineres que cortam, transpassando todos como um elemento realmente flutuante. Ao usar essa estratégia, é importante observar que o conteúdo será posicionado _relativo ao seu bloco de conteúdo_, que geralmente é a janela de visualização, a menos que um ancestral use `transform`, `perspective` ou `filter`. [Consulte esta página](https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed) para obter mais detalhes.
+O posicionamento fixo reduz changes de "pulos" quando a âncora é fixa e permite que o _flyout_ "quebre" os contêineres que cortam, transpassando todos como um elemento realmente flutuante. Ao usar essa estratégia, é importante observar que o conteúdo será posicionado _relativo ao seu bloco de conteúdo_, que geralmente é a janela de visualização, a menos que um ancestral use `transform`, `perspective` ou `filter`. [Consulte esta página](https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed) para obter mais detalhes.
 
-Neste exemplo, você pode ver como o _popover_ quebra os limites contêiner (mesmo este possuindo `overflow`) por usar a estratégia de posicionamento fixo. Embora este comportamento parece ser naturalmente o mais cômodo para o desenvolvedor, a estratégia de posicionamento fixo tende a ser menos performática que a absoluta, portanto, evite usá-la desnecessariamente.
+Neste exemplo, você pode ver como o _flyout_ quebra os limites contêiner (mesmo este possuindo `overflow`) por usar a estratégia de posicionamento fixo. Embora este comportamento parece ser naturalmente o mais cômodo para o desenvolvedor, a estratégia de posicionamento fixo tende a ser menos performática que a absoluta, portanto, evite usá-la desnecessariamente.
 
 Alterne a estratégia de posicionamento e role o contêiner para ver a diferença.
 
 ```html preview
-<div class="popover-strategy">
+<div class="flyout-strategy">
   <div class="overflow">
-    <cps-popover placement="top" strategy="fixed" active>
+    <cps-flyout placement="top" strategy="fixed" active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </cps-popover>
+    </cps-flyout>
   </div>
 
   <cps-checkbox checked>Posicionamento fixo</cps-checkbox>
 </div>
 
 <style>
-  .popover-strategy .overflow {
+  .flyout-strategy .overflow {
     position: relative;
     height: 240px;
     overflow: auto;
   }
 
-  .popover-strategy span[slot='anchor'] {
+  .flyout-strategy span[slot='anchor'] {
     display: inline-block;
     margin: 80px 50px 150px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1204,38 +1204,38 @@ Alterne a estratégia de posicionamento e role o contêiner para ver a diferenç
     height: 150px;
   }
 
-  .popover-strategy .box {
+  .flyout-strategy .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-strategy cps-checkbox {
+  .flyout-strategy cps-checkbox {
     margin-top: 1rem;
   }
 </style>
 
 <script>
-  const container = document.querySelector('.popover-strategy');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-strategy');
+  const flyout = container.querySelector('cps-flyout');
   const fixed = container.querySelector('cps-checkbox');
 
-  fixed.addEventListener('cps-change', () => (popover.strategy = fixed.checked ? 'fixed' : 'absolute'));
+  fixed.addEventListener('cps-change', () => (flyout.strategy = fixed.checked ? 'fixed' : 'absolute'));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-strategy .overflow {
+  .flyout-strategy .overflow {
     position: relative;
     height: 240px;
     overflow: auto;
   }
 
-  .popover-strategy span[slot='anchor'] {
+  .flyout-strategy span[slot='anchor'] {
     display: inline-block;
     margin: 80px 50px 150px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1243,12 +1243,12 @@ const css = `
     height: 150px;
   }
 
-  .popover-strategy .box {
+  .flyout-strategy .box {
     width: 100px;
     height: 50px;
   }
 
-  .popover-strategy cps-checkbox {
+  .flyout-strategy cps-checkbox {
     margin-top: 1rem;
   }
 `;
@@ -1258,12 +1258,12 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-strategy">
+      <div className="flyout-strategy">
         <div className="overflow">
-          <CpsPopover placement="top" strategy={fixed ? 'fixed' : 'absolute'} active>
+          <CpsFlyout placement="top" strategy={fixed ? 'fixed' : 'absolute'} active>
             <span slot="anchor" />
             <div className="box" />
-          </CpsPopover>
+          </CpsFlyout>
         </div>
 
         <CpsCheckbox checked={fixed} onchange={event => setFixed(event.target.checked)}>
@@ -1279,17 +1279,17 @@ const App = () => {
 
 ### Girar automaticamente
 
-Use o atributo `flip` para permitir que o _popover_ gire automaticamente quando não houver espaço suficiente em seu posicionamento preferido. Por padrão, o _popover_ inverte para se posicionar no lado oposto da âncora, mas você pode configurar posicionamentos alternativos preferidos usando `flip-fallback-placement` e `flip-fallback-strategy`. Opções adicionais estão disponíveis para controlar o limite e o preenchimento do comportamento do giro.
+Use o atributo `flip` para permitir que o _flyout_ gire automaticamente quando não houver espaço suficiente em seu posicionamento preferido. Por padrão, o _flyout_ inverte para se posicionar no lado oposto da âncora, mas você pode configurar posicionamentos alternativos preferidos usando `flip-fallback-placement` e `flip-fallback-strategy`. Opções adicionais estão disponíveis para controlar o limite e o preenchimento do comportamento do giro.
 
-Role o contêiner para ver como o _popover_ gira para evitar seu corte.
+Role o contêiner para ver como o _flyout_ gira para evitar seu corte.
 
 ```html preview
-<div class="popover-flip">
+<div class="flyout-flip">
   <div class="overflow">
-    <cps-popover placement="top" flip active>
+    <cps-flyout placement="top" flip active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </cps-popover>
+    </cps-flyout>
   </div>
 
   <br />
@@ -1297,13 +1297,13 @@ Role o contêiner para ver como o _popover_ gira para evitar seu corte.
 </div>
 
 <style>
-  .popover-flip .overflow {
+  .flyout-flip .overflow {
     position: relative;
     height: 240px;
     overflow: auto;
   }
 
-  .popover-flip span[slot='anchor'] {
+  .flyout-flip span[slot='anchor'] {
     display: inline-block;
     margin: 80px 50px 150px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1311,34 +1311,34 @@ Role o contêiner para ver como o _popover_ gira para evitar seu corte.
     height: 150px;
   }
 
-  .popover-flip .box {
+  .flyout-flip .box {
     width: 100px;
     height: 50px;
   }
 </style>
 
 <script>
-  const container = document.querySelector('.popover-flip');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-flip');
+  const flyout = container.querySelector('cps-flyout');
   const flip = container.querySelector('cps-checkbox');
 
-  flip.addEventListener('cps-change', () => (popover.flip = flip.checked));
+  flip.addEventListener('cps-change', () => (flyout.flip = flip.checked));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-flip .overflow {
+  .flyout-flip .overflow {
     position: relative;
     height: 240px;
     overflow: auto;
   }
 
-  .popover-flip span[slot='anchor'] {
+  .flyout-flip span[slot='anchor'] {
     display: inline-block;
     margin: 80px 50px 150px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1346,7 +1346,7 @@ const css = `
     height: 150px;
   }
 
-  .popover-flip .box {
+  .flyout-flip .box {
     width: 100px;
     height: 50px;
   }
@@ -1357,12 +1357,12 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-flip">
+      <div className="flyout-flip">
         <div className="overflow">
-          <CpsPopover placement="top" flip={flip} active>
+          <CpsFlyout placement="top" flip={flip} active>
             <span slot="anchor" />
             <div className="box" />
-          </CpsPopover>
+          </CpsFlyout>
         </div>
 
         <br />
@@ -1379,32 +1379,32 @@ const App = () => {
 
 ### Alternativas de giro
 
-Quando usando o atributo `flip`, você pode personalizar o posicionamento do _popover_ quando o posicionamento preferido não tiver espaço para acomodá-lo. Para isso, use `flip-fallback-placements` e `flip-fallback-strategy`.
+Quando usando o atributo `flip`, você pode personalizar o posicionamento do _flyout_ quando o posicionamento preferido não tiver espaço para acomodá-lo. Para isso, use `flip-fallback-placements` e `flip-fallback-strategy`.
 
 Se o posicionamento preferido não tiver espaço, o primeiro posicionamento adequado encontrado em `flip-fallback-placement` será usado. O valor deste atributo deve ser uma string que inclua qualquer número de posicionamentos separados por um espaço, por exemplo, `"right bottom"`.
 
 Se nenhuma alternativa de posicionamento funcionar, o posicionamento final será determinado por `flip-fallback-strategy`. Este valor pode ser `initial` (padrão), onde o posicionamento reverte para a posição em `placement`, ou `best-fit`, onde o posicionamento é escolhido com base no espaço disponível.
 
-Role o contêiner para ver como o _popover_ vai mudando para seus posicionamentos alternativos, para evitar seu corte.
+Role o contêiner para ver como o _flyout_ vai mudando para seus posicionamentos alternativos, para evitar seu corte.
 
 ```html preview
-<div class="popover-flip-fallbacks">
+<div class="flyout-flip-fallbacks">
   <div class="overflow">
-    <cps-popover placement="top" flip flip-fallback-placements="right bottom" flip-fallback-strategy="initial" active>
+    <cps-flyout placement="top" flip flip-fallback-placements="right bottom" flip-fallback-strategy="initial" active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </cps-popover>
+    </cps-flyout>
   </div>
 </div>
 
 <style>
-  .popover-flip-fallbacks .overflow {
+  .flyout-flip-fallbacks .overflow {
     position: relative;
     height: 300px;
     overflow: auto;
   }
 
-  .popover-flip-fallbacks span[slot='anchor'] {
+  .flyout-flip-fallbacks span[slot='anchor'] {
     display: inline-block;
     margin: 80px 250px 150px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1412,7 +1412,7 @@ Role o contêiner para ver como o _popover_ vai mudando para seus posicionamento
     height: 250px;
   }
 
-  .popover-flip-fallbacks .box {
+  .flyout-flip-fallbacks .box {
     width: 100px;
     height: 50px;
   }
@@ -1420,16 +1420,16 @@ Role o contêiner para ver como o _popover_ vai mudando para seus posicionamento
 ```
 
 ```jsx react
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-flip-fallbacks .overflow {
+  .flyout-flip-fallbacks .overflow {
     position: relative;
     height: 300px;
     overflow: auto;
   }
 
-  .popover-flip-fallbacks span[slot='anchor'] {
+  .flyout-flip-fallbacks span[slot='anchor'] {
     display: inline-block;
     margin: 80px 250px 150px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1437,7 +1437,7 @@ const css = `
     height: 250px;
   }
 
-  .popover-flip-fallbacks .box {
+  .flyout-flip-fallbacks .box {
     width: 100px;
     height: 50px;
   }
@@ -1446,9 +1446,9 @@ const css = `
 const App = () => {
   return (
     <>
-      <div className="popover-flip-fallbacks">
+      <div className="flyout-flip-fallbacks">
         <div className="overflow">
-          <CpsPopover
+          <CpsFlyout
             placement="top"
             flip
             flip-fallback-placements="right bottom"
@@ -1457,7 +1457,7 @@ const App = () => {
           >
             <span slot="anchor" />
             <div className="box" />
-          </CpsPopover>
+          </CpsFlyout>
         </div>
       </div>
 
@@ -1469,29 +1469,29 @@ const App = () => {
 
 ### Reposicionamento no eixo
 
-Quando um _popover_ é mais longo que sua âncora, ele corre o risco de ser cortado por um contêiner externo (ou mesmo pelo canto da página, se for o caso). Para evitar isto, use o atributo `shift` para automaticamente reposicionar o _popover_ ao longo de seu eixo, e de volta a uma posição que garanta sua plena visibilidade. Você pode personalizar o comportamento de deslocamento usando `shiftBoundary` e `shift-padding`.
+Quando um _flyout_ é mais longo que sua âncora, ele corre o risco de ser cortado por um contêiner externo (ou mesmo pelo canto da página, se for o caso). Para evitar isto, use o atributo `shift` para automaticamente reposicionar o _flyout_ ao longo de seu eixo, e de volta a uma posição que garanta sua plena visibilidade. Você pode personalizar o comportamento de deslocamento usando `shiftBoundary` e `shift-padding`.
 
 Alterne a caixa de seleção para ver a diferença.
 
 ```html preview
-<div class="popover-shift">
+<div class="flyout-shift">
   <div class="overflow">
-    <cps-popover placement="top" shift shift-padding="10" active>
+    <cps-flyout placement="top" shift shift-padding="10" active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </cps-popover>
+    </cps-flyout>
   </div>
 
   <cps-checkbox checked>Reposicionamento no eixo</cps-checkbox>
 </div>
 
 <style>
-  .popover-shift .overflow {
+  .flyout-shift .overflow {
     position: relative;
     overflow: auto;
   }
 
-  .popover-shift span[slot='anchor'] {
+  .flyout-shift span[slot='anchor'] {
     display: inline-block;
     margin: 60px 0 0 10px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1499,37 +1499,37 @@ Alterne a caixa de seleção para ver a diferença.
     height: 150px;
   }
 
-  .popover-shift .box {
+  .flyout-shift .box {
     width: 300px;
     height: 50px;
   }
 
-  .popover-shift cps-checkbox {
+  .flyout-shift cps-checkbox {
     margin-top: 1rem;
   }
 </style>
 
 <script>
-  const container = document.querySelector('.popover-shift');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-shift');
+  const flyout = container.querySelector('cps-flyout');
   const shift = container.querySelector('cps-checkbox');
 
-  shift.addEventListener('cps-change', () => (popover.shift = shift.checked));
+  shift.addEventListener('cps-change', () => (flyout.shift = shift.checked));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-shift .overflow {
+  .flyout-shift .overflow {
     position: relative;
     overflow: auto;
   }
 
-  .popover-shift span[slot='anchor'] {
+  .flyout-shift span[slot='anchor'] {
     display: inline-block;
     margin: 60px 0 0 10px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1537,12 +1537,12 @@ const css = `
     height: 150px;
   }
 
-  .popover-shift .box {
+  .flyout-shift .box {
     width: 300px;
     height: 50px;
   }
 
-  .popover-shift cps-checkbox {
+  .flyout-shift cps-checkbox {
     margin-top: 1rem;
   }
 `;
@@ -1552,12 +1552,12 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-shift">
+      <div className="flyout-shift">
         <div className="overflow">
-          <CpsPopover placement="top" shift={shift} shift-padding="10" active>
+          <CpsFlyout placement="top" shift={shift} shift-padding="10" active>
             <span slot="anchor" />
             <div className="box" />
-          </CpsPopover>
+          </CpsFlyout>
         </div>
 
         <CpsCheckbox checked={shift} onchange={event => setShift(event.target.checked)}>
@@ -1573,19 +1573,19 @@ const App = () => {
 
 ### Auto-dimensionamento
 
-Use o atributo `auto-size` para dizer ao _popover_ para se redimensionar quando necessário, para evitar que ele seja cortado. Os valores possíveis são `horizontal`, `vertical` e `both`. Você pode usar `autoSizeBoundary` e `auto-size-padding` para personalizar o comportamento desta opção. O auto-dimensionamento funciona bem com `flip`, mas se você estiver usando `auto-size-padding` certifique-se de que `flip-padding` seja o mesmo valor.
+Use o atributo `auto-size` para dizer ao _flyout_ para se redimensionar quando necessário, para evitar que ele seja cortado. Os valores possíveis são `horizontal`, `vertical` e `both`. Você pode usar `autoSizeBoundary` e `auto-size-padding` para personalizar o comportamento desta opção. O auto-dimensionamento funciona bem com `flip`, mas se você estiver usando `auto-size-padding` certifique-se de que `flip-padding` seja o mesmo valor.
 
-Ao usar `auto-size`, um ou ambos `--auto-size-available-width` e `--auto-size-available-height` serão aplicados. Estes valores determinam o espaço disponível que o _popover_ tem antes que o corte ocorra. Como eles se sobrepõem, você pode usá-los para definir um `max-width`/`max-height` no conteúdo do seu _popover_, e assim controlar seu _overflow_.
+Ao usar `auto-size`, um ou ambos `--auto-size-available-width` e `--auto-size-available-height` serão aplicados. Estes valores determinam o espaço disponível que o _flyout_ tem antes que o corte ocorra. Como eles se sobrepõem, você pode usá-los para definir um `max-width`/`max-height` no conteúdo do seu _flyout_, e assim controlar seu _overflow_.
 
-Role o contêiner para ver o _popover_ se auto-dimensionar conforme o espaço disponível muda.
+Role o contêiner para ver o _flyout_ se auto-dimensionar conforme o espaço disponível muda.
 
 ```html preview
-<div class="popover-auto-size">
+<div class="flyout-auto-size">
   <div class="overflow">
-    <cps-popover placement="top" auto-size="both" auto-size-padding="10" active>
+    <cps-flyout placement="top" auto-size="both" auto-size-padding="10" active>
       <span slot="anchor"></span>
       <div class="box"></div>
-    </cps-popover>
+    </cps-flyout>
   </div>
 
   <br />
@@ -1593,13 +1593,13 @@ Role o contêiner para ver o _popover_ se auto-dimensionar conforme o espaço di
 </div>
 
 <style>
-  .popover-auto-size .overflow {
+  .flyout-auto-size .overflow {
     position: relative;
     height: 300px;
     overflow: auto;
   }
 
-  .popover-auto-size span[slot='anchor'] {
+  .flyout-auto-size span[slot='anchor'] {
     display: inline-block;
     margin: 200px 50px 120px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1607,7 +1607,7 @@ Role o contêiner para ver o _popover_ se auto-dimensionar conforme o espaço di
     height: 150px;
   }
 
-  .popover-auto-size .box {
+  .flyout-auto-size .box {
     border-radius: var(--cps-border-radius-full);
     width: 100px;
     max-width: var(--auto-size-available-width);
@@ -1617,27 +1617,27 @@ Role o contêiner para ver o _popover_ se auto-dimensionar conforme o espaço di
 </style>
 
 <script>
-  const container = document.querySelector('.popover-auto-size');
-  const popover = container.querySelector('cps-popover');
+  const container = document.querySelector('.flyout-auto-size');
+  const flyout = container.querySelector('cps-flyout');
   const autoSize = container.querySelector('cps-checkbox');
 
-  autoSize.addEventListener('cps-change', () => (popover.autoSize = autoSize.checked ? 'both' : ''));
+  autoSize.addEventListener('cps-change', () => (flyout.autoSize = autoSize.checked ? 'both' : ''));
 </script>
 ```
 
 ```jsx react
 import { useState } from 'react';
 import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsPopover } from '@cps-elements/web/react/popover';
+import { CpsFlyout } from '@cps-elements/web/react/flyout';
 
 const css = `
-  .popover-auto-size .overflow {
+  .flyout-auto-size .overflow {
     position: relative;
     height: 300px;
     overflow: auto;
   }
 
-  .popover-auto-size span[slot='anchor'] {
+  .flyout-auto-size span[slot='anchor'] {
     display: inline-block;
     margin: 200px 50px 120px;
     border: dashed 2px var(--cps-color-stroke-card-secondary);
@@ -1645,7 +1645,7 @@ const css = `
     height: 150px;
   }
 
-  .popover-auto-size .box {
+  .flyout-auto-size .box {
     border-radius: var(--cps-border-radius-full);
     width: 100px;
     max-width: var(--auto-size-available-width);
@@ -1659,12 +1659,12 @@ const App = () => {
 
   return (
     <>
-      <div className="popover-auto-size">
+      <div className="flyout-auto-size">
         <div className="overflow">
-          <CpsPopover placement="top" auto-size={autoSize ? 'both' || null} auto-size-padding="10" active>
+          <CpsFlyout placement="top" auto-size={autoSize ? 'both' || null} auto-size-padding="10" active>
             <span slot="anchor" />
             <div className="box" />
-          </CpsPopover>
+          </CpsFlyout>
         </div>
 
         <br />
@@ -1679,4 +1679,4 @@ const App = () => {
 };
 ```
 
-[component-metadata:cps-popover]
+[component-metadata:cps-flyout]
