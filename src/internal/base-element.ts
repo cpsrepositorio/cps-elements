@@ -92,4 +92,9 @@ export default class BaseElement extends LitElement {
 
     return event as GetCustomEventType<T>;
   }
+
+  /* eslint-disable */
+  // @ts-expect-error This is auto-injected at build time.
+  @property({ reflect: false, noAccessor: true }) version: string = __CPS_ELEMENTS_VERSION__;
+  /* eslint-enable */
 }

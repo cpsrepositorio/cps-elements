@@ -4,10 +4,12 @@ import { execSync } from 'child_process';
 import commandLineArgs from 'command-line-args';
 import { deleteSync } from 'del';
 import esbuild from 'esbuild';
+import { replace } from 'esbuild-plugin-replace';
 import fs from 'fs';
 import getPort, { portNumbers } from 'get-port';
 import { globby } from 'globby';
 import open from 'open';
+import * as path from 'path';
 import copy from 'recursive-copy';
 
 const { bundle, copydir, dir, serve, types } = commandLineArgs([
@@ -19,6 +21,9 @@ const { bundle, copydir, dir, serve, types } = commandLineArgs([
 ]);
 
 const outdir = dir;
+
+const packageData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf-8'));
+const packageVersion = JSON.stringify(packageData.version.toString());
 
 deleteSync(outdir);
 fs.mkdirSync(outdir, { recursive: true });
@@ -82,7 +87,11 @@ fs.mkdirSync(outdir, { recursive: true });
       //
       external: bundle ? alwaysExternal : [...alwaysExternal, '@floating-ui/dom', 'lit'],
       splitting: true,
-      plugins: []
+      plugins: [
+        replace({
+          __CPS_ELEMENTS_VERSION__: packageVersion
+        })
+      ]
     })
     .catch(err => {
       console.error(chalk.red(err));
