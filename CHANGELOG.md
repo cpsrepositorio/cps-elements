@@ -17,6 +17,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 - Melhorada a documentação do `<cps-button>`, explicitando o uso com `<cps-badge>`.
 - Intensificado o efeito _blur_ em superfícies acrílicas `<cps-menu>`, `<cps-tooltip>`, e `<cps-notification>`.
 - Melhorada usabilidade da renderização em estilo `checkbox` do `<cps-menu-item>`, quando não o item está checado.
+- Permite ao evento `cps-change` receber valores diversos dentro de `event.detail`.
 
 ## 0.7.2 - 2023-08-18
 
