@@ -132,7 +132,8 @@ export default class CpsMenuItem extends BaseElement {
         })}
       >
         <span part="check" class="menu-item__check">
-          <cps-icon name="checkmark" library="system" aria-hidden="true"></cps-icon>
+          <cps-icon part="checked-icon" class="menu-item__checked" library="system" name="checkmark"></cps-icon>
+          <cps-icon part="unchecked-icon" class="menu-item__unchecked" library="system" name="unchecked"></cps-icon>
         </span>
 
         <slot name="prefix" part="prefix" class="menu-item__prefix"></slot>

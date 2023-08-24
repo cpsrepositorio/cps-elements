@@ -52,6 +52,7 @@ export default css`
   }
 
   .menu-item .menu-item__prefix::slotted(*) {
+    margin-inline-start: calc(var(--cps-spacing-0-5) * -1);
     margin-inline-end: var(--cps-spacing-2-5);
   }
 
@@ -65,7 +66,7 @@ export default css`
 
   .menu-item .menu-item__suffix::slotted(*) {
     margin-inline-start: var(--cps-spacing-2-5);
-    font: var(--cps-font-label);
+    margin-inline-end: calc(var(--cps-spacing-0-5) * -1);
   }
 
   .menu-item.menu-item--disabled .menu-item__prefix,
@@ -97,14 +98,26 @@ export default css`
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    visibility: hidden;
+    margin-inline-start: calc(var(--cps-spacing-0-5) * -1);
     margin-inline-end: var(--cps-spacing-2-5);
     width: 0.875rem;
+  }
+
+  .menu-item__unchecked {
+    color: var(--cps-color-stroke-inverted-tertiary);
+  }
+
+  .menu-item__checked {
+    display: none;
     color: var(--cps-color-text-secondary);
   }
 
-  .menu-item--checked .menu-item__check {
-    visibility: visible;
+  .menu-item--checked .menu-item__unchecked {
+    display: none;
+  }
+
+  .menu-item--checked .menu-item__checked {
+    display: block;
   }
 
   @media (forced-colors: active) {
