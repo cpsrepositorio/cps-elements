@@ -1,6 +1,7 @@
 import type { BaseFormControl } from './base-form-control.js';
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
 import type CpsButton from '../components/button.js';
+import type CpsInvalidEvent from '../events/cps-invalid.js';
 
 //
 // We store a WeakMap of forms + controls so we can keep references to all CPS Elements controls within a given form. As
@@ -356,18 +357,17 @@ export class FormControlController implements ReactiveController {
    * event will be cancelled before being dispatched.
    */
   emitInvalidEvent(originalInvalidEvent?: Event) {
-    const slInvalidEvent = new CustomEvent<Record<PropertyKey, never>>('cps-invalid', {
-      bubbles: false,
+    const cpsInvalidEvent = new CustomEvent<CpsInvalidEvent>('cps-invalid', {
+      bubbles: true,
       composed: false,
-      cancelable: true,
-      detail: {}
+      cancelable: true
     });
 
     if (!originalInvalidEvent) {
-      slInvalidEvent.preventDefault();
+      cpsInvalidEvent.preventDefault();
     }
 
-    if (!this.host.dispatchEvent(slInvalidEvent)) {
+    if (!this.host.dispatchEvent(cpsInvalidEvent)) {
       originalInvalidEvent?.preventDefault();
     }
   }
