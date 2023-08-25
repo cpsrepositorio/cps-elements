@@ -593,7 +593,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
 
     // Update validity
     this.updateComplete.then(() => {
-      this.formControlController.updateValidity(true);
+      this.formControlController.updateValidity();
     });
   }
 
