@@ -5,7 +5,7 @@
   - [Utilização](/fundamentos/utilização)
   - [Temas](/fundamentos/temas)
   - [Personalizando <small>(em breve)</small>](/fundamentos/personalizando)
-  - [Formulários <small>(em breve)</small>](/fundamentos/formulários)
+  - [Formulários](/fundamentos/formulários)
 
 - Frameworks
 

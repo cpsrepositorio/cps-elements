@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+## Added
+
+- Documentação sobre formulários.
+
 ## Fixed
 
 - Utilização de variáveis CSS `--cps-input-border-bottom-color` e `--cps-input-border-bottom-color-focus` nos controles de formulário, para simplificar a sobrescrita de cores de borda, especialmente em estado `:invalid`.
