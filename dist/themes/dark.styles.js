@@ -316,6 +316,7 @@ export default css`
     --cps-input-border-color: var(--cps-color-fill-alt-tertiary);
     --cps-input-border-bottom-width: var(--cps-spacing-0-5);
     --cps-input-border-bottom-color: var(--cps-color-text-tertiary);
+    --cps-input-border-bottom-color-focus: var(--cps-color-fill-accent-primary);
 
     --cps-input-background: var(--cps-color-fill-primary);
     --cps-input-background-hover: var(--cps-color-fill-secondary);

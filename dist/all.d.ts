@@ -28,4 +28,5 @@ export * from './utilities/animation.js';
 export * from './utilities/base-path.js';
 export * from './utilities/icon-library.js';
 export * from './utilities/theme.js';
+export * from './utilities/form.js';
 export * from './events/index.js';

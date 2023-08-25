@@ -197,21 +197,23 @@ export class FormControlController {
         host.toggleAttribute('data-user-invalid', !isValid && hasInteracted);
         host.toggleAttribute('data-user-valid', isValid && hasInteracted);
     }
-    updateValidity() {
+    updateValidity(forceHasInteracted = false) {
+        if (forceHasInteracted) {
+            this.setUserInteracted(this.host, true);
+        }
         const host = this.host;
         this.setValidity(host.validity.valid);
     }
     emitInvalidEvent(originalInvalidEvent) {
-        const slInvalidEvent = new CustomEvent('cps-invalid', {
-            bubbles: false,
+        const cpsInvalidEvent = new CustomEvent('cps-invalid', {
+            bubbles: true,
             composed: false,
-            cancelable: true,
-            detail: {}
+            cancelable: true
         });
         if (!originalInvalidEvent) {
-            slInvalidEvent.preventDefault();
+            cpsInvalidEvent.preventDefault();
         }
-        if (!this.host.dispatchEvent(slInvalidEvent)) {
+        if (!this.host.dispatchEvent(cpsInvalidEvent)) {
             originalInvalidEvent === null || originalInvalidEvent === void 0 ? void 0 : originalInvalidEvent.preventDefault();
         }
     }

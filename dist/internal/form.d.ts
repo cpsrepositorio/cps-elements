@@ -33,7 +33,7 @@ export declare class FormControlController implements ReactiveController {
     reset(submitter?: HTMLInputElement | CpsButton): void;
     submit(submitter?: HTMLInputElement | CpsButton): void;
     setValidity(isValid: boolean): void;
-    updateValidity(): void;
+    updateValidity(forceHasInteracted?: boolean): void;
     emitInvalidEvent(originalInvalidEvent?: Event): void;
 }
 export declare const validValidityState: ValidityState;
