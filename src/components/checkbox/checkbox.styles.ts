@@ -38,7 +38,7 @@ export default css`
     align-items: center;
     justify-content: center;
     transition: var(--cps-transition-fast) border-color, var(--cps-transition-fast) color;
-    border: solid var(--cps-spacing-px) var(--cps-color-text-tertiary);
+    border: solid var(--cps-spacing-px) var(--cps-input-border-bottom-color);
     border-radius: var(--cps-border-radius-small);
     width: var(--toggle-size);
     height: var(--toggle-size);
@@ -175,6 +175,7 @@ export default css`
   :host([required]) .checkbox__label::after {
     margin-inline-start: var(--cps-input-required-content-offset);
     color: var(--cps-input-required-content-color);
+    font: var(--cps-font-label);
     content: var(--cps-input-required-content);
   }
 `;

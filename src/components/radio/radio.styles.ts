@@ -47,7 +47,7 @@ export default css`
     place-items: center;
     transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) border-color,
       var(--cps-transition-fast) background-clip;
-    border: solid 1px var(--cps-color-text-tertiary);
+    border: solid var(--cps-spacing-px) var(--cps-input-border-bottom-color);
     border-radius: var(--cps-border-radius-full);
     background-clip: content-box;
     background-color: var(--cps-color-fill-alt-secondary);
@@ -56,37 +56,6 @@ export default css`
     overflow: hidden;
     will-change: background-color, border-color, background-clip;
   }
-
-  /*
-  .radio__control::before {
-    position: absolute;
-    inset: 0;
-    transition: var(--cps-transition-fast) border-color;
-    z-index: 0;
-    border: solid 1px var(--cps-color-text-tertiary);
-    border-radius: var(--cps-border-radius-full);
-    width: 100%;
-    height: 100%;
-    content: '';
-    pointer-events: none;
-    will-change: border-color;
-  }
-
-  .radio__control::after {
-    position: absolute;
-    inset: 0;
-    transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) border-width;
-    z-index: 0;
-    border: solid 1px transparent;
-    border-radius: var(--cps-border-radius-full);
-    background-clip: content-box;
-    background-color: var(--cps-color-fill-alt-secondary);
-    width: 100%;
-    height: 100%;
-    content: '';
-    will-change: background-color, border-width;
-  }
-  */
 
   .radio__input {
     position: absolute;

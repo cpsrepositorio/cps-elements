@@ -50,7 +50,7 @@ export default css`
     background-image: linear-gradient(
       transparent 0,
       transparent calc(100% - var(--cps-input-border-bottom-width) * 2),
-      var(--cps-color-fill-accent-primary) 100%
+      var(--cps-input-border-bottom-color-focus) 100%
     );
     background-origin: border-box;
     content: '';
