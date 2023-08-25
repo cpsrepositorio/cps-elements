@@ -203,6 +203,7 @@ export default class CpsTextarea extends BaseElement implements BaseFormControl 
 
   private handleInput() {
     this.value = this.textarea.value;
+    this.formControlController.updateValidity(true);
     this.emit('cps-input');
   }
 

@@ -154,6 +154,7 @@ export default class CpsRadioGroup extends BaseElement implements BaseFormContro
     if (this.value !== oldValue) {
       this.emit('cps-change');
       this.emit('cps-input');
+      this.formControlController.updateValidity(true);
       this.updateComplete.then(() => this.adjustFocusableRadios());
     }
   }
@@ -198,6 +199,7 @@ export default class CpsRadioGroup extends BaseElement implements BaseFormContro
     if (this.value !== oldValue) {
       this.emit('cps-change');
       this.emit('cps-input');
+      this.formControlController.updateValidity(true);
       this.updateComplete.then(() => this.adjustFocusableRadios());
     }
 

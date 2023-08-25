@@ -137,6 +137,7 @@ export default class CpsCheckbox extends BaseElement implements BaseFormControl 
   }
 
   private handleInput() {
+    this.formControlController.updateValidity(true);
     this.emit('cps-input');
   }
 

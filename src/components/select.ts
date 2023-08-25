@@ -272,6 +272,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
 
         // Emit after updating
         this.updateComplete.then(() => {
+          this.formControlController.updateValidity(true);
           this.emit('cps-input');
           this.emit('cps-change');
         });
@@ -405,6 +406,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
 
       // Emit after update
       this.updateComplete.then(() => {
+        this.formControlController.updateValidity(true);
         this.emit('cps-clear');
         this.emit('cps-input');
         this.emit('cps-change');
@@ -436,6 +438,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
       if (this.value !== oldValue) {
         // Emit after updating
         this.updateComplete.then(() => {
+          this.formControlController.updateValidity(true);
           this.emit('cps-input');
           this.emit('cps-change', { detail: { option } });
         });
@@ -485,6 +488,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
 
       // Emit after updating
       this.updateComplete.then(() => {
+        this.formControlController.updateValidity(true);
         this.emit('cps-input');
         this.emit('cps-change');
       });
@@ -589,7 +593,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
 
     // Update validity
     this.updateComplete.then(() => {
-      this.formControlController.updateValidity();
+      this.formControlController.updateValidity(true);
     });
   }
 

@@ -269,6 +269,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
 
   private handleClearClick(event: MouseEvent) {
     this.value = '';
+    this.formControlController.updateValidity(true);
     this.emit('cps-clear');
     this.emit('cps-input');
     this.emit('cps-change');
@@ -295,7 +296,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
 
   private handleInput() {
     this.value = this.input.value;
-    this.formControlController.updateValidity();
+    this.formControlController.updateValidity(true);
     this.emit('cps-input');
   }
 
