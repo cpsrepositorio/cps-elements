@@ -460,10 +460,10 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
 
             <cps-tab-group>
             <!--
-            <cps-tab slot="nav" panel="script">Script</cps-tab>
-            <cps-tab slot="nav" panel="import">Import</cps-tab>
-            <cps-tab slot="nav" panel="bundler">Bundler</cps-tab>
-            <cps-tab slot="nav" panel="react">React</cps-tab>
+            <cps-tab-item slot="nav" panel="script">Script</cps-tab-item>
+            <cps-tab-item slot="nav" panel="import">Import</cps-tab-item>
+            <cps-tab-item slot="nav" panel="bundler">Bundler</cps-tab-item>
+            <cps-tab-item slot="nav" panel="react">React</cps-tab-item>
             -->
 
             <cps-tab-panel name="script">\n

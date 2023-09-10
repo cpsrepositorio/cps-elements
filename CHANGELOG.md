@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-tab-item>`.
+
 ## 0.8.1 - 2023-08-25
 
 ### Added
