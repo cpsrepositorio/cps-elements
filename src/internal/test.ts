@@ -37,7 +37,7 @@ function determineMousePosition(el: Element, position: string, offsetX: number, 
 /** A testing utility that measures an element's position and clicks on it. */
 export async function clickOnElement(
   /** The element to click */
-  el: Element,
+  el?: Element | null,
   /** The location of the element to click */
   position: 'top' | 'right' | 'bottom' | 'left' | 'center' = 'center',
   /** The horizontal offset to apply to the position when clicking */
@@ -45,8 +45,8 @@ export async function clickOnElement(
   /** The vertical offset to apply to the position when clicking */
   offsetY = 0
 ) {
+  if (!el) return;
   const { clickX, clickY } = determineMousePosition(el, position, offsetX, offsetY);
-
   await sendMouse({ type: 'click', position: [clickX, clickY] });
 }
 
