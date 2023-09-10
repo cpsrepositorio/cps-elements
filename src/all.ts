@@ -23,6 +23,7 @@ export { CpsSeparator } from './components/separator.js';
 export { CpsSkeleton } from './components/skeleton.js';
 export { CpsSpinner } from './components/spinner.js';
 export { CpsTabItem } from './components/tab-item.js';
+export { CpsTabPanel } from './components/tab-panel.js';
 export { CpsTextarea } from './components/textarea.js';
 export { CpsToggleButton } from './components/toggle-button.js';
 export { CpsTooltip } from './components/tooltip.js';

@@ -37,6 +37,7 @@
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
   - [Tab Item](/componentes/tab-item)
+  - [Tab Panel](/componentes/tab-panel)
   - [Textarea](/componentes/textarea)
   - [Toggle Button](/componentes/toggle-button)
   - [Tooltip](/componentes/tooltip)
