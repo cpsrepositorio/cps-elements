@@ -3,6 +3,7 @@ export { default as CpsAfterShow } from './cps-after-show.js';
 export { default as CpsBlurEvent } from './cps-blur.js';
 export { default as CpsChangeEvent } from './cps-change.js';
 export { default as CpsClearEvent } from './cps-clear.js';
+export { default as CpsCloseEvent } from './cps-close.js';
 export { default as CpsErrorEvent } from './cps-error.js';
 export { default as CpsFocusEvent } from './cps-focus.js';
 export { default as CpsHide } from './cps-hide.js';
