@@ -1,1 +1,1 @@
-export declare const isElementVisibleFromOverflow: (outerElement: Element, innerElement: Element) => boolean;
+export declare const isElementVisibleFromOverflow: (outerElement?: Element | null, innerElement?: Element | null) => boolean;

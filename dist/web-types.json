@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -3954,6 +3954,391 @@
             "events": []
           },
           "attributes": []
+        },
+        {
+          "name": "cps-tab-group",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-group",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "activeTab",
+                "value": {
+                  "type": "CpsTabItem | undefined"
+                }
+              },
+              {
+                "name": "mutationObserver",
+                "value": {
+                  "type": "MutationObserver"
+                }
+              },
+              {
+                "name": "resizeObserver",
+                "value": {
+                  "type": "ResizeObserver"
+                }
+              },
+              {
+                "name": "tabs",
+                "value": {
+                  "type": "CpsTabItem[]"
+                }
+              },
+              {
+                "name": "panels",
+                "value": {
+                  "type": "CpsTabPanel[]"
+                }
+              },
+              {
+                "name": "tabGroup",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "body",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "nav",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "indicator",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "hasScrollControls",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "placement",
+                "description": "O posicionamento das abas dentro do grupo.",
+                "value": {
+                  "type": "'top' | 'bottom' | 'start' | 'end'"
+                }
+              },
+              {
+                "name": "activation",
+                "description": "Quando definido como `auto`, navegar pelas abas com as teclas de seta mostrará instantaneamente o painel de abas correspondente. Quando definido como `manual`, a aba receberá foco, mas não será exibida até que o usuário pressione a barra de espaço ou tecle `Enter`.",
+                "value": {
+                  "type": "'auto' | 'manual'"
+                }
+              },
+              {
+                "name": "noScrollControls",
+                "description": "Desabilita as setas indicativas de rolagem automática quando as abas transbordarem em relação ao espaço disponível na área de navegação do grupo de abas.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "getAllTabs",
+                "value": {}
+              },
+              {
+                "name": "getAllPanels",
+                "value": {}
+              },
+              {
+                "name": "getActiveTab",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handleScrollToStart",
+                "value": {}
+              },
+              {
+                "name": "handleScrollToEnd",
+                "value": {}
+              },
+              {
+                "name": "setActiveTab",
+                "value": {}
+              },
+              {
+                "name": "setAriaLabels",
+                "value": {}
+              },
+              {
+                "name": "repositionIndicator",
+                "value": {}
+              },
+              {
+                "name": "syncTabsAndPanels",
+                "value": {}
+              },
+              {
+                "name": "updateScrollControls",
+                "value": {}
+              },
+              {
+                "name": "syncIndicator",
+                "value": {}
+              },
+              {
+                "name": "show",
+                "description": "Força a seleção da aba especificada, através do nome de seu painel.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-tab-show",
+                "description": "Emitido quando o painel de uma aba é exibido."
+              },
+              {
+                "name": "cps-tab-hide",
+                "description": "Emitido quando o painel de uma aba é ocultado."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "placement",
+              "description": "O posicionamento das abas dentro do grupo.",
+              "value": {
+                "type": "'top' | 'bottom' | 'start' | 'end'"
+              }
+            },
+            {
+              "name": "activation",
+              "description": "Quando definido como `auto`, navegar pelas abas com as teclas de seta mostrará instantaneamente o painel de abas correspondente. Quando definido como `manual`, a aba receberá foco, mas não será exibida até que o usuário pressione a barra de espaço ou tecle `Enter`.",
+              "value": {
+                "type": "'auto' | 'manual'"
+              }
+            },
+            {
+              "name": "no-scroll-controls",
+              "description": "Desabilita as setas indicativas de rolagem automática quando as abas transbordarem em relação ao espaço disponível na área de navegação do grupo de abas.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-tab-item",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-item",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "attrId",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "componentId",
+                "value": {}
+              },
+              {
+                "name": "tab",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "panel",
+                "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "selected",
+                "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "placement",
+                "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
+                "value": {
+                  "type": "'top' | 'bottom' | 'start' | 'end'"
+                }
+              },
+              {
+                "name": "closable",
+                "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "fluid",
+                "description": "Força a aba a fluir através de seu contêiner.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita a aba.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleCloseClick",
+                "value": {}
+              },
+              {
+                "name": "handleSelectedChange",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco na aba.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco da aba.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-close",
+                "description": "Emitido quando o botão de fechar da aba `closable` é acionado."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "panel",
+              "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "selected",
+              "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "placement",
+              "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
+              "value": {
+                "type": "'top' | 'bottom' | 'start' | 'end'"
+              }
+            },
+            {
+              "name": "closable",
+              "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "fluid",
+              "description": "Força a aba a fluir através de seu contêiner.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita a aba.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-tab-panel",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-panel",
+          "js": {
+            "properties": [
+              {
+                "name": "attrId",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "componentId",
+                "value": {}
+              },
+              {
+                "name": "name",
+                "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "selected",
+                "description": "Quando verdadeiro, o painel é exibido.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleSelectedChanged",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "name",
+              "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "selected",
+              "description": "Quando verdadeiro, o painel é exibido.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
         },
         {
           "name": "cps-textarea",

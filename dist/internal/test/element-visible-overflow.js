@@ -1,4 +1,6 @@
 export const isElementVisibleFromOverflow = (outerElement, innerElement) => {
+    if (!outerElement || !innerElement)
+        return false;
     const outerRect = outerElement.getBoundingClientRect();
     const innerRect = innerElement.getBoundingClientRect();
     return (outerRect.top <= innerRect.bottom &&

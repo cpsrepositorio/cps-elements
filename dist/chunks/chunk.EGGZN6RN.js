@@ -1,0 +1,1 @@
+import{a as t}from"./chunk.P3QZXCMI.js";import*as o from"react";import{createComponent as e}from"@lit-labs/react";var p=e({tagName:"cps-option",elementClass:t,react:o,events:{}}),n=p;export{p as a,n as b};

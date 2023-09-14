@@ -1,1 +1,1 @@
-export declare const waitForScrollingToEnd: (element: Element, timeoutInMs?: number) => Promise<void>;
+export declare const waitForScrollingToEnd: (element?: Element | null, timeoutInMs?: number) => Promise<void>;

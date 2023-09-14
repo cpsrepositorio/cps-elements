@@ -1,8 +1,10 @@
 export const waitForScrollingToEnd = (element, timeoutInMs = 500) => {
-    let lastLeft = element.scrollLeft;
-    let lastTop = element.scrollTop;
+    let lastLeft = element === null || element === void 0 ? void 0 : element.scrollLeft;
+    let lastTop = element === null || element === void 0 ? void 0 : element.scrollTop;
     let framesWithoutChange = 0;
     return new Promise((resolve, reject) => {
+        if (!element)
+            return;
         const timeout = window.setTimeout(() => {
             reject(new Error('Waiting for scroll end timed out'));
         }, timeoutInMs);

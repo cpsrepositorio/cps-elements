@@ -31,6 +31,8 @@ function determineMousePosition(el, position, offsetX, offsetY) {
     return { clickX, clickY };
 }
 export async function clickOnElement(el, position = 'center', offsetX = 0, offsetY = 0) {
+    if (!el)
+        return;
     const { clickX, clickY } = determineMousePosition(el, position, offsetX, offsetY);
     await sendMouse({ type: 'click', position: [clickX, clickY] });
 }

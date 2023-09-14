@@ -459,12 +459,10 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             ## Importação
 
             <cps-tab-group>
-            <!--
-            <cps-tab slot="nav" panel="script">Script</cps-tab>
-            <cps-tab slot="nav" panel="import">Import</cps-tab>
-            <cps-tab slot="nav" panel="bundler">Bundler</cps-tab>
-            <cps-tab slot="nav" panel="react">React</cps-tab>
-            -->
+            <cps-tab-item slot="nav" panel="script">Script</cps-tab-item>
+            <cps-tab-item slot="nav" panel="import">Import</cps-tab-item>
+            <cps-tab-item slot="nav" panel="bundler">Bundler</cps-tab-item>
+            <cps-tab-item slot="nav" panel="react">React</cps-tab-item>
 
             <cps-tab-panel name="script">\n
             Para importar este componente [através de CDN](/fundamentos/instalação#através-de-cdn) usando uma _tag_ \`<script>\`:
