@@ -15,6 +15,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 - Definição do tipo de evento `cps-tab-show`.
 - Definição do tipo de evento `cps-close`.
 
+### Changed
+
+- Utilização dos novos componentes de abas na estrutura da documentação.
+
 ## 0.8.1 - 2023-08-25
 
 ### Added
