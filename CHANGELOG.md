@@ -10,6 +10,8 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Criação do componente `<cps-tab-item>`.
 - Criação do componente `<cps-tab-panel>`.
+- Definição do tipo de evento `cps-tab-hide`.
+- Definição do tipo de evento `cps-tab-show`.
 - Definição do tipo de evento `cps-close`.
 
 ## 0.8.1 - 2023-08-25

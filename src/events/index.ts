@@ -14,3 +14,5 @@ export { default as CpsRemoveEvent } from './cps-remove.js';
 export { default as CpsReposition } from './cps-reposition.js';
 export { default as CpsSelect } from './cps-select.js';
 export { default as CpsShow } from './cps-show.js';
+export { default as CpsTabHide } from './cps-tab-hide.js';
+export { default as CpsTabShow } from './cps-tab-show.js';
