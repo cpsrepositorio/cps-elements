@@ -36,6 +36,7 @@
   - [Separator](/componentes/separator)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
+  - [Tab Group](/componentes/tab-group)
   - [Tab Item](/componentes/tab-item)
   - [Tab Panel](/componentes/tab-panel)
   - [Textarea](/componentes/textarea)

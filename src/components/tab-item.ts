@@ -33,6 +33,8 @@ let id = 0;
  *
  * @cssproperty --selected-background - A cor de fundo da aba, quando ela está selecionada. Padrão: `var(--cps-color-background-solid-tertiary)`. Idealmente, se for personalizar, garanta que a cor aplicada é a mesma que a do painel de abas associado.
  * @cssproperty --selected-border - A cor da borda da aba, quando ela está selecionada. Padrão: `var(--cps-color-stroke-primary)`. Idealmente, se for personalizar, garanta que a cor aplicada é a mesma que a do painel de abas associado.
+ * @cssproperty --border-radius - Arredondamento dos cantos da aba. Padrão: `var(--cps-spacing-1-5)`.
+ * @cssproperty --inverse-rounded-corner-size - Arredondamento invertido posicionado na base da aba, causando o efeito de uma curvatura para fora. Padrão: `8px`.
  */
 @customElement('cps-tab-item')
 export default class CpsTabItem extends BaseElement {

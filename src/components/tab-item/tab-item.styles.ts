@@ -7,6 +7,8 @@ export default css`
   :host {
     --selected-background: var(--cps-color-background-solid-tertiary);
     --selected-border: var(--cps-color-stroke-primary);
+    --border-radius: var(--cps-spacing-1-5);
+    --inverse-rounded-corner-size: 8px;
   }
 
   :host:not([hidden]) {
@@ -37,7 +39,7 @@ export default css`
   /* Placements */
   .tab-item--top {
     border-bottom: none;
-    border-radius: var(--cps-spacing-1-5) var(--cps-spacing-1-5) 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     padding: var(--cps-spacing-2) var(--cps-spacing-6) var(--cps-spacing-2) var(--cps-spacing-4);
   }
 
@@ -45,7 +47,7 @@ export default css`
   .tab-item--end.tab-item--rtl {
     flex: 1;
     border-right: none;
-    border-radius: var(--cps-spacing-1-5) 0 0 var(--cps-spacing-1-5);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
     padding: var(--cps-spacing-5) var(--cps-spacing-6) var(--cps-spacing-5) var(--cps-spacing-4);
     width: 100%;
   }
@@ -54,14 +56,14 @@ export default css`
   .tab-item--end:not(.tab-item--rtl) {
     flex: 1;
     border-left: none;
-    border-radius: 0 var(--cps-spacing-1-5) var(--cps-spacing-1-5) 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
     padding: var(--cps-spacing-5) var(--cps-spacing-4) var(--cps-spacing-5) var(--cps-spacing-6);
     width: 100%;
   }
 
   .tab-item--bottom {
     border-top: none;
-    border-radius: 0 0 var(--cps-spacing-1-5) var(--cps-spacing-1-5);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
     padding: var(--cps-spacing-2) var(--cps-spacing-6) var(--cps-spacing-2) var(--cps-spacing-4);
   }
 
@@ -172,22 +174,50 @@ export default css`
   /* Inverse rounded bottom corners */
   .tab-item::before,
   .tab-item::after {
-    --reverse-rounded-mask: radial-gradient(8px at 8px 0, #0000 98%, #000) -8px;
+    --reverse-rounded-mask: radial-gradient(
+        var(--inverse-rounded-corner-size) at var(--inverse-rounded-corner-size) 0,
+        #0000 98%,
+        #000
+      )
+      calc(-1 * var(--inverse-rounded-corner-size));
     position: absolute;
     opacity: 0;
     z-index: 1;
     background: inherit;
     content: '';
     pointer-events: none;
-    clip-path: polygon(0% 0%, 0% 100%, 9px 100%, 9px 0, calc(100% - 9px) 0, calc(100% - 9px) 100%, 100% 100%, 100% 0);
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      calc(var(--inverse-rounded-corner-size) + 1px) 100%,
+      calc(var(--inverse-rounded-corner-size) + 1px) 0,
+      calc(100% - (calc(var(--inverse-rounded-corner-size) + 1px))) 0,
+      calc(100% - (calc(var(--inverse-rounded-corner-size) + 1px))) 100%,
+      100% 100%,
+      100% 0
+    );
     -webkit-mask: var(--reverse-rounded-mask);
     mask: var(--reverse-rounded-mask);
   }
 
   .tab-item::before {
-    --reverse-rounded-mask: radial-gradient(8px at 8px 0, #0000 96%, #000) -8px;
+    --reverse-rounded-mask: radial-gradient(
+        var(--inverse-rounded-corner-size) at var(--inverse-rounded-corner-size) 0,
+        #0000 96%,
+        #000
+      )
+      calc(-1 * var(--inverse-rounded-corner-size));
     background: var(--selected-border);
-    clip-path: polygon(0% 0%, 0% 100%, 8px 100%, 8px 0, calc(100% - 8px) 0, calc(100% - 8px) 100%, 100% 100%, 100% 0);
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      var(--inverse-rounded-corner-size) 100%,
+      var(--inverse-rounded-corner-size) 0,
+      calc(100% - var(--inverse-rounded-corner-size)) 0,
+      calc(100% - var(--inverse-rounded-corner-size)) 100%,
+      100% 100%,
+      100% 0
+    );
     -webkit-mask: var(--reverse-rounded-mask);
     mask: var(--reverse-rounded-mask);
   }
@@ -203,9 +233,9 @@ export default css`
     bottom: 0;
     left: 0;
     margin-bottom: -0.5px;
-    margin-left: -8px;
-    width: calc(100% + 16px);
-    height: 8px;
+    margin-left: calc(-1 * var(--inverse-rounded-corner-size));
+    width: calc(100% + var(--inverse-rounded-corner-size) * 2);
+    height: var(--inverse-rounded-corner-size);
   }
 
   .tab-item--top::before {
@@ -224,9 +254,9 @@ export default css`
     top: 0;
     left: 0;
     margin-top: -0.5px;
-    margin-left: -8px;
-    width: calc(100% + 16px);
-    height: 8px;
+    margin-left: calc(-1 * var(--inverse-rounded-corner-size));
+    width: calc(100% + var(--inverse-rounded-corner-size) * 2);
+    height: var(--inverse-rounded-corner-size);
     rotate: -180deg;
   }
 

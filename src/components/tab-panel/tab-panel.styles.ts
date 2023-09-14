@@ -8,16 +8,16 @@ export default css`
     --padding: var(--cps-spacing-4);
     --background: var(--cps-color-background-solid-tertiary);
     --border-color: var(--cps-color-stroke-primary);
-    --border-radius: var(--cps-border-radius-large);
 
     display: none;
     border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius, var(--cps-border-radius-large));
     background: var(--background);
   }
 
   :host([selected]) {
-    display: block;
+    display: flex;
+    flex: 1;
   }
 
   .tab-panel {

@@ -22,6 +22,7 @@ export { CpsSelect } from './components/select.js';
 export { CpsSeparator } from './components/separator.js';
 export { CpsSkeleton } from './components/skeleton.js';
 export { CpsSpinner } from './components/spinner.js';
+export { CpsTabGroup } from './components/tab-group.js';
 export { CpsTabItem } from './components/tab-item.js';
 export { CpsTabPanel } from './components/tab-panel.js';
 export { CpsTextarea } from './components/textarea.js';
