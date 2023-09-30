@@ -55,6 +55,7 @@
 
   - [Visão geral](/variáveis-de-estilo/visão-geral)
   - [Tipografia](/variáveis-de-estilo/tipografia)
+  - [Cores](/variáveis-de-estilo/cores)
 
 - Saiba mais
 
