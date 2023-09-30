@@ -18,7 +18,7 @@ export default css`
     margin: inherit;
     border: solid 1px var(--cps-color-stroke-card-primary);
     border-radius: var(--cps-border-radius-medium);
-    background-color: var(--cps-color-system-neutral-subtle);
+    background-color: var(--cps-color-state-neutral-subtle);
     color: var(--cps-color-text-primary);
     font: var(--cps-font-body);
   }
@@ -42,43 +42,43 @@ export default css`
   }
 
   .notification--neutral {
-    background: var(--cps-color-system-neutral-subtle);
+    background: var(--cps-color-state-neutral-subtle);
   }
 
   .notification--neutral .notification__icon {
-    background: var(--cps-color-system-neutral);
+    background: var(--cps-color-state-neutral);
   }
 
   .notification--informative {
-    background: var(--cps-color-system-informative-subtle);
+    background: var(--cps-color-state-informative-subtle);
   }
 
   .notification--informative .notification__icon {
-    background: var(--cps-color-system-informative);
+    background: var(--cps-color-state-informative);
   }
 
   .notification--warning {
-    background: var(--cps-color-system-warning-subtle);
+    background: var(--cps-color-state-warning-subtle);
   }
 
   .notification--warning .notification__icon {
-    background: var(--cps-color-system-warning);
+    background: var(--cps-color-state-warning);
   }
 
   .notification--critical {
-    background: var(--cps-color-system-critical-subtle);
+    background: var(--cps-color-state-critical-subtle);
   }
 
   .notification--critical .notification__icon {
-    background: var(--cps-color-system-critical);
+    background: var(--cps-color-state-critical);
   }
 
   .notification--success {
-    background: var(--cps-color-system-success-subtle);
+    background: var(--cps-color-state-success-subtle);
   }
 
   .notification--success .notification__icon {
-    background: var(--cps-color-system-success);
+    background: var(--cps-color-state-success);
   }
 
   .notification__message {

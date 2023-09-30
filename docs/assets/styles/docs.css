@@ -466,7 +466,7 @@ kbd,
   border: solid 1px var(--cps-color-stroke-card-secondary);
   border-radius: var(--cps-border-radius-medium);
   box-shadow: inset 1px 1px 0 1px var(--cps-color-text-inverted-secondary),
-    inset -1px -1px 0 1px var(--cps-color-stroke-primary), inset 0 0 12px var(--cps-color-system-informative-subtle);
+    inset -1px -1px 0 1px var(--cps-color-stroke-primary), inset 0 0 12px var(--cps-color-state-informative-subtle);
   background: linear-gradient(145deg, var(--cps-palette-neutral-200), var(--cps-palette-neutral-50));
   padding: 2px 5px;
   color: var(--cps-color-text-primary);
@@ -479,7 +479,7 @@ kbd,
   border-color: var(--cps-color-fill-alt-secondary);
   box-shadow: inset 1px 1px 0 1px var(--cps-color-stroke-secondary),
     inset -1px -1px 0 1px var(--cps-color-stroke-skeleton-accent),
-    inset 0 0 12px var(--cps-color-system-informative-subtle);
+    inset 0 0 12px var(--cps-color-state-informative-subtle);
 }
 
 /* Code blocks */
@@ -679,11 +679,11 @@ kbd,
 }
 
 .markdown-section p.tip {
-  border-left-color: var(--cps-color-system-critical);
+  border-left-color: var(--cps-color-state-critical);
 }
 
 .markdown-section p.tip:before {
-  background-color: var(--cps-color-system-critical);
+  background-color: var(--cps-color-state-critical);
   padding-top: 1px;
   font: var(--cps-font-body-large);
   content: '!';
@@ -729,15 +729,15 @@ kbd,
 
 /* Repo buttons */
 .repo-button--sponsor cps-icon {
-  color: var(--cps-color-system-critical);
+  color: var(--cps-color-state-critical);
 }
 
 .repo-button--star cps-icon {
-  color: var(--cps-color-system-warning);
+  color: var(--cps-color-state-warning);
 }
 
 .repo-button--fork cps-icon {
-  color: var(--cps-color-system-neutral);
+  color: var(--cps-color-state-neutral);
 }
 
 @media screen and (max-width: 400px) {

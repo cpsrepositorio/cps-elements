@@ -13,6 +13,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Changed
 
 - Paleta de cinzas neutros alterada de cores sólidas para níveis de opacidade.
+- Variáveis de estilo para estados de interface renomeadas `--cps-color-system-{x}` para `--cps-color-state-{x}`.
 
 ## 0.9.0 - 2023-09-14
 

@@ -35,17 +35,17 @@
 }
 
 .cps-toast-stack cps-notification[variant='informative']::part(base) {
-  background: var(--cps-color-system-informative-acrylic);
+  background: var(--cps-color-state-informative-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant='warning']::part(base) {
-  background: var(--cps-color-system-warning-acrylic);
+  background: var(--cps-color-state-warning-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant='critical']::part(base) {
-  background: var(--cps-color-system-critical-acrylic);
+  background: var(--cps-color-state-critical-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant='success']::part(base) {
-  background: var(--cps-color-system-success-acrylic);
+  background: var(--cps-color-state-success-acrylic);
 }

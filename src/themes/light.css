@@ -58,36 +58,37 @@
   --cps-palette-accent-950: rgb(9 50 60);
 
   /*
-   * System Colors
+   * State Colors
    */
 
   /* Neutral */
-  --cps-color-system-neutral: rgb(138 138 138);
-  --cps-color-system-neutral-transparent: rgb(0 0 0 / 25%);
-  --cps-color-system-neutral-subtle: rgb(0 0 0 / 2.41%);
+  --cps-color-state-neutral: rgb(138 138 138);
+  --cps-color-state-neutral-subtle: rgb(0 0 0 / 2.41%);
+  --cps-color-state-neutral-acrylic: linear-gradient(rgb(138 138 138 / 90%), rgb(138 138 138 / 90%)),
+    var(--cps-texture-acrylic);
 
   /* Informative */
-  --cps-color-system-informative: rgb(0 95 183);
-  --cps-color-system-informative-subtle: rgba(246 246 246 / 50%);
-  --cps-color-system-informative-acrylic: linear-gradient(rgb(246 246 246 / 90%), rgb(246 246 246 / 90%)),
+  --cps-color-state-informative: rgb(0 95 183);
+  --cps-color-state-informative-subtle: rgba(246 246 246 / 50%);
+  --cps-color-state-informative-acrylic: linear-gradient(rgb(246 246 246 / 90%), rgb(246 246 246 / 90%)),
     var(--cps-texture-acrylic);
 
   /* Warning */
-  --cps-color-system-warning: rgb(157 93 0);
-  --cps-color-system-warning-subtle: rgb(255 244 206);
-  --cps-color-system-warning-acrylic: linear-gradient(rgb(255 244 206 / 90%), rgb(255 244 206 / 90%)),
+  --cps-color-state-warning: rgb(157 93 0);
+  --cps-color-state-warning-subtle: rgb(255 244 206);
+  --cps-color-state-warning-acrylic: linear-gradient(rgb(255 244 206 / 90%), rgb(255 244 206 / 90%)),
     var(--cps-texture-acrylic);
 
   /* Critical */
-  --cps-color-system-critical: rgb(196 43 28);
-  --cps-color-system-critical-subtle: rgb(253 231 233);
-  --cps-color-system-critical-acrylic: linear-gradient(rgb(253 231 233 / 90%), rgb(253 231 233 / 90%)),
+  --cps-color-state-critical: rgb(196 43 28);
+  --cps-color-state-critical-subtle: rgb(253 231 233);
+  --cps-color-state-critical-acrylic: linear-gradient(rgb(253 231 233 / 90%), rgb(253 231 233 / 90%)),
     var(--cps-texture-acrylic);
 
   /* Success */
-  --cps-color-system-success: rgb(15 123 15);
-  --cps-color-system-success-subtle: rgb(223 246 221);
-  --cps-color-system-success-acrylic: linear-gradient(rgb(223 246 221 / 90%), rgb(223 246 221 / 90%)),
+  --cps-color-state-success: rgb(15 123 15);
+  --cps-color-state-success-subtle: rgb(223 246 221);
+  --cps-color-state-success-acrylic: linear-gradient(rgb(223 246 221 / 90%), rgb(223 246 221 / 90%)),
     var(--cps-texture-acrylic);
 
   /*
@@ -368,7 +369,7 @@
 
   --cps-input-required-content: '*';
   --cps-input-required-content-offset: calc(var(--cps-spacing-0-5) * -1);
-  --cps-input-required-content-color: var(--cps-color-system-critical);
+  --cps-input-required-content-color: var(--cps-color-state-critical);
 
   /* Toggles (checkboxes, radios, switches) */
   --cps-toggle-size-small: var(--cps-spacing-4); /* 16px */
