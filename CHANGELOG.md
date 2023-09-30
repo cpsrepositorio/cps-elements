@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Paleta de cinzas neutros alterada de cores sólidas para níveis de opacidade.
+
 ## 0.9.0 - 2023-09-14
 
 ### Added

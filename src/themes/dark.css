@@ -15,17 +15,17 @@
 
   /* Neutral */
   --cps-palette-neutral-0: rgb(0 0 0);
-  --cps-palette-neutral-50: rgb(11 11 11);
-  --cps-palette-neutral-100: rgb(23 23 23);
-  --cps-palette-neutral-200: rgb(38 38 38);
-  --cps-palette-neutral-300: rgb(64 64 64);
-  --cps-palette-neutral-400: rgb(82 82 82);
-  --cps-palette-neutral-500: rgb(115 115 115);
-  --cps-palette-neutral-600: rgb(163 163 163);
-  --cps-palette-neutral-700: rgb(212 212 212);
-  --cps-palette-neutral-800: rgb(229 229 229);
-  --cps-palette-neutral-900: rgb(245 245 245);
-  --cps-palette-neutral-950: rgb(250 250 250);
+  --cps-palette-neutral-50: rgb(255 255 255 / 4.2%);
+  --cps-palette-neutral-100: rgb(255 255 255 / 9%);
+  --cps-palette-neutral-200: rgb(255 255 255 / 14.8%);
+  --cps-palette-neutral-300: rgb(255 255 255 / 25%);
+  --cps-palette-neutral-400: rgb(255 255 255 / 32.2%);
+  --cps-palette-neutral-500: rgb(255 255 255 / 45%);
+  --cps-palette-neutral-600: rgb(255 255 255 / 64%);
+  --cps-palette-neutral-700: rgb(255 255 255 / 83%);
+  --cps-palette-neutral-800: rgb(255 255 255 / 89.8%);
+  --cps-palette-neutral-900: rgb(255 255 255 / 96%);
+  --cps-palette-neutral-950: rgb(255 255 255 / 97.9%);
   --cps-palette-neutral-1000: rgb(255 255 255);
 
   /* Brand */
