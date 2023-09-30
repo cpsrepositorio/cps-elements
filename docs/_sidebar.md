@@ -59,6 +59,7 @@
   - [Cantos arredondados](/variáveis-de-estilo/cantos-arredondados)
   - [Dimensões e espaçamentos](/variáveis-de-estilo/dimensões-e-espaçamentos)
   - [Elevação](/variáveis-de-estilo/elevação)
+  - [Transições](/variáveis-de-estilo/transições)
 
 - Saiba mais
 
