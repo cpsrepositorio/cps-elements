@@ -25,33 +25,33 @@ export default css`
    */
 
   .chip--neutral {
-    border-color: var(--cps-color-system-neutral-transparent);
+    border-color: var(--cps-color-stroke-inverted-tertiary);
     background-color: var(--cps-color-state-neutral-subtle);
-    color: var(--cps-palette-neutral-800);
+    color: var(--cps-color-text-primary);
   }
 
   .chip--informative {
     border-color: var(--cps-color-stroke-primary);
     background-color: var(--cps-color-state-informative);
-    color: var(--cps-palette-neutral-0);
+    color: var(--cps-color-text-inverted-primary);
   }
 
   .chip--warning {
     border-color: var(--cps-color-stroke-primary);
     background-color: var(--cps-color-state-warning);
-    color: var(--cps-palette-neutral-0);
+    color: var(--cps-color-text-inverted-primary);
   }
 
   .chip--critical {
     border-color: var(--cps-color-stroke-primary);
     background-color: var(--cps-color-state-critical);
-    color: var(--cps-palette-neutral-0);
+    color: var(--cps-color-text-inverted-primary);
   }
 
   .chip--success {
     border-color: var(--cps-color-stroke-primary);
     background-color: var(--cps-color-state-success);
-    color: var(--cps-palette-neutral-0);
+    color: var(--cps-color-text-inverted-primary);
   }
 
   /*
