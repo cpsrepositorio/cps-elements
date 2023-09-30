@@ -14,7 +14,7 @@ export default css`
     padding: var(--cps-spacing-0-5);
     overflow: auto;
     overscroll-behavior: none;
-    backdrop-filter: blur(12px);
+    backdrop-filter: var(--cps-blur-medium);
     filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
   }
 

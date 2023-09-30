@@ -307,6 +307,14 @@
   --cps-spacing-20: 5rem; /* 80px */
 
   /*
+   * Effects
+   */
+
+  --cps-blur-small: blur(6px);
+  --cps-blur-medium: blur(12px);
+  --cps-blur-large: blur(24px);
+
+  /*
    * Interaction
    */
 

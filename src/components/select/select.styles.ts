@@ -27,7 +27,7 @@ export default css`
   .select::part(container) {
     z-index: var(--cps-z-index-dropdown);
     border-radius: var(--cps-border-radius-large);
-    backdrop-filter: blur(12px);
+    backdrop-filter: var(--cps-blur-medium);
     filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
   }
 

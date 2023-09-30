@@ -22,7 +22,7 @@ export default css`
     z-index: var(--cps-z-index-tooltip);
     border-radius: var(--cps-border-radius-large);
     pointer-events: none;
-    backdrop-filter: blur(12px);
+    backdrop-filter: var(--cps-blur-medium);
     filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
   }
 

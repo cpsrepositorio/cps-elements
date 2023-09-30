@@ -25,7 +25,7 @@
 }
 
 .cps-toast-stack cps-notification::part(base) {
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--cps-blur-medium);
   filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
 }
 

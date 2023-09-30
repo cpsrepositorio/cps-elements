@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Variáveis de estilo de efeito de embaçamento (`blur`), ao invés de valores fixos nos componentes.
+
 ### Changed
 
 - Paleta de cinzas neutros alterada de cores sólidas para níveis de opacidade.
