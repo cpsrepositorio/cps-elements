@@ -1,1 +1,0 @@
-import{a as t}from"./chunk.36WV64BB.js";import*as o from"react";import{createComponent as e}from"@lit-labs/react";var r=e({tagName:"cps-button-group",elementClass:t,react:o,events:{}}),n=r;export{r as a,n as b};

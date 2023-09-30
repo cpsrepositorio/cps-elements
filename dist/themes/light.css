@@ -7,17 +7,17 @@
   --cps-texture-acrylic: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.2' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 
   --cps-palette-neutral-0: rgb(255 255 255);
-  --cps-palette-neutral-50: rgb(250 250 250);
-  --cps-palette-neutral-100: rgb(245 245 245);
-  --cps-palette-neutral-200: rgb(229 229 229);
-  --cps-palette-neutral-300: rgb(212 212 212);
-  --cps-palette-neutral-400: rgb(163 163 163);
-  --cps-palette-neutral-500: rgb(115 115 115);
-  --cps-palette-neutral-600: rgb(82 82 82);
-  --cps-palette-neutral-700: rgb(64 64 64);
-  --cps-palette-neutral-800: rgb(38 38 38);
-  --cps-palette-neutral-900: rgb(23 23 23);
-  --cps-palette-neutral-950: rgb(11 11 11);
+  --cps-palette-neutral-50: rgb(0 0 0 / 1.8%);
+  --cps-palette-neutral-100: rgb(0 0 0 / 3.8%);
+  --cps-palette-neutral-200: rgb(0 0 0 / 10%);
+  --cps-palette-neutral-300: rgb(0 0 0 / 17%);
+  --cps-palette-neutral-400: rgb(0 0 0 / 36%);
+  --cps-palette-neutral-500: rgb(0 0 0 / 54.8%);
+  --cps-palette-neutral-600: rgb(0 0 0 / 68%);
+  --cps-palette-neutral-700: rgb(0 0 0 / 75%);
+  --cps-palette-neutral-800: rgb(0 0 0 / 85%);
+  --cps-palette-neutral-900: rgb(0 0 0 / 91%);
+  --cps-palette-neutral-950: rgb(0 0 0 / 95.5%);
   --cps-palette-neutral-1000: rgb(0 0 0);
 
   --cps-palette-brand-50: rgb(255 241 230);
@@ -44,37 +44,41 @@
   --cps-palette-accent-900: rgb(9 71 87);
   --cps-palette-accent-950: rgb(9 50 60);
 
-  --cps-color-system-neutral: rgb(138 138 138);
-  --cps-color-system-neutral-transparent: rgb(0 0 0 / 25%);
-  --cps-color-system-neutral-subtle: rgb(0 0 0 / 2.41%);
+  --cps-color-state-neutral: rgb(138 138 138);
+  --cps-color-state-neutral-subtle: rgb(0 0 0 / 2.41%);
+  --cps-color-state-neutral-acrylic: linear-gradient(
+      rgb(138 138 138 / 90%),
+      rgb(138 138 138 / 90%)
+    ),
+    var(--cps-texture-acrylic);
 
-  --cps-color-system-informative: rgb(0 95 183);
-  --cps-color-system-informative-subtle: rgba(246 246 246 / 50%);
-  --cps-color-system-informative-acrylic: linear-gradient(
+  --cps-color-state-informative: rgb(0 95 183);
+  --cps-color-state-informative-subtle: rgba(246 246 246 / 50%);
+  --cps-color-state-informative-acrylic: linear-gradient(
       rgb(246 246 246 / 90%),
       rgb(246 246 246 / 90%)
     ),
     var(--cps-texture-acrylic);
 
-  --cps-color-system-warning: rgb(157 93 0);
-  --cps-color-system-warning-subtle: rgb(255 244 206);
-  --cps-color-system-warning-acrylic: linear-gradient(
+  --cps-color-state-warning: rgb(157 93 0);
+  --cps-color-state-warning-subtle: rgb(255 244 206);
+  --cps-color-state-warning-acrylic: linear-gradient(
       rgb(255 244 206 / 90%),
       rgb(255 244 206 / 90%)
     ),
     var(--cps-texture-acrylic);
 
-  --cps-color-system-critical: rgb(196 43 28);
-  --cps-color-system-critical-subtle: rgb(253 231 233);
-  --cps-color-system-critical-acrylic: linear-gradient(
+  --cps-color-state-critical: rgb(196 43 28);
+  --cps-color-state-critical-subtle: rgb(253 231 233);
+  --cps-color-state-critical-acrylic: linear-gradient(
       rgb(253 231 233 / 90%),
       rgb(253 231 233 / 90%)
     ),
     var(--cps-texture-acrylic);
 
-  --cps-color-system-success: rgb(15 123 15);
-  --cps-color-system-success-subtle: rgb(223 246 221);
-  --cps-color-system-success-acrylic: linear-gradient(
+  --cps-color-state-success: rgb(15 123 15);
+  --cps-color-state-success-subtle: rgb(223 246 221);
+  --cps-color-state-success-acrylic: linear-gradient(
       rgb(223 246 221 / 90%),
       rgb(223 246 221 / 90%)
     ),
@@ -278,6 +282,10 @@
   --cps-spacing-18: 4.5rem;
   --cps-spacing-20: 5rem;
 
+  --cps-blur-small: blur(6px);
+  --cps-blur-medium: blur(12px);
+  --cps-blur-large: blur(24px);
+
   --cps-focus-ring-color: var(--cps-palette-neutral-1000);
   --cps-focus-ring-style: solid;
   --cps-focus-ring-width: var(--cps-spacing-px);
@@ -323,7 +331,7 @@
 
   --cps-input-required-content: "*";
   --cps-input-required-content-offset: calc(var(--cps-spacing-0-5) * -1);
-  --cps-input-required-content-color: var(--cps-color-system-critical);
+  --cps-input-required-content-color: var(--cps-color-state-critical);
 
   --cps-toggle-size-small: var(--cps-spacing-4);
   --cps-toggle-size-medium: var(--cps-spacing-5);
@@ -361,7 +369,7 @@
 }
 
 .cps-toast-stack cps-notification::part(base) {
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--cps-blur-medium);
   filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
 }
 
@@ -371,17 +379,17 @@
 }
 
 .cps-toast-stack cps-notification[variant="informative"]::part(base) {
-  background: var(--cps-color-system-informative-acrylic);
+  background: var(--cps-color-state-informative-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant="warning"]::part(base) {
-  background: var(--cps-color-system-warning-acrylic);
+  background: var(--cps-color-state-warning-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant="critical"]::part(base) {
-  background: var(--cps-color-system-critical-acrylic);
+  background: var(--cps-color-state-critical-acrylic);
 }
 
 .cps-toast-stack cps-notification[variant="success"]::part(base) {
-  background: var(--cps-color-system-success-acrylic);
+  background: var(--cps-color-state-success-acrylic);
 }

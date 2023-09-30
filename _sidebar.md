@@ -4,7 +4,7 @@
   - [Instalação](/fundamentos/instalação)
   - [Utilização](/fundamentos/utilização)
   - [Temas](/fundamentos/temas)
-  - [Personalizando <small>(em breve)</small>](/fundamentos/personalizando)
+  - [Personalizando](/fundamentos/personalizando)
   - [Formulários](/fundamentos/formulários)
 
 - Frameworks
@@ -54,7 +54,12 @@
 - Variáveis de estilo
 
   - [Visão geral](/variáveis-de-estilo/visão-geral)
-  - [<code>...</code> <small>(em breve)</small>](/404)
+  - [Tipografia](/variáveis-de-estilo/tipografia)
+  - [Cores](/variáveis-de-estilo/cores)
+  - [Cantos arredondados](/variáveis-de-estilo/cantos-arredondados)
+  - [Dimensões e espaçamentos](/variáveis-de-estilo/dimensões-e-espaçamentos)
+  - [Elevação](/variáveis-de-estilo/elevação)
+  - [Transições](/variáveis-de-estilo/transições)
 
 - Saiba mais
 
