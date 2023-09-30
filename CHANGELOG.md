@@ -13,6 +13,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 - Documentação sobre variáveis de estilo de tipografia.
 - Documentação sobre variáveis de estilo de cor.
 - Documentação sobre variáveis de estilo de arredondamento de cantos.
+- Documentação sobre variáveis de estilo de dimensões e espaçamentos.
 
 ### Changed
 

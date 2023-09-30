@@ -57,6 +57,7 @@
   - [Tipografia](/variáveis-de-estilo/tipografia)
   - [Cores](/variáveis-de-estilo/cores)
   - [Cantos arredondados](/variáveis-de-estilo/cantos-arredondados)
+  - [Dimensões e espaçamentos](/variáveis-de-estilo/dimensões-e-espaçamentos)
 
 - Saiba mais
 
