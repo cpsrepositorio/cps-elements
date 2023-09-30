@@ -1,10 +1,11 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
     "bierner.lit-html",
     "bashmish.es6-string-css",
     "streetsidesoftware.code-spell-checker",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "davidanson.vscode-markdownlint",
+    "rvest.vs-code-prettier-eslint"
   ]
 }
