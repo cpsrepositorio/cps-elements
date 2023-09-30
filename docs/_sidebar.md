@@ -56,6 +56,7 @@
   - [Visão geral](/variáveis-de-estilo/visão-geral)
   - [Tipografia](/variáveis-de-estilo/tipografia)
   - [Cores](/variáveis-de-estilo/cores)
+  - [Cantos arredondados](/variáveis-de-estilo/cantos-arredondados)
 
 - Saiba mais
 
