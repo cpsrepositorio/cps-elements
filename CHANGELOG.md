@@ -10,6 +10,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Variáveis de estilo de efeito de embaçamento (`blur`), ao invés de valores fixos nos componentes.
 - Documentação preliminar sobre personalização de temas e componentes.
+- Documentação sobre variáveis de estilo de tipografia.
 
 ### Changed
 
