@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Documentação sobre acessibilidade.
+
 ## 0.9.1 - 2023-09-30
 
 ### Added
