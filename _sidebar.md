@@ -6,6 +6,7 @@
   - [Temas](/fundamentos/temas)
   - [Personalizando](/fundamentos/personalizando)
   - [Formulários](/fundamentos/formulários)
+  - [Acessibilidade](/fundamentos/acessibilidade)
 
 - Frameworks
 
@@ -64,6 +65,5 @@
 - Saiba mais
 
   - [Internacionalização <small>(em breve)</small>](/saiba-mais/internacionalização)
-  - [Acessibilidade <small>(em breve)</small>](/saiba-mais/acessibilidade)
-  - [Contribuindo <small>(em breve)</small>](/saiba-mais/contribuindo)
+    - [Contribuindo <small>(em breve)</small>](/saiba-mais/contribuindo)
   - [Changelog](/saiba-mais/changelog)
