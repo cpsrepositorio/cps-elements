@@ -382,6 +382,13 @@ export default css`
     overscroll-behavior: none;
   }
 
+  @supports (scrollbar-width: thin) {
+    .select__menu {
+      scrollbar-width: thin;
+      scrollbar-color: var(--cps-color-text-tertiary) transparent;
+    }
+  }
+
   /* Grouping */
   ::slotted(cps-separator) {
     margin: var(--cps-spacing-0-5) calc(var(--cps-spacing-0-5) * -1);
