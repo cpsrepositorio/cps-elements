@@ -188,7 +188,7 @@ export default class CpsFlyout extends BaseElement {
   @property({ attribute: 'auto-size' }) autoSize: 'horizontal' | 'vertical' | 'both';
 
   /** Sincroniza a largura ou altura (ou ambos) do _flyout_ com a do seu elemento âncora. */
-  @property() sync: 'width' | 'height' | 'both';
+  @property() sync: 'exact-width' | 'min-width' | 'exact-height' | 'min-height' | 'exact-both' | 'min-both';
 
   /**
    * A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados
@@ -311,13 +311,18 @@ export default class CpsFlyout extends BaseElement {
 
     // First we sync width/height
     if (this.sync) {
+      const attributes = this.sync.startsWith('exact-') ? ['width', 'height'] : ['min-width', 'min-height'];
+
+      const shouldSyncWidth = this.sync.endsWith('-width') || this.sync.endsWith('-both');
+      const shouldSyncHeight = this.sync.endsWith('-height') || this.sync.endsWith('-both');
+
+      const containerStyle = (this.container.style as unknown as Record<string, unknown>);
+
       middleware.push(
         size({
           apply: ({ rects }) => {
-            const syncWidth = this.sync === 'width' || this.sync === 'both';
-            const syncHeight = this.sync === 'height' || this.sync === 'both';
-            this.container.style.width = syncWidth ? `${rects.reference.width}px` : '';
-            this.container.style.height = syncHeight ? `${rects.reference.height}px` : '';
+            containerStyle[attributes[0]] = shouldSyncWidth ? `${rects.reference.width}px` : '';
+            containerStyle[attributes[1]] = shouldSyncHeight ? `${rects.reference.height}px` : '';
           }
         })
       );

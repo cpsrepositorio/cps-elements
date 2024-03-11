@@ -10,6 +10,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Documentação sobre acessibilidade.
 
+### Changed
+
+- Adicionado `sync` baseado em `min-width` e `min-height` ao `<cps-flyout>`.
+
 ## 0.9.1 - 2023-09-30
 
 ### Added
