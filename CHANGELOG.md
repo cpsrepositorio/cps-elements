@@ -13,6 +13,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Changed
 
 - Adicionado `sync` baseado em `min-width` e `min-height` ao `<cps-flyout>`.
+- Estilos do `<cps-select>` ajustados para condizer com `<cps-input>`.
 
 ## 0.9.1 - 2023-09-30
 

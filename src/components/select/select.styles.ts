@@ -48,24 +48,47 @@ export default css`
     justify-content: start;
     border-radius: var(--cps-border-radius-medium);
     cursor: pointer;
+    padding: 1px;
     width: 100%;
     min-width: 0;
     overflow: hidden;
     vertical-align: middle;
   }
 
-  .select__field::before,
-  .select__field::after {
+  .select__field::before {
     position: absolute;
     inset: 0;
-    transition: var(--cps-transition-fast) opacity;
     border: solid var(--cps-input-border-width) transparent;
     border-radius: var(--cps-border-radius-medium);
     background-clip: border-box;
     background-origin: border-box;
     content: '';
     pointer-events: none;
-    will-change: opacity;
+    -webkit-mask: linear-gradient(white 0 0) border-box, linear-gradient(white 0 0) padding-box;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .select__field::after {
+    position: absolute;
+    inset: 0;
+    transform: scaleX(0);
+    transition: var(--cps-transition-fast) transform, var(--cps-transition-fast) opacity;
+    opacity: 0;
+    z-index: 1;
+    border: solid var(--cps-input-border-width) transparent;
+    border-bottom-width: var(--cps-input-border-bottom-width);
+    border-radius: var(--cps-border-radius-medium);
+    background-clip: border-box;
+    background-image: linear-gradient(
+      transparent 0,
+      transparent calc(100% - var(--cps-input-border-bottom-width) * 2),
+      var(--cps-input-border-bottom-color-focus) 100%
+    );
+    background-origin: border-box;
+    content: '';
+    pointer-events: none;
+    will-change: transform, opacity;
     -webkit-mask: linear-gradient(white 0 0) border-box, linear-gradient(white 0 0) padding-box;
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -77,11 +100,6 @@ export default css`
       var(--cps-input-border-color) calc(100% - var(--cps-input-border-bottom-width) * 2),
       var(--cps-input-border-bottom-color) 100%
     );
-  }
-
-  .select .select__field::after {
-    opacity: 0;
-    background-image: linear-gradient(var(--cps-color-stroke-primary) 0, var(--cps-color-stroke-primary) 100%);
   }
 
   .select:not(.select--disabled)
@@ -96,9 +114,27 @@ export default css`
     background-color: var(--cps-input-background-hover);
   }
 
+  .form-control--has-label
+    .form-control__label:hover
+    ~ .form-control-input
+    .select:not(.select--focused):not(.select--disabled)
+    :is(.select__display-input, .select__chips, .select__prefix, .select__clear, .select__expand-icon) {
+    background-color: var(--cps-input-background-hover);
+  }
+
+  .select.select--focused:not(.select--disabled)
+    :is(.select__display-input, .select__chips, .select__prefix, .select__clear, .select__expand-icon) {
+    background-color: var(--cps-input-background-active);
+  }
+
+  .select.select--focused:not(.select--disabled) .select__field::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
   .select:not(.select--disabled):active
     :is(.select__display-input, .select__chips, .select__prefix, .select__clear, .select__expand-icon) {
-    background-color: var(--cps-color-fill-tertiary);
+      background-color: var(--cps-input-background-active);
   }
 
   .select.select--disabled .select__field {
@@ -108,16 +144,7 @@ export default css`
   }
 
   .select:is(:active, .select--disabled) .select__field::before {
-    opacity: 0;
-  }
-
-  .select:is(:active, .select--disabled) .select__field::after {
     opacity: 1;
-  }
-
-  .select:not(.select--disabled).select--focused .select__field {
-    outline: var(--cps-focus-ring);
-    outline-offset: var(--cps-focus-ring-offset);
   }
 
   /* Display input (single selection) */
@@ -342,8 +369,10 @@ export default css`
 
   /* The contextual menu */
   .select__menu {
-    display: block;
+    display: flex;
     position: relative;
+    flex-flow: column;
+    gap: var(--cps-spacing-0-5);
     border-radius: var(--cps-border-radius-large);
     padding: var(--cps-spacing-0-5);
     max-width: var(--auto-size-available-width);

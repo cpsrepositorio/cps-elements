@@ -96,7 +96,7 @@ const App = () => (
 Use o atributo `placeholder` para adicionar um texto de espaço reservado.
 
 ```html preview
-<cps-select placeholder="Seleciona uma opção">
+<cps-select placeholder="Selecione uma opção">
   <cps-option value="option-1">Opção 1</cps-option>
   <cps-option value="option-2">Opção 2</cps-option>
   <cps-option value="option-3">Opção 3</cps-option>
@@ -111,7 +111,7 @@ import { CpsOption } from '@cps-elements/web/react/option';
 import { CpsSelect } from '@cps-elements/web/react/select';
 
 const App = () => (
-  <CpsSelect placeholder="Seleciona uma opção">
+  <CpsSelect placeholder="Selecione uma opção">
     <CpsOption value="option-1">Opção 1</CpsOption>
     <CpsOption value="option-2">Opção 2</CpsOption>
     <CpsOption value="option-3">Opção 3</CpsOption>
@@ -129,7 +129,7 @@ const App = () => (
 Use o atributo `clearable` para exibir um botão de limpar quando o campo possui conteúdo.
 
 ```html preview
-<cps-select clearable placeholder="Seleciona uma opção" value="option-1">
+<cps-select clearable placeholder="Selecione uma opção" value="option-1">
   <cps-option value="option-1">Opção 1</cps-option>
   <cps-option value="option-2">Opção 2</cps-option>
   <cps-option value="option-3">Opção 3</cps-option>
@@ -144,7 +144,7 @@ import { CpsOption } from '@cps-elements/web/react/option';
 import { CpsSelect } from '@cps-elements/web/react/select';
 
 const App = () => (
-  <CpsSelect clearable placeholder="Seleciona uma opção" value="option-1">
+  <CpsSelect clearable placeholder="Selecione uma opção" value="option-1">
     <CpsOption value="option-1">Opção 1</CpsOption>
     <CpsOption value="option-2">Opção 2</CpsOption>
     <CpsOption value="option-3">Opção 3</CpsOption>
@@ -241,7 +241,9 @@ const App = () => (
       <CpsOption value="option-5">Opção 5</CpsOption>
       <CpsOption value="option-6">Opção 6</CpsOption>
     </CpsSelect>
+
     <br />
+
     <CpsSelect placeholder="Médio" size="medium">
       <CpsOption value="option-1">Opção 1</CpsOption>
       <CpsOption value="option-2">Opção 2</CpsOption>
@@ -250,7 +252,9 @@ const App = () => (
       <CpsOption value="option-5">Opção 5</CpsOption>
       <CpsOption value="option-6">Opção 6</CpsOption>
     </CpsSelect>
+
     <br />
+
     <CpsSelect placeholder="Grande" size="large">
       <CpsOption value="option-1">Opção 1</CpsOption>
       <CpsOption value="option-2">Opção 2</CpsOption>
@@ -274,14 +278,18 @@ Use o _slot_ `prefix` para adicionar ícone.
   <cps-option value="option-2">Opção 2</cps-option>
   <cps-option value="option-3">Opção 3</cps-option>
 </cps-select>
+
 <br />
+
 <cps-select placeholder="Médio" size="medium" clearable>
   <cps-icon name="home" slot="prefix"></cps-icon>
   <cps-option value="option-1">Opção 1</cps-option>
   <cps-option value="option-2">Opção 2</cps-option>
   <cps-option value="option-3">Opção 3</cps-option>
 </cps-select>
+
 <br />
+
 <cps-select placeholder="Grande" size="large" clearable>
   <cps-icon name="home" slot="prefix"></cps-icon>
   <cps-option value="option-1">Opção 1</cps-option>
@@ -301,14 +309,18 @@ const App = () => (
       <CpsOption value="option-2">Opção 2</CpsOption>
       <CpsOption value="option-3">Opção 3</CpsOption>
     </CpsSelect>
+
     <br />
+
     <CpsSelect placeholder="Medium" size="medium">
       <CpsIcon name="house" slot="prefix"></CpsIcon>
       <CpsOption value="option-1">Opção 1</CpsOption>
       <CpsOption value="option-2">Opção 2</CpsOption>
       <CpsOption value="option-3">Opção 3</CpsOption>
     </CpsSelect>
+
     <br />
+
     <CpsSelect placeholder="Large" size="large">
       <CpsIcon name="house" slot="prefix"></CpsIcon>
       <CpsOption value="option-1">Opção 1</CpsOption>
@@ -319,7 +331,7 @@ const App = () => (
 );
 ```
 
-Caso esteja usando ícones como prefixo nas opções, não ocorre sincronia automática com o ícone de prefixo da própria caixa de seleção, após selecionar uma opção. Se este comportamento for desejado, é necessário implementar a sincronia manualmente, usando o evento `cps-change`. Veja exemplo a seguir para os detalhes da implementação.
+Caso esteja usando ícones como prefixo nas opções, não há sincronia automática com o ícone da própria caixa de seleção após selecionar uma opção. Se este comportamento for desejado, é necessário implementar a sincronia manualmente, usando o evento `cps-change`. Veja exemplo a seguir para os detalhes da implementação.
 
 ```html preview no-vue
 <cps-select class="select-sync-prefix" label="Comida preferida" placeholder="Selecione uma opção" clearable>
@@ -381,7 +393,7 @@ Caso esteja usando ícones como prefixo nas opções, não ocorre sincronia auto
 Use `<cps-separator>` para agrupar visualmente as opções da caixa de seleção. Você também pode usar `<cps-label>` para fornecer rótulos visuais, entretanto eles não serão anunciados pela maioria dos dispositivos assistivos, uma vez que não receberão foco durante a navegação por teclado entre os elementos da lista.
 
 ```html preview
-<cps-select>
+<cps-select label="Comida saudável preferida" placeholder="Selecione uma opção" clearable>
   <cps-label>Frutas</cps-label>
   <cps-option value="apple">Maçã</cps-option>
   <cps-option value="banana">Banana</cps-option>
@@ -401,7 +413,7 @@ import { CpsSelect } from '@cps-elements/web/react/select';
 import { CpsSeparator } from '@cps-elements/web/react/separator';
 
 const App = () => (
-  <CpsSelect>
+  <CpsSelect label="Comida saudável preferida" placeholder="Selecione uma opção" clearable>
     <CpsLabel>Frutas</CpsLabel>
     <CpsOption value="apple">Maçã</CpsOption>
     <CpsOption value="banana">Banana</CpsOption>

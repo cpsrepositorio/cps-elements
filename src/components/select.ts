@@ -60,8 +60,8 @@ import type CpsRemoveEvent from '../events/cps-remove.js';
  * @csspart prefix - O elemento que embrulha a renderização do _slot_ `prefix`.
  * @csspart input - O controle interno propriamente dito (um `<input>`), o qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.
  * @csspart menu - O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.
- * @csspart chips - O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiselect` está em uso.
- * @csspart chip - Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiselect` está em uso.
+ * @csspart chips - O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiple` está em uso.
+ * @csspart chip - Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiple` está em uso.
  * @csspart chip__base - A parte `base` re-exportada de cada _chip_ de seleção múltipla.
  * @csspart chip__content - A parte `content` re-exportada de cada _chip_ de seleção múltipla.
  * @csspart chip__remove-button - O botão de remoção re-exportado de cada _chip_ de seleção múltipla.
@@ -765,7 +765,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
             strategy=${this.strategy}
             flip
             shift
-            sync="width"
+            sync="min-width"
             auto-size="vertical"
             auto-size-padding="10"
             distance="10"
