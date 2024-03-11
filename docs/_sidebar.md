@@ -22,6 +22,7 @@
   - [Button Group](/componentes/button-group)
   - [Checkbox](/componentes/checkbox)
   - [Chip](/componentes/chip)
+  - [Dropdown](/componentes/dropdown)
   - [Icon](/componentes/icon)
   - [Icon Button](/componentes/icon-button)
   - [Input](/componentes/input)

@@ -5,6 +5,7 @@ export { CpsButton } from './components/button.js';
 export { CpsButtonGroup } from './components/button-group.js';
 export { CpsCheckbox } from './components/checkbox.js';
 export { CpsChip } from './components/chip.js';
+export { CpsDropdown } from './components/dropdown.js';
 export { CpsFlyout } from './components/flyout.js';
 export { CpsIcon } from './components/icon.js';
 export { CpsIconButton } from './components/icon-button.js';

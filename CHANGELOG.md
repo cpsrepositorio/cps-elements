@@ -8,6 +8,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Added
 
+- Criação do componente `<cps-dropdown>`.
 - Documentação sobre acessibilidade.
 
 ### Changed
