@@ -27,7 +27,7 @@ export default class CpsFlyout extends BaseElement {
     shiftBoundary: Element | Element[];
     shiftPadding: number;
     autoSize: 'horizontal' | 'vertical' | 'both';
-    sync: 'width' | 'height' | 'both';
+    sync: 'exact-width' | 'min-width' | 'exact-height' | 'min-height' | 'exact-both' | 'min-both';
     autoSizeBoundary: Element | Element[];
     autoSizePadding: number;
     connectedCallback(): Promise<void>;

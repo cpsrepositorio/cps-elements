@@ -315,6 +315,67 @@
       "references": []
     },
     {
+      "name": "cps-dropdown",
+      "description": "Botões _dropdown_ permitem escolher itens de um menu de opções predefinidas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-show** - Emitido quando a lista suspensa de opções começa a ser exibida.\n- **cps-after-show** - Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando a lista suspensa de opções começa a ser ocultada.\n- **cps-after-hide** - Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas.\n\n### **Methods:**\n - **show()** - Exibe o menu seletor de opções.\n- **hide()** - Oculta o menu seletor de opções.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n\n### **Slots:**\n - _default_ - As opções da lista suspensa. Cada opção deve ser um `<cps-option>`. Opcionalmente, também pode conter `<cps-separator>` e `<cps-label>` para agrupar itens visualmente.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **expand-icon** - Indicador que demonstra se o controle está expandido ou contraído (idealmente, um `<cps-icon>`). Se rotaciona de acordo com a abertura e o fechamento da lista suspensa.\n\n### **CSS Parts:**\n - **field** - O elemento base que embrulha o botão de ação, o ícone de expansão, e eventuais prefixo e botão de limpar.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **span** - A área textual interna (um `<span>`), a qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.\n- **menu** - O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **expand-icon** - O elemento que embrulha a renderização do _slot_ `expand-icon`.",
+      "attributes": [
+        {
+          "name": "id",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "O valor do campo, permite recuperar ou definir uma opção selecionada.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do campo.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "placeholder",
+          "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+          "values": []
+        },
+        {
+          "name": "keep-placeholder",
+          "description": "Define se o espaço reservado deve ser exibido permanentemente,\r\nindependentemente de uma opção estar selecionada.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o campo.",
+          "values": []
+        },
+        {
+          "name": "clearable",
+          "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+          "values": []
+        },
+        {
+          "name": "open",
+          "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
+          "values": []
+        },
+        {
+          "name": "strategy",
+          "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+          "values": [{ "name": "absolute" }, { "name": "fixed" }]
+        },
+        {
+          "name": "placement",
+          "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+          "values": [{ "name": "top" }, { "name": "bottom" }]
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-flyout",
       "description": "_Flyout_ é um utilitário que permite ancorar caixas flutuantes declarativamente a outro elemento.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-reposition** - Emitido quando o _flyout_ é reposicionado. Este evento pode disparar numerosas vezes, evite colocar operações custosas em seu _listener_, ou alternativamente considere usar uma estratégia de _debouce_ neste evento.\n\n### **Methods:**\n - **reposition()** - Força o _flyout_ a se recalcular e se reposicionar.\n\n### **Slots:**\n - _default_ - O conteúdo do _flyout_.\n- **anchor** - O elemento que o _flyout_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _flyout_, use o _slot_ `anchor` em vez disso.\n\n### **CSS Properties:**\n - **--arrow-size** - Tamanho da seta. Observe que independentemente desta variável, a seta não será exibida a menos que o atributo `arrow` seja utilizado. _(default: 7px)_\n- **--background-color** - A cor de fundo do _flyout_ e de sua eventual seta (caso esteja sendo exibido em estilo balão). _(default: var(--cps-palette-neutral-500))_\n- **--border-color** - A bordar externa contornando o _flyout_ e sua eventual seta (caso esteja sendo exibido em estilo balão). _(default: transparent)_\n- **--auto-size-available-width** - Uma variável somente leitura que determina a largura máxima que o _flyout_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado. _(default: undefined)_\n- **--auto-size-available-height** - Uma variável somente leitura que determina a altura máxima que o _flyout_ pode ter antes de transbordar. Útil para posicionar elementos filhos que precisam se ajustar junto. Esta propriedade está disponível somente quando o atributo `auto-size` é utilizado. _(default: undefined)_\n\n### **CSS Parts:**\n - **arrow** - A seta do _flyout_, caso seja em estilo balão. Evite definir propriedades `top|bottom|left|right`, já que estes valores são atribuídos automaticamente conforme o )_flyout_ se move. Esta parte CSS é mais relevante para aplicar cores que combinam com seu _flyout_ personalizado, ou talvez bordas ou sombras diferenciadas.\n- **container** - O elemento base do _flyout_ (um element `<div>`). Esta parte CSS é útil para definir aparência personalizada ao corpo do _flyout_, como cor de fundo, sombras, etc.",
       "attributes": [
@@ -435,9 +496,12 @@
           "name": "sync",
           "description": "Sincroniza a largura ou altura (ou ambos) do _flyout_ com a do seu elemento âncora.",
           "values": [
-            { "name": "width" },
-            { "name": "height" },
-            { "name": "both" }
+            { "name": "exact-width" },
+            { "name": "min-width" },
+            { "name": "exact-height" },
+            { "name": "min-height" },
+            { "name": "exact-both" },
+            { "name": "min-both" }
           ]
         },
         {
@@ -1015,7 +1079,7 @@
     },
     {
       "name": "cps-select",
-      "description": "Caixas de seleção permitem escolher itens de um menu de opções predefinidas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-show** - Emitido quando a lista suspensa de opções começa a ser exibida.\n- **cps-after-show** - Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando a lista suspensa de opções começa a ser ocultada.\n- **cps-after-hide** - Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **show()** - Exibe o menu seletor de opções.\n- **hide()** - Oculta o menu seletor de opções.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n\n### **Slots:**\n - _default_ - As opções da lista suspensa. Cada opção deve ser um `<cps-option>`. Opcionalmente, também pode conter `<cps-separator>` e `<cps-label>` para agrupar itens visualmente.\n- **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **expand-icon** - Indicador que demonstra se o controle está expandido ou contraído (idealmente, um `<cps-icon>`). Se rotaciona de acordo com a abertura e o fechamento da lista suspensa.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **field** - O elemento base que embrulha o campo de entrada de dados, o ícone de expansão, e eventuais prefixo e botão de limpar.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **input** - O controle interno propriamente dito (um `<input>`), o qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.\n- **menu** - O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.\n- **chips** - O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiselect` está em uso.\n- **chip** - Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiselect` está em uso.\n- **chip__base** - A parte `base` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__content** - A parte `content` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__remove-button** - O botão de remoção re-exportado de cada _chip_ de seleção múltipla.\n- **chip__remove-button__base** - A parte `base` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **chip__remove-button__icon** - A parte `icon` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **expand-icon** - O elemento que embrulha a renderização do _slot_ `expand-icon`.",
+      "description": "Caixas de seleção permitem escolher itens de um menu de opções predefinidas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-show** - Emitido quando a lista suspensa de opções começa a ser exibida.\n- **cps-after-show** - Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando a lista suspensa de opções começa a ser ocultada.\n- **cps-after-hide** - Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **show()** - Exibe o menu seletor de opções.\n- **hide()** - Oculta o menu seletor de opções.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n\n### **Slots:**\n - _default_ - As opções da lista suspensa. Cada opção deve ser um `<cps-option>`. Opcionalmente, também pode conter `<cps-separator>` e `<cps-label>` para agrupar itens visualmente.\n- **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **expand-icon** - Indicador que demonstra se o controle está expandido ou contraído (idealmente, um `<cps-icon>`). Se rotaciona de acordo com a abertura e o fechamento da lista suspensa.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **field** - O elemento base que embrulha o campo de entrada de dados, o ícone de expansão, e eventuais prefixo e botão de limpar.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **input** - O controle interno propriamente dito (um `<input>`), o qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.\n- **menu** - O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.\n- **chips** - O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiple` está em uso.\n- **chip** - Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiple` está em uso.\n- **chip__base** - A parte `base` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__content** - A parte `content` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__remove-button** - O botão de remoção re-exportado de cada _chip_ de seleção múltipla.\n- **chip__remove-button__base** - A parte `base` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **chip__remove-button__icon** - A parte `icon` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **expand-icon** - O elemento que embrulha a renderização do _slot_ `expand-icon`.",
       "attributes": [
         {
           "name": "id",

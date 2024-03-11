@@ -4,6 +4,7 @@ export { CpsButtonGroup } from './button-group.js';
 export { CpsButton } from './button.js';
 export { CpsCheckbox } from './checkbox.js';
 export { CpsChip } from './chip.js';
+export { CpsDropdown } from './dropdown.js';
 export { CpsFlyout } from './flyout.js';
 export { CpsIconButton } from './icon-button.js';
 export { CpsIcon } from './icon.js';

@@ -1,1 +1,1 @@
-import{a,b}from"../chunks/chunk.S43NFARA.js";import"../chunks/chunk.JGFH3TQQ.js";import"../chunks/chunk.RWOPZR4G.js";import"../chunks/chunk.3QYB7FP6.js";import"../chunks/chunk.FVWYSG5E.js";import"../chunks/chunk.K3RV6SX6.js";export{a as CpsMenuLabel,b as default};
+import{a,b}from"../chunks/chunk.4NTEARZO.js";import"../chunks/chunk.DCXIFUVE.js";import"../chunks/chunk.RWOPZR4G.js";import"../chunks/chunk.TL3XP2KZ.js";import"../chunks/chunk.FVWYSG5E.js";import"../chunks/chunk.K3RV6SX6.js";export{a as CpsMenuLabel,b as default};

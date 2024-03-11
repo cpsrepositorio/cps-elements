@@ -586,14 +586,6 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
     overflow-y: auto;
   }
 
-  @supports (overflow: overlay) {
-    @media (hover: hover) and (pointer: fine) {
-      .icon-list {
-        overflow-y: overlay;
-      }
-    }
-  }
-
   .icon-loader[hidden],
   .icon-list[hidden] {
     display: none;

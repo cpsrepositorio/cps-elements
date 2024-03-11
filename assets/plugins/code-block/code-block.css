@@ -194,6 +194,10 @@
   user-select: none;
 }
 
+.markdown-section .docsify-copy-code-button span {
+  background-color: transparent;
+}
+
 .markdown-section .docsify-copy-code-button.copied {
   animation: pulse 0.75s;
   --pulse-color: var(--cps-palette-neutral-600);

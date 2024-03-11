@@ -1907,6 +1907,677 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/dropdown.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsDropdown",
+          "cssParts": [
+            {
+              "description": "O elemento base que embrulha o botão de ação, o ícone de expansão, e eventuais prefixo e botão de limpar.",
+              "name": "field"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
+              "name": "prefix"
+            },
+            {
+              "description": "A área textual interna (um `<span>`), a qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.",
+              "name": "span"
+            },
+            {
+              "description": "O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.",
+              "name": "menu"
+            },
+            {
+              "description": "O botão de limpar o campo (caso `clearable` esteja em uso).",
+              "name": "clear-button"
+            },
+            {
+              "description": "A parte `base` re-exportada do botão de limpar.",
+              "name": "clear-button__base"
+            },
+            {
+              "description": "A parte `icon` re-exportada do botão de limpar.",
+              "name": "clear-button__icon"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `expand-icon`.",
+              "name": "expand-icon"
+            }
+          ],
+          "slots": [
+            {
+              "description": "As opções da lista suspensa. Cada opção deve ser um `<cps-option>`. Opcionalmente, também pode conter `<cps-separator>` e `<cps-label>` para agrupar itens visualmente.",
+              "name": ""
+            },
+            {
+              "description": "Um ícone ou elemento similar antes do conteúdo principal.",
+              "name": "prefix"
+            },
+            {
+              "description": "Indicador que demonstra se o controle está expandido ou contraído (idealmente, um `<cps-icon>`). Se rotaciona de acordo com a abertura e o fechamento da lista suspensa.",
+              "name": "expand-icon"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "typeToSelectString",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "typeToSelectTimeout",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "flyout",
+              "type": {
+                "text": "CpsFlyout"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "field",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "displaySpan",
+              "type": {
+                "text": "HTMLSpanElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueInput",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "menu",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "generatedId",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "displayText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "currentOption",
+              "type": {
+                "text": "CpsOption"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "selectedOptions",
+              "type": {
+                "text": "CpsOption[]"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "id",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "attribute": "id"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O valor do campo, permite recuperar ou definir uma opção selecionada.",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+              "attribute": "placeholder"
+            },
+            {
+              "kind": "field",
+              "name": "keepPlaceholder",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Define se o espaço reservado deve ser exibido permanentemente,\r\nindependentemente de uma opção estar selecionada.",
+              "attribute": "keep-placeholder"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o campo.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+              "attribute": "clearable"
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "strategy",
+              "type": {
+                "text": "'absolute' | 'fixed'"
+              },
+              "default": "'absolute'",
+              "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+              "attribute": "strategy",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'bottom'"
+              },
+              "default": "'bottom'",
+              "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+              "attribute": "placement",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleIdChange"
+            },
+            {
+              "kind": "method",
+              "name": "addOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "removeOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDocumentFocusIn",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleDocumentKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleDocumentMouseDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleTriggerMouseDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleTriggerKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleClearClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleClearMouseDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleOptionClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleDefaultSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "getAllLabels",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "getAllOptions",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "getFirstOption",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "setCurrentOption",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "option",
+                  "type": {
+                    "text": "CpsOption | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "setSelectedOptions",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "option",
+                  "type": {
+                    "text": "CpsOption | CpsOption[]"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "selectionChanged",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleValueChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleOpenChange"
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "description": "Exibe o menu seletor de opções."
+            },
+            {
+              "kind": "method",
+              "name": "hide",
+              "description": "Oculta o menu seletor de opções."
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Coloca o foco no campo."
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Remove o foco do campo."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando a alteração do valor do controle é confirmada pelo usuário.",
+              "name": "cps-change",
+              "reactName": "onCpsChange"
+            },
+            {
+              "description": "Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).",
+              "name": "cps-clear",
+              "reactName": "onCpsClear"
+            },
+            {
+              "description": "Emitido quando o controle obtém o foco.",
+              "name": "cps-focus",
+              "reactName": "onCpsFocus"
+            },
+            {
+              "description": "Emitido quando o controle perde o foco.",
+              "name": "cps-blur",
+              "reactName": "onCpsBlur"
+            },
+            {
+              "description": "Emitido quando a lista suspensa de opções começa a ser exibida.",
+              "name": "cps-show",
+              "reactName": "onCpsShow"
+            },
+            {
+              "description": "Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas.",
+              "name": "cps-after-show",
+              "reactName": "onCpsAfterShow"
+            },
+            {
+              "description": "Emitido quando a lista suspensa de opções começa a ser ocultada.",
+              "name": "cps-hide",
+              "reactName": "onCpsHide"
+            },
+            {
+              "description": "Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas.",
+              "name": "cps-after-hide",
+              "reactName": "onCpsAfterHide"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "id",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "fieldName": "id"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O valor do campo, permite recuperar ou definir uma opção selecionada.",
+              "fieldName": "value"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo.",
+              "fieldName": "size"
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+              "fieldName": "placeholder"
+            },
+            {
+              "name": "keep-placeholder",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Define se o espaço reservado deve ser exibido permanentemente,\r\nindependentemente de uma opção estar selecionada.",
+              "fieldName": "keepPlaceholder"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o campo.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+              "fieldName": "clearable"
+            },
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
+              "fieldName": "open"
+            },
+            {
+              "name": "strategy",
+              "type": {
+                "text": "'absolute' | 'fixed'"
+              },
+              "default": "'absolute'",
+              "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+              "fieldName": "strategy"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'bottom'"
+              },
+              "default": "'bottom'",
+              "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+              "fieldName": "placement"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Botões _dropdown_ permitem escolher itens de um menu de opções predefinidas.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/dropdown",
+          "status": "stable",
+          "since": "0.10",
+          "dependencies": [
+            "cps-icon",
+            "cps-icon-button",
+            "cps-flyout"
+          ],
+          "animations": [
+            {
+              "name": "dropdown.show",
+              "description": "A animação a ser usada ao exibir a lista de opções."
+            },
+            {
+              "name": "dropdown.hide",
+              "description": "A animação a ser usada ao ocultar a lista de opções."
+            }
+          ],
+          "tagName": "cps-dropdown",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsDropdown",
+            "module": "components/dropdown.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-dropdown",
+          "declaration": {
+            "name": "CpsDropdown",
+            "module": "components/dropdown.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsDropdown",
+          "declaration": {
+            "name": "CpsDropdown",
+            "module": "components/dropdown.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/flyout.js",
       "declarations": [
         {
@@ -2174,7 +2845,7 @@
               "kind": "field",
               "name": "sync",
               "type": {
-                "text": "'width' | 'height' | 'both'"
+                "text": "'exact-width' | 'min-width' | 'exact-height' | 'min-height' | 'exact-both' | 'min-both'"
               },
               "description": "Sincroniza a largura ou altura (ou ambos) do _flyout_ com a do seu elemento âncora.",
               "attribute": "sync"
@@ -2393,7 +3064,7 @@
             {
               "name": "sync",
               "type": {
-                "text": "'width' | 'height' | 'both'"
+                "text": "'exact-width' | 'min-width' | 'exact-height' | 'min-height' | 'exact-both' | 'min-both'"
               },
               "description": "Sincroniza a largura ou altura (ou ambos) do _flyout_ com a do seu elemento âncora.",
               "fieldName": "sync"
@@ -5976,11 +6647,11 @@
               "name": "menu"
             },
             {
-              "description": "O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiselect` está em uso.",
+              "description": "O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiple` está em uso.",
               "name": "chips"
             },
             {
-              "description": "Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiselect` está em uso.",
+              "description": "Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiple` está em uso.",
               "name": "chip"
             },
             {
@@ -9778,7 +10449,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.9.1",
+    "version": "0.10.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

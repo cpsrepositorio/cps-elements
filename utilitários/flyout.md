@@ -1077,16 +1077,20 @@ Use o atributo `sync` para fazer com que o _flyout_ tenha a mesma largura ou alt
 
 ```html preview no-vue
 <div class="flyout-sync">
-  <cps-flyout placement="top" sync="width" active>
+  <cps-flyout placement="top" sync="exact-width" active>
     <span slot="anchor"></span>
     <div class="box"></div>
   </cps-flyout>
 
   <br />
-  <cps-select value="width">
-    <cps-option value="width">Sincronizar largura</cps-option>
-    <cps-option value="height">Sincronizar altura</cps-option>
-    <cps-option value="both">Sincronizar ambos</cps-option>
+
+  <cps-select value="exact-width">
+    <cps-option value="exact-width">Sincronia exata de largura</cps-option>
+    <cps-option value="min-width">Sincronia mínima de largura</cps-option>
+    <cps-option value="exact-height">Sincronia exata de altura</cps-option>
+    <cps-option value="min-height">Sincronia mínima de altura</cps-option>
+    <cps-option value="exact-both">Sincronia exata de ambas</cps-option>
+    <cps-option value="min-both">Sincronia mínima de ambas</cps-option>
     <cps-option value="">Desativar sincronia</cps-option>
   </cps-select>
 </div>
@@ -1152,7 +1156,7 @@ const css = `
 `;
 
 const App = () => {
-  const [sync, setSync] = useState('width');
+  const [sync, setSync] = useState('exact-width');
 
   return (
     <>
@@ -1164,9 +1168,12 @@ const App = () => {
 
         <br />
         <CpsSelect value={sync} onCpsChange={event => setSync(event.target.value)}>
-          <CpsOption value="width">Sincronizar largura</CpsOption>
-          <CpsOption value="height">Sincronizar altura</CpsOption>
-          <CpsOption value="both">Sincronizar ambos</CpsOption>
+          <CpsOption value="exact-width">Sincronia exata de largura</CpsOption>
+          <CpsOption value="min-width">Sincronia mínima de largura</CpsOption>
+          <CpsOption value="exact-height">Sincronia exata de altura</CpsOption>
+          <CpsOption value="min-height">Sincronia mínima de altura</CpsOption>
+          <CpsOption value="exact-both">Sincronia exata de ambas</CpsOption>
+          <CpsOption value="min-both">Sincronia mínima de ambas</CpsOption>
           <CpsOption value="">Desativar sincronia</CpsOption>
         </CpsSelect>
       </div>
@@ -1176,6 +1183,8 @@ const App = () => {
   );
 };
 ```
+
+?> A diferença entre sincronia mínima e exata é que a sincronia mínima aplica no _flyout_ as medidas do elemento âncora usando estilos `min-width` e/ou `min-height`, enquanto a sincronia exata aplica as medidas usando estilos `width` e/ou `height`. Na prática, isso significa que a sincronia mínima pode resultar um _flyout_ igual ou maior que a âncora, enquanto a sincronia exata sempre será igual.
 
 ### Estratégia de posicionamento
 
