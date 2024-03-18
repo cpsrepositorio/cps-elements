@@ -27,6 +27,7 @@
   - [Icon Button](/componentes/icon-button)
   - [Input](/componentes/input)
   - [Label](/componentes/label)
+  - [Link](/componentes/link)
   - [Menu](/componentes/menu)
   - [Menu Item](/componentes/menu-item)
   - [Menu Label](/componentes/menu-label)

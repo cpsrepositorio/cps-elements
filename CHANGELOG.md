@@ -6,6 +6,14 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-link>`.
+
+### Changed
+
+- Pequenos ajustes na documentação.
+
 ## 0.10.0 - 2024-03-11
 
 ### Added
