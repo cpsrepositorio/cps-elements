@@ -208,6 +208,6 @@ const App = () => (
 );
 ```
 
-?> Não confunda os nomes de tamanhos como `body-emphasized` e `body-strong` com definições de semântica. Esses nomes são apenas para fins de tamanho e estilo, sendo que a semântica pode ser controlada através da definição da _tag_ a ser utilizada para renderização do rótulo, conforme apresentado a seguir.
+?> Não confunda os nomes de tamanhos como `body-emphasized` e `body-strong` com definições de semântica. Esses nomes são apenas para fins de tamanho e estilo, sendo que a semântica pode ser controlada através da definição da _tag_ a ser utilizada para renderização do rótulo.
 
 [component-metadata:cps-label]
