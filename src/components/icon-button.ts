@@ -26,7 +26,7 @@ import type { CSSResultGroup } from 'lit';
 export default class CpsIconButton extends BaseElement {
   static styles: CSSResultGroup = styles;
 
-  @query('.icon-button') button: HTMLButtonElement | HTMLLinkElement;
+  @query('.icon-button') button: HTMLButtonElement | HTMLAnchorElement;
 
   @state() private isFocused = false;
 

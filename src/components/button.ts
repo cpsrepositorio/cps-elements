@@ -59,7 +59,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
   private readonly hasSlotController = new HasSlotController(this, '[default]', 'prefix', 'suffix');
   private readonly localize = new LocalizeController(this);
 
-  @query('.button') button: HTMLButtonElement | HTMLLinkElement;
+  @query('.button') button: HTMLButtonElement | HTMLAnchorElement;
 
   @state() private isFocused = false;
   @state() invalid = false;
