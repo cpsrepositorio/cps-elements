@@ -53,7 +53,7 @@ export default css`
         rgb(138 138 138 / 90%),
         rgb(138 138 138 / 90%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-state-informative: rgb(0 95 183);
     --cps-color-state-informative-subtle: rgba(246 246 246 / 50%);
@@ -61,7 +61,7 @@ export default css`
         rgb(246 246 246 / 90%),
         rgb(246 246 246 / 90%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-state-warning: rgb(157 93 0);
     --cps-color-state-warning-subtle: rgb(255 244 206);
@@ -69,7 +69,7 @@ export default css`
         rgb(255 244 206 / 90%),
         rgb(255 244 206 / 90%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-state-critical: rgb(196 43 28);
     --cps-color-state-critical-subtle: rgb(253 231 233);
@@ -77,7 +77,7 @@ export default css`
         rgb(253 231 233 / 90%),
         rgb(253 231 233 / 90%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-state-success: rgb(15 123 15);
     --cps-color-state-success-subtle: rgb(223 246 221);
@@ -85,7 +85,7 @@ export default css`
         rgb(223 246 221 / 90%),
         rgb(223 246 221 / 90%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-background-solid-primary: rgb(243 243 243);
     --cps-color-background-solid-secondary: rgb(238 238 238);
@@ -96,12 +96,17 @@ export default css`
         rgb(252 252 252 / 80%),
         rgb(252 252 252 / 80%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
+    --cps-color-background-acrylic-subtle: linear-gradient(
+        rgb(252 252 252 / 40%),
+        rgb(252 252 252 / 40%)
+      ),
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
     --cps-color-background-acrylic-base: linear-gradient(
         rgb(243 243 243 / 90%),
         rgb(243 243 243 / 90%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-background-overlay: rgb(113 113 122 / 33%);
 
@@ -109,6 +114,12 @@ export default css`
     --cps-color-fill-secondary: rgb(245 245 245 / 50%);
     --cps-color-fill-tertiary: rgb(245 245 245 / 30%);
     --cps-color-fill-disabled: rgb(245 245 245 / 30%);
+
+    --cps-color-fill-card-primary: rgb(255 255 255 / 70%);
+    --cps-color-fill-card-secondary: rgb(245 245 245 / 50%);
+    --cps-color-fill-card-tertiary: var(--cps-palette-neutral-0);
+
+    --cps-color-fill-on-acrylic: rgb(246 246 246 / 50%);
 
     --cps-color-fill-alt-secondary: rgb(0 0 0 / 2.41%);
     --cps-color-fill-alt-tertiary: rgb(0 0 0 / 5.78%);

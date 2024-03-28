@@ -8,7 +8,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
     private readonly formControlController;
     private readonly hasSlotController;
     private readonly localize;
-    button: HTMLButtonElement | HTMLLinkElement;
+    button: HTMLButtonElement | HTMLAnchorElement;
     private isFocused;
     invalid: boolean;
     title: string;

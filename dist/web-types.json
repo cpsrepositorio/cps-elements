@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -322,7 +322,7 @@
               {
                 "name": "button",
                 "value": {
-                  "type": "HTMLButtonElement | HTMLLinkElement"
+                  "type": "HTMLButtonElement | HTMLAnchorElement"
                 }
               },
               {
@@ -707,6 +707,71 @@
               "description": "Usado para sobrescrever o atributo `target` do formulário \"dono\" deste botão.",
               "value": {
                 "type": "'_self' | '_blank' | '_parent' | '_top' | string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-card",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/card",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "card",
+                "value": {
+                  "type": "HTMLDivElement"
+                }
+              },
+              {
+                "name": "variant",
+                "description": "O tipo de variação visual do _card_.",
+                "value": {
+                  "type": "'primary' | 'secondary' | 'tertiary' | 'on-acrylic'"
+                }
+              },
+              {
+                "name": "actionable",
+                "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\r\npor exemplo, com _mouse_ e teclado).",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no elemento.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no elemento.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do elemento.",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "O tipo de variação visual do _card_.",
+              "value": {
+                "type": "'primary' | 'secondary' | 'tertiary' | 'on-acrylic'"
+              }
+            },
+            {
+              "name": "actionable",
+              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\r\npor exemplo, com _mouse_ e teclado).",
+              "value": {
+                "type": "boolean"
               }
             }
           ]
@@ -1808,7 +1873,7 @@
               {
                 "name": "button",
                 "value": {
-                  "type": "HTMLButtonElement | HTMLLinkElement"
+                  "type": "HTMLButtonElement | HTMLAnchorElement"
                 }
               },
               {
@@ -2843,6 +2908,124 @@
               "description": "O elemento HTML desejado para a renderização do _label_.",
               "value": {
                 "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-link",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/link",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "link",
+                "value": {
+                  "type": "HTMLAnchorElement"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o _link_.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "href",
+                "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\r\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do _link_.",
+                "value": {
+                  "type": "| 'stamp'\r\n    | 'caption'\r\n    | 'label'\r\n    | 'body'\r\n    | 'body-emphasized'\r\n    | 'body-strong'\r\n    | 'body-large'\r\n    | 'subtitle'\r\n    | 'title'\r\n    | 'heading'\r\n    | 'display'"
+                }
+              },
+              {
+                "name": "target",
+                "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no elemento.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no _link_.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do _link_.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o _link_ perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o _link_ obtém o foco."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "disabled",
+              "description": "Desabilita o _link_.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "href",
+              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\r\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do _link_.",
+              "value": {
+                "type": "| 'stamp'\r\n    | 'caption'\r\n    | 'label'\r\n    | 'body'\r\n    | 'body-emphasized'\r\n    | 'body-strong'\r\n    | 'body-large'\r\n    | 'subtitle'\r\n    | 'title'\r\n    | 'heading'\r\n    | 'display'"
+              }
+            },
+            {
+              "name": "target",
+              "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+              "value": {
+                "type": "string"
               }
             }
           ]

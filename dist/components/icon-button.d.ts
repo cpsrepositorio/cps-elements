@@ -3,7 +3,7 @@ import BaseElement from '../internal/base-element.js';
 import type { CSSResultGroup } from 'lit';
 export default class CpsIconButton extends BaseElement {
     static styles: CSSResultGroup;
-    button: HTMLButtonElement | HTMLLinkElement;
+    button: HTMLButtonElement | HTMLAnchorElement;
     private isFocused;
     size: 'small' | 'medium' | 'large';
     label: string;

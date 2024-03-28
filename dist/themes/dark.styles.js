@@ -6,7 +6,7 @@ export default css`
     color-scheme: dark;
     accent-color: var(--cps-color-fill-accent-primary);
 
-    --cps-texture-acrylic: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.2' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    --cps-texture-acrylic: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect opacity='0.1' width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 
     --cps-palette-neutral-0: rgb(0 0 0);
     --cps-palette-neutral-50: rgb(255 255 255 / 4.2%);
@@ -52,7 +52,7 @@ export default css`
         rgb(157 157 157 / 96%),
         rgb(157 157 157 / 96%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-state-informative: rgb(96 205 255);
     --cps-color-state-informative-subtle: rgba(255 255 255 / 3.26%);
@@ -60,7 +60,7 @@ export default css`
         rgb(48 48 48 / 96%),
         rgb(48 48 48 / 96%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-state-warning: rgb(252 225 0);
     --cps-color-state-warning-subtle: rgb(67 53 25);
@@ -68,7 +68,7 @@ export default css`
         rgb(67 53 25 / 96%),
         rgb(67 53 25 / 96%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-state-critical: rgb(255 153 164);
     --cps-color-state-critical-subtle: rgb(68 39 38);
@@ -76,7 +76,7 @@ export default css`
         rgb(68 39 38 / 96%),
         rgb(68 39 38 / 96%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-state-success: rgb(108 203 95);
     --cps-color-state-success-subtle: rgb(57 61 27);
@@ -84,7 +84,7 @@ export default css`
         rgb(57 61 27 / 96%),
         rgb(57 61 27 / 96%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-background-solid-primary: rgb(32 32 32);
     --cps-color-background-solid-secondary: rgb(28 28 28);
@@ -95,12 +95,17 @@ export default css`
         rgb(44 44 44 / 88%),
         rgb(44 44 44 / 88%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
+    --cps-color-background-acrylic-subtle: linear-gradient(
+        rgb(44 44 44 / 44%),
+        rgb(44 44 44 / 44%)
+      ),
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
     --cps-color-background-acrylic-base: linear-gradient(
         rgb(32 32 32 / 95%),
         rgb(32 32 32 / 95%)
       ),
-      var(--cps-texture-acrylic);
+      var(--cps-texture-acrylic) 0/75px repeat fixed;
 
     --cps-color-background-overlay: rgba(0 0 0 / 43%);
 
@@ -108,6 +113,12 @@ export default css`
     --cps-color-fill-secondary: rgb(255 255 255 / 8.37%);
     --cps-color-fill-tertiary: rgb(255 255 255 / 3.26%);
     --cps-color-fill-disabled: rgb(255 255 255 / 4.19%);
+
+    --cps-color-fill-card-primary: rgb(255 255 255 / 5.12%);
+    --cps-color-fill-card-secondary: rgb(255 255 255 / 3.26%);
+    --cps-color-fill-card-tertiary: rgb(20 20 20);
+
+    --cps-color-fill-on-acrylic: rgb(0 0 0 / 65%);
 
     --cps-color-fill-alt-secondary: rgb(0 0 0 / 10%);
     --cps-color-fill-alt-tertiary: rgb(255 255 255 / 5.78%);

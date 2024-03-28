@@ -221,6 +221,28 @@
       "references": []
     },
     {
+      "name": "cps-card",
+      "description": "_Cards_ são utilizados para exibir informações de forma estruturada e destacada.\n\n\n---\n\n\n\n\n### **Methods:**\n - **click(event: _MouseEvent_)** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no elemento.\n- **blur()** - Remove o foco do elemento.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo principal do _card_.\n- **header** - O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.\n- **footer** - O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.",
+      "attributes": [
+        {
+          "name": "variant",
+          "description": "O tipo de variação visual do _card_.",
+          "values": [
+            { "name": "primary" },
+            { "name": "secondary" },
+            { "name": "tertiary" },
+            { "name": "on-acrylic" }
+          ]
+        },
+        {
+          "name": "actionable",
+          "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\r\npor exemplo, com _mouse_ e teclado).",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-checkbox",
       "description": "Caixas de seleção (_checkboxes_) permitem alternar entre estados marcado ou desmarcado.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **click()** - Simula um _click_ no campo.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - _default_ - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o `<input>` e eventuais elementos de apoio para sua renderização.\n- **control** - O elemento quadrado que embrulha o estado checagem do campo.\n- **control--checked** - Obtém para estilização o elemento `control`, somente quando o campo está marcado.\n- **control--indeterminate** - Obtém para estilização o elemento `control`, somente quando o campo está em estado indeterminado.\n- **checked-icon** - O ícone de estado checado, um elemento `<cps-icon>`.\n- **indeterminate-icon** - O ícone de estado indeterminado, um elemento `<cps-icon>`.\n- **label** - O elemento que embrulha o rótulo do campo, um elemento `<label>`.",
       "attributes": [
@@ -881,6 +903,46 @@
             { "name": "p" },
             { "name": "div" }
           ]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-link",
+      "description": "_Links_ são usados para navegação entre páginas ou para abrir URLs externas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o _link_ perde o foco.\n- **cps-focus** - Emitido quando o _link_ obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no _link_.\n- **blur()** - Remove o foco do _link_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<a>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o texto do _link_.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "Desabilita o _link_.",
+          "values": []
+        },
+        {
+          "name": "href",
+          "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\r\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do _link_.",
+          "values": [
+            { "name": "" },
+            { "name": "stamp" },
+            { "name": "caption" },
+            { "name": "label" },
+            { "name": "body" },
+            { "name": "body-emphasized" },
+            { "name": "body-strong" },
+            { "name": "body-large" },
+            { "name": "subtitle" },
+            { "name": "title" },
+            { "name": "heading" },
+            { "name": "display" }
+          ]
+        },
+        {
+          "name": "target",
+          "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+          "values": []
         }
       ],
       "references": []
