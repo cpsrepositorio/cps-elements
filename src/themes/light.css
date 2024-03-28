@@ -65,31 +65,31 @@
   --cps-color-state-neutral: rgb(138 138 138);
   --cps-color-state-neutral-subtle: rgb(0 0 0 / 2.41%);
   --cps-color-state-neutral-acrylic: linear-gradient(rgb(138 138 138 / 90%), rgb(138 138 138 / 90%)),
-    var(--cps-texture-acrylic);
+    var(--cps-texture-acrylic) 0/75px repeat fixed;
 
   /* Informative */
   --cps-color-state-informative: rgb(0 95 183);
   --cps-color-state-informative-subtle: rgba(246 246 246 / 50%);
   --cps-color-state-informative-acrylic: linear-gradient(rgb(246 246 246 / 90%), rgb(246 246 246 / 90%)),
-    var(--cps-texture-acrylic);
+    var(--cps-texture-acrylic) 0/75px repeat fixed;
 
   /* Warning */
   --cps-color-state-warning: rgb(157 93 0);
   --cps-color-state-warning-subtle: rgb(255 244 206);
   --cps-color-state-warning-acrylic: linear-gradient(rgb(255 244 206 / 90%), rgb(255 244 206 / 90%)),
-    var(--cps-texture-acrylic);
+    var(--cps-texture-acrylic) 0/75px repeat fixed;
 
   /* Critical */
   --cps-color-state-critical: rgb(196 43 28);
   --cps-color-state-critical-subtle: rgb(253 231 233);
   --cps-color-state-critical-acrylic: linear-gradient(rgb(253 231 233 / 90%), rgb(253 231 233 / 90%)),
-    var(--cps-texture-acrylic);
+    var(--cps-texture-acrylic) 0/75px repeat fixed;
 
   /* Success */
   --cps-color-state-success: rgb(15 123 15);
   --cps-color-state-success-subtle: rgb(223 246 221);
   --cps-color-state-success-acrylic: linear-gradient(rgb(223 246 221 / 90%), rgb(223 246 221 / 90%)),
-    var(--cps-texture-acrylic);
+    var(--cps-texture-acrylic) 0/75px repeat fixed;
 
   /*
    * Colors Tokens
@@ -102,9 +102,11 @@
   --cps-color-background-solid-quaternary: rgb(254 254 254);
 
   --cps-color-background-acrylic: linear-gradient(rgb(252 252 252 / 80%), rgb(252 252 252 / 80%)),
-    var(--cps-texture-acrylic);
+    var(--cps-texture-acrylic) 0/75px repeat fixed;
+  --cps-color-background-acrylic-subtle: linear-gradient(rgb(252 252 252 / 40%), rgb(252 252 252 / 40%)),
+    var(--cps-texture-acrylic) 0/75px repeat fixed;
   --cps-color-background-acrylic-base: linear-gradient(rgb(243 243 243 / 90%), rgb(243 243 243 / 90%)),
-    var(--cps-texture-acrylic);
+    var(--cps-texture-acrylic) 0/75px repeat fixed;
 
   --cps-color-background-overlay: rgb(113 113 122 / 33%);
 
@@ -113,6 +115,12 @@
   --cps-color-fill-secondary: rgb(245 245 245 / 50%);
   --cps-color-fill-tertiary: rgb(245 245 245 / 30%);
   --cps-color-fill-disabled: rgb(245 245 245 / 30%);
+
+  --cps-color-fill-card-primary: rgb(255 255 255 / 70%);
+  --cps-color-fill-card-secondary: rgb(245 245 245 / 50%);
+  --cps-color-fill-card-tertiary: var(--cps-palette-neutral-0);
+
+  --cps-color-fill-on-acrylic: rgb(246 246 246 / 50%);
 
   --cps-color-fill-alt-secondary: rgb(0 0 0 / 2.41%);
   --cps-color-fill-alt-tertiary: rgb(0 0 0 / 5.78%);

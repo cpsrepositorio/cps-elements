@@ -20,6 +20,7 @@
   - [Badge](/componentes/badge)
   - [Button](/componentes/button)
   - [Button Group](/componentes/button-group)
+  - [Card](/componentes/card)
   - [Checkbox](/componentes/checkbox)
   - [Chip](/componentes/chip)
   - [Dropdown](/componentes/dropdown)
