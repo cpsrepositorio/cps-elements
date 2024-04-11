@@ -8,11 +8,12 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Added
 
-- Adicionado objeto `detail` no evento `cps-change` do `<cps-radio-group>`.
+- Criação do componente `<cps-background>`.
+- Objeto `detail` no evento `cps-change` do `<cps-radio-group>`.
 
 ### Changed
 
-- Corrigida falta de objeto `detail` no evento `cps-change` do `<cps-select>`, ao usar seleção por teclado.
+- Corrigido objeto `detail` no evento `cps-change` do `<cps-select>`, ao usar seleção por teclado.
 
 ## 0.11.0 - 2024-03-28
 

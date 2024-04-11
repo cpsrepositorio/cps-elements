@@ -120,7 +120,10 @@
   --cps-color-fill-card-secondary: rgb(245 245 245 / 50%);
   --cps-color-fill-card-tertiary: var(--cps-palette-neutral-0);
 
-  --cps-color-fill-on-acrylic: rgb(246 246 246 / 50%);
+  --cps-color-fill-on-blurred: rgb(255 255 255 / 25%);
+  --cps-color-fill-on-blurred-secondary: rgb(243 243 243 / 50%);
+
+  --cps-color-fill-smoke: rgb(0 0 0 / 40%);
 
   --cps-color-fill-alt-secondary: rgb(0 0 0 / 2.41%);
   --cps-color-fill-alt-tertiary: rgb(0 0 0 / 5.78%);
@@ -323,9 +326,13 @@
    * Effects
    */
 
+  --cps-blur-slight: blur(1px);
   --cps-blur-small: blur(6px);
   --cps-blur-medium: blur(12px);
   --cps-blur-large: blur(24px);
+  --cps-blur-full: blur(80px);
+
+  --cps-background-blend-mode: screen;
 
   /*
    * Interaction
