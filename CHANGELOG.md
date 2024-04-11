@@ -13,6 +13,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Changed
 
+- Estilos do componente `<cps-card>`, especialmente na variante `on-blurred`.
 - Corrigido objeto `detail` no evento `cps-change` do `<cps-select>`, ao usar seleção por teclado.
 
 ## 0.11.0 - 2024-03-28

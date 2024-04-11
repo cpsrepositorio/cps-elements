@@ -26,7 +26,7 @@ export default class CpsCard extends BaseElement {
   @query('.card') card: HTMLDivElement;
 
   /** O tipo de variação visual do _card_. */
-  @property({ reflect: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'on-acrylic' = 'primary';
+  @property({ reflect: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'on-blurred' = 'primary';
 
   /**
    * Indica se o _card_ é acionável pelo usuário (podendo ser interagido,

@@ -20,9 +20,14 @@ export default css`  ${componentStyles}
 
   /* Variants */
 
+  .card--primary {
+    backdrop-filter: var(--cps-blur-small);
+  }
+
   .card--secondary {
     border-color: var(--cps-color-stroke-card-secondary);
     background: var(--cps-color-fill-card-secondary);
+    backdrop-filter: var(--cps-blur-small);
   }
 
   .card--tertiary {
@@ -30,9 +35,10 @@ export default css`  ${componentStyles}
     background: var(--cps-color-fill-card-tertiary);
   }
 
-  .card--on-acrylic {
+  .card--on-blurred {
     border-color: var(--cps-color-stroke-card-primary);
-    background: var(--cps-color-fill-on-acrylic);
+    background: var(--cps-color-fill-on-blurred);
+    backdrop-filter: var(--cps-blur-medium);
   }
 
   /* Interaction */
