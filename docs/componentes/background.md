@@ -14,6 +14,8 @@ import { CpsBackground } from '@cps-elements/web/react/background';
 const App = () => <CpsBackground></CpsBackground>;
 ```
 
+?> <i>Por que não apenas aplicar uma `background-image` no corpo da página usando CSS?</i><br><br>Este componente oferece uma experiência mais avançada, aplicando efeitos sobre a imagem de diferentes maneiras, dependendo da variação utilizada (conforme documentado a seguir). Além disso, o plano de fundo também se ajusta automaticamente ao tema de [modo escuro](/fundamentos/temas?id=modo-escuro) com o uso deste componente, garantindo que as cores da imagem se encaixe melhor ao restante do esquema de cores.
+
 ## Exemplos
 
 ### Variantes
