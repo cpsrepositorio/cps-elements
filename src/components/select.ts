@@ -274,7 +274,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
         this.updateComplete.then(() => {
           this.formControlController.updateValidity(true);
           this.emit('cps-input');
-          this.emit('cps-change');
+          this.emit('cps-change', { detail: { option: this.currentOption } });
         });
 
         if (!this.multiple) {
