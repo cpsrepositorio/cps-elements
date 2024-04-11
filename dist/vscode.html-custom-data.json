@@ -43,6 +43,27 @@
       "references": []
     },
     {
+      "name": "cps-background",
+      "description": "Componente utilizado para aplicar plano de fundo padrão à página.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo interno do plano de fundo.\n\n### **CSS Properties:**\n - **--background-image** - Uma imagem de fundo alternativa a ser exibida. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo interno do plano de fundo.\n- **image** - O elemento que renderiza a imagem de fundo.",
+      "attributes": [
+        {
+          "name": "variant",
+          "description": "O tipo de variação visual do plano de fundo.",
+          "values": [
+            { "name": "base" },
+            { "name": "acrylic" },
+            { "name": "blurred" }
+          ]
+        },
+        {
+          "name": "centered",
+          "description": "Automaticamente centraliza o conteúdo do plano de fundo.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-badge",
       "description": "Distintivos (_badges_) são usados para chamar atenção de forma sutil\r\ne não intrusiva, comumente para exibição de notificações de _status_,\r\nindicação de novo conteúdo ou contagens.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do _badge_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito.",
       "attributes": [
@@ -231,7 +252,7 @@
             { "name": "primary" },
             { "name": "secondary" },
             { "name": "tertiary" },
-            { "name": "on-acrylic" }
+            { "name": "on-blurred" }
           ]
         },
         {

@@ -1,4 +1,5 @@
 export { CpsAvatar } from './avatar.js';
+export { CpsBackground } from './background.js';
 export { CpsBadge } from './badge.js';
 export { CpsButtonGroup } from './button-group.js';
 export { CpsButton } from './button.js';

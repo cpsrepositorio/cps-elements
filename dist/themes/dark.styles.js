@@ -118,7 +118,10 @@ export default css`
     --cps-color-fill-card-secondary: rgb(255 255 255 / 3.26%);
     --cps-color-fill-card-tertiary: rgb(20 20 20);
 
-    --cps-color-fill-on-acrylic: rgb(0 0 0 / 65%);
+    --cps-color-fill-on-blurred: rgb(255 255 255 / 3.59%);
+    --cps-color-fill-on-blurred-secondary: rgb(32 32 32 / 80%);
+
+    --cps-color-fill-smoke: rgb(0 0 0 / 40%);
 
     --cps-color-fill-alt-secondary: rgb(0 0 0 / 10%);
     --cps-color-fill-alt-tertiary: rgb(255 255 255 / 5.78%);
@@ -295,9 +298,13 @@ export default css`
     --cps-spacing-18: 4.5rem;
     --cps-spacing-20: 5rem;
 
+    --cps-blur-slight: blur(1px);
     --cps-blur-small: blur(6px);
     --cps-blur-medium: blur(12px);
     --cps-blur-large: blur(24px);
+    --cps-blur-full: blur(80px);
+
+    --cps-background-blend-mode: multiply;
 
     --cps-focus-ring-color: var(--cps-palette-neutral-1000);
     --cps-focus-ring-style: solid;

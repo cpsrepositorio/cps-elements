@@ -32,7 +32,7 @@ const App = () => (
 
 ### Variantes
 
-Use o atributo `variant` para definir a variação visual do cartão. Atente-se que a variação `on-acrylic` só é recomendada para utilização sobre uma camada de grande variação visual de fundo, como ocorre com camadas de material acrílico acrílica, por isso o nome da variação.
+Use o atributo `variant` para definir a variação visual do cartão. Atente-se que a variação `on-blurred` só é recomendada para utilização sobre uma camada de grande variação visual de fundo, como ocorre com camadas de material acrílico acrílica, por isso o nome da variação.
 
 ```html preview
 <div class="sample-transparent-background">
@@ -48,7 +48,7 @@ Use o atributo `variant` para definir a variação visual do cartão. Atente-se 
     Terciário
   </cps-card>
 
-  <cps-card variant="on-acrylic">
+  <cps-card variant="on-blurred">
     Sobre acrílico
   </cps-card>
 </div>
@@ -66,7 +66,7 @@ Use o atributo `variant` para definir a variação visual do cartão. Atente-se 
     Terciário
   </cps-card>
 
-  <cps-card variant="on-acrylic">
+  <cps-card variant="on-blurred">
     Sobre acrílico
   </cps-card>
 </div>
@@ -90,7 +90,7 @@ const App = () => (
         Terciário
       </CpsCard>
 
-      <CpsCard variant="on-acrylic">
+      <CpsCard variant="on-blurred">
         Sobre acrílico
       </CpsCard>
     </div>
@@ -108,7 +108,7 @@ const App = () => (
         Terciário
       </CpsCard>
 
-      <CpsCard variant="on-acrylic">
+      <CpsCard variant="on-blurred">
         Sobre acrílico
       </CpsCard>
     </div>
@@ -134,7 +134,7 @@ Use o atributo `actionable` para tornar o cartão acionável, ou seja, que pode 
     Terciário
   </cps-card>
 
-  <cps-card variant="on-acrylic" actionable>
+  <cps-card variant="on-blurred" actionable>
     Sobre acrílico
   </cps-card>
 </div>
@@ -152,7 +152,7 @@ Use o atributo `actionable` para tornar o cartão acionável, ou seja, que pode 
     Terciário
   </cps-card>
 
-  <cps-card variant="on-acrylic" actionable>
+  <cps-card variant="on-blurred" actionable>
     Sobre acrílico
   </cps-card>
 </div>
@@ -176,7 +176,7 @@ const App = () => (
         Terciário
       </CpsCard>
 
-      <CpsCard variant="on-acrylic" actionable>
+      <CpsCard variant="on-blurred" actionable>
         Sobre acrílico
       </CpsCard>
     </div>
@@ -194,7 +194,7 @@ const App = () => (
         Terciário
       </CpsCard>
 
-      <CpsCard variant="on-acrylic" actionable>
+      <CpsCard variant="on-blurred" actionable>
         Sobre acrílico
       </CpsCard>
     </div>

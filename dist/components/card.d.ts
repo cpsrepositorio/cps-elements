@@ -4,7 +4,7 @@ export default class CpsCard extends BaseElement {
     static styles: CSSResultGroup;
     private readonly hasSlotController;
     card: HTMLDivElement;
-    variant: 'primary' | 'secondary' | 'tertiary' | 'on-acrylic';
+    variant: 'primary' | 'secondary' | 'tertiary' | 'on-blurred';
     actionable: boolean;
     click(event?: MouseEvent): void;
     focus(options?: FocusOptions): void;

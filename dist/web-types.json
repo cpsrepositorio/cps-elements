@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -159,6 +159,46 @@
               "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
               "value": {
                 "type": "'auto' | 'none' | string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-background",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/background",
+          "js": {
+            "properties": [
+              {
+                "name": "variant",
+                "description": "O tipo de variação visual do plano de fundo.",
+                "value": {
+                  "type": "'base' | 'acrylic' | 'blurred'"
+                }
+              },
+              {
+                "name": "centered",
+                "description": "Automaticamente centraliza o conteúdo do plano de fundo.",
+                "value": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "O tipo de variação visual do plano de fundo.",
+              "value": {
+                "type": "'base' | 'acrylic' | 'blurred'"
+              }
+            },
+            {
+              "name": "centered",
+              "description": "Automaticamente centraliza o conteúdo do plano de fundo.",
+              "value": {
+                "type": "boolean"
               }
             }
           ]
@@ -731,7 +771,7 @@
                 "name": "variant",
                 "description": "O tipo de variação visual do _card_.",
                 "value": {
-                  "type": "'primary' | 'secondary' | 'tertiary' | 'on-acrylic'"
+                  "type": "'primary' | 'secondary' | 'tertiary' | 'on-blurred'"
                 }
               },
               {
@@ -764,7 +804,7 @@
               "name": "variant",
               "description": "O tipo de variação visual do _card_.",
               "value": {
-                "type": "'primary' | 'secondary' | 'tertiary' | 'on-acrylic'"
+                "type": "'primary' | 'secondary' | 'tertiary' | 'on-blurred'"
               }
             },
             {
@@ -5750,6 +5790,14 @@
               }
             }
           ]
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
         },
         {
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",

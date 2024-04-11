@@ -1,0 +1,1 @@
+import{a as e}from"./chunk.CZNC6NUP.js";import*as o from"react";import{createComponent as t}from"@lit-labs/react";var r=t({tagName:"cps-background",elementClass:e,react:o,events:{}}),n=r;export{r as a,n as b};
