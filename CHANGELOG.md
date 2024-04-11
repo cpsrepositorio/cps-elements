@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Adicionado objeto `detail` no evento `cps-change` do `<cps-radio-group>`.
+
 ### Changed
 
 - Corrigida falta de objeto `detail` no evento `cps-change` do `<cps-select>`, ao usar seleção por teclado.

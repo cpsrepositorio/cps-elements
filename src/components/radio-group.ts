@@ -152,7 +152,7 @@ export default class CpsRadioGroup extends BaseElement implements BaseFormContro
     radios.forEach(radio => (radio.checked = radio === target));
 
     if (this.value !== oldValue) {
-      this.emit('cps-change');
+      this.emit('cps-change', { detail: { value: this.value } });
       this.emit('cps-input');
       this.formControlController.updateValidity(true);
       this.updateComplete.then(() => this.adjustFocusableRadios());
@@ -197,7 +197,7 @@ export default class CpsRadioGroup extends BaseElement implements BaseFormContro
     }
 
     if (this.value !== oldValue) {
-      this.emit('cps-change');
+      this.emit('cps-change', { detail: { value: this.value } });
       this.emit('cps-input');
       this.formControlController.updateValidity(true);
       this.updateComplete.then(() => this.adjustFocusableRadios());
