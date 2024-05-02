@@ -1,3 +1,4 @@
+export { CpsAccordion } from './components/accordion.js';
 export { CpsAvatar } from './components/avatar.js';
 export { CpsBackground } from './components/background.js';
 export { CpsBadge } from './components/badge.js';

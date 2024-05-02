@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -13,6 +13,126 @@
   "contributions": {
     "html": {
       "elements": [
+        {
+          "name": "cps-accordion",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/accordion",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "header",
+                "value": {
+                  "type": "HTMLButtonElement"
+                }
+              },
+              {
+                "name": "content",
+                "value": {
+                  "type": "HTMLDivElement"
+                }
+              },
+              {
+                "name": "open",
+                "description": "Indica se o _accordion_ está aberto, ou seja, se o seu conteúdo interno está sendo exibido. Você pode alternar este atributo, manualmente ou reativamente. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do _accordion_ em tempo real.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "subtitle",
+                "description": "Um subtítulo opcional para o cabeçalho do _accordion_.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "title",
+                "description": "O título obrigatório do cabeçalho do _accordion_.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handleOpenChange",
+                "value": {}
+              },
+              {
+                "name": "show",
+                "description": "Exibe o conteúdo associado a este _accordion_.",
+                "value": {}
+              },
+              {
+                "name": "hide",
+                "description": "Oculta o conteúdo associado a este _accordion_.",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no cabeçalho.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no cabeçalho.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do cabeçalho.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-show",
+                "description": "Emitido quando o _accordion_ de opções começa a ser exibida."
+              },
+              {
+                "name": "cps-after-show",
+                "description": "Emitido após o _accordion_ de opções ser exibida e todas as animações terem sido concluídas."
+              },
+              {
+                "name": "cps-hide",
+                "description": "Emitido quando o _accordion_ de opções começa a ser ocultada."
+              },
+              {
+                "name": "cps-after-hide",
+                "description": "Emitido após o _accordion_ de opções ser ocultada e todas as animações terem sido concluídas."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "open",
+              "description": "Indica se o _accordion_ está aberto, ou seja, se o seu conteúdo interno está sendo exibido. Você pode alternar este atributo, manualmente ou reativamente. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do _accordion_ em tempo real.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "subtitle",
+              "description": "Um subtítulo opcional para o cabeçalho do _accordion_.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "title",
+              "description": "O título obrigatório do cabeçalho do _accordion_.",
+              "value": {
+                "type": "string"
+              }
+            }
+          ]
+        },
         {
           "name": "cps-avatar",
           "description": "",

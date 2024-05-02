@@ -1,1 +1,0 @@
-import{a as e}from"./chunk.ZR2W3OAN.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var r=o({tagName:"cps-card",elementClass:e,react:t,events:{}}),p=r;export{r as a,p as b};

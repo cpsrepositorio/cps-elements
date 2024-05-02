@@ -4,6 +4,242 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "components/accordion.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsAccordion",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<div>`).",
+              "name": "base"
+            },
+            {
+              "description": "O cabeçalho do _accordion_ (um `<button>`).",
+              "name": "header"
+            },
+            {
+              "description": "O painel de conteúdo interno do _accordion_ (um `<div>`).",
+              "name": "content"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo interno do _accordion_.",
+              "name": ""
+            },
+            {
+              "description": "Um ícone opcional antes do título do _accordion_.",
+              "name": "icon"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, '[default]', 'icon')"
+            },
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "header",
+              "type": {
+                "text": "HTMLButtonElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "content",
+              "type": {
+                "text": "HTMLDivElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o _accordion_ está aberto, ou seja, se o seu conteúdo interno está sendo exibido. Você pode alternar este atributo, manualmente ou reativamente. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do _accordion_ em tempo real.",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "subtitle",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um subtítulo opcional para o cabeçalho do _accordion_.",
+              "attribute": "subtitle"
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O título obrigatório do cabeçalho do _accordion_.",
+              "attribute": "title"
+            },
+            {
+              "kind": "method",
+              "name": "handleOpenChange",
+              "parameters": [
+                {
+                  "name": "wasOpen",
+                  "type": {
+                    "text": "boolean | undefined"
+                  }
+                },
+                {
+                  "name": "open",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "description": "Exibe o conteúdo associado a este _accordion_."
+            },
+            {
+              "kind": "method",
+              "name": "hide",
+              "description": "Oculta o conteúdo associado a este _accordion_."
+            },
+            {
+              "kind": "method",
+              "name": "click",
+              "description": "Simula um _click_ no cabeçalho."
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Coloca o foco no cabeçalho."
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Remove o foco do cabeçalho."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o _accordion_ de opções começa a ser exibida.",
+              "name": "cps-show",
+              "reactName": "onCpsShow"
+            },
+            {
+              "description": "Emitido após o _accordion_ de opções ser exibida e todas as animações terem sido concluídas.",
+              "name": "cps-after-show",
+              "reactName": "onCpsAfterShow"
+            },
+            {
+              "description": "Emitido quando o _accordion_ de opções começa a ser ocultada.",
+              "name": "cps-hide",
+              "reactName": "onCpsHide"
+            },
+            {
+              "description": "Emitido após o _accordion_ de opções ser ocultada e todas as animações terem sido concluídas.",
+              "name": "cps-after-hide",
+              "reactName": "onCpsAfterHide"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o _accordion_ está aberto, ou seja, se o seu conteúdo interno está sendo exibido. Você pode alternar este atributo, manualmente ou reativamente. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do _accordion_ em tempo real.",
+              "fieldName": "open"
+            },
+            {
+              "name": "subtitle",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um subtítulo opcional para o cabeçalho do _accordion_.",
+              "fieldName": "subtitle"
+            },
+            {
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O título obrigatório do cabeçalho do _accordion_.",
+              "fieldName": "title"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "_Accordion_ é utilizado para expandir e contrair conteúdo de forma agrupada e organizada.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/accordion",
+          "status": "stable",
+          "since": "0.13",
+          "dependencies": [
+            "cps-icon"
+          ],
+          "tagName": "cps-accordion",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsAccordion",
+            "module": "components/accordion.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-accordion",
+          "declaration": {
+            "name": "CpsAccordion",
+            "module": "components/accordion.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsAccordion",
+          "declaration": {
+            "name": "CpsAccordion",
+            "module": "components/accordion.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/avatar.js",
       "declarations": [
         {
@@ -10968,7 +11204,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.12.0",
+    "version": "0.13.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

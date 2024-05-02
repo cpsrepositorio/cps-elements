@@ -2,6 +2,28 @@
   "version": 1.1,
   "tags": [
     {
+      "name": "cps-accordion",
+      "description": "_Accordion_ é utilizado para expandir e contrair conteúdo de forma agrupada e organizada.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando o _accordion_ de opções começa a ser exibida.\n- **cps-after-show** - Emitido após o _accordion_ de opções ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando o _accordion_ de opções começa a ser ocultada.\n- **cps-after-hide** - Emitido após o _accordion_ de opções ser ocultada e todas as animações terem sido concluídas.\n\n### **Methods:**\n - **show()** - Exibe o conteúdo associado a este _accordion_.\n- **hide()** - Oculta o conteúdo associado a este _accordion_.\n- **click()** - Simula um _click_ no cabeçalho.\n- **focus(options: _FocusOptions_)** - Coloca o foco no cabeçalho.\n- **blur()** - Remove o foco do cabeçalho.\n\n### **Slots:**\n - _default_ - O conteúdo interno do _accordion_.\n- **icon** - Um ícone opcional antes do título do _accordion_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **header** - O cabeçalho do _accordion_ (um `<button>`).\n- **content** - O painel de conteúdo interno do _accordion_ (um `<div>`).",
+      "attributes": [
+        {
+          "name": "open",
+          "description": "Indica se o _accordion_ está aberto, ou seja, se o seu conteúdo interno está sendo exibido. Você pode alternar este atributo, manualmente ou reativamente. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do _accordion_ em tempo real.",
+          "values": []
+        },
+        {
+          "name": "subtitle",
+          "description": "Um subtítulo opcional para o cabeçalho do _accordion_.",
+          "values": []
+        },
+        {
+          "name": "title",
+          "description": "O título obrigatório do cabeçalho do _accordion_.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-avatar",
       "description": "Avatares são usados para iconograficamente representar uma pessoa ou objeto.\n\n\n---\n\n\n\n\n### **Slots:**\n - **badge** - O distintivo informativo atrelado a este avatar. Recomenda-se utilizar `<cps-badge>` como conteúdo.\n- **icon** - O ícone a ser usado quando nenhuma imagem ou iniciais estão presentes. Recomenda-se utilizar `<cps-icon>` como conteúdo.\n\n### **CSS Properties:**\n - **--avatar-size** - A medida de tamanho do avatar, utilizada tanto como `width` quanto `height`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **icon** - O elemento que embrulha a renderização do _slot_ `icon`.\n- **initials** - O elemento que embrulha a renderização das iniciais.\n- **image** - A imagem do avatar (um `<img>`). Exibido apenas quando o atributo `image` está presente.",
       "attributes": [
