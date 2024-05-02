@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-accordion>`.
+
 ### Changed
 
 - Expõe a parte CSS `svg` do `<cps-icon>` para estilização avançada.

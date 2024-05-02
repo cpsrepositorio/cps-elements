@@ -16,6 +16,7 @@
 
 - Componentes
 
+  - [Accordion](/componentes/accordion)
   - [Avatar](/componentes/avatar)
   - [Background](/componentes/background)
   - [Badge](/componentes/badge)
