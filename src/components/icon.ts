@@ -130,7 +130,7 @@ export default class CpsIcon extends BaseElement {
   }
 
   render() {
-    return html` ${unsafeSVG(this.svg)} `;
+    return html` ${unsafeSVG(this.svg?.replace('<svg ', '<svg part="svg" '))} `;
   }
 }
 

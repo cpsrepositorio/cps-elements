@@ -6,7 +6,8 @@ export default css`
 
   :host {
     box-sizing: content-box !important;
-    display: inline-block;
+    display: inline-grid;
+    place-items: center;
     width: 1em;
     height: 1em;
   }

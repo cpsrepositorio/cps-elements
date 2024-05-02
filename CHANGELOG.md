@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Expõe a parte CSS `svg` do `<cps-icon>` para estilização avançada.
+
 ## 0.12.0 - 2024-04-11
 
 ### Added
