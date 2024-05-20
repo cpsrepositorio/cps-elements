@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Melhoria na definição de atributos de acessibilidade no `<cps-accordion>`.
+
 ## 0.13.0 - 2024-05-02
 
 ### Added

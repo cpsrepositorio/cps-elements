@@ -125,7 +125,6 @@ export default class CpsAccordion extends BaseElement {
 
     return html`
       <div
-        aria-expanded=${this.open ? 'true' : 'false'}
         class=${classMap({
           accordion: true,
           'accordion--open': this.open,
@@ -135,7 +134,7 @@ export default class CpsAccordion extends BaseElement {
         part="base"
         title
       >
-        <button aria-controls="content" class="accordion__header" id="header" part="header" @click=${this.click}>
+        <button aria-controls="content" aria-expanded=${this.open} class="accordion__header" id="header" part="header" type="button" @click=${this.click}>
           <div class="accordion__header-content">
             <slot class="accordion__header-icon" name="icon" part="icon"></slot>
             <span class="accordion__header-title" part="title">${this.title}</span>

@@ -2,8 +2,6 @@
 
 [component-header:cps-accordion]
 
-<div class="background-example">
-
 ```html preview
 <cps-accordion title="Informações adicionais">
   <cps-label>Conteúdo.</cps-label>
