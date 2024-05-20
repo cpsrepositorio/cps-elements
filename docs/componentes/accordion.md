@@ -19,6 +19,8 @@ const App = () => (
 );
 ```
 
+?> É possível usar _accordions_ independentes, como exibido nesta página. Entretanto, se quiser _accordions_ mutuamente excludentes em relação à sua expansão/contração, recomendamos o uso do [grupo de _accordions_](/componentes/accordion-group).
+
 ## Exemplos
 
 ### Abrir e fechar

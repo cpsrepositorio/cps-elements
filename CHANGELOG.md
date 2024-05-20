@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-accordion-group>`.
+
 ### Changed
 
 - Melhoria na definição de atributos de acessibilidade no `<cps-accordion>`.
