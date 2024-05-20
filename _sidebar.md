@@ -17,7 +17,7 @@
 - Componentes
 
   - [Accordion](/componentes/accordion)
-  - [Accordion Group <small>(em breve)</small>](/componentes/accordion-group)
+  - [Accordion Group](/componentes/accordion-group)
   - [Avatar](/componentes/avatar)
   - [Background](/componentes/background)
   - [Badge](/componentes/badge)

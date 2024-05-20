@@ -1,3 +1,4 @@
+export { CpsAccordionGroup } from './accordion-group.js';
 export { CpsAccordion } from './accordion.js';
 export { CpsAvatar } from './avatar.js';
 export { CpsBackground } from './background.js';
