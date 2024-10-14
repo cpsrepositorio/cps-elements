@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-logo>`.
+
 ## 0.14.0 - 2024-05-20
 
 ### Added

@@ -37,7 +37,7 @@
   - [Label](/componentes/label)
   - [Link](/componentes/link)
   - [List View <small>(em breve)</small>](/componentes/list-view)
-  - [Logo <small>(em breve)</small>](/componentes/logo)
+  - [Logo](/componentes/logo)
   - [Menu](/componentes/menu)
   - [Menu Item](/componentes/menu-item)
   - [Menu Label](/componentes/menu-label)
