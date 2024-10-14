@@ -342,6 +342,13 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
       const metadata = await customElements;
       const target = document.querySelector('.app-name');
 
+      const logo = target.querySelector('.app-name-link');
+      logo.className = 'app-logo';
+      logo.innerHTML = `
+        <cps-logo></cps-logo>
+        <cps-logo type="elements"></cps-logo>
+      `;
+
       // Add version
       const version = document.createElement('div');
       version.classList.add('sidebar-version');
@@ -408,9 +415,7 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             </div>
 
             <div class="component-header__info">
-              <cps-badge variant="neutral" pill>
-                Desde ${component.since || '?'}
-              </cps-badge>
+              ${component.since ? `<cps-badge variant="neutral" pill>Desde ${component.since}</cps-badge>` : ''}
 
               <cps-badge variant="${badge.variant}" pill style="text-transform: capitalize;">
                 ${badge.text}

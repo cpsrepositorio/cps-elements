@@ -55,8 +55,12 @@ strong {
   padding: 0 1.5rem;
 }
 
-.sidebar .app-name-link {
-  display: block;
+.sidebar .app-logo {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+  font-size: 3.75rem;
 }
 
 .sidebar-version {
@@ -273,7 +277,10 @@ strong {
 }
 
 .splash-logo {
-  max-width: 22rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 6.25rem;
 }
 
 .markdown-section .splash-start h1:first-of-type {

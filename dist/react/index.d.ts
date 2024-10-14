@@ -33,3 +33,4 @@ export { CpsTabPanel } from './tab-panel.js';
 export { CpsTextarea } from './textarea.js';
 export { CpsToggleButton } from './toggle-button.js';
 export { CpsTooltip } from './tooltip.js';
+export { CpsLogo } from './logo.js';

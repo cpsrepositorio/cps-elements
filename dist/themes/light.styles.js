@@ -110,6 +110,10 @@ export default css`
 
     --cps-color-background-overlay: rgb(113 113 122 / 33%);
 
+    --cps-color-fill-brand: var(--cps-palette-brand-600);
+    --cps-color-fill-accent: var(--cps-palette-accent-600);
+    --cps-color-fill-accent-light: var(--cps-palette-accent-500);
+
     --cps-color-fill-primary: rgb(255 255 255 / 70%);
     --cps-color-fill-secondary: rgb(245 245 245 / 50%);
     --cps-color-fill-tertiary: rgb(245 245 245 / 30%);

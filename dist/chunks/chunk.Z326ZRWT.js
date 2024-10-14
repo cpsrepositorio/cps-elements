@@ -1,0 +1,1 @@
+import{a as t}from"./chunk.WNR53XNT.js";import*as e from"react";import{createComponent as a}from"@lit-labs/react";var o=a({tagName:"cps-avatar",elementClass:t,react:e,events:{}}),p=o;export{o as a,p as b};

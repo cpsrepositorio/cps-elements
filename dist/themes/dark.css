@@ -106,6 +106,10 @@
 
   --cps-color-background-overlay: rgba(0 0 0 / 43%);
 
+  --cps-color-fill-brand: var(--cps-palette-brand-500);
+  --cps-color-fill-accent: var(--cps-palette-accent-600);
+  --cps-color-fill-accent-light: var(--cps-palette-accent-600);
+
   --cps-color-fill-primary: rgb(255 255 255 / 6.05%);
   --cps-color-fill-secondary: rgb(255 255 255 / 8.37%);
   --cps-color-fill-tertiary: rgb(255 255 255 / 3.26%);

@@ -1,6 +1,9 @@
 <div class="splash">
 <div class="splash-start">
-<img class="splash-logo" src="./assets/images/wordmark.svg" alt="CPS Elements">
+<div class="splash-logo">
+  <cps-logo></cps-logo>
+  <cps-logo type="elements"></cps-logo>
+</div>
 
 # Web Components de ponta, sem complicação.
 
