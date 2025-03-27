@@ -6,6 +6,6 @@
     "streetsidesoftware.code-spell-checker",
     "stylelint.vscode-stylelint",
     "davidanson.vscode-markdownlint",
-    "rvest.vs-code-prettier-eslint"
+    "esbenp.prettier-vscode"
   ]
 }
