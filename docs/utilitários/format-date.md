@@ -1,10 +1,10 @@
-# Formatar Data
+# Format Date
 
 [component-header:cps-format-date]
 
 A formatação de datas é gerenciada automaticamente pela API nativa [`Intl.DateTimeFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) do navegador, eliminando a necessidade de bibliotecas externas de formatação de data/hora em múltiplos idiomas. Isso proporciona uma solução leve e de alto desempenho para internacionalização de datas.
 
-Sendo assim, este utilitário é simplesmente um _wrapper_ sobre a implementação nativa, oferecendo uma sintaxe baseada em _web components_ fácil de entender e usar diretamente no HTML:
+Sendo assim, este utilitário é simplesmente um _wrapper_ sobre a implementação nativa, oferecendo uma sintaxe baseada em Web Components fácil de entender e de usar diretamente no HTML:
 
 ```html preview
 <!-- Data do primeiro commit do CPS Elements! 🎉 -->
@@ -186,6 +186,17 @@ Como já observado, o idioma atualmente em uso no navegador do usuário é utili
 ></cps-format-date>
 <br /><br />
 
+<cps-label variant="secondary">Alemão:</cps-label><br />
+<cps-format-date
+  day="numeric"
+  month="numeric"
+  year="numeric"
+  hour="numeric"
+  minute="numeric"
+  lang="de"
+></cps-format-date>
+<br /><br />
+
 <cps-label variant="secondary">Russo:</cps-label><br />
 <cps-format-date
   day="numeric"
@@ -224,6 +235,12 @@ const App = () => (
     <CpsLabel variant="secondary">Francês:</CpsLabel>
     <br />
     <CpsFormatDate day="numeric" month="numeric" year="numeric" hour="numeric" minute="numeric" lang="fr" />
+    <br />
+    <br />
+
+    <CpsLabel variant="secondary">Alemão:</CpsLabel>
+    <br />
+    <CpsFormatDate day="numeric" month="numeric" year="numeric" hour="numeric" minute="numeric" lang="de" />
     <br />
     <br />
 
