@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Added
 
 - Criação do utilitário `<cps-format-date>`.
+- Criação do utilitário `<cps-format-number>`.
 
 ### Changed
 
