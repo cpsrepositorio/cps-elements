@@ -11,7 +11,7 @@ import type { CSSResultGroup } from 'lit';
  * No contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.
  *
  * @documentation https://cpsrepositorio.github.io/cps-elements/#/componentes/logo
- * @status developing
+ * @status stable
  * @since 0.15.0
  */
 @customElement('cps-logo')
