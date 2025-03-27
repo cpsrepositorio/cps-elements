@@ -6,6 +6,14 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do utilitário `<cps-format-date>`.
+
+### Changed
+
+- Correção da importação do componente `<cps-logo>`, em ambientes que exigem extensão de arquivo explícita em importações.
+
 ## 0.15.0 - 2024-10-14
 
 ### Added

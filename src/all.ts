@@ -11,6 +11,7 @@ export { CpsCheckbox } from './components/checkbox.js';
 export { CpsChip } from './components/chip.js';
 export { CpsDropdown } from './components/dropdown.js';
 export { CpsFlyout } from './components/flyout.js';
+export { CpsFormatDate } from './components/format-date.js';
 export { CpsIcon } from './components/icon.js';
 export { CpsIconButton } from './components/icon-button.js';
 export { CpsInclude } from './components/include.js';
