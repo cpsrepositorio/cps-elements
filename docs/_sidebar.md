@@ -67,6 +67,7 @@
 - Utilitários
 
   - [Flyout](/utilitários/flyout)
+  - [Format Bytes](/utilitários/format-bytes)
   - [Format Date](/utilitários/format-date)
   - [Format Number](/utilitários/format-number)
   - [Format Relative Time <small>(em breve)</small>](/utilitários/format-relative-time)
