@@ -153,7 +153,7 @@ Como já observado, o idioma atualmente em uso no navegador do usuário é utili
 ></cps-format-date>
 <br /><br />
 
-<cps-label variant="secondary">Inglês americano:</cps-label><br />
+<cps-label variant="secondary">Inglês estadunidense:</cps-label><br />
 <cps-format-date
   day="numeric"
   month="numeric"
@@ -220,7 +220,7 @@ const App = () => (
     <br />
     <br />
 
-    <CpsLabel variant="secondary">Inglês americano:</CpsLabel>
+    <CpsLabel variant="secondary">Inglês estadunidense:</CpsLabel>
     <br />
     <CpsFormatDate day="numeric" month="numeric" year="numeric" hour="numeric" minute="numeric" lang="en-US" />
     <br />
