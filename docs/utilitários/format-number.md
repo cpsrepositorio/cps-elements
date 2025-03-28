@@ -93,7 +93,7 @@ O idioma atualmente em uso no navegador do usuário é utilizado para a formata�
 <cps-format-number value="2530.70" minimum-fraction-digits="2" lang="pt"></cps-format-number>
 <br /><br />
 
-<cps-label variant="secondary">Inglês americano:</cps-label><br />
+<cps-label variant="secondary">Inglês estadunidense:</cps-label><br />
 <cps-format-number value="2530.70" minimum-fraction-digits="2" lang="en-US"></cps-format-number>
 <br /><br />
 
