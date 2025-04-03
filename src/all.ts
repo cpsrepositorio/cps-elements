@@ -14,6 +14,7 @@ export { CpsFlyout } from './components/flyout.js';
 export { CpsFormatBytes } from './components/format-bytes.js';
 export { CpsFormatDate } from './components/format-date.js';
 export { CpsFormatNumber } from './components/format-number.js';
+export { CpsFormatRelativeTime } from './components/format-relative-time.js';
 export { CpsIcon } from './components/icon.js';
 export { CpsIconButton } from './components/icon-button.js';
 export { CpsInclude } from './components/include.js';

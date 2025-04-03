@@ -11,6 +11,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 - Criação do utilitário `<cps-format-bytes>`.
 - Criação do utilitário `<cps-format-date>`.
 - Criação do utilitário `<cps-format-number>`.
+- Criação do utilitário `<cps-format-relative-time>`.
 
 ### Changed
 
