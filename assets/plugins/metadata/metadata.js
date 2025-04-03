@@ -473,7 +473,7 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             Para importar este componente [através de CDN](/fundamentos/instalação#através-de-cdn) usando uma _tag_ \`<script>\`:
 
             \`\`\`html
-            <script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/${component.path}"></script>
+            <script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/${component.path.replace(/\.component/gi, '')}"></script>
             \`\`\`
             </cps-tab-panel>
 
@@ -481,21 +481,21 @@ const marked = /** @type {import("marked").marked} */ (window.marked);
             Para [importar individualmente](/fundamentos/instalação#importações-individuais) a partir de CDN usando um \`import\` JavaScript:
 
             \`\`\`js
-            import 'https://cdn.jsdelivr.net/npm/@cps-elements/web/${component.path}';
+            import 'https://cdn.jsdelivr.net/npm/@cps-elements/web/${component.path.replace(/\.component/gi, '')}';
             \`\`\`
             </cps-tab-panel>
 
             <cps-tab-panel name="bundler">\n
             Para importar este componente em uma instalação usando [um empacotador (_bundler_)](/fundamentos/instalação#instalação-com-empacotador):
             \`\`\`js
-            import { ${component.name} } from '@cps-elements/web/${component.path.replace('.js', '')}';
+            import { ${component.name} } from '@cps-elements/web/${component.path.replace(/\.component/gi, '').replace('.js', '')}';
             \`\`\`
             </cps-tab-panel>
 
             <cps-tab-panel name="react">\n
             Para importar este componente já embrulhado como um [componente React](/frameworks/react):
             \`\`\`js
-            import { ${component.name} } from '@cps-elements/web/${component.path.replace('components/', 'react/').replace('.js', '')}';
+            import { ${component.name} } from '@cps-elements/web/${component.path.replace('components/', 'react/').replace(/\.component/gi, '').replace('.js', '')}';
             \`\`\`
             </cps-tab-panel>
             </cps-tab-group>

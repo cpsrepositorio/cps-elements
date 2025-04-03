@@ -1663,6 +1663,210 @@
       "references": []
     },
     {
+      "name": "cps-format-bytes",
+      "description": "Formata um número como um valor em _bytes_ ou _bits_ legível por humanos.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "O número (valor bruto em _bytes_ ou _bits_) a ser formatado.",
+          "values": []
+        },
+        {
+          "name": "unit",
+          "description": "O tipo de unidade a ser considerado para as conversões de valores.",
+          "values": [{ "name": "byte" }, { "name": "bit" }]
+        },
+        {
+          "name": "display",
+          "description": "Determina como formatar o resultado, por exemplo, \"100 bytes\", \"100 b\" ou \"100b\".",
+          "values": [
+            { "name": "long" },
+            { "name": "short" },
+            { "name": "narrow" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-format-date",
+      "description": "Formata uma data/hora usando o idioma e as opções especificadas.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "date",
+          "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+          "values": [{ "name": "Date" }]
+        },
+        {
+          "name": "weekday",
+          "description": "O formato para exibir o dia da semana.",
+          "values": [
+            { "name": "narrow" },
+            { "name": "short" },
+            { "name": "long" }
+          ]
+        },
+        {
+          "name": "era",
+          "description": "O formato para exibir a era.",
+          "values": [
+            { "name": "narrow" },
+            { "name": "short" },
+            { "name": "long" }
+          ]
+        },
+        {
+          "name": "year",
+          "description": "O formato para exibir o ano.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "month",
+          "description": "O formato para exibir o mês.",
+          "values": [
+            { "name": "numeric" },
+            { "name": "2-digit" },
+            { "name": "narrow" },
+            { "name": "short" },
+            { "name": "long" }
+          ]
+        },
+        {
+          "name": "day",
+          "description": "O formato para exibir o dia.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "hour",
+          "description": "O formato para exibir a hora.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "minute",
+          "description": "O formato para exibir os minutos.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "second",
+          "description": "O formato para exibir os segundos.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "time-zone-name",
+          "description": "O formato para exibir o nome do fuso horário.",
+          "values": [{ "name": "short" }, { "name": "long" }]
+        },
+        {
+          "name": "time-zone",
+          "description": "O fuso horário no qual o horário será expresso.",
+          "values": []
+        },
+        {
+          "name": "hour-format",
+          "description": "O formato para exibir a hora.",
+          "values": [{ "name": "auto" }, { "name": "12" }, { "name": "24" }]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-format-number",
+      "description": "Formata um número usando o idioma e as opções especificadas.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "O número a ser formatado.",
+          "values": []
+        },
+        {
+          "name": "type",
+          "description": "O estilo de formatação a ser utilizado.",
+          "values": [
+            { "name": "currency" },
+            { "name": "decimal" },
+            { "name": "percent" }
+          ]
+        },
+        {
+          "name": "no-grouping",
+          "description": "Desativa os separadores de agrupamento.",
+          "values": []
+        },
+        {
+          "name": "currency",
+          "description": "O código de moeda [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) a ser utilizado na formatação.",
+          "values": []
+        },
+        {
+          "name": "currency-display",
+          "description": "Definição sobre como exibir a moeda.",
+          "values": [
+            { "name": "symbol" },
+            { "name": "narrowSymbol" },
+            { "name": "code" },
+            { "name": "name" }
+          ]
+        },
+        {
+          "name": "minimum-integer-digits",
+          "description": "O número mínimo de dígitos inteiros a ser utilizado. Valores possíveis são 1-21.",
+          "values": []
+        },
+        {
+          "name": "minimum-fraction-digits",
+          "description": "O número mínimo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+          "values": []
+        },
+        {
+          "name": "maximum-fraction-digits",
+          "description": "O número máximo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+          "values": []
+        },
+        {
+          "name": "minimum-significant-digits",
+          "description": "O número mínimo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+          "values": []
+        },
+        {
+          "name": "maximum-significant-digits",
+          "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-format-relative-time",
+      "description": "Exibe uma frase de tempo localizada relativamente à data e hora atuais.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "date",
+          "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+          "values": [{ "name": "Date" }]
+        },
+        {
+          "name": "format",
+          "description": "O estilo de formatação a ser usado.\r\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+          "values": [
+            { "name": "long" },
+            { "name": "short" },
+            { "name": "narrow" }
+          ]
+        },
+        {
+          "name": "numeric",
+          "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\r\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+          "values": []
+        },
+        {
+          "name": "sync",
+          "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-logo",
       "description": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\r\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.\n\n\n---\n\n\n",
       "attributes": [

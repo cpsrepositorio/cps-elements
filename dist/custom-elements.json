@@ -3771,6 +3771,66 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/format-bytes.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CpsFormatBytes",
+          "declaration": {
+            "name": "CpsFormatBytes",
+            "module": "./format-bytes/format-bytes.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/format-date.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CpsFormatDate",
+          "declaration": {
+            "name": "CpsFormatDate",
+            "module": "./format-date/format-date.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/format-number.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CpsFormatNumber",
+          "declaration": {
+            "name": "CpsFormatNumber",
+            "module": "./format-number/format-number.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/format-relative-time.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CpsFormatRelativeTime",
+          "declaration": {
+            "name": "CpsFormatRelativeTime",
+            "module": "./format-relative-time/format-relative-time.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/icon-button.js",
       "declarations": [
         {
@@ -5777,7 +5837,7 @@
           "name": "CpsLogo",
           "declaration": {
             "name": "CpsLogo",
-            "module": "./logo/logo.component"
+            "module": "./logo/logo.component.js"
           }
         }
       ]
@@ -11112,6 +11172,884 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/format-bytes/format-bytes.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsFormatBytes",
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "O número (valor bruto em _bytes_ ou _bits_) a ser formatado.",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "unit",
+              "type": {
+                "text": "'byte' | 'bit'"
+              },
+              "default": "'byte'",
+              "description": "O tipo de unidade a ser considerado para as conversões de valores.",
+              "attribute": "unit"
+            },
+            {
+              "kind": "field",
+              "name": "display",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "default": "'short'",
+              "description": "Determina como formatar o resultado, por exemplo, \"100 bytes\", \"100 b\" ou \"100b\".",
+              "attribute": "display"
+            },
+            {
+              "kind": "method",
+              "name": "_convertToBytes",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "unit",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_formatBytes",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "{ formattedValue: number; formattedUnit: string }"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "bytes",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "O número (valor bruto em _bytes_ ou _bits_) a ser formatado.",
+              "fieldName": "value"
+            },
+            {
+              "name": "unit",
+              "type": {
+                "text": "'byte' | 'bit'"
+              },
+              "default": "'byte'",
+              "description": "O tipo de unidade a ser considerado para as conversões de valores.",
+              "fieldName": "unit"
+            },
+            {
+              "name": "display",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "default": "'short'",
+              "description": "Determina como formatar o resultado, por exemplo, \"100 bytes\", \"100 b\" ou \"100b\".",
+              "fieldName": "display"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Formata um número como um valor em _bytes_ ou _bits_ legível por humanos.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/format-bytes",
+          "status": "stable",
+          "since": "0.16.0",
+          "tagName": "cps-format-bytes",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsFormatBytes",
+            "module": "components/format-bytes/format-bytes.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-format-bytes",
+          "declaration": {
+            "name": "CpsFormatBytes",
+            "module": "components/format-bytes/format-bytes.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsFormatBytes",
+          "declaration": {
+            "name": "CpsFormatBytes",
+            "module": "components/format-bytes/format-bytes.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/format-date/format-date.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsFormatDate",
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "Date | string"
+              },
+              "default": "new Date()",
+              "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "attribute": "date"
+            },
+            {
+              "kind": "field",
+              "name": "weekday",
+              "type": {
+                "text": "'narrow' | 'short' | 'long'"
+              },
+              "description": "O formato para exibir o dia da semana.",
+              "attribute": "weekday"
+            },
+            {
+              "kind": "field",
+              "name": "era",
+              "type": {
+                "text": "'narrow' | 'short' | 'long'"
+              },
+              "description": "O formato para exibir a era.",
+              "attribute": "era"
+            },
+            {
+              "kind": "field",
+              "name": "year",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir o ano.",
+              "attribute": "year"
+            },
+            {
+              "kind": "field",
+              "name": "month",
+              "type": {
+                "text": "'numeric' | '2-digit' | 'narrow' | 'short' | 'long'"
+              },
+              "description": "O formato para exibir o mês.",
+              "attribute": "month"
+            },
+            {
+              "kind": "field",
+              "name": "day",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir o dia.",
+              "attribute": "day"
+            },
+            {
+              "kind": "field",
+              "name": "hour",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir a hora.",
+              "attribute": "hour"
+            },
+            {
+              "kind": "field",
+              "name": "minute",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir os minutos.",
+              "attribute": "minute"
+            },
+            {
+              "kind": "field",
+              "name": "second",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir os segundos.",
+              "attribute": "second"
+            },
+            {
+              "kind": "field",
+              "name": "timeZoneName",
+              "type": {
+                "text": "'short' | 'long'"
+              },
+              "description": "O formato para exibir o nome do fuso horário.",
+              "attribute": "time-zone-name"
+            },
+            {
+              "kind": "field",
+              "name": "timeZone",
+              "type": {
+                "text": "string"
+              },
+              "description": "O fuso horário no qual o horário será expresso.",
+              "attribute": "time-zone"
+            },
+            {
+              "kind": "field",
+              "name": "hourFormat",
+              "type": {
+                "text": "'auto' | '12' | '24'"
+              },
+              "default": "'auto'",
+              "description": "O formato para exibir a hora.",
+              "attribute": "hour-format"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "date",
+              "type": {
+                "text": "Date | string"
+              },
+              "default": "new Date()",
+              "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "fieldName": "date"
+            },
+            {
+              "name": "weekday",
+              "type": {
+                "text": "'narrow' | 'short' | 'long'"
+              },
+              "description": "O formato para exibir o dia da semana.",
+              "fieldName": "weekday"
+            },
+            {
+              "name": "era",
+              "type": {
+                "text": "'narrow' | 'short' | 'long'"
+              },
+              "description": "O formato para exibir a era.",
+              "fieldName": "era"
+            },
+            {
+              "name": "year",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir o ano.",
+              "fieldName": "year"
+            },
+            {
+              "name": "month",
+              "type": {
+                "text": "'numeric' | '2-digit' | 'narrow' | 'short' | 'long'"
+              },
+              "description": "O formato para exibir o mês.",
+              "fieldName": "month"
+            },
+            {
+              "name": "day",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir o dia.",
+              "fieldName": "day"
+            },
+            {
+              "name": "hour",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir a hora.",
+              "fieldName": "hour"
+            },
+            {
+              "name": "minute",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir os minutos.",
+              "fieldName": "minute"
+            },
+            {
+              "name": "second",
+              "type": {
+                "text": "'numeric' | '2-digit'"
+              },
+              "description": "O formato para exibir os segundos.",
+              "fieldName": "second"
+            },
+            {
+              "name": "time-zone-name",
+              "type": {
+                "text": "'short' | 'long'"
+              },
+              "description": "O formato para exibir o nome do fuso horário.",
+              "fieldName": "timeZoneName"
+            },
+            {
+              "name": "time-zone",
+              "type": {
+                "text": "string"
+              },
+              "description": "O fuso horário no qual o horário será expresso.",
+              "fieldName": "timeZone"
+            },
+            {
+              "name": "hour-format",
+              "type": {
+                "text": "'auto' | '12' | '24'"
+              },
+              "default": "'auto'",
+              "description": "O formato para exibir a hora.",
+              "fieldName": "hourFormat"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Formata uma data/hora usando o idioma e as opções especificadas.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/format-date",
+          "status": "stable",
+          "since": "0.16.0",
+          "tagName": "cps-format-date",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsFormatDate",
+            "module": "components/format-date/format-date.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-format-date",
+          "declaration": {
+            "name": "CpsFormatDate",
+            "module": "components/format-date/format-date.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsFormatDate",
+          "declaration": {
+            "name": "CpsFormatDate",
+            "module": "components/format-date/format-date.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/format-number/format-number.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsFormatNumber",
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "O número a ser formatado.",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'currency' | 'decimal' | 'percent'"
+              },
+              "default": "'decimal'",
+              "description": "O estilo de formatação a ser utilizado.",
+              "attribute": "type"
+            },
+            {
+              "kind": "field",
+              "name": "noGrouping",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desativa os separadores de agrupamento.",
+              "attribute": "no-grouping"
+            },
+            {
+              "kind": "field",
+              "name": "currency",
+              "type": {
+                "text": "string"
+              },
+              "default": "'USD'",
+              "description": "O código de moeda [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) a ser utilizado na formatação.",
+              "attribute": "currency"
+            },
+            {
+              "kind": "field",
+              "name": "currencyDisplay",
+              "type": {
+                "text": "'symbol' | 'narrowSymbol' | 'code' | 'name'"
+              },
+              "default": "'symbol'",
+              "description": "Definição sobre como exibir a moeda.",
+              "attribute": "currency-display"
+            },
+            {
+              "kind": "field",
+              "name": "minimumIntegerDigits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número mínimo de dígitos inteiros a ser utilizado. Valores possíveis são 1-21.",
+              "attribute": "minimum-integer-digits"
+            },
+            {
+              "kind": "field",
+              "name": "minimumFractionDigits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número mínimo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+              "attribute": "minimum-fraction-digits"
+            },
+            {
+              "kind": "field",
+              "name": "maximumFractionDigits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número máximo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+              "attribute": "maximum-fraction-digits"
+            },
+            {
+              "kind": "field",
+              "name": "minimumSignificantDigits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número mínimo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+              "attribute": "minimum-significant-digits"
+            },
+            {
+              "kind": "field",
+              "name": "maximumSignificantDigits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+              "attribute": "maximum-significant-digits"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "O número a ser formatado.",
+              "fieldName": "value"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "'currency' | 'decimal' | 'percent'"
+              },
+              "default": "'decimal'",
+              "description": "O estilo de formatação a ser utilizado.",
+              "fieldName": "type"
+            },
+            {
+              "name": "no-grouping",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desativa os separadores de agrupamento.",
+              "fieldName": "noGrouping"
+            },
+            {
+              "name": "currency",
+              "type": {
+                "text": "string"
+              },
+              "default": "'USD'",
+              "description": "O código de moeda [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) a ser utilizado na formatação.",
+              "fieldName": "currency"
+            },
+            {
+              "name": "currency-display",
+              "type": {
+                "text": "'symbol' | 'narrowSymbol' | 'code' | 'name'"
+              },
+              "default": "'symbol'",
+              "description": "Definição sobre como exibir a moeda.",
+              "fieldName": "currencyDisplay"
+            },
+            {
+              "name": "minimum-integer-digits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número mínimo de dígitos inteiros a ser utilizado. Valores possíveis são 1-21.",
+              "fieldName": "minimumIntegerDigits"
+            },
+            {
+              "name": "minimum-fraction-digits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número mínimo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+              "fieldName": "minimumFractionDigits"
+            },
+            {
+              "name": "maximum-fraction-digits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número máximo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+              "fieldName": "maximumFractionDigits"
+            },
+            {
+              "name": "minimum-significant-digits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número mínimo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+              "fieldName": "minimumSignificantDigits"
+            },
+            {
+              "name": "maximum-significant-digits",
+              "type": {
+                "text": "number"
+              },
+              "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+              "fieldName": "maximumSignificantDigits"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Formata um número usando o idioma e as opções especificadas.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/format-number",
+          "status": "stable",
+          "since": "0.16.0",
+          "tagName": "cps-format-number",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsFormatNumber",
+            "module": "components/format-number/format-number.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-format-number",
+          "declaration": {
+            "name": "CpsFormatNumber",
+            "module": "components/format-number/format-number.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsFormatNumber",
+          "declaration": {
+            "name": "CpsFormatNumber",
+            "module": "components/format-number/format-number.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/format-relative-time/format-relative-time.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsFormatRelativeTime",
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "updateTimeout",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "isoTime",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "relativeTime",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "titleTime",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "Date | string"
+              },
+              "default": "new Date()",
+              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "attribute": "date"
+            },
+            {
+              "kind": "field",
+              "name": "format",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "default": "'long'",
+              "description": "O estilo de formatação a ser usado.\r\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+              "attribute": "format"
+            },
+            {
+              "kind": "field",
+              "name": "numeric",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\r\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+              "attribute": "numeric"
+            },
+            {
+              "kind": "field",
+              "name": "sync",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
+              "attribute": "sync"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "date",
+              "type": {
+                "text": "Date | string"
+              },
+              "default": "new Date()",
+              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "fieldName": "date"
+            },
+            {
+              "name": "format",
+              "type": {
+                "text": "'long' | 'short' | 'narrow'"
+              },
+              "default": "'long'",
+              "description": "O estilo de formatação a ser usado.\r\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+              "fieldName": "format"
+            },
+            {
+              "name": "numeric",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\r\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+              "fieldName": "numeric"
+            },
+            {
+              "name": "sync",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
+              "fieldName": "sync"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Exibe uma frase de tempo localizada relativamente à data e hora atuais.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/format-relative-time",
+          "status": "stable",
+          "since": "0.16.0",
+          "tagName": "cps-format-relative-time",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsFormatRelativeTime",
+            "module": "components/format-relative-time/format-relative-time.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-format-relative-time",
+          "declaration": {
+            "name": "CpsFormatRelativeTime",
+            "module": "components/format-relative-time/format-relative-time.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsFormatRelativeTime",
+          "declaration": {
+            "name": "CpsFormatRelativeTime",
+            "module": "components/format-relative-time/format-relative-time.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/format-relative-time/helpers.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "availableUnits",
+          "type": {
+            "text": "{\r\n  max: number;\r\n  value: number;\r\n  unit: Intl.RelativeTimeFormatUnit;\r\n}[]"
+          },
+          "default": "[\r\n  { max: 2760000, value: 60000, unit: 'minute' }, // max 46 minutes\r\n  { max: 72000000, value: 3600000, unit: 'hour' }, // max 20 hours\r\n  { max: 518400000, value: 86400000, unit: 'day' }, // max 6 days\r\n  { max: 2419200000, value: 604800000, unit: 'week' }, // max 28 days\r\n  { max: 28512000000, value: 2592000000, unit: 'month' }, // max 11 months\r\n  { max: Infinity, value: 31536000000, unit: 'year' }\r\n]",
+          "description": "Configuration for the available time units.\r\nEach unit has a maximum time difference it can represent, a value in milliseconds, and the unit name."
+        },
+        {
+          "kind": "function",
+          "name": "getTimeUntilNextUnit",
+          "parameters": [
+            {
+              "name": "unit",
+              "type": {
+                "text": "'second' | 'minute' | 'hour' | 'day'"
+              },
+              "description": "The time unit to calculate until ('second', 'minute', 'hour', or 'day')."
+            }
+          ],
+          "description": "Calculates the time remaining until the next occurrence of a specified time unit.",
+          "return": {
+            "type": {
+              "text": ""
+            }
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "availableUnits",
+          "declaration": {
+            "name": "availableUnits",
+            "module": "components/format-relative-time/helpers.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getTimeUntilNextUnit",
+          "declaration": {
+            "name": "getTimeUntilNextUnit",
+            "module": "components/format-relative-time/helpers.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/icon/library.default.js",
       "declarations": [
         {
@@ -11410,7 +12348,7 @@
           },
           "summary": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\r\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.",
           "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
-          "status": "developing",
+          "status": "stable",
           "since": "0.15.0",
           "tagName": "cps-logo",
           "customElement": true
@@ -11566,7 +12504,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.15.0",
+    "version": "0.16.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

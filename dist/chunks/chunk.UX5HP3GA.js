@@ -1,1 +1,0 @@
-import{a as o}from"./chunk.SXIGELZD.js";import*as e from"react";import{createComponent as t}from"@lit-labs/react";var r=t({tagName:"cps-accordion-group",elementClass:o,react:e,events:{}}),a=r;export{r as a,a as b};

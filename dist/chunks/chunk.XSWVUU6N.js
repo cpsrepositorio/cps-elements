@@ -1,0 +1,1 @@
+import{a as e}from"./chunk.RHY6ZE4D.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var m=o({tagName:"cps-tab-item",elementClass:e,react:t,events:{onCpsClose:"cps-close"}}),a=m;export{m as a,a as b};

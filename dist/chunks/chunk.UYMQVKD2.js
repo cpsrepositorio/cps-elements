@@ -1,1 +1,0 @@
-import{a as o}from"./chunk.TUTR4WPW.js";import*as e from"react";import{createComponent as t}from"@lit-labs/react";var p=t({tagName:"cps-accordion",elementClass:o,react:e,events:{onCpsShow:"cps-show",onCpsAfterShow:"cps-after-show",onCpsHide:"cps-hide",onCpsAfterHide:"cps-after-hide"}}),c=p;export{p as a,c as b};
