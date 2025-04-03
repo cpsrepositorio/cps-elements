@@ -209,7 +209,7 @@ const App = () => (
 );
 ```
 
-### Localização
+### Localização forçada
 
 O idioma atualmente em uso no navegador do usuário é utilizado para a formatação padrão da parte numérica do resultado. Use o atributo `lang` para definir um idioma de formatação de forma explícita.
 
