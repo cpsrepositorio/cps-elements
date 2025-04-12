@@ -494,6 +494,7 @@ Distribuída sob [licença MIT](https://github.com/tailwindlabs/heroicons/blob/m
         item.addEventListener('mouseenter', () => {
           const tooltip = document.createElement('cps-tooltip');
           tooltip.content = item.getAttribute('data-name');
+          tooltip.setAttribute('hoist', '');
 
           // Close open tooltips
           document.querySelectorAll('.icon-list cps-tooltip[open]').forEach(tooltip => tooltip.hide());
