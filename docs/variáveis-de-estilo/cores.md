@@ -139,7 +139,7 @@ Complementarmente, para composições com planos de fundo com imagens, ou para e
 | ------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `--cps-color-background-acrylic`      | <div class="color-sample blur" style="background: var(--cps-color-background-acrylic)"></div>      |
 | `--cps-color-background-acrylic-base` | <div class="color-sample blur" style="background: var(--cps-color-background-acrylic-base)"></div> |
-| `--cps-color-background-overlay`      | <div class="color-sample" style="background: var(--cps-color-background-overlay)"></div>           |
+| `--cps-color-backdrop`                | <div class="color-sample" style="background: var(--cps-color-backdrop)"></div>                     |
 
 </div>
 
@@ -248,6 +248,6 @@ São usadas na coloração de bordas em geral, bem como separadores e outros cas
 }
 
 .chessboard-pattern .table-wrapper tbody {
-  background: linear-gradient(90deg, var(--cps-color-background-solid-quaternary) 50%, #fff0), linear-gradient(var(--cps-color-background-overlay), var(--cps-color-background-overlay)), repeating-conic-gradient(var(--cps-palette-neutral-300) 0% 25%, var(--cps-palette-neutral-100) 0% 50%) 0 0/16px 16px;
+  background: linear-gradient(90deg, var(--cps-color-background-solid-quaternary) 50%, #fff0), linear-gradient(var(--cps-color-backdrop), var(--cps-color-backdrop)), repeating-conic-gradient(var(--cps-palette-neutral-300) 0% 25%, var(--cps-palette-neutral-100) 0% 50%) 0 0/16px 16px;
 }
 </style>

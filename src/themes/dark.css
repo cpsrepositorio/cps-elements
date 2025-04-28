@@ -105,7 +105,7 @@
   --cps-color-background-acrylic-base: linear-gradient(rgb(32 32 32 / 95%), rgb(32 32 32 / 95%)),
     var(--cps-texture-acrylic) 0/75px repeat fixed;
 
-  --cps-color-background-overlay: rgba(0 0 0 / 43%);
+  --cps-color-backdrop: rgba(0 0 0 / 43%);
 
   /* Fill colors */
   --cps-color-fill-brand: var(--cps-palette-brand-500);

@@ -28,7 +28,7 @@ body.site-search-visible {
   bottom: 0;
   left: 0;
   z-index: -1;
-  background: var(--cps-color-background-overlay);
+  background: var(--cps-color-backdrop);
 }
 
 .site-search__panel {
