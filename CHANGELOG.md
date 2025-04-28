@@ -6,6 +6,12 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Definição do tipo de evento `cps-after-close`.
+- Definição do tipo de evento `cps-initial-focus`.
+- Definição do tipo de evento `cps-request-close`.
+
 ### Changed
 
 - - 🚨 **BREAKING**: Variável CSS `--cps-color-background-overlay` renomeada para `--cps-color-backdrop`, para maior aderência com seu caso de uso real em conjunto com o componente `<cps-dialog>`.
