@@ -2550,6 +2550,21 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/dialog.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CpsDialog",
+          "declaration": {
+            "name": "CpsDialog",
+            "module": "./dialog/dialog.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/dropdown.js",
       "declarations": [
         {
@@ -11172,6 +11187,553 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/dialog/dialog.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsDialog",
+          "cssProperties": [
+            {
+              "description": "A largura preferida da caixa de diálogo. Observe que, ainda assim, a caixa de diálogo diminuirá para se acomodar em telas menores.",
+              "name": "--width"
+            },
+            {
+              "description": "A quantidade de preenchimento a ser usada para o cabeçalho.",
+              "name": "--header-spacing"
+            },
+            {
+              "description": "A quantidade de preenchimento a ser usada para o corpo.",
+              "name": "--body-spacing"
+            },
+            {
+              "description": "A quantidade de preenchimento a ser usada para o rodapé.",
+              "name": "--footer-spacing"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento base que envolve o componente.",
+              "name": "base"
+            },
+            {
+              "description": "A sobreposição que cobre a tela por trás da caixa de diálogo.",
+              "name": "backdrop"
+            },
+            {
+              "description": "O painel da caixa de diálogo (onde a caixa de diálogo e seu conteúdo são renderizados).",
+              "name": "panel"
+            },
+            {
+              "description": "O cabeçalho da caixa de diálogo. Este elemento envolve o título e ações do cabeçalho.",
+              "name": "header"
+            },
+            {
+              "description": "Contêiner para ações opcionais do cabeçalho.",
+              "name": "header-actions"
+            },
+            {
+              "description": "O título da caixa de diálogo.",
+              "name": "title"
+            },
+            {
+              "description": "O botão de fechar, um `<cps-icon-button>`.",
+              "name": "close-button"
+            },
+            {
+              "description": "A parte `base` exportada do botão de fechar.",
+              "name": "close-button__base"
+            },
+            {
+              "description": "O corpo da caixa de diálogo.",
+              "name": "body"
+            },
+            {
+              "description": "O rodapé da caixa de diálogo.",
+              "name": "footer"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo principal da caixa de diálogo.",
+              "name": ""
+            },
+            {
+              "description": "O rótulo da caixa de diálogo. Alternativamente, você pode usar o atributo `label`.",
+              "name": "label"
+            },
+            {
+              "description": "Ações opcionais para adicionar ao cabeçalho. Funciona melhor com `<cps-icon-button>`.",
+              "name": "header-actions"
+            },
+            {
+              "description": "O rodapé da caixa de diálogo, geralmente um ou mais botões representando várias opções.",
+              "name": "footer"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, '[default]', 'label', 'header-actions', 'footer')"
+            },
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "modal",
+              "type": {
+                "text": "Modal"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "originalTrigger",
+              "type": {
+                "text": "HTMLElement | null"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "dialog",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "panel",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "backdrop",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\r\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "attribute": "closable",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "ariaLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "attribute": "aria-label"
+            },
+            {
+              "kind": "field",
+              "name": "returnValue",
+              "type": {
+                "text": "string | boolean | undefined"
+              },
+              "default": "undefined",
+              "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\r\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\r\nfoi tomada pelo usuário.",
+              "attribute": "returnValue"
+            },
+            {
+              "kind": "method",
+              "name": "setupFooterButtons",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleFooterButtonClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleDocumentKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "playAnimation",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "target",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                },
+                {
+                  "name": "animationName",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "requestClose",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "source",
+                  "type": {
+                    "text": "CpsRequestClose['detail']['source']"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "addOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "removeOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleFormSubmission",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "SubmitEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleOpenChange"
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "description": "Mostra a caixa de diálogo."
+            },
+            {
+              "kind": "method",
+              "name": "close",
+              "parameters": [
+                {
+                  "name": "returnValue",
+                  "optional": true,
+                  "type": {
+                    "text": "string | boolean"
+                  }
+                }
+              ],
+              "description": "Fecha a caixa de diálogo, opcionalmente definindo um valor de retorno."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando a caixa de diálogo começa a ser aberta.",
+              "name": "cps-show",
+              "reactName": "onCpsShow"
+            },
+            {
+              "description": "Emitido após a caixa de diálogo ser aberta e todas as animações serem concluídas.",
+              "name": "cps-after-show",
+              "reactName": "onCpsAfterShow"
+            },
+            {
+              "description": "Emitido quando a caixa de diálogo começa a ser fechada.",
+              "name": "cps-close",
+              "reactName": "onCpsClose"
+            },
+            {
+              "description": "Emitido após a caixa de diálogo ser fechada e todas as animações serem concluídas.",
+              "name": "cps-after-close",
+              "reactName": "onCpsAfterClose"
+            },
+            {
+              "description": "Emitido quando a caixa de diálogo é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada.",
+              "name": "cps-initial-focus",
+              "reactName": "onCpsInitialFocus"
+            },
+            {
+              "type": {
+                "text": "{ source: 'backdrop' | 'header' | 'keyboard' }"
+              },
+              "description": "Emitido quando o usuário tenta fechar a caixa de diálogo clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a caixa de diálogo aberta. Evite usar isso a menos que fechar a caixa de diálogo resulte em comportamento destrutivo, como perda de dados.",
+              "name": "cps-request-close",
+              "reactName": "onCpsRequestClose"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\r\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+              "fieldName": "open"
+            },
+            {
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "fieldName": "closable"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "fieldName": "label"
+            },
+            {
+              "name": "aria-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "fieldName": "ariaLabel"
+            },
+            {
+              "name": "returnValue",
+              "type": {
+                "text": "string | boolean | undefined"
+              },
+              "default": "undefined",
+              "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\r\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\r\nfoi tomada pelo usuário.",
+              "resolveInitializer": {
+                "module": "src/components/dialog/dialog.component.ts"
+              },
+              "fieldName": "returnValue"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Caixas de diálogo, às vezes chamadas de \"modais\", aparecem acima de outros elementos na página e requerem atenção imediata do usuário.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/dialog",
+          "status": "stable",
+          "since": "0.17.0",
+          "dependencies": [
+            "cps-icon-button"
+          ],
+          "animations": [
+            {
+              "name": "dialog.show",
+              "description": "A animação a ser usada ao mostrar a caixa de diálogo."
+            },
+            {
+              "name": "dialog.hide",
+              "description": "A animação a ser usada ao ocultar a caixa de diálogo."
+            },
+            {
+              "name": "dialog.denyClose",
+              "description": "A animação a ser usada quando uma solicitação para fechar a caixa de diálogo é negada."
+            },
+            {
+              "name": "dialog.backdrop.show",
+              "description": "A animação a ser usada ao mostrar a sobreposição da caixa de diálogo."
+            },
+            {
+              "name": "dialog.backdrop.hide",
+              "description": "A animação a ser usada ao ocultar a sobreposição da caixa de diálogo."
+            }
+          ],
+          "tagName": "cps-dialog",
+          "customElement": true
+        },
+        {
+          "kind": "function",
+          "name": "showAlert",
+          "return": {
+            "type": {
+              "text": "Promise<void>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "message",
+              "type": {
+                "text": "string"
+              },
+              "description": "The message to display in the dialog body."
+            },
+            {
+              "name": "title",
+              "default": "''",
+              "type": {
+                "text": "string"
+              },
+              "description": "Optional title for the dialog",
+              "optional": true
+            },
+            {
+              "name": "button",
+              "default": "'OK'",
+              "type": {
+                "text": "string"
+              },
+              "description": "Optional text for the button, defaults to \"OK\".",
+              "optional": true
+            }
+          ],
+          "description": "Displays an alert dialog using a `CpsDialog` instance."
+        },
+        {
+          "kind": "function",
+          "name": "showConfirm",
+          "return": {
+            "type": {
+              "text": "Promise<boolean>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "message",
+              "type": {
+                "text": "string"
+              },
+              "description": "The message to display in the dialog body."
+            },
+            {
+              "name": "title",
+              "default": "''",
+              "type": {
+                "text": "string"
+              },
+              "description": "Optional title for the dialog.",
+              "optional": true
+            },
+            {
+              "name": "buttonYes",
+              "default": "'Confirmar'",
+              "type": {
+                "text": "string"
+              },
+              "description": "Optional text for the confirmation button, defaults to \"Yes\".",
+              "optional": true
+            },
+            {
+              "name": "buttonNo",
+              "default": "'Cancelar'",
+              "type": {
+                "text": "string"
+              },
+              "description": "Optional text for the cancelation button, defaults to \"No\".",
+              "optional": true
+            }
+          ],
+          "description": "Displays a confirm dialog using a `CpsDialog` instance."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsDialog",
+            "module": "components/dialog/dialog.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-dialog",
+          "declaration": {
+            "name": "CpsDialog",
+            "module": "components/dialog/dialog.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "showAlert",
+          "declaration": {
+            "name": "showAlert",
+            "module": "components/dialog/dialog.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "showConfirm",
+          "declaration": {
+            "name": "showConfirm",
+            "module": "components/dialog/dialog.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsDialog",
+          "declaration": {
+            "name": "CpsDialog",
+            "module": "components/dialog/dialog.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/format-bytes/format-bytes.component.js",
       "declarations": [
         {
@@ -12504,7 +13066,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.16.0",
+    "version": "0.17.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

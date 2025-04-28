@@ -27,7 +27,7 @@
   - [Card](/componentes/card)
   - [Checkbox](/componentes/checkbox)
   - [Chip](/componentes/chip)
-  - [Dialog <small>(em breve)</small>](/componentes/dialog)
+  - [Dialog](/componentes/dialog)
   - [Drawer <small>(em breve)</small>](/componentes/drawer)
   - [Dropdown](/componentes/dropdown)
   - [Grid View <small>(em breve)</small>](/componentes/grid-view)

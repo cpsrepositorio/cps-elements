@@ -1663,6 +1663,38 @@
       "references": []
     },
     {
+      "name": "cps-dialog",
+      "description": "Caixas de diálogo, às vezes chamadas de \"modais\", aparecem acima de outros elementos na página e requerem atenção imediata do usuário.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando a caixa de diálogo começa a ser aberta.\n- **cps-after-show** - Emitido após a caixa de diálogo ser aberta e todas as animações serem concluídas.\n- **cps-close** - Emitido quando a caixa de diálogo começa a ser fechada.\n- **cps-after-close** - Emitido após a caixa de diálogo ser fechada e todas as animações serem concluídas.\n- **cps-initial-focus** - Emitido quando a caixa de diálogo é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada.\n- **cps-request-close** - Emitido quando o usuário tenta fechar a caixa de diálogo clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a caixa de diálogo aberta. Evite usar isso a menos que fechar a caixa de diálogo resulte em comportamento destrutivo, como perda de dados.\n\n### **Methods:**\n - **show()** - Mostra a caixa de diálogo.\n- **close(returnValue: _string | boolean_)** - Fecha a caixa de diálogo, opcionalmente definindo um valor de retorno.\n\n### **Slots:**\n - _default_ - O conteúdo principal da caixa de diálogo.\n- **label** - O rótulo da caixa de diálogo. Alternativamente, você pode usar o atributo `label`.\n- **header-actions** - Ações opcionais para adicionar ao cabeçalho. Funciona melhor com `<cps-icon-button>`.\n- **footer** - O rodapé da caixa de diálogo, geralmente um ou mais botões representando várias opções.\n\n### **CSS Properties:**\n - **--width** - A largura preferida da caixa de diálogo. Observe que, ainda assim, a caixa de diálogo diminuirá para se acomodar em telas menores. _(default: undefined)_\n- **--header-spacing** - A quantidade de preenchimento a ser usada para o cabeçalho. _(default: undefined)_\n- **--body-spacing** - A quantidade de preenchimento a ser usada para o corpo. _(default: undefined)_\n- **--footer-spacing** - A quantidade de preenchimento a ser usada para o rodapé. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento base que envolve o componente.\n- **backdrop** - A sobreposição que cobre a tela por trás da caixa de diálogo.\n- **panel** - O painel da caixa de diálogo (onde a caixa de diálogo e seu conteúdo são renderizados).\n- **header** - O cabeçalho da caixa de diálogo. Este elemento envolve o título e ações do cabeçalho.\n- **header-actions** - Contêiner para ações opcionais do cabeçalho.\n- **title** - O título da caixa de diálogo.\n- **close-button** - O botão de fechar, um `<cps-icon-button>`.\n- **close-button__base** - A parte `base` exportada do botão de fechar.\n- **body** - O corpo da caixa de diálogo.\n- **footer** - O rodapé da caixa de diálogo.",
+      "attributes": [
+        {
+          "name": "open",
+          "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\r\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+          "values": []
+        },
+        {
+          "name": "closable",
+          "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+          "values": []
+        },
+        {
+          "name": "label",
+          "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "aria-label",
+          "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+          "values": []
+        },
+        {
+          "name": "returnValue",
+          "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\r\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\r\nfoi tomada pelo usuário.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-format-bytes",
       "description": "Formata um número como um valor em _bytes_ ou _bits_ legível por humanos.\n\n\n---\n\n\n",
       "attributes": [

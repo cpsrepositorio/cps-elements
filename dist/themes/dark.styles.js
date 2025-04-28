@@ -107,7 +107,7 @@ export default css`
       ),
       var(--cps-texture-acrylic) 0/75px repeat fixed;
 
-    --cps-color-background-overlay: rgba(0 0 0 / 43%);
+    --cps-color-backdrop: rgba(0 0 0 / 43%);
 
     --cps-color-fill-brand: var(--cps-palette-brand-500);
     --cps-color-fill-accent: var(--cps-palette-accent-600);

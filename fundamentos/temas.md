@@ -125,7 +125,7 @@ O utilitário também retorna uma função `toggleTheme()` a qual facilita a con
 <cps-button class="toggle-color-mode"></cps-button>
 
 <script type="module">
-  import { setTheme, toggleTheme } from 'https://cdn.jsdelivr.net/npm/@cps-elements/web//utilities/theme.js';
+  import { setTheme, toggleTheme } from 'https://cdn.jsdelivr.net/npm/@cps-elements/web/utilities/theme.js';
 
   const button = document.querySelector('.toggle-color-mode');
 

@@ -1,9 +1,10 @@
+const reducedMotionDuration = 30;
 export function animateTo(el, keyframes, options) {
     return new Promise(resolve => {
         if ((options === null || options === void 0 ? void 0 : options.duration) === Infinity) {
             throw new Error('Promise-based animations must be finite.');
         }
-        const animation = el.animate(keyframes, Object.assign(Object.assign({}, options), { duration: prefersReducedMotion() ? 0 : options.duration }));
+        const animation = el.animate(keyframes, Object.assign(Object.assign({}, options), { duration: prefersReducedMotion() ? reducedMotionDuration : options.duration }));
         animation.addEventListener('cancel', resolve, { once: true });
         animation.addEventListener('finish', resolve, { once: true });
     });

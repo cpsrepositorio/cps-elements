@@ -33,6 +33,7 @@ export { CpsTabPanel } from './tab-panel.js';
 export { CpsTextarea } from './textarea.js';
 export { CpsToggleButton } from './toggle-button.js';
 export { CpsTooltip } from './tooltip.js';
+export { CpsDialog } from './dialog.js';
 export { CpsFormatBytes } from './format-bytes.js';
 export { CpsFormatDate } from './format-date.js';
 export { CpsFormatNumber } from './format-number.js';
