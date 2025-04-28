@@ -1,3 +1,6 @@
+// Small duration for reduced motion
+const reducedMotionDuration = 30;
+
 /**
  * Animates an element using keyframes. Returns a promise that resolves after the animation completes or gets canceled.
  */
@@ -9,7 +12,7 @@ export function animateTo(el: HTMLElement, keyframes: Keyframe[], options?: Keyf
 
     const animation = el.animate(keyframes, {
       ...options,
-      duration: prefersReducedMotion() ? 0 : options!.duration
+      duration: prefersReducedMotion() ? reducedMotionDuration : options!.duration
     });
 
     animation.addEventListener('cancel', resolve, { once: true });
