@@ -8,6 +8,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Added
 
+- Criação do componente `<cps-dialog>`.
 - Definição do tipo de evento `cps-after-close`.
 - Definição do tipo de evento `cps-initial-focus`.
 - Definição do tipo de evento `cps-request-close`.
