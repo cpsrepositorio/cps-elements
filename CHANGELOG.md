@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Reduzida a duração da animação padrão de ocultamento de _backdrop_ no `<cps-dialog>`.
+
 ### Fixed
 
 - Exportação faltando das funções `showAlert` e `showConfirm` do componente `<cps-dialog>`.

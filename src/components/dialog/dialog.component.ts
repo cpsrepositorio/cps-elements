@@ -394,7 +394,7 @@ setDefaultAnimation('dialog.backdrop.show', {
 
 setDefaultAnimation('dialog.backdrop.hide', {
   keyframes: [{ opacity: 1 }, { opacity: 0 }],
-  options: { duration: 250 }
+  options: { duration: 100 }
 });
 
 /**
