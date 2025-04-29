@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Fixed
+
+- Exportação faltando das funções `showAlert` e `showConfirm` do componente `<cps-dialog>`.
+
 ## 0.17.0 - 2025-04-28
 
 ### Added
