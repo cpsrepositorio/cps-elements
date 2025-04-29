@@ -478,7 +478,7 @@
                 "text": "'auto' | string"
               },
               "default": "''",
-              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
               "attribute": "initials"
             },
             {
@@ -509,7 +509,7 @@
                 "text": "'auto' | 'none' | string"
               },
               "default": "'auto'",
-              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
               "attribute": "color",
               "reflects": true
             },
@@ -603,7 +603,7 @@
                 "text": "'auto' | string"
               },
               "default": "''",
-              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
               "fieldName": "initials"
             },
             {
@@ -630,7 +630,7 @@
                 "text": "'auto' | 'none' | string"
               },
               "default": "'auto'",
-              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
               "fieldName": "color"
             }
           ],
@@ -916,7 +916,7 @@
             "name": "BaseElement",
             "module": "/src/internal/base-element.js"
           },
-          "summary": "Distintivos (_badges_) são usados para chamar atenção de forma sutil\r\ne não intrusiva, comumente para exibição de notificações de _status_,\r\nindicação de novo conteúdo ou contagens.",
+          "summary": "Distintivos (_badges_) são usados para chamar atenção de forma sutil\ne não intrusiva, comumente para exibição de notificações de _status_,\nindicação de novo conteúdo ou contagens.",
           "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/badge",
           "status": "stable",
           "since": "0.2",
@@ -997,7 +997,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\r\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
               "attribute": "label"
             },
             {
@@ -1065,7 +1065,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\r\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
               "fieldName": "label"
             }
           ],
@@ -1157,7 +1157,7 @@
               "kind": "field",
               "name": "formControlController",
               "privacy": "private",
-              "default": "new FormControlController(this, {\r\n    form: input => {\r\n      // Buttons support a form attribute that points to an arbitrary form, so if this attribute is set we need to query\r\n      // the form from the same root using its id\r\n      if (input.hasAttribute('form')) {\r\n        const doc = input.getRootNode() as Document | ShadowRoot;\r\n        const formId = input.getAttribute('form')!;\r\n        return doc.getElementById(formId) as HTMLFormElement;\r\n      }\r\n\r\n      // Fall back to the closest containing form\r\n      return input.closest('form');\r\n    },\r\n    assumeInteractionOn: ['click']\r\n  })"
+              "default": "new FormControlController(this, {\n    form: input => {\n      // Buttons support a form attribute that points to an arbitrary form, so if this attribute is set we need to query\n      // the form from the same root using its id\n      if (input.hasAttribute('form')) {\n        const doc = input.getRootNode() as Document | ShadowRoot;\n        const formId = input.getAttribute('form')!;\n        return doc.getElementById(formId) as HTMLFormElement;\n      }\n\n      // Fall back to the closest containing form\n      return input.closest('form');\n    },\n    assumeInteractionOn: ['click']\n  })"
             },
             {
               "kind": "field",
@@ -1277,7 +1277,7 @@
                 "text": "'button' | 'submit' | 'reset'"
               },
               "default": "'button'",
-              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\r\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
               "attribute": "type"
             },
             {
@@ -1287,7 +1287,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "attribute": "name"
             },
             {
@@ -1297,7 +1297,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "attribute": "value"
             },
             {
@@ -1326,7 +1326,7 @@
                 "text": "string"
               },
               "default": "'noreferrer noopener'",
-              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
               "attribute": "rel"
             },
             {
@@ -1344,7 +1344,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "attribute": "form"
             },
             {
@@ -1601,7 +1601,7 @@
                 "text": "'button' | 'submit' | 'reset'"
               },
               "default": "'button'",
-              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\r\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
               "fieldName": "type"
             },
             {
@@ -1610,7 +1610,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "fieldName": "name"
             },
             {
@@ -1619,7 +1619,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
               "fieldName": "value"
             },
             {
@@ -1645,7 +1645,7 @@
                 "text": "string"
               },
               "default": "'noreferrer noopener'",
-              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
               "fieldName": "rel"
             },
             {
@@ -1661,7 +1661,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "fieldName": "form"
             },
             {
@@ -1952,7 +1952,7 @@
               "kind": "field",
               "name": "formControlController",
               "privacy": "private",
-              "default": "new FormControlController(this, {\r\n    value: (control: CpsCheckbox) => (control.checked ? control.value || 'on' : undefined),\r\n    defaultValue: (control: CpsCheckbox) => control.defaultChecked,\r\n    setValue: (control: CpsCheckbox, checked: boolean) => (control.checked = checked)\r\n  })"
+              "default": "new FormControlController(this, {\n    value: (control: CpsCheckbox) => (control.checked ? control.value || 'on' : undefined),\n    defaultValue: (control: CpsCheckbox) => control.defaultChecked,\n    setValue: (control: CpsCheckbox, checked: boolean) => (control.checked = checked)\n  })"
             },
             {
               "kind": "field",
@@ -2001,7 +2001,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "attribute": "id"
             },
             {
@@ -2073,7 +2073,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Apresenta o campo em estado indeterminado.\r\nIsso é geralmente aplicado a caixas de seleção que representam o cabeçalho\r\nde um comportamento \"Selecionar todos/nenhum\", quando as caixas de seleção\r\nassociadas podem ter mistura de estados marcados e desmarcados.",
+              "description": "Apresenta o campo em estado indeterminado.\nIsso é geralmente aplicado a caixas de seleção que representam o cabeçalho\nde um comportamento \"Selecionar todos/nenhum\", quando as caixas de seleção\nassociadas podem ter mistura de estados marcados e desmarcados.",
               "attribute": "indeterminate",
               "reflects": true
             },
@@ -2093,7 +2093,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "attribute": "form",
               "reflects": true
             },
@@ -2263,7 +2263,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "fieldName": "id"
             },
             {
@@ -2325,7 +2325,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Apresenta o campo em estado indeterminado.\r\nIsso é geralmente aplicado a caixas de seleção que representam o cabeçalho\r\nde um comportamento \"Selecionar todos/nenhum\", quando as caixas de seleção\r\nassociadas podem ter mistura de estados marcados e desmarcados.",
+              "description": "Apresenta o campo em estado indeterminado.\nIsso é geralmente aplicado a caixas de seleção que representam o cabeçalho\nde um comportamento \"Selecionar todos/nenhum\", quando as caixas de seleção\nassociadas podem ter mistura de estados marcados e desmarcados.",
               "fieldName": "indeterminate"
             },
             {
@@ -2334,7 +2334,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "fieldName": "form"
             },
             {
@@ -2560,6 +2560,22 @@
             "name": "CpsDialog",
             "module": "./dialog/dialog.component.js"
           }
+        },
+        {
+          "kind": "js",
+          "name": "showAlert",
+          "declaration": {
+            "name": "showAlert",
+            "module": "./dialog/dialog.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "showConfirm",
+          "declaration": {
+            "name": "showConfirm",
+            "module": "./dialog/dialog.component.js"
+          }
         }
       ]
     },
@@ -2726,7 +2742,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "attribute": "id"
             },
             {
@@ -2768,7 +2784,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Define se o espaço reservado deve ser exibido permanentemente,\r\nindependentemente de uma opção estar selecionada.",
+              "description": "Define se o espaço reservado deve ser exibido permanentemente,\nindependentemente de uma opção estar selecionada.",
               "attribute": "keep-placeholder"
             },
             {
@@ -3095,7 +3111,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "fieldName": "id"
             },
             {
@@ -3131,7 +3147,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Define se o espaço reservado deve ser exibido permanentemente,\r\nindependentemente de uma opção estar selecionada.",
+              "description": "Define se o espaço reservado deve ser exibido permanentemente,\nindependentemente de uma opção estar selecionada.",
               "fieldName": "keepPlaceholder"
             },
             {
@@ -3897,7 +3913,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\r\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\r\npor ferramentas de acessibilidade.",
+              "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\npor ferramentas de acessibilidade.",
               "attribute": "label"
             },
             {
@@ -3915,7 +3931,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
               "attribute": "library"
             },
             {
@@ -3924,7 +3940,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
               "attribute": "src"
             },
             {
@@ -3953,7 +3969,7 @@
                 "text": "string"
               },
               "default": "'noreferrer noopener'",
-              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
               "attribute": "rel"
             },
             {
@@ -4052,7 +4068,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\r\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\r\npor ferramentas de acessibilidade.",
+              "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\npor ferramentas de acessibilidade.",
               "fieldName": "label"
             },
             {
@@ -4068,7 +4084,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
               "fieldName": "library"
             },
             {
@@ -4076,7 +4092,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
               "fieldName": "src"
             },
             {
@@ -4102,7 +4118,7 @@
                 "text": "string"
               },
               "default": "'noreferrer noopener'",
-              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
               "fieldName": "rel"
             },
             {
@@ -4127,7 +4143,7 @@
             "name": "BaseElement",
             "module": "/src/internal/base-element.js"
           },
-          "summary": "Botões de ícone são simples, apenas um ícone dentro,\r\nnormalmente para uso dentro de outros componentes.",
+          "summary": "Botões de ícone são simples, apenas um ícone dentro,\nnormalmente para uso dentro de outros componentes.",
           "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon-button",
           "status": "stable",
           "since": "0.2",
@@ -4205,7 +4221,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
               "attribute": "src"
             },
             {
@@ -4215,7 +4231,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Descrição alternativa para ferramentas de acessibilidade.\r\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+              "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
               "attribute": "label"
             },
             {
@@ -4225,7 +4241,7 @@
                 "text": "string"
               },
               "default": "'default'",
-              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
               "attribute": "library",
               "reflects": true
             },
@@ -4269,7 +4285,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
               "fieldName": "src"
             },
             {
@@ -4278,7 +4294,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Descrição alternativa para ferramentas de acessibilidade.\r\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+              "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
               "fieldName": "label"
             },
             {
@@ -4287,7 +4303,7 @@
                 "text": "string"
               },
               "default": "'default'",
-              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
               "fieldName": "library"
             }
           ],
@@ -4345,7 +4361,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
+              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
               "attribute": "src"
             },
             {
@@ -4365,7 +4381,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
+              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
               "attribute": "allow-scripts"
             },
             {
@@ -4407,7 +4423,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
+              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
               "fieldName": "src"
             },
             {
@@ -4425,7 +4441,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
+              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
               "fieldName": "allowScripts"
             }
           ],
@@ -4557,7 +4573,7 @@
               "kind": "field",
               "name": "formControlController",
               "privacy": "private",
-              "default": "new FormControlController(this, {\r\n    assumeInteractionOn: ['cps-blur', 'cps-input']\r\n  })"
+              "default": "new FormControlController(this, {\n    assumeInteractionOn: ['cps-blur', 'cps-input']\n  })"
             },
             {
               "kind": "field",
@@ -4612,7 +4628,7 @@
                 "text": "'date' | 'datetime-local' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url'"
               },
               "default": "'text'",
-              "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\r\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
+              "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
               "attribute": "type",
               "reflects": true
             },
@@ -4623,7 +4639,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "attribute": "id"
             },
             {
@@ -4765,7 +4781,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "attribute": "form",
               "reflects": true
             },
@@ -4831,7 +4847,7 @@
               "type": {
                 "text": "number | 'any'"
               },
-              "description": "Especifica a granularidade que o valor deve obedecer, ou o valor especial `any` que significa que nenhum passo é\r\nimplicado, permitindo qualquer valor numérico. Aplicável somente se `type` for `date` ou `number`.",
+              "description": "Especifica a granularidade que o valor deve obedecer, ou o valor especial `any` que significa que nenhum passo é\nimplicado, permitindo qualquer valor numérico. Aplicável somente se `type` for `date` ou `number`.",
               "attribute": "step"
             },
             {
@@ -4858,7 +4874,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\nConsulte\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
               "attribute": "autocomplete"
             },
             {
@@ -4895,7 +4911,7 @@
               "type": {
                 "text": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
               },
-              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
               "attribute": "inputmode"
             },
             {
@@ -5204,7 +5220,7 @@
                 "text": "'date' | 'datetime-local' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url'"
               },
               "default": "'text'",
-              "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\r\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
+              "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
               "fieldName": "type"
             },
             {
@@ -5213,7 +5229,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "fieldName": "id"
             },
             {
@@ -5330,7 +5346,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "fieldName": "form"
             },
             {
@@ -5387,7 +5403,7 @@
               "type": {
                 "text": "number | 'any'"
               },
-              "description": "Especifica a granularidade que o valor deve obedecer, ou o valor especial `any` que significa que nenhum passo é\r\nimplicado, permitindo qualquer valor numérico. Aplicável somente se `type` for `date` ou `number`.",
+              "description": "Especifica a granularidade que o valor deve obedecer, ou o valor especial `any` que significa que nenhum passo é\nimplicado, permitindo qualquer valor numérico. Aplicável somente se `type` for `date` ou `number`.",
               "fieldName": "step"
             },
             {
@@ -5411,7 +5427,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\nConsulte\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
               "fieldName": "autocomplete"
             },
             {
@@ -5444,7 +5460,7 @@
               "type": {
                 "text": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
               },
-              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
               "fieldName": "inputmode"
             }
           ],
@@ -5519,7 +5535,7 @@
               "kind": "field",
               "name": "variant",
               "type": {
-                "text": "| 'primary'\r\n    | 'secondary'\r\n    | 'tertiary'\r\n    | 'disabled'\r\n    | 'brand-primary'\r\n    | 'brand-secondary'\r\n    | 'brand-tertiary'\r\n    | 'inverted-primary'\r\n    | 'inverted-secondary'\r\n    | 'inverted-disabled'"
+                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
               },
               "default": "'primary'",
               "description": "A variante temática do _label_.",
@@ -5530,7 +5546,7 @@
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "| 'stamp'\r\n    | 'caption'\r\n    | 'label'\r\n    | 'body'\r\n    | 'body-emphasized'\r\n    | 'body-strong'\r\n    | 'body-large'\r\n    | 'subtitle'\r\n    | 'title'\r\n    | 'heading'\r\n    | 'display'"
+                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
               },
               "default": "'body'",
               "description": "O tamanho do _label_.",
@@ -5553,7 +5569,7 @@
             {
               "name": "variant",
               "type": {
-                "text": "| 'primary'\r\n    | 'secondary'\r\n    | 'tertiary'\r\n    | 'disabled'\r\n    | 'brand-primary'\r\n    | 'brand-secondary'\r\n    | 'brand-tertiary'\r\n    | 'inverted-primary'\r\n    | 'inverted-secondary'\r\n    | 'inverted-disabled'"
+                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
               },
               "default": "'primary'",
               "description": "A variante temática do _label_.",
@@ -5562,7 +5578,7 @@
             {
               "name": "size",
               "type": {
-                "text": "| 'stamp'\r\n    | 'caption'\r\n    | 'label'\r\n    | 'body'\r\n    | 'body-emphasized'\r\n    | 'body-strong'\r\n    | 'body-large'\r\n    | 'subtitle'\r\n    | 'title'\r\n    | 'heading'\r\n    | 'display'"
+                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
               },
               "default": "'body'",
               "description": "O tamanho do _label_.",
@@ -5681,14 +5697,14 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\r\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
               "attribute": "href"
             },
             {
               "kind": "field",
               "name": "size",
               "type": {
-                "text": "| 'stamp'\r\n    | 'caption'\r\n    | 'label'\r\n    | 'body'\r\n    | 'body-emphasized'\r\n    | 'body-strong'\r\n    | 'body-large'\r\n    | 'subtitle'\r\n    | 'title'\r\n    | 'heading'\r\n    | 'display'"
+                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
               },
               "default": "'body'",
               "description": "O tamanho do _link_.",
@@ -5781,13 +5797,13 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\r\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
               "fieldName": "href"
             },
             {
               "name": "size",
               "type": {
-                "text": "| 'stamp'\r\n    | 'caption'\r\n    | 'label'\r\n    | 'body'\r\n    | 'body-emphasized'\r\n    | 'body-strong'\r\n    | 'body-large'\r\n    | 'subtitle'\r\n    | 'title'\r\n    | 'heading'\r\n    | 'display'"
+                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
               },
               "default": "'body'",
               "description": "O tamanho do _link_.",
@@ -6922,7 +6938,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "attribute": "id"
             },
             {
@@ -6984,7 +7000,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "attribute": "form",
               "reflects": true
             },
@@ -7146,7 +7162,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "fieldName": "id"
             },
             {
@@ -7200,7 +7216,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "fieldName": "form"
             },
             {
@@ -7332,7 +7348,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "attribute": "id"
             },
             {
@@ -7467,7 +7483,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "fieldName": "id"
             },
             {
@@ -7676,7 +7692,7 @@
               "kind": "field",
               "name": "formControlController",
               "privacy": "private",
-              "default": "new FormControlController(this, {\r\n    assumeInteractionOn: ['cps-blur', 'cps-input']\r\n  })"
+              "default": "new FormControlController(this, {\n    assumeInteractionOn: ['cps-blur', 'cps-input']\n  })"
             },
             {
               "kind": "field",
@@ -7790,7 +7806,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "attribute": "id"
             },
             {
@@ -7810,7 +7826,7 @@
                 "text": "string | string[]"
               },
               "default": "''",
-              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
               "attribute": "value"
             },
             {
@@ -7861,7 +7877,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\r\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\r\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
+              "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
               "attribute": "max-options-visible"
             },
             {
@@ -7945,7 +7961,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "attribute": "form",
               "reflects": true
             },
@@ -8335,7 +8351,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "fieldName": "id"
             },
             {
@@ -8353,7 +8369,7 @@
                 "text": "string | string[]"
               },
               "default": "''",
-              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
               "fieldName": "value"
             },
             {
@@ -8389,7 +8405,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\r\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\r\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
+              "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
               "fieldName": "maxOptionsVisible"
             },
             {
@@ -8461,7 +8477,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "fieldName": "form"
             },
             {
@@ -9745,7 +9761,7 @@
               "kind": "field",
               "name": "formControlController",
               "privacy": "private",
-              "default": "new FormControlController(this, {\r\n    assumeInteractionOn: ['cps-blur', 'cps-input']\r\n  })"
+              "default": "new FormControlController(this, {\n    assumeInteractionOn: ['cps-blur', 'cps-input']\n  })"
             },
             {
               "kind": "field",
@@ -9802,7 +9818,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "attribute": "id"
             },
             {
@@ -9924,7 +9940,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "attribute": "form",
               "reflects": true
             },
@@ -9981,7 +9997,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\nConsulte\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
               "attribute": "autocomplete"
             },
             {
@@ -10018,7 +10034,7 @@
               "type": {
                 "text": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
               },
-              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
               "attribute": "inputmode"
             },
             {
@@ -10264,7 +10280,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
               "fieldName": "id"
             },
             {
@@ -10363,7 +10379,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "fieldName": "form"
             },
             {
@@ -10412,7 +10428,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+              "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\nConsulte\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
               "fieldName": "autocomplete"
             },
             {
@@ -10445,7 +10461,7 @@
               "type": {
                 "text": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
               },
-              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+              "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
               "fieldName": "inputmode"
             }
           ],
@@ -10576,7 +10592,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\n\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
               "attribute": "checked",
               "reflects": true
             },
@@ -10586,7 +10602,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\n\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
               "attribute": "value"
             },
             {
@@ -10607,7 +10623,7 @@
                 "text": "'small' | 'medium' | 'large'"
               },
               "default": "'medium'",
-              "description": "O tamanho do botão alternável.\r\n\r\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
+              "description": "O tamanho do botão alternável.\n\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
               "attribute": "size",
               "reflects": true
             },
@@ -10693,7 +10709,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\n\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
               "fieldName": "checked"
             },
             {
@@ -10701,7 +10717,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\n\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
               "fieldName": "value"
             },
             {
@@ -10719,7 +10735,7 @@
                 "text": "'small' | 'medium' | 'large'"
               },
               "default": "'medium'",
-              "description": "O tamanho do botão alternável.\r\n\r\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
+              "description": "O tamanho do botão alternável.\n\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
               "fieldName": "size"
             },
             {
@@ -10871,10 +10887,10 @@
               "kind": "field",
               "name": "placement",
               "type": {
-                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+                "text": "| 'top'\n    | 'top-start'\n    | 'top-end'\n    | 'right'\n    | 'right-start'\n    | 'right-end'\n    | 'bottom'\n    | 'bottom-start'\n    | 'bottom-end'\n    | 'left'\n    | 'left-start'\n    | 'left-end'"
               },
               "default": "'top'",
-              "description": "O posicionamento preferido da dica de ferramenta.\r\nObserve que o posicionamento real pode variar conforme necessário,\r\npara manter a dica de ferramenta dentro da janela de visualização.",
+              "description": "O posicionamento preferido da dica de ferramenta.\nObserve que o posicionamento real pode variar conforme necessário,\npara manter a dica de ferramenta dentro da janela de visualização.",
               "attribute": "placement"
             },
             {
@@ -10895,7 +10911,7 @@
                 "text": "number"
               },
               "default": "10",
-              "description": "A distância em pixels do _flyout_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
+              "description": "A distância em pixels do _flyout_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
               "attribute": "distance"
             },
             {
@@ -10905,7 +10921,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de seu elemento alvo.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
+              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de seu elemento alvo.\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
               "attribute": "skidding"
             },
             {
@@ -10915,7 +10931,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Indica se a dica de ferramenta está ou não visível atualmente.\r\nVocê pode usar isso declarativamente e reativamente, ao invés de precisar\r\nimperativamente dos métodos `show` e `hide`.",
+              "description": "Indica se a dica de ferramenta está ou não visível atualmente.\nVocê pode usar isso declarativamente e reativamente, ao invés de precisar\nimperativamente dos métodos `show` e `hide`.",
               "attribute": "open",
               "reflects": true
             },
@@ -10926,7 +10942,7 @@
                 "text": "string"
               },
               "default": "'hover focus'",
-              "description": "Controla como a dica de ferramenta é ativada. As opções possíveis incluem `click`, `hover`, `focus` e `manual`.\r\nMúltiplas opções podem ser passadas, separando-as com um espaço, exceto o valor `manual`.\r\nQuando `manual` é usado, a dica de ferramenta deve ser exclusivamente manipulada programaticamente.",
+              "description": "Controla como a dica de ferramenta é ativada. As opções possíveis incluem `click`, `hover`, `focus` e `manual`.\nMúltiplas opções podem ser passadas, separando-as com um espaço, exceto o valor `manual`.\nQuando `manual` é usado, a dica de ferramenta deve ser exclusivamente manipulada programaticamente.",
               "attribute": "trigger"
             },
             {
@@ -10936,7 +10952,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\r\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\r\n\r\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\r\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\r\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\r\n\r\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\r\nmas não em todos, então teste com cautela se precisar habilitar.",
+              "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\n\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\n\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\nmas não em todos, então teste com cautela se precisar habilitar.",
               "attribute": "hoist"
             },
             {
@@ -11048,10 +11064,10 @@
             {
               "name": "placement",
               "type": {
-                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+                "text": "| 'top'\n    | 'top-start'\n    | 'top-end'\n    | 'right'\n    | 'right-start'\n    | 'right-end'\n    | 'bottom'\n    | 'bottom-start'\n    | 'bottom-end'\n    | 'left'\n    | 'left-start'\n    | 'left-end'"
               },
               "default": "'top'",
-              "description": "O posicionamento preferido da dica de ferramenta.\r\nObserve que o posicionamento real pode variar conforme necessário,\r\npara manter a dica de ferramenta dentro da janela de visualização.",
+              "description": "O posicionamento preferido da dica de ferramenta.\nObserve que o posicionamento real pode variar conforme necessário,\npara manter a dica de ferramenta dentro da janela de visualização.",
               "fieldName": "placement"
             },
             {
@@ -11069,7 +11085,7 @@
                 "text": "number"
               },
               "default": "10",
-              "description": "A distância em pixels do _flyout_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
+              "description": "A distância em pixels do _flyout_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
               "fieldName": "distance"
             },
             {
@@ -11078,7 +11094,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de seu elemento alvo.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
+              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de seu elemento alvo.\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
               "fieldName": "skidding"
             },
             {
@@ -11087,7 +11103,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Indica se a dica de ferramenta está ou não visível atualmente.\r\nVocê pode usar isso declarativamente e reativamente, ao invés de precisar\r\nimperativamente dos métodos `show` e `hide`.",
+              "description": "Indica se a dica de ferramenta está ou não visível atualmente.\nVocê pode usar isso declarativamente e reativamente, ao invés de precisar\nimperativamente dos métodos `show` e `hide`.",
               "fieldName": "open"
             },
             {
@@ -11096,7 +11112,7 @@
                 "text": "string"
               },
               "default": "'hover focus'",
-              "description": "Controla como a dica de ferramenta é ativada. As opções possíveis incluem `click`, `hover`, `focus` e `manual`.\r\nMúltiplas opções podem ser passadas, separando-as com um espaço, exceto o valor `manual`.\r\nQuando `manual` é usado, a dica de ferramenta deve ser exclusivamente manipulada programaticamente.",
+              "description": "Controla como a dica de ferramenta é ativada. As opções possíveis incluem `click`, `hover`, `focus` e `manual`.\nMúltiplas opções podem ser passadas, separando-as com um espaço, exceto o valor `manual`.\nQuando `manual` é usado, a dica de ferramenta deve ser exclusivamente manipulada programaticamente.",
               "fieldName": "trigger"
             },
             {
@@ -11105,7 +11121,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\r\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\r\n\r\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\r\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\r\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\r\n\r\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\r\nmas não em todos, então teste com cautela se precisar habilitar.",
+              "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\n\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\n\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\nmas não em todos, então teste com cautela se precisar habilitar.",
               "fieldName": "hoist"
             }
           ],
@@ -11328,7 +11344,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\r\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+              "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
               "attribute": "open",
               "reflects": true
             },
@@ -11339,7 +11355,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
               "attribute": "closable",
               "reflects": true
             },
@@ -11350,7 +11366,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
               "attribute": "label",
               "reflects": true
             },
@@ -11361,7 +11377,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
               "attribute": "aria-label"
             },
             {
@@ -11371,7 +11387,7 @@
                 "text": "string | boolean | undefined"
               },
               "default": "undefined",
-              "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\r\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\r\nfoi tomada pelo usuário.",
+              "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
               "attribute": "returnValue"
             },
             {
@@ -11526,7 +11542,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\r\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+              "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
               "fieldName": "open"
             },
             {
@@ -11535,7 +11551,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
               "fieldName": "closable"
             },
             {
@@ -11544,7 +11560,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
               "fieldName": "label"
             },
             {
@@ -11553,7 +11569,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
               "fieldName": "ariaLabel"
             },
             {
@@ -11562,7 +11578,7 @@
                 "text": "string | boolean | undefined"
               },
               "default": "undefined",
-              "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\r\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\r\nfoi tomada pelo usuário.",
+              "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
               "resolveInitializer": {
                 "module": "src/components/dialog/dialog.component.ts"
               },
@@ -11578,7 +11594,8 @@
           "status": "stable",
           "since": "0.17.0",
           "dependencies": [
-            "cps-icon-button"
+            "cps-icon-button",
+            "cps-tooltip"
           ],
           "animations": [
             {
@@ -11910,7 +11927,7 @@
                 "text": "Date | string"
               },
               "default": "new Date()",
-              "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
               "attribute": "date"
             },
             {
@@ -12021,7 +12038,7 @@
                 "text": "Date | string"
               },
               "default": "new Date()",
-              "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
               "fieldName": "date"
             },
             {
@@ -12447,7 +12464,7 @@
                 "text": "Date | string"
               },
               "default": "new Date()",
-              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
               "attribute": "date"
             },
             {
@@ -12457,7 +12474,7 @@
                 "text": "'long' | 'short' | 'narrow'"
               },
               "default": "'long'",
-              "description": "O estilo de formatação a ser usado.\r\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+              "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
               "attribute": "format"
             },
             {
@@ -12467,7 +12484,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\r\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
               "attribute": "numeric"
             },
             {
@@ -12488,7 +12505,7 @@
                 "text": "Date | string"
               },
               "default": "new Date()",
-              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
               "fieldName": "date"
             },
             {
@@ -12497,7 +12514,7 @@
                 "text": "'long' | 'short' | 'narrow'"
               },
               "default": "'long'",
-              "description": "O estilo de formatação a ser usado.\r\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+              "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
               "fieldName": "format"
             },
             {
@@ -12506,7 +12523,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\r\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
               "fieldName": "numeric"
             },
             {
@@ -12566,10 +12583,10 @@
           "kind": "variable",
           "name": "availableUnits",
           "type": {
-            "text": "{\r\n  max: number;\r\n  value: number;\r\n  unit: Intl.RelativeTimeFormatUnit;\r\n}[]"
+            "text": "{\n  max: number;\n  value: number;\n  unit: Intl.RelativeTimeFormatUnit;\n}[]"
           },
-          "default": "[\r\n  { max: 2760000, value: 60000, unit: 'minute' }, // max 46 minutes\r\n  { max: 72000000, value: 3600000, unit: 'hour' }, // max 20 hours\r\n  { max: 518400000, value: 86400000, unit: 'day' }, // max 6 days\r\n  { max: 2419200000, value: 604800000, unit: 'week' }, // max 28 days\r\n  { max: 28512000000, value: 2592000000, unit: 'month' }, // max 11 months\r\n  { max: Infinity, value: 31536000000, unit: 'year' }\r\n]",
-          "description": "Configuration for the available time units.\r\nEach unit has a maximum time difference it can represent, a value in milliseconds, and the unit name."
+          "default": "[\n  { max: 2760000, value: 60000, unit: 'minute' }, // max 46 minutes\n  { max: 72000000, value: 3600000, unit: 'hour' }, // max 20 hours\n  { max: 518400000, value: 86400000, unit: 'day' }, // max 6 days\n  { max: 2419200000, value: 604800000, unit: 'week' }, // max 28 days\n  { max: 28512000000, value: 2592000000, unit: 'month' }, // max 11 months\n  { max: Infinity, value: 31536000000, unit: 'year' }\n]",
+          "description": "Configuration for the available time units.\nEach unit has a maximum time difference it can represent, a value in milliseconds, and the unit name."
         },
         {
           "kind": "function",
@@ -12620,7 +12637,7 @@
           "type": {
             "text": "IconLibrary"
           },
-          "default": "{\r\n  name: 'default',\r\n  resolver: name => getBasePath(`assets/icons/${name}.svg`)\r\n}"
+          "default": "{\n  name: 'default',\n  resolver: name => getBasePath(`assets/icons/${name}.svg`)\n}"
         }
       ],
       "exports": [
@@ -12644,7 +12661,7 @@
           "type": {
             "text": "IconLibrary"
           },
-          "default": "{\r\n  name: 'system',\r\n  resolver: (name: keyof typeof icons) => {\r\n    if (name in icons) {\r\n      return `data:image/svg+xml,${encodeURIComponent(icons[name])}`;\r\n    }\r\n    return '';\r\n  }\r\n}"
+          "default": "{\n  name: 'system',\n  resolver: (name: keyof typeof icons) => {\n    if (name in icons) {\n      return `data:image/svg+xml,${encodeURIComponent(icons[name])}`;\n    }\n    return '';\n  }\n}"
         }
       ],
       "exports": [
@@ -12908,7 +12925,7 @@
             "name": "BaseElement",
             "module": "/src/internal/base-element.js"
           },
-          "summary": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\r\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.",
+          "summary": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.",
           "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
           "status": "stable",
           "since": "0.15.0",
@@ -12950,7 +12967,7 @@
         {
           "kind": "variable",
           "name": "AreaDI",
-          "default": "literal`\r\n  <path\r\n    class=\"accent\"\r\n    d=\"M12.75 89.64h-2.68l.02-1.4h2.66c.92 0 1.68-.19 2.3-.57a3.6 3.6 0 0 0 1.37-1.64c.31-.7.47-1.52.47-2.47v-.79c0-.74-.09-1.4-.27-1.97a4 4 0 0 0-.77-1.46c-.34-.4-.76-.7-1.26-.92a4.28 4.28 0 0 0-1.68-.3H10V76.7h2.9c.84 0 1.6.14 2.3.43.7.27 1.3.68 1.8 1.21.5.53.89 1.17 1.16 1.92.27.75.4 1.59.4 2.52v.77c0 .94-.13 1.78-.4 2.54a5.29 5.29 0 0 1-3.01 3.12c-.71.28-1.52.42-2.41.42ZM10.98 76.7v12.93h-1.7V76.7h1.7ZM22.3 80.03v9.6h-1.64v-9.6h1.64Zm-1.77-2.55a1 1 0 0 1 .24-.67c.17-.19.4-.28.72-.28.32 0 .55.1.72.28.17.18.25.4.25.67 0 .26-.08.48-.25.66-.17.18-.4.27-.72.27-.31 0-.55-.1-.72-.27a.97.97 0 0 1-.24-.66ZM27.46 88.16l2.61-8.13h1.67l-3.43 9.6h-1.1l.25-1.47Zm-2.18-8.13 2.69 8.17.19 1.44h-1.1l-3.46-9.6h1.68ZM34.72 80.03v9.6h-1.64v-9.6h1.64Zm-1.76-2.55a1 1 0 0 1 .23-.67c.17-.19.41-.28.73-.28.3 0 .55.1.71.28.17.18.26.4.26.67 0 .26-.09.48-.26.66-.16.18-.4.27-.71.27-.32 0-.56-.1-.73-.27a.97.97 0 0 1-.23-.66ZM42.54 87.09c0-.24-.05-.46-.16-.66-.1-.2-.3-.4-.63-.56a5.11 5.11 0 0 0-1.4-.44c-.54-.11-1.02-.25-1.45-.4a4.35 4.35 0 0 1-1.08-.56c-.3-.22-.52-.48-.68-.77a2.42 2.42 0 0 1 0-2.11c.18-.34.42-.64.72-.9.31-.26.69-.47 1.12-.61a4.5 4.5 0 0 1 1.46-.23c.76 0 1.42.14 1.96.41.54.27.95.64 1.24 1.1.29.44.43.94.43 1.5h-1.63c0-.27-.08-.53-.24-.78a1.76 1.76 0 0 0-.68-.63c-.3-.16-.65-.25-1.08-.25-.45 0-.82.07-1.1.22-.28.13-.48.3-.61.52a1.32 1.32 0 0 0-.1 1.15c.06.14.18.27.33.39.16.1.39.22.68.32.28.1.65.2 1.1.3.78.18 1.42.39 1.93.64.5.25.88.55 1.13.91.25.36.37.8.37 1.32a2.52 2.52 0 0 1-1.01 2.06c-.33.24-.72.44-1.17.58-.45.14-.95.2-1.5.2a4.6 4.6 0 0 1-2.14-.45 3.3 3.3 0 0 1-1.33-1.17c-.3-.48-.45-.98-.45-1.52h1.64c.03.45.16.81.4 1.08.23.26.52.44.86.56a3.39 3.39 0 0 0 2.13-.02c.3-.12.54-.28.7-.49.16-.2.24-.44.24-.71ZM51.58 88v-4.95c0-.38-.07-.7-.23-.99a1.5 1.5 0 0 0-.67-.65c-.3-.16-.67-.23-1.1-.23-.42 0-.78.07-1.1.21-.3.14-.54.33-.72.56-.17.23-.25.48-.25.74h-1.64c0-.34.1-.68.27-1.02.17-.33.43-.64.76-.91.33-.28.73-.5 1.2-.66.47-.16 1-.25 1.57-.25.7 0 1.3.12 1.83.36.54.24.96.6 1.26 1.07.3.48.45 1.07.45 1.79v4.47c0 .32.03.66.08 1.02.06.36.15.68.26.94v.14h-1.7a3.08 3.08 0 0 1-.2-.76 6.12 6.12 0 0 1-.07-.88Zm.28-4.19.02 1.16h-1.65c-.46 0-.88.04-1.24.11-.37.07-.67.18-.92.33a1.5 1.5 0 0 0-.76 1.33c0 .3.07.58.2.83.14.25.34.45.61.6.28.14.62.2 1.02.2a2.67 2.67 0 0 0 2.23-1.1c.23-.3.35-.6.37-.89l.7.79a2.4 2.4 0 0 1-.34.83 3.94 3.94 0 0 1-1.8 1.55c-.42.18-.88.27-1.4.27-.65 0-1.21-.13-1.7-.39a2.72 2.72 0 0 1-1.53-2.47c0-.5.1-.96.3-1.35.2-.4.49-.73.87-.99a4.1 4.1 0 0 1 1.35-.6c.53-.14 1.12-.2 1.78-.2h1.9Zm.01-7.63 1.1.1c0 .43-.08.8-.25 1.13-.17.33-.4.58-.69.76-.28.17-.6.26-.96.26a1.9 1.9 0 0 1-1.26-.41 3.12 3.12 0 0 0-.49-.3 1.3 1.3 0 0 0-.61-.13c-.25 0-.46.1-.63.28-.17.2-.25.43-.25.7l-1.1-.05c0-.43.08-.8.25-1.13.17-.34.4-.6.68-.78.3-.19.61-.28.97-.28.25 0 .47.04.66.13.2.08.37.18.55.3l.52.29c.19.08.4.12.63.12.25 0 .46-.1.63-.28.17-.2.25-.43.25-.71ZM54.99 84.94v-.2c0-.7.1-1.34.3-1.93.2-.6.49-1.12.86-1.55.38-.45.84-.8 1.37-1.03a4.22 4.22 0 0 1 1.8-.38c.67 0 1.27.13 1.8.38.55.24 1 .58 1.39 1.03.38.43.67.95.87 1.55.2.6.3 1.23.3 1.93v.2c0 .7-.1 1.34-.3 1.93-.2.59-.5 1.1-.87 1.55a4 4 0 0 1-3.17 1.4 4.1 4.1 0 0 1-4.05-2.95c-.2-.6-.3-1.24-.3-1.93Zm1.63-.2v.2c0 .48.06.93.17 1.36.11.42.28.8.5 1.12.23.32.52.58.86.77.34.18.74.28 1.19.28.45 0 .84-.1 1.17-.28.34-.19.63-.45.85-.77.22-.33.39-.7.5-1.12.12-.43.18-.88.18-1.36v-.2c0-.48-.06-.92-.18-1.34-.11-.43-.28-.8-.51-1.13a2.36 2.36 0 0 0-2.03-1.07c-.45 0-.84.1-1.18.29-.34.19-.62.45-.85.78-.22.32-.39.7-.5 1.13a5.2 5.2 0 0 0-.17 1.34ZM75.5 87.77V76h1.64v13.64h-1.5l-.14-1.87Zm-6.42-2.83v-.19c0-.73.09-1.4.26-2 .19-.6.44-1.11.77-1.55a3.37 3.37 0 0 1 2.74-1.35c.6 0 1.13.11 1.58.32.45.21.83.52 1.14.92.32.4.57.87.75 1.44.19.56.31 1.2.38 1.9v.82c-.06.7-.19 1.34-.38 1.9a4.49 4.49 0 0 1-.75 1.44c-.3.4-.7.7-1.14.91a3.79 3.79 0 0 1-3.13-.05 3.63 3.63 0 0 1-1.19-1.02 4.99 4.99 0 0 1-.77-1.54 6.84 6.84 0 0 1-.26-1.95Zm1.64-.19v.2c0 .47.05.92.14 1.34.1.42.25.8.46 1.11.2.32.47.57.79.76.31.17.7.26 1.13.26.55 0 .99-.11 1.34-.34.35-.24.63-.54.84-.92.22-.38.38-.79.5-1.23v-2.14a4.76 4.76 0 0 0-.31-.94 2.9 2.9 0 0 0-.51-.82c-.2-.24-.46-.44-.77-.58-.3-.14-.66-.21-1.07-.21-.45 0-.83.1-1.15.28-.32.19-.58.44-.79.77-.2.32-.36.69-.46 1.12-.1.42-.14.87-.14 1.34ZM83.29 89.82a4.1 4.1 0 0 1-4.08-2.78c-.2-.57-.31-1.2-.31-1.87v-.37c0-.78.11-1.48.34-2.09.23-.61.55-1.13.94-1.56a4 4 0 0 1 4.66-.94c.5.24.9.57 1.22 1 .32.41.56.91.71 1.48.15.57.23 1.2.23 1.87v.74h-7.13v-1.34h5.5v-.13a4.12 4.12 0 0 0-.27-1.24c-.14-.4-.38-.74-.7-1-.33-.26-.77-.39-1.33-.39a2.21 2.21 0 0 0-1.82.94c-.23.3-.4.68-.52 1.12-.13.45-.19.96-.19 1.54v.37c0 .46.06.89.19 1.29s.31.75.55 1.05a2.7 2.7 0 0 0 2.1.97c.57 0 1.06-.12 1.46-.36.4-.24.75-.55 1.05-.95l.99.79c-.2.31-.47.61-.79.9-.32.28-.7.51-1.17.69-.46.18-1 .27-1.63.27ZM1.7 94.9v12.92H0V94.9h1.7ZM5.82 100.27v7.55H4.2v-9.6h1.55l.08 2.05Zm-.38 2.39-.68-.03c0-.66.1-1.27.29-1.82.19-.56.45-1.05.8-1.47a3.54 3.54 0 0 1 2.79-1.3c.47 0 .9.06 1.27.2.38.12.7.32.96.6.27.28.48.64.62 1.08.14.44.21.97.21 1.6v6.3h-1.64v-6.31c0-.5-.07-.9-.22-1.2-.15-.32-.36-.54-.65-.67a2.3 2.3 0 0 0-1.04-.22 2.4 2.4 0 0 0-1.96.97 3.58 3.58 0 0 0-.75 2.27ZM16.25 107.82h-1.63V97.2c0-.69.12-1.27.37-1.75a2.5 2.5 0 0 1 1.09-1.08 3.54 3.54 0 0 1 1.67-.37 4.51 4.51 0 0 1 1.13.14l-.09 1.34a1.8 1.8 0 0 0-1.78.13c-.25.14-.43.34-.56.6-.13.27-.2.6-.2 1v10.61Zm2.03-9.6v1.26h-5.17v-1.26h5.17ZM19.3 103.13v-.2a6 6 0 0 1 .3-1.94c.2-.6.5-1.11.87-1.55.38-.44.83-.79 1.37-1.03a4.22 4.22 0 0 1 1.8-.37c.67 0 1.27.12 1.8.37.55.24 1 .59 1.38 1.03.39.44.68.96.88 1.55.2.6.3 1.24.3 1.93v.2c0 .7-.1 1.34-.3 1.93-.2.6-.5 1.11-.88 1.56a4.01 4.01 0 0 1-3.16 1.39 4.1 4.1 0 0 1-4.05-2.95c-.2-.59-.3-1.23-.3-1.92Zm1.64-.2v.2c0 .48.05.93.17 1.35.1.42.28.8.5 1.12.23.33.51.59.85.78.35.18.74.27 1.2.27.44 0 .83-.1 1.17-.28.34-.18.62-.44.85-.77.22-.32.39-.7.5-1.12.12-.42.18-.88.18-1.36v-.2c0-.47-.06-.92-.18-1.34-.11-.43-.28-.8-.51-1.13a2.36 2.36 0 0 0-2.03-1.07c-.45 0-.84.1-1.18.3-.34.18-.62.44-.85.77-.22.33-.4.7-.5 1.13a5.2 5.2 0 0 0-.17 1.34ZM31.31 99.72v8.1h-1.63v-9.6h1.6l.03 1.5Zm2.99-1.56-.01 1.53a4.08 4.08 0 0 0-.8-.07c-.37 0-.7.06-1 .18-.28.11-.53.28-.73.5-.2.2-.35.46-.47.76-.11.29-.19.6-.22.96l-.46.26c0-.58.05-1.12.17-1.63.11-.51.3-.96.53-1.35.25-.4.55-.7.92-.92a2.57 2.57 0 0 1 2.07-.22ZM37.07 100.12v7.7h-1.64v-9.6h1.55l.09 1.9Zm-.34 2.53-.76-.02c.01-.66.1-1.27.26-1.82.16-.56.4-1.05.73-1.47.33-.41.73-.73 1.21-.96a3.84 3.84 0 0 1 1.68-.34c.44 0 .86.06 1.23.2a2.49 2.49 0 0 1 1.63 1.64c.15.42.23.94.23 1.54v6.4H41.3v-6.32c0-.5-.08-.9-.25-1.2-.17-.3-.4-.53-.7-.66-.31-.15-.67-.22-1.09-.22-.48 0-.88.09-1.2.26-.33.17-.59.4-.78.71-.2.3-.34.65-.42 1.04-.09.38-.13.8-.13 1.22Zm6.19-.9-1.1.34c.01-.53.1-1.04.26-1.52.17-.49.41-.92.73-1.3a3.7 3.7 0 0 1 2.8-1.23c.52 0 .97.07 1.37.2.4.14.73.35 1 .63.28.28.49.64.63 1.08.14.44.21.96.21 1.56v6.31h-1.64v-6.33c0-.54-.09-.95-.26-1.25-.16-.3-.4-.51-.7-.63a2.8 2.8 0 0 0-2.03 0c-.28.12-.51.3-.7.51-.19.22-.33.46-.43.74-.1.28-.14.58-.14.89ZM56.56 106.18v-4.95c0-.38-.08-.7-.23-.98a1.5 1.5 0 0 0-.67-.66c-.3-.15-.67-.23-1.11-.23-.41 0-.78.07-1.09.21-.3.15-.55.33-.72.56-.17.23-.26.48-.26.75h-1.63c0-.34.09-.69.26-1.02.18-.34.43-.64.76-.92.34-.27.74-.5 1.2-.65.47-.17 1-.25 1.57-.25.7 0 1.31.12 1.84.35.53.24.95.6 1.25 1.08.3.47.46 1.07.46 1.78v4.48c0 .32.03.66.08 1.02a4 4 0 0 0 .26.93v.14h-1.7a3.09 3.09 0 0 1-.2-.75 6.14 6.14 0 0 1-.07-.89Zm.28-4.18.02 1.15H55.2c-.47 0-.88.04-1.25.12-.36.07-.67.18-.91.33a1.5 1.5 0 0 0-.76 1.33c0 .3.07.58.2.82.14.25.34.45.61.6.28.14.61.21 1.01.21a2.67 2.67 0 0 0 2.24-1.1c.23-.3.35-.6.37-.9l.7.8a2.4 2.4 0 0 1-.34.82 3.93 3.93 0 0 1-1.8 1.55 3.5 3.5 0 0 1-1.4.27c-.65 0-1.22-.13-1.7-.38-.49-.26-.87-.6-1.14-1.02-.26-.43-.4-.92-.4-1.45 0-.52.1-.97.3-1.36.2-.4.5-.72.87-.98.38-.27.83-.47 1.36-.6.53-.14 1.12-.21 1.77-.21h1.9Zm-2.92-5.2 1.71-2.62h1.97l-2.36 2.61h-1.32ZM64.4 98.22v1.26h-5.17v-1.26h5.16Zm-3.42-2.34h1.63v9.56c0 .33.05.57.15.74.1.17.23.27.39.33.16.05.33.08.51.08a2.75 2.75 0 0 0 .77-.1v1.33a3.9 3.9 0 0 1-1.26.18c-.4 0-.76-.08-1.1-.24-.33-.16-.6-.43-.8-.8-.2-.38-.3-.89-.3-1.53v-9.55ZM67.72 98.22v9.6h-1.64v-9.6h1.64Zm-1.76-2.55a1 1 0 0 1 .23-.68c.17-.18.41-.27.73-.27.3 0 .55.09.71.27.17.19.26.41.26.68 0 .25-.09.47-.26.65-.16.18-.4.27-.71.27-.32 0-.56-.09-.73-.27a.97.97 0 0 1-.23-.65ZM73.8 106.65c.39 0 .75-.08 1.08-.24.33-.16.6-.38.8-.66.22-.28.34-.6.37-.96h1.55c-.03.56-.22 1.1-.57 1.58A3.92 3.92 0 0 1 73.8 108c-.72 0-1.34-.13-1.88-.38-.53-.26-.97-.6-1.32-1.05-.35-.44-.61-.95-.79-1.53a6.48 6.48 0 0 1-.25-1.84v-.37c0-.64.08-1.25.25-1.83.18-.58.44-1.09.79-1.53.35-.45.8-.8 1.32-1.05a4.33 4.33 0 0 1 1.88-.38 4 4 0 0 1 1.96.46c.56.3 1 .72 1.31 1.24.33.52.5 1.12.53 1.78h-1.55c-.03-.4-.14-.76-.34-1.08a2.16 2.16 0 0 0-1.91-1.06 2.22 2.22 0 0 0-2.06 1.1c-.2.34-.34.71-.43 1.12-.08.4-.12.81-.12 1.23v.38c0 .42.04.83.12 1.24.08.4.22.78.42 1.1.2.34.46.6.8.8.34.2.76.3 1.27.3ZM84.7 106.18v-4.95c0-.38-.07-.7-.22-.98a1.5 1.5 0 0 0-.67-.66c-.3-.15-.67-.23-1.12-.23-.4 0-.77.07-1.08.21-.3.15-.55.33-.72.56-.17.23-.26.48-.26.75H79c0-.34.09-.69.26-1.02.18-.34.43-.64.76-.92.34-.27.74-.5 1.2-.65.47-.17 1-.25 1.57-.25.7 0 1.3.12 1.84.35.53.24.95.6 1.25 1.08.3.47.46 1.07.46 1.78v4.48c0 .32.02.66.08 1.02a4 4 0 0 0 .25.93v.14h-1.7a3.08 3.08 0 0 1-.2-.75 6.13 6.13 0 0 1-.06-.89ZM85 102l.02 1.15h-1.65c-.47 0-.88.04-1.25.12-.36.07-.67.18-.92.33a1.5 1.5 0 0 0-.76 1.33c0 .3.07.58.2.82.14.25.35.45.62.6.27.14.61.21 1.01.21a2.67 2.67 0 0 0 2.23-1.1c.23-.3.36-.6.37-.9l.7.8c-.04.24-.15.52-.33.82a3.93 3.93 0 0 1-1.81 1.55 3.5 3.5 0 0 1-1.4.27c-.64 0-1.21-.13-1.7-.38-.48-.26-.86-.6-1.13-1.02-.26-.43-.4-.92-.4-1.45 0-.52.1-.97.3-1.36.2-.4.5-.72.87-.98.38-.27.83-.47 1.36-.6.53-.14 1.12-.21 1.77-.21H85ZM41.44 62.5H25.88l.08-8.63h15.48c3.41 0 6.28-.74 8.59-2.23a14.03 14.03 0 0 0 5.24-6.52c1.18-2.85 1.77-6.25 1.77-10.22v-7.34c0-3.06-.34-5.76-1-8.1a16.17 16.17 0 0 0-3-5.92 12.4 12.4 0 0 0-4.79-3.63 16.4 16.4 0 0 0-6.57-1.24H25.63V0h16.05c3.93 0 7.5.65 10.72 1.96a23.96 23.96 0 0 1 8.43 5.63 24.35 24.35 0 0 1 5.48 8.7 31.63 31.63 0 0 1 1.93 11.35v7.26c0 4.15-.64 7.93-1.93 11.34a24.35 24.35 0 0 1-13.95 14.3 29.3 29.3 0 0 1-10.92 1.96ZM32.08 0v62.5H21V0h11.08ZM87 0v62.5H75.92V0H87Z\"\r\n  />\r\n`"
+          "default": "literal`\n  <path\n    class=\"accent\"\n    d=\"M12.75 89.64h-2.68l.02-1.4h2.66c.92 0 1.68-.19 2.3-.57a3.6 3.6 0 0 0 1.37-1.64c.31-.7.47-1.52.47-2.47v-.79c0-.74-.09-1.4-.27-1.97a4 4 0 0 0-.77-1.46c-.34-.4-.76-.7-1.26-.92a4.28 4.28 0 0 0-1.68-.3H10V76.7h2.9c.84 0 1.6.14 2.3.43.7.27 1.3.68 1.8 1.21.5.53.89 1.17 1.16 1.92.27.75.4 1.59.4 2.52v.77c0 .94-.13 1.78-.4 2.54a5.29 5.29 0 0 1-3.01 3.12c-.71.28-1.52.42-2.41.42ZM10.98 76.7v12.93h-1.7V76.7h1.7ZM22.3 80.03v9.6h-1.64v-9.6h1.64Zm-1.77-2.55a1 1 0 0 1 .24-.67c.17-.19.4-.28.72-.28.32 0 .55.1.72.28.17.18.25.4.25.67 0 .26-.08.48-.25.66-.17.18-.4.27-.72.27-.31 0-.55-.1-.72-.27a.97.97 0 0 1-.24-.66ZM27.46 88.16l2.61-8.13h1.67l-3.43 9.6h-1.1l.25-1.47Zm-2.18-8.13 2.69 8.17.19 1.44h-1.1l-3.46-9.6h1.68ZM34.72 80.03v9.6h-1.64v-9.6h1.64Zm-1.76-2.55a1 1 0 0 1 .23-.67c.17-.19.41-.28.73-.28.3 0 .55.1.71.28.17.18.26.4.26.67 0 .26-.09.48-.26.66-.16.18-.4.27-.71.27-.32 0-.56-.1-.73-.27a.97.97 0 0 1-.23-.66ZM42.54 87.09c0-.24-.05-.46-.16-.66-.1-.2-.3-.4-.63-.56a5.11 5.11 0 0 0-1.4-.44c-.54-.11-1.02-.25-1.45-.4a4.35 4.35 0 0 1-1.08-.56c-.3-.22-.52-.48-.68-.77a2.42 2.42 0 0 1 0-2.11c.18-.34.42-.64.72-.9.31-.26.69-.47 1.12-.61a4.5 4.5 0 0 1 1.46-.23c.76 0 1.42.14 1.96.41.54.27.95.64 1.24 1.1.29.44.43.94.43 1.5h-1.63c0-.27-.08-.53-.24-.78a1.76 1.76 0 0 0-.68-.63c-.3-.16-.65-.25-1.08-.25-.45 0-.82.07-1.1.22-.28.13-.48.3-.61.52a1.32 1.32 0 0 0-.1 1.15c.06.14.18.27.33.39.16.1.39.22.68.32.28.1.65.2 1.1.3.78.18 1.42.39 1.93.64.5.25.88.55 1.13.91.25.36.37.8.37 1.32a2.52 2.52 0 0 1-1.01 2.06c-.33.24-.72.44-1.17.58-.45.14-.95.2-1.5.2a4.6 4.6 0 0 1-2.14-.45 3.3 3.3 0 0 1-1.33-1.17c-.3-.48-.45-.98-.45-1.52h1.64c.03.45.16.81.4 1.08.23.26.52.44.86.56a3.39 3.39 0 0 0 2.13-.02c.3-.12.54-.28.7-.49.16-.2.24-.44.24-.71ZM51.58 88v-4.95c0-.38-.07-.7-.23-.99a1.5 1.5 0 0 0-.67-.65c-.3-.16-.67-.23-1.1-.23-.42 0-.78.07-1.1.21-.3.14-.54.33-.72.56-.17.23-.25.48-.25.74h-1.64c0-.34.1-.68.27-1.02.17-.33.43-.64.76-.91.33-.28.73-.5 1.2-.66.47-.16 1-.25 1.57-.25.7 0 1.3.12 1.83.36.54.24.96.6 1.26 1.07.3.48.45 1.07.45 1.79v4.47c0 .32.03.66.08 1.02.06.36.15.68.26.94v.14h-1.7a3.08 3.08 0 0 1-.2-.76 6.12 6.12 0 0 1-.07-.88Zm.28-4.19.02 1.16h-1.65c-.46 0-.88.04-1.24.11-.37.07-.67.18-.92.33a1.5 1.5 0 0 0-.76 1.33c0 .3.07.58.2.83.14.25.34.45.61.6.28.14.62.2 1.02.2a2.67 2.67 0 0 0 2.23-1.1c.23-.3.35-.6.37-.89l.7.79a2.4 2.4 0 0 1-.34.83 3.94 3.94 0 0 1-1.8 1.55c-.42.18-.88.27-1.4.27-.65 0-1.21-.13-1.7-.39a2.72 2.72 0 0 1-1.53-2.47c0-.5.1-.96.3-1.35.2-.4.49-.73.87-.99a4.1 4.1 0 0 1 1.35-.6c.53-.14 1.12-.2 1.78-.2h1.9Zm.01-7.63 1.1.1c0 .43-.08.8-.25 1.13-.17.33-.4.58-.69.76-.28.17-.6.26-.96.26a1.9 1.9 0 0 1-1.26-.41 3.12 3.12 0 0 0-.49-.3 1.3 1.3 0 0 0-.61-.13c-.25 0-.46.1-.63.28-.17.2-.25.43-.25.7l-1.1-.05c0-.43.08-.8.25-1.13.17-.34.4-.6.68-.78.3-.19.61-.28.97-.28.25 0 .47.04.66.13.2.08.37.18.55.3l.52.29c.19.08.4.12.63.12.25 0 .46-.1.63-.28.17-.2.25-.43.25-.71ZM54.99 84.94v-.2c0-.7.1-1.34.3-1.93.2-.6.49-1.12.86-1.55.38-.45.84-.8 1.37-1.03a4.22 4.22 0 0 1 1.8-.38c.67 0 1.27.13 1.8.38.55.24 1 .58 1.39 1.03.38.43.67.95.87 1.55.2.6.3 1.23.3 1.93v.2c0 .7-.1 1.34-.3 1.93-.2.59-.5 1.1-.87 1.55a4 4 0 0 1-3.17 1.4 4.1 4.1 0 0 1-4.05-2.95c-.2-.6-.3-1.24-.3-1.93Zm1.63-.2v.2c0 .48.06.93.17 1.36.11.42.28.8.5 1.12.23.32.52.58.86.77.34.18.74.28 1.19.28.45 0 .84-.1 1.17-.28.34-.19.63-.45.85-.77.22-.33.39-.7.5-1.12.12-.43.18-.88.18-1.36v-.2c0-.48-.06-.92-.18-1.34-.11-.43-.28-.8-.51-1.13a2.36 2.36 0 0 0-2.03-1.07c-.45 0-.84.1-1.18.29-.34.19-.62.45-.85.78-.22.32-.39.7-.5 1.13a5.2 5.2 0 0 0-.17 1.34ZM75.5 87.77V76h1.64v13.64h-1.5l-.14-1.87Zm-6.42-2.83v-.19c0-.73.09-1.4.26-2 .19-.6.44-1.11.77-1.55a3.37 3.37 0 0 1 2.74-1.35c.6 0 1.13.11 1.58.32.45.21.83.52 1.14.92.32.4.57.87.75 1.44.19.56.31 1.2.38 1.9v.82c-.06.7-.19 1.34-.38 1.9a4.49 4.49 0 0 1-.75 1.44c-.3.4-.7.7-1.14.91a3.79 3.79 0 0 1-3.13-.05 3.63 3.63 0 0 1-1.19-1.02 4.99 4.99 0 0 1-.77-1.54 6.84 6.84 0 0 1-.26-1.95Zm1.64-.19v.2c0 .47.05.92.14 1.34.1.42.25.8.46 1.11.2.32.47.57.79.76.31.17.7.26 1.13.26.55 0 .99-.11 1.34-.34.35-.24.63-.54.84-.92.22-.38.38-.79.5-1.23v-2.14a4.76 4.76 0 0 0-.31-.94 2.9 2.9 0 0 0-.51-.82c-.2-.24-.46-.44-.77-.58-.3-.14-.66-.21-1.07-.21-.45 0-.83.1-1.15.28-.32.19-.58.44-.79.77-.2.32-.36.69-.46 1.12-.1.42-.14.87-.14 1.34ZM83.29 89.82a4.1 4.1 0 0 1-4.08-2.78c-.2-.57-.31-1.2-.31-1.87v-.37c0-.78.11-1.48.34-2.09.23-.61.55-1.13.94-1.56a4 4 0 0 1 4.66-.94c.5.24.9.57 1.22 1 .32.41.56.91.71 1.48.15.57.23 1.2.23 1.87v.74h-7.13v-1.34h5.5v-.13a4.12 4.12 0 0 0-.27-1.24c-.14-.4-.38-.74-.7-1-.33-.26-.77-.39-1.33-.39a2.21 2.21 0 0 0-1.82.94c-.23.3-.4.68-.52 1.12-.13.45-.19.96-.19 1.54v.37c0 .46.06.89.19 1.29s.31.75.55 1.05a2.7 2.7 0 0 0 2.1.97c.57 0 1.06-.12 1.46-.36.4-.24.75-.55 1.05-.95l.99.79c-.2.31-.47.61-.79.9-.32.28-.7.51-1.17.69-.46.18-1 .27-1.63.27ZM1.7 94.9v12.92H0V94.9h1.7ZM5.82 100.27v7.55H4.2v-9.6h1.55l.08 2.05Zm-.38 2.39-.68-.03c0-.66.1-1.27.29-1.82.19-.56.45-1.05.8-1.47a3.54 3.54 0 0 1 2.79-1.3c.47 0 .9.06 1.27.2.38.12.7.32.96.6.27.28.48.64.62 1.08.14.44.21.97.21 1.6v6.3h-1.64v-6.31c0-.5-.07-.9-.22-1.2-.15-.32-.36-.54-.65-.67a2.3 2.3 0 0 0-1.04-.22 2.4 2.4 0 0 0-1.96.97 3.58 3.58 0 0 0-.75 2.27ZM16.25 107.82h-1.63V97.2c0-.69.12-1.27.37-1.75a2.5 2.5 0 0 1 1.09-1.08 3.54 3.54 0 0 1 1.67-.37 4.51 4.51 0 0 1 1.13.14l-.09 1.34a1.8 1.8 0 0 0-1.78.13c-.25.14-.43.34-.56.6-.13.27-.2.6-.2 1v10.61Zm2.03-9.6v1.26h-5.17v-1.26h5.17ZM19.3 103.13v-.2a6 6 0 0 1 .3-1.94c.2-.6.5-1.11.87-1.55.38-.44.83-.79 1.37-1.03a4.22 4.22 0 0 1 1.8-.37c.67 0 1.27.12 1.8.37.55.24 1 .59 1.38 1.03.39.44.68.96.88 1.55.2.6.3 1.24.3 1.93v.2c0 .7-.1 1.34-.3 1.93-.2.6-.5 1.11-.88 1.56a4.01 4.01 0 0 1-3.16 1.39 4.1 4.1 0 0 1-4.05-2.95c-.2-.59-.3-1.23-.3-1.92Zm1.64-.2v.2c0 .48.05.93.17 1.35.1.42.28.8.5 1.12.23.33.51.59.85.78.35.18.74.27 1.2.27.44 0 .83-.1 1.17-.28.34-.18.62-.44.85-.77.22-.32.39-.7.5-1.12.12-.42.18-.88.18-1.36v-.2c0-.47-.06-.92-.18-1.34-.11-.43-.28-.8-.51-1.13a2.36 2.36 0 0 0-2.03-1.07c-.45 0-.84.1-1.18.3-.34.18-.62.44-.85.77-.22.33-.4.7-.5 1.13a5.2 5.2 0 0 0-.17 1.34ZM31.31 99.72v8.1h-1.63v-9.6h1.6l.03 1.5Zm2.99-1.56-.01 1.53a4.08 4.08 0 0 0-.8-.07c-.37 0-.7.06-1 .18-.28.11-.53.28-.73.5-.2.2-.35.46-.47.76-.11.29-.19.6-.22.96l-.46.26c0-.58.05-1.12.17-1.63.11-.51.3-.96.53-1.35.25-.4.55-.7.92-.92a2.57 2.57 0 0 1 2.07-.22ZM37.07 100.12v7.7h-1.64v-9.6h1.55l.09 1.9Zm-.34 2.53-.76-.02c.01-.66.1-1.27.26-1.82.16-.56.4-1.05.73-1.47.33-.41.73-.73 1.21-.96a3.84 3.84 0 0 1 1.68-.34c.44 0 .86.06 1.23.2a2.49 2.49 0 0 1 1.63 1.64c.15.42.23.94.23 1.54v6.4H41.3v-6.32c0-.5-.08-.9-.25-1.2-.17-.3-.4-.53-.7-.66-.31-.15-.67-.22-1.09-.22-.48 0-.88.09-1.2.26-.33.17-.59.4-.78.71-.2.3-.34.65-.42 1.04-.09.38-.13.8-.13 1.22Zm6.19-.9-1.1.34c.01-.53.1-1.04.26-1.52.17-.49.41-.92.73-1.3a3.7 3.7 0 0 1 2.8-1.23c.52 0 .97.07 1.37.2.4.14.73.35 1 .63.28.28.49.64.63 1.08.14.44.21.96.21 1.56v6.31h-1.64v-6.33c0-.54-.09-.95-.26-1.25-.16-.3-.4-.51-.7-.63a2.8 2.8 0 0 0-2.03 0c-.28.12-.51.3-.7.51-.19.22-.33.46-.43.74-.1.28-.14.58-.14.89ZM56.56 106.18v-4.95c0-.38-.08-.7-.23-.98a1.5 1.5 0 0 0-.67-.66c-.3-.15-.67-.23-1.11-.23-.41 0-.78.07-1.09.21-.3.15-.55.33-.72.56-.17.23-.26.48-.26.75h-1.63c0-.34.09-.69.26-1.02.18-.34.43-.64.76-.92.34-.27.74-.5 1.2-.65.47-.17 1-.25 1.57-.25.7 0 1.31.12 1.84.35.53.24.95.6 1.25 1.08.3.47.46 1.07.46 1.78v4.48c0 .32.03.66.08 1.02a4 4 0 0 0 .26.93v.14h-1.7a3.09 3.09 0 0 1-.2-.75 6.14 6.14 0 0 1-.07-.89Zm.28-4.18.02 1.15H55.2c-.47 0-.88.04-1.25.12-.36.07-.67.18-.91.33a1.5 1.5 0 0 0-.76 1.33c0 .3.07.58.2.82.14.25.34.45.61.6.28.14.61.21 1.01.21a2.67 2.67 0 0 0 2.24-1.1c.23-.3.35-.6.37-.9l.7.8a2.4 2.4 0 0 1-.34.82 3.93 3.93 0 0 1-1.8 1.55 3.5 3.5 0 0 1-1.4.27c-.65 0-1.22-.13-1.7-.38-.49-.26-.87-.6-1.14-1.02-.26-.43-.4-.92-.4-1.45 0-.52.1-.97.3-1.36.2-.4.5-.72.87-.98.38-.27.83-.47 1.36-.6.53-.14 1.12-.21 1.77-.21h1.9Zm-2.92-5.2 1.71-2.62h1.97l-2.36 2.61h-1.32ZM64.4 98.22v1.26h-5.17v-1.26h5.16Zm-3.42-2.34h1.63v9.56c0 .33.05.57.15.74.1.17.23.27.39.33.16.05.33.08.51.08a2.75 2.75 0 0 0 .77-.1v1.33a3.9 3.9 0 0 1-1.26.18c-.4 0-.76-.08-1.1-.24-.33-.16-.6-.43-.8-.8-.2-.38-.3-.89-.3-1.53v-9.55ZM67.72 98.22v9.6h-1.64v-9.6h1.64Zm-1.76-2.55a1 1 0 0 1 .23-.68c.17-.18.41-.27.73-.27.3 0 .55.09.71.27.17.19.26.41.26.68 0 .25-.09.47-.26.65-.16.18-.4.27-.71.27-.32 0-.56-.09-.73-.27a.97.97 0 0 1-.23-.65ZM73.8 106.65c.39 0 .75-.08 1.08-.24.33-.16.6-.38.8-.66.22-.28.34-.6.37-.96h1.55c-.03.56-.22 1.1-.57 1.58A3.92 3.92 0 0 1 73.8 108c-.72 0-1.34-.13-1.88-.38-.53-.26-.97-.6-1.32-1.05-.35-.44-.61-.95-.79-1.53a6.48 6.48 0 0 1-.25-1.84v-.37c0-.64.08-1.25.25-1.83.18-.58.44-1.09.79-1.53.35-.45.8-.8 1.32-1.05a4.33 4.33 0 0 1 1.88-.38 4 4 0 0 1 1.96.46c.56.3 1 .72 1.31 1.24.33.52.5 1.12.53 1.78h-1.55c-.03-.4-.14-.76-.34-1.08a2.16 2.16 0 0 0-1.91-1.06 2.22 2.22 0 0 0-2.06 1.1c-.2.34-.34.71-.43 1.12-.08.4-.12.81-.12 1.23v.38c0 .42.04.83.12 1.24.08.4.22.78.42 1.1.2.34.46.6.8.8.34.2.76.3 1.27.3ZM84.7 106.18v-4.95c0-.38-.07-.7-.22-.98a1.5 1.5 0 0 0-.67-.66c-.3-.15-.67-.23-1.12-.23-.4 0-.77.07-1.08.21-.3.15-.55.33-.72.56-.17.23-.26.48-.26.75H79c0-.34.09-.69.26-1.02.18-.34.43-.64.76-.92.34-.27.74-.5 1.2-.65.47-.17 1-.25 1.57-.25.7 0 1.3.12 1.84.35.53.24.95.6 1.25 1.08.3.47.46 1.07.46 1.78v4.48c0 .32.02.66.08 1.02a4 4 0 0 0 .25.93v.14h-1.7a3.08 3.08 0 0 1-.2-.75 6.13 6.13 0 0 1-.06-.89ZM85 102l.02 1.15h-1.65c-.47 0-.88.04-1.25.12-.36.07-.67.18-.92.33a1.5 1.5 0 0 0-.76 1.33c0 .3.07.58.2.82.14.25.35.45.62.6.27.14.61.21 1.01.21a2.67 2.67 0 0 0 2.23-1.1c.23-.3.36-.6.37-.9l.7.8c-.04.24-.15.52-.33.82a3.93 3.93 0 0 1-1.81 1.55 3.5 3.5 0 0 1-1.4.27c-.64 0-1.21-.13-1.7-.38-.48-.26-.86-.6-1.13-1.02-.26-.43-.4-.92-.4-1.45 0-.52.1-.97.3-1.36.2-.4.5-.72.87-.98.38-.27.83-.47 1.36-.6.53-.14 1.12-.21 1.77-.21H85ZM41.44 62.5H25.88l.08-8.63h15.48c3.41 0 6.28-.74 8.59-2.23a14.03 14.03 0 0 0 5.24-6.52c1.18-2.85 1.77-6.25 1.77-10.22v-7.34c0-3.06-.34-5.76-1-8.1a16.17 16.17 0 0 0-3-5.92 12.4 12.4 0 0 0-4.79-3.63 16.4 16.4 0 0 0-6.57-1.24H25.63V0h16.05c3.93 0 7.5.65 10.72 1.96a23.96 23.96 0 0 1 8.43 5.63 24.35 24.35 0 0 1 5.48 8.7 31.63 31.63 0 0 1 1.93 11.35v7.26c0 4.15-.64 7.93-1.93 11.34a24.35 24.35 0 0 1-13.95 14.3 29.3 29.3 0 0 1-10.92 1.96ZM32.08 0v62.5H21V0h11.08ZM87 0v62.5H75.92V0H87Z\"\n  />\n`"
         }
       ],
       "exports": [
@@ -12971,7 +12988,7 @@
         {
           "kind": "variable",
           "name": "CPS",
-          "default": "literal`\r\n  <path\r\n    class=\"brand\"\r\n    d=\"M126.55 29.8c.13-3.91 1.85-5.47 7.53-5.47h31.27V13.39h-29.3c-13.86 0-21.66 5.85-21.66 16.94 0 21.63 39.98 17.2 39.98 28.67 0 3.91-2.11 6-7.52 6h-40.9a29.07 29.07 0 0 0 6.66-18.77c0-18.5-12.14-34.13-32.7-34.13-18.6 0-31.92 13.82-31.92 34.4v5.11H33.9c-10.94 0-21.76-7.04-21.76-20.33S22.96 10.95 33.9 10.95h8.98V0H31.8C17.02 0 0 11.2 0 31.27c0 20.06 17.02 31.26 31.79 31.26h16.2v45.43h11.6V62.53h22.1V51.6H59.6v-3.02c0-17.2 9.25-25.54 20.32-25.54 12.4 0 21.1 8.98 21.1 21.76 0 10.97-6.01 18.09-15.54 20.2h-14.8v10.93h76.2c11.2 0 19.64-5.6 19.64-17.45 0-22.42-40.11-17.85-39.96-28.67Z\"\r\n  />\r\n  <path\r\n    class=\"text\"\r\n    d=\"M79.78 92.78c-.63.27-1.89.53-3.5.53-3.73 0-6.53-2-6.53-5.7 0-3.51 2.8-5.9 6.9-5.9 1.65 0 2.69.3 3.14.49l-.4 1.18a7.14 7.14 0 0 0-2.67-.46c-3.1 0-5.16 1.68-5.16 4.63 0 2.75 1.87 4.53 5.07 4.53 1.05 0 2.1-.18 2.8-.47l.35 1.17Zm2.82-3.39c.03 1.98 1.53 2.8 3.26 2.8a7.3 7.3 0 0 0 2.62-.42l.3 1.04c-.6.24-1.65.5-3.16.5-2.92 0-4.67-1.63-4.67-4.08 0-2.43 1.68-4.35 4.45-4.35 3.1 0 3.92 2.32 3.92 3.8 0 .31-.04.54-.07.7H82.6v.01Zm5.06-1.05c.01-.93-.46-2.39-2.4-2.39-1.74 0-2.5 1.36-2.64 2.39h5.04Zm3.8-1.07c0-.84-.02-1.52-.1-2.2h1.54l.1 1.33h.03c.47-.77 1.56-1.52 3.14-1.52 1.31 0 3.36.68 3.36 3.44v4.83h-1.71V88.5c0-1.3-.57-2.39-2.2-2.39-1.14 0-2.02.7-2.32 1.5-.07.18-.12.44-.12.7v4.85h-1.73v-5.9Zm12.9-4.51v2.32h2.46v1.11h-2.46v4.37c0 .99.33 1.57 1.29 1.57.45 0 .79-.05 1-.1l.09 1.1a5 5 0 0 1-1.53.21c-.8 0-1.44-.22-1.86-.62-.5-.43-.67-1.15-.67-2.1v-4.4h-1.48v-1.13h1.47v-1.93l1.69-.4Zm4.4 4.84c0-.96-.02-1.76-.09-2.52h1.51l.05 1.58h.09a2.8 2.8 0 0 1 3.1-1.73v1.38a3.1 3.1 0 0 0-.58-.05 2.3 2.3 0 0 0-2.32 1.88c-.03.21-.08.44-.08.7v4.3h-1.72V87.6h.04Zm14.81 1.46c0 2.99-2.43 4.28-4.72 4.28-2.57 0-4.55-1.6-4.55-4.16 0-2.7 2.08-4.28 4.7-4.28 2.73 0 4.57 1.68 4.57 4.16Zm-7.52.08c0 1.77 1.19 3.1 2.87 3.1 1.65 0 2.89-1.31 2.89-3.14 0-1.37-.8-3.1-2.84-3.1-2.05 0-2.92 1.6-2.92 3.14ZM70.54 96.7c.82-.11 1.9-.23 3.27-.23 1.68 0 2.92.34 3.71.95a2.84 2.84 0 0 1 1.16 2.35 3 3 0 0 1-1.02 2.4c-.9.81-2.37 1.23-4.03 1.23-.5 0-1-.02-1.38-.1v4.5h-1.71V96.7Zm1.7 5.42c.36.08.83.1 1.4.1 2.07 0 3.31-.84 3.31-2.39 0-1.49-1.24-2.2-3.12-2.2-.74 0-1.31.04-1.61.1v4.39h.01Zm13.42 5.69-.14-1.03h-.05a3.73 3.73 0 0 1-2.9 1.2c-1.92 0-2.91-1.15-2.91-2.31 0-1.95 2.03-3.03 5.71-3v-.17c0-.67-.22-1.87-2.15-1.87-.9 0-1.8.24-2.47.6l-.4-.98a6.75 6.75 0 0 1 3.1-.72c2.91 0 3.62 1.68 3.62 3.3v3.03c0 .7.03 1.39.15 1.93h-1.56v.02Zm-.26-4.13c-1.88-.03-4.01.26-4.01 1.83 0 .94.74 1.4 1.63 1.4 1.24 0 2.01-.67 2.3-1.34.07-.16.1-.32.1-.46v-1.43h-.02Zm12.4 1.92c0 .83.02 1.57.07 2.2h-1.53l-.1-1.3h-.03a3.7 3.7 0 0 1-3.15 1.5c-1.49 0-3.27-.7-3.27-3.53v-4.72h1.73v4.48c0 1.53.55 2.57 2.12 2.57a2.5 2.5 0 0 0 2.26-1.33c.1-.22.16-.47.16-.75v-4.95h1.73v5.83h.01Zm2.86-9.64h1.73v11.85h-1.73V95.96Zm9.9 11.85-.14-1.03h-.07a3.73 3.73 0 0 1-2.9 1.2c-1.92 0-2.91-1.15-2.91-2.31 0-1.95 2.03-3.03 5.71-3v-.17c0-.67-.22-1.87-2.15-1.87-.89 0-1.8.24-2.47.6l-.38-.98a6.72 6.72 0 0 1 3.12-.72c2.9 0 3.61 1.68 3.61 3.3v3.03c0 .7.04 1.39.15 1.93h-1.58v.02Zm-.26-4.13c-1.88-.03-4.03.26-4.03 1.83 0 .94.74 1.4 1.63 1.4 1.24 0 2.02-.67 2.3-1.34.05-.16.1-.32.1-.46v-1.43Zm8.44 2.35c.75.4 1.88.74 3.05.74 1.75 0 2.77-.78 2.77-1.92 0-1.05-.7-1.65-2.48-2.24-2.17-.65-3.5-1.6-3.5-3.18 0-1.76 1.7-3.05 4.27-3.05 1.35 0 2.34.27 2.93.54l-.48 1.18a6.17 6.17 0 0 0-2.52-.52c-1.8 0-2.48.9-2.48 1.68 0 1.05.8 1.56 2.64 2.17 2.23.73 3.37 1.65 3.37 3.3 0 1.75-1.51 3.24-4.63 3.24a7.82 7.82 0 0 1-3.38-.72l.44-1.22Zm18.54-2.33c0 2.99-2.43 4.28-4.72 4.28-2.57 0-4.55-1.6-4.55-4.15 0-2.7 2.08-4.29 4.7-4.29 2.72 0 4.57 1.7 4.57 4.16Zm-7.52.08c0 1.77 1.19 3.1 2.89 3.1 1.64 0 2.89-1.33 2.89-3.13 0-1.36-.81-3.1-2.84-3.1-2.07 0-2.94 1.6-2.94 3.13Zm17.64 1.82c0 .83.01 1.57.08 2.2h-1.53l-.1-1.3h-.03a3.7 3.7 0 0 1-3.14 1.5c-1.5 0-3.28-.7-3.28-3.53v-4.72h1.73v4.48c0 1.53.56 2.57 2.12 2.57a2.5 2.5 0 0 0 2.26-1.33c.1-.22.16-.47.16-.75v-4.95h1.73v5.83Zm1.8 1.36 4.3-4.76c.4-.44.8-.82 1.22-1.25v-.03h-5.14v-1.19h7.24l-.01.93-4.24 4.69c-.38.44-.77.84-1.2 1.26v.03h5.54v1.17h-7.72v-.85Zm14.71.85-.13-1.03h-.07a3.74 3.74 0 0 1-2.9 1.2c-1.94 0-2.91-1.15-2.91-2.31 0-1.95 2.03-3.03 5.7-3v-.17c0-.67-.2-1.87-2.14-1.87-.9 0-1.8.24-2.47.6l-.39-.98a6.71 6.71 0 0 1 3.13-.72c2.9 0 3.6 1.68 3.6 3.3v3.03c0 .7.04 1.39.16 1.93h-1.58v.02Zm-.25-4.13c-1.88-.03-4.02.26-4.02 1.83 0 .94.74 1.4 1.63 1.4 1.25 0 2.02-.67 2.3-1.34.07-.16.1-.32.1-.46v-1.43h-.01Z\"\r\n  />\r\n`"
+          "default": "literal`\n  <path\n    class=\"brand\"\n    d=\"M126.55 29.8c.13-3.91 1.85-5.47 7.53-5.47h31.27V13.39h-29.3c-13.86 0-21.66 5.85-21.66 16.94 0 21.63 39.98 17.2 39.98 28.67 0 3.91-2.11 6-7.52 6h-40.9a29.07 29.07 0 0 0 6.66-18.77c0-18.5-12.14-34.13-32.7-34.13-18.6 0-31.92 13.82-31.92 34.4v5.11H33.9c-10.94 0-21.76-7.04-21.76-20.33S22.96 10.95 33.9 10.95h8.98V0H31.8C17.02 0 0 11.2 0 31.27c0 20.06 17.02 31.26 31.79 31.26h16.2v45.43h11.6V62.53h22.1V51.6H59.6v-3.02c0-17.2 9.25-25.54 20.32-25.54 12.4 0 21.1 8.98 21.1 21.76 0 10.97-6.01 18.09-15.54 20.2h-14.8v10.93h76.2c11.2 0 19.64-5.6 19.64-17.45 0-22.42-40.11-17.85-39.96-28.67Z\"\n  />\n  <path\n    class=\"text\"\n    d=\"M79.78 92.78c-.63.27-1.89.53-3.5.53-3.73 0-6.53-2-6.53-5.7 0-3.51 2.8-5.9 6.9-5.9 1.65 0 2.69.3 3.14.49l-.4 1.18a7.14 7.14 0 0 0-2.67-.46c-3.1 0-5.16 1.68-5.16 4.63 0 2.75 1.87 4.53 5.07 4.53 1.05 0 2.1-.18 2.8-.47l.35 1.17Zm2.82-3.39c.03 1.98 1.53 2.8 3.26 2.8a7.3 7.3 0 0 0 2.62-.42l.3 1.04c-.6.24-1.65.5-3.16.5-2.92 0-4.67-1.63-4.67-4.08 0-2.43 1.68-4.35 4.45-4.35 3.1 0 3.92 2.32 3.92 3.8 0 .31-.04.54-.07.7H82.6v.01Zm5.06-1.05c.01-.93-.46-2.39-2.4-2.39-1.74 0-2.5 1.36-2.64 2.39h5.04Zm3.8-1.07c0-.84-.02-1.52-.1-2.2h1.54l.1 1.33h.03c.47-.77 1.56-1.52 3.14-1.52 1.31 0 3.36.68 3.36 3.44v4.83h-1.71V88.5c0-1.3-.57-2.39-2.2-2.39-1.14 0-2.02.7-2.32 1.5-.07.18-.12.44-.12.7v4.85h-1.73v-5.9Zm12.9-4.51v2.32h2.46v1.11h-2.46v4.37c0 .99.33 1.57 1.29 1.57.45 0 .79-.05 1-.1l.09 1.1a5 5 0 0 1-1.53.21c-.8 0-1.44-.22-1.86-.62-.5-.43-.67-1.15-.67-2.1v-4.4h-1.48v-1.13h1.47v-1.93l1.69-.4Zm4.4 4.84c0-.96-.02-1.76-.09-2.52h1.51l.05 1.58h.09a2.8 2.8 0 0 1 3.1-1.73v1.38a3.1 3.1 0 0 0-.58-.05 2.3 2.3 0 0 0-2.32 1.88c-.03.21-.08.44-.08.7v4.3h-1.72V87.6h.04Zm14.81 1.46c0 2.99-2.43 4.28-4.72 4.28-2.57 0-4.55-1.6-4.55-4.16 0-2.7 2.08-4.28 4.7-4.28 2.73 0 4.57 1.68 4.57 4.16Zm-7.52.08c0 1.77 1.19 3.1 2.87 3.1 1.65 0 2.89-1.31 2.89-3.14 0-1.37-.8-3.1-2.84-3.1-2.05 0-2.92 1.6-2.92 3.14ZM70.54 96.7c.82-.11 1.9-.23 3.27-.23 1.68 0 2.92.34 3.71.95a2.84 2.84 0 0 1 1.16 2.35 3 3 0 0 1-1.02 2.4c-.9.81-2.37 1.23-4.03 1.23-.5 0-1-.02-1.38-.1v4.5h-1.71V96.7Zm1.7 5.42c.36.08.83.1 1.4.1 2.07 0 3.31-.84 3.31-2.39 0-1.49-1.24-2.2-3.12-2.2-.74 0-1.31.04-1.61.1v4.39h.01Zm13.42 5.69-.14-1.03h-.05a3.73 3.73 0 0 1-2.9 1.2c-1.92 0-2.91-1.15-2.91-2.31 0-1.95 2.03-3.03 5.71-3v-.17c0-.67-.22-1.87-2.15-1.87-.9 0-1.8.24-2.47.6l-.4-.98a6.75 6.75 0 0 1 3.1-.72c2.91 0 3.62 1.68 3.62 3.3v3.03c0 .7.03 1.39.15 1.93h-1.56v.02Zm-.26-4.13c-1.88-.03-4.01.26-4.01 1.83 0 .94.74 1.4 1.63 1.4 1.24 0 2.01-.67 2.3-1.34.07-.16.1-.32.1-.46v-1.43h-.02Zm12.4 1.92c0 .83.02 1.57.07 2.2h-1.53l-.1-1.3h-.03a3.7 3.7 0 0 1-3.15 1.5c-1.49 0-3.27-.7-3.27-3.53v-4.72h1.73v4.48c0 1.53.55 2.57 2.12 2.57a2.5 2.5 0 0 0 2.26-1.33c.1-.22.16-.47.16-.75v-4.95h1.73v5.83h.01Zm2.86-9.64h1.73v11.85h-1.73V95.96Zm9.9 11.85-.14-1.03h-.07a3.73 3.73 0 0 1-2.9 1.2c-1.92 0-2.91-1.15-2.91-2.31 0-1.95 2.03-3.03 5.71-3v-.17c0-.67-.22-1.87-2.15-1.87-.89 0-1.8.24-2.47.6l-.38-.98a6.72 6.72 0 0 1 3.12-.72c2.9 0 3.61 1.68 3.61 3.3v3.03c0 .7.04 1.39.15 1.93h-1.58v.02Zm-.26-4.13c-1.88-.03-4.03.26-4.03 1.83 0 .94.74 1.4 1.63 1.4 1.24 0 2.02-.67 2.3-1.34.05-.16.1-.32.1-.46v-1.43Zm8.44 2.35c.75.4 1.88.74 3.05.74 1.75 0 2.77-.78 2.77-1.92 0-1.05-.7-1.65-2.48-2.24-2.17-.65-3.5-1.6-3.5-3.18 0-1.76 1.7-3.05 4.27-3.05 1.35 0 2.34.27 2.93.54l-.48 1.18a6.17 6.17 0 0 0-2.52-.52c-1.8 0-2.48.9-2.48 1.68 0 1.05.8 1.56 2.64 2.17 2.23.73 3.37 1.65 3.37 3.3 0 1.75-1.51 3.24-4.63 3.24a7.82 7.82 0 0 1-3.38-.72l.44-1.22Zm18.54-2.33c0 2.99-2.43 4.28-4.72 4.28-2.57 0-4.55-1.6-4.55-4.15 0-2.7 2.08-4.29 4.7-4.29 2.72 0 4.57 1.7 4.57 4.16Zm-7.52.08c0 1.77 1.19 3.1 2.89 3.1 1.64 0 2.89-1.33 2.89-3.13 0-1.36-.81-3.1-2.84-3.1-2.07 0-2.94 1.6-2.94 3.13Zm17.64 1.82c0 .83.01 1.57.08 2.2h-1.53l-.1-1.3h-.03a3.7 3.7 0 0 1-3.14 1.5c-1.5 0-3.28-.7-3.28-3.53v-4.72h1.73v4.48c0 1.53.56 2.57 2.12 2.57a2.5 2.5 0 0 0 2.26-1.33c.1-.22.16-.47.16-.75v-4.95h1.73v5.83Zm1.8 1.36 4.3-4.76c.4-.44.8-.82 1.22-1.25v-.03h-5.14v-1.19h7.24l-.01.93-4.24 4.69c-.38.44-.77.84-1.2 1.26v.03h5.54v1.17h-7.72v-.85Zm14.71.85-.13-1.03h-.07a3.74 3.74 0 0 1-2.9 1.2c-1.94 0-2.91-1.15-2.91-2.31 0-1.95 2.03-3.03 5.7-3v-.17c0-.67-.2-1.87-2.14-1.87-.9 0-1.8.24-2.47.6l-.39-.98a6.71 6.71 0 0 1 3.13-.72c2.9 0 3.6 1.68 3.6 3.3v3.03c0 .7.04 1.39.16 1.93h-1.58v.02Zm-.25-4.13c-1.88-.03-4.02.26-4.02 1.83 0 .94.74 1.4 1.63 1.4 1.25 0 2.02-.67 2.3-1.34.07-.16.1-.32.1-.46v-1.43h-.01Z\"\n  />\n`"
         }
       ],
       "exports": [
@@ -12992,7 +13009,7 @@
         {
           "kind": "variable",
           "name": "Elements",
-          "default": "literal`\r\n  <path\r\n    class=\"accent-light\"\r\n    clip-rule=\"evenodd\"\r\n    fill-rule=\"evenodd\"\r\n    d=\"M226.7 74.35a4.88 4.88 0 0 0-4.55 5.3l.26 2.4-5.08.47a2.44 2.44 0 0 0-2.28 2.64l5 45.72a2.54 2.54 0 0 0 2.8 2.17l55.9-5.2a2.44 2.44 0 0 0 2.28-2.64l-5-45.72a2.54 2.54 0 0 0-2.8-2.17l-5.08.47-.26-2.4a5.07 5.07 0 0 0-5.61-4.35l-10.16.95a4.88 4.88 0 0 0-4.56 5.28l.26 2.41-5.08.47-.26-2.4a5.07 5.07 0 0 0-5.61-4.34l-10.16.94Zm25.8 16.35c-4.59.43-6.25 2.23-5.93 5.1.35 3.12 4.56 4.3 9.3 5.65 6.11 1.72 13.1 3.7 13.84 10.36.81 7.35-6.32 10.07-17.35 11.1l-8.27.76c-8.28.76-14.64-.1-15.61-8.87l4.39-.4c.84 7.55 4.14 8.27 11.04 7.63 4.6-.42 6.25-2.22 5.93-5.08-.34-3.13-4.56-4.32-9.3-5.66-6.1-1.72-13.1-3.7-13.83-10.36-.82-7.35 6.31-10.07 17.34-11.1l8.28-.76c7.12-.66 13.49.2 14.46 8.98l-4.4.4c-.83-7.55-4.13-8.28-9.88-7.75ZM159.53 72c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.66 1.12-2.66 2.5v47.5c0 1.38 1.19 2.5 2.65 2.5h58.33c1.46 0 2.65-1.12 2.65-2.5V82c0-1.38-1.2-2.5-2.66-2.5h-5.3V77c0-2.76-2.37-5-5.3-5h-10.6c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3V77c0-2.76-2.38-5-5.3-5h-10.61Zm41.25 21.75h-12.41v30.75h-19.09V93.75h-12.4V89.5h43.9v4.25ZM87.42 72c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.65 1.12-2.65 2.5v47.5c0 1.38 1.18 2.5 2.65 2.5h58.32c1.46 0 2.65-1.12 2.65-2.5V82c0-1.38-1.19-2.5-2.65-2.5h-5.3V77c0-2.76-2.38-5-5.3-5h-10.6c-2.94 0-5.31 2.24-5.31 5v2.5h-5.3V77c0-2.76-2.38-5-5.3-5h-10.6Zm-2.12 52.5v-35h19.8l16.2 28.44V89.5h5.09v35h-20.33L89.54 97v27.5H85.3ZM15.32 72c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.66 1.12-2.66 2.5v47.5c0 1.38 1.19 2.5 2.65 2.5h58.32c1.47 0 2.65-1.12 2.65-2.5V82c0-1.38-1.18-2.5-2.65-2.5h-5.3V77c0-2.76-2.37-5-5.3-5h-10.6c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3V77c0-2.76-2.38-5-5.3-5H15.31Zm39.02 52.5h-37.7v-35h36.74v4.25H35.73V105h13.36v2.25H35.73v13h18.6v4.25ZM231.64 4c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.66 1.12-2.66 2.5v47.5c0 1.38 1.19 2.5 2.65 2.5h58.32c1.47 0 2.65-1.12 2.65-2.5V14c0-1.38-1.18-2.5-2.65-2.5h-5.3V9c0-2.76-2.37-5-5.3-5h-10.6c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3V9c0-2.76-2.38-5-5.3-5h-10.61Zm41.62 52.5h-13.17V28.81L249.4 56.5h-5.34l-13.23-27.69V56.5h-3.97v-35h13.96L249.4 39l9.28-17.5h14.58v35ZM159.53 4c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.66 1.12-2.66 2.5v47.5c0 1.38 1.19 2.5 2.65 2.5h58.33c1.46 0 2.65-1.12 2.65-2.5V14c0-1.38-1.2-2.5-2.66-2.5h-5.3V9c0-2.76-2.37-5-5.3-5h-10.6c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3V9c0-2.76-2.38-5-5.3-5h-10.61Zm39.02 52.5h-37.7v-35h36.74v4.25h-17.65V37h13.36v2.25h-13.36v13h18.6v4.25ZM87.42 4c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.65 1.12-2.65 2.5v47.5c0 1.38 1.18 2.5 2.65 2.5h58.32c1.46 0 2.65-1.12 2.65-2.5V14c0-1.38-1.19-2.5-2.65-2.5h-5.3V9c0-2.76-2.38-5-5.3-5h-10.6c-2.94 0-5.31 2.24-5.31 5v2.5h-5.3V9c0-2.76-2.38-5-5.3-5h-10.6Zm36.9 52.5h-35.3v-35h19.08v30.75h16.22v4.25ZM19.4 1.12a5.07 5.07 0 0 0-5.62 4.3l-.28 2.4-5.07-.5a2.54 2.54 0 0 0-2.81 2.15L.32 55.1a2.43 2.43 0 0 0 2.27 2.66l55.76 5.5c1.4.14 2.66-.82 2.82-2.15l5.29-45.62a2.43 2.43 0 0 0-2.26-2.65l-5.07-.5.28-2.4a4.87 4.87 0 0 0-4.51-5.3l-10.14-1a5.07 5.07 0 0 0-5.63 4.3l-.28 2.4-5.07-.5.28-2.4a4.87 4.87 0 0 0-4.51-5.3l-10.14-1Zm31.16 53.9-36.07-3.56 3.9-33.6 35.16 3.48-.47 4.08-16.9-1.67-1.25 10.8L47.7 35.8l-.25 2.16-12.78-1.26-1.45 12.48 17.8 1.76-.47 4.07Z\"\r\n  />\r\n`"
+          "default": "literal`\n  <path\n    class=\"accent-light\"\n    clip-rule=\"evenodd\"\n    fill-rule=\"evenodd\"\n    d=\"M226.7 74.35a4.88 4.88 0 0 0-4.55 5.3l.26 2.4-5.08.47a2.44 2.44 0 0 0-2.28 2.64l5 45.72a2.54 2.54 0 0 0 2.8 2.17l55.9-5.2a2.44 2.44 0 0 0 2.28-2.64l-5-45.72a2.54 2.54 0 0 0-2.8-2.17l-5.08.47-.26-2.4a5.07 5.07 0 0 0-5.61-4.35l-10.16.95a4.88 4.88 0 0 0-4.56 5.28l.26 2.41-5.08.47-.26-2.4a5.07 5.07 0 0 0-5.61-4.34l-10.16.94Zm25.8 16.35c-4.59.43-6.25 2.23-5.93 5.1.35 3.12 4.56 4.3 9.3 5.65 6.11 1.72 13.1 3.7 13.84 10.36.81 7.35-6.32 10.07-17.35 11.1l-8.27.76c-8.28.76-14.64-.1-15.61-8.87l4.39-.4c.84 7.55 4.14 8.27 11.04 7.63 4.6-.42 6.25-2.22 5.93-5.08-.34-3.13-4.56-4.32-9.3-5.66-6.1-1.72-13.1-3.7-13.83-10.36-.82-7.35 6.31-10.07 17.34-11.1l8.28-.76c7.12-.66 13.49.2 14.46 8.98l-4.4.4c-.83-7.55-4.13-8.28-9.88-7.75ZM159.53 72c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.66 1.12-2.66 2.5v47.5c0 1.38 1.19 2.5 2.65 2.5h58.33c1.46 0 2.65-1.12 2.65-2.5V82c0-1.38-1.2-2.5-2.66-2.5h-5.3V77c0-2.76-2.37-5-5.3-5h-10.6c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3V77c0-2.76-2.38-5-5.3-5h-10.61Zm41.25 21.75h-12.41v30.75h-19.09V93.75h-12.4V89.5h43.9v4.25ZM87.42 72c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.65 1.12-2.65 2.5v47.5c0 1.38 1.18 2.5 2.65 2.5h58.32c1.46 0 2.65-1.12 2.65-2.5V82c0-1.38-1.19-2.5-2.65-2.5h-5.3V77c0-2.76-2.38-5-5.3-5h-10.6c-2.94 0-5.31 2.24-5.31 5v2.5h-5.3V77c0-2.76-2.38-5-5.3-5h-10.6Zm-2.12 52.5v-35h19.8l16.2 28.44V89.5h5.09v35h-20.33L89.54 97v27.5H85.3ZM15.32 72c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.66 1.12-2.66 2.5v47.5c0 1.38 1.19 2.5 2.65 2.5h58.32c1.47 0 2.65-1.12 2.65-2.5V82c0-1.38-1.18-2.5-2.65-2.5h-5.3V77c0-2.76-2.37-5-5.3-5h-10.6c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3V77c0-2.76-2.38-5-5.3-5H15.31Zm39.02 52.5h-37.7v-35h36.74v4.25H35.73V105h13.36v2.25H35.73v13h18.6v4.25ZM231.64 4c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.66 1.12-2.66 2.5v47.5c0 1.38 1.19 2.5 2.65 2.5h58.32c1.47 0 2.65-1.12 2.65-2.5V14c0-1.38-1.18-2.5-2.65-2.5h-5.3V9c0-2.76-2.37-5-5.3-5h-10.6c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3V9c0-2.76-2.38-5-5.3-5h-10.61Zm41.62 52.5h-13.17V28.81L249.4 56.5h-5.34l-13.23-27.69V56.5h-3.97v-35h13.96L249.4 39l9.28-17.5h14.58v35ZM159.53 4c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.66 1.12-2.66 2.5v47.5c0 1.38 1.19 2.5 2.65 2.5h58.33c1.46 0 2.65-1.12 2.65-2.5V14c0-1.38-1.2-2.5-2.66-2.5h-5.3V9c0-2.76-2.37-5-5.3-5h-10.6c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3V9c0-2.76-2.38-5-5.3-5h-10.61Zm39.02 52.5h-37.7v-35h36.74v4.25h-17.65V37h13.36v2.25h-13.36v13h18.6v4.25ZM87.42 4c-2.93 0-5.3 2.24-5.3 5v2.5h-5.3c-1.47 0-2.65 1.12-2.65 2.5v47.5c0 1.38 1.18 2.5 2.65 2.5h58.32c1.46 0 2.65-1.12 2.65-2.5V14c0-1.38-1.19-2.5-2.65-2.5h-5.3V9c0-2.76-2.38-5-5.3-5h-10.6c-2.94 0-5.31 2.24-5.31 5v2.5h-5.3V9c0-2.76-2.38-5-5.3-5h-10.6Zm36.9 52.5h-35.3v-35h19.08v30.75h16.22v4.25ZM19.4 1.12a5.07 5.07 0 0 0-5.62 4.3l-.28 2.4-5.07-.5a2.54 2.54 0 0 0-2.81 2.15L.32 55.1a2.43 2.43 0 0 0 2.27 2.66l55.76 5.5c1.4.14 2.66-.82 2.82-2.15l5.29-45.62a2.43 2.43 0 0 0-2.26-2.65l-5.07-.5.28-2.4a4.87 4.87 0 0 0-4.51-5.3l-10.14-1a5.07 5.07 0 0 0-5.63 4.3l-.28 2.4-5.07-.5.28-2.4a4.87 4.87 0 0 0-4.51-5.3l-10.14-1Zm31.16 53.9-36.07-3.56 3.9-33.6 35.16 3.48-.47 4.08-16.9-1.67-1.25 10.8L47.7 35.8l-.25 2.16-12.78-1.26-1.45 12.48 17.8 1.76-.47 4.07Z\"\n  />\n`"
         }
       ],
       "exports": [
@@ -13027,7 +13044,7 @@
         {
           "kind": "variable",
           "name": "SPHorizontal",
-          "default": "literal`\r\n  <path\r\n    class=\"text\"\r\n    d=\"M290.06 111.96c-.07 3.96-.36 7.34-2.77 10.72-2.66 3.7-6.65 5.32-11.18 5.32-8.53 0-14.46-5.8-14.46-14.31 0-8.82 5.97-14.6 14.7-14.6 5.58 0 9.9 2.51 12.24 7.58l-6.7 2.8c-.96-2.58-3.01-4.31-5.85-4.31-4.64 0-7.05 4.43-7.05 8.56 0 4.2 2.51 8.49 7.15 8.49 3.06 0 5.4-1.58 5.69-4.71h-5.76v-5.54h14ZM301.06 113.08c0 4.67 3.46 8.09 7.67 8.09 4.2 0 7.66-3.42 7.66-8.1 0-3.73-3.46-7.15-7.66-7.15-4.21 0-7.67 3.41-7.67 7.16Zm22.67-.04c0 8.78-6.3 14.96-15 14.96s-15-6.18-15-14.96c0-8.2 7.2-13.96 15-13.96s15 5.76 15 13.96ZM339.01 116.35l6.58-16.47h7.67L341.67 127h-5.46l-11.4-27.12h7.66l6.54 16.47ZM363.93 105.85v4.53h7.95v5.97h-7.95v4.68h8.38V127h-15.43V99.88h15.43v5.97h-8.38ZM385.99 112.04h.68c2.3 0 4.9-.44 4.9-3.38 0-2.95-2.6-3.38-4.9-3.38H386v6.76Zm15.5 14.96h-8.78l-6.65-10.43h-.07V127h-7.05V99.88h10.54c5.36 0 9.42 2.55 9.42 8.34 0 3.74-2.08 6.98-5.93 7.66l8.52 11.12ZM405 99.88h7.05l12.91 16.58h.08V99.88h7.05V127h-7.05l-12.92-16.62h-.07V127H405V99.88ZM443.42 113.08c0 4.67 3.45 8.09 7.66 8.09 4.2 0 7.66-3.42 7.66-8.1 0-3.73-3.45-7.15-7.66-7.15-4.2 0-7.66 3.41-7.66 7.16Zm22.66-.04c0 8.78-6.3 14.96-15 14.96s-15-6.18-15-14.96c0-8.2 7.2-13.96 15-13.96s15 5.76 15 13.96ZM492.25 121.03h1.58c4.21 0 7.8-2.3 7.8-7.59 0-4.85-3.2-7.59-7.73-7.59h-1.65v15.18Zm-7.05-21.15h10c7.55 0 13.77 5.93 13.77 13.56 0 7.62-6.25 13.56-13.77 13.56h-10V99.88ZM520.6 113.08c0 4.67 3.46 8.09 7.67 8.09 4.2 0 7.66-3.42 7.66-8.1 0-3.73-3.45-7.15-7.66-7.15s-7.66 3.41-7.66 7.16Zm22.67-.04c0 8.78-6.3 14.96-15 14.96s-15-6.18-15-14.96c0-8.2 7.2-13.96 15-13.96s15 5.76 15 13.96ZM567.44 105.85v4.53h7.94v5.97h-7.94v4.68h8.38V127h-15.43V99.88h15.43v5.97h-8.38ZM597.55 107.14a7.4 7.4 0 0 0-4.67-1.8c-1.3 0-3.02.75-3.02 2.26 0 1.59 1.9 2.2 3.12 2.6l1.8.54c3.78 1.11 6.7 3.01 6.7 7.4 0 2.7-.65 5.47-2.81 7.3-2.12 1.8-4.96 2.56-7.7 2.56-3.41 0-6.76-1.15-9.53-3.1l3.02-5.68c1.76 1.55 3.85 2.8 6.26 2.8 1.65 0 3.42-.82 3.42-2.72 0-1.98-2.77-2.67-4.28-3.1-4.43-1.26-7.34-2.4-7.34-7.66 0-5.5 3.92-9.1 9.35-9.1 2.74 0 6.08.87 8.49 2.23l-2.8 5.47ZM616.37 127h-7.05v-21.15h-5.83v-5.97h18.7v5.97h-5.82V127ZM636.82 108.26h-.07l-2.92 8.63h5.87l-2.88-8.63Zm-4.93 14.03-1.87 4.7h-7.48l10.43-27.11h7.7L650.88 127h-7.52l-1.76-4.71h-9.7ZM662.67 121.03h1.59c4.2 0 7.8-2.3 7.8-7.59 0-4.85-3.2-7.59-7.73-7.59h-1.66v15.18Zm-7.05-21.15h10c7.55 0 13.78 5.93 13.78 13.56 0 7.62-6.26 13.56-13.78 13.56h-10V99.88ZM691.03 113.08c0 4.67 3.46 8.09 7.66 8.09s7.67-3.42 7.67-8.1c0-3.73-3.46-7.15-7.67-7.15-4.2 0-7.66 3.41-7.66 7.16Zm22.66-.04c0 8.78-6.3 14.96-15 14.96s-15-6.18-15-14.96c0-8.2 7.2-13.96 15-13.96s15 5.76 15 13.96ZM297.16 33.74a19.22 19.22 0 0 0-5.07-3.05c-1.7-.66-3.33-.99-4.91-.99-2.01 0-3.65.47-4.92 1.43a4.45 4.45 0 0 0-1.9 3.72c0 1.06.31 1.93.95 2.62a8.26 8.26 0 0 0 2.5 1.78c1.03.5 2.19.94 3.48 1.31 1.3.37 2.58.77 3.85 1.19 5.07 1.69 8.79 3.95 11.14 6.78 2.35 2.82 3.52 6.51 3.52 11.05 0 3.07-.51 5.84-1.54 8.33a17.36 17.36 0 0 1-4.52 6.38 20.76 20.76 0 0 1-7.3 4.12 30.3 30.3 0 0 1-9.78 1.47 36.02 36.02 0 0 1-21.01-6.74l6.66-12.52a27 27 0 0 0 6.9 4.6c2.27 1 4.51 1.5 6.73 1.5 2.54 0 4.43-.58 5.67-1.75a5.35 5.35 0 0 0 1.39-6.3 5.08 5.08 0 0 0-1.59-1.82c-.74-.56-1.7-1.07-2.9-1.55-1.18-.47-2.62-1-4.31-1.58a82.79 82.79 0 0 1-5.9-2.1 18.56 18.56 0 0 1-5.16-3.05 14.12 14.12 0 0 1-3.65-4.8c-.92-1.93-1.38-4.37-1.38-7.33s.48-5.64 1.46-8.05a17.9 17.9 0 0 1 4.13-6.18 18.37 18.37 0 0 1 6.5-4 24.56 24.56 0 0 1 8.6-1.43 40.76 40.76 0 0 1 18.55 4.83l-6.19 12.13ZM342.97 56.68l-6.98-19.9-6.98 19.9h13.96Zm-24.34-43.84c0-3.9.9-7.02 2.7-9.31a8.38 8.38 0 0 1 6.9-3.45c1.1 0 2.34.17 3.72.51 1.37.35 2.73.72 4.08 1.11 1.35.4 2.59.76 3.73 1.07 1.13.32 2.04.48 2.73.48 1.7 0 2.83-1.08 3.4-3.25h7.86c-.53 4.75-1.68 8.09-3.45 9.99-1.77 1.9-4.16 2.85-7.18 2.85-1.48 0-2.93-.17-4.36-.51a63.05 63.05 0 0 1-4.04-1.12c-1.27-.39-2.4-.76-3.4-1.1-1.01-.34-1.86-.52-2.55-.52-.58 0-1.08.21-1.5.63-.42.43-.82 1.3-1.19 2.62h-7.45Zm28.46 55.65h-22.2l-3.57 10.39h-16.56L327.5 19.1h16.96l22.75 59.77h-16.57l-3.56-10.39ZM379.15 48.33c0 2.38.45 4.57 1.35 6.58a16.58 16.58 0 0 0 15.46 9.9 17.08 17.08 0 0 0 11.85-4.67 15.93 15.93 0 0 0 5.03-11.81 15.94 15.94 0 0 0-5.03-11.81 17.04 17.04 0 0 0-11.85-4.68c-2.28 0-4.43.41-6.46 1.23a16.56 16.56 0 0 0-9 8.68c-.9 2-1.35 4.2-1.35 6.58Zm-16.25 0a31.2 31.2 0 0 1 9.27-22.44 31.2 31.2 0 0 1 10.43-6.7 35.76 35.76 0 0 1 13.36-2.41c4.8 0 9.24.8 13.31 2.41a30.7 30.7 0 0 1 17.36 16.73 31.22 31.22 0 0 1 2.46 12.4 30.7 30.7 0 0 1-19.82 29.13 35.87 35.87 0 0 1-13.31 2.43c-4.87 0-9.32-.8-13.36-2.42a31.2 31.2 0 0 1-10.43-6.7 30.96 30.96 0 0 1-9.27-22.43ZM469.66 46.53h5.15c5.71 0 8.56-2.48 8.56-7.45 0-4.96-2.85-7.45-8.56-7.45h-5.15v14.9Zm0 32.35h-15.54V19.1h24.74c6.71 0 11.85 1.74 15.42 5.23 3.57 3.48 5.35 8.4 5.35 14.74s-1.78 11.26-5.35 14.74c-3.57 3.5-8.71 5.24-15.42 5.24h-9.2v19.82ZM530.43 56.68l-6.97-19.9-6.98 19.9h13.95Zm4.12 11.81h-22.2l-3.56 10.39h-16.57l22.75-59.77h16.96l22.76 59.77h-16.57l-3.57-10.39ZM568.9 18.44v32.5c0 1.75.08 3.53.2 5.35.14 1.83.53 3.48 1.2 4.96a8.24 8.24 0 0 0 3.13 3.61c1.42.92 3.43 1.39 6.02 1.39 2.59 0 4.58-.47 5.98-1.39a8.62 8.62 0 0 0 3.14-3.61c.69-1.48 1.1-3.13 1.23-4.96.13-1.82.2-3.6.2-5.35v-32.5h15.45V53.1c0 9.3-2.12 16.09-6.38 20.37-4.25 4.28-10.8 6.42-19.62 6.42-8.83 0-15.38-2.14-19.66-6.42-4.28-4.28-6.42-11.07-6.42-20.37V18.44h15.54ZM628.05 19.1v46.62h18.64v13.16h-34.17V19.1h15.53ZM662.85 48.33c0 2.38.45 4.57 1.35 6.58a16.6 16.6 0 0 0 15.46 9.9 17.08 17.08 0 0 0 11.85-4.67 15.99 15.99 0 0 0 5.03-11.81 16 16 0 0 0-5.03-11.81 17.06 17.06 0 0 0-11.85-4.68c-2.28 0-4.43.41-6.46 1.23a16.56 16.56 0 0 0-9 8.68c-.9 2-1.35 4.2-1.35 6.58Zm-16.25 0a31.19 31.19 0 0 1 9.27-22.44 31.23 31.23 0 0 1 10.43-6.7 35.8 35.8 0 0 1 13.36-2.41c4.8 0 9.25.8 13.31 2.41a31.55 31.55 0 0 1 10.51 6.7 30.76 30.76 0 0 1 9.32 22.44 30.76 30.76 0 0 1-9.32 22.44 31.55 31.55 0 0 1-10.5 6.7 35.84 35.84 0 0 1-13.32 2.41c-4.86 0-9.31-.8-13.36-2.42a31.22 31.22 0 0 1-10.43-6.7 30.98 30.98 0 0 1-9.27-22.43Z\"\r\n  />\r\n  <path\r\n    class=\"brand\"\r\n    d=\"M203.55 18.67h-67.7A13.54 13.54 0 0 0 122.3 32.2V127l54.17-27.08h27.08a27.08 27.08 0 0 0 27.09-27.09V45.75a27.08 27.08 0 0 0-27.09-27.08Z\"\r\n  />\r\n  <path\r\n    class=\"text\"\r\n    d=\"M81.25 18.67H27.08a27.08 27.08 0 1 0 0 54.16H0V127h81.25a27.08 27.08 0 1 0 0-54.17h27.09V18.67H81.25Z\"\r\n  />\r\n`"
+          "default": "literal`\n  <path\n    class=\"text\"\n    d=\"M290.06 111.96c-.07 3.96-.36 7.34-2.77 10.72-2.66 3.7-6.65 5.32-11.18 5.32-8.53 0-14.46-5.8-14.46-14.31 0-8.82 5.97-14.6 14.7-14.6 5.58 0 9.9 2.51 12.24 7.58l-6.7 2.8c-.96-2.58-3.01-4.31-5.85-4.31-4.64 0-7.05 4.43-7.05 8.56 0 4.2 2.51 8.49 7.15 8.49 3.06 0 5.4-1.58 5.69-4.71h-5.76v-5.54h14ZM301.06 113.08c0 4.67 3.46 8.09 7.67 8.09 4.2 0 7.66-3.42 7.66-8.1 0-3.73-3.46-7.15-7.66-7.15-4.21 0-7.67 3.41-7.67 7.16Zm22.67-.04c0 8.78-6.3 14.96-15 14.96s-15-6.18-15-14.96c0-8.2 7.2-13.96 15-13.96s15 5.76 15 13.96ZM339.01 116.35l6.58-16.47h7.67L341.67 127h-5.46l-11.4-27.12h7.66l6.54 16.47ZM363.93 105.85v4.53h7.95v5.97h-7.95v4.68h8.38V127h-15.43V99.88h15.43v5.97h-8.38ZM385.99 112.04h.68c2.3 0 4.9-.44 4.9-3.38 0-2.95-2.6-3.38-4.9-3.38H386v6.76Zm15.5 14.96h-8.78l-6.65-10.43h-.07V127h-7.05V99.88h10.54c5.36 0 9.42 2.55 9.42 8.34 0 3.74-2.08 6.98-5.93 7.66l8.52 11.12ZM405 99.88h7.05l12.91 16.58h.08V99.88h7.05V127h-7.05l-12.92-16.62h-.07V127H405V99.88ZM443.42 113.08c0 4.67 3.45 8.09 7.66 8.09 4.2 0 7.66-3.42 7.66-8.1 0-3.73-3.45-7.15-7.66-7.15-4.2 0-7.66 3.41-7.66 7.16Zm22.66-.04c0 8.78-6.3 14.96-15 14.96s-15-6.18-15-14.96c0-8.2 7.2-13.96 15-13.96s15 5.76 15 13.96ZM492.25 121.03h1.58c4.21 0 7.8-2.3 7.8-7.59 0-4.85-3.2-7.59-7.73-7.59h-1.65v15.18Zm-7.05-21.15h10c7.55 0 13.77 5.93 13.77 13.56 0 7.62-6.25 13.56-13.77 13.56h-10V99.88ZM520.6 113.08c0 4.67 3.46 8.09 7.67 8.09 4.2 0 7.66-3.42 7.66-8.1 0-3.73-3.45-7.15-7.66-7.15s-7.66 3.41-7.66 7.16Zm22.67-.04c0 8.78-6.3 14.96-15 14.96s-15-6.18-15-14.96c0-8.2 7.2-13.96 15-13.96s15 5.76 15 13.96ZM567.44 105.85v4.53h7.94v5.97h-7.94v4.68h8.38V127h-15.43V99.88h15.43v5.97h-8.38ZM597.55 107.14a7.4 7.4 0 0 0-4.67-1.8c-1.3 0-3.02.75-3.02 2.26 0 1.59 1.9 2.2 3.12 2.6l1.8.54c3.78 1.11 6.7 3.01 6.7 7.4 0 2.7-.65 5.47-2.81 7.3-2.12 1.8-4.96 2.56-7.7 2.56-3.41 0-6.76-1.15-9.53-3.1l3.02-5.68c1.76 1.55 3.85 2.8 6.26 2.8 1.65 0 3.42-.82 3.42-2.72 0-1.98-2.77-2.67-4.28-3.1-4.43-1.26-7.34-2.4-7.34-7.66 0-5.5 3.92-9.1 9.35-9.1 2.74 0 6.08.87 8.49 2.23l-2.8 5.47ZM616.37 127h-7.05v-21.15h-5.83v-5.97h18.7v5.97h-5.82V127ZM636.82 108.26h-.07l-2.92 8.63h5.87l-2.88-8.63Zm-4.93 14.03-1.87 4.7h-7.48l10.43-27.11h7.7L650.88 127h-7.52l-1.76-4.71h-9.7ZM662.67 121.03h1.59c4.2 0 7.8-2.3 7.8-7.59 0-4.85-3.2-7.59-7.73-7.59h-1.66v15.18Zm-7.05-21.15h10c7.55 0 13.78 5.93 13.78 13.56 0 7.62-6.26 13.56-13.78 13.56h-10V99.88ZM691.03 113.08c0 4.67 3.46 8.09 7.66 8.09s7.67-3.42 7.67-8.1c0-3.73-3.46-7.15-7.67-7.15-4.2 0-7.66 3.41-7.66 7.16Zm22.66-.04c0 8.78-6.3 14.96-15 14.96s-15-6.18-15-14.96c0-8.2 7.2-13.96 15-13.96s15 5.76 15 13.96ZM297.16 33.74a19.22 19.22 0 0 0-5.07-3.05c-1.7-.66-3.33-.99-4.91-.99-2.01 0-3.65.47-4.92 1.43a4.45 4.45 0 0 0-1.9 3.72c0 1.06.31 1.93.95 2.62a8.26 8.26 0 0 0 2.5 1.78c1.03.5 2.19.94 3.48 1.31 1.3.37 2.58.77 3.85 1.19 5.07 1.69 8.79 3.95 11.14 6.78 2.35 2.82 3.52 6.51 3.52 11.05 0 3.07-.51 5.84-1.54 8.33a17.36 17.36 0 0 1-4.52 6.38 20.76 20.76 0 0 1-7.3 4.12 30.3 30.3 0 0 1-9.78 1.47 36.02 36.02 0 0 1-21.01-6.74l6.66-12.52a27 27 0 0 0 6.9 4.6c2.27 1 4.51 1.5 6.73 1.5 2.54 0 4.43-.58 5.67-1.75a5.35 5.35 0 0 0 1.39-6.3 5.08 5.08 0 0 0-1.59-1.82c-.74-.56-1.7-1.07-2.9-1.55-1.18-.47-2.62-1-4.31-1.58a82.79 82.79 0 0 1-5.9-2.1 18.56 18.56 0 0 1-5.16-3.05 14.12 14.12 0 0 1-3.65-4.8c-.92-1.93-1.38-4.37-1.38-7.33s.48-5.64 1.46-8.05a17.9 17.9 0 0 1 4.13-6.18 18.37 18.37 0 0 1 6.5-4 24.56 24.56 0 0 1 8.6-1.43 40.76 40.76 0 0 1 18.55 4.83l-6.19 12.13ZM342.97 56.68l-6.98-19.9-6.98 19.9h13.96Zm-24.34-43.84c0-3.9.9-7.02 2.7-9.31a8.38 8.38 0 0 1 6.9-3.45c1.1 0 2.34.17 3.72.51 1.37.35 2.73.72 4.08 1.11 1.35.4 2.59.76 3.73 1.07 1.13.32 2.04.48 2.73.48 1.7 0 2.83-1.08 3.4-3.25h7.86c-.53 4.75-1.68 8.09-3.45 9.99-1.77 1.9-4.16 2.85-7.18 2.85-1.48 0-2.93-.17-4.36-.51a63.05 63.05 0 0 1-4.04-1.12c-1.27-.39-2.4-.76-3.4-1.1-1.01-.34-1.86-.52-2.55-.52-.58 0-1.08.21-1.5.63-.42.43-.82 1.3-1.19 2.62h-7.45Zm28.46 55.65h-22.2l-3.57 10.39h-16.56L327.5 19.1h16.96l22.75 59.77h-16.57l-3.56-10.39ZM379.15 48.33c0 2.38.45 4.57 1.35 6.58a16.58 16.58 0 0 0 15.46 9.9 17.08 17.08 0 0 0 11.85-4.67 15.93 15.93 0 0 0 5.03-11.81 15.94 15.94 0 0 0-5.03-11.81 17.04 17.04 0 0 0-11.85-4.68c-2.28 0-4.43.41-6.46 1.23a16.56 16.56 0 0 0-9 8.68c-.9 2-1.35 4.2-1.35 6.58Zm-16.25 0a31.2 31.2 0 0 1 9.27-22.44 31.2 31.2 0 0 1 10.43-6.7 35.76 35.76 0 0 1 13.36-2.41c4.8 0 9.24.8 13.31 2.41a30.7 30.7 0 0 1 17.36 16.73 31.22 31.22 0 0 1 2.46 12.4 30.7 30.7 0 0 1-19.82 29.13 35.87 35.87 0 0 1-13.31 2.43c-4.87 0-9.32-.8-13.36-2.42a31.2 31.2 0 0 1-10.43-6.7 30.96 30.96 0 0 1-9.27-22.43ZM469.66 46.53h5.15c5.71 0 8.56-2.48 8.56-7.45 0-4.96-2.85-7.45-8.56-7.45h-5.15v14.9Zm0 32.35h-15.54V19.1h24.74c6.71 0 11.85 1.74 15.42 5.23 3.57 3.48 5.35 8.4 5.35 14.74s-1.78 11.26-5.35 14.74c-3.57 3.5-8.71 5.24-15.42 5.24h-9.2v19.82ZM530.43 56.68l-6.97-19.9-6.98 19.9h13.95Zm4.12 11.81h-22.2l-3.56 10.39h-16.57l22.75-59.77h16.96l22.76 59.77h-16.57l-3.57-10.39ZM568.9 18.44v32.5c0 1.75.08 3.53.2 5.35.14 1.83.53 3.48 1.2 4.96a8.24 8.24 0 0 0 3.13 3.61c1.42.92 3.43 1.39 6.02 1.39 2.59 0 4.58-.47 5.98-1.39a8.62 8.62 0 0 0 3.14-3.61c.69-1.48 1.1-3.13 1.23-4.96.13-1.82.2-3.6.2-5.35v-32.5h15.45V53.1c0 9.3-2.12 16.09-6.38 20.37-4.25 4.28-10.8 6.42-19.62 6.42-8.83 0-15.38-2.14-19.66-6.42-4.28-4.28-6.42-11.07-6.42-20.37V18.44h15.54ZM628.05 19.1v46.62h18.64v13.16h-34.17V19.1h15.53ZM662.85 48.33c0 2.38.45 4.57 1.35 6.58a16.6 16.6 0 0 0 15.46 9.9 17.08 17.08 0 0 0 11.85-4.67 15.99 15.99 0 0 0 5.03-11.81 16 16 0 0 0-5.03-11.81 17.06 17.06 0 0 0-11.85-4.68c-2.28 0-4.43.41-6.46 1.23a16.56 16.56 0 0 0-9 8.68c-.9 2-1.35 4.2-1.35 6.58Zm-16.25 0a31.19 31.19 0 0 1 9.27-22.44 31.23 31.23 0 0 1 10.43-6.7 35.8 35.8 0 0 1 13.36-2.41c4.8 0 9.25.8 13.31 2.41a31.55 31.55 0 0 1 10.51 6.7 30.76 30.76 0 0 1 9.32 22.44 30.76 30.76 0 0 1-9.32 22.44 31.55 31.55 0 0 1-10.5 6.7 35.84 35.84 0 0 1-13.32 2.41c-4.86 0-9.31-.8-13.36-2.42a31.22 31.22 0 0 1-10.43-6.7 30.98 30.98 0 0 1-9.27-22.43Z\"\n  />\n  <path\n    class=\"brand\"\n    d=\"M203.55 18.67h-67.7A13.54 13.54 0 0 0 122.3 32.2V127l54.17-27.08h27.08a27.08 27.08 0 0 0 27.09-27.09V45.75a27.08 27.08 0 0 0-27.09-27.08Z\"\n  />\n  <path\n    class=\"text\"\n    d=\"M81.25 18.67H27.08a27.08 27.08 0 1 0 0 54.16H0V127h81.25a27.08 27.08 0 1 0 0-54.17h27.09V18.67H81.25Z\"\n  />\n`"
         }
       ],
       "exports": [
@@ -13048,7 +13065,7 @@
         {
           "kind": "variable",
           "name": "SPVertical",
-          "default": "literal`\r\n  <path\r\n    class=\"text\"\r\n    d=\"M26.87 15.23a26.86 26.86 0 1 0 0 53.74H0v53.74h80.61a26.86 26.86 0 1 0 0-53.74h26.87V15.23H26.87Z\"\r\n  />\r\n  <path\r\n    class=\"brand\"\r\n    d=\"M200.6 15.23h-67.17A13.44 13.44 0 0 0 120 28.67v94.04l53.74-26.87h26.87a26.87 26.87 0 0 0 26.87-26.87V42.1a26.87 26.87 0 0 0-26.87-26.87Z\"\r\n  />\r\n  <path\r\n    class=\"text\"\r\n    d=\"M262.51 148.33h10.2c0 1.03-.04 1.96-.13 2.8a9.4 9.4 0 0 1-2.02 5.04 8.61 8.61 0 0 1-2.21 1.93c-.85.53-1.78.93-2.8 1.2-1 .28-2.07.4-3.2.4a11.4 11.4 0 0 1-4.2-.73 9.39 9.39 0 0 1-5.39-5.34c-.5-1.25-.76-2.65-.76-4.17 0-1.51.25-2.9.75-4.16a9.23 9.23 0 0 1 5.44-5.31c1.3-.5 2.73-.74 4.32-.74 2.07 0 3.88.43 5.43 1.32a9.12 9.12 0 0 1 3.7 4.06l-4.88 1.97a4.95 4.95 0 0 0-1.77-2.3 4.98 4.98 0 0 0-4.58-.26c-.62.28-1.16.68-1.6 1.21-.45.53-.8 1.16-1.05 1.9a7.53 7.53 0 0 0-.38 2.47c0 .81.1 1.57.32 2.27.22.71.55 1.32.99 1.83.43.52.98.92 1.62 1.19a6.33 6.33 0 0 0 3.72.26 3.29 3.29 0 0 0 2.7-2.94h-4.22v-3.9ZM280.38 149.49a5.1 5.1 0 0 0 1.65 3.82 5.63 5.63 0 0 0 3.9 1.52 5.62 5.62 0 0 0 5.14-3.2c.3-.67.45-1.37.45-2.14a5.07 5.07 0 0 0-1.66-3.84 5.74 5.74 0 0 0-9.04 1.7c-.3.65-.44 1.37-.44 2.14Zm-5.38 0a9.93 9.93 0 0 1 3.07-7.29c.96-.93 2.1-1.65 3.45-2.16a11.9 11.9 0 0 1 4.41-.79c1.6 0 3.06.26 4.41.79a9.92 9.92 0 0 1 6.56 9.45 9.9 9.9 0 0 1-3.09 7.27c-.97.93-2.12 1.65-3.47 2.18-1.35.51-2.81.77-4.4.77-1.61 0-3.09-.26-4.42-.77a10 10 0 0 1-6.52-9.45ZM304.58 140.33l4.78 11.8 4.8-11.8h5.58l-8.34 19.38h-4.09L299 140.33h5.58ZM334.25 144.6h-6.11v3.24h5.77v4.26h-5.77v3.34h6.1v4.27H323v-19.38h11.25v4.27ZM345.14 149h.97c1.01 0 1.79-.22 2.33-.62.54-.41.82-1 .82-1.78 0-.77-.28-1.36-.82-1.78a3.87 3.87 0 0 0-2.33-.6h-.97v4.77Zm11.3 10.7h-6.4l-4.9-7.44v7.45H340v-19.38h8c1.1 0 2.06.16 2.88.48a5.28 5.28 0 0 1 3.24 3.2c.27.72.4 1.49.4 2.3 0 1.48-.36 2.68-1.08 3.6a5.49 5.49 0 0 1-3.21 1.86l6.21 7.94ZM359 159.7v-19.37h5.14l9.5 11.85v-11.85h5.1v19.38h-5.1l-9.5-11.84v11.84H359ZM387.38 149.49a5.1 5.1 0 0 0 1.65 3.82 5.63 5.63 0 0 0 3.9 1.52 5.61 5.61 0 0 0 5.14-3.2c.3-.67.45-1.37.45-2.14a5.07 5.07 0 0 0-1.66-3.84 5.74 5.74 0 0 0-9.04 1.7c-.3.65-.44 1.37-.44 2.14Zm-5.38 0a9.93 9.93 0 0 1 3.07-7.29 10.1 10.1 0 0 1 3.45-2.16 11.9 11.9 0 0 1 4.42-.79c1.59 0 3.05.26 4.4.79a9.96 9.96 0 0 1 6.56 9.45 9.96 9.96 0 0 1-6.56 9.45c-1.35.51-2.81.77-4.4.77-1.61 0-3.09-.26-4.42-.77a10.01 10.01 0 0 1-6.52-9.45ZM258.14 183.44h1.18c.89 0 1.69-.14 2.38-.41.7-.27 1.3-.65 1.78-1.13.47-.5.84-1.06 1.1-1.71.25-.67.38-1.38.38-2.18 0-.77-.13-1.49-.4-2.15a5.11 5.11 0 0 0-1.11-1.73 5.09 5.09 0 0 0-1.77-1.13 6.5 6.5 0 0 0-2.36-.41h-1.18v10.85ZM253 168.32h7.6c1.35 0 2.61.27 3.8.8a10.4 10.4 0 0 1 3.09 2.12 9.77 9.77 0 0 1 2.84 6.77 9.77 9.77 0 0 1-2.82 6.76c-.88.9-1.91 1.6-3.1 2.14a9.3 9.3 0 0 1-3.8.8H253v-19.39ZM279.37 178.49a5.1 5.1 0 0 0 1.66 3.82 5.62 5.62 0 0 0 3.9 1.53 5.78 5.78 0 0 0 3.92-1.52 5.25 5.25 0 0 0-1.78-8.78 5.68 5.68 0 0 0-2.14-.4 5.68 5.68 0 0 0-3.9 1.5 5.12 5.12 0 0 0-1.65 3.84Zm-5.37 0a10.01 10.01 0 0 1 6.51-9.46c1.34-.52 2.81-.78 4.42-.78 1.6 0 3.06.26 4.4.78a10.1 10.1 0 0 1 5.74 5.43c.55 1.25.82 2.58.82 4.03a9.95 9.95 0 0 1-6.55 9.44c-1.35.52-2.82.78-4.4.78-1.62 0-3.09-.26-4.43-.78a10.2 10.2 0 0 1-5.7-5.43 9.93 9.93 0 0 1-.81-4.01ZM318.25 172.59h-6.11v3.23h5.77v4.27h-5.77v3.35h6.11v4.27H307v-19.39h11.25v4.27ZM332.75 173.76a6.68 6.68 0 0 0-1.68-1 4.7 4.7 0 0 0-1.63-.32c-.66 0-1.2.16-1.62.46-.42.32-.63.72-.63 1.2 0 .36.1.64.31.87.21.22.49.4.83.57.34.17.72.3 1.15.43l1.27.38a7.99 7.99 0 0 1 3.69 2.2 5.35 5.35 0 0 1 1.17 3.59 6.9 6.9 0 0 1-.52 2.7c-.34.8-.84 1.49-1.5 2.06a6.74 6.74 0 0 1-2.4 1.35 12.04 12.04 0 0 1-10.19-1.71l2.2-4.07a9.21 9.21 0 0 0 2.28 1.5c.75.31 1.5.49 2.23.49.84 0 1.47-.2 1.88-.58a1.72 1.72 0 0 0 .46-2.04c-.1-.21-.28-.42-.53-.59a4.61 4.61 0 0 0-.96-.5c-.39-.15-.87-.33-1.42-.52-.67-.2-1.32-.42-1.96-.68a6.25 6.25 0 0 1-1.7-.98 4.66 4.66 0 0 1-1.67-3.94c0-.97.16-1.82.49-2.62a5.77 5.77 0 0 1 3.51-3.3c.85-.3 1.8-.46 2.85-.46a13.4 13.4 0 0 1 6.14 1.57l-2.05 3.94ZM348.36 172.59v15.12h-5.14v-15.12H339v-4.27h13.58v4.27h-4.22ZM364.64 180.5l-2.3-6.45-2.32 6.45h4.62Zm1.36 3.84h-7.34l-1.18 3.37H352l7.52-19.39h5.62l7.52 19.39h-5.48l-1.18-3.37ZM381.14 183.44h1.18c.89 0 1.69-.14 2.39-.41.7-.27 1.29-.65 1.77-1.13.48-.5.84-1.06 1.1-1.71.25-.67.38-1.38.38-2.18 0-.77-.13-1.49-.4-2.15a5.14 5.14 0 0 0-1.11-1.73 5.1 5.1 0 0 0-1.77-1.13 6.5 6.5 0 0 0-2.36-.41h-1.18v10.85ZM376 168.32h7.6c1.35 0 2.61.27 3.8.8a10.4 10.4 0 0 1 3.09 2.12 9.76 9.76 0 0 1 2.84 6.77 9.75 9.75 0 0 1-2.82 6.76c-.88.9-1.91 1.6-3.1 2.14a9.3 9.3 0 0 1-3.8.8H376v-19.39ZM401.37 178.49a5.1 5.1 0 0 0 1.66 3.82 5.62 5.62 0 0 0 3.9 1.53 5.72 5.72 0 0 0 3.92-1.52 5.23 5.23 0 0 0-1.78-8.78 5.66 5.66 0 0 0-2.14-.4 5.68 5.68 0 0 0-3.9 1.5 5.12 5.12 0 0 0-1.65 3.84Zm-5.37 0a10 10 0 0 1 6.51-9.46c1.34-.52 2.82-.78 4.42-.78s3.06.26 4.41.78a10.12 10.12 0 0 1 5.74 5.43c.54 1.25.82 2.58.82 4.03a9.97 9.97 0 0 1-6.56 9.44c-1.34.52-2.82.78-4.4.78-1.61 0-3.09-.26-4.43-.78a10.18 10.18 0 0 1-5.7-5.43 9.92 9.92 0 0 1-.81-4.01ZM265.35 96.99h4.1c4.54 0 6.8-1.98 6.8-5.92 0-3.95-2.26-5.94-6.8-5.94h-4.1v11.86Zm0 25.72H253V75.18h19.67c5.33 0 9.42 1.38 12.25 4.16 2.84 2.78 4.26 6.68 4.26 11.73 0 5.03-1.42 8.94-4.26 11.7-2.83 2.78-6.92 4.17-12.25 4.17h-7.32v15.77ZM315.38 105.04l-5.55-15.8-5.54 15.8h11.09Zm3.28 9.4H301l-2.84 8.27H285l18.09-47.53h13.49l18.09 47.53h-13.18l-2.83-8.27ZM346.35 74.86v25.84c0 1.38.05 2.81.16 4.26.1 1.45.42 2.76.95 3.93a6.56 6.56 0 0 0 2.49 2.88c1.13.74 2.73 1.1 4.79 1.1 2.05 0 3.64-.36 4.75-1.1a6.86 6.86 0 0 0 2.5-2.88c.54-1.17.87-2.48.97-3.93.1-1.45.16-2.88.16-4.26V74.86h12.29v27.55c0 7.38-1.7 12.8-5.08 16.2-3.38 3.4-8.58 5.1-15.6 5.1-7.01 0-12.22-1.7-15.63-5.1-3.4-3.4-5.1-8.82-5.1-16.2V74.86h12.35ZM392.35 75.18v37.05h14.82v10.48H380V75.18h12.35ZM420.92 98.63a12.75 12.75 0 0 0 3.97 9.38 13.5 13.5 0 0 0 9.4 3.72 13.5 13.5 0 0 0 9.42-3.72 12.86 12.86 0 0 0 4-9.38 12.65 12.65 0 0 0-4-9.4 13.55 13.55 0 0 0-9.43-3.71c-1.8 0-3.52.33-5.14.97a13.09 13.09 0 0 0-8.22 12.14Zm-12.92 0c0-3.54.65-6.83 1.95-9.87a24.45 24.45 0 0 1 13.71-13.3 28.39 28.39 0 0 1 10.62-1.92c3.83 0 7.35.64 10.59 1.92a25.06 25.06 0 0 1 8.35 5.33 24.16 24.16 0 0 1 5.45 7.97 24.84 24.84 0 0 1 1.96 9.87c0 3.52-.66 6.81-1.96 9.86a24.41 24.41 0 0 1-5.45 7.98 25.02 25.02 0 0 1-8.35 5.31 28.46 28.46 0 0 1-10.59 1.93c-3.87 0-7.4-.64-10.62-1.93a24.8 24.8 0 0 1-8.29-5.31A24.7 24.7 0 0 1 408 98.63ZM280.24 27.04a15.13 15.13 0 0 0-4.04-2.43c-1.34-.53-2.64-.79-3.9-.79-1.6 0-2.9.37-3.91 1.13a3.54 3.54 0 0 0-1.52 2.96c0 .84.26 1.53.76 2.09.5.53 1.17 1 1.99 1.41.81.4 1.74.76 2.77 1.04 1.03.3 2.05.6 3.06.94 4.03 1.35 6.98 3.15 8.85 5.4 1.87 2.24 2.8 5.19 2.8 8.79 0 2.43-.4 4.64-1.22 6.62a13.73 13.73 0 0 1-3.6 5.07 16.45 16.45 0 0 1-5.8 3.28c-2.29.77-4.88 1.16-7.78 1.16-6 0-11.57-1.79-16.7-5.35l5.3-9.96a21.38 21.38 0 0 0 5.48 3.65c1.8.8 3.59 1.2 5.35 1.2 2.02 0 3.52-.46 4.51-1.39a4.3 4.3 0 0 0 1.1-5.01c-.25-.52-.67-1-1.26-1.44a9.96 9.96 0 0 0-2.3-1.23c-.94-.37-2.09-.81-3.43-1.26-1.6-.5-3.17-1.06-4.7-1.67-1.53-.6-2.9-1.43-4.1-2.44-1.2-1-2.16-2.27-2.9-3.8a13.5 13.5 0 0 1-1.1-5.84c0-2.35.4-4.47 1.17-6.39a14.1 14.1 0 0 1 8.44-8.1 19.52 19.52 0 0 1 6.84-1.13c2.36 0 4.81.31 7.38.97 2.56.66 5.02 1.62 7.37 2.88l-4.91 9.64ZM317.38 45.06l-5.55-15.81-5.54 15.8h11.09ZM298.03 10.2c0-3.1.71-5.58 2.14-7.4a6.66 6.66 0 0 1 5.48-2.74c.89 0 1.88.13 2.97.4 1.09.27 2.17.58 3.24.88 1.07.32 2.06.6 2.96.85.91.25 1.63.39 2.18.39 1.35 0 2.25-.87 2.71-2.59h6.24c-.42 3.79-1.33 6.42-2.74 7.95-1.4 1.5-3.31 2.26-5.7 2.26-1.18 0-2.34-.13-3.47-.4-1.14-.27-2.2-.58-3.22-.9-1-.3-1.9-.6-2.7-.88-.8-.27-1.48-.4-2.02-.4-.47 0-.86.16-1.2.5a5.07 5.07 0 0 0-.95 2.08h-5.92Zm22.63 44.25H303l-2.84 8.25H287l18.09-47.53h13.49l18.09 47.53h-13.18l-2.83-8.25ZM344.92 38.63c0 1.9.36 3.63 1.07 5.23a13.22 13.22 0 0 0 12.29 7.89 13.6 13.6 0 0 0 9.42-3.73 12.8 12.8 0 0 0 4-9.4 12.71 12.71 0 0 0-4-9.38 13.56 13.56 0 0 0-9.42-3.72 13.54 13.54 0 0 0-9.39 3.72 13.2 13.2 0 0 0-2.9 4.15 12.68 12.68 0 0 0-1.07 5.24Zm-12.92 0a24.75 24.75 0 0 1 7.38-17.83 24.94 24.94 0 0 1 8.28-5.34 28.49 28.49 0 0 1 10.62-1.92c3.83 0 7.36.64 10.6 1.92a24.39 24.39 0 0 1 13.8 13.3 24.79 24.79 0 0 1 1.95 9.87c0 3.53-.65 6.8-1.96 9.87a24.4 24.4 0 0 1-13.8 13.29 28.57 28.57 0 0 1-10.59 1.92c-3.86 0-7.4-.64-10.62-1.92a24.64 24.64 0 0 1-8.29-5.32A24.63 24.63 0 0 1 332 38.63Z\"\r\n  />\r\n`"
+          "default": "literal`\n  <path\n    class=\"text\"\n    d=\"M26.87 15.23a26.86 26.86 0 1 0 0 53.74H0v53.74h80.61a26.86 26.86 0 1 0 0-53.74h26.87V15.23H26.87Z\"\n  />\n  <path\n    class=\"brand\"\n    d=\"M200.6 15.23h-67.17A13.44 13.44 0 0 0 120 28.67v94.04l53.74-26.87h26.87a26.87 26.87 0 0 0 26.87-26.87V42.1a26.87 26.87 0 0 0-26.87-26.87Z\"\n  />\n  <path\n    class=\"text\"\n    d=\"M262.51 148.33h10.2c0 1.03-.04 1.96-.13 2.8a9.4 9.4 0 0 1-2.02 5.04 8.61 8.61 0 0 1-2.21 1.93c-.85.53-1.78.93-2.8 1.2-1 .28-2.07.4-3.2.4a11.4 11.4 0 0 1-4.2-.73 9.39 9.39 0 0 1-5.39-5.34c-.5-1.25-.76-2.65-.76-4.17 0-1.51.25-2.9.75-4.16a9.23 9.23 0 0 1 5.44-5.31c1.3-.5 2.73-.74 4.32-.74 2.07 0 3.88.43 5.43 1.32a9.12 9.12 0 0 1 3.7 4.06l-4.88 1.97a4.95 4.95 0 0 0-1.77-2.3 4.98 4.98 0 0 0-4.58-.26c-.62.28-1.16.68-1.6 1.21-.45.53-.8 1.16-1.05 1.9a7.53 7.53 0 0 0-.38 2.47c0 .81.1 1.57.32 2.27.22.71.55 1.32.99 1.83.43.52.98.92 1.62 1.19a6.33 6.33 0 0 0 3.72.26 3.29 3.29 0 0 0 2.7-2.94h-4.22v-3.9ZM280.38 149.49a5.1 5.1 0 0 0 1.65 3.82 5.63 5.63 0 0 0 3.9 1.52 5.62 5.62 0 0 0 5.14-3.2c.3-.67.45-1.37.45-2.14a5.07 5.07 0 0 0-1.66-3.84 5.74 5.74 0 0 0-9.04 1.7c-.3.65-.44 1.37-.44 2.14Zm-5.38 0a9.93 9.93 0 0 1 3.07-7.29c.96-.93 2.1-1.65 3.45-2.16a11.9 11.9 0 0 1 4.41-.79c1.6 0 3.06.26 4.41.79a9.92 9.92 0 0 1 6.56 9.45 9.9 9.9 0 0 1-3.09 7.27c-.97.93-2.12 1.65-3.47 2.18-1.35.51-2.81.77-4.4.77-1.61 0-3.09-.26-4.42-.77a10 10 0 0 1-6.52-9.45ZM304.58 140.33l4.78 11.8 4.8-11.8h5.58l-8.34 19.38h-4.09L299 140.33h5.58ZM334.25 144.6h-6.11v3.24h5.77v4.26h-5.77v3.34h6.1v4.27H323v-19.38h11.25v4.27ZM345.14 149h.97c1.01 0 1.79-.22 2.33-.62.54-.41.82-1 .82-1.78 0-.77-.28-1.36-.82-1.78a3.87 3.87 0 0 0-2.33-.6h-.97v4.77Zm11.3 10.7h-6.4l-4.9-7.44v7.45H340v-19.38h8c1.1 0 2.06.16 2.88.48a5.28 5.28 0 0 1 3.24 3.2c.27.72.4 1.49.4 2.3 0 1.48-.36 2.68-1.08 3.6a5.49 5.49 0 0 1-3.21 1.86l6.21 7.94ZM359 159.7v-19.37h5.14l9.5 11.85v-11.85h5.1v19.38h-5.1l-9.5-11.84v11.84H359ZM387.38 149.49a5.1 5.1 0 0 0 1.65 3.82 5.63 5.63 0 0 0 3.9 1.52 5.61 5.61 0 0 0 5.14-3.2c.3-.67.45-1.37.45-2.14a5.07 5.07 0 0 0-1.66-3.84 5.74 5.74 0 0 0-9.04 1.7c-.3.65-.44 1.37-.44 2.14Zm-5.38 0a9.93 9.93 0 0 1 3.07-7.29 10.1 10.1 0 0 1 3.45-2.16 11.9 11.9 0 0 1 4.42-.79c1.59 0 3.05.26 4.4.79a9.96 9.96 0 0 1 6.56 9.45 9.96 9.96 0 0 1-6.56 9.45c-1.35.51-2.81.77-4.4.77-1.61 0-3.09-.26-4.42-.77a10.01 10.01 0 0 1-6.52-9.45ZM258.14 183.44h1.18c.89 0 1.69-.14 2.38-.41.7-.27 1.3-.65 1.78-1.13.47-.5.84-1.06 1.1-1.71.25-.67.38-1.38.38-2.18 0-.77-.13-1.49-.4-2.15a5.11 5.11 0 0 0-1.11-1.73 5.09 5.09 0 0 0-1.77-1.13 6.5 6.5 0 0 0-2.36-.41h-1.18v10.85ZM253 168.32h7.6c1.35 0 2.61.27 3.8.8a10.4 10.4 0 0 1 3.09 2.12 9.77 9.77 0 0 1 2.84 6.77 9.77 9.77 0 0 1-2.82 6.76c-.88.9-1.91 1.6-3.1 2.14a9.3 9.3 0 0 1-3.8.8H253v-19.39ZM279.37 178.49a5.1 5.1 0 0 0 1.66 3.82 5.62 5.62 0 0 0 3.9 1.53 5.78 5.78 0 0 0 3.92-1.52 5.25 5.25 0 0 0-1.78-8.78 5.68 5.68 0 0 0-2.14-.4 5.68 5.68 0 0 0-3.9 1.5 5.12 5.12 0 0 0-1.65 3.84Zm-5.37 0a10.01 10.01 0 0 1 6.51-9.46c1.34-.52 2.81-.78 4.42-.78 1.6 0 3.06.26 4.4.78a10.1 10.1 0 0 1 5.74 5.43c.55 1.25.82 2.58.82 4.03a9.95 9.95 0 0 1-6.55 9.44c-1.35.52-2.82.78-4.4.78-1.62 0-3.09-.26-4.43-.78a10.2 10.2 0 0 1-5.7-5.43 9.93 9.93 0 0 1-.81-4.01ZM318.25 172.59h-6.11v3.23h5.77v4.27h-5.77v3.35h6.11v4.27H307v-19.39h11.25v4.27ZM332.75 173.76a6.68 6.68 0 0 0-1.68-1 4.7 4.7 0 0 0-1.63-.32c-.66 0-1.2.16-1.62.46-.42.32-.63.72-.63 1.2 0 .36.1.64.31.87.21.22.49.4.83.57.34.17.72.3 1.15.43l1.27.38a7.99 7.99 0 0 1 3.69 2.2 5.35 5.35 0 0 1 1.17 3.59 6.9 6.9 0 0 1-.52 2.7c-.34.8-.84 1.49-1.5 2.06a6.74 6.74 0 0 1-2.4 1.35 12.04 12.04 0 0 1-10.19-1.71l2.2-4.07a9.21 9.21 0 0 0 2.28 1.5c.75.31 1.5.49 2.23.49.84 0 1.47-.2 1.88-.58a1.72 1.72 0 0 0 .46-2.04c-.1-.21-.28-.42-.53-.59a4.61 4.61 0 0 0-.96-.5c-.39-.15-.87-.33-1.42-.52-.67-.2-1.32-.42-1.96-.68a6.25 6.25 0 0 1-1.7-.98 4.66 4.66 0 0 1-1.67-3.94c0-.97.16-1.82.49-2.62a5.77 5.77 0 0 1 3.51-3.3c.85-.3 1.8-.46 2.85-.46a13.4 13.4 0 0 1 6.14 1.57l-2.05 3.94ZM348.36 172.59v15.12h-5.14v-15.12H339v-4.27h13.58v4.27h-4.22ZM364.64 180.5l-2.3-6.45-2.32 6.45h4.62Zm1.36 3.84h-7.34l-1.18 3.37H352l7.52-19.39h5.62l7.52 19.39h-5.48l-1.18-3.37ZM381.14 183.44h1.18c.89 0 1.69-.14 2.39-.41.7-.27 1.29-.65 1.77-1.13.48-.5.84-1.06 1.1-1.71.25-.67.38-1.38.38-2.18 0-.77-.13-1.49-.4-2.15a5.14 5.14 0 0 0-1.11-1.73 5.1 5.1 0 0 0-1.77-1.13 6.5 6.5 0 0 0-2.36-.41h-1.18v10.85ZM376 168.32h7.6c1.35 0 2.61.27 3.8.8a10.4 10.4 0 0 1 3.09 2.12 9.76 9.76 0 0 1 2.84 6.77 9.75 9.75 0 0 1-2.82 6.76c-.88.9-1.91 1.6-3.1 2.14a9.3 9.3 0 0 1-3.8.8H376v-19.39ZM401.37 178.49a5.1 5.1 0 0 0 1.66 3.82 5.62 5.62 0 0 0 3.9 1.53 5.72 5.72 0 0 0 3.92-1.52 5.23 5.23 0 0 0-1.78-8.78 5.66 5.66 0 0 0-2.14-.4 5.68 5.68 0 0 0-3.9 1.5 5.12 5.12 0 0 0-1.65 3.84Zm-5.37 0a10 10 0 0 1 6.51-9.46c1.34-.52 2.82-.78 4.42-.78s3.06.26 4.41.78a10.12 10.12 0 0 1 5.74 5.43c.54 1.25.82 2.58.82 4.03a9.97 9.97 0 0 1-6.56 9.44c-1.34.52-2.82.78-4.4.78-1.61 0-3.09-.26-4.43-.78a10.18 10.18 0 0 1-5.7-5.43 9.92 9.92 0 0 1-.81-4.01ZM265.35 96.99h4.1c4.54 0 6.8-1.98 6.8-5.92 0-3.95-2.26-5.94-6.8-5.94h-4.1v11.86Zm0 25.72H253V75.18h19.67c5.33 0 9.42 1.38 12.25 4.16 2.84 2.78 4.26 6.68 4.26 11.73 0 5.03-1.42 8.94-4.26 11.7-2.83 2.78-6.92 4.17-12.25 4.17h-7.32v15.77ZM315.38 105.04l-5.55-15.8-5.54 15.8h11.09Zm3.28 9.4H301l-2.84 8.27H285l18.09-47.53h13.49l18.09 47.53h-13.18l-2.83-8.27ZM346.35 74.86v25.84c0 1.38.05 2.81.16 4.26.1 1.45.42 2.76.95 3.93a6.56 6.56 0 0 0 2.49 2.88c1.13.74 2.73 1.1 4.79 1.1 2.05 0 3.64-.36 4.75-1.1a6.86 6.86 0 0 0 2.5-2.88c.54-1.17.87-2.48.97-3.93.1-1.45.16-2.88.16-4.26V74.86h12.29v27.55c0 7.38-1.7 12.8-5.08 16.2-3.38 3.4-8.58 5.1-15.6 5.1-7.01 0-12.22-1.7-15.63-5.1-3.4-3.4-5.1-8.82-5.1-16.2V74.86h12.35ZM392.35 75.18v37.05h14.82v10.48H380V75.18h12.35ZM420.92 98.63a12.75 12.75 0 0 0 3.97 9.38 13.5 13.5 0 0 0 9.4 3.72 13.5 13.5 0 0 0 9.42-3.72 12.86 12.86 0 0 0 4-9.38 12.65 12.65 0 0 0-4-9.4 13.55 13.55 0 0 0-9.43-3.71c-1.8 0-3.52.33-5.14.97a13.09 13.09 0 0 0-8.22 12.14Zm-12.92 0c0-3.54.65-6.83 1.95-9.87a24.45 24.45 0 0 1 13.71-13.3 28.39 28.39 0 0 1 10.62-1.92c3.83 0 7.35.64 10.59 1.92a25.06 25.06 0 0 1 8.35 5.33 24.16 24.16 0 0 1 5.45 7.97 24.84 24.84 0 0 1 1.96 9.87c0 3.52-.66 6.81-1.96 9.86a24.41 24.41 0 0 1-5.45 7.98 25.02 25.02 0 0 1-8.35 5.31 28.46 28.46 0 0 1-10.59 1.93c-3.87 0-7.4-.64-10.62-1.93a24.8 24.8 0 0 1-8.29-5.31A24.7 24.7 0 0 1 408 98.63ZM280.24 27.04a15.13 15.13 0 0 0-4.04-2.43c-1.34-.53-2.64-.79-3.9-.79-1.6 0-2.9.37-3.91 1.13a3.54 3.54 0 0 0-1.52 2.96c0 .84.26 1.53.76 2.09.5.53 1.17 1 1.99 1.41.81.4 1.74.76 2.77 1.04 1.03.3 2.05.6 3.06.94 4.03 1.35 6.98 3.15 8.85 5.4 1.87 2.24 2.8 5.19 2.8 8.79 0 2.43-.4 4.64-1.22 6.62a13.73 13.73 0 0 1-3.6 5.07 16.45 16.45 0 0 1-5.8 3.28c-2.29.77-4.88 1.16-7.78 1.16-6 0-11.57-1.79-16.7-5.35l5.3-9.96a21.38 21.38 0 0 0 5.48 3.65c1.8.8 3.59 1.2 5.35 1.2 2.02 0 3.52-.46 4.51-1.39a4.3 4.3 0 0 0 1.1-5.01c-.25-.52-.67-1-1.26-1.44a9.96 9.96 0 0 0-2.3-1.23c-.94-.37-2.09-.81-3.43-1.26-1.6-.5-3.17-1.06-4.7-1.67-1.53-.6-2.9-1.43-4.1-2.44-1.2-1-2.16-2.27-2.9-3.8a13.5 13.5 0 0 1-1.1-5.84c0-2.35.4-4.47 1.17-6.39a14.1 14.1 0 0 1 8.44-8.1 19.52 19.52 0 0 1 6.84-1.13c2.36 0 4.81.31 7.38.97 2.56.66 5.02 1.62 7.37 2.88l-4.91 9.64ZM317.38 45.06l-5.55-15.81-5.54 15.8h11.09ZM298.03 10.2c0-3.1.71-5.58 2.14-7.4a6.66 6.66 0 0 1 5.48-2.74c.89 0 1.88.13 2.97.4 1.09.27 2.17.58 3.24.88 1.07.32 2.06.6 2.96.85.91.25 1.63.39 2.18.39 1.35 0 2.25-.87 2.71-2.59h6.24c-.42 3.79-1.33 6.42-2.74 7.95-1.4 1.5-3.31 2.26-5.7 2.26-1.18 0-2.34-.13-3.47-.4-1.14-.27-2.2-.58-3.22-.9-1-.3-1.9-.6-2.7-.88-.8-.27-1.48-.4-2.02-.4-.47 0-.86.16-1.2.5a5.07 5.07 0 0 0-.95 2.08h-5.92Zm22.63 44.25H303l-2.84 8.25H287l18.09-47.53h13.49l18.09 47.53h-13.18l-2.83-8.25ZM344.92 38.63c0 1.9.36 3.63 1.07 5.23a13.22 13.22 0 0 0 12.29 7.89 13.6 13.6 0 0 0 9.42-3.73 12.8 12.8 0 0 0 4-9.4 12.71 12.71 0 0 0-4-9.38 13.56 13.56 0 0 0-9.42-3.72 13.54 13.54 0 0 0-9.39 3.72 13.2 13.2 0 0 0-2.9 4.15 12.68 12.68 0 0 0-1.07 5.24Zm-12.92 0a24.75 24.75 0 0 1 7.38-17.83 24.94 24.94 0 0 1 8.28-5.34 28.49 28.49 0 0 1 10.62-1.92c3.83 0 7.36.64 10.6 1.92a24.39 24.39 0 0 1 13.8 13.3 24.79 24.79 0 0 1 1.95 9.87c0 3.53-.65 6.8-1.96 9.87a24.4 24.4 0 0 1-13.8 13.29 28.57 28.57 0 0 1-10.59 1.92c-3.86 0-7.4-.64-10.62-1.92a24.64 24.64 0 0 1-8.29-5.32A24.63 24.63 0 0 1 332 38.63Z\"\n  />\n`"
         }
       ],
       "exports": [
@@ -13066,7 +13083,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.17.0",
+    "version": "0.17.1",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

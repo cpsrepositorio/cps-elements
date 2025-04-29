@@ -1,4 +1,5 @@
 import '../icon-button.js';
+import '../tooltip.js';
 import BaseElement from '../../internal/base-element.js';
 import type { CSSResultGroup } from 'lit';
 export default class CpsDialog extends BaseElement {

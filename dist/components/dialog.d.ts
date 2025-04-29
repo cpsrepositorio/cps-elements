@@ -1,1 +1,1 @@
-export { CpsDialog } from './dialog/dialog.component.js';
+export { CpsDialog, showAlert, showConfirm } from './dialog/dialog.component.js';

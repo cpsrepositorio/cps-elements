@@ -51,7 +51,7 @@
         },
         {
           "name": "initials",
-          "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+          "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
           "values": [{ "name": "auto" }]
         },
         {
@@ -70,7 +70,7 @@
         },
         {
           "name": "color",
-          "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+          "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
           "values": [{ "name": "auto" }, { "name": "none" }]
         }
       ],
@@ -99,7 +99,7 @@
     },
     {
       "name": "cps-badge",
-      "description": "Distintivos (_badges_) são usados para chamar atenção de forma sutil\r\ne não intrusiva, comumente para exibição de notificações de _status_,\r\nindicação de novo conteúdo ou contagens.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do _badge_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito.",
+      "description": "Distintivos (_badges_) são usados para chamar atenção de forma sutil\ne não intrusiva, comumente para exibição de notificações de _status_,\nindicação de novo conteúdo ou contagens.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do _badge_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito.",
       "attributes": [
         {
           "name": "variant",
@@ -136,7 +136,7 @@
       "attributes": [
         {
           "name": "label",
-          "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\r\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+          "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
           "values": []
         }
       ],
@@ -191,7 +191,7 @@
         },
         {
           "name": "type",
-          "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\r\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+          "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
           "values": [
             { "name": "button" },
             { "name": "submit" },
@@ -200,12 +200,12 @@
         },
         {
           "name": "name",
-          "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+          "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
           "values": []
         },
         {
           "name": "value",
-          "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\r\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+          "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
           "values": []
         },
         {
@@ -225,7 +225,7 @@
         },
         {
           "name": "rel",
-          "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+          "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
           "values": []
         },
         {
@@ -235,7 +235,7 @@
         },
         {
           "name": "form",
-          "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\r\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+          "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
           "values": []
         },
         {
@@ -304,7 +304,7 @@
         { "name": "title", "values": [] },
         {
           "name": "id",
-          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
           "values": []
         },
         {
@@ -343,12 +343,12 @@
         },
         {
           "name": "indeterminate",
-          "description": "Apresenta o campo em estado indeterminado.\r\nIsso é geralmente aplicado a caixas de seleção que representam o cabeçalho\r\nde um comportamento \"Selecionar todos/nenhum\", quando as caixas de seleção\r\nassociadas podem ter mistura de estados marcados e desmarcados.",
+          "description": "Apresenta o campo em estado indeterminado.\nIsso é geralmente aplicado a caixas de seleção que representam o cabeçalho\nde um comportamento \"Selecionar todos/nenhum\", quando as caixas de seleção\nassociadas podem ter mistura de estados marcados e desmarcados.",
           "values": []
         },
         {
           "name": "form",
-          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
           "values": []
         },
         {
@@ -397,7 +397,7 @@
       "attributes": [
         {
           "name": "id",
-          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
           "values": []
         },
         {
@@ -421,7 +421,7 @@
         },
         {
           "name": "keep-placeholder",
-          "description": "Define se o espaço reservado deve ser exibido permanentemente,\r\nindependentemente de uma opção estar selecionada.",
+          "description": "Define se o espaço reservado deve ser exibido permanentemente,\nindependentemente de uma opção estar selecionada.",
           "values": []
         },
         {
@@ -596,7 +596,7 @@
     },
     {
       "name": "cps-icon-button",
-      "description": "Botões de ícone são simples, apenas um ícone dentro,\r\nnormalmente para uso dentro de outros componentes.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).\n- **icon** - O ícone do botão (um `<cps-icon>`).",
+      "description": "Botões de ícone são simples, apenas um ícone dentro,\nnormalmente para uso dentro de outros componentes.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).\n- **icon** - O ícone do botão (um `<cps-icon>`).",
       "attributes": [
         {
           "name": "size",
@@ -609,7 +609,7 @@
         },
         {
           "name": "label",
-          "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\r\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\r\npor ferramentas de acessibilidade.",
+          "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\npor ferramentas de acessibilidade.",
           "values": []
         },
         {
@@ -619,12 +619,12 @@
         },
         {
           "name": "library",
-          "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+          "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
           "values": []
         },
         {
           "name": "src",
-          "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+          "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
           "values": []
         },
         {
@@ -644,7 +644,7 @@
         },
         {
           "name": "rel",
-          "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\r\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\r\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\r\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+          "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
           "values": []
         },
         {
@@ -671,17 +671,17 @@
         },
         {
           "name": "src",
-          "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\r\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\r\nse for carregado um arquivo malicioso.",
+          "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
           "values": []
         },
         {
           "name": "label",
-          "description": "Descrição alternativa para ferramentas de acessibilidade.\r\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+          "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
           "values": []
         },
         {
           "name": "library",
-          "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\r\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+          "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
           "values": []
         }
       ],
@@ -693,7 +693,7 @@
       "attributes": [
         {
           "name": "src",
-          "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\r\nque você está incluindo, já que será executado como código no navegador após o carregamento,\r\no que implica em possíveis ataques XSS.",
+          "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
           "values": []
         },
         {
@@ -707,7 +707,7 @@
         },
         {
           "name": "allow-scripts",
-          "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\r\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\r\napós o carregamento, o que implica em possíveis ataques XSS.",
+          "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
           "values": []
         }
       ],
@@ -720,7 +720,7 @@
         { "name": "title", "values": [] },
         {
           "name": "type",
-          "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\r\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
+          "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
           "values": [
             { "name": "date" },
             { "name": "datetime-local" },
@@ -736,7 +736,7 @@
         },
         {
           "name": "id",
-          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
           "values": []
         },
         {
@@ -805,7 +805,7 @@
         },
         {
           "name": "form",
-          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
           "values": []
         },
         {
@@ -840,7 +840,7 @@
         },
         {
           "name": "step",
-          "description": "Especifica a granularidade que o valor deve obedecer, ou o valor especial `any` que significa que nenhum passo é\r\nimplicado, permitindo qualquer valor numérico. Aplicável somente se `type` for `date` ou `number`.",
+          "description": "Especifica a granularidade que o valor deve obedecer, ou o valor especial `any` que significa que nenhum passo é\nimplicado, permitindo qualquer valor numérico. Aplicável somente se `type` for `date` ou `number`.",
           "values": [{ "name": "any" }]
         },
         {
@@ -862,7 +862,7 @@
         },
         {
           "name": "autocomplete",
-          "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+          "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\nConsulte\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
           "values": []
         },
         {
@@ -890,7 +890,7 @@
         },
         {
           "name": "inputmode",
-          "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+          "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
           "values": [
             { "name": "none" },
             { "name": "text" },
@@ -973,7 +973,7 @@
         },
         {
           "name": "href",
-          "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\r\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+          "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
           "values": []
         },
         {
@@ -1102,7 +1102,7 @@
       "attributes": [
         {
           "name": "id",
-          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
           "values": []
         },
         {
@@ -1136,7 +1136,7 @@
         },
         {
           "name": "form",
-          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
           "values": []
         },
         {
@@ -1154,7 +1154,7 @@
         { "name": "title", "values": [] },
         {
           "name": "id",
-          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
           "values": []
         },
         {
@@ -1200,7 +1200,7 @@
       "attributes": [
         {
           "name": "id",
-          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
           "values": []
         },
         {
@@ -1210,7 +1210,7 @@
         },
         {
           "name": "value",
-          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
+          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
           "values": [{ "name": "string[]" }]
         },
         {
@@ -1234,7 +1234,7 @@
         },
         {
           "name": "max-options-visible",
-          "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\r\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\r\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
+          "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
           "values": []
         },
         {
@@ -1274,7 +1274,7 @@
         },
         {
           "name": "form",
-          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
           "values": []
         },
         {
@@ -1418,7 +1418,7 @@
         { "name": "title", "values": [] },
         {
           "name": "id",
-          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\r\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
           "values": []
         },
         {
@@ -1481,7 +1481,7 @@
         },
         {
           "name": "form",
-          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\r\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\r\nexistente no documento.",
+          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
           "values": []
         },
         {
@@ -1518,7 +1518,7 @@
         },
         {
           "name": "autocomplete",
-          "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\r\nConsulte\r\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
+          "description": "Especifica quais permissões o navegador tem para fornecer assistência no preenchimento dos valores do campo.\nConsulte\n[esta documentação no MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) para a lista de valores disponíveis.",
           "values": []
         },
         {
@@ -1546,7 +1546,7 @@
         },
         {
           "name": "inputmode",
-          "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\r\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
+          "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
           "values": [
             { "name": "none" },
             { "name": "text" },
@@ -1567,12 +1567,12 @@
       "attributes": [
         {
           "name": "checked",
-          "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
+          "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\n\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
           "values": []
         },
         {
           "name": "value",
-          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\r\n\r\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
+          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\n\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
           "values": []
         },
         {
@@ -1582,7 +1582,7 @@
         },
         {
           "name": "size",
-          "description": "O tamanho do botão alternável.\r\n\r\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
+          "description": "O tamanho do botão alternável.\n\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
           "values": [
             { "name": "small" },
             { "name": "medium" },
@@ -1612,7 +1612,7 @@
         },
         {
           "name": "placement",
-          "description": "O posicionamento preferido da dica de ferramenta.\r\nObserve que o posicionamento real pode variar conforme necessário,\r\npara manter a dica de ferramenta dentro da janela de visualização.",
+          "description": "O posicionamento preferido da dica de ferramenta.\nObserve que o posicionamento real pode variar conforme necessário,\npara manter a dica de ferramenta dentro da janela de visualização.",
           "values": [
             { "name": "" },
             { "name": "top" },
@@ -1636,27 +1636,27 @@
         },
         {
           "name": "distance",
-          "description": "A distância em pixels do _flyout_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
+          "description": "A distância em pixels do _flyout_ em relação à seu elemento alvo, para afastá-lo ou aproximá-lo deste.\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
           "values": []
         },
         {
           "name": "skidding",
-          "description": "A distância em pixels do _flyout_ no eixo de deslocamento de seu elemento alvo.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
+          "description": "A distância em pixels do _flyout_ no eixo de deslocamento de seu elemento alvo.\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
           "values": []
         },
         {
           "name": "open",
-          "description": "Indica se a dica de ferramenta está ou não visível atualmente.\r\nVocê pode usar isso declarativamente e reativamente, ao invés de precisar\r\nimperativamente dos métodos `show` e `hide`.",
+          "description": "Indica se a dica de ferramenta está ou não visível atualmente.\nVocê pode usar isso declarativamente e reativamente, ao invés de precisar\nimperativamente dos métodos `show` e `hide`.",
           "values": []
         },
         {
           "name": "trigger",
-          "description": "Controla como a dica de ferramenta é ativada. As opções possíveis incluem `click`, `hover`, `focus` e `manual`.\r\nMúltiplas opções podem ser passadas, separando-as com um espaço, exceto o valor `manual`.\r\nQuando `manual` é usado, a dica de ferramenta deve ser exclusivamente manipulada programaticamente.",
+          "description": "Controla como a dica de ferramenta é ativada. As opções possíveis incluem `click`, `hover`, `focus` e `manual`.\nMúltiplas opções podem ser passadas, separando-as com um espaço, exceto o valor `manual`.\nQuando `manual` é usado, a dica de ferramenta deve ser exclusivamente manipulada programaticamente.",
           "values": []
         },
         {
           "name": "hoist",
-          "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\r\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\r\n\r\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\r\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\r\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\r\n\r\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\r\nmas não em todos, então teste com cautela se precisar habilitar.",
+          "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\n\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\n\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\nmas não em todos, então teste com cautela se precisar habilitar.",
           "values": []
         }
       ],
@@ -1668,27 +1668,27 @@
       "attributes": [
         {
           "name": "open",
-          "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\r\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+          "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
           "values": []
         },
         {
           "name": "closable",
-          "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+          "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
           "values": []
         },
         {
           "name": "label",
-          "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+          "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
           "values": []
         },
         {
           "name": "aria-label",
-          "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+          "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
           "values": []
         },
         {
           "name": "returnValue",
-          "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\r\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\r\nfoi tomada pelo usuário.",
+          "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
           "values": []
         }
       ],
@@ -1726,7 +1726,7 @@
       "attributes": [
         {
           "name": "date",
-          "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+          "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
           "values": [{ "name": "Date" }]
         },
         {
@@ -1873,12 +1873,12 @@
       "attributes": [
         {
           "name": "date",
-          "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\r\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\r\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\r\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+          "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
           "values": [{ "name": "Date" }]
         },
         {
           "name": "format",
-          "description": "O estilo de formatação a ser usado.\r\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+          "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
           "values": [
             { "name": "long" },
             { "name": "short" },
@@ -1887,7 +1887,7 @@
         },
         {
           "name": "numeric",
-          "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\r\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+          "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
           "values": []
         },
         {
@@ -1900,7 +1900,7 @@
     },
     {
       "name": "cps-logo",
-      "description": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\r\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.\n\n\n---\n\n\n",
+      "description": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.\n\n\n---\n\n\n",
       "attributes": [
         {
           "name": "type",

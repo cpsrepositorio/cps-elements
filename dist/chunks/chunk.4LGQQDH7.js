@@ -1,1 +1,0 @@
-import{a as t}from"./chunk.TIMFCXYL.js";import*as e from"react";import{createComponent as o}from"@lit-labs/react";var a=o({tagName:"cps-format-date",elementClass:t,react:e,events:{}}),p=a;export{a,p as b};

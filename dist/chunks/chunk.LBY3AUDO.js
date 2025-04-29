@@ -1,1 +1,0 @@
-import{c as t}from"./chunk.K3RV6SX6.js";function v(n,e){return new Promise(i=>{function r(o){o.target===n&&(n.removeEventListener(e,r),i())}t(r,"done"),n.addEventListener(e,r)})}t(v,"waitForEvent");export{v as a};
