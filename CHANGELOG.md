@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Changed
 
 - Reduzida a duração da animação padrão de ocultamento de _backdrop_ no `<cps-dialog>`.
+- Adiciona `<cps-tooltip>` por padrão ao botão fechar do `<cps-dialog>`.
 - Ajustes finos na aparência do `<cps-dialog>`.
 
 ### Fixed

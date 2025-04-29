@@ -511,7 +511,9 @@ Use o _slot_ `header-actions` para injetar mais [botões de ícone](/componentes
 ```html preview no-vue
 <div class="dialog-example-header-actions">
   <cps-dialog label="Exemplo com ação no cabeçalho" closable>
-    <cps-icon-button slot="header-actions" name="arrow-up-right-fill"></cps-icon-button>
+    <cps-tooltip slot="header-actions" content="Abrir nova aba" hoist>
+      <cps-icon-button name="arrow-up-right-fill"></cps-icon-button>
+    </cps-tooltip>
     Conteúdo de exemplo no corpo da caixa de diálogo.
     <cps-button slot="footer" autofocus>Ok</cps-button>
   </cps-dialog>
@@ -524,7 +526,7 @@ Use o _slot_ `header-actions` para injetar mais [botões de ícone](/componentes
   const dialog = container.querySelector('cps-dialog');
   const openButton = container.querySelector(':scope > cps-button');
   const closeButton = dialog.querySelector('cps-button[slot="footer"]');
-  const newWindowButton = dialog.querySelector('cps-icon-button[slot="header-actions"]');
+  const newWindowButton = dialog.querySelector('[slot="header-actions"] cps-icon-button');
 
   openButton.addEventListener('click', () => dialog.show());
   closeButton.addEventListener('click', () => dialog.close());

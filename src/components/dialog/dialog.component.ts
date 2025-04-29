@@ -1,4 +1,5 @@
 import '../icon-button.js';
+import '../tooltip.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property, query } from 'lit/decorators.js';
 import { getAnimation, setDefaultAnimation } from '../../utilities/animation-registry.js';
@@ -23,6 +24,7 @@ import type { CSSResultGroup } from 'lit';
  * @since 0.17.0
  *
  * @dependency cps-icon-button
+ * @dependency cps-tooltip
  *
  * @slot - O conteúdo principal da caixa de diálogo.
  * @slot label - O rótulo da caixa de diálogo. Alternativamente, você pode usar o atributo `label`.
@@ -339,15 +341,17 @@ export default class CpsDialog extends BaseElement {
                     <slot name="header-actions"></slot>
                     ${this.closable
                       ? html`
-                          <cps-icon-button
-                            part="close-button"
-                            exportparts="base:close-button__base"
-                            class="dialog__close"
-                            name="dismiss"
-                            label=${this.localize.term('close')}
-                            library="system"
-                            @click="${() => this.requestClose('header')}"
-                          ></cps-icon-button>
+                          <cps-tooltip content="${this.localize.term('close')}" hoist>
+                            <cps-icon-button
+                              part="close-button"
+                              exportparts="base:close-button__base"
+                              class="dialog__close"
+                              name="dismiss"
+                              label=${this.localize.term('close')}
+                              library="system"
+                              @click="${() => this.requestClose('header')}"
+                            ></cps-icon-button>
+                          </cps-tooltip>
                         `
                       : ''}
                   </div>
