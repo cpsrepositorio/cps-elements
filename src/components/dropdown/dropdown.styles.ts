@@ -2,7 +2,8 @@ import { css } from 'lit';
 import componentStyles from '../../styles/component.styles';
 import formControlStyles from '../../styles/form-control.styles';
 
-export default css`  ${css`
+export default css`
+  ${css`
     ${componentStyles}
     ${formControlStyles}
   `}
@@ -13,7 +14,7 @@ export default css`  ${css`
     width: auto;
   }
 
-  /** The flyout */
+  /** Flyout variables override */
   .dropdown {
     --background-color: var(--cps-color-background-acrylic);
     --border-color: var(--cps-color-stroke-surface);

@@ -12,6 +12,7 @@ export default css`
     display: contents;
   }
 
+  /** Flyout variables override */
   .tooltip {
     --background-color: var(--cps-color-background-acrylic);
     --border-color: var(--cps-color-stroke-surface);

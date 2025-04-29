@@ -1,7 +1,8 @@
 import { css } from 'lit';
 import componentStyles from '../../styles/component.styles.js';
 
-export default css`  ${componentStyles}
+export default css`
+  ${componentStyles}
 
   :host {
     display: block;
@@ -48,8 +49,7 @@ export default css`  ${componentStyles}
   }
 
   .card--actionable {
-    transition: background-color var(--cps-transition-fast),
-      box-shadow var(--cps-transition-fast),
+    transition: background-color var(--cps-transition-fast), box-shadow var(--cps-transition-fast),
       transform var(--cps-transition-fast);
     cursor: pointer;
   }

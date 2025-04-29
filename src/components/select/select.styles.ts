@@ -12,7 +12,7 @@ export default css`
     display: block;
   }
 
-  /** The flyout */
+  /** Flyout variables override */
   .select {
     --background-color: var(--cps-color-background-acrylic);
     --border-color: var(--cps-color-stroke-surface);
@@ -134,7 +134,7 @@ export default css`
 
   .select:not(.select--disabled):active
     :is(.select__display-input, .select__chips, .select__prefix, .select__clear, .select__expand-icon) {
-      background-color: var(--cps-input-background-active);
+    background-color: var(--cps-input-background-active);
   }
 
   .select.select--disabled .select__field {
