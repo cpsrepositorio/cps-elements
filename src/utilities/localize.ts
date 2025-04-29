@@ -13,20 +13,23 @@ export interface Translation extends DefaultTranslation {
   $name: string; // e.g. English, Español
   $dir: 'ltr' | 'rtl';
 
+  cancel: string;
   clearEntry: string;
   close: string;
+  confirm: string;
   copy: string;
-  numOptionsSelected: (num: number) => string;
   currentValue: string;
   hidePassword: string;
   loading: string;
+  numOptionsSelected: (n: number) => string;
+  ok: string;
   progress: string;
   remove: string;
   resize: string;
   scrollToEnd: string;
   scrollToStart: string;
   selectAColorFromTheScreen: string;
+  showCalendar: string;
   showPassword: string;
   toggleColorFormat: string;
-  showCalendar: string;
 }
