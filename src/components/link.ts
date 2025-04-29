@@ -70,7 +70,6 @@ export default class CpsLink extends BaseElement {
     this.emit('cps-focus');
   }
 
-
   /** Simula um _click_ no elemento. */
   click() {
     this.link.click();
