@@ -29,22 +29,19 @@ export default css`
   .dialog__panel {
     display: flex;
     flex-direction: column;
-    transform: scale(0.8);
     transform-origin: center center;
-    transition: opacity 250ms cubic-bezier(0.2, 0.9, 0.3, 1), transform 250ms cubic-bezier(0.2, 0.9, 0.3, 1);
     opacity: 0;
     z-index: 2;
     border-width: 1px;
     border-style: solid;
     border-radius: var(--cps-border-radius-large);
     border-color: var(--cps-color-stroke-primary);
-    background-clip: padding-box;
     width: var(--width);
     max-width: calc(100% - var(--cps-spacing-9));
     max-height: calc(100% - var(--cps-spacing-9));
     font: var(--cps-font-body);
-    backdrop-filter: var(--cps-blur-medium);
-    filter: drop-shadow(var(--cps-shadow)) drop-shadow(var(--cps-shadow-lg));
+    filter: drop-shadow(var(--cps-shadow-xl));
+    backdrop-filter: var(--cps-blur-large);
   }
 
   .dialog__panel:focus {
@@ -60,6 +57,7 @@ export default css`
   .dialog__header {
     display: flex;
     flex: 0 0 auto;
+    align-items: center;
     border-radius: var(--internal-radius) var(--internal-radius) 0 0;
   }
 
@@ -132,13 +130,11 @@ export default css`
     align-items: center;
     justify-content: end;
     justify-items: end;
-    margin-top: -1px;
     border-top-width: 1px;
     border-top-style: solid;
     border-radius: 0 0 var(--internal-radius) var(--internal-radius);
     border-top-color: var(--cps-color-stroke-primary);
-    background: var(--cps-color-background-acrylic-base);
-    background-clip: padding-box;
+    background: var(--cps-color-background-solid-primary);
     padding: var(--footer-spacing);
     text-align: right;
   }
