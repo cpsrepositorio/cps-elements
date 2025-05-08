@@ -123,7 +123,6 @@ export default class CpsDialog extends BaseElement {
       lockBodyScrolling(this);
     }
 
-    // Configura a manipulação de botões no slot footer
     this.setupFooterButtons();
   }
 
@@ -142,11 +141,10 @@ export default class CpsDialog extends BaseElement {
   private handleFooterButtonClick(event: MouseEvent) {
     const button = event.currentTarget as HTMLButtonElement;
 
-    // Verifica se o botão possui formmethod="dialog"
     if (button.formMethod === 'dialog' || button.getAttribute('formmethod') === 'dialog') {
       event.preventDefault();
       const returnValue = button.value || button.getAttribute('value') || '';
-      this.close(returnValue); // Fecha o diálogo e define o returnValue
+      this.close(returnValue);
     }
   }
 
@@ -199,16 +197,14 @@ export default class CpsDialog extends BaseElement {
   private handleFormSubmission(event: SubmitEvent) {
     const form = event.target as HTMLFormElement;
 
-    // Verifica se o formulário tem method="dialog"
     if (form.method === 'dialog') {
       event.preventDefault();
 
-      // Obtém o botão que acionou a submissão
       const submitter = event.submitter as HTMLButtonElement | null;
 
       if (submitter) {
         const returnValue = submitter.value || '';
-        this.close(returnValue); // Fecha o diálogo e define o returnValue
+        this.close(returnValue);
       }
     }
   }

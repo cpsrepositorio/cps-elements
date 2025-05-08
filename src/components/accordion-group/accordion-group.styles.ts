@@ -5,9 +5,8 @@ export default css`
   ${componentStyles}
 
   :host {
-    display: block;
-
     --gap: var(--cps-spacing-3);
+    display: block;
   }
 
   .accordion-group {

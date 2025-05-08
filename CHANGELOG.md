@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Normalização do local do arquivo de implementação dos componentes, sem impacto na forma de utilização.
+
 ## 0.17.1 - 2025-04-29
 
 ### Changed

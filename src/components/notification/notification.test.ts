@@ -160,7 +160,7 @@ describe('<cps-notification>', () => {
       const closeButton = getCloseButton(notification);
 
       await expectHideAndAfterHideToBeEmittedInCorrectOrder(notification, () => {
-        clickOnElement(closeButton!);
+        clickOnElement(closeButton);
       });
     });
   });
@@ -206,7 +206,7 @@ describe('<cps-notification>', () => {
 
       const closePromise = oneEvent(notification, 'cps-after-hide');
       const closeButton = getCloseButton(notification);
-      clickOnElement(closeButton!);
+      clickOnElement(closeButton);
 
       await closePromise;
       await aTimeout(0);
@@ -233,7 +233,7 @@ describe('<cps-notification>', () => {
     const closeToast = async (notification: CpsNotification): Promise<void> => {
       const closePromise = oneEvent(notification, 'cps-after-hide');
       const closeButton = getCloseButton(notification);
-      await clickOnElement(closeButton!);
+      await clickOnElement(closeButton);
       await closePromise;
       await aTimeout(0);
     };
