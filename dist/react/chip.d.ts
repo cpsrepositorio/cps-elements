@@ -1,4 +1,4 @@
-import Component from '../components/chip.js';
+import Component from '../components/chip/chip.component.js';
 export declare const CpsChip: import("@lit-labs/react").ReactWebComponent<Component, {
     onCpsRemove: string;
 }>;

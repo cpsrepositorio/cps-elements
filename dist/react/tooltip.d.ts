@@ -1,4 +1,4 @@
-import Component from '../components/tooltip.js';
+import Component from '../components/tooltip/tooltip.component.js';
 export declare const CpsTooltip: import("@lit-labs/react").ReactWebComponent<Component, {
     onCpsShow: string;
     onCpsAfterShow: string;

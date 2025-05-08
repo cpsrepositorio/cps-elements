@@ -1,1 +1,0 @@
-import{a as e}from"./chunk.JO35J4E6.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var m=o({tagName:"cps-format-number",elementClass:e,react:t,events:{}}),p=m;export{m as a,p as b};

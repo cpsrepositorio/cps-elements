@@ -1,1 +1,2 @@
-export { CpsDialog, showAlert, showConfirm } from './dialog/dialog.component.js';
+export * from './dialog/dialog.component.js';
+export { default } from './dialog/dialog.component.js';

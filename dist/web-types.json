@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.17.1",
+  "version": "0.17.2",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -13,56 +13,6 @@
   "contributions": {
     "html": {
       "elements": [
-        {
-          "name": "cps-accordion-group",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/accordion-group",
-          "js": {
-            "properties": [
-              {
-                "name": "activeAccordion",
-                "value": {
-                  "type": "CpsAccordion | undefined"
-                }
-              },
-              {
-                "name": "accordions",
-                "value": {
-                  "type": "CpsAccordion[]"
-                }
-              },
-              {
-                "name": "multiple",
-                "description": "Permite que múltiplos _accordions_ sejam abertos simultaneamente.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "getAllAccordions",
-                "value": {}
-              },
-              {
-                "name": "setActiveAccordion",
-                "value": {}
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "multiple",
-              "description": "Permite que múltiplos _accordions_ sejam abertos simultaneamente.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
         {
           "name": "cps-accordion",
           "description": "",
@@ -184,6 +134,56 @@
           ]
         },
         {
+          "name": "cps-accordion-group",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/accordion-group",
+          "js": {
+            "properties": [
+              {
+                "name": "activeAccordion",
+                "value": {
+                  "type": "CpsAccordion | undefined"
+                }
+              },
+              {
+                "name": "accordions",
+                "value": {
+                  "type": "CpsAccordion[]"
+                }
+              },
+              {
+                "name": "multiple",
+                "description": "Permite que múltiplos _accordions_ sejam abertos simultaneamente.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "getAllAccordions",
+                "value": {}
+              },
+              {
+                "name": "setActiveAccordion",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "multiple",
+              "description": "Permite que múltiplos _accordions_ sejam abertos simultaneamente.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-avatar",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/avatar",
@@ -227,7 +227,7 @@
               },
               {
                 "name": "initials",
-                "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+                "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
                 "value": {
                   "type": "'auto' | string"
                 }
@@ -248,7 +248,7 @@
               },
               {
                 "name": "color",
-                "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+                "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
                 "value": {
                   "type": "'auto' | 'none' | string"
                 }
@@ -305,7 +305,7 @@
             },
             {
               "name": "initials",
-              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
               "value": {
                 "type": "'auto' | string"
               }
@@ -326,12 +326,20 @@
             },
             {
               "name": "color",
-              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
               "value": {
                 "type": "'auto' | 'none' | string"
               }
             }
           ]
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
         },
         {
           "name": "cps-background",
@@ -449,64 +457,6 @@
               "description": "Efeito pulsante para chamar atenção extra.",
               "value": {
                 "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-button-group",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button-group",
-          "js": {
-            "properties": [
-              {
-                "name": "defaultSlot",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "disableRole",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "label",
-                "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleMouseOver",
-                "value": {}
-              },
-              {
-                "name": "handleMouseOut",
-                "value": {}
-              },
-              {
-                "name": "handleSlotChange",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "label",
-              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-              "value": {
-                "type": "string"
               }
             }
           ]
@@ -917,6 +867,64 @@
               "description": "Usado para sobrescrever o atributo `target` do formulário \"dono\" deste botão.",
               "value": {
                 "type": "'_self' | '_blank' | '_parent' | '_top' | string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-button-group",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button-group",
+          "js": {
+            "properties": [
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "disableRole",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "label",
+                "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleMouseOver",
+                "value": {}
+              },
+              {
+                "name": "handleMouseOut",
+                "value": {}
+              },
+              {
+                "name": "handleSlotChange",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "label",
+              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "value": {
+                "type": "string"
               }
             }
           ]
@@ -1347,6 +1355,215 @@
               }
             }
           ]
+        },
+        {
+          "name": "cps-dialog",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/dialog",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "modal",
+                "value": {
+                  "type": "Modal"
+                }
+              },
+              {
+                "name": "originalTrigger",
+                "value": {
+                  "type": "HTMLElement | null"
+                }
+              },
+              {
+                "name": "dialog",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "panel",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "backdrop",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "open",
+                "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "closable",
+                "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "label",
+                "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "ariaLabel",
+                "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "returnValue",
+                "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
+                "value": {
+                  "type": "string | boolean | undefined"
+                }
+              },
+              {
+                "name": "setupFooterButtons",
+                "value": {}
+              },
+              {
+                "name": "handleFooterButtonClick",
+                "value": {}
+              },
+              {
+                "name": "handleDocumentKeyDown",
+                "value": {}
+              },
+              {
+                "name": "playAnimation",
+                "value": {}
+              },
+              {
+                "name": "requestClose",
+                "value": {}
+              },
+              {
+                "name": "addOpenListeners",
+                "value": {}
+              },
+              {
+                "name": "removeOpenListeners",
+                "value": {}
+              },
+              {
+                "name": "handleFormSubmission",
+                "value": {}
+              },
+              {
+                "name": "handleOpenChange",
+                "value": {}
+              },
+              {
+                "name": "show",
+                "description": "Mostra a caixa de diálogo.",
+                "value": {}
+              },
+              {
+                "name": "close",
+                "description": "Fecha a caixa de diálogo, opcionalmente definindo um valor de retorno.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-show",
+                "description": "Emitido quando a caixa de diálogo começa a ser aberta."
+              },
+              {
+                "name": "cps-after-show",
+                "description": "Emitido após a caixa de diálogo ser aberta e todas as animações serem concluídas."
+              },
+              {
+                "name": "cps-close",
+                "description": "Emitido quando a caixa de diálogo começa a ser fechada."
+              },
+              {
+                "name": "cps-after-close",
+                "description": "Emitido após a caixa de diálogo ser fechada e todas as animações serem concluídas."
+              },
+              {
+                "name": "cps-initial-focus",
+                "description": "Emitido quando a caixa de diálogo é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada."
+              },
+              {
+                "name": "cps-request-close",
+                "description": "Emitido quando o usuário tenta fechar a caixa de diálogo clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a caixa de diálogo aberta. Evite usar isso a menos que fechar a caixa de diálogo resulte em comportamento destrutivo, como perda de dados."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "open",
+              "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "closable",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "label",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "aria-label",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "returnValue",
+              "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
+              "value": {
+                "type": "string | boolean | undefined"
+              }
+            }
+          ]
+        },
+        {
+          "description": "Displays an alert dialog using a `CpsDialog` instance.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Displays a confirm dialog using a `CpsDialog` instance.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
         },
         {
           "name": "cps-dropdown",
@@ -2075,6 +2292,690 @@
           ]
         },
         {
+          "name": "cps-format-bytes",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-bytes",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "value",
+                "description": "O número (valor bruto em _bytes_ ou _bits_) a ser formatado.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "unit",
+                "description": "O tipo de unidade a ser considerado para as conversões de valores.",
+                "value": {
+                  "type": "'byte' | 'bit'"
+                }
+              },
+              {
+                "name": "display",
+                "description": "Determina como formatar o resultado, por exemplo, \"100 bytes\", \"100 b\" ou \"100b\".",
+                "value": {
+                  "type": "'long' | 'short' | 'narrow'"
+                }
+              },
+              {
+                "name": "_convertToBytes",
+                "value": {}
+              },
+              {
+                "name": "_formatBytes",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "value",
+              "description": "O número (valor bruto em _bytes_ ou _bits_) a ser formatado.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "unit",
+              "description": "O tipo de unidade a ser considerado para as conversões de valores.",
+              "value": {
+                "type": "'byte' | 'bit'"
+              }
+            },
+            {
+              "name": "display",
+              "description": "Determina como formatar o resultado, por exemplo, \"100 bytes\", \"100 b\" ou \"100b\".",
+              "value": {
+                "type": "'long' | 'short' | 'narrow'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-format-date",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-date",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "date",
+                "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+                "value": {
+                  "type": "Date | string"
+                }
+              },
+              {
+                "name": "weekday",
+                "description": "O formato para exibir o dia da semana.",
+                "value": {
+                  "type": "'narrow' | 'short' | 'long'"
+                }
+              },
+              {
+                "name": "era",
+                "description": "O formato para exibir a era.",
+                "value": {
+                  "type": "'narrow' | 'short' | 'long'"
+                }
+              },
+              {
+                "name": "year",
+                "description": "O formato para exibir o ano.",
+                "value": {
+                  "type": "'numeric' | '2-digit'"
+                }
+              },
+              {
+                "name": "month",
+                "description": "O formato para exibir o mês.",
+                "value": {
+                  "type": "'numeric' | '2-digit' | 'narrow' | 'short' | 'long'"
+                }
+              },
+              {
+                "name": "day",
+                "description": "O formato para exibir o dia.",
+                "value": {
+                  "type": "'numeric' | '2-digit'"
+                }
+              },
+              {
+                "name": "hour",
+                "description": "O formato para exibir a hora.",
+                "value": {
+                  "type": "'numeric' | '2-digit'"
+                }
+              },
+              {
+                "name": "minute",
+                "description": "O formato para exibir os minutos.",
+                "value": {
+                  "type": "'numeric' | '2-digit'"
+                }
+              },
+              {
+                "name": "second",
+                "description": "O formato para exibir os segundos.",
+                "value": {
+                  "type": "'numeric' | '2-digit'"
+                }
+              },
+              {
+                "name": "timeZoneName",
+                "description": "O formato para exibir o nome do fuso horário.",
+                "value": {
+                  "type": "'short' | 'long'"
+                }
+              },
+              {
+                "name": "timeZone",
+                "description": "O fuso horário no qual o horário será expresso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "hourFormat",
+                "description": "O formato para exibir a hora.",
+                "value": {
+                  "type": "'auto' | '12' | '24'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "date",
+              "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "value": {
+                "type": "Date | string"
+              }
+            },
+            {
+              "name": "weekday",
+              "description": "O formato para exibir o dia da semana.",
+              "value": {
+                "type": "'narrow' | 'short' | 'long'"
+              }
+            },
+            {
+              "name": "era",
+              "description": "O formato para exibir a era.",
+              "value": {
+                "type": "'narrow' | 'short' | 'long'"
+              }
+            },
+            {
+              "name": "year",
+              "description": "O formato para exibir o ano.",
+              "value": {
+                "type": "'numeric' | '2-digit'"
+              }
+            },
+            {
+              "name": "month",
+              "description": "O formato para exibir o mês.",
+              "value": {
+                "type": "'numeric' | '2-digit' | 'narrow' | 'short' | 'long'"
+              }
+            },
+            {
+              "name": "day",
+              "description": "O formato para exibir o dia.",
+              "value": {
+                "type": "'numeric' | '2-digit'"
+              }
+            },
+            {
+              "name": "hour",
+              "description": "O formato para exibir a hora.",
+              "value": {
+                "type": "'numeric' | '2-digit'"
+              }
+            },
+            {
+              "name": "minute",
+              "description": "O formato para exibir os minutos.",
+              "value": {
+                "type": "'numeric' | '2-digit'"
+              }
+            },
+            {
+              "name": "second",
+              "description": "O formato para exibir os segundos.",
+              "value": {
+                "type": "'numeric' | '2-digit'"
+              }
+            },
+            {
+              "name": "time-zone-name",
+              "description": "O formato para exibir o nome do fuso horário.",
+              "value": {
+                "type": "'short' | 'long'"
+              }
+            },
+            {
+              "name": "time-zone",
+              "description": "O fuso horário no qual o horário será expresso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "hour-format",
+              "description": "O formato para exibir a hora.",
+              "value": {
+                "type": "'auto' | '12' | '24'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-format-number",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-number",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "value",
+                "description": "O número a ser formatado.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "type",
+                "description": "O estilo de formatação a ser utilizado.",
+                "value": {
+                  "type": "'currency' | 'decimal' | 'percent'"
+                }
+              },
+              {
+                "name": "noGrouping",
+                "description": "Desativa os separadores de agrupamento.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "currency",
+                "description": "O código de moeda [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) a ser utilizado na formatação.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "currencyDisplay",
+                "description": "Definição sobre como exibir a moeda.",
+                "value": {
+                  "type": "'symbol' | 'narrowSymbol' | 'code' | 'name'"
+                }
+              },
+              {
+                "name": "minimumIntegerDigits",
+                "description": "O número mínimo de dígitos inteiros a ser utilizado. Valores possíveis são 1-21.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "minimumFractionDigits",
+                "description": "O número mínimo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "maximumFractionDigits",
+                "description": "O número máximo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "minimumSignificantDigits",
+                "description": "O número mínimo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "maximumSignificantDigits",
+                "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+                "value": {
+                  "type": "number"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "value",
+              "description": "O número a ser formatado.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "type",
+              "description": "O estilo de formatação a ser utilizado.",
+              "value": {
+                "type": "'currency' | 'decimal' | 'percent'"
+              }
+            },
+            {
+              "name": "no-grouping",
+              "description": "Desativa os separadores de agrupamento.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "currency",
+              "description": "O código de moeda [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) a ser utilizado na formatação.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "currency-display",
+              "description": "Definição sobre como exibir a moeda.",
+              "value": {
+                "type": "'symbol' | 'narrowSymbol' | 'code' | 'name'"
+              }
+            },
+            {
+              "name": "minimum-integer-digits",
+              "description": "O número mínimo de dígitos inteiros a ser utilizado. Valores possíveis são 1-21.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "minimum-fraction-digits",
+              "description": "O número mínimo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "maximum-fraction-digits",
+              "description": "O número máximo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "minimum-significant-digits",
+              "description": "O número mínimo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "maximum-significant-digits",
+              "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+              "value": {
+                "type": "number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-format-relative-time",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-relative-time",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "updateTimeout",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "isoTime",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "relativeTime",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "titleTime",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "date",
+                "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+                "value": {
+                  "type": "Date | string"
+                }
+              },
+              {
+                "name": "format",
+                "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+                "value": {
+                  "type": "'long' | 'short' | 'narrow'"
+                }
+              },
+              {
+                "name": "numeric",
+                "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "sync",
+                "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
+                "value": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "date",
+              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "value": {
+                "type": "Date | string"
+              }
+            },
+            {
+              "name": "format",
+              "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+              "value": {
+                "type": "'long' | 'short' | 'narrow'"
+              }
+            },
+            {
+              "name": "numeric",
+              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "sync",
+              "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "description": "Configuration for the available time units.\nEach unit has a maximum time difference it can represent, a value in milliseconds, and the unit name.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Calculates the time remaining until the next occurrence of a specified time unit.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-icon",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon",
+          "js": {
+            "properties": [
+              {
+                "name": "svg",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "src",
+                "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "label",
+                "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "library",
+                "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "getUrl",
+                "value": {}
+              },
+              {
+                "name": "handleLabelChange",
+                "value": {}
+              },
+              {
+                "name": "setIcon",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-load",
+                "description": "Emitido quando o ícone foi carregado."
+              },
+              {
+                "name": "cps-error",
+                "description": "Emitido quando o ícone falha para carregar devido a um erro."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "name",
+              "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "src",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "label",
+              "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "library",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "value": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Adds an icon to the list of watched icons.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Removes an icon from the list of watched icons.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Returns a library from the registry.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Adds an icon library to the registry, or overrides an existing one.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Removes an icon library from the registry.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
           "name": "cps-icon-button",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon-button",
@@ -2275,101 +3176,6 @@
           ]
         },
         {
-          "name": "cps-icon",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon",
-          "js": {
-            "properties": [
-              {
-                "name": "svg",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "name",
-                "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
-                "value": {
-                  "type": "string | undefined"
-                }
-              },
-              {
-                "name": "src",
-                "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
-                "value": {
-                  "type": "string | undefined"
-                }
-              },
-              {
-                "name": "label",
-                "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "library",
-                "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "getUrl",
-                "value": {}
-              },
-              {
-                "name": "handleLabelChange",
-                "value": {}
-              },
-              {
-                "name": "setIcon",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-load",
-                "description": "Emitido quando o ícone foi carregado."
-              },
-              {
-                "name": "cps-error",
-                "description": "Emitido quando o ícone falha para carregar devido a um erro."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "name",
-              "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
-              "value": {
-                "type": "string | undefined"
-              }
-            },
-            {
-              "name": "src",
-              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
-              "value": {
-                "type": "string | undefined"
-              }
-            },
-            {
-              "name": "label",
-              "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "library",
-              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
-              "value": {
-                "type": "string"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-include",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/include",
@@ -2439,6 +3245,15 @@
               }
             }
           ]
+        },
+        {
+          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
         },
         {
           "name": "cps-input",
@@ -3241,6 +4056,88 @@
           ]
         },
         {
+          "name": "cps-logo",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
+          "js": {
+            "properties": [
+              {
+                "name": "type",
+                "description": "O tipo de _logo_ a ser renderizado.",
+                "value": {
+                  "type": "'area-di' | 'cps' | 'elements' | 'sp-horizontal' | 'sp-vertical'"
+                }
+              },
+              {
+                "name": "variant",
+                "description": "A variante temática do _logo_.",
+                "value": {
+                  "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "type",
+              "description": "O tipo de _logo_ a ser renderizado.",
+              "value": {
+                "type": "'area-di' | 'cps' | 'elements' | 'sp-horizontal' | 'sp-vertical'"
+              }
+            },
+            {
+              "name": "variant",
+              "description": "A variante temática do _logo_.",
+              "value": {
+                "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-menu",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
+          "js": {
+            "properties": [
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handleMouseDown",
+                "value": {}
+              },
+              {
+                "name": "handleSlotChange",
+                "value": {}
+              },
+              {
+                "name": "isMenuItem",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-select",
+                "description": "Emitido quando um item de menu interno é selecionado."
+              }
+            ]
+          },
+          "attributes": []
+        },
+        {
           "name": "cps-menu-item",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-item",
@@ -3358,48 +4255,6 @@
           "js": {
             "properties": [],
             "events": []
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-menu",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
-          "js": {
-            "properties": [
-              {
-                "name": "defaultSlot",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleKeyDown",
-                "value": {}
-              },
-              {
-                "name": "handleMouseDown",
-                "value": {}
-              },
-              {
-                "name": "handleSlotChange",
-                "value": {}
-              },
-              {
-                "name": "isMenuItem",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-select",
-                "description": "Emitido quando um item de menu interno é selecionado."
-              }
-            ]
           },
           "attributes": []
         },
@@ -3658,6 +4513,189 @@
             {
               "name": "disabled",
               "description": "Desabilita a opção.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-radio",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/radio",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "hasFocus",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "generatedId",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "title",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "id",
+                "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "label",
+                "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do campo.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o campo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "checked",
+                "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleIdChange",
+                "value": {}
+              },
+              {
+                "name": "addEventListeners",
+                "value": {}
+              },
+              {
+                "name": "removeEventListeners",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "setInitialAttributes",
+                "value": {}
+              },
+              {
+                "name": "handleCheckedChange",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o controle perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o controle obtém o foco."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "id",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "label",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do campo.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o campo.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "checked",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
               "value": {
                 "type": "boolean"
               }
@@ -3925,189 +4963,6 @@
             {
               "name": "required",
               "description": "Torna o campo como sendo de preenchimento obrigatório, garantindo que um `<cps-radio>` ou um `<cps-toggle-button>` internos esteja marcado.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-radio",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/radio",
-          "js": {
-            "properties": [
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "hasFocus",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "generatedId",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "title",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "id",
-                "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "name",
-                "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "label",
-                "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do campo.",
-                "value": {
-                  "type": "'small' | 'medium' | 'large'"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o campo.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "checked",
-                "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "handleIdChange",
-                "value": {}
-              },
-              {
-                "name": "addEventListeners",
-                "value": {}
-              },
-              {
-                "name": "removeEventListeners",
-                "value": {}
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "setInitialAttributes",
-                "value": {}
-              },
-              {
-                "name": "handleCheckedChange",
-                "value": {}
-              },
-              {
-                "name": "handleDisabledChange",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-blur",
-                "description": "Emitido quando o controle perde o foco."
-              },
-              {
-                "name": "cps-focus",
-                "description": "Emitido quando o controle obtém o foco."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "title",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "id",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "value",
-              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "name",
-              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "label",
-              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do campo.",
-              "value": {
-                "type": "'small' | 'medium' | 'large'"
-              }
-            },
-            {
-              "name": "disabled",
-              "description": "Desabilita o campo.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "checked",
-              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
               "value": {
                 "type": "boolean"
               }
@@ -5957,861 +6812,6 @@
               "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\n\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\n\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\nmas não em todos, então teste com cautela se precisar habilitar.",
               "value": {
                 "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-dialog",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/dialog",
-          "js": {
-            "properties": [
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "modal",
-                "value": {
-                  "type": "Modal"
-                }
-              },
-              {
-                "name": "originalTrigger",
-                "value": {
-                  "type": "HTMLElement | null"
-                }
-              },
-              {
-                "name": "dialog",
-                "value": {
-                  "type": "HTMLElement"
-                }
-              },
-              {
-                "name": "panel",
-                "value": {
-                  "type": "HTMLElement"
-                }
-              },
-              {
-                "name": "backdrop",
-                "value": {
-                  "type": "HTMLElement"
-                }
-              },
-              {
-                "name": "open",
-                "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "closable",
-                "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "label",
-                "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "ariaLabel",
-                "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "returnValue",
-                "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
-                "value": {
-                  "type": "string | boolean | undefined"
-                }
-              },
-              {
-                "name": "setupFooterButtons",
-                "value": {}
-              },
-              {
-                "name": "handleFooterButtonClick",
-                "value": {}
-              },
-              {
-                "name": "handleDocumentKeyDown",
-                "value": {}
-              },
-              {
-                "name": "playAnimation",
-                "value": {}
-              },
-              {
-                "name": "requestClose",
-                "value": {}
-              },
-              {
-                "name": "addOpenListeners",
-                "value": {}
-              },
-              {
-                "name": "removeOpenListeners",
-                "value": {}
-              },
-              {
-                "name": "handleFormSubmission",
-                "value": {}
-              },
-              {
-                "name": "handleOpenChange",
-                "value": {}
-              },
-              {
-                "name": "show",
-                "description": "Mostra a caixa de diálogo.",
-                "value": {}
-              },
-              {
-                "name": "close",
-                "description": "Fecha a caixa de diálogo, opcionalmente definindo um valor de retorno.",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-show",
-                "description": "Emitido quando a caixa de diálogo começa a ser aberta."
-              },
-              {
-                "name": "cps-after-show",
-                "description": "Emitido após a caixa de diálogo ser aberta e todas as animações serem concluídas."
-              },
-              {
-                "name": "cps-close",
-                "description": "Emitido quando a caixa de diálogo começa a ser fechada."
-              },
-              {
-                "name": "cps-after-close",
-                "description": "Emitido após a caixa de diálogo ser fechada e todas as animações serem concluídas."
-              },
-              {
-                "name": "cps-initial-focus",
-                "description": "Emitido quando a caixa de diálogo é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada."
-              },
-              {
-                "name": "cps-request-close",
-                "description": "Emitido quando o usuário tenta fechar a caixa de diálogo clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a caixa de diálogo aberta. Evite usar isso a menos que fechar a caixa de diálogo resulte em comportamento destrutivo, como perda de dados."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "open",
-              "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "closable",
-              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "label",
-              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "aria-label",
-              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "returnValue",
-              "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
-              "value": {
-                "type": "string | boolean | undefined"
-              }
-            }
-          ]
-        },
-        {
-          "description": "Displays an alert dialog using a `CpsDialog` instance.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Displays a confirm dialog using a `CpsDialog` instance.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-format-bytes",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-bytes",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "value",
-                "description": "O número (valor bruto em _bytes_ ou _bits_) a ser formatado.",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "unit",
-                "description": "O tipo de unidade a ser considerado para as conversões de valores.",
-                "value": {
-                  "type": "'byte' | 'bit'"
-                }
-              },
-              {
-                "name": "display",
-                "description": "Determina como formatar o resultado, por exemplo, \"100 bytes\", \"100 b\" ou \"100b\".",
-                "value": {
-                  "type": "'long' | 'short' | 'narrow'"
-                }
-              },
-              {
-                "name": "_convertToBytes",
-                "value": {}
-              },
-              {
-                "name": "_formatBytes",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "value",
-              "description": "O número (valor bruto em _bytes_ ou _bits_) a ser formatado.",
-              "value": {
-                "type": "number"
-              }
-            },
-            {
-              "name": "unit",
-              "description": "O tipo de unidade a ser considerado para as conversões de valores.",
-              "value": {
-                "type": "'byte' | 'bit'"
-              }
-            },
-            {
-              "name": "display",
-              "description": "Determina como formatar o resultado, por exemplo, \"100 bytes\", \"100 b\" ou \"100b\".",
-              "value": {
-                "type": "'long' | 'short' | 'narrow'"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-format-date",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-date",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "date",
-                "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
-                "value": {
-                  "type": "Date | string"
-                }
-              },
-              {
-                "name": "weekday",
-                "description": "O formato para exibir o dia da semana.",
-                "value": {
-                  "type": "'narrow' | 'short' | 'long'"
-                }
-              },
-              {
-                "name": "era",
-                "description": "O formato para exibir a era.",
-                "value": {
-                  "type": "'narrow' | 'short' | 'long'"
-                }
-              },
-              {
-                "name": "year",
-                "description": "O formato para exibir o ano.",
-                "value": {
-                  "type": "'numeric' | '2-digit'"
-                }
-              },
-              {
-                "name": "month",
-                "description": "O formato para exibir o mês.",
-                "value": {
-                  "type": "'numeric' | '2-digit' | 'narrow' | 'short' | 'long'"
-                }
-              },
-              {
-                "name": "day",
-                "description": "O formato para exibir o dia.",
-                "value": {
-                  "type": "'numeric' | '2-digit'"
-                }
-              },
-              {
-                "name": "hour",
-                "description": "O formato para exibir a hora.",
-                "value": {
-                  "type": "'numeric' | '2-digit'"
-                }
-              },
-              {
-                "name": "minute",
-                "description": "O formato para exibir os minutos.",
-                "value": {
-                  "type": "'numeric' | '2-digit'"
-                }
-              },
-              {
-                "name": "second",
-                "description": "O formato para exibir os segundos.",
-                "value": {
-                  "type": "'numeric' | '2-digit'"
-                }
-              },
-              {
-                "name": "timeZoneName",
-                "description": "O formato para exibir o nome do fuso horário.",
-                "value": {
-                  "type": "'short' | 'long'"
-                }
-              },
-              {
-                "name": "timeZone",
-                "description": "O fuso horário no qual o horário será expresso.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "hourFormat",
-                "description": "O formato para exibir a hora.",
-                "value": {
-                  "type": "'auto' | '12' | '24'"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "date",
-              "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
-              "value": {
-                "type": "Date | string"
-              }
-            },
-            {
-              "name": "weekday",
-              "description": "O formato para exibir o dia da semana.",
-              "value": {
-                "type": "'narrow' | 'short' | 'long'"
-              }
-            },
-            {
-              "name": "era",
-              "description": "O formato para exibir a era.",
-              "value": {
-                "type": "'narrow' | 'short' | 'long'"
-              }
-            },
-            {
-              "name": "year",
-              "description": "O formato para exibir o ano.",
-              "value": {
-                "type": "'numeric' | '2-digit'"
-              }
-            },
-            {
-              "name": "month",
-              "description": "O formato para exibir o mês.",
-              "value": {
-                "type": "'numeric' | '2-digit' | 'narrow' | 'short' | 'long'"
-              }
-            },
-            {
-              "name": "day",
-              "description": "O formato para exibir o dia.",
-              "value": {
-                "type": "'numeric' | '2-digit'"
-              }
-            },
-            {
-              "name": "hour",
-              "description": "O formato para exibir a hora.",
-              "value": {
-                "type": "'numeric' | '2-digit'"
-              }
-            },
-            {
-              "name": "minute",
-              "description": "O formato para exibir os minutos.",
-              "value": {
-                "type": "'numeric' | '2-digit'"
-              }
-            },
-            {
-              "name": "second",
-              "description": "O formato para exibir os segundos.",
-              "value": {
-                "type": "'numeric' | '2-digit'"
-              }
-            },
-            {
-              "name": "time-zone-name",
-              "description": "O formato para exibir o nome do fuso horário.",
-              "value": {
-                "type": "'short' | 'long'"
-              }
-            },
-            {
-              "name": "time-zone",
-              "description": "O fuso horário no qual o horário será expresso.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "hour-format",
-              "description": "O formato para exibir a hora.",
-              "value": {
-                "type": "'auto' | '12' | '24'"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-format-number",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-number",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "value",
-                "description": "O número a ser formatado.",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "type",
-                "description": "O estilo de formatação a ser utilizado.",
-                "value": {
-                  "type": "'currency' | 'decimal' | 'percent'"
-                }
-              },
-              {
-                "name": "noGrouping",
-                "description": "Desativa os separadores de agrupamento.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "currency",
-                "description": "O código de moeda [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) a ser utilizado na formatação.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "currencyDisplay",
-                "description": "Definição sobre como exibir a moeda.",
-                "value": {
-                  "type": "'symbol' | 'narrowSymbol' | 'code' | 'name'"
-                }
-              },
-              {
-                "name": "minimumIntegerDigits",
-                "description": "O número mínimo de dígitos inteiros a ser utilizado. Valores possíveis são 1-21.",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "minimumFractionDigits",
-                "description": "O número mínimo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "maximumFractionDigits",
-                "description": "O número máximo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "minimumSignificantDigits",
-                "description": "O número mínimo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "maximumSignificantDigits",
-                "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
-                "value": {
-                  "type": "number"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "value",
-              "description": "O número a ser formatado.",
-              "value": {
-                "type": "number"
-              }
-            },
-            {
-              "name": "type",
-              "description": "O estilo de formatação a ser utilizado.",
-              "value": {
-                "type": "'currency' | 'decimal' | 'percent'"
-              }
-            },
-            {
-              "name": "no-grouping",
-              "description": "Desativa os separadores de agrupamento.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "currency",
-              "description": "O código de moeda [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) a ser utilizado na formatação.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "currency-display",
-              "description": "Definição sobre como exibir a moeda.",
-              "value": {
-                "type": "'symbol' | 'narrowSymbol' | 'code' | 'name'"
-              }
-            },
-            {
-              "name": "minimum-integer-digits",
-              "description": "O número mínimo de dígitos inteiros a ser utilizado. Valores possíveis são 1-21.",
-              "value": {
-                "type": "number"
-              }
-            },
-            {
-              "name": "minimum-fraction-digits",
-              "description": "O número mínimo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
-              "value": {
-                "type": "number"
-              }
-            },
-            {
-              "name": "maximum-fraction-digits",
-              "description": "O número máximo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
-              "value": {
-                "type": "number"
-              }
-            },
-            {
-              "name": "minimum-significant-digits",
-              "description": "O número mínimo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
-              "value": {
-                "type": "number"
-              }
-            },
-            {
-              "name": "maximum-significant-digits",
-              "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
-              "value": {
-                "type": "number"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-format-relative-time",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-relative-time",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "updateTimeout",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "isoTime",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "relativeTime",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "titleTime",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "date",
-                "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
-                "value": {
-                  "type": "Date | string"
-                }
-              },
-              {
-                "name": "format",
-                "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
-                "value": {
-                  "type": "'long' | 'short' | 'narrow'"
-                }
-              },
-              {
-                "name": "numeric",
-                "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "sync",
-                "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
-                "value": {
-                  "type": "boolean"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "date",
-              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
-              "value": {
-                "type": "Date | string"
-              }
-            },
-            {
-              "name": "format",
-              "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
-              "value": {
-                "type": "'long' | 'short' | 'narrow'"
-              }
-            },
-            {
-              "name": "numeric",
-              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "sync",
-              "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "description": "Configuration for the available time units.\nEach unit has a maximum time difference it can represent, a value in milliseconds, and the unit name.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Calculates the time remaining until the next occurrence of a specified time unit.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Adds an icon to the list of watched icons.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Removes an icon from the list of watched icons.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Returns a library from the registry.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Adds an icon library to the registry, or overrides an existing one.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Removes an icon library from the registry.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-logo",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
-          "js": {
-            "properties": [
-              {
-                "name": "type",
-                "description": "O tipo de _logo_ a ser renderizado.",
-                "value": {
-                  "type": "'area-di' | 'cps' | 'elements' | 'sp-horizontal' | 'sp-vertical'"
-                }
-              },
-              {
-                "name": "variant",
-                "description": "A variante temática do _logo_.",
-                "value": {
-                  "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "type",
-              "description": "O tipo de _logo_ a ser renderizado.",
-              "value": {
-                "type": "'area-di' | 'cps' | 'elements' | 'sp-horizontal' | 'sp-vertical'"
-              }
-            },
-            {
-              "name": "variant",
-              "description": "A variante temática do _logo_.",
-              "value": {
-                "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
               }
             }
           ]

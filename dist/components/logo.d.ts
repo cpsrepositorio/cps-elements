@@ -1,1 +1,2 @@
-export { CpsLogo } from './logo/logo.component.js';
+export * from './logo/logo.component.js';
+export { default } from './logo/logo.component.js';

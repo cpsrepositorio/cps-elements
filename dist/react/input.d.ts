@@ -1,4 +1,4 @@
-import Component from '../components/input.js';
+import Component from '../components/input/input.component.js';
 export declare const CpsInput: import("@lit-labs/react").ReactWebComponent<Component, {
     onCpsBlur: string;
     onCpsChange: string;

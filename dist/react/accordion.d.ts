@@ -1,4 +1,4 @@
-import Component from '../components/accordion.js';
+import Component from '../components/accordion/accordion.component.js';
 export declare const CpsAccordion: import("@lit-labs/react").ReactWebComponent<Component, {
     onCpsShow: string;
     onCpsAfterShow: string;

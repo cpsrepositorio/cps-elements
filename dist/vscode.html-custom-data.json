@@ -2,18 +2,6 @@
   "version": 1.1,
   "tags": [
     {
-      "name": "cps-accordion-group",
-      "description": "Grupos de _accordions_ permitem automatizar expansão/contração exclusiva de múltiplos [_accordions_](/componentes/accordion).\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do grupo, necessariamente um ou mais de `<cps-accordion>`.\n\n### **CSS Properties:**\n - **--gap** - O espaçamento entre _accordions_ dentro do grupo. Padrão: `var(--cps-spacing-3)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).",
-      "attributes": [
-        {
-          "name": "multiple",
-          "description": "Permite que múltiplos _accordions_ sejam abertos simultaneamente.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
       "name": "cps-accordion",
       "description": "_Accordion_ é utilizado para expandir e contrair conteúdo de forma agrupada e organizada.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando o _accordion_ de opções começa a ser exibida.\n- **cps-after-show** - Emitido após o _accordion_ de opções ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando o _accordion_ de opções começa a ser ocultada.\n- **cps-after-hide** - Emitido após o _accordion_ de opções ser ocultada e todas as animações terem sido concluídas.\n\n### **Methods:**\n - **show()** - Exibe o conteúdo associado a este _accordion_.\n- **hide()** - Oculta o conteúdo associado a este _accordion_.\n- **click()** - Simula um _click_ no cabeçalho.\n- **focus(options: _FocusOptions_)** - Coloca o foco no cabeçalho.\n- **blur()** - Remove o foco do cabeçalho.\n\n### **Slots:**\n - _default_ - O conteúdo interno do _accordion_.\n- **icon** - Um ícone opcional antes do título do _accordion_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **header** - O cabeçalho do _accordion_ (um `<button>`).\n- **content** - O painel de conteúdo interno do _accordion_ (um `<div>`).",
       "attributes": [
@@ -36,6 +24,18 @@
       "references": []
     },
     {
+      "name": "cps-accordion-group",
+      "description": "Grupos de _accordions_ permitem automatizar expansão/contração exclusiva de múltiplos [_accordions_](/componentes/accordion).\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do grupo, necessariamente um ou mais de `<cps-accordion>`.\n\n### **CSS Properties:**\n - **--gap** - O espaçamento entre _accordions_ dentro do grupo. Padrão: `var(--cps-spacing-3)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).",
+      "attributes": [
+        {
+          "name": "multiple",
+          "description": "Permite que múltiplos _accordions_ sejam abertos simultaneamente.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-avatar",
       "description": "Avatares são usados para iconograficamente representar uma pessoa ou objeto.\n\n\n---\n\n\n\n\n### **Slots:**\n - **badge** - O distintivo informativo atrelado a este avatar. Recomenda-se utilizar `<cps-badge>` como conteúdo.\n- **icon** - O ícone a ser usado quando nenhuma imagem ou iniciais estão presentes. Recomenda-se utilizar `<cps-icon>` como conteúdo.\n\n### **CSS Properties:**\n - **--avatar-size** - A medida de tamanho do avatar, utilizada tanto como `width` quanto `height`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **icon** - O elemento que embrulha a renderização do _slot_ `icon`.\n- **initials** - O elemento que embrulha a renderização das iniciais.\n- **image** - A imagem do avatar (um `<img>`). Exibido apenas quando o atributo `image` está presente.",
       "attributes": [
@@ -51,7 +51,7 @@
         },
         {
           "name": "initials",
-          "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+          "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
           "values": [{ "name": "auto" }]
         },
         {
@@ -70,7 +70,7 @@
         },
         {
           "name": "color",
-          "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+          "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
           "values": [{ "name": "auto" }, { "name": "none" }]
         }
       ],
@@ -125,18 +125,6 @@
         {
           "name": "pulse",
           "description": "Efeito pulsante para chamar atenção extra.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-button-group",
-      "description": "Grupos de botões podem ser usados para agrupar botões relacionados em seções.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - Um ou mais elementos `<cps-button>` a exibir dentro do grupo de botões.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o grupo.",
-      "attributes": [
-        {
-          "name": "label",
-          "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
           "values": []
         }
       ],
@@ -276,6 +264,18 @@
       "references": []
     },
     {
+      "name": "cps-button-group",
+      "description": "Grupos de botões podem ser usados para agrupar botões relacionados em seções.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - Um ou mais elementos `<cps-button>` a exibir dentro do grupo de botões.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o grupo.",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-card",
       "description": "_Cards_ são utilizados para exibir informações de forma estruturada e destacada.\n\n\n---\n\n\n\n\n### **Methods:**\n - **click(event: _MouseEvent_)** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no elemento.\n- **blur()** - Remove o foco do elemento.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo principal do _card_.\n- **header** - O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.\n- **footer** - O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.",
       "attributes": [
@@ -386,6 +386,38 @@
         {
           "name": "removable",
           "description": "Marca o _chip_ como removível, exibindo-se um botão de remoção junto ao conteúdo interno.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-dialog",
+      "description": "Caixas de diálogo, às vezes chamadas de \"modais\", aparecem acima de outros elementos na página e requerem atenção imediata do usuário.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando a caixa de diálogo começa a ser aberta.\n- **cps-after-show** - Emitido após a caixa de diálogo ser aberta e todas as animações serem concluídas.\n- **cps-close** - Emitido quando a caixa de diálogo começa a ser fechada.\n- **cps-after-close** - Emitido após a caixa de diálogo ser fechada e todas as animações serem concluídas.\n- **cps-initial-focus** - Emitido quando a caixa de diálogo é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada.\n- **cps-request-close** - Emitido quando o usuário tenta fechar a caixa de diálogo clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a caixa de diálogo aberta. Evite usar isso a menos que fechar a caixa de diálogo resulte em comportamento destrutivo, como perda de dados.\n\n### **Methods:**\n - **show()** - Mostra a caixa de diálogo.\n- **close(returnValue: _string | boolean_)** - Fecha a caixa de diálogo, opcionalmente definindo um valor de retorno.\n\n### **Slots:**\n - _default_ - O conteúdo principal da caixa de diálogo.\n- **label** - O rótulo da caixa de diálogo. Alternativamente, você pode usar o atributo `label`.\n- **header-actions** - Ações opcionais para adicionar ao cabeçalho. Funciona melhor com `<cps-icon-button>`.\n- **footer** - O rodapé da caixa de diálogo, geralmente um ou mais botões representando várias opções.\n\n### **CSS Properties:**\n - **--width** - A largura preferida da caixa de diálogo. Observe que, ainda assim, a caixa de diálogo diminuirá para se acomodar em telas menores. _(default: undefined)_\n- **--header-spacing** - A quantidade de preenchimento a ser usada para o cabeçalho. _(default: undefined)_\n- **--body-spacing** - A quantidade de preenchimento a ser usada para o corpo. _(default: undefined)_\n- **--footer-spacing** - A quantidade de preenchimento a ser usada para o rodapé. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento base que envolve o componente.\n- **backdrop** - A sobreposição que cobre a tela por trás da caixa de diálogo.\n- **panel** - O painel da caixa de diálogo (onde a caixa de diálogo e seu conteúdo são renderizados).\n- **header** - O cabeçalho da caixa de diálogo. Este elemento envolve o título e ações do cabeçalho.\n- **header-actions** - Contêiner para ações opcionais do cabeçalho.\n- **title** - O título da caixa de diálogo.\n- **close-button** - O botão de fechar, um `<cps-icon-button>`.\n- **close-button__base** - A parte `base` exportada do botão de fechar.\n- **body** - O corpo da caixa de diálogo.\n- **footer** - O rodapé da caixa de diálogo.",
+      "attributes": [
+        {
+          "name": "open",
+          "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+          "values": []
+        },
+        {
+          "name": "closable",
+          "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+          "values": []
+        },
+        {
+          "name": "label",
+          "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "aria-label",
+          "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+          "values": []
+        },
+        {
+          "name": "returnValue",
+          "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
           "values": []
         }
       ],
@@ -595,8 +627,239 @@
       "references": []
     },
     {
+      "name": "cps-format-bytes",
+      "description": "Formata um número como um valor em _bytes_ ou _bits_ legível por humanos.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "O número (valor bruto em _bytes_ ou _bits_) a ser formatado.",
+          "values": []
+        },
+        {
+          "name": "unit",
+          "description": "O tipo de unidade a ser considerado para as conversões de valores.",
+          "values": [{ "name": "byte" }, { "name": "bit" }]
+        },
+        {
+          "name": "display",
+          "description": "Determina como formatar o resultado, por exemplo, \"100 bytes\", \"100 b\" ou \"100b\".",
+          "values": [
+            { "name": "long" },
+            { "name": "short" },
+            { "name": "narrow" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-format-date",
+      "description": "Formata uma data/hora usando o idioma e as opções especificadas.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "date",
+          "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+          "values": [{ "name": "Date" }]
+        },
+        {
+          "name": "weekday",
+          "description": "O formato para exibir o dia da semana.",
+          "values": [
+            { "name": "narrow" },
+            { "name": "short" },
+            { "name": "long" }
+          ]
+        },
+        {
+          "name": "era",
+          "description": "O formato para exibir a era.",
+          "values": [
+            { "name": "narrow" },
+            { "name": "short" },
+            { "name": "long" }
+          ]
+        },
+        {
+          "name": "year",
+          "description": "O formato para exibir o ano.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "month",
+          "description": "O formato para exibir o mês.",
+          "values": [
+            { "name": "numeric" },
+            { "name": "2-digit" },
+            { "name": "narrow" },
+            { "name": "short" },
+            { "name": "long" }
+          ]
+        },
+        {
+          "name": "day",
+          "description": "O formato para exibir o dia.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "hour",
+          "description": "O formato para exibir a hora.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "minute",
+          "description": "O formato para exibir os minutos.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "second",
+          "description": "O formato para exibir os segundos.",
+          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
+        },
+        {
+          "name": "time-zone-name",
+          "description": "O formato para exibir o nome do fuso horário.",
+          "values": [{ "name": "short" }, { "name": "long" }]
+        },
+        {
+          "name": "time-zone",
+          "description": "O fuso horário no qual o horário será expresso.",
+          "values": []
+        },
+        {
+          "name": "hour-format",
+          "description": "O formato para exibir a hora.",
+          "values": [{ "name": "auto" }, { "name": "12" }, { "name": "24" }]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-format-number",
+      "description": "Formata um número usando o idioma e as opções especificadas.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "O número a ser formatado.",
+          "values": []
+        },
+        {
+          "name": "type",
+          "description": "O estilo de formatação a ser utilizado.",
+          "values": [
+            { "name": "currency" },
+            { "name": "decimal" },
+            { "name": "percent" }
+          ]
+        },
+        {
+          "name": "no-grouping",
+          "description": "Desativa os separadores de agrupamento.",
+          "values": []
+        },
+        {
+          "name": "currency",
+          "description": "O código de moeda [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) a ser utilizado na formatação.",
+          "values": []
+        },
+        {
+          "name": "currency-display",
+          "description": "Definição sobre como exibir a moeda.",
+          "values": [
+            { "name": "symbol" },
+            { "name": "narrowSymbol" },
+            { "name": "code" },
+            { "name": "name" }
+          ]
+        },
+        {
+          "name": "minimum-integer-digits",
+          "description": "O número mínimo de dígitos inteiros a ser utilizado. Valores possíveis são 1-21.",
+          "values": []
+        },
+        {
+          "name": "minimum-fraction-digits",
+          "description": "O número mínimo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+          "values": []
+        },
+        {
+          "name": "maximum-fraction-digits",
+          "description": "O número máximo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
+          "values": []
+        },
+        {
+          "name": "minimum-significant-digits",
+          "description": "O número mínimo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+          "values": []
+        },
+        {
+          "name": "maximum-significant-digits",
+          "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-format-relative-time",
+      "description": "Exibe uma frase de tempo localizada relativamente à data e hora atuais.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "date",
+          "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+          "values": [{ "name": "Date" }]
+        },
+        {
+          "name": "format",
+          "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+          "values": [
+            { "name": "long" },
+            { "name": "short" },
+            { "name": "narrow" }
+          ]
+        },
+        {
+          "name": "numeric",
+          "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+          "values": []
+        },
+        {
+          "name": "sync",
+          "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-icon",
+      "description": "Ícones são símbolos gráficos para representação de ações ou informações em uma interface.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o ícone foi carregado.\n- **cps-error** - Emitido quando o ícone falha para carregar devido a um erro.\n\n### **CSS Parts:**\n - **svg** - O elemento SVG renderizado.",
+      "attributes": [
+        {
+          "name": "name",
+          "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+          "values": []
+        },
+        {
+          "name": "src",
+          "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+          "values": []
+        },
+        {
+          "name": "label",
+          "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
+          "values": []
+        },
+        {
+          "name": "library",
+          "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-icon-button",
-      "description": "Botões de ícone são simples, apenas um ícone dentro,\nnormalmente para uso dentro de outros componentes.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).\n- **icon** - O ícone do botão (um `<cps-icon>`).",
+      "description": "Botões de ícone são simples, apenas um ícone dentro, normalmente para uso dentro de outros componentes.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o botão perde o foco.\n- **cps-focus** - Emitido quando o botão obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no botão.\n- **focus(options: _FocusOptions_)** - Coloca o foco no botão.\n- **blur()** - Remove o foco do botão.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (que pode ser `<button>` ou `<a>`).\n- **icon** - O ícone do botão (um `<cps-icon>`).",
       "attributes": [
         {
           "name": "size",
@@ -655,33 +918,6 @@
         {
           "name": "disabled",
           "description": "Desabilita o botão.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-icon",
-      "description": "Ícones são símbolos gráficos para representação de ações ou informações em uma interface.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o ícone foi carregado.\n- **cps-error** - Emitido quando o ícone falha para carregar devido a um erro.\n\n### **CSS Parts:**\n - **svg** - O elemento SVG renderizado.",
-      "attributes": [
-        {
-          "name": "name",
-          "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
-          "values": []
-        },
-        {
-          "name": "src",
-          "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
-          "values": []
-        },
-        {
-          "name": "label",
-          "description": "Descrição alternativa para ferramentas de acessibilidade.\nSe omitido, será um ícone puramente visual, ignorado por tecnologias assistivas.",
-          "values": []
-        },
-        {
-          "name": "library",
-          "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
           "values": []
         }
       ],
@@ -1003,6 +1239,39 @@
       "references": []
     },
     {
+      "name": "cps-logo",
+      "description": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "type",
+          "description": "O tipo de _logo_ a ser renderizado.",
+          "values": [
+            { "name": "area-di" },
+            { "name": "cps" },
+            { "name": "elements" },
+            { "name": "sp-horizontal" },
+            { "name": "sp-vertical" }
+          ]
+        },
+        {
+          "name": "variant",
+          "description": "A variante temática do _logo_.",
+          "values": [
+            { "name": "default" },
+            { "name": "monochromatic" },
+            { "name": "monochromatic-inverted" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-menu",
+      "description": "Menus oferecem uma lista de opções para o usuário escolher.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-select** - Emitido quando um item de menu interno é selecionado.\n\n### **Slots:**\n - _default_ - Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
+      "attributes": [],
+      "references": []
+    },
+    {
       "name": "cps-menu-item",
       "description": "Itens de menu fornecem opções para o usuário escolher em um menu.\n\n\n---\n\n\n\n\n### **Methods:**\n - **getTextLabel()** - Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.\n\n### **Slots:**\n - _default_ - O texto interno do item de menu.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **check** - O elemento que embrulha o ícone de checagem (caso o item de menu seja do tipo `checkbox`), visível apenas quando o item de menu está marcado.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **label** - O elemento que embrulha o conteúdo principal, normalmente um texto literal.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
       "attributes": [
@@ -1032,12 +1301,6 @@
     {
       "name": "cps-menu-label",
       "description": "Rótulos de menu são usados para descrever um grupo de itens de menu.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O texto interno do rótulo de menu.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
-      "attributes": [],
-      "references": []
-    },
-    {
-      "name": "cps-menu",
-      "description": "Menus oferecem uma lista de opções para o usuário escolher.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-select** - Emitido quando um item de menu interno é selecionado.\n\n### **Slots:**\n - _default_ - Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
       "attributes": [],
       "references": []
     },
@@ -1097,6 +1360,53 @@
       "references": []
     },
     {
+      "name": "cps-radio",
+      "description": "Campos de opção (_radio_) permitem que o usuário selecione uma única opção de um grupo.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n\n### **Slots:**\n - _default_ - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o `<input>` e eventuais elementos de apoio para sua renderização.\n- **control** - O elemento circular que embrulha o estado checagem do campo.\n- **control--checked** - Obtém para estilização o elemento `control`, somente quando o campo está marcado.\n- **checked-handle** - O identificador de estado checado, um elemento `<span>` com estilização circular.\n- **label** - O elemento que embrulha o rótulo do campo, um elemento `<label>`.",
+      "attributes": [
+        { "name": "title", "values": [] },
+        {
+          "name": "id",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "name",
+          "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "label",
+          "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do campo.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o campo.",
+          "values": []
+        },
+        {
+          "name": "checked",
+          "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-radio-group",
       "description": "Grupos de opções englobam múltiplos [Radio](/componentes/radio) ou [Toggle Button](/componentes/toggle-button) para que funcionem como um único controle.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity(): _boolean_** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - _default_ - O _slot_ padrão onde elementos `<cps-radio>` ou `<cps-toggle-button>` são colocados.\n- **label** - Rótulo informativo do campo. Obrigatório para acessibilidade adequada. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **button-group** - O componente de grupo de botões que embrulha botões alternáveis (um `<cps-button-group>`).\n- **button-group__base** - A parte `base` re-exportada do grupo de botões.",
       "attributes": [
@@ -1142,53 +1452,6 @@
         {
           "name": "required",
           "description": "Torna o campo como sendo de preenchimento obrigatório, garantindo que um `<cps-radio>` ou um `<cps-toggle-button>` internos esteja marcado.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-radio",
-      "description": "Campos de opção (_radio_) permitem que o usuário selecione uma única opção de um grupo.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n\n### **Slots:**\n - _default_ - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o `<input>` e eventuais elementos de apoio para sua renderização.\n- **control** - O elemento circular que embrulha o estado checagem do campo.\n- **control--checked** - Obtém para estilização o elemento `control`, somente quando o campo está marcado.\n- **checked-handle** - O identificador de estado checado, um elemento `<span>` com estilização circular.\n- **label** - O elemento que embrulha o rótulo do campo, um elemento `<label>`.",
-      "attributes": [
-        { "name": "title", "values": [] },
-        {
-          "name": "id",
-          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
-          "values": []
-        },
-        {
-          "name": "value",
-          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
-          "values": []
-        },
-        {
-          "name": "name",
-          "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
-          "values": []
-        },
-        {
-          "name": "label",
-          "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
-          "values": []
-        },
-        {
-          "name": "size",
-          "description": "O tamanho do campo.",
-          "values": [
-            { "name": "small" },
-            { "name": "medium" },
-            { "name": "large" }
-          ]
-        },
-        {
-          "name": "disabled",
-          "description": "Desabilita o campo.",
-          "values": []
-        },
-        {
-          "name": "checked",
-          "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
           "values": []
         }
       ],
@@ -1658,269 +1921,6 @@
           "name": "hoist",
           "description": "Habilite esta opção para que a dica de ferramenta seja exibida em um contêiner de nível superior\n(usualmente, o `<body>`), ao invés de ser renderizado junto ao seu elemento alvo.\n\nIsso é útil quando você precisa exibir conteúdo que pode ser cortado por um contêiner pai que\ntenha `overflow` `hidden`, `scroll` ou `auto`, ou quando você precisa exibir a dica de ferramenta\nem um contêiner com um `z-index` menor que o do seu elemento alvo.\n\nIçar usa uma estratégia de posicionamento fixo que funciona em muitos cenários,\nmas não em todos, então teste com cautela se precisar habilitar.",
           "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-dialog",
-      "description": "Caixas de diálogo, às vezes chamadas de \"modais\", aparecem acima de outros elementos na página e requerem atenção imediata do usuário.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando a caixa de diálogo começa a ser aberta.\n- **cps-after-show** - Emitido após a caixa de diálogo ser aberta e todas as animações serem concluídas.\n- **cps-close** - Emitido quando a caixa de diálogo começa a ser fechada.\n- **cps-after-close** - Emitido após a caixa de diálogo ser fechada e todas as animações serem concluídas.\n- **cps-initial-focus** - Emitido quando a caixa de diálogo é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada.\n- **cps-request-close** - Emitido quando o usuário tenta fechar a caixa de diálogo clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a caixa de diálogo aberta. Evite usar isso a menos que fechar a caixa de diálogo resulte em comportamento destrutivo, como perda de dados.\n\n### **Methods:**\n - **show()** - Mostra a caixa de diálogo.\n- **close(returnValue: _string | boolean_)** - Fecha a caixa de diálogo, opcionalmente definindo um valor de retorno.\n\n### **Slots:**\n - _default_ - O conteúdo principal da caixa de diálogo.\n- **label** - O rótulo da caixa de diálogo. Alternativamente, você pode usar o atributo `label`.\n- **header-actions** - Ações opcionais para adicionar ao cabeçalho. Funciona melhor com `<cps-icon-button>`.\n- **footer** - O rodapé da caixa de diálogo, geralmente um ou mais botões representando várias opções.\n\n### **CSS Properties:**\n - **--width** - A largura preferida da caixa de diálogo. Observe que, ainda assim, a caixa de diálogo diminuirá para se acomodar em telas menores. _(default: undefined)_\n- **--header-spacing** - A quantidade de preenchimento a ser usada para o cabeçalho. _(default: undefined)_\n- **--body-spacing** - A quantidade de preenchimento a ser usada para o corpo. _(default: undefined)_\n- **--footer-spacing** - A quantidade de preenchimento a ser usada para o rodapé. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento base que envolve o componente.\n- **backdrop** - A sobreposição que cobre a tela por trás da caixa de diálogo.\n- **panel** - O painel da caixa de diálogo (onde a caixa de diálogo e seu conteúdo são renderizados).\n- **header** - O cabeçalho da caixa de diálogo. Este elemento envolve o título e ações do cabeçalho.\n- **header-actions** - Contêiner para ações opcionais do cabeçalho.\n- **title** - O título da caixa de diálogo.\n- **close-button** - O botão de fechar, um `<cps-icon-button>`.\n- **close-button__base** - A parte `base` exportada do botão de fechar.\n- **body** - O corpo da caixa de diálogo.\n- **footer** - O rodapé da caixa de diálogo.",
-      "attributes": [
-        {
-          "name": "open",
-          "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
-          "values": []
-        },
-        {
-          "name": "closable",
-          "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
-          "values": []
-        },
-        {
-          "name": "label",
-          "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
-          "values": []
-        },
-        {
-          "name": "aria-label",
-          "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
-          "values": []
-        },
-        {
-          "name": "returnValue",
-          "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-format-bytes",
-      "description": "Formata um número como um valor em _bytes_ ou _bits_ legível por humanos.\n\n\n---\n\n\n",
-      "attributes": [
-        {
-          "name": "value",
-          "description": "O número (valor bruto em _bytes_ ou _bits_) a ser formatado.",
-          "values": []
-        },
-        {
-          "name": "unit",
-          "description": "O tipo de unidade a ser considerado para as conversões de valores.",
-          "values": [{ "name": "byte" }, { "name": "bit" }]
-        },
-        {
-          "name": "display",
-          "description": "Determina como formatar o resultado, por exemplo, \"100 bytes\", \"100 b\" ou \"100b\".",
-          "values": [
-            { "name": "long" },
-            { "name": "short" },
-            { "name": "narrow" }
-          ]
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-format-date",
-      "description": "Formata uma data/hora usando o idioma e as opções especificadas.\n\n\n---\n\n\n",
-      "attributes": [
-        {
-          "name": "date",
-          "description": "A data/hora a ser formatada. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
-          "values": [{ "name": "Date" }]
-        },
-        {
-          "name": "weekday",
-          "description": "O formato para exibir o dia da semana.",
-          "values": [
-            { "name": "narrow" },
-            { "name": "short" },
-            { "name": "long" }
-          ]
-        },
-        {
-          "name": "era",
-          "description": "O formato para exibir a era.",
-          "values": [
-            { "name": "narrow" },
-            { "name": "short" },
-            { "name": "long" }
-          ]
-        },
-        {
-          "name": "year",
-          "description": "O formato para exibir o ano.",
-          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
-        },
-        {
-          "name": "month",
-          "description": "O formato para exibir o mês.",
-          "values": [
-            { "name": "numeric" },
-            { "name": "2-digit" },
-            { "name": "narrow" },
-            { "name": "short" },
-            { "name": "long" }
-          ]
-        },
-        {
-          "name": "day",
-          "description": "O formato para exibir o dia.",
-          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
-        },
-        {
-          "name": "hour",
-          "description": "O formato para exibir a hora.",
-          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
-        },
-        {
-          "name": "minute",
-          "description": "O formato para exibir os minutos.",
-          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
-        },
-        {
-          "name": "second",
-          "description": "O formato para exibir os segundos.",
-          "values": [{ "name": "numeric" }, { "name": "2-digit" }]
-        },
-        {
-          "name": "time-zone-name",
-          "description": "O formato para exibir o nome do fuso horário.",
-          "values": [{ "name": "short" }, { "name": "long" }]
-        },
-        {
-          "name": "time-zone",
-          "description": "O fuso horário no qual o horário será expresso.",
-          "values": []
-        },
-        {
-          "name": "hour-format",
-          "description": "O formato para exibir a hora.",
-          "values": [{ "name": "auto" }, { "name": "12" }, { "name": "24" }]
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-format-number",
-      "description": "Formata um número usando o idioma e as opções especificadas.\n\n\n---\n\n\n",
-      "attributes": [
-        {
-          "name": "value",
-          "description": "O número a ser formatado.",
-          "values": []
-        },
-        {
-          "name": "type",
-          "description": "O estilo de formatação a ser utilizado.",
-          "values": [
-            { "name": "currency" },
-            { "name": "decimal" },
-            { "name": "percent" }
-          ]
-        },
-        {
-          "name": "no-grouping",
-          "description": "Desativa os separadores de agrupamento.",
-          "values": []
-        },
-        {
-          "name": "currency",
-          "description": "O código de moeda [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) a ser utilizado na formatação.",
-          "values": []
-        },
-        {
-          "name": "currency-display",
-          "description": "Definição sobre como exibir a moeda.",
-          "values": [
-            { "name": "symbol" },
-            { "name": "narrowSymbol" },
-            { "name": "code" },
-            { "name": "name" }
-          ]
-        },
-        {
-          "name": "minimum-integer-digits",
-          "description": "O número mínimo de dígitos inteiros a ser utilizado. Valores possíveis são 1-21.",
-          "values": []
-        },
-        {
-          "name": "minimum-fraction-digits",
-          "description": "O número mínimo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
-          "values": []
-        },
-        {
-          "name": "maximum-fraction-digits",
-          "description": "O número máximo de dígitos fracionários a ser utilizado. Valores possíveis de 0 a 100.",
-          "values": []
-        },
-        {
-          "name": "minimum-significant-digits",
-          "description": "O número mínimo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
-          "values": []
-        },
-        {
-          "name": "maximum-significant-digits",
-          "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-format-relative-time",
-      "description": "Exibe uma frase de tempo localizada relativamente à data e hora atuais.\n\n\n---\n\n\n",
-      "attributes": [
-        {
-          "name": "date",
-          "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
-          "values": [{ "name": "Date" }]
-        },
-        {
-          "name": "format",
-          "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
-          "values": [
-            { "name": "long" },
-            { "name": "short" },
-            { "name": "narrow" }
-          ]
-        },
-        {
-          "name": "numeric",
-          "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
-          "values": []
-        },
-        {
-          "name": "sync",
-          "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-logo",
-      "description": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.\n\n\n---\n\n\n",
-      "attributes": [
-        {
-          "name": "type",
-          "description": "O tipo de _logo_ a ser renderizado.",
-          "values": [
-            { "name": "area-di" },
-            { "name": "cps" },
-            { "name": "elements" },
-            { "name": "sp-horizontal" },
-            { "name": "sp-vertical" }
-          ]
-        },
-        {
-          "name": "variant",
-          "description": "A variante temática do _logo_.",
-          "values": [
-            { "name": "default" },
-            { "name": "monochromatic" },
-            { "name": "monochromatic-inverted" }
-          ]
         }
       ],
       "references": []

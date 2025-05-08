@@ -1,4 +1,4 @@
-import Component from '../components/notification.js';
+import Component from '../components/notification/notification.component.js';
 export declare const CpsNotification: import("@lit-labs/react").ReactWebComponent<Component, {
     onCpsShow: string;
     onCpsAfterShow: string;

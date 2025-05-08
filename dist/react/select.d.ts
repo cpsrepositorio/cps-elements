@@ -1,4 +1,4 @@
-import Component from '../components/select.js';
+import Component from '../components/select/select.component.js';
 export declare const CpsSelect: import("@lit-labs/react").ReactWebComponent<Component, {
     onCpsChange: string;
     onCpsClear: string;

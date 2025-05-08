@@ -1,1 +1,0 @@
-import{a as o}from"./chunk.QMDJU7GE.js";import*as e from"react";import{createComponent as t}from"@lit-labs/react";var p=t({tagName:"cps-radio",elementClass:o,react:e,events:{onCpsBlur:"cps-blur",onCpsFocus:"cps-focus"}}),a=p;export{p as a,a as b};

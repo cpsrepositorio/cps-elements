@@ -2,7 +2,7 @@
 
 [component-header:cps-avatar]
 
-Por padrão, um ícone genérico de silhueta de pessoa será exibido. Você pode personalizar avatares adicionando imagens, ícones, ou iniciais personalizados. Você sempre deve fornecer um `label` descrevendo o que este avatar apresenta, tanto para acessibilidade em dispositivos assistivos quanto para exibição como dica de ferramenta.
+Por padrão, um ícone genérico de silhueta de pessoa será exibido. Você pode personalizar avatares adicionando imagens, ícones ou iniciais personalizados. Você sempre deve fornecer um `label` descrevendo o que este avatar apresenta, tanto para acessibilidade em dispositivos assistivos quanto para exibição como dica de ferramenta.
 
 ```html preview
 <cps-avatar label="Alguma pessoa desconhecida"></cps-avatar>
@@ -38,11 +38,11 @@ const App = () => (
 
 Quando definida, a imagem tem prioridade sobre iniciais e ícones personalizados, ainda que estes também sejam informados. Caso ocorra um erro no carregamento da imagem, o avatar exibirá iniciais ou ícone como estratégia de _fallback_, dependendo do que tiver sido fornecido. Caso nenhum dos dois tenha sido informado, o avatar exibirá o ícone padrão.
 
-?> Assim como imagens nativas, por padrão as imagens de avatar são carregadas durante o carregamento inicial da página (todos os avatares existentes de uma vez, independentemente de estar em exibição ou não). Embora isso possa ser útil em alguns casos (e seja mantido como comportamento padrão por ser o comportamento legado de `<img>`), normalmente significa permitir o carregamento de muitos dados potencialmente desnecessários.<br><br>Assim, é recomendado usar o atributo `loading` como `lazy` para garantir o carregamento sob demanda apenas quando o avatar se tornar visível durante a rolagem da página. Leia mais sobre [carregamento preguiçoso de imagens](https://web.dev/browser-level-image-lazy-loading/).
+?> Assim como imagens nativas, por padrão as imagens de avatar são carregadas durante o carregamento inicial da página (todos os avatares existentes de uma vez, independentemente de estarem em exibição ou não). Embora isso possa ser útil às vezes (e é o comportamento padrão por ser o comportamento legado de `<img>`), normalmente significa carregar muitos dados potencialmente desnecessários.<br><br>Assim, é recomendado usar o atributo `loading` como `lazy` para garantir o carregamento sob demanda apenas quando o avatar se tornar visível durante a rolagem da página. Leia mais sobre [Carregamento lento de imagens](https://web.dev/browser-level-image-lazy-loading/).
 
 ### Iniciais automáticas
 
-Caso você não tenha uma imagem para usar, use o atributo `initials` como `auto` para mostrar gerar iniciais automáticas a partir da primeira e última palavras existentes no `label` do avatar.
+Caso você não tenha uma imagem para usar, utilize o atributo `initials` como `auto` para gerar iniciais automáticas a partir da primeira e última palavras existentes no `label` do avatar.
 
 ```html preview
 <cps-avatar initials="auto" label="Erick Petrucelli"></cps-avatar>
@@ -114,9 +114,9 @@ const App = () => (
 
 ### Tamanhos
 
-Um avatar padrão segue uma medida de `2em`, isto é, o dobro do tamanho da fonte atual do local em que estão aplicados. Isto simplifica sua utilização em meio a outros conteúdos de diversos tamanhos tipográficos.
+Um avatar padrão segue uma medida de `2em`, isto é, o dobro do tamanho da fonte atual do local em que está aplicado. Isso simplifica sua utilização em meio a outros conteúdos de diversos tamanhos tipográficos.
 
-Entretanto, para um ajuste fino, o tamanho do avatar pode ser definido através da sobrescrita da propriedade CSS `--avatar-size`, seja em um avatar específico, ou mesmo em qualquer contêiner superior com vários avatares dentro.
+Entretanto, para um ajuste fino, o tamanho do avatar pode ser definido através da sobrescrita da propriedade CSS `--avatar-size`, seja em um avatar específico ou mesmo em qualquer contêiner superior com vários avatares dentro.
 
 ```html preview
 <div>
@@ -185,7 +185,7 @@ const App = () => (
 
 ### Formatos
 
-Uso o atributo `shape` para definir o formato do avatar, sendo que o padrão é circular.
+Use o atributo `shape` para definir o formato do avatar, sendo que o padrão é circular.
 
 ```html preview
 <cps-avatar shape="square" label="Avatar quadrado"></cps-avatar>
@@ -205,11 +205,11 @@ const App = () => (
 );
 ```
 
-?> Se você está trabalhando em projeto aderente ao CPS Design System, pode ter observado que as [variações de avatar](https://cpsrepositorio.github.io/cps-design-system/documentacao/avatar.html#variacoes) só apresentam avatares em formato circular. De fato, recomendamos _manter o formato circular_ padrão de forma geral.<br><br>Entretanto, existem alguns casos de uso úteis ao variar formatos, como o caso de sua aplicação usar diferentes formatos de avatar para diferentes tipos de entidade. Por exemplo, você pode manter `circle` para pessoas físicas, e adotar algo como `square` our `rounded` para pessoas jurídicas, facilitando a compreensão imediata do usuário sobre o tipo diferente de entidade em uma lista que as mistura. Evidentemente, esta é uma estratégia baseada em memorização de formato que será efetiva para usuários frequentes e experientes com sua aplicação, sendo irrelevante e até estranha para aplicações em que usuários não são frequentes e/ou variam bastante ao longo do tempo.
+?> Se você está trabalhando em projeto aderente ao CPS Design System, pode ter observado que as [variações de avatar](https://cpsrepositorio.github.io/cps-design-system/documentacao/avatar.html#variacoes) só apresentam avatares em formato circular. De fato, recomendamos _manter o formato circular_ padrão de forma geral.<br><br>Entretanto, existem alguns casos de uso úteis ao variar formatos, como o caso de sua aplicação usar diferentes formatos de avatar para diferentes tipos de entidade. Por exemplo, você pode manter `circle` para pessoas físicas e adotar algo como `square` ou `rounded` para pessoas jurídicas, facilitando a compreensão imediata do usuário sobre o tipo diferente de entidade em uma lista que as mistura. Evidentemente, esta é uma estratégia baseada em memorização de formato que será efetiva para usuários frequentes e experientes com sua aplicação, sendo irrelevante e até estranha para aplicações em que usuários não são frequentes e/ou variam bastante ao longo do tempo.
 
 ### Cor de fundo
 
-Um problema típico de aplicações que usam muitos avatares, é que muitas entidades podem não imagens disponíveis (por exemplo, a maioria de seus usuários pode não ter o costume de submeter seus avatares em seus perfis). Isto pode acabar trazendo certo monotonia a interfaces planejadas para exibirem diversas imagens.
+Um problema típico de aplicações que usam muitos avatares é que muitas entidades podem não ter imagens disponíveis (por exemplo, a maioria de seus usuários pode não ter o costume de submeter imagens de perfil). Isso pode acabar trazendo certa monotonia a interfaces planejadas com muitos avatares em mente.
 
 A estratégia desta biblioteca, assim como recomenda o CPS Design System, é utilizar cores de fundo para avatares que não possuem imagens, comportamento ativado por padrão através do valor `auto` no atributo `color`.
 
@@ -307,7 +307,7 @@ const App = () => (
 
 ### Grupo de avatares
 
-Uma apresentação comum de avatares é em grupos, como em uma lista de pessoas. Embora comum, é um _layout_ tão facilmente obtido com poucas linhas de CSS, que optamos por não oferecer um componente específico para isso.
+Uma apresentação comum de avatares é em grupos, como em uma lista de pessoas. Embora comum, é um _layout_ tão facilmente obtido com poucas linhas de CSS que optamos por não oferecer um componente específico para isso.
 
 ```html preview
 <div class="avatar-group">

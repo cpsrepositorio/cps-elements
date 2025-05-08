@@ -1,4 +1,4 @@
-import Component from '../components/dropdown.js';
+import Component from '../components/dropdown/dropdown.component.js';
 export declare const CpsDropdown: import("@lit-labs/react").ReactWebComponent<Component, {
     onCpsChange: string;
     onCpsClear: string;

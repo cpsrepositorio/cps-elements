@@ -1,1 +1,2 @@
-export { CpsFormatNumber } from './format-number/format-number.component.js';
+export * from './format-number/format-number.component.js';
+export { default } from './format-number/format-number.component.js';
