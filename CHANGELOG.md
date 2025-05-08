@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Changed
 
 - Normalização do local do arquivo de implementação dos componentes, sem impacto na forma de utilização.
+- Correções na documentação do `<cps-avatar>`.
 
 ## 0.17.1 - 2025-04-29
 
