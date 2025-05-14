@@ -8,17 +8,18 @@
   }
 
   window.$docsify.plugins.push(hook => {
-    hook.beforeEach(async (content, next) => {
+    hook.afterEach(async (content, next) => {
       // Ensure custom elements are loaded before replacing.
       await customElements;
 
       // Replace ?> blockquote with informative <cps-notification>.
-      content = content.replace(/\n\?> (.+)/g, (_match, innerMarkdown) => {
+      content = content.replace(/<p class="warn">(.+?)<\/p>/g, (_match, innerMarkdown) => {
+        console.log(innerMarkdown);
         return `<cps-notification icon open variant="informative">${innerMarkdown}</cps-notification>`;
       });
 
       // Replace !> blockquote with warning <cps-notification>.
-      content = content.replace(/\n!> (.+)/g, (_match, innerMarkdown) => {
+      content = content.replace(/<p class="tip">(.+?)<\/p>/g, (_match, innerMarkdown) => {
         return `<cps-notification icon open variant="warning">${innerMarkdown}</cps-notification>`;
       });
 
