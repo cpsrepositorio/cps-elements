@@ -26,7 +26,7 @@ export { CpsLogo } from './components/logo.js';
 export { CpsMenu } from './components/menu.js';
 export { CpsMenuItem } from './components/menu-item.js';
 export { CpsMenuLabel } from './components/menu-label.js';
-export { CpsNotification } from './components/notification.js';
+export { CpsNotification, toast } from './components/notification.js';
 export { CpsOption } from './components/option.js';
 export { CpsRadio } from './components/radio.js';
 export { CpsRadioGroup } from './components/radio-group.js';
