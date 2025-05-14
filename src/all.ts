@@ -40,6 +40,7 @@ export { CpsTabPanel } from './components/tab-panel.js';
 export { CpsTextarea } from './components/textarea.js';
 export { CpsToggleButton } from './components/toggle-button.js';
 export { CpsTooltip } from './components/tooltip.js';
+export { CpsVisuallyHidden } from './components/visually-hidden.js';
 /* plop:component */
 
 // Utilities
