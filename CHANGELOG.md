@@ -6,6 +6,18 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do utilitário de acessibilidade `<cps-visually-hidden>`.
+
+### Changed
+
+- Vinculação da documentação de acessibilidade com as documentações pertinentes dos componentes e utilitários específicos.
+
+### Fixed
+
+- Exportação faltando da função `toast` do componente `<cps-dialog>`.
+
 ## 0.17.2 - 2025-05-08
 
 ### Changed
