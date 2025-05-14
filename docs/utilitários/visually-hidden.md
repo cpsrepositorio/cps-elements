@@ -26,7 +26,7 @@ Existem elementos visuais que trazem algum significado agregado, entretanto usu�
 
 No exemplo abaixo, por utilizar o utilitário _visually hidden_, leitores de tela podem anunciar _"abre em uma nova janela"_ quando a âncora recebe o foco, ainda que tal texto adicional nunca seja visível para usuários que enxergam.
 
-```html preview
+```html preview no-vue
 <cps-link href="https://www.cps.sp.gov.br/" target="_blank">
   Visite o portal do Centro Paula Souza
   <cps-visually-hidden>(abre em uma nova janela)</cps-visually-hidden>
@@ -40,7 +40,7 @@ Ao construir a interface pensando em sua estética para usuários que enxergam, 
 
 No exemplo abaixo, por utilizar o utilitário _visually hidden_, o contexto adicional fornecido será anunciado por dispositivos assistivos como leitores de tela, ainda que tal texto adicional nunca seja visível para usuários que enxergam.
 
-```html preview
+```html preview no-vue
 <cps-card style="max-width: 340px">
   <header>
     <cps-visually-hidden>Informações Pessoais</cps-visually-hidden>
