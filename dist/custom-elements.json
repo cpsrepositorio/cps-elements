@@ -947,6 +947,29 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/visually-hidden.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./visually-hidden/visually-hidden.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "default",
+            "module": "./visually-hidden/visually-hidden.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/accordion/accordion.component.js",
       "declarations": [
         {
@@ -13799,6 +13822,60 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/visually-hidden/visually-hidden.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsVisuallyHidden",
+          "slots": [
+            {
+              "description": "O conteúdo a ser visualmente oculto.",
+              "name": ""
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "O utilitário visualmente oculto (_visually hidden_) torna seu conteúdo acessível sem exibir na interface.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/visually-hidden",
+          "status": "stable",
+          "since": "0.18",
+          "tagName": "cps-visually-hidden",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsVisuallyHidden",
+            "module": "components/visually-hidden/visually-hidden.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-visually-hidden",
+          "declaration": {
+            "name": "CpsVisuallyHidden",
+            "module": "components/visually-hidden/visually-hidden.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsVisuallyHidden",
+          "declaration": {
+            "name": "CpsVisuallyHidden",
+            "module": "components/visually-hidden/visually-hidden.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/logo/paths/area-di.js",
       "declarations": [
         {
@@ -13920,7 +13997,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.17.2",
+    "version": "0.18.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

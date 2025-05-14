@@ -74,7 +74,7 @@
   - [Include](/utilitários/include)
   - [Mutation Observer <small>(em breve)</small>](/utilitários/mutation-observer)
   - [Resize Observer <small>(em breve)</small>](/utilitários/resize-observer)
-  - [Visually Hidden <small>(em breve)</small>](/utilitários/visually-hidden)
+  - [Visually Hidden](/utilitários/visually-hidden)
   - [<code>...</code> <small>(em breve)</small>](/404)
 
 - Variáveis de estilo

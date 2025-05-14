@@ -1924,6 +1924,12 @@
         }
       ],
       "references": []
+    },
+    {
+      "name": "cps-visually-hidden",
+      "description": "O utilitário visualmente oculto (_visually hidden_) torna seu conteúdo acessível sem exibir na interface.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo a ser visualmente oculto.",
+      "attributes": [],
+      "references": []
     }
   ]
 }
