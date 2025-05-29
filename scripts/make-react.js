@@ -26,7 +26,7 @@ const index = [];
 
 components.map(component => {
   const tagWithoutPrefix = component.tagName.replace(/^cps-/, '');
-  const componentFile = path.join(reactDir, `${tagWithoutPrefix}.ts`);
+  const componentName = tagWithoutPrefix.replace(/.ts$/, '');
   const importPath = component.path;
   const events = (component.events || []).map(event => `${event.reactName}: '${event.name}'`).join(',\n');
 
@@ -34,9 +34,9 @@ components.map(component => {
     `
       import * as React from 'react';
       import { createComponent } from '@lit-labs/react';
-      import Component from '../${importPath}';
+      import Component from '../../${importPath}';
 
-      export const ${component.name} = createComponent({
+      const ${component.name} = createComponent({
         tagName: '${component.tagName}',
         elementClass: Component,
         react: React,
@@ -45,6 +45,7 @@ components.map(component => {
         }
       });
 
+      export { ${component.name} };
       export default ${component.name};
     `,
     Object.assign(prettierConfig, {
@@ -52,9 +53,10 @@ components.map(component => {
     })
   );
 
-  index.push(`export { ${component.name} } from './${tagWithoutPrefix}.js';`);
+  index.push(`export { ${component.name} } from './${tagWithoutPrefix}';`);
 
-  fs.writeFileSync(componentFile, source, 'utf8');
+  fs.mkdirSync(path.join(reactDir, componentName), { recursive: true });
+  fs.writeFileSync(path.join(reactDir, componentName, 'index.ts'), source, { encoding: 'utf8' });
 });
 
 // Generate the index file
