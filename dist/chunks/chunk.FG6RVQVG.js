@@ -1,0 +1,1 @@
+import{a as o}from"./chunk.6JA7VEGT.js";import*as e from"react";import{createComponent as t}from"@lit-labs/react";var r=t({tagName:"cps-accordion-group",elementClass:o,react:e,events:{}});var a=r;export{r as a,a as b};

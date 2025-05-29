@@ -165,6 +165,7 @@ export default css`
 
     --cps-color-stroke-primary: rgb(255 255 255 / 6.98%);
     --cps-color-stroke-secondary: rgb(255 255 255 / 9.3%);
+    --cps-color-stroke-tertiary: rgb(255 255 255 / 54.42%);
 
     --cps-color-stroke-inverted-primary: rgb(255 255 255 / 8%);
     --cps-color-stroke-inverted-secondary: rgb(0 0 0 / 14%);

@@ -1,1 +1,0 @@
-import{a as e}from"./chunk.Q25WXMNB.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var a=o({tagName:"cps-visually-hidden",elementClass:e,react:t,events:{}}),n=a;export{a,n as b};

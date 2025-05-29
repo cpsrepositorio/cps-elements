@@ -1,0 +1,1 @@
+import{a as o}from"./chunk.ZPSWYF76.js";import*as e from"react";import{createComponent as t}from"@lit-labs/react";var m=t({tagName:"cps-logo",elementClass:o,react:e,events:{}});var a=m;export{m as a,a as b};

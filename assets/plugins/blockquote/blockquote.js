@@ -14,7 +14,6 @@
 
       // Replace ?> blockquote with informative <cps-notification>.
       content = content.replace(/<p class="warn">(.+?)<\/p>/g, (_match, innerMarkdown) => {
-        console.log(innerMarkdown);
         return `<cps-notification icon open variant="informative">${innerMarkdown}</cps-notification>`;
       });
 

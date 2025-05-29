@@ -1,0 +1,1 @@
+import{a as e}from"./chunk.YPDPHRGC.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var a=o({tagName:"cps-tab-panel",elementClass:e,react:t,events:{}});var r=a;export{a,r as b};

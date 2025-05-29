@@ -591,7 +591,7 @@ const App = () => (
 );
 ```
 
-### Estilizando botões
+### Estilizando totalmente
 
 Através de uma mistura de técnicas com partes CSS e variáveis CSS com valores personalizados, é possível sobrescrever fundamentalmente toda a aparência de um botão. Esta é uma forma simples de adicionar novas variações visuais. Para personalizar uma variação existente, basta modificar o seletor CSS para atingir o atributo `variant` do botão, ao invés de uma classe personalizada (por exemplo, `cps-button[variant="accent"]`).
 

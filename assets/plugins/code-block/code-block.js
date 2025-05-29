@@ -15,7 +15,7 @@
 
   function convertModuleLinks(html) {
     html = html
-      .replace(/@cps-elements\/web/g, `https://cdn.jsdelivr.net/npm/@cps-elements/web`)
+      .replace(/@cps-elements\/web/gi, `https://esm.sh/@cps-elements/web`)
       .replace(
         /@cps-elements\/web\/(utilities|translations)\/([\w|-]+)(?!\.js)('|")/gim,
         '@cps-elements/web/$1/$2.js$3'
@@ -25,6 +25,15 @@
       .replace(/from 'vue'/g, `from 'https://cdnjs.cloudflare.com/ajax/libs/vue/${vueVersion}/vue.global.prod.min.js'`)
       .replace(/from "vue"/g, `from "https://cdnjs.cloudflare.com/ajax/libs/vue/${vueVersion}/vue.global.prod.min.js"`);
     return html;
+  }
+
+  function decreaseIndentationLevel(script) {
+    return script
+      .replace(/^\s{2}(\S)/gm, '$1')
+      .replace(/^\s{2}(\n)/gm, '$1')
+      .replace(/^\s{2}(\s|\n)*$/gm, '')
+      .replace(/^\s{2}(\s|\n)*$/gm, '')
+      .replace(/^\s{2}(\s|\n)*$/gm, '');
   }
 
   function getAdjacentExample(name, pre) {
@@ -217,7 +226,7 @@
 
           pre.setAttribute('aria-labelledby', toggleId);
 
-          const codeBlock = `
+          let codeBlock = `
             <div class="code-block ${isExpanded ? 'code-block--expanded' : ''}">
               <div class="code-block__preview">
                 ${code.textContent}
@@ -287,7 +296,15 @@
             </div>
           `;
 
-          pre.replaceWith(domParser.parseFromString(codeBlock, 'text/html').body);
+          codeBlock = domParser.parseFromString(codeBlock, 'text/html').body;
+          pre.replaceWith(codeBlock);
+
+          if (code.classList.contains('theme-light')) {
+            codeBlock.firstElementChild.classList.add('cps-theme-light');
+          } else if (code.classList.contains('theme-dark')) {
+            codeBlock.firstElementChild.classList.add('cps-theme-dark');
+          }
+
           reactPre?.remove();
           vuePre?.remove();
 
@@ -412,80 +429,49 @@
     if (button?.classList.contains('code-block__button--codepen')) {
       const codeBlock = button.closest('.code-block');
       const htmlExample = codeBlock.querySelector('.code-block__source--html > pre > code')?.textContent;
-      const reactExample = codeBlock.querySelector('.code-block__source--react > pre > code')?.textContent;
-      const vueExample = codeBlock.querySelector('.code-block__source--vue > pre > code')?.textContent;
-      const isReact = flavor === 'react' && typeof reactExample === 'string';
-      const isVue = flavor === 'vue' && typeof vueExample === 'string';
+      if (!htmlExample) return;
+
       const theme = localStorage.getItem('cps-theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const isDark = theme === 'dark' || (theme === 'auto' && prefersDark);
-      const editors = isReact || isVue ? '0010' : '1000';
-      let htmlTemplate = '';
-      let jsTemplate = '';
-      let vueTemplate = '';
-      let cssTemplate = '';
+      const isDark =
+        codeBlock.classList.contains('cps-theme-dark') || theme === 'dark' || (theme === 'auto' && prefersDark);
+
+      const editors = '1000'; // Show HTML pane; CSS and JS can be inferred or are minimal
 
       const form = document.createElement('form');
-      form.action = isVue ? 'https://codepen.io/pen/editor/vue' : 'https://codepen.io/pen/define';
-      form.method = isVue ? 'GET' : 'POST';
+      form.action = 'https://codepen.io/pen/define';
+      form.method = 'POST';
       form.target = '_blank';
 
-      // HTML templates
-      if (!isReact && !isVue) {
-        htmlTemplate = `<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/all.js"></script>\n\n${convertModuleLinks(
-          htmlExample
-        )}`;
-        jsTemplate = '';
-      }
-
-      // React templates
-      if (isReact) {
-        htmlTemplate = '<div id="root"></div>';
-        jsTemplate =
-          `import React from 'https://cdn.skypack.dev/react@${reactVersion}';\n` +
-          `import ReactDOM from 'https://cdn.skypack.dev/react-dom@${reactVersion}';\n` +
-          `import { setBasePath } from 'https://cdn.skypack.dev/@cps-elements/web/utilities/base-path';\n` +
-          `\n` +
-          `// Set the base path for CPS Elements assets\n` +
-          `setBasePath('https://cdn.skypack.dev/@cps-elements/web')\n` +
-          `\n${convertModuleLinks(reactExample)}\n` +
-          `\n` +
-          `ReactDOM.render(<App />, document.getElementById('root'));`;
-      }
-
-      // Vue templates
-      if (isVue) {
-        vueTemplate = `${convertModuleLinks(vueExample)}`;
-      }
-
-      // CSS templates
-      cssTemplate =
-        `@import 'https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/${isDark ? 'dark' : 'light'}.css';\n` +
-        '\n' +
+      const cssTemplate =
         'body {\n' +
         '  font: var(--cps-font-body);\n' +
         '  background-color: var(--cps-color-background-solid-primary);\n' +
         '  color: var(--cps-color-text-primary);\n' +
         '  padding: 1rem;\n' +
         '}';
+      const jsTemplate = decreaseIndentationLevel(
+        convertModuleLinks(htmlExample.match(/<script type="module">((.|\n)*)<\/script>/)?.[1] || '')
+      );
+      const htmlTemplate = htmlExample.replace(/(\n+)<script type="module">((.|\n)*)<\/script>/, '');
 
-      // Docs: https://blog.codepen.io/documentation/prefill/
       const data = {
-        title: '',
-        description: '',
+        title: 'CPS Elements Example',
         tags: ['elements', 'web components'],
         editors,
-        head: `<meta name="viewport" content="width=device-width">`,
+        head:
+          '<meta charset="UTF-8">\n' +
+          '<meta name="viewport" content="width=device-width">\n' +
+          '<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/autoloader.js"></script>',
         html_classes: `cps-theme-${isDark ? 'dark' : 'light'}`,
-        css_external: '',
-        js_external: isVue ? `https://cdnjs.cloudflare.com/ajax/libs/vue/${vueVersion}/vue.global.prod.min.js` : '',
-        js_library: isVue ? 'vue' : '',
-        js_module: true,
-        js_pre_processor: isReact ? 'babel' : 'none',
+        css_external: [
+          'https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap',
+          `https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/${isDark ? 'dark' : 'light'}.css`
+        ],
         html: htmlTemplate,
         css: cssTemplate,
         js: jsTemplate,
-        vue: vueTemplate
+        js_module: true
       };
 
       const input = document.createElement('input');

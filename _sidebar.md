@@ -43,7 +43,7 @@
   - [Menu Label](/componentes/menu-label)
   - [Notification](/componentes/notification)
   - [Option](/componentes/option)
-  - [Progress <small>(em breve)</small>](/componentes/progress)
+  - [Progress](/componentes/progress)
   - [Radio](/componentes/radio)
   - [Radio Group](/componentes/radio-group)
   - [Rating <small>(em breve)</small>](/componentes/rating)

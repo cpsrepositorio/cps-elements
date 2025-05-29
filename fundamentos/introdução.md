@@ -5,7 +5,7 @@
   <cps-logo type="elements"></cps-logo>
 </div>
 
-# Web Components de ponta, sem complicação.
+# Web Components de ponta, sem complicação
 
 <cps-icon name="globe"></cps-icon> Componentes no navegador, sem _frameworks_;<br />
 <cps-icon name="plug-connected-fill"></cps-icon> E nativamente em _frameworks_ como [Vue](/frameworks/vue) e [Angular](/frameworks/angular);<br />
@@ -38,43 +38,38 @@ Adicione o seguinte código ao `<head>` de sua página.
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/all.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/autoloader.js"></script>
 ```
 
-Agora você tem acesso a todos os componentes CPS Elements! Tente adicionar um botão:
+Agora você pode começar a usar componentes CPS Elements! Tente adicionar um botão:
 
-<div style="font-family: sans-serif" class="cps-theme-light">
-
-```html preview expanded no-vue
+```html preview expanded no-vue theme-light
 <cps-button>Me clique</cps-button>
 ```
 
-</div>
+?> Este início rápido está usando a estratégia de auto-carregamento de componentes CPS Elements conforme eles são encontrados na página. Entretanto, pode não ser a forma mais indicada para seu caso. Veja mais em [instruções de instalação](fundamentos/instalação).
 
-?> Este início rápido disponibilizará todos os componentes CPS Elements no navegador do usuário, mas é provável que você não esteja usando todos em seu projeto. Embora útil para testes e prototipação rápida, instalar componentes específicos pode ser mais recomendado para seu caso. Veja mais em [instruções de instalação](fundamentos/instalação).
+## Tipografia e tema visual
 
-## Tipografia e modo escuro
-
-Embora apenas carregar o tema claro e o _script_ principal permita uso básico, uma importação de arquivos um pouco mais extensa é provavelmente o cenário típico desejado para aplicações aderentes ao [CPS Design System](https://cpsrepositorio.github.io/cps-design-system/):
+Embora apenas importar o tema claro e o _script_ de auto-carregamento permita sair usando os componentes, recomendamos carregar também a tipografia oficial **Roboto Flex**, caso esteja em um projeto que segue a tipografia do [CPS Design System](https://cpsrepositorio.github.io/cps-design-system/guia-visual/tipografia.html):
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/light.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/dark.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/all.js"></script>
 ```
 
-Desta vez, registramos também para carregamento pelo navegador do usuário a fonte [Roboto Flex](https://fonts.google.com/specimen/Roboto+Flex), para aderência máxima à [tipografia](https://cpsrepositorio.github.io/cps-design-system/guia-visual/tipografia.html), e o tema para modo escuro, para aderência máxima aos [modos de cor](https://cpsrepositorio.github.io/cps-design-system/guia-visual/cores.html#modos-de-cor) do Design System.
+Além da tipografia, é provável querer carregar um tema visual diferente, especialmente para dar suporte ao modo de cor escuro. Nós trazemos de fábrica um modo escuro completamente aderente aos [modos de cor](https://cpsrepositorio.github.io/cps-design-system/guia-visual/cores.html#modos-de-cor) do Design System:
 
-<div class="cps-theme-dark">
-
-```html preview expanded no-vue
+```html preview expanded no-vue theme-dark
 <cps-button>Me clique</cps-button>
 ```
 
-</div>
+Ao invés de carregar o tema claro, basta importar os estilos do tema escuro:
 
-?> Carregar o tema para modo escuro permite que componentes sejam exibidos em modo escuro (como no exemplo acima), mas não habilita a alternância de temas por si só. Veja mais sobre o [tema de modo escuro](fundamentos/temas#modo-escuro).
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/dark.css" />
+```
+
+Observe que carregar diretamente outro tema funciona, mas não habilita alternância de temas. Para detecção e alternância entre modo claro e modo escuro, recomendamos que leia nossa [documentação detalhada sobre temas](fundamentos/temas#modo-escuro).
 
 ## O que são Web Components?
 
