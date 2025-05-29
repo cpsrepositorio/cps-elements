@@ -169,6 +169,7 @@
   /* Control stroke colors */
   --cps-color-stroke-primary: rgb(0 0 0 / 5.78%);
   --cps-color-stroke-secondary: rgb(0 0 0 / 16.22%);
+  --cps-color-stroke-tertiary: rgb(0 0 0 / 44.58%);
 
   --cps-color-stroke-inverted-primary: rgb(255 255 255 / 8%);
   --cps-color-stroke-inverted-secondary: rgb(0 0 0 / 40%);

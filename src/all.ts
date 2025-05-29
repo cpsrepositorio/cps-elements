@@ -28,6 +28,7 @@ export { CpsMenuItem } from './components/menu-item.js';
 export { CpsMenuLabel } from './components/menu-label.js';
 export { CpsNotification, toast } from './components/notification.js';
 export { CpsOption } from './components/option.js';
+export { CpsProgress } from './components/progress.js';
 export { CpsRadio } from './components/radio.js';
 export { CpsRadioGroup } from './components/radio-group.js';
 export { CpsSelect } from './components/select.js';
