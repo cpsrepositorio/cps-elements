@@ -214,6 +214,7 @@ São usadas na coloração de bordas em geral, bem como separadores e outros cas
 | --------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `--cps-color-stroke-primary`            | <div class="color-sample" style="background: var(--cps-color-stroke-primary)"></div>            |
 | `--cps-color-stroke-secondary`          | <div class="color-sample" style="background: var(--cps-color-stroke-secondary)"></div>          |
+| `--cps-color-stroke-tertiary`           | <div class="color-sample" style="background: var(--cps-color-stroke-tertiary)"></div>           |
 | `--cps-color-stroke-inverted-primary`   | <div class="color-sample" style="background: var(--cps-color-stroke-inverted-primary)"></div>   |
 | `--cps-color-stroke-inverted-secondary` | <div class="color-sample" style="background: var(--cps-color-stroke-inverted-secondary)"></div> |
 | `--cps-color-stroke-inverted-tertiary`  | <div class="color-sample" style="background: var(--cps-color-stroke-inverted-tertiary)"></div>  |

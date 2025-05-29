@@ -6,6 +6,14 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-progress>`.
+
+### Changed
+
+- Adição de variável `--cps-color-stroke-tertiary` nos temas claro e escuro.
+
 ## 0.18.0 - 2025-05-14
 
 ### Added
@@ -50,7 +58,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Changed
 
-- - 🚨 **BREAKING**: Variável CSS `--cps-color-background-overlay` renomeada para `--cps-color-backdrop`, para maior aderência com seu caso de uso real em conjunto com o componente `<cps-dialog>`.
+- 🚨 **BREAKING**: Variável CSS `--cps-color-background-overlay` renomeada para `--cps-color-backdrop`, para maior aderência com seu caso de uso real em conjunto com o componente `<cps-dialog>`.
 
 ## 0.16.0 - 2025-04-03
 
