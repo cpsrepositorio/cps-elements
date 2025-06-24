@@ -24,6 +24,7 @@ export default css`
     align-items: center;
     justify-content: center;
     z-index: var(--cps-z-index-dialog);
+    pointer-events: none;
   }
 
   .dialog__panel {
@@ -42,6 +43,7 @@ export default css`
     font: var(--cps-font-body);
     filter: drop-shadow(var(--cps-shadow-xl));
     backdrop-filter: var(--cps-blur-large);
+    pointer-events: all;
   }
 
   .dialog__panel:focus {
@@ -157,6 +159,7 @@ export default css`
     transition: opacity 250ms cubic-bezier(0.2, 0.9, 0.3, 1);
     opacity: 0;
     background: var(--cps-color-backdrop);
+    pointer-events: all;
   }
 
   .dialog--open .dialog__backdrop {

@@ -231,9 +231,9 @@ export default class CpsDialog extends BaseElement {
         this.playAnimation(this.panel, 'dialog.show')
       ]);
 
-      const slInitialFocus = this.emit('cps-initial-focus', { cancelable: true });
+      const initialFocusEvent = this.emit('cps-initial-focus', { cancelable: true });
 
-      if (!slInitialFocus.defaultPrevented) {
+      if (!initialFocusEvent.defaultPrevented) {
         if (autoFocusTarget) {
           (autoFocusTarget as HTMLInputElement).focus({ preventScroll: true });
         } else {

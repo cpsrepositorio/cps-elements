@@ -10,6 +10,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Criação do componente `<cps-drawer>`.
 
+### Changed
+
+- Garante que a ocultação de _backdrop_ no `<cps-dialog>` seja equivalente ao comportamento do novo `<cps-drawer>`.
+
 ## 0.19.0 - 2025-05-29
 
 ### Added
