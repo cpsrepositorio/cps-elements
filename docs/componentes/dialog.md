@@ -215,7 +215,98 @@ const App = () => {
 
 Em resumo, a diferença é sutil e ambas as opções geram o mesmo resultado final, porém utilizam abordagens de programação diferentes. Trata-se somente de versatilidade para o desenvolvedor escolher o que mais se adequaria às suas necessidades.
 
-?> Se você já usou o elemento `<dialog>` nativo, pode ter percebido que nosso `show()` na realidade se comporta como o [`showModal()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) nativo. Isto é intencional, pois não consideramos adequado exibir caixas de diálogo sem sobreposição que cobre a tela (_backdrop_). Se desejado, é possível obter o resultado equivalente ao método [`show()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/show) nativo, simplesmente estilizando a parte CSS `backdrop` do `<cps-dialog>` de forma a mantê-la invisível, entretanto não recomendamos tal abordagem.
+### Sem sobreposição de plano de fundo
+
+Se você comparar com o elemento `<dialog>` nativo, perceberá que nosso método `show()` na realidade se comporta como o [`showModal()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) nativo. Isto é intencional, pois não consideramos adequado exibir tanto as caixas de diálogo quanto as [gavetas de navegação](/componentes/drawer) sem a sobreposição de plano de fundo (_backdrop_).
+
+Se realmente desejado, é possível obter o resultado equivalente ao método [`show()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/show) nativo, simplesmente estilizando a parte CSS `backdrop` do `<cps-dialog>` de forma a mantê-la invisível o tempo todo.
+
+```html preview
+<div class="dialog-no-backdrop">
+  <cps-dialog label="Exemplo">
+    Conteúdo de exemplo no corpo da caixa de diálogo.
+    <cps-button slot="footer" autofocus>Ok</cps-button>
+  </cps-dialog>
+
+  <cps-button>Abrir caixa de diálogo</cps-button>
+</div>
+
+<style>
+  .dialog-no-backdrop cps-dialog::part(backdrop) {
+    display: none;
+  }
+</style>
+
+<script>
+  const container = document.querySelector('.dialog-no-backdrop');
+  const dialog = container.querySelector('cps-dialog');
+  const openButton = container.querySelector(':scope > cps-button');
+  const closeButton = dialog.querySelector('cps-button');
+
+  openButton.addEventListener('click', () => dialog.show());
+  closeButton.addEventListener('click', () => dialog.close());
+</script>
+```
+
+```jsx react
+import { useState } from 'react';
+import { CpsButton } from '@cps-elements/web/react/button';
+import { CpsDialog } from '@cps-elements/web/react/dialog';
+
+const css = `
+  .dialog-no-backdrop cps-dialog::part(backdrop) {
+    display: none;
+  }
+`;
+
+const App = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  return (
+    <>
+      <div className="dialog-no-backdrop">
+        <CpsDialog label="Exemplo" open={isOpen}>
+          Conteúdo de exemplo no corpo da caixa de diálogo.
+          <CpsButton slot="footer" autofocus onClick={() => setOpen(false)}>
+            Ok
+          </CpsButton>
+        </CpsDialog>
+
+        <CpsButton onClick={() => setOpen(true)}>Abrir caixa de diálogo</CpsButton>
+      </div>
+
+      <style>{css}</style>
+    </>
+  );
+};
+```
+
+```html vue
+<script setup>
+  import { ref } from 'vue';
+  import { CpsButton } from '@cps-elements/web/components/button';
+  import { CpsDialog } from '@cps-elements/web/components/dialog';
+
+  const isOpen = ref(false);
+</script>
+
+<template>
+  <cps-dialog label="Exemplo" :open="isOpen">
+    Conteúdo de exemplo no corpo da caixa de diálogo.
+    <cps-button slot="footer" autofocus @click="isOpen = false">Ok</cps-button>
+  </cps-dialog>
+
+  <cps-button @click="isOpen = true">Abrir caixa de diálogo</cps-button>
+</template>
+
+<style scoped>
+  cps-dialog::part(backdrop) {
+    display: none;
+  }
+</style>
+```
+
+!> **Atenção!** Apesar de ser possível para aderência ao `<dialog>` nativo, **não recomendamos** esconder o _backdrop_. Fazer isso prejudica a visibilidade prioritária da caixa de diálogo, bem como reduz a usabilidade geral ao se permitir focar e interagir com o restante do conteúdo enquanto a caixa ainda está aberta.
 
 ### Fechável
 
@@ -223,7 +314,7 @@ Use o atributo `closable` para exibir um botão de fechar no cabeçalho, como um
 
 ```html preview
 <div class="dialog-example-closable">
-  <cps-dialog label="Exemplo com botão fechar embutido" closable>
+  <cps-dialog label="Botão fechar embutido" closable>
     Neste exemplo, não estamos usando botões no rodapé para deixar claro que o botão fechar no cabeçalho não exige nada
     mais para funcionar. Entretanto, em cenários reais, é provável que você também tenha seus próprios botões no rodapé.
   </cps-dialog>
@@ -250,7 +341,7 @@ const App = () => {
 
   return (
     <>
-      <CpsDialog label="Exemplo com botão fechar embutido" closable open={isOpen}>
+      <CpsDialog label="Botão fechar embutido" closable open={isOpen}>
         Neste exemplo, não estamos usando botões no rodapé para deixar claro que o botão fechar no cabeçalho não exige
         nada mais para funcionar. Entretanto, em cenários reais, é provável que você também tenha seus próprios botões
         no rodapé.
@@ -272,7 +363,7 @@ const App = () => {
 </script>
 
 <template>
-  <cps-dialog label="Exemplo com botão fechar embutido" closable :open="isOpen">
+  <cps-dialog label="Botão fechar embutido" closable :open="isOpen">
     Neste exemplo, não estamos usando botões no rodapé para deixar claro que o botão fechar no cabeçalho não exige nada
     mais para funcionar. Entretanto, em cenários reais, é provável que você também tenha seus próprios botões no rodapé.
   </cps-dialog>
@@ -649,7 +740,7 @@ Por padrão, o painel da caixa de diálogo receberá o foco quando aberta. Isso 
 </script>
 ```
 
-A definição do foco inicial é especialmente útil para fins de usabilidade. Mesmo que você esteja exibindo uma caixa de diálogo que não possui campos internos em seu corpo, você pode usar o `autofocus` nos botões do rodapé, para facilmente determinar qual ação é esperada quando o usuário pressionar a tela <kbd>Enter</kbd>, uma vez que o elemento em foco é executado quando esta tecla é pressionada.
+A definição do foco inicial é especialmente útil para fins de usabilidade. Mesmo que você esteja exibindo uma caixa de diálogo que não possui campos internos em seu corpo, você pode usar o `autofocus` nos botões do rodapé, para facilmente determinar qual ação é esperada quando o usuário pressionar a tecla <kbd>Enter</kbd>, uma vez que o elemento em foco é executado quando esta tecla é pressionada.
 
 ?> Você pode personalizar ainda mais o comportamento do foco inicial cancelando o evento `cps-initial-focus` e definindo o foco você mesmo dentro do manipulador de eventos.
 
