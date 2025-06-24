@@ -1,0 +1,1 @@
+import{a as e}from"./chunk.FRGO3U4I.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var m=o({tagName:"cps-format-relative-time",elementClass:e,react:t,events:{}});var p=m;export{m as a,p as b};

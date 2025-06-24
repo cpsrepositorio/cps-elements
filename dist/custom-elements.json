@@ -257,6 +257,29 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/drawer.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./drawer/drawer.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "default",
+            "module": "./drawer/drawer.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/dropdown.js",
       "declarations": [],
       "exports": [
@@ -1467,7 +1490,7 @@
                 "text": "'auto' | string"
               },
               "default": "''",
-              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
               "attribute": "initials"
             },
             {
@@ -1498,7 +1521,7 @@
                 "text": "'auto' | 'none' | string"
               },
               "default": "'auto'",
-              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
               "attribute": "color",
               "reflects": true
             },
@@ -1592,7 +1615,7 @@
                 "text": "'auto' | string"
               },
               "default": "''",
-              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
               "fieldName": "initials"
             },
             {
@@ -1619,7 +1642,7 @@
                 "text": "'auto' | 'none' | string"
               },
               "default": "'auto'",
-              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
               "fieldName": "color"
             }
           ],
@@ -2819,7 +2842,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
+              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\r\npor exemplo, com _mouse_ e teclado).",
               "attribute": "actionable",
               "reflects": true
             },
@@ -2873,7 +2896,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
+              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\r\npor exemplo, com _mouse_ e teclado).",
               "fieldName": "actionable"
             }
           ],
@@ -4111,6 +4134,456 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/drawer/drawer.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsDrawer",
+          "cssProperties": [
+            {
+              "description": "O tamanho preferencial da gaveta de navegação. Será aplicado à largura ou altura dependendo do `placement`.",
+              "name": "--size"
+            },
+            {
+              "description": "A quantidade de preenchimento a ser usada para o cabeçalho.",
+              "name": "--header-spacing"
+            },
+            {
+              "description": "A quantidade de preenchimento a ser usada para o corpo.",
+              "name": "--body-spacing"
+            },
+            {
+              "description": "A quantidade de preenchimento a ser usada para o rodapé.",
+              "name": "--footer-spacing"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento base que envolve o componente.",
+              "name": "base"
+            },
+            {
+              "description": "A sobreposição que cobre a tela por trás da gaveta de navegação.",
+              "name": "backdrop"
+            },
+            {
+              "description": "O painel da gaveta de navegação (onde a gaveta e seu conteúdo são renderizados).",
+              "name": "panel"
+            },
+            {
+              "description": "O cabeçalho da gaveta de navegação. Este elemento envolve o título e ações do cabeçalho.",
+              "name": "header"
+            },
+            {
+              "description": "Contêiner para ações opcionais do cabeçalho.",
+              "name": "header-actions"
+            },
+            {
+              "description": "O título da gaveta de navegação.",
+              "name": "title"
+            },
+            {
+              "description": "O botão de fechar, um `<cps-icon-button>`.",
+              "name": "close-button"
+            },
+            {
+              "description": "A parte `base` exportada do botão de fechar.",
+              "name": "close-button__base"
+            },
+            {
+              "description": "O corpo da gaveta de navegação.",
+              "name": "body"
+            },
+            {
+              "description": "O rodapé da gaveta de navegação.",
+              "name": "footer"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo principal da gaveta de navegação.",
+              "name": ""
+            },
+            {
+              "description": "O rótulo da gaveta de navegação. Alternativamente, você pode usar o atributo `label`.",
+              "name": "label"
+            },
+            {
+              "description": "Ações opcionais para adicionar ao cabeçalho. Funciona melhor com `<cps-icon-button>`.",
+              "name": "header-actions"
+            },
+            {
+              "description": "O rodapé da gaveta de navegação, geralmente um ou mais botões representando várias opções.",
+              "name": "footer"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, '[default]', 'label', 'header-actions', 'footer')"
+            },
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "modal",
+              "type": {
+                "text": "Modal"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "originalTrigger",
+              "type": {
+                "text": "HTMLElement | null"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "drawer",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "panel",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "backdrop",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se a gaveta de navegação está aberta ou não.",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "attribute": "closable",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "ariaLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "attribute": "aria-label"
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'end' | 'bottom' | 'start'"
+              },
+              "default": "'end'",
+              "description": "Direção de onde a gaveta de navegação será exibida.",
+              "attribute": "placement",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "contained",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\r\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
+              "attribute": "contained",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "playAnimation",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "target",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                },
+                {
+                  "name": "animationName",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "requestClose",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "source",
+                  "type": {
+                    "text": "'backdrop' | 'header' | 'keyboard'"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "addOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "removeOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDocumentKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleOpenChange"
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "description": "Mostra a gaveta de navegação."
+            },
+            {
+              "kind": "method",
+              "name": "close",
+              "description": "Fecha a gaveta de navegação."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando a gaveta de navegação começa a ser aberta.",
+              "name": "cps-show",
+              "reactName": "onCpsShow"
+            },
+            {
+              "description": "Emitido após a gaveta de navegação ser aberta e todas as animações serem concluídas.",
+              "name": "cps-after-show",
+              "reactName": "onCpsAfterShow"
+            },
+            {
+              "description": "Emitido quando a gaveta de navegação começa a ser fechada.",
+              "name": "cps-close",
+              "reactName": "onCpsClose"
+            },
+            {
+              "description": "Emitido após a gaveta de navegação ser fechada e todas as animações serem concluídas.",
+              "name": "cps-after-close",
+              "reactName": "onCpsAfterClose"
+            },
+            {
+              "description": "Emitido quando a gaveta de navegação é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada.",
+              "name": "cps-initial-focus",
+              "reactName": "onCpsInitialFocus"
+            },
+            {
+              "type": {
+                "text": "{ source: 'backdrop' | 'header' | 'keyboard' }"
+              },
+              "description": "Emitido quando o usuário tenta fechar a gaveta de navegação clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a gaveta de navegação aberta. Evite usar isso a menos que fechar a gaveta de navegação resulte em comportamento destrutivo, como perda de dados.",
+              "name": "cps-request-close",
+              "reactName": "onCpsRequestClose"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se a gaveta de navegação está aberta ou não.",
+              "fieldName": "open"
+            },
+            {
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "fieldName": "closable"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "fieldName": "label"
+            },
+            {
+              "name": "aria-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "fieldName": "ariaLabel"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'end' | 'bottom' | 'start'"
+              },
+              "default": "'end'",
+              "description": "Direção de onde a gaveta de navegação será exibida.",
+              "fieldName": "placement"
+            },
+            {
+              "name": "contained",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\r\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
+              "fieldName": "contained"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Gavetas de navegação (_drawers_) deslizam a partir de uma borda da tela para exibir informações ou ações complementares, causando uma mudança de foco imediata para o usuário.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/drawer",
+          "status": "stable",
+          "since": "0.20.0",
+          "dependencies": [
+            "cps-icon-button"
+          ],
+          "animations": [
+            {
+              "name": "drawer.showTop",
+              "description": "Animação ao mostrar a gaveta de navegação vindo do topo."
+            },
+            {
+              "name": "drawer.showEnd",
+              "description": "Animação ao mostrar a gaveta de navegação vindo da direita."
+            },
+            {
+              "name": "drawer.showBottom",
+              "description": "Animação ao mostrar a gaveta de navegação vindo de baixo."
+            },
+            {
+              "name": "drawer.showStart",
+              "description": "Animação ao mostrar a gaveta de navegação vindo da esquerda."
+            },
+            {
+              "name": "drawer.hideTop",
+              "description": "Animação ao ocultar a gaveta de navegação para o topo."
+            },
+            {
+              "name": "drawer.hideEnd",
+              "description": "Animação ao ocultar a gaveta de navegação para a direita."
+            },
+            {
+              "name": "drawer.hideBottom",
+              "description": "Animação ao ocultar a gaveta de navegação para baixo."
+            },
+            {
+              "name": "drawer.hideStart",
+              "description": "Animação ao ocultar a gaveta de navegação para a esquerda."
+            },
+            {
+              "name": "drawer.denyClose",
+              "description": "Animação ao negar o fechamento da gaveta de navegação."
+            },
+            {
+              "name": "drawer.backdrop.show",
+              "description": "Animação ao mostrar a sobreposição da gaveta de navegação."
+            },
+            {
+              "name": "drawer.backdrop.hide",
+              "description": "Animação ao ocultar a sobreposição da gaveta de navegação."
+            }
+          ],
+          "tagName": "cps-drawer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsDrawer",
+            "module": "components/drawer/drawer.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-drawer",
+          "declaration": {
+            "name": "CpsDrawer",
+            "module": "components/drawer/drawer.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsDrawer",
+          "declaration": {
+            "name": "CpsDrawer",
+            "module": "components/drawer/drawer.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/dropdown/dropdown.component.js",
       "declarations": [
         {
@@ -4882,7 +5355,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
+              "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
               "attribute": "active",
               "reflects": true
             },
@@ -4890,7 +5363,7 @@
               "kind": "field",
               "name": "placement",
               "type": {
-                "text": "| 'top'\n    | 'top-start'\n    | 'top-end'\n    | 'bottom'\n    | 'bottom-start'\n    | 'bottom-end'\n    | 'right'\n    | 'right-start'\n    | 'right-end'\n    | 'left'\n    | 'left-start'\n    | 'left-end'"
+                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
               },
               "default": "'top'",
               "description": "O posicionamento preferido do _flyout_ em relação à âncora. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
@@ -4915,7 +5388,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
+              "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
               "attribute": "distance"
             },
             {
@@ -4925,7 +5398,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
+              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
               "attribute": "skidding"
             },
             {
@@ -4935,7 +5408,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\nPara personalizações adicionais, você também pode selecionar a seta para estilização\nusando `::part(arrow)` em sua folha de estilos.",
+              "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
               "attribute": "arrow"
             },
             {
@@ -4945,7 +5418,7 @@
                 "text": "'start' | 'end' | 'center' | 'anchor'"
               },
               "default": "'anchor'",
-              "description": "O posicionamento da seta.\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\nconsiderando o espaço disponível e o `arrow-padding`.\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
+              "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
               "attribute": "arrow-placement"
             },
             {
@@ -4955,7 +5428,7 @@
                 "text": "number"
               },
               "default": "10",
-              "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\nSe o _flyout_ tiver um `border-radius`, por exemplo,\nisso evitará que a seta ultrapasse o início do arredondamento.",
+              "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\r\nSe o _flyout_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
               "attribute": "arrow-padding"
             },
             {
@@ -4965,7 +5438,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
+              "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
               "attribute": "flip"
             },
             {
@@ -4975,7 +5448,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\na estratégia de posicionamento alternativo será usada em vez disso.",
+              "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
               "attribute": "flip-fallback-placements"
             },
             {
@@ -4985,7 +5458,7 @@
                 "text": "'best-fit' | 'initial'"
               },
               "default": "'best-fit'",
-              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\nmelhor ajuste disponível com base no espaço disponível ou\ncomo foi inicialmente definido por seu `placement`.",
+              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
               "attribute": "flip-fallback-strategy"
             },
             {
@@ -4994,7 +5467,7 @@
               "type": {
                 "text": "Element | Element[]"
               },
-              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\nreferência à instância de um ou mais elementos nesta propriedade.",
+              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
               "attribute": "flipBoundary"
             },
             {
@@ -5014,7 +5487,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\nele se moverá para a esquerda ou para a direita, conforme necessário.",
+              "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
               "attribute": "shift"
             },
             {
@@ -5023,7 +5496,7 @@
               "type": {
                 "text": "Element | Element[]"
               },
-              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\num ou mais elementos nesta propriedade.",
+              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
               "attribute": "shiftBoundary"
             },
             {
@@ -5042,7 +5515,7 @@
               "type": {
                 "text": "'horizontal' | 'vertical' | 'both'"
               },
-              "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
+              "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
               "attribute": "auto-size"
             },
             {
@@ -5060,7 +5533,7 @@
               "type": {
                 "text": "Element | Element[]"
               },
-              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\num ou mais elementos nesta propriedade.",
+              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
               "attribute": "autoSizeBoundary"
             },
             {
@@ -5121,13 +5594,13 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
+              "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
               "fieldName": "active"
             },
             {
               "name": "placement",
               "type": {
-                "text": "| 'top'\n    | 'top-start'\n    | 'top-end'\n    | 'bottom'\n    | 'bottom-start'\n    | 'bottom-end'\n    | 'right'\n    | 'right-start'\n    | 'right-end'\n    | 'left'\n    | 'left-start'\n    | 'left-end'"
+                "text": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
               },
               "default": "'top'",
               "description": "O posicionamento preferido do _flyout_ em relação à âncora. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
@@ -5148,7 +5621,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
+              "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
               "fieldName": "distance"
             },
             {
@@ -5157,7 +5630,7 @@
                 "text": "number"
               },
               "default": "0",
-              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
+              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
               "fieldName": "skidding"
             },
             {
@@ -5166,7 +5639,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\nPara personalizações adicionais, você também pode selecionar a seta para estilização\nusando `::part(arrow)` em sua folha de estilos.",
+              "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
               "fieldName": "arrow"
             },
             {
@@ -5175,7 +5648,7 @@
                 "text": "'start' | 'end' | 'center' | 'anchor'"
               },
               "default": "'anchor'",
-              "description": "O posicionamento da seta.\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\nconsiderando o espaço disponível e o `arrow-padding`.\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
+              "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
               "fieldName": "arrowPlacement"
             },
             {
@@ -5184,7 +5657,7 @@
                 "text": "number"
               },
               "default": "10",
-              "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\nSe o _flyout_ tiver um `border-radius`, por exemplo,\nisso evitará que a seta ultrapasse o início do arredondamento.",
+              "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\r\nSe o _flyout_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
               "fieldName": "arrowPadding"
             },
             {
@@ -5193,7 +5666,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
+              "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
               "fieldName": "flip"
             },
             {
@@ -5202,7 +5675,7 @@
                 "text": "string"
               },
               "default": "''",
-              "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\na estratégia de posicionamento alternativo será usada em vez disso.",
+              "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
               "fieldName": "flipFallbackPlacements"
             },
             {
@@ -5211,7 +5684,7 @@
                 "text": "'best-fit' | 'initial'"
               },
               "default": "'best-fit'",
-              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\nmelhor ajuste disponível com base no espaço disponível ou\ncomo foi inicialmente definido por seu `placement`.",
+              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
               "fieldName": "flipFallbackStrategy"
             },
             {
@@ -5219,7 +5692,7 @@
               "type": {
                 "text": "Element | Element[]"
               },
-              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\nreferência à instância de um ou mais elementos nesta propriedade.",
+              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
               "fieldName": "flipBoundary"
             },
             {
@@ -5237,7 +5710,7 @@
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\nele se moverá para a esquerda ou para a direita, conforme necessário.",
+              "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
               "fieldName": "shift"
             },
             {
@@ -5245,7 +5718,7 @@
               "type": {
                 "text": "Element | Element[]"
               },
-              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\num ou mais elementos nesta propriedade.",
+              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
               "fieldName": "shiftBoundary"
             },
             {
@@ -5262,7 +5735,7 @@
               "type": {
                 "text": "'horizontal' | 'vertical' | 'both'"
               },
-              "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
+              "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
               "fieldName": "autoSize"
             },
             {
@@ -5278,7 +5751,7 @@
               "type": {
                 "text": "Element | Element[]"
               },
-              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\num ou mais elementos nesta propriedade.",
+              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
               "fieldName": "autoSizeBoundary"
             },
             {
@@ -7076,133 +7549,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/label/label.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsLabel",
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (por padrão um `<span>`, podendo ser modificado com o atributo `tag`).",
-              "name": "base"
-            },
-            {
-              "description": "O `<slot>` de conteúdo interno do _label_.",
-              "name": "content"
-            }
-          ],
-          "slots": [
-            {
-              "description": "O conteúdo do _label_.",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-              },
-              "default": "'primary'",
-              "description": "A variante temática do _label_.",
-              "attribute": "variant",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "size",
-              "type": {
-                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              },
-              "default": "'body'",
-              "description": "O tamanho do _label_.",
-              "attribute": "size",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "tag",
-              "type": {
-                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-              },
-              "default": "'span'",
-              "description": "O elemento HTML desejado para a renderização do _label_.",
-              "attribute": "tag",
-              "reflects": true
-            }
-          ],
-          "attributes": [
-            {
-              "name": "variant",
-              "type": {
-                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-              },
-              "default": "'primary'",
-              "description": "A variante temática do _label_.",
-              "fieldName": "variant"
-            },
-            {
-              "name": "size",
-              "type": {
-                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              },
-              "default": "'body'",
-              "description": "O tamanho do _label_.",
-              "fieldName": "size"
-            },
-            {
-              "name": "tag",
-              "type": {
-                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-              },
-              "default": "'span'",
-              "description": "O elemento HTML desejado para a renderização do _label_.",
-              "fieldName": "tag"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Rótulos (_labels_) representam uma etiqueta textual para um item na interface.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
-          "status": "stable",
-          "since": "0.6",
-          "tagName": "cps-label",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsLabel",
-            "module": "components/label/label.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-label",
-          "declaration": {
-            "name": "CpsLabel",
-            "module": "components/label/label.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsLabel",
-          "declaration": {
-            "name": "CpsLabel",
-            "module": "components/label/label.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/input/input.component.js",
       "declarations": [
         {
@@ -8219,6 +8565,133 @@
           "declaration": {
             "name": "CpsInput",
             "module": "components/input/input.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/label/label.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsLabel",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (por padrão um `<span>`, podendo ser modificado com o atributo `tag`).",
+              "name": "base"
+            },
+            {
+              "description": "O `<slot>` de conteúdo interno do _label_.",
+              "name": "content"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo do _label_.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+              },
+              "default": "'primary'",
+              "description": "A variante temática do _label_.",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              },
+              "default": "'body'",
+              "description": "O tamanho do _label_.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "tag",
+              "type": {
+                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+              },
+              "default": "'span'",
+              "description": "O elemento HTML desejado para a renderização do _label_.",
+              "attribute": "tag",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+              },
+              "default": "'primary'",
+              "description": "A variante temática do _label_.",
+              "fieldName": "variant"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              },
+              "default": "'body'",
+              "description": "O tamanho do _label_.",
+              "fieldName": "size"
+            },
+            {
+              "name": "tag",
+              "type": {
+                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+              },
+              "default": "'span'",
+              "description": "O elemento HTML desejado para a renderização do _label_.",
+              "fieldName": "tag"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Rótulos (_labels_) representam uma etiqueta textual para um item na interface.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
+          "status": "stable",
+          "since": "0.6",
+          "tagName": "cps-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsLabel",
+            "module": "components/label/label.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-label",
+          "declaration": {
+            "name": "CpsLabel",
+            "module": "components/label/label.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsLabel",
+          "declaration": {
+            "name": "CpsLabel",
+            "module": "components/label/label.component.js"
           }
         }
       ]
@@ -14187,7 +14660,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.19.0",
+    "version": "0.20.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

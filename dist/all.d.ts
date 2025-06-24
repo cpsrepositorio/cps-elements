@@ -9,6 +9,7 @@ export { CpsCard } from './components/card.js';
 export { CpsCheckbox } from './components/checkbox.js';
 export { CpsChip } from './components/chip.js';
 export { CpsDialog, showAlert, showConfirm } from './components/dialog.js';
+export { CpsDrawer } from './components/drawer.js';
 export { CpsDropdown } from './components/dropdown.js';
 export { CpsFlyout } from './components/flyout.js';
 export { CpsFormatBytes } from './components/format-bytes.js';
