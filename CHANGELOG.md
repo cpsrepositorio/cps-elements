@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-drawer>`.
+
 ## 0.19.0 - 2025-05-29
 
 ### Added
