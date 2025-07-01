@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Adicionada verificação no `<cps-input>` para que, ao usar `type` com os valores `button`, `checkbox`, `image`, `radio`, `range`, `reset`, `submit`, se instrua sobre a utilização dos componentes corretos.
+
 ## 0.20.0 - 2025-06-24
 
 ### Added

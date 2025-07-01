@@ -432,7 +432,35 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
     this.formControlController.updateValidity();
   }
 
+  private typeError(correct?: string) {
+    return html`<p style="font: var(--cps-font-label); color: var(--cps-color-state-critical)">
+      <strong>Error</strong>: Use
+      <a
+        href="https://cpsrepositorio.github.io/cps-elements/#/componentes/${correct}"
+        target="_blank"
+        style="font: inherit; color: inherit; text-decoration: underline"
+        ><code>&lt;cps-${correct}&gt;</code></a
+      >
+      instead of <code>&lt;cps-input type="${this.type}"&gt;</code>
+    </p>`;
+  }
+
   render() {
+    switch (this.type as string) {
+      case 'button':
+      case 'reset':
+      case 'submit':
+        return this.typeError('button');
+      case 'checkbox':
+        return this.typeError('checkbox');
+      case 'image':
+        return this.typeError('button');
+      case 'radio':
+        return this.typeError('radio');
+      case 'range':
+        return this.typeError('range');
+    }
+
     const hasLabelSlot = this.hasSlotController.test('label');
     const hasHelpTextSlot = this.hasSlotController.test('help-text');
     const hasLabel = this.label ? true : !!hasLabelSlot;
