@@ -486,7 +486,9 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
     const hasClearIcon =
       this.clearable && !this.disabled && !this.readonly && (typeof this.value === 'number' || this.value.length > 0);
     const hasPasswordToggle = this.type === 'password' && this.passwordToggle && !this.disabled && !this.readonly;
-    const hasCalendarIcon = ['date', 'datetime-local', 'month', 'week'].includes(this.type) && !this.disabled && !this.readonly;
+    const hasCalendarIcon =
+      ['date', 'datetime-local', 'month', 'week'].includes(this.type) && !this.disabled && !this.readonly;
+    const hasClockIcon = this.type === 'time' && !this.disabled && !this.readonly;
 
     return html`
       <div
@@ -611,6 +613,21 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
                 ? html`
                     <cps-icon-button
                       name="calendar"
+                      library="system"
+                      class="input__date-picker"
+                      aria-label=${this.localize.term('showCalendar')}
+                      @click=${this.showPicker}
+                      size=${this.size}
+                    ></cps-icon-button>
+                  `
+                : ''
+            }
+
+            ${
+              hasClockIcon
+                ? html`
+                    <cps-icon-button
+                      name="clock"
                       library="system"
                       class="input__date-picker"
                       aria-label=${this.localize.term('showCalendar')}

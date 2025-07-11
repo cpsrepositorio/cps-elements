@@ -322,6 +322,7 @@ export default css`
       input[type='date'],
       input[type='datetime-local'],
       input[type='month'],
+      input[type='time'],
       input[type='week']
     )::-webkit-calendar-picker-indicator {
     z-index: -1;

@@ -10,6 +10,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Adicionada verificação no `<cps-input>` para que, ao usar `type` com os valores `button`, `checkbox`, `image`, `radio`, `range`, `reset`, `submit`, se instrua sobre a utilização dos componentes corretos.
 - Ajusta a apresentação de ícone de calendário no `<cps-input>` para `type` com os valores `datetime-local`, `month`, e `week`.
+- Ajusta a apresentação de ícone de relógio no `<cps-input>` para `type` `time`.
 - Adiciona suporte ao `type` `hidden` no `<cps-input>`.
 
 ## 0.20.0 - 2025-06-24
