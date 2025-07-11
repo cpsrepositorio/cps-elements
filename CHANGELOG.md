@@ -13,6 +13,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 - Ajusta a apresentação de ícone de relógio no `<cps-input>` para `type` `time`.
 - Adiciona suporte ao `type` `hidden` no `<cps-input>`.
 
+### Fixed
+
+- Todos os componentes agora respeitam o atributo nativo `hidden`.
+
 ## 0.20.0 - 2025-06-24
 
 ### Added
