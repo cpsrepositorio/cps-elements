@@ -12,6 +12,10 @@ export default css`
     display: block;
   }
 
+  :host([type='hidden']) {
+    display: none !important;
+  }
+
   .input {
     display: inline-flex;
     position: relative;
