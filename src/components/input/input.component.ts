@@ -73,7 +73,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
    * mas apenas um subconjunto de tipos é suportado. O padrão é `text`.
    */
   // prettier-ignore
-  @property({ reflect: true }) type: 'date' | 'datetime-local' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' = 'text';
+  @property({ reflect: true }) type: 'date' | 'datetime-local' | 'email' | 'hidden' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' = 'text';
 
   /**
    * O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.
@@ -459,6 +459,24 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
         return this.typeError('radio');
       case 'range':
         return this.typeError('range');
+    }
+
+    if (this.type === 'hidden') {
+      return html`
+        <input
+          ?disabled=${this.disabled}
+          ?required=${this.required}
+          .value=${live(this.value)}
+          @change=${this.handleChange}
+          @input=${this.handleInput}
+          @invalid=${this.handleInvalid}
+          form=${ifDefined(this.form || undefined)}
+          id=${this.generatedId}
+          name=${ifDefined(this.name)}
+          part="input"
+          type="hidden"
+        />
+      `;
     }
 
     const hasLabelSlot = this.hasSlotController.test('label');
