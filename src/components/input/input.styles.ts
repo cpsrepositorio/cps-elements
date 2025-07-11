@@ -317,7 +317,13 @@ export default css`
   }
 
   /* Style built-in date picker icon */
-  .input input[type='date']::-webkit-calendar-picker-indicator {
+  .input
+    :is(
+      input[type='date'],
+      input[type='datetime-local'],
+      input[type='month'],
+      input[type='week']
+    )::-webkit-calendar-picker-indicator {
     z-index: -1;
     background: none;
     cursor: text;

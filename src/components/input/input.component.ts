@@ -486,7 +486,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
     const hasClearIcon =
       this.clearable && !this.disabled && !this.readonly && (typeof this.value === 'number' || this.value.length > 0);
     const hasPasswordToggle = this.type === 'password' && this.passwordToggle && !this.disabled && !this.readonly;
-    const hasCalendarIcon = this.type === 'date' && !this.disabled && !this.readonly;
+    const hasCalendarIcon = ['date', 'datetime-local', 'month', 'week'].includes(this.type) && !this.disabled && !this.readonly;
 
     return html`
       <div
