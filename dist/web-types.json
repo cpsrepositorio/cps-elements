@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.20.0",
+  "version": "0.20.1",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -184,6 +184,54 @@
           ]
         },
         {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-background",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/background",
+          "js": {
+            "properties": [
+              {
+                "name": "variant",
+                "description": "O tipo de variação visual do plano de fundo.",
+                "value": {
+                  "type": "'base' | 'acrylic' | 'blurred'"
+                }
+              },
+              {
+                "name": "centered",
+                "description": "Automaticamente centraliza o conteúdo do plano de fundo.",
+                "value": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "O tipo de variação visual do plano de fundo.",
+              "value": {
+                "type": "'base' | 'acrylic' | 'blurred'"
+              }
+            },
+            {
+              "name": "centered",
+              "description": "Automaticamente centraliza o conteúdo do plano de fundo.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-avatar",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/avatar",
@@ -227,7 +275,7 @@
               },
               {
                 "name": "initials",
-                "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+                "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
                 "value": {
                   "type": "'auto' | string"
                 }
@@ -248,7 +296,7 @@
               },
               {
                 "name": "color",
-                "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+                "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
                 "value": {
                   "type": "'auto' | 'none' | string"
                 }
@@ -305,7 +353,7 @@
             },
             {
               "name": "initials",
-              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\r\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\r\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
+              "description": "Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.\nQuando `auto`, as iniciais são geradas automaticamente a partir do `label`.\nCaso contrário, as iniciais são definidas explicitamente neste atributo.",
               "value": {
                 "type": "'auto' | string"
               }
@@ -326,57 +374,9 @@
             },
             {
               "name": "color",
-              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\r\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\r\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
+              "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
               "value": {
                 "type": "'auto' | 'none' | string"
-              }
-            }
-          ]
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-background",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/background",
-          "js": {
-            "properties": [
-              {
-                "name": "variant",
-                "description": "O tipo de variação visual do plano de fundo.",
-                "value": {
-                  "type": "'base' | 'acrylic' | 'blurred'"
-                }
-              },
-              {
-                "name": "centered",
-                "description": "Automaticamente centraliza o conteúdo do plano de fundo.",
-                "value": {
-                  "type": "boolean"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "variant",
-              "description": "O tipo de variação visual do plano de fundo.",
-              "value": {
-                "type": "'base' | 'acrylic' | 'blurred'"
-              }
-            },
-            {
-              "name": "centered",
-              "description": "Automaticamente centraliza o conteúdo do plano de fundo.",
-              "value": {
-                "type": "boolean"
               }
             }
           ]
@@ -954,7 +954,7 @@
               },
               {
                 "name": "actionable",
-                "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\r\npor exemplo, com _mouse_ e teclado).",
+                "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
                 "value": {
                   "type": "boolean"
                 }
@@ -987,7 +987,7 @@
             },
             {
               "name": "actionable",
-              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\r\npor exemplo, com _mouse_ e teclado).",
+              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
               "value": {
                 "type": "boolean"
               }
@@ -1618,21 +1618,21 @@
               },
               {
                 "name": "closable",
-                "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+                "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
                 "value": {
                   "type": "boolean"
                 }
               },
               {
                 "name": "label",
-                "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+                "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
                 "value": {
                   "type": "string"
                 }
               },
               {
                 "name": "ariaLabel",
-                "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+                "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
                 "value": {
                   "type": "string"
                 }
@@ -1646,7 +1646,7 @@
               },
               {
                 "name": "contained",
-                "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\r\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
+                "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
                 "value": {
                   "type": "boolean"
                 }
@@ -1723,21 +1723,21 @@
             },
             {
               "name": "closable",
-              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\r\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
               "value": {
                 "type": "boolean"
               }
             },
             {
               "name": "label",
-              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\r\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
               "value": {
                 "type": "string"
               }
             },
             {
               "name": "aria-label",
-              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\r\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
               "value": {
                 "type": "string"
               }
@@ -1751,7 +1751,7 @@
             },
             {
               "name": "contained",
-              "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\r\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
+              "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
               "value": {
                 "type": "boolean"
               }
@@ -2171,7 +2171,7 @@
               },
               {
                 "name": "active",
-                "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
+                "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
                 "value": {
                   "type": "boolean"
                 }
@@ -2180,7 +2180,7 @@
                 "name": "placement",
                 "description": "O posicionamento preferido do _flyout_ em relação à âncora. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
                 "value": {
-                  "type": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+                  "type": "| 'top'\n    | 'top-start'\n    | 'top-end'\n    | 'bottom'\n    | 'bottom-start'\n    | 'bottom-end'\n    | 'right'\n    | 'right-start'\n    | 'right-end'\n    | 'left'\n    | 'left-start'\n    | 'left-end'"
                 }
               },
               {
@@ -2192,63 +2192,63 @@
               },
               {
                 "name": "distance",
-                "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
+                "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
                 "value": {
                   "type": "number"
                 }
               },
               {
                 "name": "skidding",
-                "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
+                "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
                 "value": {
                   "type": "number"
                 }
               },
               {
                 "name": "arrow",
-                "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
+                "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\nPara personalizações adicionais, você também pode selecionar a seta para estilização\nusando `::part(arrow)` em sua folha de estilos.",
                 "value": {
                   "type": "boolean"
                 }
               },
               {
                 "name": "arrowPlacement",
-                "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
+                "description": "O posicionamento da seta.\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\nconsiderando o espaço disponível e o `arrow-padding`.\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
                 "value": {
                   "type": "'start' | 'end' | 'center' | 'anchor'"
                 }
               },
               {
                 "name": "arrowPadding",
-                "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\r\nSe o _flyout_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
+                "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\nSe o _flyout_ tiver um `border-radius`, por exemplo,\nisso evitará que a seta ultrapasse o início do arredondamento.",
                 "value": {
                   "type": "number"
                 }
               },
               {
                 "name": "flip",
-                "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
+                "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
                 "value": {
                   "type": "boolean"
                 }
               },
               {
                 "name": "flipFallbackPlacements",
-                "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
+                "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\na estratégia de posicionamento alternativo será usada em vez disso.",
                 "value": {
                   "type": "string"
                 }
               },
               {
                 "name": "flipFallbackStrategy",
-                "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
+                "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\nmelhor ajuste disponível com base no espaço disponível ou\ncomo foi inicialmente definido por seu `placement`.",
                 "value": {
                   "type": "'best-fit' | 'initial'"
                 }
               },
               {
                 "name": "flipBoundary",
-                "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
+                "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\nreferência à instância de um ou mais elementos nesta propriedade.",
                 "value": {
                   "type": "Element | Element[]"
                 }
@@ -2262,14 +2262,14 @@
               },
               {
                 "name": "shift",
-                "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
+                "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\nele se moverá para a esquerda ou para a direita, conforme necessário.",
                 "value": {
                   "type": "boolean"
                 }
               },
               {
                 "name": "shiftBoundary",
-                "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+                "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\num ou mais elementos nesta propriedade.",
                 "value": {
                   "type": "Element | Element[]"
                 }
@@ -2283,7 +2283,7 @@
               },
               {
                 "name": "autoSize",
-                "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
+                "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
                 "value": {
                   "type": "'horizontal' | 'vertical' | 'both'"
                 }
@@ -2297,7 +2297,7 @@
               },
               {
                 "name": "autoSizeBoundary",
-                "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+                "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\num ou mais elementos nesta propriedade.",
                 "value": {
                   "type": "Element | Element[]"
                 }
@@ -2344,7 +2344,7 @@
             },
             {
               "name": "active",
-              "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\r\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
+              "description": "Ativa a lógica de posicionamento e mostra o _flyout_.\nQuando este atributo é removido, a lógica de posicionamento é desativada e o _flyout_ será ocultado.",
               "value": {
                 "type": "boolean"
               }
@@ -2353,7 +2353,7 @@
               "name": "placement",
               "description": "O posicionamento preferido do _flyout_ em relação à âncora. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
               "value": {
-                "type": "| 'top'\r\n    | 'top-start'\r\n    | 'top-end'\r\n    | 'bottom'\r\n    | 'bottom-start'\r\n    | 'bottom-end'\r\n    | 'right'\r\n    | 'right-start'\r\n    | 'right-end'\r\n    | 'left'\r\n    | 'left-start'\r\n    | 'left-end'"
+                "type": "| 'top'\n    | 'top-start'\n    | 'top-end'\n    | 'bottom'\n    | 'bottom-start'\n    | 'bottom-end'\n    | 'right'\n    | 'right-start'\n    | 'right-end'\n    | 'left'\n    | 'left-start'\n    | 'left-end'"
               }
             },
             {
@@ -2365,63 +2365,63 @@
             },
             {
               "name": "distance",
-              "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
+              "description": "A distância em pixels do _flyout_ em relação à sua âncora, para afastá-lo ou aproximá-lo da âncora.\nPor exemplo, se `placement` for `top` ou `bottom`, `distance` definirá a distância do _flyout_ no eixo vertical.",
               "value": {
                 "type": "number"
               }
             },
             {
               "name": "skidding",
-              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\r\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
+              "description": "A distância em pixels do _flyout_ no eixo de deslocamento de sua âncora.\nPor exemplo, se `placement` for `top` ou `bottom`, `skidding` definirá a distância do _flyout_ no eixo horizontal.",
               "value": {
                 "type": "number"
               }
             },
             {
               "name": "arrow",
-              "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\r\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\r\nPara personalizações adicionais, você também pode selecionar a seta para estilização\r\nusando `::part(arrow)` em sua folha de estilos.",
+              "description": "Anexa uma seta ao _flyout_, para que apresente um estilo balão.\nO tamanho e a cor da seta podem ser personalizados usando as variáveis CSS `--arrow-size` e `--arrow-color`.\nPara personalizações adicionais, você também pode selecionar a seta para estilização\nusando `::part(arrow)` em sua folha de estilos.",
               "value": {
                 "type": "boolean"
               }
             },
             {
               "name": "arrow-placement",
-              "description": "O posicionamento da seta.\r\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\r\nconsiderando o espaço disponível e o `arrow-padding`.\r\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
+              "description": "O posicionamento da seta.\nO padrão é `anchor`, que alinhará a seta o mais próximo possível do centro da âncora,\nconsiderando o espaço disponível e o `arrow-padding`.\nUm valor de `start`, `end` ou `center` alinhará a seta ao início, ao fim ou ao centro do _flyout_.",
               "value": {
                 "type": "'start' | 'end' | 'center' | 'anchor'"
               }
             },
             {
               "name": "arrow-padding",
-              "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\r\nSe o _flyout_ tiver um `border-radius`, por exemplo,\r\nisso evitará que a seta ultrapasse o início do arredondamento.",
+              "description": "A quantidade de espaço entre a seta e as bordas do _flyout_.\nSe o _flyout_ tiver um `border-radius`, por exemplo,\nisso evitará que a seta ultrapasse o início do arredondamento.",
               "value": {
                 "type": "number"
               }
             },
             {
               "name": "flip",
-              "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\r\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
+              "description": "Quando definido, o _flyout_ será girado automaticamente para caber no espaço disponível.\nVocê pode usar `flipFallbackPlacements` para configurar ainda mais como o posicionamento alternativo é determinado.",
               "value": {
                 "type": "boolean"
               }
             },
             {
               "name": "flip-fallback-placements",
-              "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\r\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\r\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\r\na estratégia de posicionamento alternativo será usada em vez disso.",
+              "description": "Se o posicionamento preferido não atender, o _flyout_ será testado nestes posicionamentos alternativos,\naté que um atenda. Deve ser uma `String` de qualquer número de posicionamentos separados por um espaço,\npor exemplo, `\"top bottom left\"`. Se nenhum posicionamento atender,\na estratégia de posicionamento alternativo será usada em vez disso.",
               "value": {
                 "type": "string"
               }
             },
             {
               "name": "flip-fallback-strategy",
-              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\r\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\r\nmelhor ajuste disponível com base no espaço disponível ou\r\ncomo foi inicialmente definido por seu `placement`.",
+              "description": "Quando nem o posicionamento preferido nem os posicionamentos alternativos se encaixam,\neste valor será usado para determinar se o _flyout_ deve ser posicionado usando o\nmelhor ajuste disponível com base no espaço disponível ou\ncomo foi inicialmente definido por seu `placement`.",
               "value": {
                 "type": "'best-fit' | 'initial'"
               }
             },
             {
               "name": "flipBoundary",
-              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\r\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\r\nreferência à instância de um ou mais elementos nesta propriedade.",
+              "description": "A fronteira de giro descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\nquando o _flyout_ precisar girar para se acomodar. Por padrão, a fronteira inclui ancestrais com rolagem\nque fariam com que o elemento fosse cortado. Se necessário, você pode alterar a fronteira passando uma\nreferência à instância de um ou mais elementos nesta propriedade.",
               "value": {
                 "type": "Element | Element[]"
               }
@@ -2435,14 +2435,14 @@
             },
             {
               "name": "shift",
-              "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\r\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\r\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\r\nele se moverá para a esquerda ou para a direita, conforme necessário.",
+              "description": "Permite reposicionar o _flyout_ ao longo do seu eixo atual, para mantê-lo à vista quando cortado.\nPor exemplo, um `placement` de `top` farão que o _flyout_ esteja posicionado com seu eixo na horizontal.\nSe a posição do _flyout_ neste eixo transpassar possíveis áreas de corte,\nele se moverá para a esquerda ou para a direita, conforme necessário.",
               "value": {
                 "type": "boolean"
               }
             },
             {
               "name": "shiftBoundary",
-              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\r\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "description": "A fronteira de reposicionamento descreve o(s) elemento(s) de colisão que serão verificados em casos de cortes,\nquando o _flyout_ precisar ser reposicionado no seu eixo para se acomodar.\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\num ou mais elementos nesta propriedade.",
               "value": {
                 "type": "Element | Element[]"
               }
@@ -2456,7 +2456,7 @@
             },
             {
               "name": "auto-size",
-              "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\r\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
+              "description": "Quando definido, permite que o _flyout_ automaticamente se redimensione\npara prevenir seu transbordamento ou potenciais cortes por causa de ancestrais com rolagem.",
               "value": {
                 "type": "'horizontal' | 'vertical' | 'both'"
               }
@@ -2470,7 +2470,7 @@
             },
             {
               "name": "autoSizeBoundary",
-              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\r\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\r\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\r\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\r\num ou mais elementos nesta propriedade.",
+              "description": "A fronteira de auto-dimensionamento descreve o(s) elemento(s) de colisão que serão verificados\nem casos de cortes, quando o _flyout_ precisar ser redimensionado para se acomodar.\nPor padrão, a fronteira inclui ancestrais com rolagem que fariam com que o elemento fosse cortado.\nSe necessário, você pode alterar a fronteira passando uma referência à instância de\num ou mais elementos nesta propriedade.",
               "value": {
                 "type": "Element | Element[]"
               }
@@ -2735,6 +2735,120 @@
           ]
         },
         {
+          "name": "cps-format-relative-time",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-relative-time",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "updateTimeout",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "isoTime",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "relativeTime",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "titleTime",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "date",
+                "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+                "value": {
+                  "type": "Date | string"
+                }
+              },
+              {
+                "name": "format",
+                "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+                "value": {
+                  "type": "'long' | 'short' | 'narrow'"
+                }
+              },
+              {
+                "name": "numeric",
+                "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "sync",
+                "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
+                "value": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "date",
+              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+              "value": {
+                "type": "Date | string"
+              }
+            },
+            {
+              "name": "format",
+              "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+              "value": {
+                "type": "'long' | 'short' | 'narrow'"
+              }
+            },
+            {
+              "name": "numeric",
+              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "sync",
+              "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "description": "Configuration for the available time units.\nEach unit has a maximum time difference it can represent, a value in milliseconds, and the unit name.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "description": "Calculates the time remaining until the next occurrence of a specified time unit.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
           "name": "cps-format-number",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-number",
@@ -2889,120 +3003,6 @@
               }
             }
           ]
-        },
-        {
-          "name": "cps-format-relative-time",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-relative-time",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "updateTimeout",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "isoTime",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "relativeTime",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "titleTime",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "date",
-                "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
-                "value": {
-                  "type": "Date | string"
-                }
-              },
-              {
-                "name": "format",
-                "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
-                "value": {
-                  "type": "'long' | 'short' | 'narrow'"
-                }
-              },
-              {
-                "name": "numeric",
-                "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "sync",
-                "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
-                "value": {
-                  "type": "boolean"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "date",
-              "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
-              "value": {
-                "type": "Date | string"
-              }
-            },
-            {
-              "name": "format",
-              "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
-              "value": {
-                "type": "'long' | 'short' | 'narrow'"
-              }
-            },
-            {
-              "name": "numeric",
-              "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "sync",
-              "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "description": "Configuration for the available time units.\nEach unit has a maximum time difference it can represent, a value in milliseconds, and the unit name.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "description": "Calculates the time remaining until the next occurrence of a specified time unit.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
         },
         {
           "name": "cps-icon",
@@ -3494,7 +3494,7 @@
                 "name": "type",
                 "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
                 "value": {
-                  "type": "'date' | 'datetime-local' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url'"
+                  "type": "'date' | 'datetime-local' | 'email' | 'hidden' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url'"
                 }
               },
               {
@@ -3835,6 +3835,10 @@
                 "name": "setCustomValidity",
                 "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.",
                 "value": {}
+              },
+              {
+                "name": "typeError",
+                "value": {}
               }
             ],
             "events": [
@@ -3875,7 +3879,7 @@
               "name": "type",
               "description": "O tipo do campo. Funciona da mesma forma que um elemento `<input>` nativo,\nmas apenas um subconjunto de tipos é suportado. O padrão é `text`.",
               "value": {
-                "type": "'date' | 'datetime-local' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url'"
+                "type": "'date' | 'datetime-local' | 'email' | 'hidden' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url'"
               }
             },
             {
@@ -4131,124 +4135,6 @@
           ]
         },
         {
-          "name": "cps-link",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/link",
-          "js": {
-            "properties": [
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "link",
-                "value": {
-                  "type": "HTMLAnchorElement"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o _link_.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "href",
-                "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do _link_.",
-                "value": {
-                  "type": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-                }
-              },
-              {
-                "name": "target",
-                "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "click",
-                "description": "Simula um _click_ no elemento.",
-                "value": {}
-              },
-              {
-                "name": "focus",
-                "description": "Coloca o foco no _link_.",
-                "value": {}
-              },
-              {
-                "name": "blur",
-                "description": "Remove o foco do _link_.",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-blur",
-                "description": "Emitido quando o _link_ perde o foco."
-              },
-              {
-                "name": "cps-focus",
-                "description": "Emitido quando o _link_ obtém o foco."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "disabled",
-              "description": "Desabilita o _link_.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "href",
-              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do _link_.",
-              "value": {
-                "type": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              }
-            },
-            {
-              "name": "target",
-              "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
-              "value": {
-                "type": "string"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-logo",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
@@ -4440,16 +4326,6 @@
               }
             }
           ]
-        },
-        {
-          "name": "cps-menu-label",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
         },
         {
           "name": "cps-notification",
@@ -4713,6 +4589,124 @@
           ]
         },
         {
+          "name": "cps-link",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/link",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "link",
+                "value": {
+                  "type": "HTMLAnchorElement"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o _link_.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "href",
+                "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do _link_.",
+                "value": {
+                  "type": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+                }
+              },
+              {
+                "name": "target",
+                "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no elemento.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no _link_.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do _link_.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o _link_ perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o _link_ obtém o foco."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "disabled",
+              "description": "Desabilita o _link_.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "href",
+              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do _link_.",
+              "value": {
+                "type": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              }
+            },
+            {
+              "name": "target",
+              "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+              "value": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-progress",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/progress",
@@ -4776,6 +4770,16 @@
               }
             }
           ]
+        },
+        {
+          "name": "cps-menu-label",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
         },
         {
           "name": "cps-radio",
@@ -5221,6 +5225,422 @@
             {
               "name": "required",
               "description": "Torna o campo como sendo de preenchimento obrigatório, garantindo que um `<cps-radio>` ou um `<cps-toggle-button>` internos esteja marcado.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-separator",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/separator",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "vertical",
+                "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
+                "value": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "vertical",
+              "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-skeleton",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/skeleton",
+          "js": {
+            "properties": [
+              {
+                "name": "effect",
+                "description": "Determina o efeito visual de carregamento do indicador.",
+                "value": {
+                  "type": "'sheen' | 'pulse' | 'none'"
+                }
+              },
+              {
+                "name": "rounded",
+                "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
+                "value": {
+                  "type": "'default' | 'corner' | 'full' | 'none'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "effect",
+              "description": "Determina o efeito visual de carregamento do indicador.",
+              "value": {
+                "type": "'sheen' | 'pulse' | 'none'"
+              }
+            },
+            {
+              "name": "rounded",
+              "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
+              "value": {
+                "type": "'default' | 'corner' | 'full' | 'none'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-spinner",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-tab-group",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-group",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "activeTab",
+                "value": {
+                  "type": "CpsTabItem | undefined"
+                }
+              },
+              {
+                "name": "mutationObserver",
+                "value": {
+                  "type": "MutationObserver"
+                }
+              },
+              {
+                "name": "resizeObserver",
+                "value": {
+                  "type": "ResizeObserver"
+                }
+              },
+              {
+                "name": "tabs",
+                "value": {
+                  "type": "CpsTabItem[]"
+                }
+              },
+              {
+                "name": "panels",
+                "value": {
+                  "type": "CpsTabPanel[]"
+                }
+              },
+              {
+                "name": "tabGroup",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "body",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "nav",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "indicator",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "hasScrollControls",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "placement",
+                "description": "O posicionamento das abas dentro do grupo.",
+                "value": {
+                  "type": "'top' | 'bottom' | 'start' | 'end'"
+                }
+              },
+              {
+                "name": "activation",
+                "description": "Quando definido como `auto`, navegar pelas abas com as teclas de seta mostrará instantaneamente o painel de abas correspondente. Quando definido como `manual`, a aba receberá foco, mas não será exibida até que o usuário pressione a barra de espaço ou tecle `Enter`.",
+                "value": {
+                  "type": "'auto' | 'manual'"
+                }
+              },
+              {
+                "name": "noScrollControls",
+                "description": "Desabilita as setas indicativas de rolagem automática quando as abas transbordarem em relação ao espaço disponível na área de navegação do grupo de abas.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "getAllTabs",
+                "value": {}
+              },
+              {
+                "name": "getAllPanels",
+                "value": {}
+              },
+              {
+                "name": "getActiveTab",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handleScrollToStart",
+                "value": {}
+              },
+              {
+                "name": "handleScrollToEnd",
+                "value": {}
+              },
+              {
+                "name": "setActiveTab",
+                "value": {}
+              },
+              {
+                "name": "setAriaLabels",
+                "value": {}
+              },
+              {
+                "name": "repositionIndicator",
+                "value": {}
+              },
+              {
+                "name": "syncTabsAndPanels",
+                "value": {}
+              },
+              {
+                "name": "updateScrollControls",
+                "value": {}
+              },
+              {
+                "name": "syncIndicator",
+                "value": {}
+              },
+              {
+                "name": "show",
+                "description": "Força a seleção da aba especificada, através do nome de seu painel.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-tab-show",
+                "description": "Emitido quando o painel de uma aba é exibido."
+              },
+              {
+                "name": "cps-tab-hide",
+                "description": "Emitido quando o painel de uma aba é ocultado."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "placement",
+              "description": "O posicionamento das abas dentro do grupo.",
+              "value": {
+                "type": "'top' | 'bottom' | 'start' | 'end'"
+              }
+            },
+            {
+              "name": "activation",
+              "description": "Quando definido como `auto`, navegar pelas abas com as teclas de seta mostrará instantaneamente o painel de abas correspondente. Quando definido como `manual`, a aba receberá foco, mas não será exibida até que o usuário pressione a barra de espaço ou tecle `Enter`.",
+              "value": {
+                "type": "'auto' | 'manual'"
+              }
+            },
+            {
+              "name": "no-scroll-controls",
+              "description": "Desabilita as setas indicativas de rolagem automática quando as abas transbordarem em relação ao espaço disponível na área de navegação do grupo de abas.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-tab-item",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-item",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "attrId",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "componentId",
+                "value": {}
+              },
+              {
+                "name": "tab",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "panel",
+                "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "selected",
+                "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "placement",
+                "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
+                "value": {
+                  "type": "'top' | 'bottom' | 'start' | 'end'"
+                }
+              },
+              {
+                "name": "closable",
+                "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "fluid",
+                "description": "Força a aba a fluir através de seu contêiner.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita a aba.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleCloseClick",
+                "value": {}
+              },
+              {
+                "name": "handleSelectedChange",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco na aba.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco da aba.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-close",
+                "description": "Emitido quando o botão de fechar da aba `closable` é acionado."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "panel",
+              "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "selected",
+              "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "placement",
+              "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
+              "value": {
+                "type": "'top' | 'bottom' | 'start' | 'end'"
+              }
+            },
+            {
+              "name": "closable",
+              "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "fluid",
+              "description": "Força a aba a fluir através de seu contêiner.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita a aba.",
               "value": {
                 "type": "boolean"
               }
@@ -5750,476 +6170,6 @@
           ]
         },
         {
-          "name": "cps-separator",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/separator",
-          "js": {
-            "properties": [
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "vertical",
-                "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
-                "value": {
-                  "type": "boolean"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "vertical",
-              "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-skeleton",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/skeleton",
-          "js": {
-            "properties": [
-              {
-                "name": "effect",
-                "description": "Determina o efeito visual de carregamento do indicador.",
-                "value": {
-                  "type": "'sheen' | 'pulse' | 'none'"
-                }
-              },
-              {
-                "name": "rounded",
-                "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
-                "value": {
-                  "type": "'default' | 'corner' | 'full' | 'none'"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "effect",
-              "description": "Determina o efeito visual de carregamento do indicador.",
-              "value": {
-                "type": "'sheen' | 'pulse' | 'none'"
-              }
-            },
-            {
-              "name": "rounded",
-              "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
-              "value": {
-                "type": "'default' | 'corner' | 'full' | 'none'"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-spinner",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-tab-group",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-group",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "activeTab",
-                "value": {
-                  "type": "CpsTabItem | undefined"
-                }
-              },
-              {
-                "name": "mutationObserver",
-                "value": {
-                  "type": "MutationObserver"
-                }
-              },
-              {
-                "name": "resizeObserver",
-                "value": {
-                  "type": "ResizeObserver"
-                }
-              },
-              {
-                "name": "tabs",
-                "value": {
-                  "type": "CpsTabItem[]"
-                }
-              },
-              {
-                "name": "panels",
-                "value": {
-                  "type": "CpsTabPanel[]"
-                }
-              },
-              {
-                "name": "tabGroup",
-                "value": {
-                  "type": "HTMLElement"
-                }
-              },
-              {
-                "name": "body",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "nav",
-                "value": {
-                  "type": "HTMLElement"
-                }
-              },
-              {
-                "name": "indicator",
-                "value": {
-                  "type": "HTMLElement"
-                }
-              },
-              {
-                "name": "hasScrollControls",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "placement",
-                "description": "O posicionamento das abas dentro do grupo.",
-                "value": {
-                  "type": "'top' | 'bottom' | 'start' | 'end'"
-                }
-              },
-              {
-                "name": "activation",
-                "description": "Quando definido como `auto`, navegar pelas abas com as teclas de seta mostrará instantaneamente o painel de abas correspondente. Quando definido como `manual`, a aba receberá foco, mas não será exibida até que o usuário pressione a barra de espaço ou tecle `Enter`.",
-                "value": {
-                  "type": "'auto' | 'manual'"
-                }
-              },
-              {
-                "name": "noScrollControls",
-                "description": "Desabilita as setas indicativas de rolagem automática quando as abas transbordarem em relação ao espaço disponível na área de navegação do grupo de abas.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "getAllTabs",
-                "value": {}
-              },
-              {
-                "name": "getAllPanels",
-                "value": {}
-              },
-              {
-                "name": "getActiveTab",
-                "value": {}
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleKeyDown",
-                "value": {}
-              },
-              {
-                "name": "handleScrollToStart",
-                "value": {}
-              },
-              {
-                "name": "handleScrollToEnd",
-                "value": {}
-              },
-              {
-                "name": "setActiveTab",
-                "value": {}
-              },
-              {
-                "name": "setAriaLabels",
-                "value": {}
-              },
-              {
-                "name": "repositionIndicator",
-                "value": {}
-              },
-              {
-                "name": "syncTabsAndPanels",
-                "value": {}
-              },
-              {
-                "name": "updateScrollControls",
-                "value": {}
-              },
-              {
-                "name": "syncIndicator",
-                "value": {}
-              },
-              {
-                "name": "show",
-                "description": "Força a seleção da aba especificada, através do nome de seu painel.",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-tab-show",
-                "description": "Emitido quando o painel de uma aba é exibido."
-              },
-              {
-                "name": "cps-tab-hide",
-                "description": "Emitido quando o painel de uma aba é ocultado."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "placement",
-              "description": "O posicionamento das abas dentro do grupo.",
-              "value": {
-                "type": "'top' | 'bottom' | 'start' | 'end'"
-              }
-            },
-            {
-              "name": "activation",
-              "description": "Quando definido como `auto`, navegar pelas abas com as teclas de seta mostrará instantaneamente o painel de abas correspondente. Quando definido como `manual`, a aba receberá foco, mas não será exibida até que o usuário pressione a barra de espaço ou tecle `Enter`.",
-              "value": {
-                "type": "'auto' | 'manual'"
-              }
-            },
-            {
-              "name": "no-scroll-controls",
-              "description": "Desabilita as setas indicativas de rolagem automática quando as abas transbordarem em relação ao espaço disponível na área de navegação do grupo de abas.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-tab-item",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-item",
-          "js": {
-            "properties": [
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "attrId",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "componentId",
-                "value": {}
-              },
-              {
-                "name": "tab",
-                "value": {
-                  "type": "HTMLElement"
-                }
-              },
-              {
-                "name": "panel",
-                "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "selected",
-                "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "placement",
-                "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
-                "value": {
-                  "type": "'top' | 'bottom' | 'start' | 'end'"
-                }
-              },
-              {
-                "name": "closable",
-                "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "fluid",
-                "description": "Força a aba a fluir através de seu contêiner.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita a aba.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "handleCloseClick",
-                "value": {}
-              },
-              {
-                "name": "handleSelectedChange",
-                "value": {}
-              },
-              {
-                "name": "handleDisabledChange",
-                "value": {}
-              },
-              {
-                "name": "focus",
-                "description": "Coloca o foco na aba.",
-                "value": {}
-              },
-              {
-                "name": "blur",
-                "description": "Remove o foco da aba.",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-close",
-                "description": "Emitido quando o botão de fechar da aba `closable` é acionado."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "panel",
-              "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "selected",
-              "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "placement",
-              "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
-              "value": {
-                "type": "'top' | 'bottom' | 'start' | 'end'"
-              }
-            },
-            {
-              "name": "closable",
-              "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "fluid",
-              "description": "Força a aba a fluir através de seu contêiner.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "disabled",
-              "description": "Desabilita a aba.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-tab-panel",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-panel",
-          "js": {
-            "properties": [
-              {
-                "name": "attrId",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "componentId",
-                "value": {}
-              },
-              {
-                "name": "name",
-                "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "selected",
-                "description": "Quando verdadeiro, o painel é exibido.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "handleSelectedChanged",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "name",
-              "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "selected",
-              "description": "Quando verdadeiro, o painel é exibido.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-textarea",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/textarea",
@@ -6707,6 +6657,60 @@
               "description": "Informa o navegador qual o tipo de dados esperado para ser inserido pelo usuário. Isso permite que o navegador\napresente o teclado virtual apropriado para o tipo de dados em dispositivos móveis.",
               "value": {
                 "type": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-tab-panel",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-panel",
+          "js": {
+            "properties": [
+              {
+                "name": "attrId",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "componentId",
+                "value": {}
+              },
+              {
+                "name": "name",
+                "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "selected",
+                "description": "Quando verdadeiro, o painel é exibido.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleSelectedChanged",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "name",
+              "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "selected",
+              "description": "Quando verdadeiro, o painel é exibido.",
+              "value": {
+                "type": "boolean"
               }
             }
           ]

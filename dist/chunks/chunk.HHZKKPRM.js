@@ -1,1 +1,0 @@
-import{a as t}from"./chunk.NKBSRJB6.js";import*as e from"react";import{createComponent as o}from"@lit-labs/react";var a=o({tagName:"cps-format-date",elementClass:t,react:e,events:{}});var p=a;export{a,p as b};

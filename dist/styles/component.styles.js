@@ -10,7 +10,8 @@ export default css `
     box-sizing: inherit;
   }
 
-  [hidden] {
+  [hidden],
+  :host([hidden]) {
     display: none !important;
   }
 `;

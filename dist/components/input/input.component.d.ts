@@ -11,7 +11,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
     private hasFocus;
     private generatedId;
     title: string;
-    type: 'date' | 'datetime-local' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url';
+    type: 'date' | 'datetime-local' | 'email' | 'hidden' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url';
     id: string;
     name: string;
     value: string;
@@ -74,6 +74,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
     getForm(): HTMLFormElement | null;
     reportValidity(): boolean;
     setCustomValidity(message: string): void;
+    private typeError;
     render(): import("lit-html").TemplateResult<1>;
 }
 export { CpsInput };
