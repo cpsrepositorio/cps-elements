@@ -10,6 +10,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Componente `<cps-dropdown>` passa a ser aceito como parte de um `<cps-button-group>`.
 - O atributo `size` do `<cps-button-group>` passa a ser prioritário, sobrescrevendo o tamanho dos botões dentro do grupo.
+- A variante `transparent` do `<cps-button>` agora apresenta coloração similar a um `<cps-hyperlink>`, para maior consistência visual e aderência ao CPS Design System.
 
 ### Fixed
 

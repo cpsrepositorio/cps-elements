@@ -148,7 +148,7 @@ export default css`
   }
 
   .button--transparent:not(.button--circle) {
-    color: var(--cps-color-text-brand-primary);
+    color: var(--cps-color-text-accent-primary);
   }
 
   .button--transparent:hover:not(.button--disabled):not(.button--waiting) {
@@ -160,7 +160,7 @@ export default css`
   }
 
   .button--transparent:not(.button--circle):hover:not(.button--disabled):not(.button--waiting) {
-    color: var(--cps-color-text-brand-secondary);
+    color: var(--cps-color-text-accent-secondary);
   }
 
   .button--transparent.button--circle:focus-visible:not(.button--disabled):not(.button--waiting) {
@@ -168,7 +168,7 @@ export default css`
   }
 
   .button--transparent:not(.button--circle):focus-visible:not(.button--disabled):not(.button--waiting) {
-    color: var(--cps-color-text-brand-secondary);
+    color: var(--cps-color-text-accent-secondary);
   }
 
   .button--transparent:active:not(.button--disabled):not(.button--waiting) {
@@ -180,7 +180,7 @@ export default css`
   }
 
   .button--transparent:not(.button--circle):active:not(.button--disabled):not(.button--waiting) {
-    color: var(--cps-color-text-brand-tertiary);
+    color: var(--cps-color-text-accent-tertiary);
   }
 
   .button--transparent:not(.button--disabled):not(.button--waiting) .button__prefix,
