@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Fixed
 
 - Corrige problema com `<tab-group>` se posicionando sobre menus de contexto e outros elementos flutuantes.
+- Corrige falta de `id` no `<input>` interno que mantém o valor selecionado do `<cps-dropdown>`.
 
 ## 0.20.1 - 2025-07-22
 

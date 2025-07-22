@@ -573,7 +573,7 @@ export default class CpsDropdown extends BaseElement {
 
           <span
             part="span"
-            id=${this.generatedId}
+            id=${`${this.generatedId}-span`}
             class="dropdown__display-span"
             type="text"
             aria-controls=${`${this.generatedId}-menu`}
@@ -590,6 +590,7 @@ export default class CpsDropdown extends BaseElement {
           </span>
 
           <input
+            id=${this.generatedId}
             class="dropdown__value-input"
             type="text"
             ?disabled=${this.disabled}
