@@ -60,6 +60,11 @@ export default class CpsButtonGroup extends BaseElement {
         button.classList.toggle('cps-button-group__button--first', index === 0);
         button.classList.toggle('cps-button-group__button--inner', index > 0 && index < slottedElements.length - 1);
         button.classList.toggle('cps-button-group__button--last', index === slottedElements.length - 1);
+
+        // If group size is explicity set, ensure children use it
+        if (this.hasAttribute('size')) {
+          button.setAttribute('size', this.getAttribute('size') ?? 'medium');
+        }
       }
     });
   }

@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Changed
 
 - Componente `<cps-dropdown>` passa a ser aceito como parte de um `<cps-button-group>`.
+- O atributo `size` do `<cps-button-group>` passa a ser prioritário, sobrescrevendo o tamanho dos botões dentro do grupo.
 
 ### Fixed
 
