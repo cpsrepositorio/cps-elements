@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Componente `<cps-dropdown>` passa a ser aceito como parte de um `<cps-button-group>`.
+
 ### Fixed
 
 - Corrige problema com `<tab-group>` se posicionando sobre menus de contexto e outros elementos flutuantes.

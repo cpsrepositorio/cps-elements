@@ -83,7 +83,7 @@ export default class CpsButtonGroup extends BaseElement {
 }
 
 function findButton(el: HTMLElement) {
-  const selector = 'cps-button, cps-toggle-button';
+  const selector = 'cps-button, cps-dropdown, cps-toggle-button';
 
   // The button could be the target element or a child of it (e.g. a dropdown or tooltip anchor)
   return el.closest(selector) ?? el.querySelector(selector);

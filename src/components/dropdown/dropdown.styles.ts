@@ -328,4 +328,106 @@ export default css`
     padding: var(--cps-spacing-2-5) var(--cps-spacing-4) var(--cps-spacing-1-5);
     user-select: none;
   }
+
+  /*
+   * Button groups support a variety of button types (e.g. buttons with tooltips, buttons as dropdown triggers, etc.).
+   * This means buttons aren't always direct descendants of the button group, thus we can't target them with the
+   * ::slotted selector. To work around this, the button group component does some magic to add these special classes to
+   * buttons and we style them here instead.
+  */
+
+  :host(.cps-button-group__button--first:not(.cps-button-group__button--last)) .dropdown__field,
+  :host(.cps-button-group__button--first:not(.cps-button-group__button--last)) .dropdown__field::before {
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  :host(.cps-button-group__button--inner) .dropdown__field,
+  :host(.cps-button-group__button--inner) .dropdown__field::before {
+    border-radius: 0;
+  }
+
+  :host(.cps-button-group__button--last:not(.cps-button-group__button--first)) .dropdown__field,
+  :host(.cps-button-group__button--last:not(.cps-button-group__button--first)) .dropdown__field::before {
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+  }
+
+  /* All except the first */
+  :host(.cps-button-group__button:not(.cps-button-group__button--first)) {
+    margin-inline-start: calc(-1 * var(--cps-button-border-width));
+  }
+
+  :host(.cps-button-group__button:not(.cps-button-group__button--first)) .dropdown__field::before {
+    border-left: 0 none transparent;
+  }
+
+  :host(.cps-button-group__button:not(.cps-button-group__button--last)) .dropdown__field::before {
+    border-right: 0 none transparent;
+  }
+
+  /* Add a visual separator between solid buttons */
+  :host(.cps-button-group__button:not(.cps-button-group__button--first)) .dropdown::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    border-left: 1px solid;
+    content: '';
+  }
+
+  :host(.cps-button-group__button:not(.cps-button-group__button--first, [checked])) .dropdown::before {
+    border-left-color: var(--cps-color-stroke-primary);
+  }
+
+  :host(.cps-button-group__button[checked]:not(.cps-button-group__button--first)) .dropdown::before {
+    border-left-color: var(--cps-color-stroke-inverted-primary);
+  }
+
+  :host(
+      .cps-button-group__button[variant='default']:not(
+          .cps-button-group__button--first,
+          .cps-button-group__button--radio
+        )
+    )
+    .dropdown::before {
+    border-left-color: var(--cps-color-stroke-primary);
+  }
+
+  :host(
+      .cps-button-group__button[variant='transparent']:not(
+          .cps-button-group__button--first,
+          .cps-button-group__button--radio
+        )
+    )
+    .dropdown::before {
+    border-left-color: var(--cps-color-stroke-separator);
+  }
+
+  :host(
+      .cps-button-group__button[variant='accent']:not(
+          .cps-button-group__button--first,
+          .cps-button-group__button--radio
+        )
+    )
+    .dropdown::before {
+    border-left-color: var(--cps-color-stroke-inverted-primary);
+  }
+
+  /* Focus and checked are always on top */
+  :host(.cps-button-group__button--focus),
+  :host(.cps-button-group__button[checked]) {
+    z-index: 2;
+  }
+
+  /* Grouped dropdown without placeholder has fine-tuned padding */
+  :host(.cps-button-group__button) .dropdown:not(.dropdown--placeholder-visible) .dropdown__display-span {
+    padding-left: var(--cps-spacing-1-5);
+    padding-right: 0;
+  }
+
+  :host(.cps-button-group__button) .dropdown:not(.dropdown--placeholder-visible) .dropdown__expand-icon {
+    padding-right: var(--cps-spacing-1-5);
+  }
 `;
