@@ -143,29 +143,107 @@ const App = () => (
 
 ### Tipos de entrada
 
-Use o atributo `type` para alterar o tipo de entrada do campo.
+Use o atributo `type` para alterar o tipo de entrada do campo, da mesma forma que um [`<input>` nativo](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input). Alguns tipos possuem comportamentos e visual bem específicos e diferenciados e, em geral, você pode esperar que um `<cps-input>` terá suporte aos mesmos atributos e oferecerá funcionalidade similar à sua contraparte nativa.
 
-```html preview
-<cps-input type="email" label="E-mail"></cps-input>
-<br />
-<cps-input type="number" label="Número"></cps-input>
-<br />
-<cps-input type="date" label="Data"></cps-input>
+!> O elemento nativo é incrivelmente amplo, muitas vezes saindo do escopo de uma caixa de entrada, abordando coisas como botões e caixas de seleção. Este escopo excessivo é, em grande parte, resultado de décadas de suporte legado que o elemento nativo não pode simplesmente remover do dia para a noite.<br /><br />Nós, entretanto, por não estarmos presos a este legado, optamos por limitar o escopo do `<cps-input>` e, ao mesmo tempo, direcionar o utilizador ao componente CPS Elements correto, quando um `type` que não suportamos é utilizado.
+
+A seguir, veja como o `<cps-input>` opera com cada um dos `type` disponíveis em um `<input>` nativo.
+
+```html preview no-vue
+<form class="input-types">
+  <cps-input label="Caixa de seleção" name="checkbox" type="checkbox"></cps-input>
+
+  <cps-input label="Cor" name="color" type="color"></cps-input>
+
+  <cps-input label="Data" name="date" type="date"></cps-input>
+
+  <cps-input label="Data/Hora Local" name="datetime-local" type="datetime-local"></cps-input>
+
+  <cps-input label="E-mail" name="email" type="email" hidden></cps-input>
+
+  <cps-input label="Arquivo" name="file" type="file"></cps-input>
+
+  <cps-input label="Oculto" name="hidden" type="hidden" value="Valor"></cps-input>
+
+  <cps-input
+    label="Imagem"
+    name="image"
+    type="image"
+    src="https://placehold.co/200x50/orange/white/?text=Teste"
+  ></cps-input>
+
+  <cps-input label="Senha" name="password" type="password" password-toggle></cps-input>
+
+  <cps-input label="Mês" name="month" type="month"></cps-input>
+
+  <cps-input label="Número" name="number" type="number"></cps-input>
+
+  <cps-input label="Campo de opção" name="raio" type="radio"></cps-input>
+
+  <cps-input label="Intervalo" name="range" type="range"></cps-input>
+
+  <cps-input label="Limpar" name="reset" type="reset" value="Limpar"></cps-input>
+
+  <cps-input label="Pesquisa" name="search" type="search"></cps-input>
+
+  <cps-input label="Submeter" name="submit" type="submit" value="Submeter"></cps-input>
+
+  <cps-input label="Telefone" name="tel" type="tel"></cps-input>
+
+  <cps-input label="Texto" name="text"></cps-input>
+
+  <cps-input label="Hora" name="time" type="time"></cps-input>
+
+  <cps-input label="URL" name="url" type="url"></cps-input>
+
+  <cps-input label="Semana" name="week" type="week"></cps-input>
+
+  <div class="buttons">
+    <cps-button type="submit" variant="accent">Submeter</cps-button>
+    <cps-button type="reset">Limpar</cps-button>
+  </div>
+</form>
+
+<style>
+  form.input-types {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+  }
+
+  form.input-types .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  form.input-types .buttons * {
+    flex: 1;
+  }
+</style>
+
+<script type="module">
+  import { showConfirm } from '@cps-elements/web/components/dialog.js';
+
+  const form = document.querySelector('form.input-types');
+  const hidden = form.querySelector('[type="hidden"]');
+  hidden.value = 'Oculto';
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    showConfirm(
+      `<pre>${JSON.stringify(data)
+        .replaceAll(',"', ',<br>  "')
+        .replaceAll('":"', '": "')
+        .replace('{"', '{<br>  "')
+        .replace('"}', '"<br>}')}</pre>`,
+      'Valores submetidos:'
+    );
+  });
+</script>
 ```
 
-```jsx react
-import { CpsInput } from '@cps-elements/web/react/input';
-
-const App = () => (
-  <>
-    <CpsInput type="email" placeholder="Email" />
-    <br />
-    <CpsInput type="number" placeholder="Number" />
-    <br />
-    <CpsInput type="date" placeholder="Date" />
-  </>
-);
-```
+?> Prezamos por aderência a comportamentos nativos sempre que possível. Isso significa que mantemos aderência ao `<input>` nativo mesmo quando algum navegador possui interpretações próprias sobre elementos de apoio deste.<br /><br />Por exemplo, o seletor de datas de um `type` igual a `date` não é padronizado por especificação e, portanto, difere de navegador para navegador. Intencionalmente optamos por não forçar padronização neste sentido.
 
 ### Ícones como prefixo ou sufixo
 
