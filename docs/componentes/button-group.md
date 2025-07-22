@@ -149,31 +149,6 @@ const App = () => (
 );
 ```
 
-### Botões com sinalizador de menu
-
-Botões com sinalizador de menu são suportados através do atributo `caret` do botão.
-
-```html preview
-<cps-button-group label="Exemplo de grupo">
-  <cps-button>Botão</cps-button>
-  <cps-button caret>Botão com menu</cps-button>
-  <cps-button>Botão</cps-button>
-</cps-button-group>
-```
-
-```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsButtonGroup } from '@cps-elements/web/react/button-group';
-
-const App = () => (
-  <CpsButtonGroup label="Exemplo de grupo">
-    <CpsButton>Botão</CpsButton>
-    <CpsButton caret>Botão com menu</CpsButton>
-    <CpsButton>Botão</CpsButton>
-  </CpsButtonGroup>
-);
-```
-
 ### Grupos arredondados
 
 Grupos com botões arredondados são suportados, basta usar o atributo `rounded` do botão.
@@ -403,5 +378,9 @@ const App = () => (
   </>
 );
 ```
+
+### Botão composto
+
+Se você estiver procurando como compor botões comuns e botões _dropdown_ em conjunto, veja a documentação da composição [_split button_](componentes/split-button).
 
 [component-metadata:cps-button-group]
