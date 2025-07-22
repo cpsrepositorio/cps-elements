@@ -32,7 +32,7 @@ export default css`
     display: none;
   }
 
-  .popup__arrow {
+  .flyout__arrow {
     position: absolute;
     backface-visibility: hidden;
     z-index: 1;
@@ -42,7 +42,7 @@ export default css`
     clip-path: polygon(50% 100%, 0 0, 100% 0);
   }
 
-  .popup__arrow::after {
+  .flyout__arrow::after {
     position: absolute;
     inset: 0 1.5px 1.5px;
     background: var(--background-color);

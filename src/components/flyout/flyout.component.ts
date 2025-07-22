@@ -48,7 +48,7 @@ export default class CpsFlyout extends BaseElement {
 
   /** A referência ao elemento _flyout_ interno. Útil para animar e estilizar o flyout com JavaScript. */
   @query('.flyout') container: HTMLElement;
-  @query('.popup__arrow') private arrowElement: HTMLElement;
+  @query('.flyout__arrow') private arrowElement: HTMLElement;
 
   /** O elemento ao qual o _flyout_ será ancorado. Se o elemento estiver fora da estrutura hierárquica do _flyout_, você pode fornecer a esta propriedade o `id` deste elemento, uma instância direta dele no DOM, ou ainda um `VirtualElement`. Caso contrário, se a âncora pode ser contida junto à estrutura hierárquica do próprio _flyout_, use o _slot_ `anchor` em vez disso. */
   @property() anchor: Element | string | VirtualElement;
@@ -494,7 +494,7 @@ export default class CpsFlyout extends BaseElement {
         })}
       >
         <slot></slot>
-        ${this.arrow ? html`<div part="arrow" class="popup__arrow" role="presentation"></div>` : ''}
+        ${this.arrow ? html`<div part="arrow" class="flyout__arrow" role="presentation"></div>` : ''}
       </div>
     `;
   }
