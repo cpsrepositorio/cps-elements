@@ -183,6 +183,10 @@ const App = () => (
 
 Na realidade, os _slots_ `prefix` e `suffix` permitem injetar qualquer tipo de elemento ou conteúdo em suas posições, mas abusar dessa capacidade não é recomendado, já que pode estragar o visual e a usabilidade do botão.
 
+### Botão de ícone
+
+Se ao invés de um botão comum você estiver procurando um _icon button_, veja o [`<cps-icon-button>`](componentes/icon-button).
+
 ### Arredondamento dos cantos
 
 Use o atributo `rounded` como `default` (ou simplesmente não informe tal atributo), para definir o arredondamento dos cantos do botão para seu padrão de `4px`.
@@ -348,6 +352,12 @@ const App = () => (
   </>
 );
 ```
+
+?> A sinalização de menu é apenas um indicador visual. Você precisará utilizar de outros recursos, como o utilitário [`<cps-flyout>`](/utilitários/flyout), para interligar o botão com eventuais menus de contexto. Alternativamente, você pode usar um botão _dropdown_ diretamente.
+
+### Botão _dropdown_
+
+Se ao invés de um botão comum você estiver procurando um botão _dropdown_, veja o [`<cps-dropdown>`](componentes/dropdown).
 
 ### Botões como âncoras
 
@@ -590,6 +600,10 @@ const App = () => (
   </>
 );
 ```
+
+### Botão composto
+
+Se você estiver procurando como compor botões comuns e botões _dropdown_ em conjunto, veja a documentação da composição [_split button_](componentes/split-button).
 
 ### Estilizando totalmente
 

@@ -29,7 +29,7 @@ const App = () => (
 );
 ```
 
-?> Este componente funciona de forma similar ao [`<cps-select>`](/componentes/select), porém com o elemento base visualmente condizente com [`<cps-button>`]((/componentes/button)), facilitando cenários de uso do tipo _dropdown button_.
+?> Este componente funciona de forma similar ao [`<cps-select>`](/componentes/select), porém com o elemento base visualmente condizente com [`<cps-button>`](/componentes/button), facilitando cenários de uso do tipo _dropdown button_.
 
 ## Exemplos
 
@@ -213,7 +213,8 @@ const App = () => (
       <CpsOption value="option-6">Opção 6</CpsOption>
     </CpsDropdown>
 
-    <br /><br />
+    <br />
+    <br />
 
     <CpsDropdown placeholder="Médio" size="medium">
       <CpsOption value="option-1">Opção 1</CpsOption>
@@ -224,7 +225,8 @@ const App = () => (
       <CpsOption value="option-6">Opção 6</CpsOption>
     </CpsDropdown>
 
-    <br /><br />
+    <br />
+    <br />
 
     <CpsDropdown placeholder="Grande" size="large">
       <CpsOption value="option-1">Opção 1</CpsOption>
@@ -281,7 +283,8 @@ const App = () => (
       <CpsOption value="option-3">Opção 3</CpsOption>
     </CpsDropdown>
 
-    <br /><br />
+    <br />
+    <br />
 
     <CpsDropdown placeholder="Medium" size="medium">
       <CpsIcon name="house" slot="prefix"></CpsIcon>
@@ -290,7 +293,8 @@ const App = () => (
       <CpsOption value="option-3">Opção 3</CpsOption>
     </CpsDropdown>
 
-    <br /><br />
+    <br />
+    <br />
 
     <CpsDropdown placeholder="Large" size="large">
       <CpsIcon name="house" slot="prefix"></CpsIcon>
@@ -436,11 +440,7 @@ const App = () => (
 Use o atributo `value` para definir o valor inicial do campo, ou seja, qual opção começa selecionada.
 
 ```html preview
-<cps-dropdown
-  placeholder="Selecione uma opção"
-  value="skill-2"
-  clearable
->
+<cps-dropdown placeholder="Selecione uma opção" value="skill-2" clearable>
   <cps-option value="skill-1">Comunicação</cps-option>
   <cps-option value="skill-2">Trabalho em equipe</cps-option>
   <cps-option value="skill-3">Criatividade</cps-option>
@@ -459,11 +459,7 @@ import { CpsOption } from '@cps-elements/web/react/option';
 import { CpsDropdown } from '@cps-elements/web/react/dropdown';
 
 const App = () => (
-  <CpsDropdown
-    placeholder="Selecione uma opção"
-    value="skill-2"
-    clearable
-  >
+  <CpsDropdown placeholder="Selecione uma opção" value="skill-2" clearable>
     <CpsOption value="skill-1">Comunicação</CpsOption>
     <CpsOption value="skill-2">Trabalho em equipe</CpsOption>
     <CpsOption value="skill-3">Criatividade</CpsOption>
@@ -477,5 +473,13 @@ const App = () => (
   </CpsDropdown>
 );
 ```
+
+### Botão comum
+
+Se ao invés de um botão _dropdown_ você estiver procurando um botão comum, veja o [`<cps-button>`](componentes/button).
+
+### Botão composto
+
+Se você estiver procurando como compor botões comuns e botões _dropdown_ em conjunto, veja a documentação da composição [_split button_](componentes/split-button).
 
 [component-metadata:cps-dropdown]

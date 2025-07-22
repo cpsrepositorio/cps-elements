@@ -1,1 +1,0 @@
-import{a as e}from"./chunk.HFF3VCJT.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var r=o({tagName:"cps-spinner",elementClass:e,react:t,events:{}});var m=r;export{r as a,m as b};

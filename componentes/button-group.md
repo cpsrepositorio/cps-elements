@@ -27,29 +27,29 @@ const App = () => (
 
 ### Tamanhos de botão
 
-Todos os tamanhos de botão são suportados, mas evite misturar tamanhos dentro do mesmo grupo de botões.
+Use o atributo `size` para definir um tamanho unificado para todos os botões que fazem parte do mesmo grupo.
 
 ```html preview
-<cps-button-group label="Alinhamento">
-  <cps-button size="small">Esquerda</cps-button>
-  <cps-button size="small">Centro</cps-button>
-  <cps-button size="small">Direita</cps-button>
+<cps-button-group size="small" label="Alinhamento">
+  <cps-button>Esquerda</cps-button>
+  <cps-button>Centro</cps-button>
+  <cps-button>Direita</cps-button>
 </cps-button-group>
 
 <br /><br />
 
-<cps-button-group label="Alinhamento">
-  <cps-button size="medium">Esquerda</cps-button>
-  <cps-button size="medium">Centro</cps-button>
-  <cps-button size="medium">Direita</cps-button>
+<cps-button-group size="medium" label="Alinhamento">
+  <cps-button>Esquerda</cps-button>
+  <cps-button>Centro</cps-button>
+  <cps-button>Direita</cps-button>
 </cps-button-group>
 
 <br /><br />
 
-<cps-button-group label="Alinhamento">
-  <cps-button size="large">Esquerda</cps-button>
-  <cps-button size="large">Centro</cps-button>
-  <cps-button size="large">Direita</cps-button>
+<cps-button-group size="large" label="Alinhamento">
+  <cps-button>Esquerda</cps-button>
+  <cps-button>Centro</cps-button>
+  <cps-button>Direita</cps-button>
 </cps-button-group>
 ```
 
@@ -59,32 +59,34 @@ import { CpsButtonGroup } from '@cps-elements/web/react/button-group';
 
 const App = () => (
   <>
-    <CpsButtonGroup label="Alinhamento">
-      <CpsButton size="small">Esquerda</CpsButton>
-      <CpsButton size="small">Centro</CpsButton>
-      <CpsButton size="small">Direita</CpsButton>
+    <CpsButtonGroup size="small" label="Alinhamento">
+      <CpsButton>Esquerda</CpsButton>
+      <CpsButton>Centro</CpsButton>
+      <CpsButton>Direita</CpsButton>
     </CpsButtonGroup>
 
     <br />
     <br />
 
-    <CpsButtonGroup label="Alinhamento">
-      <CpsButton size="medium">Esquerda</CpsButton>
-      <CpsButton size="medium">Centro</CpsButton>
-      <CpsButton size="medium">Direita</CpsButton>
+    <CpsButtonGroup size="medium" label="Alinhamento">
+      <CpsButton>Esquerda</CpsButton>
+      <CpsButton>Centro</CpsButton>
+      <CpsButton>Direita</CpsButton>
     </CpsButtonGroup>
 
     <br />
     <br />
 
-    <CpsButtonGroup label="Alinhamento">
-      <CpsButton size="large">Esquerda</CpsButton>
-      <CpsButton size="large">Centro</CpsButton>
-      <CpsButton size="large">Direita</CpsButton>
+    <CpsButtonGroup size="large" label="Alinhamento">
+      <CpsButton>Esquerda</CpsButton>
+      <CpsButton>Centro</CpsButton>
+      <CpsButton>Direita</CpsButton>
     </CpsButtonGroup>
   </>
 );
 ```
+
+?> Ao usar um grupos de botões, seu `size` é intencionalmente prioritário em relação ao tamanho individual de cada botão. Afinal, botões com tamanhos distintos em um mesmo grupo resultariam em distorções visuais e confusão para o usuário.
 
 ### Variações de botão
 
@@ -144,31 +146,6 @@ const App = () => (
       <CpsButton variant="accent">Direita</CpsButton>
     </CpsButtonGroup>
   </>
-);
-```
-
-### Botões com sinalizador de menu
-
-Botões com sinalizador de menu são suportados através do atributo `caret` do botão.
-
-```html preview
-<cps-button-group label="Exemplo de grupo">
-  <cps-button>Botão</cps-button>
-  <cps-button caret>Botão com menu</cps-button>
-  <cps-button>Botão</cps-button>
-</cps-button-group>
-```
-
-```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsButtonGroup } from '@cps-elements/web/react/button-group';
-
-const App = () => (
-  <CpsButtonGroup label="Exemplo de grupo">
-    <CpsButton>Botão</CpsButton>
-    <CpsButton caret>Botão com menu</CpsButton>
-    <CpsButton>Botão</CpsButton>
-  </CpsButtonGroup>
 );
 ```
 
@@ -401,5 +378,9 @@ const App = () => (
   </>
 );
 ```
+
+### Botão composto
+
+Se você estiver procurando como compor botões comuns e botões _dropdown_ em conjunto, veja a documentação da composição [_split button_](componentes/split-button).
 
 [component-metadata:cps-button-group]

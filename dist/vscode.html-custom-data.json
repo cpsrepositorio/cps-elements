@@ -36,27 +36,6 @@
       "references": []
     },
     {
-      "name": "cps-background",
-      "description": "Componente utilizado para aplicar plano de fundo padrão à página.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo interno do plano de fundo.\n\n### **CSS Properties:**\n - **--background-image** - Uma imagem de fundo alternativa a ser exibida. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo interno do plano de fundo.\n- **image** - O elemento que renderiza a imagem de fundo.",
-      "attributes": [
-        {
-          "name": "variant",
-          "description": "O tipo de variação visual do plano de fundo.",
-          "values": [
-            { "name": "base" },
-            { "name": "acrylic" },
-            { "name": "blurred" }
-          ]
-        },
-        {
-          "name": "centered",
-          "description": "Automaticamente centraliza o conteúdo do plano de fundo.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
       "name": "cps-avatar",
       "description": "Avatares são usados para iconograficamente representar uma pessoa ou objeto.\n\n\n---\n\n\n\n\n### **Slots:**\n - **badge** - O distintivo informativo atrelado a este avatar. Recomenda-se utilizar `<cps-badge>` como conteúdo.\n- **icon** - O ícone a ser usado quando nenhuma imagem ou iniciais estão presentes. Recomenda-se utilizar `<cps-icon>` como conteúdo.\n\n### **CSS Properties:**\n - **--avatar-size** - A medida de tamanho do avatar, utilizada tanto como `width` quanto `height`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **icon** - O elemento que embrulha a renderização do _slot_ `icon`.\n- **initials** - O elemento que embrulha a renderização das iniciais.\n- **image** - A imagem do avatar (um `<img>`). Exibido apenas quando o atributo `image` está presente.",
       "attributes": [
@@ -93,6 +72,27 @@
           "name": "color",
           "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
           "values": [{ "name": "auto" }, { "name": "none" }]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-background",
+      "description": "Componente utilizado para aplicar plano de fundo padrão à página.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo interno do plano de fundo.\n\n### **CSS Properties:**\n - **--background-image** - Uma imagem de fundo alternativa a ser exibida. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo interno do plano de fundo.\n- **image** - O elemento que renderiza a imagem de fundo.",
+      "attributes": [
+        {
+          "name": "variant",
+          "description": "O tipo de variação visual do plano de fundo.",
+          "values": [
+            { "name": "base" },
+            { "name": "acrylic" },
+            { "name": "blurred" }
+          ]
+        },
+        {
+          "name": "centered",
+          "description": "Automaticamente centraliza o conteúdo do plano de fundo.",
+          "values": []
         }
       ],
       "references": []
@@ -522,6 +522,11 @@
           "name": "placement",
           "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
           "values": [{ "name": "top" }, { "name": "bottom" }]
+        },
+        {
+          "name": "forget-selection",
+          "description": "Indica se o menu de seleção de opções deve esquecer a seleção atual após o fechamento. Isso pode ser útil para menus que servem apenas como um seletor visual, mas com funcionalidade totalmente personalizada após a seleção.",
+          "values": []
         }
       ],
       "references": []
@@ -776,37 +781,6 @@
       "references": []
     },
     {
-      "name": "cps-format-relative-time",
-      "description": "Exibe uma frase de tempo localizada relativamente à data e hora atuais.\n\n\n---\n\n\n",
-      "attributes": [
-        {
-          "name": "date",
-          "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
-          "values": [{ "name": "Date" }]
-        },
-        {
-          "name": "format",
-          "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
-          "values": [
-            { "name": "long" },
-            { "name": "short" },
-            { "name": "narrow" }
-          ]
-        },
-        {
-          "name": "numeric",
-          "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
-          "values": []
-        },
-        {
-          "name": "sync",
-          "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
       "name": "cps-format-number",
       "description": "Formata um número usando o idioma e as opções especificadas.\n\n\n---\n\n\n",
       "attributes": [
@@ -867,6 +841,37 @@
         {
           "name": "maximum-significant-digits",
           "description": "O número máximo de dígitos significativos a ser utilizado. Valores possíveis de 1 a 21.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-format-relative-time",
+      "description": "Exibe uma frase de tempo localizada relativamente à data e hora atuais.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "date",
+          "description": "A data a partir da qual calcular o tempo. Se não for definida, a data e hora atuais serão usadas.\nAo passar um texto, é altamente recomendado usar o formato ISO 8601 para garantir\nque os fusos horários sejam tratados corretamente. Para converter uma data para este\nformato em JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).",
+          "values": [{ "name": "Date" }]
+        },
+        {
+          "name": "format",
+          "description": "O estilo de formatação a ser usado.\nAlguns idiomas exibem os mesmos valores entre os formatos, exatamente o caso do português.",
+          "values": [
+            { "name": "long" },
+            { "name": "short" },
+            { "name": "narrow" }
+          ]
+        },
+        {
+          "name": "numeric",
+          "description": "Quando `false`, valores textuais, como \"ontem\" e \"amanhã\", serão usados quando possível.\nQuando `true`, somente números explícitos, como \"há 1 dia\" e \"em 1 dia\", serão usados.",
+          "values": []
+        },
+        {
+          "name": "sync",
+          "description": "Mantém o valor exibido atualizado conforme o tempo passa.",
           "values": []
         }
       ],
@@ -1242,6 +1247,46 @@
       "references": []
     },
     {
+      "name": "cps-link",
+      "description": "_Links_ são usados para navegação entre páginas ou para abrir URLs externas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o _link_ perde o foco.\n- **cps-focus** - Emitido quando o _link_ obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no _link_.\n- **blur()** - Remove o foco do _link_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<a>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o texto do _link_.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "Desabilita o _link_.",
+          "values": []
+        },
+        {
+          "name": "href",
+          "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do _link_.",
+          "values": [
+            { "name": "" },
+            { "name": "stamp" },
+            { "name": "caption" },
+            { "name": "label" },
+            { "name": "body" },
+            { "name": "body-emphasized" },
+            { "name": "body-strong" },
+            { "name": "body-large" },
+            { "name": "subtitle" },
+            { "name": "title" },
+            { "name": "heading" },
+            { "name": "display" }
+          ]
+        },
+        {
+          "name": "target",
+          "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-logo",
       "description": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.\n\n\n---\n\n\n",
       "attributes": [
@@ -1302,6 +1347,12 @@
       "references": []
     },
     {
+      "name": "cps-menu-label",
+      "description": "Rótulos de menu são usados para descrever um grupo de itens de menu.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O texto interno do rótulo de menu.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
+      "attributes": [],
+      "references": []
+    },
+    {
       "name": "cps-notification",
       "description": "Notificações são usadas para exibir mensagens importantes de forma pontual, localmente ou como _toast_.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando a notificação aparece.\n- **cps-after-show** - Emitido após a notificação aparecer e todas as animações terem sido completadas.\n- **cps-hide** - Emitido quando a notificação some.\n- **cps-after-hide** - Emitido após a notificação sumir e todas as animações terem sido completadas.\n\n### **Methods:**\n - **show()** - Exibe a notificação, no local onde foi definida através de seu HTML e CSS.\n- **hide()** - Oculta a notificação, caso esta esteja visível.\n- **toast()** - Exibe a notificação como um _toast_. Isto irá mover a notificação para fora de sua posição no DOM e, quando ocultada, ela será removida do DOM completamente. Ao armazenar uma referência à notificação, você pode reutilizá-la chamando este método novamente. Retorna uma `Promise`que será resolvida após a notificação ser ocultada.\n\n### **Slots:**\n - _default_ - O conteúdo principal da notificação, usualmente uma mensagem a ser exibida.\n- **icon** - Um ícone personalizado a ser exibido junto à notificação (utilize um `<cps-icon>` para melhor apresentação). Não possui efeito se o atributo `icon` estiver em uso.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **icon** - O elemento que embrulha o ícone opcional (um `<div>`) no qual se aplica a cor de fundo de acordo com a variante da notificação, seja ele gerado automaticamente ou informado com _slot_.\n- **message** - O elemento que embrulha o conteúdo principal da notificação, usualmente contendo um ou mais elementos que definem a mensagem de exibição.\n- **close-button** - O botão de fechar a notificação (caso `closable` esteja em uso).\n- **close-button__base** - A parte `base` re-exportada do botão de fechar.\n- **close-button__icon** - A parte `icon` re-exportada do botão de fechar.",
       "attributes": [
@@ -1357,46 +1408,6 @@
       "references": []
     },
     {
-      "name": "cps-link",
-      "description": "_Links_ são usados para navegação entre páginas ou para abrir URLs externas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o _link_ perde o foco.\n- **cps-focus** - Emitido quando o _link_ obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no _link_.\n- **blur()** - Remove o foco do _link_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<a>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o texto do _link_.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
-      "attributes": [
-        {
-          "name": "disabled",
-          "description": "Desabilita o _link_.",
-          "values": []
-        },
-        {
-          "name": "href",
-          "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
-          "values": []
-        },
-        {
-          "name": "size",
-          "description": "O tamanho do _link_.",
-          "values": [
-            { "name": "" },
-            { "name": "stamp" },
-            { "name": "caption" },
-            { "name": "label" },
-            { "name": "body" },
-            { "name": "body-emphasized" },
-            { "name": "body-strong" },
-            { "name": "body-large" },
-            { "name": "subtitle" },
-            { "name": "title" },
-            { "name": "heading" },
-            { "name": "display" }
-          ]
-        },
-        {
-          "name": "target",
-          "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
       "name": "cps-progress",
       "description": "Barras de progresso (_progress_) são usadas para mostrar a situação de uma operação em andamento.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--indicator-height** - A altura do indicador. _(default: undefined)_\n- **--track-height** - A altura da trilha. _(default: undefined)_\n- **--indicator-color** - A cor do indicador, quando em estado padrão. _(default: undefined)_\n- **--indicator-pause-color** - A cor do indicador, quando em estado de pausa. _(default: undefined)_\n- **--indicator-success-color** - A cor do indicador, quando em estado de sucesso. _(default: undefined)_\n- **--indicator-error-color** - A cor do indicador, quando em estado de erro. _(default: undefined)_\n- **--track-color** - A cor da trilha. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento base do componente.\n- **indicator** - O indicador da barra de progresso.\n- **track** - A trilha de fundo da barra de progresso.",
       "attributes": [
@@ -1421,12 +1432,6 @@
           "values": []
         }
       ],
-      "references": []
-    },
-    {
-      "name": "cps-menu-label",
-      "description": "Rótulos de menu são usados para descrever um grupo de itens de menu.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O texto interno do rótulo de menu.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
-      "attributes": [],
       "references": []
     },
     {
@@ -1522,6 +1527,97 @@
         {
           "name": "required",
           "description": "Torna o campo como sendo de preenchimento obrigatório, garantindo que um `<cps-radio>` ou um `<cps-toggle-button>` internos esteja marcado.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-select",
+      "description": "Caixas de seleção permitem escolher itens de um menu de opções predefinidas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-show** - Emitido quando a lista suspensa de opções começa a ser exibida.\n- **cps-after-show** - Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando a lista suspensa de opções começa a ser ocultada.\n- **cps-after-hide** - Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **show()** - Exibe o menu seletor de opções.\n- **hide()** - Oculta o menu seletor de opções.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n\n### **Slots:**\n - _default_ - As opções da lista suspensa. Cada opção deve ser um `<cps-option>`. Opcionalmente, também pode conter `<cps-separator>` e `<cps-label>` para agrupar itens visualmente.\n- **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **expand-icon** - Indicador que demonstra se o controle está expandido ou contraído (idealmente, um `<cps-icon>`). Se rotaciona de acordo com a abertura e o fechamento da lista suspensa.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **field** - O elemento base que embrulha o campo de entrada de dados, o ícone de expansão, e eventuais prefixo e botão de limpar.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **input** - O controle interno propriamente dito (um `<input>`), o qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.\n- **menu** - O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.\n- **chips** - O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiple` está em uso.\n- **chip** - Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiple` está em uso.\n- **chip__base** - A parte `base` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__content** - A parte `content` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__remove-button** - O botão de remoção re-exportado de cada _chip_ de seleção múltipla.\n- **chip__remove-button__base** - A parte `base` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **chip__remove-button__icon** - A parte `icon` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **expand-icon** - O elemento que embrulha a renderização do _slot_ `expand-icon`.",
+      "attributes": [
+        {
+          "name": "id",
+          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
+          "values": []
+        },
+        {
+          "name": "name",
+          "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
+          "values": [{ "name": "string[]" }]
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do campo.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "placeholder",
+          "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+          "values": []
+        },
+        {
+          "name": "multiple",
+          "description": "Habilita a possibilidade de selecionar mais de uma opção.",
+          "values": []
+        },
+        {
+          "name": "max-options-visible",
+          "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o campo.",
+          "values": []
+        },
+        {
+          "name": "clearable",
+          "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+          "values": []
+        },
+        {
+          "name": "open",
+          "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
+          "values": []
+        },
+        {
+          "name": "strategy",
+          "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+          "values": [{ "name": "absolute" }, { "name": "fixed" }]
+        },
+        {
+          "name": "label",
+          "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "placement",
+          "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+          "values": [{ "name": "top" }, { "name": "bottom" }]
+        },
+        {
+          "name": "help-text",
+          "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "form",
+          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+          "values": []
+        },
+        {
+          "name": "required",
+          "description": "Torna o campo como sendo de preenchimento obrigatório.",
           "values": []
         }
       ],
@@ -1637,91 +1733,17 @@
       "references": []
     },
     {
-      "name": "cps-select",
-      "description": "Caixas de seleção permitem escolher itens de um menu de opções predefinidas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-show** - Emitido quando a lista suspensa de opções começa a ser exibida.\n- **cps-after-show** - Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando a lista suspensa de opções começa a ser ocultada.\n- **cps-after-hide** - Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **show()** - Exibe o menu seletor de opções.\n- **hide()** - Oculta o menu seletor de opções.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n\n### **Slots:**\n - _default_ - As opções da lista suspensa. Cada opção deve ser um `<cps-option>`. Opcionalmente, também pode conter `<cps-separator>` e `<cps-label>` para agrupar itens visualmente.\n- **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **expand-icon** - Indicador que demonstra se o controle está expandido ou contraído (idealmente, um `<cps-icon>`). Se rotaciona de acordo com a abertura e o fechamento da lista suspensa.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **field** - O elemento base que embrulha o campo de entrada de dados, o ícone de expansão, e eventuais prefixo e botão de limpar.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **input** - O controle interno propriamente dito (um `<input>`), o qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.\n- **menu** - O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.\n- **chips** - O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiple` está em uso.\n- **chip** - Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiple` está em uso.\n- **chip__base** - A parte `base` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__content** - A parte `content` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__remove-button** - O botão de remoção re-exportado de cada _chip_ de seleção múltipla.\n- **chip__remove-button__base** - A parte `base` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **chip__remove-button__icon** - A parte `icon` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **expand-icon** - O elemento que embrulha a renderização do _slot_ `expand-icon`.",
+      "name": "cps-tab-panel",
+      "description": "Painéis de abas (_tab panels_) são usados dentro de [grupos de abas](/componentes/tab-group) para exibir conteúdo em abas.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do painel.\n\n### **CSS Properties:**\n - **--padding** - O espaçamento interno do painel. Padrão: `var(--cps-spacing-4)`. _(default: undefined)_\n- **--background** - A cor de fundo do painel. Padrão: `var(--cps-color-background-solid-tertiary)`. _(default: undefined)_\n- **--border-color** - A cor da borda do painel. Padrão: `var(--cps-color-stroke-primary)`. _(default: undefined)_\n- **--border-radius** - O arredondamento da borda do painel. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
       "attributes": [
         {
-          "name": "id",
-          "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
-          "values": []
-        },
-        {
           "name": "name",
-          "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
           "values": []
         },
         {
-          "name": "value",
-          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
-          "values": [{ "name": "string[]" }]
-        },
-        {
-          "name": "size",
-          "description": "O tamanho do campo.",
-          "values": [
-            { "name": "small" },
-            { "name": "medium" },
-            { "name": "large" }
-          ]
-        },
-        {
-          "name": "placeholder",
-          "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
-          "values": []
-        },
-        {
-          "name": "multiple",
-          "description": "Habilita a possibilidade de selecionar mais de uma opção.",
-          "values": []
-        },
-        {
-          "name": "max-options-visible",
-          "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
-          "values": []
-        },
-        {
-          "name": "disabled",
-          "description": "Desabilita o campo.",
-          "values": []
-        },
-        {
-          "name": "clearable",
-          "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
-          "values": []
-        },
-        {
-          "name": "open",
-          "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
-          "values": []
-        },
-        {
-          "name": "strategy",
-          "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
-          "values": [{ "name": "absolute" }, { "name": "fixed" }]
-        },
-        {
-          "name": "label",
-          "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
-          "values": []
-        },
-        {
-          "name": "placement",
-          "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
-          "values": [{ "name": "top" }, { "name": "bottom" }]
-        },
-        {
-          "name": "help-text",
-          "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
-          "values": []
-        },
-        {
-          "name": "form",
-          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
-          "values": []
-        },
-        {
-          "name": "required",
-          "description": "Torna o campo como sendo de preenchimento obrigatório.",
+          "name": "selected",
+          "description": "Quando verdadeiro, o painel é exibido.",
           "values": []
         }
       ],
@@ -1873,23 +1895,6 @@
             { "name": "email" },
             { "name": "url" }
           ]
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-tab-panel",
-      "description": "Painéis de abas (_tab panels_) são usados dentro de [grupos de abas](/componentes/tab-group) para exibir conteúdo em abas.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do painel.\n\n### **CSS Properties:**\n - **--padding** - O espaçamento interno do painel. Padrão: `var(--cps-spacing-4)`. _(default: undefined)_\n- **--background** - A cor de fundo do painel. Padrão: `var(--cps-color-background-solid-tertiary)`. _(default: undefined)_\n- **--border-color** - A cor da borda do painel. Padrão: `var(--cps-color-stroke-primary)`. _(default: undefined)_\n- **--border-radius** - O arredondamento da borda do painel. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
-      "attributes": [
-        {
-          "name": "name",
-          "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
-          "values": []
-        },
-        {
-          "name": "selected",
-          "description": "Quando verdadeiro, o painel é exibido.",
-          "values": []
         }
       ],
       "references": []

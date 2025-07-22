@@ -30,6 +30,7 @@ export default class CpsDropdown extends BaseElement {
     open: boolean;
     strategy: 'absolute' | 'fixed';
     placement: 'top' | 'bottom';
+    forgetSelection: boolean;
     handleIdChange(): void;
     connectedCallback(): void;
     private addOpenListeners;
