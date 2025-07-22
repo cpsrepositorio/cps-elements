@@ -16,6 +16,7 @@ export default css`
     --track-width: 1px;
 
     display: block;
+    isolation: isolate;
   }
 
   .tab-group {
