@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Adicionado suporte à utilização composta de `<cps-button>` a `<cps-dropdown>` para atender necessidades de _split button_.
+
 ### Changed
 
 - Componente `<cps-dropdown>` passa a ser aceito como parte de um `<cps-button-group>`.

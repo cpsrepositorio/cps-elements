@@ -52,6 +52,7 @@
   - [Separator](/componentes/separator)
   - [Skeleton](/componentes/skeleton)
   - [Spinner](/componentes/spinner)
+  - [Split Button](/componentes/split-button)
   - [Stepper <small>(em breve)</small>](/componentes/stepper)
   - [Switch <small>(em breve)</small>](/componentes/switch)
   - [Tab Group](/componentes/tab-group)

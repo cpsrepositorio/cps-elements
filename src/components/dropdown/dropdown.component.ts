@@ -113,6 +113,9 @@ export default class CpsDropdown extends BaseElement {
   /** O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização. */
   @property({ reflect: true }) placement: 'top' | 'bottom' = 'bottom';
 
+  /** Indica se o menu de seleção de opções deve esquecer a seleção atual após o fechamento. Isso pode ser útil para menus que servem apenas como um seletor visual, mas com funcionalidade totalmente personalizada após a seleção. */
+  @property({ type: Boolean, attribute: 'forget-selection' }) forgetSelection = false;
+
   @watch('id')
   handleIdChange() {
     this.generatedId = uuid(this.id);
@@ -187,9 +190,14 @@ export default class CpsDropdown extends BaseElement {
         return;
       }
 
-      // If it is open, update the value based on the current selection and close it
+      // If it is open, update the value based on the current selection
       if (this.currentOption && !this.currentOption.disabled) {
-        this.setSelectedOptions(this.currentOption);
+        if (this.forgetSelection) {
+          // Just close it if selection is forgotten
+          this.hide();
+        } else {
+          this.setSelectedOptions(this.currentOption);
+        }
 
         // Emit after updating
         this.updateComplete.then(() => {
@@ -332,7 +340,9 @@ export default class CpsDropdown extends BaseElement {
     const oldValue = this.value;
 
     if (option && !option.disabled) {
-      this.setSelectedOptions(option);
+      if (!this.forgetSelection) {
+        this.setSelectedOptions(option);
+      }
 
       // Set focus after updating so the value is announced by screen readers
       this.updateComplete.then(() => this.displaySpan.focus({ preventScroll: true }));
@@ -365,8 +375,13 @@ export default class CpsDropdown extends BaseElement {
     if (customElements.get('cps-option')) {
       allOptions.forEach(option => values.push(option.value));
 
-      // Select only the options that match the new value
-      this.setSelectedOptions(allOptions.filter(el => value.includes(el.value)));
+      if (this.forgetSelection) {
+        // Clear the current selection if forgetSelection is true
+        this.setSelectedOptions([]);
+      } else {
+        // Select only the options that match the new value
+        this.setSelectedOptions(allOptions.filter(el => value.includes(el.value)));
+      }
     } else {
       // Rerun this handler when <cps-option> is registered
       customElements.whenDefined('cps-option').then(() => this.handleDefaultSlotChange());
