@@ -8,26 +8,32 @@ const translation: Translation = {
   $code: 'ru',
   $name: 'Русский',
   $dir: 'ltr',
+  $firstDayOfWeek: 'monday',
 
   cancel: 'Отмена',
-  clearEntry: 'Очистить запись',
+  clear: 'Очистить',
   close: 'Закрыть',
   confirm: 'Подтвердить',
   copy: 'Скопировать',
   currentValue: 'Текущее значение',
   hidePassword: 'Скрыть пароль',
   loading: 'Загрузка',
+  next: 'Следующий',
   numOptionsSelected,
   ok: 'ОК',
+  previous: 'Предыдущий',
   progress: 'Прогресс',
   remove: 'Удалить',
   resize: 'Изменить размер',
   scrollToEnd: 'Пролистать до конца',
   scrollToStart: 'Пролистать к началу',
-  selectAColorFromTheScreen: 'Выберите цвет на экране',
+  select: 'Выбрать',
   showCalendar: 'Показать календарь',
   showPassword: 'Показать пароль',
-  toggleColorFormat: 'Переключить цветовую модель'
+  today: 'Сегодня',
+  viewDays: 'Просмотр дней',
+  viewMonths: 'Просмотр месяцев',
+  viewYears: 'Просмотр лет'
 };
 
 registerTranslation(translation);

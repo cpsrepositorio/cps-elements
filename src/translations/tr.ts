@@ -8,26 +8,32 @@ const translation: Translation = {
   $code: 'tr',
   $name: 'Türkçe',
   $dir: 'ltr',
+  $firstDayOfWeek: 'monday',
 
   cancel: 'İptal',
-  clearEntry: 'Girişi sil',
+  clear: 'Temizle',
   close: 'Kapat',
   confirm: 'Onayla',
   copy: 'Kopya',
   currentValue: 'Mevcut değer',
   hidePassword: 'Şifreyi sakla',
   loading: 'Yükleme',
+  next: 'Sonraki',
   numOptionsSelected,
   ok: 'Tamam',
+  previous: 'Önceki',
   progress: 'İlerleme',
   remove: 'Kaldır',
   resize: 'Yeniden boyutlandır',
   scrollToEnd: 'Sona kay',
   scrollToStart: 'Başa kay',
-  selectAColorFromTheScreen: 'Ekrandan bir renk seçin',
+  select: 'Seç',
   showCalendar: 'Takvimi göster',
   showPassword: 'Şifreyi göster',
-  toggleColorFormat: 'Renk biçimini değiştir'
+  today: 'Bugün',
+  viewDays: 'Günleri Görüntüle',
+  viewMonths: 'Ayları Görüntüle',
+  viewYears: 'Yılları Görüntüle'
 };
 
 registerTranslation(translation);

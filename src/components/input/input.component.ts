@@ -581,7 +581,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
                       name="dismiss"
                       library="system"
                       class="input__clear"
-                      aria-label=${this.localize.term('clearEntry')}
+                      aria-label=${this.localize.term('clear')}
                       @click=${this.handleClearClick}
                       size=${this.size}
                     ></cps-icon-button>

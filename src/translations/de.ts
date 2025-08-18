@@ -8,26 +8,32 @@ const translation: Translation = {
   $code: 'de',
   $name: 'Deutsch',
   $dir: 'ltr',
+  $firstDayOfWeek: 'monday',
 
   cancel: 'Abbrechen',
-  clearEntry: 'Eingabe löschen',
+  clear: 'Löschen',
   close: 'Schließen',
   confirm: 'Bestätigen',
   copy: 'Kopieren',
   currentValue: 'Aktueller Wert',
   hidePassword: 'Passwort verbergen',
   loading: 'Wird geladen',
+  next: 'Weiter',
   numOptionsSelected,
   ok: 'OK',
+  previous: 'Zurück',
   progress: 'Fortschritt',
   remove: 'Entfernen',
   resize: 'Größe ändern',
   scrollToEnd: 'Zum Ende scrollen',
   scrollToStart: 'Zum Anfang scrollen',
-  selectAColorFromTheScreen: 'Wähle eine Farbe vom Bildschirm',
+  select: 'Auswählen',
   showCalendar: 'Kalender anzeigen',
   showPassword: 'Passwort anzeigen',
-  toggleColorFormat: 'Farbformat umschalten'
+  today: 'Heute',
+  viewDays: 'Tage anzeigen',
+  viewMonths: 'Monate anzeigen',
+  viewYears: 'Jahre anzeigen'
 };
 
 registerTranslation(translation);

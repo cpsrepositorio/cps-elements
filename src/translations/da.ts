@@ -7,26 +7,32 @@ const translation: Translation = {
   $code: 'da',
   $name: 'Dansk',
   $dir: 'ltr',
+  $firstDayOfWeek: 'monday',
 
   cancel: 'Annuller',
-  clearEntry: 'Ryd indtastning',
+  clear: 'Ryd',
   close: 'Luk',
   confirm: 'Bekræft',
   copy: 'Kopier',
   currentValue: 'Nuværende værdi',
   hidePassword: 'Skjul adgangskode',
   loading: 'Indlæser',
+  next: 'Næste',
   numOptionsSelected,
   ok: 'OK',
+  previous: 'Forrige',
   progress: 'Status',
   remove: 'Fjern',
   resize: 'Tilpas størrelse',
   scrollToEnd: 'Scroll til slut',
   scrollToStart: 'Scroll til start',
-  selectAColorFromTheScreen: 'Vælg en farve fra skærmen',
+  select: 'Vælg',
   showCalendar: 'Vis kalender',
   showPassword: 'Vis adgangskode',
-  toggleColorFormat: 'Skift farveformat'
+  today: 'I dag',
+  viewDays: 'Se dage',
+  viewMonths: 'Se måneder',
+  viewYears: 'Se år'
 };
 
 registerTranslation(translation);

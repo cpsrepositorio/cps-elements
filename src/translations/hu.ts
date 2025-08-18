@@ -8,26 +8,32 @@ const translation: Translation = {
   $code: 'hu',
   $name: 'Magyar',
   $dir: 'ltr',
+  $firstDayOfWeek: 'monday',
 
   cancel: 'Mégse',
-  clearEntry: 'Bejegyzés törlése',
+  clear: 'Törlés',
   close: 'Bezárás',
   confirm: 'Megerősít',
   copy: 'Másolás',
   currentValue: 'Aktuális érték',
   hidePassword: 'Jelszó elrejtése',
   loading: 'Betöltés',
+  next: 'Következő',
   numOptionsSelected,
   ok: 'OK',
+  previous: 'Előző',
   progress: 'Folyamat',
   remove: 'Eltávolítás',
   resize: 'Átméretezés',
   scrollToEnd: 'Görgessen a végére',
   scrollToStart: 'Görgessen az elejére',
-  selectAColorFromTheScreen: 'Szín választása a képernyőről',
+  select: 'Kiválasztás',
   showCalendar: 'Naptár megjelenítése',
   showPassword: 'Jelszó megjelenítése',
-  toggleColorFormat: 'Színformátum változtatása'
+  today: 'Ma',
+  viewDays: 'Napok megtekintése',
+  viewMonths: 'Hónapok megtekintése',
+  viewYears: 'Évek megtekintése'
 };
 
 registerTranslation(translation);

@@ -857,7 +857,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
                       name="dismiss"
                       library="system"
                       class="select__clear"
-                      aria-label=${this.localize.term('clearEntry')}
+                      aria-label=${this.localize.term('clear')}
                       @mousedown=${this.handleClearMouseDown}
                       @click=${this.handleClearClick}
                       size=${this.size}

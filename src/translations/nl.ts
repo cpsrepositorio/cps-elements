@@ -8,26 +8,32 @@ const translation: Translation = {
   $code: 'nl',
   $name: 'Nederlands',
   $dir: 'ltr',
+  $firstDayOfWeek: 'monday',
 
   cancel: 'Annuleren',
-  clearEntry: 'Invoer wissen',
+  clear: 'Wissen',
   close: 'Sluiten',
   confirm: 'Bevestigen',
   copy: 'Kopiëren',
   currentValue: 'Huidige waarde',
   hidePassword: 'Verberg wachtwoord',
   loading: 'Bezig met laden',
+  next: 'Volgende',
   numOptionsSelected,
   ok: 'OK',
+  previous: 'Vorige',
   progress: 'Voortgang',
   remove: 'Verwijderen',
   resize: 'Formaat wijzigen',
   scrollToEnd: 'Scroll naar einde',
   scrollToStart: 'Scroll naar begin',
-  selectAColorFromTheScreen: 'Selecteer een kleur van het scherm',
+  select: 'Selecteren',
   showCalendar: 'Kalender weergeven',
   showPassword: 'Laat wachtwoord zien',
-  toggleColorFormat: 'Wissel kleurnotatie'
+  today: 'Vandaag',
+  viewDays: 'Bekijk dagen',
+  viewMonths: 'Bekijk maanden',
+  viewYears: 'Bekijk jaren'
 };
 
 registerTranslation(translation);

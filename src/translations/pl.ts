@@ -7,26 +7,32 @@ const translation: Translation = {
   $code: 'pl',
   $name: 'Polski',
   $dir: 'ltr',
+  $firstDayOfWeek: 'monday',
 
   cancel: 'Anuluj',
-  clearEntry: 'Wyczyść wpis',
+  clear: 'Wyczyść',
   close: 'Zamknij',
   confirm: 'Potwierdź',
   copy: 'Kopiuj',
   currentValue: 'Aktualna wartość',
   hidePassword: 'Ukryj hasło',
   loading: 'Ładowanie',
+  next: 'Następny',
   numOptionsSelected,
   ok: 'OK',
+  previous: 'Poprzedni',
   progress: 'Postęp',
   remove: 'Usunąć',
   resize: 'Zmień rozmiar',
   scrollToEnd: 'Przewiń do końca',
   scrollToStart: 'Przewiń do początku',
-  selectAColorFromTheScreen: 'Próbkuj z ekranu',
+  select: 'Wybierz',
   showCalendar: 'Pokaż kalendarz',
   showPassword: 'Pokaż hasło',
-  toggleColorFormat: 'Przełącz format'
+  today: 'Dzisiaj',
+  viewDays: 'Wyświetl dni',
+  viewMonths: 'Wyświetl miesiące',
+  viewYears: 'Wyświetl lata'
 };
 
 registerTranslation(translation);

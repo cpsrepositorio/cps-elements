@@ -9,26 +9,32 @@ const translation: Translation = {
   $code: 'ja',
   $name: '日本語',
   $dir: 'ltr',
+  $firstDayOfWeek: 'sunday',
 
   cancel: 'キャンセル',
-  clearEntry: 'クリアエントリ',
+  clear: 'クリア',
   close: '閉じる',
   confirm: '確認',
   copy: 'コピー',
   currentValue: '現在の価値',
   hidePassword: 'パスワードを隠す',
   loading: '読み込み中',
+  next: '次へ',
   numOptionsSelected,
   ok: 'OK',
+  previous: '前へ',
   progress: '進行',
   remove: '削除',
   resize: 'サイズ変更',
   scrollToEnd: '最後にスクロールする',
   scrollToStart: '最初にスクロールする',
-  selectAColorFromTheScreen: '画面から色を選択してください',
+  select: '選択',
   showCalendar: 'カレンダーを表示',
   showPassword: 'パスワードを表示',
-  toggleColorFormat: '色のフォーマットを切り替える'
+  today: '今日',
+  viewDays: '日を表示',
+  viewMonths: '月を表示',
+  viewYears: '年を表示'
 };
 
 registerTranslation(translation);

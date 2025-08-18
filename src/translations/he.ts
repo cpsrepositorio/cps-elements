@@ -8,26 +8,32 @@ const translation: Translation = {
   $code: 'he',
   $name: 'עברית',
   $dir: 'rtl',
+  $firstDayOfWeek: 'saturday',
 
   cancel: 'ביטול',
-  clearEntry: 'נקה קלט',
+  clear: 'נקה',
   close: 'סגור',
   confirm: 'אשר',
   copy: 'העתק',
   currentValue: 'ערך נוכחי',
   hidePassword: 'הסתר סיסמא',
   loading: 'טוען',
+  next: 'הבא',
   numOptionsSelected,
   ok: 'אישור',
+  previous: 'הקודם',
   progress: 'התקדמות',
   remove: 'לְהַסִיר',
   resize: 'שנה גודל',
   scrollToEnd: 'גלול עד הסוף',
   scrollToStart: 'גלול להתחלה',
-  selectAColorFromTheScreen: 'בחור צבע מהמסך',
+  select: 'בחר',
   showCalendar: 'הצג לוח שנה',
   showPassword: 'הראה סיסמה',
-  toggleColorFormat: 'החלף פורמט צבע'
+  today: 'היום',
+  viewDays: 'צפה בימים',
+  viewMonths: 'צפה בחודשים',
+  viewYears: 'צפה בשנים'
 };
 
 registerTranslation(translation);

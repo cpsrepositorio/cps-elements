@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Ajustes e reorganização das chaves de internacionalização, com atualizações em `<cps-dropdown>`, `<cps-input>`, e `<cps-select>`, sem impacto nas funcionalidades.
+
 ## 0.20.2 - 2025-07-22
 
 ### Added

@@ -8,26 +8,32 @@ const translation: Translation = {
   $code: 'sv',
   $name: 'Svenska',
   $dir: 'ltr',
+  $firstDayOfWeek: 'monday',
 
   cancel: 'Avbryt',
-  clearEntry: 'Återställ val',
+  clear: 'Rensa',
   close: 'Stäng',
   confirm: 'Bekräfta',
   copy: 'Kopiera',
   currentValue: 'Nuvarande värde',
   hidePassword: 'Dölj lösenord',
   loading: 'Läser in',
+  next: 'Nästa',
   numOptionsSelected,
   ok: 'OK',
+  previous: 'Föregående',
   progress: 'Framsteg',
   remove: 'Ta bort',
   resize: 'Ändra storlek',
   scrollToEnd: 'Skrolla till slutet',
   scrollToStart: 'Skrolla till början',
-  selectAColorFromTheScreen: 'Välj en färg från skärmen',
+  select: 'Välj',
   showCalendar: 'Visa kalender',
   showPassword: 'Visa lösenord',
-  toggleColorFormat: 'Växla färgformat'
+  today: 'Idag',
+  viewDays: 'Visa dagar',
+  viewMonths: 'Visa månader',
+  viewYears: 'Visa år'
 };
 
 registerTranslation(translation);

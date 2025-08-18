@@ -623,7 +623,7 @@ export default class CpsDropdown extends BaseElement {
                   name="dismiss"
                   library="system"
                   class="dropdown__clear"
-                  aria-label=${this.localize.term('clearEntry')}
+                  aria-label=${this.localize.term('clear')}
                   @mousedown=${this.handleClearMouseDown}
                   @click=${this.handleClearClick}
                   size=${this.size}

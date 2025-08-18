@@ -7,26 +7,32 @@ const translation: Translation = {
   $code: 'zh-tw',
   $name: '正體中文',
   $dir: 'ltr',
+  $firstDayOfWeek: 'sunday',
 
   cancel: '取消',
-  clearEntry: '清空',
+  clear: '清空',
   close: '關閉',
   confirm: '確認',
   copy: '複製',
   currentValue: '當前值',
   hidePassword: '隱藏密碼',
   loading: '載入中',
+  next: '下一個',
   numOptionsSelected,
   ok: '確定',
+  previous: '上一個',
   progress: '進度',
   remove: '移除',
   resize: '調整大小',
   scrollToEnd: '捲至頁尾',
   scrollToStart: '捲至頁首',
-  selectAColorFromTheScreen: '從螢幕中選擇一種顏色',
+  select: '選擇',
   showCalendar: '顯示日曆',
   showPassword: '顯示密碼',
-  toggleColorFormat: '切換顏色格式'
+  today: '今天',
+  viewDays: '查看天',
+  viewMonths: '查看月',
+  viewYears: '查看年'
 };
 
 registerTranslation(translation);

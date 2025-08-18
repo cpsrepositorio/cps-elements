@@ -8,26 +8,32 @@ const translation: Translation = {
   $code: 'fa',
   $name: 'فارسی',
   $dir: 'rtl',
+  $firstDayOfWeek: 'saturday',
 
   cancel: 'لغو',
-  clearEntry: 'پاک کردن ورودی',
+  clear: 'پاک کردن',
   close: 'بستن',
   confirm: 'تایید',
   copy: 'رونوشت',
   currentValue: 'مقدار فعلی',
   hidePassword: 'پنهان کردن رمز',
   loading: 'بارگذاری',
+  next: 'بعدی',
   numOptionsSelected,
   ok: 'تایید',
+  previous: 'قبلی',
   progress: 'پیشرفت',
   remove: 'حذف',
   resize: 'تغییر اندازه',
   scrollToEnd: 'پیمایش به انتها',
   scrollToStart: 'پیمایش به ابتدا',
-  selectAColorFromTheScreen: 'انتخاب یک رنگ از صفحه نمایش',
+  select: 'انتخاب',
   showCalendar: 'نمایش تقویم',
   showPassword: 'نمایش رمز',
-  toggleColorFormat: 'تغییر قالب رنگ'
+  today: 'امروز',
+  viewDays: 'مشاهده روزها',
+  viewMonths: 'مشاهده ماه‌ها',
+  viewYears: 'مشاهده سال‌ها'
 };
 
 registerTranslation(translation);
