@@ -1,0 +1,1 @@
+import{a as o}from"./chunk.AHI6DD5W.js";import*as t from"react";import{createComponent as e}from"@lit-labs/react";var p=e({tagName:"cps-toggle-button",elementClass:o,react:t,events:{onCpsBlur:"cps-blur",onCpsFocus:"cps-focus"}});var n=p;export{p as a,n as b};

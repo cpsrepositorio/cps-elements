@@ -5,6 +5,7 @@ export { CpsBackground } from './background';
 export { CpsBadge } from './badge';
 export { CpsButton } from './button';
 export { CpsButtonGroup } from './button-group';
+export { CpsCalendar } from './calendar';
 export { CpsCard } from './card';
 export { CpsCheckbox } from './checkbox';
 export { CpsChip } from './chip';

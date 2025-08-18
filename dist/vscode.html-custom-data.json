@@ -276,6 +276,61 @@
       "references": []
     },
     {
+      "name": "cps-calendar",
+      "description": "Calendários permitem aos usuários selecionar datas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando o valor selecionado muda ou quando o mês/ano visualizado é alterado.\n\n### **Methods:**\n - **previous()** - Navega para o mês, ano ou década anterior, dependendo da visualização atual.\n- **next()** - Navega para o próximo mês, ano ou década, dependendo da visualização atual.\n- **clear()** - Limpa a data selecionada no calendário.\n- **today()** - Define a data atual como a data selecionada no calendário.\n\n### **CSS Parts:**\n - **base** - O elemento base do calendário.\n- **header** - O cabeçalho do calendário.\n- **title** - O título do calendário.\n- **navigation** - O container dos botões de navegação.\n- **previous-button** - O botão para navegar para o anterior.\n- **next-button** - O botão para navegar para o próximo.\n- **grid** - O container da grade de células (dias, meses ou anos).\n- **weekday** - Uma célula de dia da semana.\n- **cell** - Uma célula do calendário.\n- **cell--today** - Aplicado na célula correspondente à data atual.\n- **cell--selected** - Aplicado na célula selecionada.\n- **cell--outside** - Aplicado em células fora do intervalo principal.\n- **cell--disabled** - Aplicado em células desabilitadas.\n- **footer** - O rodapé do calendário.\n- **clear-link** - O botão estilizado como link para limpar a data selecionada.\n- **today-link** - O botão estilizado como link para selecionar a data atual.",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "A data selecionada no formato ISO 8601 (ex: \"2025-07-28\").\nQuando não definida, nenhuma data estará selecionada.",
+          "values": []
+        },
+        {
+          "name": "min",
+          "description": "A data mínima selecionável no formato ISO 8601 (ex: \"2025-07-28\").\nDatas anteriores serão desabilitadas.",
+          "values": []
+        },
+        {
+          "name": "max",
+          "description": "A data máxima selecionável no formato ISO 8601 (ex: \"2025-07-28\").\nDatas posteriores serão desabilitadas.",
+          "values": []
+        },
+        {
+          "name": "hide-footer",
+          "description": "Determina se o rodapé do calendário deve ser ocultado.",
+          "values": []
+        },
+        {
+          "name": "hide-outside",
+          "description": "Determina se células fora do intervalo principal (dias fora do mês ou anos fora da década) devem ser ocultadas.\nPor padrão, células fora do intervalo principal são exibidas.",
+          "values": []
+        },
+        {
+          "name": "first-day-of-week",
+          "description": "Primeiro dia da semana no calendário, podendo ser: `'sunday'`, `'monday'`, `'tuesday'`, `'wednesday'`, `'thursday'`, `'friday'`, `'saturday'`.\nCaso não informado, o primeiro dia da semana será determinado automaticamente com base no idioma do usuário.",
+          "values": [
+            { "name": "sunday" },
+            { "name": "monday" },
+            { "name": "tuesday" },
+            { "name": "wednesday" },
+            { "name": "thursday" },
+            { "name": "friday" },
+            { "name": "saturday" }
+          ]
+        },
+        {
+          "name": "disable-weekdays",
+          "description": "Dias da semana desabilitados no calendário, no formato `'sunday'`, `'monday'`, `'tuesday'`, `'wednesday'`, `'thursday'`, `'friday'`, `'saturday'`.\nAceita um único dia, ou uma lista de dias da semana separados por vírgula.",
+          "values": []
+        },
+        {
+          "name": "disable-dates",
+          "description": "Datas específicas desabilitadas no calendário.\nAceita uma ou mais datas no formato ISO 8601 (YYYY-MM-DD), separadas por vírgula.\nExemplo: `disable-dates=\"2023-03-13,2023-03-14,2023-03-24\"` desabilita as datas 13, 14 e 24 de março de 2023.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-card",
       "description": "_Cards_ são utilizados para exibir informações de forma estruturada e destacada.\n\n\n---\n\n\n\n\n### **Methods:**\n - **click(event: _MouseEvent_)** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no elemento.\n- **blur()** - Remove o foco do elemento.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo principal do _card_.\n- **header** - O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.\n- **footer** - O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.",
       "attributes": [

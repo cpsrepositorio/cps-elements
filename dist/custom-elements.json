@@ -165,6 +165,29 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/calendar.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./calendar/calendar.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "default",
+            "module": "./calendar/calendar.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/card.js",
       "declarations": [],
       "exports": [
@@ -2780,6 +2803,576 @@
           "declaration": {
             "name": "CpsButtonGroup",
             "module": "components/button-group/button-group.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/calendar/calendar.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsCalendar",
+          "cssParts": [
+            {
+              "description": "O elemento base do calendário.",
+              "name": "base"
+            },
+            {
+              "description": "O cabeçalho do calendário.",
+              "name": "header"
+            },
+            {
+              "description": "O título do calendário.",
+              "name": "title"
+            },
+            {
+              "description": "O container dos botões de navegação.",
+              "name": "navigation"
+            },
+            {
+              "description": "O botão para navegar para o anterior.",
+              "name": "previous-button"
+            },
+            {
+              "description": "O botão para navegar para o próximo.",
+              "name": "next-button"
+            },
+            {
+              "description": "O container da grade de células (dias, meses ou anos).",
+              "name": "grid"
+            },
+            {
+              "description": "Uma célula de dia da semana.",
+              "name": "weekday"
+            },
+            {
+              "description": "Uma célula do calendário.",
+              "name": "cell"
+            },
+            {
+              "description": "Aplicado na célula correspondente à data atual.",
+              "name": "cell--today"
+            },
+            {
+              "description": "Aplicado na célula selecionada.",
+              "name": "cell--selected"
+            },
+            {
+              "description": "Aplicado em células fora do intervalo principal.",
+              "name": "cell--outside"
+            },
+            {
+              "description": "Aplicado em células desabilitadas.",
+              "name": "cell--disabled"
+            },
+            {
+              "description": "O rodapé do calendário.",
+              "name": "footer"
+            },
+            {
+              "description": "O botão estilizado como link para limpar a data selecionada.",
+              "name": "clear-link"
+            },
+            {
+              "description": "O botão estilizado como link para selecionar a data atual.",
+              "name": "today-link"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "calendar",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "calendarGrid",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A data selecionada no formato ISO 8601 (ex: \"2025-07-28\").\nQuando não definida, nenhuma data estará selecionada.",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "min",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A data mínima selecionável no formato ISO 8601 (ex: \"2025-07-28\").\nDatas anteriores serão desabilitadas.",
+              "attribute": "min"
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A data máxima selecionável no formato ISO 8601 (ex: \"2025-07-28\").\nDatas posteriores serão desabilitadas.",
+              "attribute": "max"
+            },
+            {
+              "kind": "field",
+              "name": "hideFooter",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina se o rodapé do calendário deve ser ocultado.",
+              "attribute": "hide-footer"
+            },
+            {
+              "kind": "field",
+              "name": "hideOutside",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina se células fora do intervalo principal (dias fora do mês ou anos fora da década) devem ser ocultadas.\nPor padrão, células fora do intervalo principal são exibidas.",
+              "attribute": "hide-outside"
+            },
+            {
+              "kind": "field",
+              "name": "firstDayOfWeek",
+              "type": {
+                "text": "'sunday' | 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | null"
+              },
+              "default": "null",
+              "description": "Primeiro dia da semana no calendário, podendo ser: `'sunday'`, `'monday'`, `'tuesday'`, `'wednesday'`, `'thursday'`, `'friday'`, `'saturday'`.\nCaso não informado, o primeiro dia da semana será determinado automaticamente com base no idioma do usuário.",
+              "attribute": "first-day-of-week"
+            },
+            {
+              "kind": "field",
+              "name": "disableWeekdays",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Dias da semana desabilitados no calendário, no formato `'sunday'`, `'monday'`, `'tuesday'`, `'wednesday'`, `'thursday'`, `'friday'`, `'saturday'`.\nAceita um único dia, ou uma lista de dias da semana separados por vírgula.",
+              "attribute": "disable-weekdays"
+            },
+            {
+              "kind": "field",
+              "name": "disableDates",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Datas específicas desabilitadas no calendário.\nAceita uma ou mais datas no formato ISO 8601 (YYYY-MM-DD), separadas por vírgula.\nExemplo: `disable-dates=\"2023-03-13,2023-03-14,2023-03-24\"` desabilita as datas 13, 14 e 24 de março de 2023.",
+              "attribute": "disable-dates"
+            },
+            {
+              "kind": "field",
+              "name": "currentMonth",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "currentYear",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "selectedDate",
+              "type": {
+                "text": "Date | null"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "calendarData",
+              "type": {
+                "text": "{\n    day: number;\n    month: number;\n    year: number;\n    isOutsideMonth: boolean;\n    isToday: boolean;\n    isSelected: boolean;\n    isDisabled: boolean;\n    date: Date;\n  }[][]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "focusedCell",
+              "type": {
+                "text": "{ row: number; col: number } | null"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "currentView",
+              "type": {
+                "text": "'days' | 'months' | 'years'"
+              },
+              "privacy": "private",
+              "default": "'days'"
+            },
+            {
+              "kind": "field",
+              "name": "previousView",
+              "type": {
+                "text": "'days' | 'months' | 'years' | null"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "method",
+              "name": "previous",
+              "privacy": "public",
+              "description": "Navega para o mês, ano ou década anterior, dependendo da visualização atual."
+            },
+            {
+              "kind": "method",
+              "name": "next",
+              "privacy": "public",
+              "description": "Navega para o próximo mês, ano ou década, dependendo da visualização atual."
+            },
+            {
+              "kind": "method",
+              "name": "clear",
+              "privacy": "public",
+              "description": "Limpa a data selecionada no calendário."
+            },
+            {
+              "kind": "method",
+              "name": "today",
+              "privacy": "public",
+              "description": "Define a data atual como a data selecionada no calendário."
+            },
+            {
+              "kind": "method",
+              "name": "initializeCalendar",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "parseDate",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Date | null"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "isoString",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "roundTime",
+                  "optional": true,
+                  "type": {
+                    "text": "'startOfDay' | 'endOfDay'"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleValueChange"
+            },
+            {
+              "kind": "method",
+              "name": "areDatesEqual",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "date1",
+                  "type": {
+                    "text": "Date | null"
+                  }
+                },
+                {
+                  "name": "date2",
+                  "type": {
+                    "text": "Date | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "formatDateToISO",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "date",
+                  "type": {
+                    "text": "Date"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "updateCalendarSelection",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleOptionsChange"
+            },
+            {
+              "kind": "method",
+              "name": "getFirstDayOfWeekIndex",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "generateCalendarData",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDayClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "date",
+                  "type": {
+                    "text": "{\n    day: number;\n    month: number;\n    year: number;\n    isDisabled: boolean;\n    isOutsideMonth?: boolean;\n  }"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleMonthClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "month",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleYearClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "year",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "focusCurrentCell",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleGridKeyDown",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "toggleView",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderDaysGrid",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderMonthsGrid",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderYearsGrid",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderHeader",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderFooter",
+              "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o valor selecionado muda ou quando o mês/ano visualizado é alterado.",
+              "name": "cps-change",
+              "reactName": "onCpsChange"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A data selecionada no formato ISO 8601 (ex: \"2025-07-28\").\nQuando não definida, nenhuma data estará selecionada.",
+              "fieldName": "value"
+            },
+            {
+              "name": "min",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A data mínima selecionável no formato ISO 8601 (ex: \"2025-07-28\").\nDatas anteriores serão desabilitadas.",
+              "fieldName": "min"
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "A data máxima selecionável no formato ISO 8601 (ex: \"2025-07-28\").\nDatas posteriores serão desabilitadas.",
+              "fieldName": "max"
+            },
+            {
+              "name": "hide-footer",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina se o rodapé do calendário deve ser ocultado.",
+              "fieldName": "hideFooter"
+            },
+            {
+              "name": "hide-outside",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina se células fora do intervalo principal (dias fora do mês ou anos fora da década) devem ser ocultadas.\nPor padrão, células fora do intervalo principal são exibidas.",
+              "fieldName": "hideOutside"
+            },
+            {
+              "name": "first-day-of-week",
+              "type": {
+                "text": "'sunday' | 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | null"
+              },
+              "default": "null",
+              "description": "Primeiro dia da semana no calendário, podendo ser: `'sunday'`, `'monday'`, `'tuesday'`, `'wednesday'`, `'thursday'`, `'friday'`, `'saturday'`.\nCaso não informado, o primeiro dia da semana será determinado automaticamente com base no idioma do usuário.",
+              "fieldName": "firstDayOfWeek"
+            },
+            {
+              "name": "disable-weekdays",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Dias da semana desabilitados no calendário, no formato `'sunday'`, `'monday'`, `'tuesday'`, `'wednesday'`, `'thursday'`, `'friday'`, `'saturday'`.\nAceita um único dia, ou uma lista de dias da semana separados por vírgula.",
+              "fieldName": "disableWeekdays"
+            },
+            {
+              "name": "disable-dates",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Datas específicas desabilitadas no calendário.\nAceita uma ou mais datas no formato ISO 8601 (YYYY-MM-DD), separadas por vírgula.\nExemplo: `disable-dates=\"2023-03-13,2023-03-14,2023-03-24\"` desabilita as datas 13, 14 e 24 de março de 2023.",
+              "fieldName": "disableDates"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Calendários permitem aos usuários selecionar datas.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/calendar",
+          "status": "stable",
+          "since": "0.21.0",
+          "dependencies": [
+            "cps-icon"
+          ],
+          "tagName": "cps-calendar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsCalendar",
+            "module": "components/calendar/calendar.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-calendar",
+          "declaration": {
+            "name": "CpsCalendar",
+            "module": "components/calendar/calendar.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsCalendar",
+          "declaration": {
+            "name": "CpsCalendar",
+            "module": "components/calendar/calendar.component.js"
           }
         }
       ]
@@ -14693,7 +15286,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.20.2",
+    "version": "0.21.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

@@ -23,7 +23,7 @@
   - [Badge](/componentes/badge)
   - [Button](/componentes/button)
   - [Button Group](/componentes/button-group)
-  - [Calendar <small>(em breve)</small>](/componentes/calendar)
+  - [Calendar](/componentes/calendar)
   - [Card](/componentes/card)
   - [Checkbox](/componentes/checkbox)
   - [Chip](/componentes/chip)
