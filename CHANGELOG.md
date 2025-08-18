@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-calendar>`.
+
 ### Changed
 
 - Ajustes e reorganização das chaves de internacionalização, com atualizações em `<cps-dropdown>`, `<cps-input>`, e `<cps-select>`, sem impacto nas funcionalidades.
