@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-rating>`.
+
 ## 0.21.0 - 2025-08-18
 
 ### Added
