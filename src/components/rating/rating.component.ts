@@ -430,6 +430,8 @@ export default class CpsRating extends BaseElement implements BaseFormControl {
   }
 }
 
+export { CpsRating };
+
 declare global {
   interface HTMLElementTagNameMap {
     'cps-rating': CpsRating;
