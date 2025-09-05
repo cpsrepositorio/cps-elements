@@ -331,28 +331,6 @@
       "references": []
     },
     {
-      "name": "cps-card",
-      "description": "_Cards_ são utilizados para exibir informações de forma estruturada e destacada.\n\n\n---\n\n\n\n\n### **Methods:**\n - **click(event: _MouseEvent_)** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no elemento.\n- **blur()** - Remove o foco do elemento.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo principal do _card_.\n- **header** - O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.\n- **footer** - O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.",
-      "attributes": [
-        {
-          "name": "variant",
-          "description": "O tipo de variação visual do _card_.",
-          "values": [
-            { "name": "primary" },
-            { "name": "secondary" },
-            { "name": "tertiary" },
-            { "name": "on-blurred" }
-          ]
-        },
-        {
-          "name": "actionable",
-          "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
       "name": "cps-checkbox",
       "description": "Caixas de seleção (_checkboxes_) permitem alternar entre estados marcado ou desmarcado.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **click()** - Simula um _click_ no campo.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - _default_ - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o `<input>` e eventuais elementos de apoio para sua renderização.\n- **control** - O elemento quadrado que embrulha o estado checagem do campo.\n- **control--checked** - Obtém para estilização o elemento `control`, somente quando o campo está marcado.\n- **control--indeterminate** - Obtém para estilização o elemento `control`, somente quando o campo está em estado indeterminado.\n- **checked-icon** - O ícone de estado checado, um elemento `<cps-icon>`.\n- **indeterminate-icon** - O ícone de estado indeterminado, um elemento `<cps-icon>`.\n- **label** - O elemento que embrulha o rótulo do campo, um elemento `<label>`.",
       "attributes": [
@@ -447,32 +425,22 @@
       "references": []
     },
     {
-      "name": "cps-dialog",
-      "description": "Caixas de diálogo, às vezes chamadas de \"modais\", aparecem acima de outros elementos na página e requerem atenção imediata do usuário.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando a caixa de diálogo começa a ser aberta.\n- **cps-after-show** - Emitido após a caixa de diálogo ser aberta e todas as animações serem concluídas.\n- **cps-close** - Emitido quando a caixa de diálogo começa a ser fechada.\n- **cps-after-close** - Emitido após a caixa de diálogo ser fechada e todas as animações serem concluídas.\n- **cps-initial-focus** - Emitido quando a caixa de diálogo é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada.\n- **cps-request-close** - Emitido quando o usuário tenta fechar a caixa de diálogo clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a caixa de diálogo aberta. Evite usar isso a menos que fechar a caixa de diálogo resulte em comportamento destrutivo, como perda de dados.\n\n### **Methods:**\n - **show()** - Mostra a caixa de diálogo.\n- **close(returnValue: _string | boolean_)** - Fecha a caixa de diálogo, opcionalmente definindo um valor de retorno.\n\n### **Slots:**\n - _default_ - O conteúdo principal da caixa de diálogo.\n- **label** - O rótulo da caixa de diálogo. Alternativamente, você pode usar o atributo `label`.\n- **header-actions** - Ações opcionais para adicionar ao cabeçalho. Funciona melhor com `<cps-icon-button>`.\n- **footer** - O rodapé da caixa de diálogo, geralmente um ou mais botões representando várias opções.\n\n### **CSS Properties:**\n - **--width** - A largura preferida da caixa de diálogo. Observe que, ainda assim, a caixa de diálogo diminuirá para se acomodar em telas menores. _(default: undefined)_\n- **--header-spacing** - A quantidade de preenchimento a ser usada para o cabeçalho. _(default: undefined)_\n- **--body-spacing** - A quantidade de preenchimento a ser usada para o corpo. _(default: undefined)_\n- **--footer-spacing** - A quantidade de preenchimento a ser usada para o rodapé. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento base que envolve o componente.\n- **backdrop** - A sobreposição que cobre a tela por trás da caixa de diálogo.\n- **panel** - O painel da caixa de diálogo (onde a caixa de diálogo e seu conteúdo são renderizados).\n- **header** - O cabeçalho da caixa de diálogo. Este elemento envolve o título e ações do cabeçalho.\n- **header-actions** - Contêiner para ações opcionais do cabeçalho.\n- **title** - O título da caixa de diálogo.\n- **close-button** - O botão de fechar, um `<cps-icon-button>`.\n- **close-button__base** - A parte `base` exportada do botão de fechar.\n- **body** - O corpo da caixa de diálogo.\n- **footer** - O rodapé da caixa de diálogo.",
+      "name": "cps-card",
+      "description": "_Cards_ são utilizados para exibir informações de forma estruturada e destacada.\n\n\n---\n\n\n\n\n### **Methods:**\n - **click(event: _MouseEvent_)** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no elemento.\n- **blur()** - Remove o foco do elemento.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo principal do _card_.\n- **header** - O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.\n- **footer** - O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.",
       "attributes": [
         {
-          "name": "open",
-          "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
-          "values": []
+          "name": "variant",
+          "description": "O tipo de variação visual do _card_.",
+          "values": [
+            { "name": "primary" },
+            { "name": "secondary" },
+            { "name": "tertiary" },
+            { "name": "on-blurred" }
+          ]
         },
         {
-          "name": "closable",
-          "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
-          "values": []
-        },
-        {
-          "name": "label",
-          "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
-          "values": []
-        },
-        {
-          "name": "aria-label",
-          "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
-          "values": []
-        },
-        {
-          "name": "returnValue",
-          "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
+          "name": "actionable",
+          "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
           "values": []
         }
       ],
@@ -515,6 +483,38 @@
         {
           "name": "contained",
           "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-dialog",
+      "description": "Caixas de diálogo, às vezes chamadas de \"modais\", aparecem acima de outros elementos na página e requerem atenção imediata do usuário.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando a caixa de diálogo começa a ser aberta.\n- **cps-after-show** - Emitido após a caixa de diálogo ser aberta e todas as animações serem concluídas.\n- **cps-close** - Emitido quando a caixa de diálogo começa a ser fechada.\n- **cps-after-close** - Emitido após a caixa de diálogo ser fechada e todas as animações serem concluídas.\n- **cps-initial-focus** - Emitido quando a caixa de diálogo é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada.\n- **cps-request-close** - Emitido quando o usuário tenta fechar a caixa de diálogo clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a caixa de diálogo aberta. Evite usar isso a menos que fechar a caixa de diálogo resulte em comportamento destrutivo, como perda de dados.\n\n### **Methods:**\n - **show()** - Mostra a caixa de diálogo.\n- **close(returnValue: _string | boolean_)** - Fecha a caixa de diálogo, opcionalmente definindo um valor de retorno.\n\n### **Slots:**\n - _default_ - O conteúdo principal da caixa de diálogo.\n- **label** - O rótulo da caixa de diálogo. Alternativamente, você pode usar o atributo `label`.\n- **header-actions** - Ações opcionais para adicionar ao cabeçalho. Funciona melhor com `<cps-icon-button>`.\n- **footer** - O rodapé da caixa de diálogo, geralmente um ou mais botões representando várias opções.\n\n### **CSS Properties:**\n - **--width** - A largura preferida da caixa de diálogo. Observe que, ainda assim, a caixa de diálogo diminuirá para se acomodar em telas menores. _(default: undefined)_\n- **--header-spacing** - A quantidade de preenchimento a ser usada para o cabeçalho. _(default: undefined)_\n- **--body-spacing** - A quantidade de preenchimento a ser usada para o corpo. _(default: undefined)_\n- **--footer-spacing** - A quantidade de preenchimento a ser usada para o rodapé. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento base que envolve o componente.\n- **backdrop** - A sobreposição que cobre a tela por trás da caixa de diálogo.\n- **panel** - O painel da caixa de diálogo (onde a caixa de diálogo e seu conteúdo são renderizados).\n- **header** - O cabeçalho da caixa de diálogo. Este elemento envolve o título e ações do cabeçalho.\n- **header-actions** - Contêiner para ações opcionais do cabeçalho.\n- **title** - O título da caixa de diálogo.\n- **close-button** - O botão de fechar, um `<cps-icon-button>`.\n- **close-button__base** - A parte `base` exportada do botão de fechar.\n- **body** - O corpo da caixa de diálogo.\n- **footer** - O rodapé da caixa de diálogo.",
+      "attributes": [
+        {
+          "name": "open",
+          "description": "Indica se a caixa de diálogo está aberta ou não. Você pode alternar este atributo para mostrar e ocultar a caixa de diálogo, ou pode\nusar os métodos `show()` e `hide()` e este atributo refletirá o estado aberto da caixa de diálogo.",
+          "values": []
+        },
+        {
+          "name": "closable",
+          "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+          "values": []
+        },
+        {
+          "name": "label",
+          "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "aria-label",
+          "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+          "values": []
+        },
+        {
+          "name": "returnValue",
+          "description": "O valor de retorno do diálogo, similar ao `returnValue` de um elemento de diálogo nativo.\nEste valor é definido quando o diálogo é fechado e pode ser usado para determinar qual ação\nfoi tomada pelo usuário.",
           "values": []
         }
       ],
@@ -1375,6 +1375,12 @@
       "references": []
     },
     {
+      "name": "cps-menu-label",
+      "description": "Rótulos de menu são usados para descrever um grupo de itens de menu.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O texto interno do rótulo de menu.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
+      "attributes": [],
+      "references": []
+    },
+    {
       "name": "cps-menu-item",
       "description": "Itens de menu fornecem opções para o usuário escolher em um menu.\n\n\n---\n\n\n\n\n### **Methods:**\n - **getTextLabel()** - Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.\n\n### **Slots:**\n - _default_ - O texto interno do item de menu.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **check** - O elemento que embrulha o ícone de checagem (caso o item de menu seja do tipo `checkbox`), visível apenas quando o item de menu está marcado.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **label** - O elemento que embrulha o conteúdo principal, normalmente um texto literal.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
       "attributes": [
@@ -1399,12 +1405,6 @@
           "values": []
         }
       ],
-      "references": []
-    },
-    {
-      "name": "cps-menu-label",
-      "description": "Rótulos de menu são usados para descrever um grupo de itens de menu.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O texto interno do rótulo de menu.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
-      "attributes": [],
       "references": []
     },
     {
@@ -1588,6 +1588,82 @@
       "references": []
     },
     {
+      "name": "cps-rating",
+      "description": "Campos de classificação (_rating_) permitem aos usuários classificar um conteúdo.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n\n### **Slots:**\n - **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Properties:**\n - **--symbol-color** - Cor do símbolo quando não está ativo. Por padrão, `var(--cps-color-text-secondary)`. _(default: undefined)_\n- **--symbol-color-active** - Cor do símbolo quando está ativo. Por padrão, `var(--cps-color-fill-accent)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **base** - O elemento principal que envolve os símbolos de classificação.\n- **symbol** - O contêiner base envolvendo cada símbolo de classificação renderizado.\n- **symbol--active** - Aplicado a um símbolo quando ele está ativo (selecionado), ainda que parcialmente.",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "aria-label",
+          "description": "O rótulo de acessibilidade para a classificação. Necessário apenas se um `label` visual não for fornecido.",
+          "values": []
+        },
+        {
+          "name": "help-text",
+          "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+          "values": []
+        },
+        {
+          "name": "name",
+          "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do campo.",
+          "values": [
+            { "name": "small" },
+            { "name": "medium" },
+            { "name": "large" }
+          ]
+        },
+        {
+          "name": "max",
+          "description": "O valor máximo da classificação, por padrão `5`. Deve ser no mínimo `1`.",
+          "values": []
+        },
+        {
+          "name": "precision",
+          "description": "A precisão para a qual arredondar. Para permitir meias estrelas, defina como `0.5`.",
+          "values": []
+        },
+        {
+          "name": "symbol",
+          "description": "O símbolo usado para representar cada unidade de classificação.",
+          "values": [{ "name": "star" }, { "name": "heart" }]
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o campo.",
+          "values": []
+        },
+        {
+          "name": "readonly",
+          "description": "Torna o campo somente leitura.",
+          "values": []
+        },
+        {
+          "name": "required",
+          "description": "Torna o campo como sendo de preenchimento obrigatório.",
+          "values": []
+        },
+        {
+          "name": "form",
+          "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-select",
       "description": "Caixas de seleção permitem escolher itens de um menu de opções predefinidas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-show** - Emitido quando a lista suspensa de opções começa a ser exibida.\n- **cps-after-show** - Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando a lista suspensa de opções começa a ser ocultada.\n- **cps-after-hide** - Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **show()** - Exibe o menu seletor de opções.\n- **hide()** - Oculta o menu seletor de opções.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n\n### **Slots:**\n - _default_ - As opções da lista suspensa. Cada opção deve ser um `<cps-option>`. Opcionalmente, também pode conter `<cps-separator>` e `<cps-label>` para agrupar itens visualmente.\n- **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **expand-icon** - Indicador que demonstra se o controle está expandido ou contraído (idealmente, um `<cps-icon>`). Se rotaciona de acordo com a abertura e o fechamento da lista suspensa.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **field** - O elemento base que embrulha o campo de entrada de dados, o ícone de expansão, e eventuais prefixo e botão de limpar.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **input** - O controle interno propriamente dito (um `<input>`), o qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.\n- **menu** - O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.\n- **chips** - O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiple` está em uso.\n- **chip** - Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiple` está em uso.\n- **chip__base** - A parte `base` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__content** - A parte `content` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__remove-button** - O botão de remoção re-exportado de cada _chip_ de seleção múltipla.\n- **chip__remove-button__base** - A parte `base` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **chip__remove-button__icon** - A parte `icon` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **expand-icon** - O elemento que embrulha a renderização do _slot_ `expand-icon`.",
       "attributes": [
@@ -1723,33 +1799,6 @@
       "references": []
     },
     {
-      "name": "cps-tab-group",
-      "description": "Grupos de abas organizam o conteúdo em um contêiner que mostra uma seção por vez.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-tab-show** - Emitido quando o painel de uma aba é exibido.\n- **cps-tab-hide** - Emitido quando o painel de uma aba é ocultado.\n\n### **Methods:**\n - **show(panel: _string_)** - Força a seleção da aba especificada, através do nome de seu painel.\n\n### **Slots:**\n - _default_ - Usado para agrupar painéis de abas dentro do grupo. Utilize apenas elementos `<cps-tab-panel>`.\n- **nav** - Usado para especificar as abas existentes dentro do grupo. Utilize apenas elementos `<cps-tab-item>`.\n\n### **CSS Properties:**\n - **--background-navigation** - A cor de fundo da área de navegação, onde as abas são dispostas. Padrão: `var(--cps-color-background-solid-primary)`. _(default: undefined)_\n- **--background-selection** - A cor de fundo das áreas selecionadas, ou seja, tanto a aba selecionada quanto o respectivo painel selecionado. Padrão: `var(--cps-color-background-solid-tertiary)`. _(default: undefined)_\n- **--border-color** - Cor de borda utilizada em todo o grupo, incluindo área de navegação, aba selecionada, e o respectivo painel selecionado. Padrão: `var(--cps-color-stroke-primary)`. _(default: undefined)_\n- **--border-width** - Espessura da borda da área de navegação. Padrão: `1px`. _(default: undefined)_\n- **--border-radius** - Arredondamento de bordas, incluindo área de navegação e painel selecionado. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n- **--indicator-color** - Cor do indicador de aba atualmente selecionada. Invisível por padrão. _(default: undefined)_\n- **--padding-navigation** - Espaçamentos internos da área de navegação. Padrão: `var(--cps-spacing-2)`. _(default: undefined)_\n- **--track-color** - Cor da área de posicionamento de indicador de seleção. Padrão: `var(--border-color)`. _(default: undefined)_\n- **--track-width** - Espessura da área de posicionamento de indicador de seleção. Padrão: `1px`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **nav** - O contêiner da área de navegação (um `<div>`), o qual contém a lista de abas, e eventuais elementos auxiliares como os botões de rolagem automática.\n- **tabs** - O contêiner que embrulha as abas propriamente ditas (um `<div>`).\n- **active-tab-indicator** - O elemento indicativa de seleção atual, por padrão uma linha não apresentada visual, mas que pode ser ativada através da propriedade CSS `--indicator-color`.\n- **body** - O contêiner que embrulha o corpo do grupo, onde os painéis de abas são dispostos.\n- **scroll-button** - Seletor que intercepta tanto o botão de rolagem em direção ao início quanto em direção ao final da lista de abas (ambos `<cps-icon-button>`), exibidos quando existem abas transbordando, causando rolagem automática da lista de abas.\n- **scroll-button--start** - O botão de rolagem em direção ao início da lista de abas.\n- **scroll-button--start__base** - A parte `base` re-exportada do botão de rolagem em direção ao início da lista de abas.\n- **scroll-button--start__icon** - A parte `icon` re-exportada do botão de rolagem em direção ao início da lista de abas.\n- **scroll-button--end** - O botão de rolagem em direção ao final da lista de abas.\n- **scroll-button--end__base** - A parte `base` re-exportada do botão de rolagem em direção ao final da lista de abas.\n- **scroll-button--end__icon** - A parte `icon` re-exportada do botão de rolagem em direção ao final da lista de abas.",
-      "attributes": [
-        {
-          "name": "placement",
-          "description": "O posicionamento das abas dentro do grupo.",
-          "values": [
-            { "name": "top" },
-            { "name": "bottom" },
-            { "name": "start" },
-            { "name": "end" }
-          ]
-        },
-        {
-          "name": "activation",
-          "description": "Quando definido como `auto`, navegar pelas abas com as teclas de seta mostrará instantaneamente o painel de abas correspondente. Quando definido como `manual`, a aba receberá foco, mas não será exibida até que o usuário pressione a barra de espaço ou tecle `Enter`.",
-          "values": [{ "name": "auto" }, { "name": "manual" }]
-        },
-        {
-          "name": "no-scroll-controls",
-          "description": "Desabilita as setas indicativas de rolagem automática quando as abas transbordarem em relação ao espaço disponível na área de navegação do grupo de abas.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
       "name": "cps-tab-item",
       "description": "Abas (_tab items_) são usadas dentro de [grupos de abas](/componentes/tab-group) para controlar a visibilidade de [painéis de abas](/components/tab-panel).\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-close** - Emitido quando o botão de fechar da aba `closable` é acionado.\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Coloca o foco na aba.\n- **blur()** - Remove o foco da aba.\n\n### **Slots:**\n - _default_ - O conteúdo da aba.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n\n### **CSS Properties:**\n - **--selected-background** - A cor de fundo da aba, quando ela está selecionada. Padrão: `var(--cps-color-background-solid-tertiary)`. Idealmente, se for personalizar, garanta que a cor aplicada é a mesma que a do painel de abas associado. _(default: undefined)_\n- **--selected-border** - A cor da borda da aba, quando ela está selecionada. Padrão: `var(--cps-color-stroke-primary)`. Idealmente, se for personalizar, garanta que a cor aplicada é a mesma que a do painel de abas associado. _(default: undefined)_\n- **--border-radius** - Arredondamento dos cantos da aba. Padrão: `var(--cps-spacing-1-5)`. _(default: undefined)_\n- **--inverse-rounded-corner-size** - Arredondamento invertido posicionado na base da aba, causando o efeito de uma curvatura para fora. Padrão: `8px`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o _label_ do botão.\n- **close-button** - O botão de fechar a aba (caso `closable` esteja em uso).\n- **close-button__base** - A parte `base` re-exportada do botão de fechar.\n- **close-button__icon** - A parte `icon` re-exportada do botão de fechar.",
       "attributes": [
@@ -1784,6 +1833,33 @@
           "values": []
         },
         { "name": "disabled", "description": "Desabilita a aba.", "values": [] }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-tab-group",
+      "description": "Grupos de abas organizam o conteúdo em um contêiner que mostra uma seção por vez.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-tab-show** - Emitido quando o painel de uma aba é exibido.\n- **cps-tab-hide** - Emitido quando o painel de uma aba é ocultado.\n\n### **Methods:**\n - **show(panel: _string_)** - Força a seleção da aba especificada, através do nome de seu painel.\n\n### **Slots:**\n - _default_ - Usado para agrupar painéis de abas dentro do grupo. Utilize apenas elementos `<cps-tab-panel>`.\n- **nav** - Usado para especificar as abas existentes dentro do grupo. Utilize apenas elementos `<cps-tab-item>`.\n\n### **CSS Properties:**\n - **--background-navigation** - A cor de fundo da área de navegação, onde as abas são dispostas. Padrão: `var(--cps-color-background-solid-primary)`. _(default: undefined)_\n- **--background-selection** - A cor de fundo das áreas selecionadas, ou seja, tanto a aba selecionada quanto o respectivo painel selecionado. Padrão: `var(--cps-color-background-solid-tertiary)`. _(default: undefined)_\n- **--border-color** - Cor de borda utilizada em todo o grupo, incluindo área de navegação, aba selecionada, e o respectivo painel selecionado. Padrão: `var(--cps-color-stroke-primary)`. _(default: undefined)_\n- **--border-width** - Espessura da borda da área de navegação. Padrão: `1px`. _(default: undefined)_\n- **--border-radius** - Arredondamento de bordas, incluindo área de navegação e painel selecionado. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n- **--indicator-color** - Cor do indicador de aba atualmente selecionada. Invisível por padrão. _(default: undefined)_\n- **--padding-navigation** - Espaçamentos internos da área de navegação. Padrão: `var(--cps-spacing-2)`. _(default: undefined)_\n- **--track-color** - Cor da área de posicionamento de indicador de seleção. Padrão: `var(--border-color)`. _(default: undefined)_\n- **--track-width** - Espessura da área de posicionamento de indicador de seleção. Padrão: `1px`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **nav** - O contêiner da área de navegação (um `<div>`), o qual contém a lista de abas, e eventuais elementos auxiliares como os botões de rolagem automática.\n- **tabs** - O contêiner que embrulha as abas propriamente ditas (um `<div>`).\n- **active-tab-indicator** - O elemento indicativa de seleção atual, por padrão uma linha não apresentada visual, mas que pode ser ativada através da propriedade CSS `--indicator-color`.\n- **body** - O contêiner que embrulha o corpo do grupo, onde os painéis de abas são dispostos.\n- **scroll-button** - Seletor que intercepta tanto o botão de rolagem em direção ao início quanto em direção ao final da lista de abas (ambos `<cps-icon-button>`), exibidos quando existem abas transbordando, causando rolagem automática da lista de abas.\n- **scroll-button--start** - O botão de rolagem em direção ao início da lista de abas.\n- **scroll-button--start__base** - A parte `base` re-exportada do botão de rolagem em direção ao início da lista de abas.\n- **scroll-button--start__icon** - A parte `icon` re-exportada do botão de rolagem em direção ao início da lista de abas.\n- **scroll-button--end** - O botão de rolagem em direção ao final da lista de abas.\n- **scroll-button--end__base** - A parte `base` re-exportada do botão de rolagem em direção ao final da lista de abas.\n- **scroll-button--end__icon** - A parte `icon` re-exportada do botão de rolagem em direção ao final da lista de abas.",
+      "attributes": [
+        {
+          "name": "placement",
+          "description": "O posicionamento das abas dentro do grupo.",
+          "values": [
+            { "name": "top" },
+            { "name": "bottom" },
+            { "name": "start" },
+            { "name": "end" }
+          ]
+        },
+        {
+          "name": "activation",
+          "description": "Quando definido como `auto`, navegar pelas abas com as teclas de seta mostrará instantaneamente o painel de abas correspondente. Quando definido como `manual`, a aba receberá foco, mas não será exibida até que o usuário pressione a barra de espaço ou tecle `Enter`.",
+          "values": [{ "name": "auto" }, { "name": "manual" }]
+        },
+        {
+          "name": "no-scroll-controls",
+          "description": "Desabilita as setas indicativas de rolagem automática quando as abas transbordarem em relação ao espaço disponível na área de navegação do grupo de abas.",
+          "values": []
+        }
       ],
       "references": []
     },

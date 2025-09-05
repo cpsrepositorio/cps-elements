@@ -1,0 +1,1 @@
+import{a as o}from"./chunk.ABX7FEY2.js";import*as t from"react";import{createComponent as e}from"@lit-labs/react";var p=e({tagName:"cps-flyout",elementClass:o,react:t,events:{onCpsReposition:"cps-reposition"}});var m=p;export{p as a,m as b};

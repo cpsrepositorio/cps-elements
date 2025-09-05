@@ -47,7 +47,7 @@
   - [Radio](/componentes/radio)
   - [Radio Group](/componentes/radio-group)
   - [Range <small>(em breve)</small>](/componentes/range)
-  - [Rating <small>(em breve)</small>](/componentes/rating)
+  - [Rating](/componentes/rating)
   - [Select](/componentes/select)
   - [Separator](/componentes/separator)
   - [Skeleton](/componentes/skeleton)

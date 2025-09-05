@@ -1,0 +1,1 @@
+import{a as o}from"./chunk.6YBFUVA5.js";import*as e from"react";import{createComponent as t}from"@lit-labs/react";var p=t({tagName:"cps-tooltip",elementClass:o,react:e,events:{onCpsShow:"cps-show",onCpsAfterShow:"cps-after-show",onCpsHide:"cps-hide",onCpsAfterHide:"cps-after-hide"}});var n=p;export{p as a,n as b};

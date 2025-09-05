@@ -786,6 +786,29 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/rating.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./rating/rating.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "default",
+            "module": "./rating/rating.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/select.js",
       "declarations": [],
       "exports": [
@@ -3379,161 +3402,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/card/card.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsCard",
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<div>`).",
-              "name": "base"
-            },
-            {
-              "description": "O conteúdo principal do _card_.",
-              "name": "content"
-            },
-            {
-              "description": "O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.",
-              "name": "header"
-            },
-            {
-              "description": "O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.",
-              "name": "footer"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "hasSlotController",
-              "privacy": "private",
-              "default": "new HasSlotController(this, '[default]', 'header', 'footer')"
-            },
-            {
-              "kind": "field",
-              "name": "card",
-              "type": {
-                "text": "HTMLDivElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "'primary' | 'secondary' | 'tertiary' | 'on-blurred'"
-              },
-              "default": "'primary'",
-              "description": "O tipo de variação visual do _card_.",
-              "attribute": "variant",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "actionable",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
-              "attribute": "actionable",
-              "reflects": true
-            },
-            {
-              "kind": "method",
-              "name": "click",
-              "parameters": [
-                {
-                  "name": "event",
-                  "optional": true,
-                  "type": {
-                    "text": "MouseEvent"
-                  }
-                }
-              ],
-              "description": "Simula um _click_ no elemento."
-            },
-            {
-              "kind": "method",
-              "name": "focus",
-              "parameters": [
-                {
-                  "name": "options",
-                  "optional": true,
-                  "type": {
-                    "text": "FocusOptions"
-                  }
-                }
-              ],
-              "description": "Coloca o foco no elemento."
-            },
-            {
-              "kind": "method",
-              "name": "blur",
-              "description": "Remove o foco do elemento."
-            }
-          ],
-          "attributes": [
-            {
-              "name": "variant",
-              "type": {
-                "text": "'primary' | 'secondary' | 'tertiary' | 'on-blurred'"
-              },
-              "default": "'primary'",
-              "description": "O tipo de variação visual do _card_.",
-              "fieldName": "variant"
-            },
-            {
-              "name": "actionable",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
-              "fieldName": "actionable"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "_Cards_ são utilizados para exibir informações de forma estruturada e destacada.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/card",
-          "status": "stable",
-          "since": "0.11",
-          "tagName": "cps-card",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsCard",
-            "module": "components/card/card.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-card",
-          "declaration": {
-            "name": "CpsCard",
-            "module": "components/card/card.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsCard",
-          "declaration": {
-            "name": "CpsCard",
-            "module": "components/card/card.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/checkbox/checkbox.component.js",
       "declarations": [
         {
@@ -4179,6 +4047,611 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/card/card.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsCard",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<div>`).",
+              "name": "base"
+            },
+            {
+              "description": "O conteúdo principal do _card_.",
+              "name": "content"
+            },
+            {
+              "description": "O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.",
+              "name": "header"
+            },
+            {
+              "description": "O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.",
+              "name": "footer"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, '[default]', 'header', 'footer')"
+            },
+            {
+              "kind": "field",
+              "name": "card",
+              "type": {
+                "text": "HTMLDivElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'primary' | 'secondary' | 'tertiary' | 'on-blurred'"
+              },
+              "default": "'primary'",
+              "description": "O tipo de variação visual do _card_.",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "actionable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
+              "attribute": "actionable",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "click",
+              "parameters": [
+                {
+                  "name": "event",
+                  "optional": true,
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "description": "Simula um _click_ no elemento."
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Coloca o foco no elemento."
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Remove o foco do elemento."
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'primary' | 'secondary' | 'tertiary' | 'on-blurred'"
+              },
+              "default": "'primary'",
+              "description": "O tipo de variação visual do _card_.",
+              "fieldName": "variant"
+            },
+            {
+              "name": "actionable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
+              "fieldName": "actionable"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "_Cards_ são utilizados para exibir informações de forma estruturada e destacada.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/card",
+          "status": "stable",
+          "since": "0.11",
+          "tagName": "cps-card",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsCard",
+            "module": "components/card/card.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-card",
+          "declaration": {
+            "name": "CpsCard",
+            "module": "components/card/card.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsCard",
+          "declaration": {
+            "name": "CpsCard",
+            "module": "components/card/card.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/drawer/drawer.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsDrawer",
+          "cssProperties": [
+            {
+              "description": "O tamanho preferencial da gaveta de navegação. Será aplicado à largura ou altura dependendo do `placement`.",
+              "name": "--size"
+            },
+            {
+              "description": "A quantidade de preenchimento a ser usada para o cabeçalho.",
+              "name": "--header-spacing"
+            },
+            {
+              "description": "A quantidade de preenchimento a ser usada para o corpo.",
+              "name": "--body-spacing"
+            },
+            {
+              "description": "A quantidade de preenchimento a ser usada para o rodapé.",
+              "name": "--footer-spacing"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento base que envolve o componente.",
+              "name": "base"
+            },
+            {
+              "description": "A sobreposição que cobre a tela por trás da gaveta de navegação.",
+              "name": "backdrop"
+            },
+            {
+              "description": "O painel da gaveta de navegação (onde a gaveta e seu conteúdo são renderizados).",
+              "name": "panel"
+            },
+            {
+              "description": "O cabeçalho da gaveta de navegação. Este elemento envolve o título e ações do cabeçalho.",
+              "name": "header"
+            },
+            {
+              "description": "Contêiner para ações opcionais do cabeçalho.",
+              "name": "header-actions"
+            },
+            {
+              "description": "O título da gaveta de navegação.",
+              "name": "title"
+            },
+            {
+              "description": "O botão de fechar, um `<cps-icon-button>`.",
+              "name": "close-button"
+            },
+            {
+              "description": "A parte `base` exportada do botão de fechar.",
+              "name": "close-button__base"
+            },
+            {
+              "description": "O corpo da gaveta de navegação.",
+              "name": "body"
+            },
+            {
+              "description": "O rodapé da gaveta de navegação.",
+              "name": "footer"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo principal da gaveta de navegação.",
+              "name": ""
+            },
+            {
+              "description": "O rótulo da gaveta de navegação. Alternativamente, você pode usar o atributo `label`.",
+              "name": "label"
+            },
+            {
+              "description": "Ações opcionais para adicionar ao cabeçalho. Funciona melhor com `<cps-icon-button>`.",
+              "name": "header-actions"
+            },
+            {
+              "description": "O rodapé da gaveta de navegação, geralmente um ou mais botões representando várias opções.",
+              "name": "footer"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, '[default]', 'label', 'header-actions', 'footer')"
+            },
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "modal",
+              "type": {
+                "text": "Modal"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "originalTrigger",
+              "type": {
+                "text": "HTMLElement | null"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "drawer",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "panel",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "backdrop",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se a gaveta de navegação está aberta ou não.",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "attribute": "closable",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "ariaLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "attribute": "aria-label"
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'end' | 'bottom' | 'start'"
+              },
+              "default": "'end'",
+              "description": "Direção de onde a gaveta de navegação será exibida.",
+              "attribute": "placement",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "contained",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
+              "attribute": "contained",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "playAnimation",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "target",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                },
+                {
+                  "name": "animationName",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "requestClose",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "source",
+                  "type": {
+                    "text": "'backdrop' | 'header' | 'keyboard'"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "addOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "removeOpenListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDocumentKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleOpenChange"
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "description": "Mostra a gaveta de navegação."
+            },
+            {
+              "kind": "method",
+              "name": "close",
+              "description": "Fecha a gaveta de navegação."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando a gaveta de navegação começa a ser aberta.",
+              "name": "cps-show",
+              "reactName": "onCpsShow"
+            },
+            {
+              "description": "Emitido após a gaveta de navegação ser aberta e todas as animações serem concluídas.",
+              "name": "cps-after-show",
+              "reactName": "onCpsAfterShow"
+            },
+            {
+              "description": "Emitido quando a gaveta de navegação começa a ser fechada.",
+              "name": "cps-close",
+              "reactName": "onCpsClose"
+            },
+            {
+              "description": "Emitido após a gaveta de navegação ser fechada e todas as animações serem concluídas.",
+              "name": "cps-after-close",
+              "reactName": "onCpsAfterClose"
+            },
+            {
+              "description": "Emitido quando a gaveta de navegação é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada.",
+              "name": "cps-initial-focus",
+              "reactName": "onCpsInitialFocus"
+            },
+            {
+              "type": {
+                "text": "{ source: 'backdrop' | 'header' | 'keyboard' }"
+              },
+              "description": "Emitido quando o usuário tenta fechar a gaveta de navegação clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a gaveta de navegação aberta. Evite usar isso a menos que fechar a gaveta de navegação resulte em comportamento destrutivo, como perda de dados.",
+              "name": "cps-request-close",
+              "reactName": "onCpsRequestClose"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se a gaveta de navegação está aberta ou não.",
+              "fieldName": "open"
+            },
+            {
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
+              "fieldName": "closable"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
+              "fieldName": "label"
+            },
+            {
+              "name": "aria-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
+              "fieldName": "ariaLabel"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'end' | 'bottom' | 'start'"
+              },
+              "default": "'end'",
+              "description": "Direção de onde a gaveta de navegação será exibida.",
+              "fieldName": "placement"
+            },
+            {
+              "name": "contained",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
+              "fieldName": "contained"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Gavetas de navegação (_drawers_) deslizam a partir de uma borda da tela para exibir informações ou ações complementares, causando uma mudança de foco imediata para o usuário.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/drawer",
+          "status": "stable",
+          "since": "0.20.0",
+          "dependencies": [
+            "cps-icon-button"
+          ],
+          "animations": [
+            {
+              "name": "drawer.showTop",
+              "description": "Animação ao mostrar a gaveta de navegação vindo do topo."
+            },
+            {
+              "name": "drawer.showEnd",
+              "description": "Animação ao mostrar a gaveta de navegação vindo da direita."
+            },
+            {
+              "name": "drawer.showBottom",
+              "description": "Animação ao mostrar a gaveta de navegação vindo de baixo."
+            },
+            {
+              "name": "drawer.showStart",
+              "description": "Animação ao mostrar a gaveta de navegação vindo da esquerda."
+            },
+            {
+              "name": "drawer.hideTop",
+              "description": "Animação ao ocultar a gaveta de navegação para o topo."
+            },
+            {
+              "name": "drawer.hideEnd",
+              "description": "Animação ao ocultar a gaveta de navegação para a direita."
+            },
+            {
+              "name": "drawer.hideBottom",
+              "description": "Animação ao ocultar a gaveta de navegação para baixo."
+            },
+            {
+              "name": "drawer.hideStart",
+              "description": "Animação ao ocultar a gaveta de navegação para a esquerda."
+            },
+            {
+              "name": "drawer.denyClose",
+              "description": "Animação ao negar o fechamento da gaveta de navegação."
+            },
+            {
+              "name": "drawer.backdrop.show",
+              "description": "Animação ao mostrar a sobreposição da gaveta de navegação."
+            },
+            {
+              "name": "drawer.backdrop.hide",
+              "description": "Animação ao ocultar a sobreposição da gaveta de navegação."
+            }
+          ],
+          "tagName": "cps-drawer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsDrawer",
+            "module": "components/drawer/drawer.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-drawer",
+          "declaration": {
+            "name": "CpsDrawer",
+            "module": "components/drawer/drawer.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsDrawer",
+          "declaration": {
+            "name": "CpsDrawer",
+            "module": "components/drawer/drawer.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/dialog/dialog.component.js",
       "declarations": [
         {
@@ -4721,456 +5194,6 @@
           "declaration": {
             "name": "CpsDialog",
             "module": "components/dialog/dialog.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/drawer/drawer.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsDrawer",
-          "cssProperties": [
-            {
-              "description": "O tamanho preferencial da gaveta de navegação. Será aplicado à largura ou altura dependendo do `placement`.",
-              "name": "--size"
-            },
-            {
-              "description": "A quantidade de preenchimento a ser usada para o cabeçalho.",
-              "name": "--header-spacing"
-            },
-            {
-              "description": "A quantidade de preenchimento a ser usada para o corpo.",
-              "name": "--body-spacing"
-            },
-            {
-              "description": "A quantidade de preenchimento a ser usada para o rodapé.",
-              "name": "--footer-spacing"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "O elemento base que envolve o componente.",
-              "name": "base"
-            },
-            {
-              "description": "A sobreposição que cobre a tela por trás da gaveta de navegação.",
-              "name": "backdrop"
-            },
-            {
-              "description": "O painel da gaveta de navegação (onde a gaveta e seu conteúdo são renderizados).",
-              "name": "panel"
-            },
-            {
-              "description": "O cabeçalho da gaveta de navegação. Este elemento envolve o título e ações do cabeçalho.",
-              "name": "header"
-            },
-            {
-              "description": "Contêiner para ações opcionais do cabeçalho.",
-              "name": "header-actions"
-            },
-            {
-              "description": "O título da gaveta de navegação.",
-              "name": "title"
-            },
-            {
-              "description": "O botão de fechar, um `<cps-icon-button>`.",
-              "name": "close-button"
-            },
-            {
-              "description": "A parte `base` exportada do botão de fechar.",
-              "name": "close-button__base"
-            },
-            {
-              "description": "O corpo da gaveta de navegação.",
-              "name": "body"
-            },
-            {
-              "description": "O rodapé da gaveta de navegação.",
-              "name": "footer"
-            }
-          ],
-          "slots": [
-            {
-              "description": "O conteúdo principal da gaveta de navegação.",
-              "name": ""
-            },
-            {
-              "description": "O rótulo da gaveta de navegação. Alternativamente, você pode usar o atributo `label`.",
-              "name": "label"
-            },
-            {
-              "description": "Ações opcionais para adicionar ao cabeçalho. Funciona melhor com `<cps-icon-button>`.",
-              "name": "header-actions"
-            },
-            {
-              "description": "O rodapé da gaveta de navegação, geralmente um ou mais botões representando várias opções.",
-              "name": "footer"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "hasSlotController",
-              "privacy": "private",
-              "default": "new HasSlotController(this, '[default]', 'label', 'header-actions', 'footer')"
-            },
-            {
-              "kind": "field",
-              "name": "localize",
-              "privacy": "private",
-              "default": "new LocalizeController(this)"
-            },
-            {
-              "kind": "field",
-              "name": "modal",
-              "type": {
-                "text": "Modal"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "originalTrigger",
-              "type": {
-                "text": "HTMLElement | null"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "drawer",
-              "type": {
-                "text": "HTMLElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "panel",
-              "type": {
-                "text": "HTMLElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "backdrop",
-              "type": {
-                "text": "HTMLElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "open",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indica se a gaveta de navegação está aberta ou não.",
-              "attribute": "open",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "closable",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
-              "attribute": "closable",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
-              "attribute": "label",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "ariaLabel",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
-              "attribute": "aria-label"
-            },
-            {
-              "kind": "field",
-              "name": "placement",
-              "type": {
-                "text": "'top' | 'end' | 'bottom' | 'start'"
-              },
-              "default": "'end'",
-              "description": "Direção de onde a gaveta de navegação será exibida.",
-              "attribute": "placement",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "contained",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
-              "attribute": "contained",
-              "reflects": true
-            },
-            {
-              "kind": "method",
-              "name": "playAnimation",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "target",
-                  "type": {
-                    "text": "HTMLElement"
-                  }
-                },
-                {
-                  "name": "animationName",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "requestClose",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "source",
-                  "type": {
-                    "text": "'backdrop' | 'header' | 'keyboard'"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "addOpenListeners",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "removeOpenListeners",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "handleDocumentKeyDown",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleOpenChange"
-            },
-            {
-              "kind": "method",
-              "name": "show",
-              "description": "Mostra a gaveta de navegação."
-            },
-            {
-              "kind": "method",
-              "name": "close",
-              "description": "Fecha a gaveta de navegação."
-            }
-          ],
-          "events": [
-            {
-              "description": "Emitido quando a gaveta de navegação começa a ser aberta.",
-              "name": "cps-show",
-              "reactName": "onCpsShow"
-            },
-            {
-              "description": "Emitido após a gaveta de navegação ser aberta e todas as animações serem concluídas.",
-              "name": "cps-after-show",
-              "reactName": "onCpsAfterShow"
-            },
-            {
-              "description": "Emitido quando a gaveta de navegação começa a ser fechada.",
-              "name": "cps-close",
-              "reactName": "onCpsClose"
-            },
-            {
-              "description": "Emitido após a gaveta de navegação ser fechada e todas as animações serem concluídas.",
-              "name": "cps-after-close",
-              "reactName": "onCpsAfterClose"
-            },
-            {
-              "description": "Emitido quando a gaveta de navegação é aberta e está pronta para receber foco. Chamar `event.preventDefault()` impedirá o foco e permitirá que você o defina em um elemento diferente, como um campo de entrada.",
-              "name": "cps-initial-focus",
-              "reactName": "onCpsInitialFocus"
-            },
-            {
-              "type": {
-                "text": "{ source: 'backdrop' | 'header' | 'keyboard' }"
-              },
-              "description": "Emitido quando o usuário tenta fechar a gaveta de navegação clicando no botão de fechar, clicando na sobreposição ou pressionando Escape. Chamar `event.preventDefault()` manterá a gaveta de navegação aberta. Evite usar isso a menos que fechar a gaveta de navegação resulte em comportamento destrutivo, como perda de dados.",
-              "name": "cps-request-close",
-              "reactName": "onCpsRequestClose"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "open",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indica se a gaveta de navegação está aberta ou não.",
-              "fieldName": "open"
-            },
-            {
-              "name": "closable",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Habilita a exibição de um botão de fechar no cabeçalho, como uma forma ainda mais evidente ao usuário de que a caixa de diálogo pode ser fechada.\nNão possui efeito caso não haja cabeçalho, ou seja, se não houver valor no atributo `label` e não houver conteúdo no _slot_ `label`.",
-              "fieldName": "closable"
-            },
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "O rótulo da caixa de diálogo exibido no cabeçalho. Você deve sempre incluir um rótulo relevante para\nacessibilidade adequada. Se você precisar exibir HTML, use o slot `label` em vez disso.",
-              "fieldName": "label"
-            },
-            {
-              "name": "aria-label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "O rótulo de acessibilidade para o diálogo. Se não for especificado, o atributo `label` será usado.\nÉ altamente recomendável definir este atributo, caso não haja um valor definido para o atributo `label`.",
-              "fieldName": "ariaLabel"
-            },
-            {
-              "name": "placement",
-              "type": {
-                "text": "'top' | 'end' | 'bottom' | 'start'"
-              },
-              "default": "'end'",
-              "description": "Direção de onde a gaveta de navegação será exibida.",
-              "fieldName": "placement"
-            },
-            {
-              "name": "contained",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Por padrão, a gaveta de navegação é uma sobreposição sobre toda a página.\nUsando este atributo, ela passa a ser contida dentro de seu elemento pai.",
-              "fieldName": "contained"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Gavetas de navegação (_drawers_) deslizam a partir de uma borda da tela para exibir informações ou ações complementares, causando uma mudança de foco imediata para o usuário.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/drawer",
-          "status": "stable",
-          "since": "0.20.0",
-          "dependencies": [
-            "cps-icon-button"
-          ],
-          "animations": [
-            {
-              "name": "drawer.showTop",
-              "description": "Animação ao mostrar a gaveta de navegação vindo do topo."
-            },
-            {
-              "name": "drawer.showEnd",
-              "description": "Animação ao mostrar a gaveta de navegação vindo da direita."
-            },
-            {
-              "name": "drawer.showBottom",
-              "description": "Animação ao mostrar a gaveta de navegação vindo de baixo."
-            },
-            {
-              "name": "drawer.showStart",
-              "description": "Animação ao mostrar a gaveta de navegação vindo da esquerda."
-            },
-            {
-              "name": "drawer.hideTop",
-              "description": "Animação ao ocultar a gaveta de navegação para o topo."
-            },
-            {
-              "name": "drawer.hideEnd",
-              "description": "Animação ao ocultar a gaveta de navegação para a direita."
-            },
-            {
-              "name": "drawer.hideBottom",
-              "description": "Animação ao ocultar a gaveta de navegação para baixo."
-            },
-            {
-              "name": "drawer.hideStart",
-              "description": "Animação ao ocultar a gaveta de navegação para a esquerda."
-            },
-            {
-              "name": "drawer.denyClose",
-              "description": "Animação ao negar o fechamento da gaveta de navegação."
-            },
-            {
-              "name": "drawer.backdrop.show",
-              "description": "Animação ao mostrar a sobreposição da gaveta de navegação."
-            },
-            {
-              "name": "drawer.backdrop.hide",
-              "description": "Animação ao ocultar a sobreposição da gaveta de navegação."
-            }
-          ],
-          "tagName": "cps-drawer",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsDrawer",
-            "module": "components/drawer/drawer.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-drawer",
-          "declaration": {
-            "name": "CpsDrawer",
-            "module": "components/drawer/drawer.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsDrawer",
-          "declaration": {
-            "name": "CpsDrawer",
-            "module": "components/drawer/drawer.component.js"
           }
         }
       ]
@@ -9769,6 +9792,66 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/menu-label/menu-label.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsMenuLabel",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<slot>`).",
+              "name": "base"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O texto interno do rótulo de menu.",
+              "name": ""
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Rótulos de menu são usados para descrever um grupo de itens de menu.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
+          "status": "stable",
+          "since": "0.7",
+          "tagName": "cps-menu-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsMenuLabel",
+            "module": "components/menu-label/menu-label.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-menu-label",
+          "declaration": {
+            "name": "CpsMenuLabel",
+            "module": "components/menu-label/menu-label.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsMenuLabel",
+          "declaration": {
+            "name": "CpsMenuLabel",
+            "module": "components/menu-label/menu-label.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/menu-item/menu-item.component.js",
       "declarations": [
         {
@@ -9988,66 +10071,6 @@
           "declaration": {
             "name": "CpsMenuItem",
             "module": "components/menu-item/menu-item.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/menu-label/menu-label.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsMenuLabel",
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<slot>`).",
-              "name": "base"
-            }
-          ],
-          "slots": [
-            {
-              "description": "O texto interno do rótulo de menu.",
-              "name": ""
-            }
-          ],
-          "members": [],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Rótulos de menu são usados para descrever um grupo de itens de menu.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
-          "status": "stable",
-          "since": "0.7",
-          "tagName": "cps-menu-label",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsMenuLabel",
-            "module": "components/menu-label/menu-label.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-menu-label",
-          "declaration": {
-            "name": "CpsMenuLabel",
-            "module": "components/menu-label/menu-label.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsMenuLabel",
-          "declaration": {
-            "name": "CpsMenuLabel",
-            "module": "components/menu-label/menu-label.component.js"
           }
         }
       ]
@@ -11513,6 +11536,637 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/rating/rating.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsRating",
+          "cssProperties": [
+            {
+              "description": "Cor do símbolo quando não está ativo. Por padrão, `var(--cps-color-text-secondary)`.",
+              "name": "--symbol-color"
+            },
+            {
+              "description": "Cor do símbolo quando está ativo. Por padrão, `var(--cps-color-fill-accent)`.",
+              "name": "--symbol-color-active"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.",
+              "name": "form-control"
+            },
+            {
+              "description": "Elemento que embrulha o rótulo do controle de formulário.",
+              "name": "form-control-label"
+            },
+            {
+              "description": "Elemento que embrulha o campo do controle de formulário.",
+              "name": "form-control-input"
+            },
+            {
+              "description": "Elemento que embrulha o texto de apoio do controle de formulário.",
+              "name": "form-control-help-text"
+            },
+            {
+              "description": "O elemento principal que envolve os símbolos de classificação.",
+              "name": "base"
+            },
+            {
+              "description": "O contêiner base envolvendo cada símbolo de classificação renderizado.",
+              "name": "symbol"
+            },
+            {
+              "description": "Aplicado a um símbolo quando ele está ativo (selecionado), ainda que parcialmente.",
+              "name": "symbol--active"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.",
+              "name": "label"
+            },
+            {
+              "description": "Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.",
+              "name": "help-text"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formControlController",
+              "privacy": "private",
+              "default": "new FormControlController(this, {\n    value: (control: CpsRating) => (control.value > 0 ? control.value.toString() : undefined),\n    defaultValue: (control: CpsRating) => control.defaultValue,\n    setValue: (control: CpsRating, value: number) => (control.value = value)\n  })"
+            },
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, 'help-text', 'label')"
+            },
+            {
+              "kind": "field",
+              "name": "input",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "rating",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hoverValue",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "isHovering",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "isFocused",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "generatedId",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "ariaLabel",
+              "type": {
+                "text": "string"
+              },
+              "description": "O rótulo de acessibilidade para a classificação. Necessário apenas se um `label` visual não for fornecido.",
+              "attribute": "aria-label"
+            },
+            {
+              "kind": "field",
+              "name": "helpText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+              "attribute": "help-text"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "defaultValue",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "O valor padrão do controle de formulário. Usado principalmente para redefinir o campo."
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "default": "5",
+              "description": "O valor máximo da classificação, por padrão `5`. Deve ser no mínimo `1`.",
+              "attribute": "max"
+            },
+            {
+              "kind": "field",
+              "name": "precision",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "description": "A precisão para a qual arredondar. Para permitir meias estrelas, defina como `0.5`.",
+              "attribute": "precision"
+            },
+            {
+              "kind": "field",
+              "name": "symbol",
+              "type": {
+                "text": "'star' | 'heart'"
+              },
+              "default": "'star'",
+              "description": "O símbolo usado para representar cada unidade de classificação.",
+              "attribute": "symbol",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o campo.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Torna o campo somente leitura.",
+              "attribute": "readonly",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Torna o campo como sendo de preenchimento obrigatório.",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+              "attribute": "form",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "description": "Obtém o objeto de estado de validade do campo."
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "description": "Obtém a mensagem de validação do campo."
+            },
+            {
+              "kind": "method",
+              "name": "handleIdChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleInvalid",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getValueFromMouse",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getRoundedValue",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseEnter",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseLeave",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseMove",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "handleLabelClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleValueChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleReadonlyChange"
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido."
+            },
+            {
+              "kind": "method",
+              "name": "getForm",
+              "return": {
+                "type": {
+                  "text": "HTMLFormElement | null"
+                }
+              },
+              "description": "Obtém o formulário associado com este componente, se algum estiver."
+            },
+            {
+              "kind": "method",
+              "name": "reportValidity",
+              "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido."
+            },
+            {
+              "kind": "method",
+              "name": "setCustomValidity",
+              "parameters": [
+                {
+                  "name": "message",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento."
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Coloca o foco no campo."
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Remove o foco do campo."
+            },
+            {
+              "kind": "method",
+              "name": "renderItems",
+              "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando a alteração do valor do controle é confirmada.",
+              "name": "cps-change",
+              "reactName": "onCpsChange"
+            },
+            {
+              "description": "Emitido quando o controle obtém o foco.",
+              "name": "cps-focus",
+              "reactName": "onCpsFocus"
+            },
+            {
+              "description": "Emitido quando o controle perde o foco.",
+              "name": "cps-blur",
+              "reactName": "onCpsBlur"
+            },
+            {
+              "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.",
+              "name": "cps-invalid",
+              "reactName": "onCpsInvalid"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "fieldName": "label"
+            },
+            {
+              "name": "aria-label",
+              "type": {
+                "text": "string"
+              },
+              "description": "O rótulo de acessibilidade para a classificação. Necessário apenas se um `label` visual não for fornecido.",
+              "fieldName": "ariaLabel"
+            },
+            {
+              "name": "help-text",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+              "fieldName": "helpText"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "fieldName": "name"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "fieldName": "value"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "O tamanho do campo.",
+              "fieldName": "size"
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "default": "5",
+              "description": "O valor máximo da classificação, por padrão `5`. Deve ser no mínimo `1`.",
+              "fieldName": "max"
+            },
+            {
+              "name": "precision",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "description": "A precisão para a qual arredondar. Para permitir meias estrelas, defina como `0.5`.",
+              "fieldName": "precision"
+            },
+            {
+              "name": "symbol",
+              "type": {
+                "text": "'star' | 'heart'"
+              },
+              "default": "'star'",
+              "description": "O símbolo usado para representar cada unidade de classificação.",
+              "fieldName": "symbol"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o campo.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Torna o campo somente leitura.",
+              "fieldName": "readonly"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Torna o campo como sendo de preenchimento obrigatório.",
+              "fieldName": "required"
+            },
+            {
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+              "fieldName": "form"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Campos de classificação (_rating_) permitem aos usuários classificar um conteúdo.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/rating",
+          "status": "stable",
+          "since": "0.22.0",
+          "tagName": "cps-rating",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsRating",
+            "module": "components/rating/rating.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-rating",
+          "declaration": {
+            "name": "CpsRating",
+            "module": "components/rating/rating.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsRating",
+          "declaration": {
+            "name": "CpsRating",
+            "module": "components/rating/rating.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/select/select.component.js",
       "declarations": [
         {
@@ -12771,6 +13425,313 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/tab-item/tab-item.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsTabItem",
+          "cssProperties": [
+            {
+              "description": "A cor de fundo da aba, quando ela está selecionada. Padrão: `var(--cps-color-background-solid-tertiary)`. Idealmente, se for personalizar, garanta que a cor aplicada é a mesma que a do painel de abas associado.",
+              "name": "--selected-background"
+            },
+            {
+              "description": "A cor da borda da aba, quando ela está selecionada. Padrão: `var(--cps-color-stroke-primary)`. Idealmente, se for personalizar, garanta que a cor aplicada é a mesma que a do painel de abas associado.",
+              "name": "--selected-border"
+            },
+            {
+              "description": "Arredondamento dos cantos da aba. Padrão: `var(--cps-spacing-1-5)`.",
+              "name": "--border-radius"
+            },
+            {
+              "description": "Arredondamento invertido posicionado na base da aba, causando o efeito de uma curvatura para fora. Padrão: `8px`.",
+              "name": "--inverse-rounded-corner-size"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<div>`).",
+              "name": "base"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
+              "name": "prefix"
+            },
+            {
+              "description": "O elemento que embrulha o conteúdo principal, normalmente o _label_ do botão.",
+              "name": "content"
+            },
+            {
+              "description": "O botão de fechar a aba (caso `closable` esteja em uso).",
+              "name": "close-button"
+            },
+            {
+              "description": "A parte `base` re-exportada do botão de fechar.",
+              "name": "close-button__base"
+            },
+            {
+              "description": "A parte `icon` re-exportada do botão de fechar.",
+              "name": "close-button__icon"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo da aba.",
+              "name": ""
+            },
+            {
+              "description": "Um ícone ou elemento similar antes do conteúdo principal.",
+              "name": "prefix"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, '[default]', 'prefix')"
+            },
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "attrId",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "++id"
+            },
+            {
+              "kind": "field",
+              "name": "componentId",
+              "privacy": "private",
+              "default": "`cps-tab-item-${this.attrId}`"
+            },
+            {
+              "kind": "field",
+              "name": "tab",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "panel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
+              "attribute": "panel",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
+              "attribute": "selected",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'bottom' | 'start' | 'end'"
+              },
+              "default": "'top'",
+              "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
+              "attribute": "placement"
+            },
+            {
+              "kind": "field",
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
+              "attribute": "closable"
+            },
+            {
+              "kind": "field",
+              "name": "fluid",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Força a aba a fluir através de seu contêiner.",
+              "attribute": "fluid",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita a aba.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleCloseClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleSelectedChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Coloca o foco na aba."
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Remove o foco da aba."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o botão de fechar da aba `closable` é acionado.",
+              "name": "cps-close",
+              "reactName": "onCpsClose"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "panel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
+              "fieldName": "panel"
+            },
+            {
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
+              "fieldName": "selected"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "'top' | 'bottom' | 'start' | 'end'"
+              },
+              "default": "'top'",
+              "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
+              "fieldName": "placement"
+            },
+            {
+              "name": "closable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
+              "fieldName": "closable"
+            },
+            {
+              "name": "fluid",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Força a aba a fluir através de seu contêiner.",
+              "fieldName": "fluid"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita a aba.",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Abas (_tab items_) são usadas dentro de [grupos de abas](/componentes/tab-group) para controlar a visibilidade de [painéis de abas](/components/tab-panel).",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab",
+          "status": "stable",
+          "since": "0.9",
+          "dependencies": [
+            "cps-icon-button"
+          ],
+          "tagName": "cps-tab-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsTabItem",
+            "module": "components/tab-item/tab-item.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-tab-item",
+          "declaration": {
+            "name": "CpsTabItem",
+            "module": "components/tab-item/tab-item.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsTabItem",
+          "declaration": {
+            "name": "CpsTabItem",
+            "module": "components/tab-item/tab-item.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/tab-group/tab-group.component.js",
       "declarations": [
         {
@@ -13193,313 +14154,6 @@
           "declaration": {
             "name": "CpsTabGroup",
             "module": "components/tab-group/tab-group.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/tab-item/tab-item.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsTabItem",
-          "cssProperties": [
-            {
-              "description": "A cor de fundo da aba, quando ela está selecionada. Padrão: `var(--cps-color-background-solid-tertiary)`. Idealmente, se for personalizar, garanta que a cor aplicada é a mesma que a do painel de abas associado.",
-              "name": "--selected-background"
-            },
-            {
-              "description": "A cor da borda da aba, quando ela está selecionada. Padrão: `var(--cps-color-stroke-primary)`. Idealmente, se for personalizar, garanta que a cor aplicada é a mesma que a do painel de abas associado.",
-              "name": "--selected-border"
-            },
-            {
-              "description": "Arredondamento dos cantos da aba. Padrão: `var(--cps-spacing-1-5)`.",
-              "name": "--border-radius"
-            },
-            {
-              "description": "Arredondamento invertido posicionado na base da aba, causando o efeito de uma curvatura para fora. Padrão: `8px`.",
-              "name": "--inverse-rounded-corner-size"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<div>`).",
-              "name": "base"
-            },
-            {
-              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
-              "name": "prefix"
-            },
-            {
-              "description": "O elemento que embrulha o conteúdo principal, normalmente o _label_ do botão.",
-              "name": "content"
-            },
-            {
-              "description": "O botão de fechar a aba (caso `closable` esteja em uso).",
-              "name": "close-button"
-            },
-            {
-              "description": "A parte `base` re-exportada do botão de fechar.",
-              "name": "close-button__base"
-            },
-            {
-              "description": "A parte `icon` re-exportada do botão de fechar.",
-              "name": "close-button__icon"
-            }
-          ],
-          "slots": [
-            {
-              "description": "O conteúdo da aba.",
-              "name": ""
-            },
-            {
-              "description": "Um ícone ou elemento similar antes do conteúdo principal.",
-              "name": "prefix"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "hasSlotController",
-              "privacy": "private",
-              "default": "new HasSlotController(this, '[default]', 'prefix')"
-            },
-            {
-              "kind": "field",
-              "name": "localize",
-              "privacy": "private",
-              "default": "new LocalizeController(this)"
-            },
-            {
-              "kind": "field",
-              "name": "attrId",
-              "type": {
-                "text": "number"
-              },
-              "privacy": "private",
-              "default": "++id"
-            },
-            {
-              "kind": "field",
-              "name": "componentId",
-              "privacy": "private",
-              "default": "`cps-tab-item-${this.attrId}`"
-            },
-            {
-              "kind": "field",
-              "name": "tab",
-              "type": {
-                "text": "HTMLElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "panel",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
-              "attribute": "panel",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
-              "attribute": "selected",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "placement",
-              "type": {
-                "text": "'top' | 'bottom' | 'start' | 'end'"
-              },
-              "default": "'top'",
-              "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
-              "attribute": "placement"
-            },
-            {
-              "kind": "field",
-              "name": "closable",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
-              "attribute": "closable"
-            },
-            {
-              "kind": "field",
-              "name": "fluid",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Força a aba a fluir através de seu contêiner.",
-              "attribute": "fluid",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Desabilita a aba.",
-              "attribute": "disabled",
-              "reflects": true
-            },
-            {
-              "kind": "method",
-              "name": "handleCloseClick",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleSelectedChange"
-            },
-            {
-              "kind": "method",
-              "name": "handleDisabledChange"
-            },
-            {
-              "kind": "method",
-              "name": "focus",
-              "parameters": [
-                {
-                  "name": "options",
-                  "optional": true,
-                  "type": {
-                    "text": "FocusOptions"
-                  }
-                }
-              ],
-              "description": "Coloca o foco na aba."
-            },
-            {
-              "kind": "method",
-              "name": "blur",
-              "description": "Remove o foco da aba."
-            }
-          ],
-          "events": [
-            {
-              "description": "Emitido quando o botão de fechar da aba `closable` é acionado.",
-              "name": "cps-close",
-              "reactName": "onCpsClose"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "panel",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "Nome do painel de abas associado à aba. O painel deve estar no mesmo grupo de abas.",
-              "fieldName": "panel"
-            },
-            {
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Determinada que a aba está selecionada, representando que o painel atrelado a ela está marcado.",
-              "fieldName": "selected"
-            },
-            {
-              "name": "placement",
-              "type": {
-                "text": "'top' | 'bottom' | 'start' | 'end'"
-              },
-              "default": "'top'",
-              "description": "O posicionamento da aba dentro de seu grupo, para a correta renderização de bordas nas posições ideais.",
-              "fieldName": "placement"
-            },
-            {
-              "name": "closable",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Habilita a exibição de um botão de fechar para que o usuário possa remover a aba.",
-              "fieldName": "closable"
-            },
-            {
-              "name": "fluid",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Força a aba a fluir através de seu contêiner.",
-              "fieldName": "fluid"
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Desabilita a aba.",
-              "fieldName": "disabled"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Abas (_tab items_) são usadas dentro de [grupos de abas](/componentes/tab-group) para controlar a visibilidade de [painéis de abas](/components/tab-panel).",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab",
-          "status": "stable",
-          "since": "0.9",
-          "dependencies": [
-            "cps-icon-button"
-          ],
-          "tagName": "cps-tab-item",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsTabItem",
-            "module": "components/tab-item/tab-item.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-tab-item",
-          "declaration": {
-            "name": "CpsTabItem",
-            "module": "components/tab-item/tab-item.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsTabItem",
-          "declaration": {
-            "name": "CpsTabItem",
-            "module": "components/tab-item/tab-item.component.js"
           }
         }
       ]
@@ -15286,7 +15940,7 @@
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.21.0",
+    "version": "0.22.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"
