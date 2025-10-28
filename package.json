@@ -81,7 +81,8 @@
     "deploy": "gh-pages -d docs"
   },
   "engines": {
-    "node": ">=14.17.0"
+    "node": ">=24.11.0",
+    "npm": ">=11.6.0"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.2.1",
