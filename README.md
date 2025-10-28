@@ -31,7 +31,7 @@ CPS Elements provê uma coleção de componentes profissionalmente projetados, c
 
 ## Como executar os códigos-fonte?
 
-Se você é ou quer ser um contribuidor, ou seja um "desenvolvedor CPS Elements", você pode usar esta documentação para entender como construir o CPS Elements a partir dos códigos-fonte. Você precisará de um ambiente executando [Node](https://nodejs.org/en) a partir da versão `14.17`, para compilar e executar o projeto localmente.
+Se você é ou quer ser um contribuidor, ou seja um "desenvolvedor CPS Elements", você pode usar esta documentação para entender como construir o CPS Elements a partir dos códigos-fonte. Você precisará de um ambiente executando [Node](https://nodejs.org/en) a partir da versão `v24.11`, para compilar e executar o projeto localmente.
 
 **Você não precisa fazer nada disso para usar CPS Elements!** Esta página é direcionada a pessoas que querem contribuir com o projeto, ajustar seus códigos-fonte, ou mesmo construir algo novo a partir do CPS Elements.
 
