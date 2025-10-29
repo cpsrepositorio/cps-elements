@@ -88,7 +88,7 @@
     "@floating-ui/dom": "^1.2.1",
     "@lit-labs/react": "^1.1.1",
     "composed-offset-position": "^0.0.4",
-    "lit": "^2.7.0"
+    "lit": "^3.3.1"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.6.8",
@@ -116,7 +116,7 @@
     "eslint-plugin-chai-expect": "^3.0.0",
     "eslint-plugin-chai-friendly": "^0.7.2",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-lit": "^1.8.3",
+    "eslint-plugin-lit": "^2.1.1",
     "eslint-plugin-lit-a11y": "^2.4.1",
     "eslint-plugin-markdown": "^3.0.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
