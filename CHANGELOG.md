@@ -6,6 +6,11 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Migração da base dos componentes de Lit 2 para Lit 3.
+- Melhorias de acessibilidade após migração para ESLint Lit A11y 4.
+
 ## 0.22.0 - 2025-09-05
 
 ### Added

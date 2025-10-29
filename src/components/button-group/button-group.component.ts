@@ -72,17 +72,20 @@ export default class CpsButtonGroup extends BaseElement {
   render() {
     // eslint-disable-next-line lit-a11y/mouse-events-have-key-events
     return html`
-      <slot
+      <div
         part="base"
         class="button-group"
         role="${this.disableRole ? 'presentation' : 'group'}"
         aria-label=${this.label}
-        @focusout=${this.handleBlur}
-        @focusin=${this.handleFocus}
-        @mouseover=${this.handleMouseOver}
-        @mouseout=${this.handleMouseOut}
-        @slotchange=${this.handleSlotChange}
-      ></slot>
+      >
+        <slot
+          @focusout=${this.handleBlur}
+          @focusin=${this.handleFocus}
+          @mouseover=${this.handleMouseOver}
+          @mouseout=${this.handleMouseOut}
+          @slotchange=${this.handleSlotChange}
+        ></slot>
+      </div>
     `;
   }
 }

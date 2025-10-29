@@ -887,15 +887,18 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
           </cps-flyout>
         </div>
 
-        <slot
-          name="help-text"
-          id=${`${this.generatedId}-help-text`}
-          part="form-control-help-text"
-          class="form-control__help-text"
-          aria-hidden=${hasHelpText ? 'false' : 'true'}
-        >
-          ${this.helpText}
-        </slot>
+        ${hasHelpText
+          ? html`
+              <slot
+                name="help-text"
+                id=${`${this.generatedId}-help-text`}
+                part="form-control-help-text"
+                class="form-control__help-text"
+              >
+                ${this.helpText}
+              </slot>
+            `
+          : ''}
       </div>
     `;
   }

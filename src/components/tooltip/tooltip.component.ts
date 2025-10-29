@@ -291,18 +291,18 @@ export default class CpsTooltip extends BaseElement {
         shift
         arrow
       >
-        <slot slot="anchor" aria-describedby="tooltip"></slot>
+        <slot slot="anchor"></slot>
 
-        <slot
-          name="content"
+        <div
           part="body"
           id="tooltip"
           class="tooltip__body"
           role="tooltip"
+          aria-labelledby="tooltip-content"
           aria-live=${this.open ? 'polite' : 'off'}
         >
-          ${this.content}
-        </slot>
+          <slot id="tooltip-content" name="content">${this.content}</slot>
+        </div>
       </cps-flyout>
     `;
   }

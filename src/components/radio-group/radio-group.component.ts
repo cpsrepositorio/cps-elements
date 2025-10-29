@@ -351,12 +351,7 @@ export default class CpsRadioGroup extends BaseElement implements BaseFormContro
     const hasHelpText = this.helpText ? true : !!hasHelpTextSlot;
 
     const defaultSlot = html`
-      <slot
-        @click=${this.handleRadioClick}
-        @keydown=${this.handleKeyDown}
-        @slotchange=${this.syncRadios}
-        role="presentation"
-      ></slot>
+      <slot @click=${this.handleRadioClick} @keydown=${this.handleKeyDown} @slotchange=${this.syncRadios}></slot>
     `;
 
     return html`
@@ -411,15 +406,18 @@ export default class CpsRadioGroup extends BaseElement implements BaseFormContro
             : defaultSlot}
         </div>
 
-        <slot
-          name="help-text"
-          id=${`${this.generatedId}-help-text`}
-          part="form-control-help-text"
-          class="form-control__help-text"
-          aria-hidden=${hasHelpText ? 'false' : 'true'}
-        >
-          ${this.helpText}
-        </slot>
+        ${hasHelpText
+          ? html`
+              <slot
+                name="help-text"
+                id=${`${this.generatedId}-help-text`}
+                part="form-control-help-text"
+                class="form-control__help-text"
+              >
+                ${this.helpText}
+              </slot>
+            `
+          : ''}
       </fieldset>
     `;
     /* eslint-enable lit-a11y/click-events-have-key-events */

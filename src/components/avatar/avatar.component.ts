@@ -143,8 +143,8 @@ export default class CpsAvatar extends BaseElement {
       avatarWithoutImage = html`<div part="initials" class="avatar__initials">${this.generatedInitials}</div>`;
     } else {
       avatarWithoutImage = html`
-        <slot name="icon" part="icon" class="avatar__icon" aria-hidden="true">
-          <cps-icon name="person" library="system"></cps-icon>
+        <slot name="icon" part="icon" class="avatar__icon">
+          <cps-icon aria-hidden="true" name="person" library="system"></cps-icon>
         </slot>
       `;
     }
