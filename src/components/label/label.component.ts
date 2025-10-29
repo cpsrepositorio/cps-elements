@@ -1,6 +1,9 @@
+/* eslint-disable lit/binding-positions, lit/no-invalid-html */
+
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property } from 'lit/decorators.js';
-import { html, literal } from 'lit/static-html.js';
+import { html } from 'lit';
+import { unsafeStatic } from 'lit/static-html.js';
 import BaseElement from '../../internal/base-element.js';
 import styles from './label.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -51,22 +54,10 @@ export default class CpsLabel extends BaseElement {
   @property({ reflect: true }) tag: 'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div' = 'span';
 
   render() {
-    const tag = {
-      span: literal`span`,
-      small: literal`small`,
-      i: literal`i`,
-      b: literal`b`,
-      em: literal`em`,
-      strong: literal`strong`,
-      label: literal`label`,
-      p: literal`p`,
-      div: literal`div`
-    }[this.tag];
+    const tagName = unsafeStatic(this.tag);
 
-    /* eslint-disable lit/no-invalid-html */
-    /* eslint-disable lit/binding-positions */
     return html`
-      <${tag}
+      <${tagName}
         part="base"
         class=${classMap({
           label: true,
@@ -98,7 +89,7 @@ export default class CpsLabel extends BaseElement {
         })}
       >
         <slot part="content" class="label__content"></slot>
-      </${tag}>
+      </${tagName}>
     `;
   }
 }

@@ -97,13 +97,23 @@ export default css`
   }
 
   @keyframes indeterminate {
-    0% { left: -50%; }
-    75%, 100% { left: 100%; }
+    0% {
+      left: -50%;
+    }
+    75%,
+    100% {
+      left: 100%;
+    }
   }
 
   @keyframes indeterminate-rtl {
-    0% { right: -50%; }
-    75%, 100% { right: 100%; }
+    0% {
+      right: -50%;
+    }
+    75%,
+    100% {
+      right: 100%;
+    }
   }
 
   @keyframes sheen {

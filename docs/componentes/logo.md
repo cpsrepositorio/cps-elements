@@ -112,21 +112,13 @@ Esta característica também permite que o logotipo se ajuste automaticamente ao
 
 ```html preview
 <div style="display: flex; flex-direction: column; gap: 3rem">
-  <cps-label size="body">
-    Body: <cps-logo type="elements"></cps-logo>
-  </cps-label>
+  <cps-label size="body"> Body: <cps-logo type="elements"></cps-logo> </cps-label>
 
-  <cps-label size="title">
-    Title: <cps-logo type="elements"></cps-logo>
-  </cps-label>
+  <cps-label size="title"> Title: <cps-logo type="elements"></cps-logo> </cps-label>
 
-  <cps-label size="heading">
-    Heading: <cps-logo type="elements"></cps-logo>
-  </cps-label>
+  <cps-label size="heading"> Heading: <cps-logo type="elements"></cps-logo> </cps-label>
 
-  <cps-label size="display">
-    Display: <cps-logo type="elements"></cps-logo>
-  </cps-label>
+  <cps-label size="display"> Display: <cps-logo type="elements"></cps-logo> </cps-label>
 </div>
 ```
 

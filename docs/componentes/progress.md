@@ -10,9 +10,7 @@
 import { CpsProgress } from '@cps-elements/web/react/progress';
 
 const App = () => {
-  return (
-    <CpsProgress value={50} />
-  );
+  return <CpsProgress value={50} />;
 };
 ```
 
@@ -151,58 +149,58 @@ const App = () => {
 </template>
 
 <script setup>
-import { computed, reactive, onUnmounted } from 'vue';
-import { CpsProgress } from '@cps-elements/web/vue/progress';
-import { CpsButton } from '@cps-elements/web/vue/button';
-import { CpsLabel } from '@cps-elements/web/vue/label';
+  import { computed, reactive, onUnmounted } from 'vue';
+  import { CpsProgress } from '@cps-elements/web/vue/progress';
+  import { CpsButton } from '@cps-elements/web/vue/button';
+  import { CpsLabel } from '@cps-elements/web/vue/label';
 
-const state = reactive({
-  value: 0,
-  running: false,
-  intervalId: null,
-});
+  const state = reactive({
+    value: 0,
+    running: false,
+    intervalId: null
+  });
 
-const startRunning = () => {
-  state.running = true;
-  state.intervalId = setInterval(() => {
-    if (state.value < 100) state.value++;
-    else stopRunning();
-  }, 25);
-};
+  const startRunning = () => {
+    state.running = true;
+    state.intervalId = setInterval(() => {
+      if (state.value < 100) state.value++;
+      else stopRunning();
+    }, 25);
+  };
 
-const stopRunning = () => {
-  state.intervalId && clearInterval(state.intervalId);
-  state.intervalId = null;
-  state.running = false;
-};
+  const stopRunning = () => {
+    state.intervalId && clearInterval(state.intervalId);
+    state.intervalId = null;
+    state.running = false;
+  };
 
-const onClick = () => {
-  if (state.value === 100) {
-    state.value = 0;
-    return;
-  }
+  const onClick = () => {
+    if (state.value === 100) {
+      state.value = 0;
+      return;
+    }
 
-  if (state.running) {
-    stopRunning();
-    return;
-  }
+    if (state.running) {
+      stopRunning();
+      return;
+    }
 
-  startRunning();
-};
+    startRunning();
+  };
 
-const status = computed(() => {
-  if (state.value === 100) return 'success';
-  if (!state.running && state.value > 0) return 'pause';
-  return 'default';
-});
+  const status = computed(() => {
+    if (state.value === 100) return 'success';
+    if (!state.running && state.value > 0) return 'pause';
+    return 'default';
+  });
 
-const buttonLabel = computed(() => {
-  if (state.value === 100) return 'Limpar';
-  if (state.running) return 'Pausar';
-  return 'Iniciar';
-});
+  const buttonLabel = computed(() => {
+    if (state.value === 100) return 'Limpar';
+    if (state.running) return 'Pausar';
+    return 'Iniciar';
+  });
 
-onUnmounted(stopRunning);
+  onUnmounted(stopRunning);
 </script>
 ```
 
@@ -399,52 +397,50 @@ const App = () => {
 </template>
 
 <script setup>
-import { computed, reactive, onUnmounted } from 'vue';
-import { CpsButton } from '@cps-elements/web/vue/button';
-import { CpsLabel } from '@cps-elements/web/vue/label';
-import { CpsProgress } from '@cps-elements/web/vue/progress';
+  import { computed, reactive, onUnmounted } from 'vue';
+  import { CpsButton } from '@cps-elements/web/vue/button';
+  import { CpsLabel } from '@cps-elements/web/vue/label';
+  import { CpsProgress } from '@cps-elements/web/vue/progress';
 
-const state = reactive({
-  progress: 0,
-  indeterminate: false,
-  intervalId: null,
-});
+  const state = reactive({
+    progress: 0,
+    indeterminate: false,
+    intervalId: null
+  });
 
-const stopRunning = () => {
-  state.intervalId && clearInterval(state.intervalId);
-  state.intervalId = null;
-};
+  const stopRunning = () => {
+    state.intervalId && clearInterval(state.intervalId);
+    state.intervalId = null;
+  };
 
-const onClick = () => {
-  if (state.indeterminate) {
-    state.indeterminate = false;
-    state.progress = 0;
-    stopRunning();
+  const onClick = () => {
+    if (state.indeterminate) {
+      state.indeterminate = false;
+      state.progress = 0;
+      stopRunning();
 
-    setTimeout(() => {
-      state.intervalId = setInterval(() => {
-        if (state.progress < 100) {
-          state.progress++;
-        } else {
-          stopRunning();
-        }
-      }, 50);
-    }, 150);
-  } else {
-    state.indeterminate = true;
-    stopRunning();
-  }
-};
+      setTimeout(() => {
+        state.intervalId = setInterval(() => {
+          if (state.progress < 100) {
+            state.progress++;
+          } else {
+            stopRunning();
+          }
+        }, 50);
+      }, 150);
+    } else {
+      state.indeterminate = true;
+      stopRunning();
+    }
+  };
 
-const buttonLabel = computed(() =>
-  state.indeterminate ? 'Iniciar progresso' : 'Tornar indeterminado'
-);
+  const buttonLabel = computed(() => (state.indeterminate ? 'Iniciar progresso' : 'Tornar indeterminado'));
 
-const labelText = computed(() =>
-  state.indeterminate ? 'Progresso: Indeterminado' : `Progresso: ${state.progress}%`
-);
+  const labelText = computed(() =>
+    state.indeterminate ? 'Progresso: Indeterminado' : `Progresso: ${state.progress}%`
+  );
 
-onUnmounted(stopRunning);
+  onUnmounted(stopRunning);
 </script>
 ```
 
@@ -456,7 +452,11 @@ Entretanto, como uma barra de progresso comumente representa que uma determinada
 
 ```html preview
 <div aria-busy="true" aria-describedby="example-bar">
-  <cps-label tag="p">Para fins de acessibilidade, demarcamos no HTML deste exemplo que o conteúdo desta região está ocupado aguardando o progresso do elemento cujo <code>id</code> é <code>example-bar</code>, o qual poderia estar sendo apresentado em qualquer outro lugar da página.</cps-label>
+  <cps-label tag="p"
+    >Para fins de acessibilidade, demarcamos no HTML deste exemplo que o conteúdo desta região está ocupado aguardando o
+    progresso do elemento cujo <code>id</code> é <code>example-bar</code>, o qual poderia estar sendo apresentado em
+    qualquer outro lugar da página.</cps-label
+  >
 </div>
 
 <cps-progress id="example-bar" label="Calculando alguma coisa..."></cps-progress>
@@ -471,7 +471,9 @@ const App = () => {
     <>
       <div aria-busy="true" aria-describedby="example-bar">
         <CpsLabel tag="p">
-          Para fins de acessibilidade, demarcamos no HTML deste exemplo que o conteúdo desta região está ocupado aguardando o progresso do elemento cujo <code>id</code> é <code>example-bar</code>, o qual poderia estar sendo apresentado em qualquer outro lugar da página.
+          Para fins de acessibilidade, demarcamos no HTML deste exemplo que o conteúdo desta região está ocupado
+          aguardando o progresso do elemento cujo <code>id</code> é <code>example-bar</code>, o qual poderia estar sendo
+          apresentado em qualquer outro lugar da página.
         </CpsLabel>
       </div>
 
@@ -493,9 +495,7 @@ Use a propriedade CSS `--indicator-height` para ajustar a dimensão vertical do 
 import { CpsProgress } from '@cps-elements/web/react/progress';
 
 const App = () => {
-  return (
-    <CpsProgress style={{ '--indicator-height': '1rem', '--track-height': '1rem' }} />
-  );
+  return <CpsProgress style={{ '--indicator-height': '1rem', '--track-height': '1rem' }} />;
 };
 ```
 
@@ -521,11 +521,11 @@ Através de uma mistura de técnicas com partes CSS e propriedades CSS com valor
     /* Definindo atributos CSS conforme desejado em cada parte do componente */
     border-width: 1px;
     border-style: solid;
+    border-radius: 0;
     border-top-color: #ff7ac1;
     border-right-color: #ad005c;
     border-bottom-color: #ad005c;
     border-left-color: #ff7ac1;
-    border-radius: 0;
   }
 
   cps-progress.fancy::part(indicator),

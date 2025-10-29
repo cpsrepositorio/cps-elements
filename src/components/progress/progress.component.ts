@@ -49,7 +49,7 @@ export default class CpsProgress extends BaseElement {
 
   /** É possível setar programaticamente o estado `indeterminate` como `true`, o que causa a remoção do atributo `value`. Não tem efeito como atributo, pois simplesmente não informar o atributo `value` já é suficiente. */
   public set indeterminate(indeterminate: boolean) {
-    this.value = indeterminate ? undefined : (this.value ?? 0);
+    this.value = indeterminate ? undefined : this.value ?? 0;
   }
 
   render() {
@@ -73,7 +73,11 @@ export default class CpsProgress extends BaseElement {
         aria-valuenow=${ifDefined(this.value)}
       >
         <div part="track" class="progress-bar__track"></div>
-        <div part="indicator" class="progress-bar__indicator" style=${styleMap({ width: `${this.value ?? 50}%` })}></div>
+        <div
+          part="indicator"
+          class="progress-bar__indicator"
+          style=${styleMap({ width: `${this.value ?? 50}%` })}
+        ></div>
       </div>
     `;
   }

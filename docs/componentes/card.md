@@ -6,9 +6,14 @@
 <cps-card>
   <cps-label>Conteúdo do cartão, conforme for desejado.</cps-label>
   <br />
-  <cps-label>Pode estruturar o conteúdo com qualquer elemento <abbr title="HyperText Markup Language">HTML</abbr>.</cps-label>
+  <cps-label
+    >Pode estruturar o conteúdo com qualquer elemento <abbr title="HyperText Markup Language">HTML</abbr>.</cps-label
+  >
   <br />
-  <cps-label>E também <cps-link href="/#/fundamentos/utilização">utilizar</cps-link> qualquer componente CPS Elements.</cps-label>
+  <cps-label
+    >E também <cps-link href="/#/fundamentos/utilização">utilizar</cps-link> qualquer componente CPS
+    Elements.</cps-label
+  >
 </cps-card>
 ```
 
@@ -21,9 +26,13 @@ const App = () => (
   <CpsCard>
     <CpsLabel>Conteúdo do cartão, conforme for desejado.</CpsLabel>
     <br />
-    <CpsLabel>Pode estruturar o conteúdo com qualquer elemento <abbr title="HyperText Markup Language">HTML</abbr>.</CpsLabel>
+    <CpsLabel>
+      Pode estruturar o conteúdo com qualquer elemento <abbr title="HyperText Markup Language">HTML</abbr>.
+    </CpsLabel>
     <br />
-    <CpsLabel>E também <CpsLink href="/#/fundamentos/utilização">utilizar</CpsLink> qualquer componente CPS Elements.</CpsLabel>
+    <CpsLabel>
+      E também <CpsLink href="/#/fundamentos/utilização">utilizar</CpsLink> qualquer componente CPS Elements.
+    </CpsLabel>
   </CpsCard>
 );
 ```
@@ -36,39 +45,23 @@ Use o atributo `variant` para definir a variação visual do cartão. Atente-se 
 
 ```html preview
 <div class="sample-transparent-background">
-  <cps-card variant="primary">
-    Primário
-  </cps-card>
+  <cps-card variant="primary"> Primário </cps-card>
 
-  <cps-card variant="secondary">
-    Secundário
-  </cps-card>
+  <cps-card variant="secondary"> Secundário </cps-card>
 
-  <cps-card variant="tertiary">
-    Terciário
-  </cps-card>
+  <cps-card variant="tertiary"> Terciário </cps-card>
 
-  <cps-card variant="on-blurred">
-    Sobre acrílico
-  </cps-card>
+  <cps-card variant="on-blurred"> Sobre acrílico </cps-card>
 </div>
 
 <div class="sample-acrylic-background">
-  <cps-card variant="primary">
-    Primário
-  </cps-card>
+  <cps-card variant="primary"> Primário </cps-card>
 
-  <cps-card variant="secondary">
-    Secundário
-  </cps-card>
+  <cps-card variant="secondary"> Secundário </cps-card>
 
-  <cps-card variant="tertiary">
-    Terciário
-  </cps-card>
+  <cps-card variant="tertiary"> Terciário </cps-card>
 
-  <cps-card variant="on-blurred">
-    Sobre acrílico
-  </cps-card>
+  <cps-card variant="on-blurred"> Sobre acrílico </cps-card>
 </div>
 ```
 
@@ -78,39 +71,23 @@ import { CpsCard } from '@cps-elements/web/react/card';
 const App = () => (
   <>
     <div className="sample-transparent-background">
-      <CpsCard variant="primary">
-        Primário
-      </CpsCard>
+      <CpsCard variant="primary">Primário</CpsCard>
 
-      <CpsCard variant="secondary">
-        Secundário
-      </CpsCard>
+      <CpsCard variant="secondary">Secundário</CpsCard>
 
-      <CpsCard variant="tertiary">
-        Terciário
-      </CpsCard>
+      <CpsCard variant="tertiary">Terciário</CpsCard>
 
-      <CpsCard variant="on-blurred">
-        Sobre acrílico
-      </CpsCard>
+      <CpsCard variant="on-blurred">Sobre acrílico</CpsCard>
     </div>
 
     <div className="sample-acrylic-background">
-      <CpsCard variant="primary">
-        Primário
-      </CpsCard>
+      <CpsCard variant="primary">Primário</CpsCard>
 
-      <CpsCard variant="secondary">
-        Secundário
-      </CpsCard>
+      <CpsCard variant="secondary">Secundário</CpsCard>
 
-      <CpsCard variant="tertiary">
-        Terciário
-      </CpsCard>
+      <CpsCard variant="tertiary">Terciário</CpsCard>
 
-      <CpsCard variant="on-blurred">
-        Sobre acrílico
-      </CpsCard>
+      <CpsCard variant="on-blurred">Sobre acrílico</CpsCard>
     </div>
   </>
 );
@@ -122,39 +99,23 @@ Use o atributo `actionable` para tornar o cartão acionável, ou seja, que pode 
 
 ```html preview
 <div class="sample-transparent-background">
-  <cps-card variant="primary" actionable>
-    Primário
-  </cps-card>
+  <cps-card variant="primary" actionable> Primário </cps-card>
 
-  <cps-card variant="secondary" actionable>
-    Secundário
-  </cps-card>
+  <cps-card variant="secondary" actionable> Secundário </cps-card>
 
-  <cps-card variant="tertiary" actionable>
-    Terciário
-  </cps-card>
+  <cps-card variant="tertiary" actionable> Terciário </cps-card>
 
-  <cps-card variant="on-blurred" actionable>
-    Sobre acrílico
-  </cps-card>
+  <cps-card variant="on-blurred" actionable> Sobre acrílico </cps-card>
 </div>
 
 <div class="sample-acrylic-background">
-  <cps-card variant="primary" actionable>
-    Primário
-  </cps-card>
+  <cps-card variant="primary" actionable> Primário </cps-card>
 
-  <cps-card variant="secondary" actionable>
-    Secundário
-  </cps-card>
+  <cps-card variant="secondary" actionable> Secundário </cps-card>
 
-  <cps-card variant="tertiary" actionable>
-    Terciário
-  </cps-card>
+  <cps-card variant="tertiary" actionable> Terciário </cps-card>
 
-  <cps-card variant="on-blurred" actionable>
-    Sobre acrílico
-  </cps-card>
+  <cps-card variant="on-blurred" actionable> Sobre acrílico </cps-card>
 </div>
 ```
 
@@ -231,31 +192,31 @@ Use os _slots_ `header` e `footer` para adicionar cabeçalho e rodapé ao cartã
 </cps-card>
 
 <style>
-.example-header-layout {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: auto 1fr;
-  row-gap: 0.25rem;
-  column-gap: 1rem;
-  align-items: center;
-}
+  .example-header-layout {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto 1fr;
+    row-gap: 0.25rem;
+    column-gap: 1rem;
+    align-items: center;
+  }
 
-.example-header-layout cps-avatar {
-  grid-row: span 2;
-}
+  .example-header-layout cps-avatar {
+    grid-row: span 2;
+  }
 
-.example-content-layout {
-  border: 1px dashed var(--cps-color-stroke-card-secondary);
-  border-radius: var(--cps-border-radius-medium);
-  background: var(--cps-color-fill-alt-tertiary);
-  padding: 1rem;
-}
+  .example-content-layout {
+    border: 1px dashed var(--cps-color-stroke-card-secondary);
+    border-radius: var(--cps-border-radius-medium);
+    background: var(--cps-color-fill-alt-tertiary);
+    padding: 1rem;
+  }
 
-.example-footer-layout {
-  display: flex;
-  gap: 1rem;
-  justify-content: end;
-}
+  .example-footer-layout {
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+  }
 </style>
 ```
 
@@ -296,30 +257,32 @@ const css = `
 
 const App = () => (
   <>
-  <CpsCard>
-    <div slot="header" className="example-header-layout">
-      <CpsAvatar image="https://i.pravatar.cc/48?img=3" label="John Doe" loading="lazy"></CpsAvatar>
-      <CpsLabel size="body-strong">John Doe</CpsLabel>
-      <CpsLabel size="body" variant="secondary">Engenheiro de Software</CpsLabel>
-    </div>
+    <CpsCard>
+      <div slot="header" className="example-header-layout">
+        <CpsAvatar image="https://i.pravatar.cc/48?img=3" label="John Doe" loading="lazy"></CpsAvatar>
+        <CpsLabel size="body-strong">John Doe</CpsLabel>
+        <CpsLabel size="body" variant="secondary">
+          Engenheiro de Software
+        </CpsLabel>
+      </div>
 
-    <div className="example-content-layout">
-      <CpsLabel variant="secondary">Área de conteúdo, construa conforme desejar.</CpsLabel>
-    </div>
+      <div className="example-content-layout">
+        <CpsLabel variant="secondary">Área de conteúdo, construa conforme desejar.</CpsLabel>
+      </div>
 
-    <div slot="footer" className="example-footer-layout">
-      <CpsButton>
-        <CpsIcon name="delete" label="Excluir"></CpsIcon>
-      </CpsButton>
+      <div slot="footer" className="example-footer-layout">
+        <CpsButton>
+          <CpsIcon name="delete" label="Excluir"></CpsIcon>
+        </CpsButton>
 
-      <CpsButton variant="accent">
-        <CpsIcon slot="prefix" name="edit" label="Editar"></CpsIcon>
-        Editar
-      </CpsButton>
-    </div>
-  </CpsCard>
+        <CpsButton variant="accent">
+          <CpsIcon slot="prefix" name="edit" label="Editar"></CpsIcon>
+          Editar
+        </CpsButton>
+      </div>
+    </CpsCard>
 
-  <style>{css}</style>
+    <style>{css}</style>
   </>
 );
 ```

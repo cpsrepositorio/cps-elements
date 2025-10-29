@@ -17,8 +17,7 @@ const stubbedFetchResponse: Response = {
   formData: sinon.fake(),
   bodyUsed: false,
   body: null,
-  clone: sinon.fake(),
-  bytes: sinon.fake()
+  clone: sinon.fake()
 };
 
 async function delayResolve(resolveValue: string) {

@@ -1,65 +1,40 @@
 {
-  "extends": [
-    "stylelint-config-recommended",
-    "stylelint-config-concentric-order"
-  ],
+  "extends": ["stylelint-config-recommended", "stylelint-config-concentric-order"],
   "rules": {
     "no-descending-specificity": null
   },
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "**/*.ts"
-      ],
+      "files": ["*.ts", "**/*.ts"],
       "customSyntax": "postcss-lit",
       "rules": {
         "selector-type-no-unknown": [
           true,
           {
-            "ignore": [
-              "custom-elements"
-            ],
-            "ignoreTypes": [
-              "POSTCSS_LIT_0",
-              "POSTCSS_LIT_1"
-            ]
+            "ignore": ["custom-elements"],
+            "ignoreTypes": ["POSTCSS_LIT_0", "POSTCSS_LIT_1"]
           }
         ]
       }
     },
     {
-      "files": [
-        "*.css",
-        "**/*.css"
-      ],
+      "files": ["*.css", "**/*.css"],
       "rules": {
-        "order/order": [
-          "declarations",
-          "custom-properties"
-        ]
+        "order/order": ["declarations", "custom-properties"]
       }
     },
     {
-      "files": [
-        "*.html",
-        "**/*.html"
-      ],
+      "files": ["*.html", "**/*.html"],
       "customSyntax": "postcss-html"
     },
     {
-      "files": [
-        "*.md",
-        "**/*.md"
-      ],
+      "files": ["*.md", "**/*.md"],
       "customSyntax": "postcss-markdown",
       "rules": {
         "selector-pseudo-class-no-unknown": [
           true,
           {
-            "ignorePseudoClasses": [
-              "global"
-            ]
+            "ignorePseudoClasses": ["global"]
           }
         ]
       }
