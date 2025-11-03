@@ -215,7 +215,9 @@ export default class CpsTooltip extends BaseElement {
       // Show
       this.emit('cps-show');
 
-      await stopAnimations(this.body);
+      // Cancel any ongoing animations (hiding in progress) before showing again
+      await Promise.all([stopAnimations(this.body), stopAnimations(this.flyout.container)]);
+
       this.body.hidden = false;
       this.flyout.active = true;
       const { keyframes, options } = getAnimation(this, 'tooltip.show', { dir: this.localize.dir() });
@@ -226,9 +228,16 @@ export default class CpsTooltip extends BaseElement {
       // Hide
       this.emit('cps-hide');
 
-      await stopAnimations(this.body);
+      // Cancel any ongoing animations (opening in progress) before hiding
+      await Promise.all([stopAnimations(this.body), stopAnimations(this.flyout.container)]);
+
       const { keyframes, options } = getAnimation(this, 'tooltip.hide', { dir: this.localize.dir() });
+      const initialOpenState = this.open;
       await animateTo(this.flyout.container, keyframes, options);
+
+      // If open state flipped back to true during the hide animation, abort finalizing hide
+      if (this.open !== initialOpenState) return;
+
       this.flyout.active = false;
       this.body.hidden = true;
 
