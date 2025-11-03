@@ -244,7 +244,7 @@ const App = () => (
 );
 ```
 
-?> Na maioria dos casos, a melhor escolha visual é manter o `size` padrão `medium` (ou simplesmente não informar tal atributo). O valor `small` existe para casos raros em que o componente é utilizado dentro de outros componentes, e o valor `large` existe para casos extremos.
+?> Na maioria dos casos, a melhor escolha é manter `size` padrão `medium` (ou simplesmente não informar o atributo). O valor `small` existe para casos raros em que o componente é utilizado dentro de outros componentes, e o valor `large` existe para casos extremos.
 
 ### Estado somente leitura
 
