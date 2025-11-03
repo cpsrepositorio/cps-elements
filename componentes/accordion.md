@@ -173,7 +173,12 @@ Use o _slot_ padrão para adicionar conteúdo personalizado ao _accordion_. Qual
 Para simplificar os casos mais comuns, há um `padding` padrão de `24px` no _container_ da área de conteúdo, o qual pode ser sobrescrito com estilos aplicados à parte CSS `content`.
 
 ```html preview
-<cps-accordion class="styled-content" title="Desligamento do sistema" subtitle="Como as coisas devem funcionar em segundo plano" open>
+<cps-accordion
+  class="styled-content"
+  title="Desligamento do sistema"
+  subtitle="Como as coisas devem funcionar em segundo plano"
+  open
+>
   <cps-icon slot="icon" name="power"></cps-icon>
 
   <div>
@@ -268,7 +273,12 @@ const css = `
 
 const App = () => (
   <>
-    <CpsAccordion class="styled-content" title="Desligamento do sistema" subtitle="Como as coisas devem funcionar em segundo plano" open>
+    <CpsAccordion
+      class="styled-content"
+      title="Desligamento do sistema"
+      subtitle="Como as coisas devem funcionar em segundo plano"
+      open
+    >
       <CpsIcon slot="icon" name="power" />
 
       <div>

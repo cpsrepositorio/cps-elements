@@ -24,7 +24,7 @@ export default class CpsRadio extends BaseElement {
     private setInitialAttributes;
     handleCheckedChange(): void;
     handleDisabledChange(): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsRadio };
 declare global {

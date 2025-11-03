@@ -19,7 +19,7 @@ export default class CpsToggleButton extends BaseElement {
     click(): void;
     focus(options?: FocusOptions): void;
     blur(): void;
-    render(): import("lit-html").TemplateResult;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsToggleButton };
 declare global {

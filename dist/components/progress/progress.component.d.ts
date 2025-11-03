@@ -9,7 +9,7 @@ export default class CpsProgress extends BaseElement {
     label: string;
     get indeterminate(): boolean;
     set indeterminate(indeterminate: boolean);
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsProgress };
 declare global {

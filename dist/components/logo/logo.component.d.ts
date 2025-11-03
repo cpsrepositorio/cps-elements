@@ -4,7 +4,7 @@ export default class CpsLogo extends BaseElement {
     static styles: CSSResultGroup;
     type: 'area-di' | 'cps' | 'elements' | 'sp-horizontal' | 'sp-vertical';
     variant: 'default' | 'monochromatic' | 'monochromatic-inverted';
-    render(): import("lit-html").TemplateResult | null;
+    render(): import("lit").TemplateResult | null;
 }
 export { CpsLogo };
 declare global {

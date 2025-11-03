@@ -58,7 +58,8 @@ Para definir um item aberto inicialmente, use o atributo `open` no próprio `cps
 
   <cps-accordion title="Informações adicionais">
     <cps-label>Conteúdo.</cps-label>
-  </cps-accordion>
+  </cps-accordion></cps-accordion-group
+>
 ```
 
 ```jsx react

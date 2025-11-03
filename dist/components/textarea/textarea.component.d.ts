@@ -65,7 +65,7 @@ export default class CpsTextarea extends BaseElement implements BaseFormControl 
     getForm(): HTMLFormElement | null;
     reportValidity(): boolean;
     setCustomValidity(message: string): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsTextarea };
 declare global {

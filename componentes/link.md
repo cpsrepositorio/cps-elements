@@ -21,9 +21,7 @@ Use o atributo `href` para definir o endereço de destino do _link_. O valor pod
 ```jsx react
 import { CpsLink } from '@cps-elements/web/react/link';
 
-const App = () => (
-  <CpsLink href="https://www.cps.sp.gov.br/">Navegar para portal CPS</CpsLink>
-);
+const App = () => <CpsLink href="https://www.cps.sp.gov.br/">Navegar para portal CPS</CpsLink>;
 ```
 
 ### Alvo de navegação
@@ -38,7 +36,9 @@ Use o atributo `target` para definir o alvo de navegação do _link_. O valor pa
 import { CpsLink } from '@cps-elements/web/react/link';
 
 const App = () => (
-  <CpsLink href="https://www.cps.sp.gov.br/" target="_blank">Abrir portal CPS em nova aba</CpsLink>
+  <CpsLink href="https://www.cps.sp.gov.br/" target="_blank">
+    Abrir portal CPS em nova aba
+  </CpsLink>
 );
 ```
 
@@ -55,7 +55,9 @@ import { CpsLink } from '@cps-elements/web/react/link';
 
 const App = () => (
   <>
-    <CpsLink href="#" disabled>Navegação desabilitada</CpsLink>
+    <CpsLink href="#" disabled>
+      Navegação desabilitada
+    </CpsLink>
   </>
 );
 ```
@@ -97,14 +99,16 @@ const App = () => (
       Instalação
     </CpsLink>
 
-    <br /><br />
+    <br />
+    <br />
 
     <CpsLink href="#">
       <CpsIcon slot="suffix" name="arrow-counterclockwise"></CpsIcon>
       Recomeçar
     </CpsLink>
 
-    <br /><br />
+    <br />
+    <br />
 
     <CpsLink href="https://www.cps.sp.gov.br/" target="_blank">
       <CpsIcon slot="prefix" name="cloud-link-fill"></CpsIcon>

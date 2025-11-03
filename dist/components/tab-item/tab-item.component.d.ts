@@ -20,7 +20,7 @@ export default class CpsTabItem extends BaseElement {
     handleDisabledChange(): void;
     focus(options?: FocusOptions): void;
     blur(): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsTabItem };
 declare global {

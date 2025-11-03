@@ -33,7 +33,7 @@ export default class CpsTabGroup extends BaseElement {
     updateScrollControls(): void;
     syncIndicator(): void;
     show(panel: string): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsTabGroup };
 declare global {

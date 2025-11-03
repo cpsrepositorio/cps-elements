@@ -58,7 +58,7 @@ const App = () => (
 );
 ```
 
-?> Na maioria dos casos, a melhor escolha visual é manter o `size` padrão `medium` (ou simplesmente não informar tal atributo). O valor `small` existe para casos raros em que o botão é utilizado dentro de outros componentes, e o valor `large` existe para casos extremos como botões de chamada para a ação (_call-to-action buttons_).
+?> Na maioria dos casos, a melhor escolha é manter `size` padrão `medium` (ou simplesmente não informar o atributo). O valor `small` existe para casos raros em que o botão é utilizado dentro de outros componentes, e o valor `large` existe para casos extremos como botões de chamada para a ação (_call-to-action buttons_).
 
 ### Ícones como prefixo ou sufixo
 

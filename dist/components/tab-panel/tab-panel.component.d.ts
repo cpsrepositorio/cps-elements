@@ -8,7 +8,7 @@ export default class CpsTabPanel extends BaseElement {
     selected: boolean;
     connectedCallback(): void;
     handleSelectedChanged(): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsTabPanel };
 declare global {

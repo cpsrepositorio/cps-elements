@@ -78,7 +78,7 @@ export default class CpsSelect extends BaseElement implements BaseFormControl {
     setCustomValidity(message: string): void;
     focus(options?: FocusOptions): void;
     blur(): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsSelect };
 declare global {

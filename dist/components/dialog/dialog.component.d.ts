@@ -30,7 +30,7 @@ export default class CpsDialog extends BaseElement {
     handleOpenChange(): Promise<void>;
     show(): Promise<void>;
     close(returnValue?: string | boolean): Promise<void>;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export declare function showAlert(message: string, title?: string, button?: string): Promise<void>;
 export declare function showConfirm(message: string, title?: string, buttonYes?: string, buttonNo?: string): Promise<boolean>;

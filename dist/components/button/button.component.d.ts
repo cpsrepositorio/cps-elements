@@ -51,7 +51,7 @@ export default class CpsButton extends BaseElement implements BaseFormControl {
     getForm(): HTMLFormElement | null;
     reportValidity(): boolean;
     setCustomValidity(message: string): void;
-    render(): import("lit-html").TemplateResult;
+    render(): import("lit").TemplateResult;
 }
 export { CpsButton };
 declare global {

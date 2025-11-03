@@ -13,7 +13,7 @@ export default class CpsIcon extends BaseElement {
     private getUrl;
     handleLabelChange(): void;
     setIcon(): Promise<void>;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsIcon };
 declare global {

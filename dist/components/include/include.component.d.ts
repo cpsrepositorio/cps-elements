@@ -7,7 +7,7 @@ export default class CpsInclude extends BaseElement {
     allowScripts: boolean;
     private executeScript;
     handleSrcChange(): Promise<void>;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsInclude };
 declare global {

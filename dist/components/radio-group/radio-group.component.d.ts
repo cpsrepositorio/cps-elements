@@ -42,7 +42,7 @@ export default class CpsRadioGroup extends BaseElement implements BaseFormContro
     getForm(): HTMLFormElement | null;
     reportValidity(): boolean;
     setCustomValidity(message?: string): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsRadioGroup };
 declare global {

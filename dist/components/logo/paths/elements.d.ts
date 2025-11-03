@@ -1,1 +1,1 @@
-export declare const Elements: import("lit-html/static").StaticValue;
+export declare const Elements: import("lit/static-html.js").StaticValue;

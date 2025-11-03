@@ -10,7 +10,7 @@ export default class CpsButtonGroup extends BaseElement {
     private handleMouseOver;
     private handleMouseOut;
     private handleSlotChange;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsButtonGroup };
 declare global {

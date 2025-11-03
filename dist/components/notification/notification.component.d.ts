@@ -22,7 +22,7 @@ export default class CpsNotification extends BaseElement {
     hide(): Promise<void>;
     toast(): Promise<void>;
     private hasIcon;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 interface ToastOptions {
     variant?: CpsNotification['variant'];

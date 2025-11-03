@@ -1,1 +1,1 @@
-export declare const SPHorizontal: import("lit-html/static").StaticValue;
+export declare const SPHorizontal: import("lit/static-html.js").StaticValue;

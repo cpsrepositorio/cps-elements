@@ -9,7 +9,7 @@ export default class CpsCard extends BaseElement {
     click(event?: MouseEvent): void;
     focus(options?: FocusOptions): void;
     blur(): void;
-    render(): import("lit-html").TemplateResult;
+    render(): import("lit").TemplateResult;
 }
 export { CpsCard };
 declare global {

@@ -37,7 +37,7 @@ export default class CpsFlyout extends BaseElement {
     private start;
     private stop;
     reposition(): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsFlyout };
 declare global {

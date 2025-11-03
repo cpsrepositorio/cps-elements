@@ -46,9 +46,9 @@ strong {
 
 /* Sidebar */
 .sidebar {
+  z-index: auto !important;
   border-right: 0;
   background-color: var(--cps-color-background-solid-primary);
-  z-index: auto !important;
 }
 
 .sidebar .app-name {

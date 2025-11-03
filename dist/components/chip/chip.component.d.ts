@@ -8,7 +8,7 @@ export default class CpsChip extends BaseElement {
     size: 'small' | 'medium' | 'large';
     removable: boolean;
     private handleRemoveClick;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsChip };
 declare global {

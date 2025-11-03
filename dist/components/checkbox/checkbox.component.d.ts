@@ -39,7 +39,7 @@ export default class CpsCheckbox extends BaseElement implements BaseFormControl 
     getForm(): HTMLFormElement | null;
     reportValidity(): boolean;
     setCustomValidity(message: string): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsCheckbox };
 declare global {

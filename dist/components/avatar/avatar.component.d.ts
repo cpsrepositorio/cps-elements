@@ -22,7 +22,7 @@ export default class CpsAvatar extends BaseElement {
     private updateBackground;
     private getHash;
     private normalizeHash;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsAvatar };
 declare global {

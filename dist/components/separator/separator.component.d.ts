@@ -4,7 +4,7 @@ export default class CpsSeparator extends BaseElement {
     static styles: CSSResultGroup;
     private readonly hasSlotController;
     vertical: boolean;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsSeparator };
 declare global {

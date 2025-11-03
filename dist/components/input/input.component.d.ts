@@ -75,7 +75,7 @@ export default class CpsInput extends BaseElement implements BaseFormControl {
     reportValidity(): boolean;
     setCustomValidity(message: string): void;
     private typeError;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsInput };
 declare global {

@@ -16,7 +16,7 @@ export default class CpsMenu extends BaseElement {
     getAllItems(): CpsMenuItem[];
     getCurrentItem(): CpsMenuItem | undefined;
     setCurrentItem(item: CpsMenuItem): void;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsMenu };
 declare global {

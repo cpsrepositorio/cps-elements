@@ -1,1 +1,0 @@
-import{a as p}from"./chunk.SLMEGIHK.js";import*as n from"react";import{createComponent as o}from"@lit-labs/react";var s=o({tagName:"cps-input",elementClass:p,react:n,events:{onCpsBlur:"cps-blur",onCpsChange:"cps-change",onCpsClear:"cps-clear",onCpsFocus:"cps-focus",onCpsInput:"cps-input",onCpsInvalid:"cps-invalid"}});var c=s;export{s as a,c as b};

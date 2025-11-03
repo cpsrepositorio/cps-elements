@@ -9,7 +9,7 @@ export default class CpsBadge extends BaseElement {
     pulse: boolean;
     private hasSingleCharacter;
     private hasIcon;
-    render(): import("lit-html").TemplateResult;
+    render(): import("lit").TemplateResult;
 }
 export { CpsBadge };
 declare global {

@@ -27,7 +27,7 @@ export default class CpsDrawer extends BaseElement {
     handleOpenChange(): Promise<void>;
     show(): Promise<void>;
     close(): Promise<void>;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsDrawer };
 declare global {

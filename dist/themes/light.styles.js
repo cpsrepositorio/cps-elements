@@ -119,6 +119,9 @@ export default css`
     --cps-color-fill-tertiary: rgb(245 245 245 / 30%);
     --cps-color-fill-disabled: rgb(245 245 245 / 30%);
 
+    --cps-color-fill-control-solid: rgb(245 255 245);
+    --cps-color-fill-control-disabled-solid: rgb(180, 180, 180);
+
     --cps-color-fill-card-primary: rgb(255 255 255 / 70%);
     --cps-color-fill-card-secondary: rgb(245 245 245 / 50%);
     --cps-color-fill-card-tertiary: var(--cps-palette-neutral-0);

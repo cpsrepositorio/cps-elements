@@ -18,7 +18,7 @@ export default class CpsOption extends BaseElement {
     handleSelectedChange(): void;
     handleValueChange(): void;
     getTextLabel(): string;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsOption };
 declare global {

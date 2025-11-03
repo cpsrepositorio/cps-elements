@@ -16,7 +16,7 @@ export default class CpsAccordion extends BaseElement {
     click(): void;
     focus(options?: FocusOptions): void;
     blur(): void;
-    render(): import("lit-html").TemplateResult;
+    render(): import("lit").TemplateResult;
 }
 export { CpsAccordion };
 declare global {

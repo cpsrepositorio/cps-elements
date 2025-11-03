@@ -15,7 +15,7 @@ export default class CpsLink extends BaseElement {
     click(): void;
     focus(options?: FocusOptions): void;
     blur(): void;
-    render(): import("lit-html").TemplateResult;
+    render(): import("lit").TemplateResult;
 }
 export { CpsLink };
 declare global {

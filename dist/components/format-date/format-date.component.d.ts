@@ -13,7 +13,7 @@ export default class CpsFormatDate extends BaseElement {
     timeZoneName: 'short' | 'long';
     timeZone: string;
     hourFormat: 'auto' | '12' | '24';
-    render(): import("lit-html").TemplateResult<1> | undefined;
+    render(): import("lit").TemplateResult<1> | undefined;
 }
 export { CpsFormatDate };
 declare global {

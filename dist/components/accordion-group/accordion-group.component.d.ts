@@ -9,7 +9,7 @@ export default class CpsAccordionGroup extends BaseElement {
     private getAllAccordions;
     private setActiveAccordion;
     private handleClick;
-    render(): import("lit-html").TemplateResult;
+    render(): import("lit").TemplateResult;
 }
 export { CpsAccordionGroup };
 declare global {

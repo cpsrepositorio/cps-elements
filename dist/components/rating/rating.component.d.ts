@@ -19,7 +19,7 @@ export default class CpsRating extends BaseElement implements BaseFormControl {
     defaultValue: number;
     size: 'small' | 'medium' | 'large';
     max: number;
-    precision: number;
+    step: number;
     symbol: 'star' | 'heart';
     disabled: boolean;
     readonly: boolean;
@@ -51,7 +51,7 @@ export default class CpsRating extends BaseElement implements BaseFormControl {
     focus(options?: FocusOptions): void;
     blur(): void;
     private renderItems;
-    render(): import("lit-html").TemplateResult<1>;
+    render(): import("lit").TemplateResult<1>;
 }
 export { CpsRating };
 declare global {
