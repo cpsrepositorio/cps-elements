@@ -46,7 +46,7 @@
   - [Progress](/componentes/progress)
   - [Radio](/componentes/radio)
   - [Radio Group](/componentes/radio-group)
-  - [Range <small>(em breve)</small>](/componentes/range)
+  - [Range](/componentes/range)
   - [Rating](/componentes/rating)
   - [Select](/componentes/select)
   - [Separator](/componentes/separator)

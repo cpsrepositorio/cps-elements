@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-range>`.
+
 ### Changed
 
 - 🚨 **BREAKING**: Renomeada propriedade `precision` para `step` no componente `<cps-rating>`.
