@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           registry-url: https://registry.npmjs.org/
-          node-version: '14.17'
+          node-version: '24.11'
 
       # Use cache for node modules
       - name: Cache node modules
