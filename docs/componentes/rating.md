@@ -148,28 +148,28 @@ const App = () => <CpsRating ariaLabel="Selecione se gostou do nosso site" max={
 
 ### Precisão da classificação
 
-Use o atributo `precision` para permitir avaliações com valores decimais.
+Use o atributo `step` para permitir avaliações com valores decimais.
 
 ```html preview
-<cps-rating label="Avaliação com precisão 0.5" precision="0.5" value="2.5"></cps-rating>
+<cps-rating label="Avaliação com precisão 0.5" step="0.5" value="2.5"></cps-rating>
 ```
 
 ```jsx react
 import { CpsRating } from '@cps-elements/web/react/rating';
 
-const App = () => <CpsRating label="Avaliação com precisão 0.5" precision={0.5} value={2.5} />;
+const App = () => <CpsRating label="Avaliação com precisão 0.5" step={0.5} value={2.5} />;
 ```
 
 Embora unusual, valores decimais ainda mais reduzidos são possíveis.
 
 ```html preview
-<cps-rating label="Avaliação com precisão 0.25" precision="0.25" value="2.25"></cps-rating>
+<cps-rating label="Avaliação com precisão 0.25" step="0.25" value="2.25"></cps-rating>
 ```
 
 ```jsx react
 import { CpsRating } from '@cps-elements/web/react/rating';
 
-const App = () => <CpsRating label="Avaliação com precisão 0.25" precision={0.25} value={2.25} />;
+const App = () => <CpsRating label="Avaliação com precisão 0.25" step={0.25} value={2.25} />;
 ```
 
 !> Embora suportado, não é recomendado usar precisão abaixo de `0.5`. Acertar o clique no ponto exato do ícone para preencher o valor se torna muito difícil, ocasionando uma usabilidade altamente frustrante para o usuário.
@@ -183,7 +183,7 @@ Se desejado, você também pode aproveitar a [propriedade CSS](?id=propriedades-
 ```html preview
 <cps-rating
   label="O quanto você amou?"
-  precision="0.5"
+  step="0.5"
   style="--symbol-color-active: var(--cps-color-fill-brand)"
   symbol="heart"
   value="4"
@@ -196,7 +196,7 @@ import { CpsRating } from '@cps-elements/web/react/rating';
 const App = () => (
   <CpsRating
     label="O quanto você amou?"
-    precision={0.5}
+    step={0.5}
     style={{ '--symbol-color-active': 'var(--cps-color-fill-brand)' }}
     symbol="heart"
     value={4}

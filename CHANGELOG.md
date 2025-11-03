@@ -8,6 +8,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Changed
 
+- 🚨 **BREAKING**: Renomeada propriedade `precision` para `step` no componente `<cps-rating>`.
 - Migração da base dos componentes de Lit 2 para Lit 3.
 - Melhorias de acessibilidade após migração para ESLint Lit A11y 4.
 

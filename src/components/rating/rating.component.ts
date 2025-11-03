@@ -92,8 +92,8 @@ export default class CpsRating extends BaseElement implements BaseFormControl {
   })
   max = 5;
 
-  /** A precisão para a qual arredondar. Para permitir meias estrelas, defina como `0.5`. */
-  @property({ type: Number }) precision = 1;
+  /** A precisão para a qual arredondar, por padrão `1`. Para permitir meias estrelas, defina como `0.5`. */
+  @property({ type: Number }) step = 1;
 
   /** O símbolo usado para representar cada unidade de classificação. */
   @property({ reflect: true }) symbol: 'star' | 'heart' = 'star';
@@ -160,7 +160,7 @@ export default class CpsRating extends BaseElement implements BaseFormControl {
   }
 
   private getRoundedValue(value: number) {
-    return Math.round(value / this.precision) * this.precision;
+    return Math.round(value / this.step) * this.step;
   }
 
   private handleKeyDown(event: KeyboardEvent) {
@@ -193,12 +193,12 @@ export default class CpsRating extends BaseElement implements BaseFormControl {
 
     if (['ArrowLeft', 'ArrowDown'].includes(event.key)) {
       event.preventDefault();
-      const decrement = event.shiftKey ? 1 : this.precision;
+      const decrement = event.shiftKey ? 1 : this.step;
       this.value = Math.max(0, this.value - decrement);
       this.emit('cps-change');
     } else if (['ArrowRight', 'ArrowUp'].includes(event.key)) {
       event.preventDefault();
-      const increment = event.shiftKey ? 1 : this.precision;
+      const increment = event.shiftKey ? 1 : this.step;
       this.value = Math.min(this.max, this.value + increment);
       this.emit('cps-change');
     }
@@ -406,7 +406,7 @@ export default class CpsRating extends BaseElement implements BaseFormControl {
             ?required=${this.required}
             min="0"
             max=${this.max}
-            step=${this.precision}
+            step=${this.step}
             tabindex="-1"
             aria-hidden="true"
             form=${ifDefined(this.form || undefined)}
