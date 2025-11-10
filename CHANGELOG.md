@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Fixed
+
+- Corrigido `<cps-label>` quanto à renderização da _tag_ HTML correta, relativa ao valor da propriedade `tag`.
+
 ## 0.23.0 - 2025-11-03
 
 ### Added

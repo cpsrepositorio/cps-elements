@@ -1,9 +1,6 @@
-/* eslint-disable lit/binding-positions, lit/no-invalid-html */
-
 import { classMap } from 'lit/directives/class-map.js';
 import { customElement, property } from 'lit/decorators.js';
 import { html } from 'lit';
-import { unsafeStatic } from 'lit/static-html.js';
 import BaseElement from '../../internal/base-element.js';
 import styles from './label.styles.js';
 import type { CSSResultGroup } from 'lit';
@@ -54,43 +51,57 @@ export default class CpsLabel extends BaseElement {
   @property({ reflect: true }) tag: 'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div' = 'span';
 
   render() {
-    const tagName = unsafeStatic(this.tag);
+    const className = classMap({
+      label: true,
 
-    return html`
-      <${tagName}
-        part="base"
-        class=${classMap({
-          label: true,
+      // Variants
+      'label--primary': this.variant === 'primary',
+      'label--secondary': this.variant === 'secondary',
+      'label--tertiary': this.variant === 'tertiary',
+      'label--disabled': this.variant === 'disabled',
+      'label--brand-primary': this.variant === 'brand-primary',
+      'label--brand-secondary': this.variant === 'brand-secondary',
+      'label--brand-tertiary': this.variant === 'brand-tertiary',
+      'label--inverted-primary': this.variant === 'inverted-primary',
+      'label--inverted-secondary': this.variant === 'inverted-secondary',
+      'label--inverted-disabled': this.variant === 'inverted-disabled',
 
-          // Variants
-          'label--primary': this.variant === 'primary',
-          'label--secondary': this.variant === 'secondary',
-          'label--tertiary': this.variant === 'tertiary',
-          'label--disabled': this.variant === 'disabled',
-          'label--brand-primary': this.variant === 'brand-primary',
-          'label--brand-secondary': this.variant === 'brand-secondary',
-          'label--brand-tertiary': this.variant === 'brand-tertiary',
-          'label--inverted-primary': this.variant === 'inverted-primary',
-          'label--inverted-secondary': this.variant === 'inverted-secondary',
-          'label--inverted-disabled': this.variant === 'inverted-disabled',
+      // Sizes
+      'label--stamp': this.size === 'stamp',
+      'label--caption': this.size === 'caption',
+      'label--label': this.size === 'label',
+      'label--body': this.size === 'body',
+      'label--body-em': this.size === 'body-emphasized',
+      'label--body-strong': this.size === 'body-strong',
+      'label--body-large': this.size === 'body-large',
+      'label--subtitle': this.size === 'subtitle',
+      'label--title': this.size === 'title',
+      'label--heading': this.size === 'heading',
+      'label--display': this.size === 'display'
+    });
 
-          // Sizes
-          'label--stamp': this.size === 'stamp',
-          'label--caption': this.size === 'caption',
-          'label--label': this.size === 'label',
-          'label--body': this.size === 'body',
-          'label--body-em': this.size === 'body-emphasized',
-          'label--body-strong': this.size === 'body-strong',
-          'label--body-large': this.size === 'body-large',
-          'label--subtitle': this.size === 'subtitle',
-          'label--title': this.size === 'title',
-          'label--heading': this.size === 'heading',
-          'label--display': this.size === 'display'
-        })}
-      >
-        <slot part="content" class="label__content"></slot>
-      </${tagName}>
-    `;
+    const slot = html`<slot part="content" class="label__content"></slot>`;
+
+    switch (this.tag) {
+      case 'small':
+        return html`<small part="base" class=${className}>${slot}</small>`;
+      case 'i':
+        return html`<i part="base" class=${className}>${slot}</i>`;
+      case 'b':
+        return html`<b part="base" class=${className}>${slot}</b>`;
+      case 'em':
+        return html`<em part="base" class=${className}>${slot}</em>`;
+      case 'strong':
+        return html`<strong part="base" class=${className}>${slot}</strong>`;
+      case 'label':
+        return html`<label part="base" class=${className}>${slot}</label>`;
+      case 'p':
+        return html`<p part="base" class=${className}>${slot}</p>`;
+      case 'div':
+        return html`<div part="base" class=${className}>${slot}</div>`;
+      default:
+        return html`<span part="base" class=${className}>${slot}</span>`;
+    }
   }
 }
 
