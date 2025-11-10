@@ -11,8 +11,7 @@
   >
   <br />
   <cps-label
-    >E também <cps-link href="/#/fundamentos/utilização">utilizar</cps-link> qualquer componente CPS
-    Elements.</cps-label
+    >E também <cps-link href="/#/fundamentos/utilização">utilizar</cps-link>qualquer componente CPS Elements.</cps-label
   >
 </cps-card>
 ```
@@ -31,7 +30,7 @@ const App = () => (
     </CpsLabel>
     <br />
     <CpsLabel>
-      E também <CpsLink href="/#/fundamentos/utilização">utilizar</CpsLink> qualquer componente CPS Elements.
+      E também <CpsLink href="/#/fundamentos/utilização">utilizar</CpsLink>qualquer componente CPS Elements.
     </CpsLabel>
   </CpsCard>
 );
@@ -45,23 +44,23 @@ Use o atributo `variant` para definir a variação visual do cartão. Atente-se 
 
 ```html preview
 <div class="sample-transparent-background">
-  <cps-card variant="primary"> Primário </cps-card>
+  <cps-card variant="primary">Primário</cps-card>
 
-  <cps-card variant="secondary"> Secundário </cps-card>
+  <cps-card variant="secondary">Secundário</cps-card>
 
-  <cps-card variant="tertiary"> Terciário </cps-card>
+  <cps-card variant="tertiary">Terciário</cps-card>
 
-  <cps-card variant="on-blurred"> Sobre acrílico </cps-card>
+  <cps-card variant="on-blurred">Sobre acrílico</cps-card>
 </div>
 
 <div class="sample-acrylic-background">
-  <cps-card variant="primary"> Primário </cps-card>
+  <cps-card variant="primary">Primário</cps-card>
 
-  <cps-card variant="secondary"> Secundário </cps-card>
+  <cps-card variant="secondary">Secundário</cps-card>
 
-  <cps-card variant="tertiary"> Terciário </cps-card>
+  <cps-card variant="tertiary">Terciário</cps-card>
 
-  <cps-card variant="on-blurred"> Sobre acrílico </cps-card>
+  <cps-card variant="on-blurred">Sobre acrílico</cps-card>
 </div>
 ```
 
@@ -99,23 +98,23 @@ Use o atributo `actionable` para tornar o cartão acionável, ou seja, que pode 
 
 ```html preview
 <div class="sample-transparent-background">
-  <cps-card variant="primary" actionable> Primário </cps-card>
+  <cps-card variant="primary" actionable>Primário</cps-card>
 
-  <cps-card variant="secondary" actionable> Secundário </cps-card>
+  <cps-card variant="secondary" actionable>Secundário</cps-card>
 
-  <cps-card variant="tertiary" actionable> Terciário </cps-card>
+  <cps-card variant="tertiary" actionable>Terciário</cps-card>
 
-  <cps-card variant="on-blurred" actionable> Sobre acrílico </cps-card>
+  <cps-card variant="on-blurred" actionable>Sobre acrílico</cps-card>
 </div>
 
 <div class="sample-acrylic-background">
-  <cps-card variant="primary" actionable> Primário </cps-card>
+  <cps-card variant="primary" actionable>Primário</cps-card>
 
-  <cps-card variant="secondary" actionable> Secundário </cps-card>
+  <cps-card variant="secondary" actionable>Secundário</cps-card>
 
-  <cps-card variant="tertiary" actionable> Terciário </cps-card>
+  <cps-card variant="tertiary" actionable>Terciário</cps-card>
 
-  <cps-card variant="on-blurred" actionable> Sobre acrílico </cps-card>
+  <cps-card variant="on-blurred" actionable>Sobre acrílico</cps-card>
 </div>
 ```
 
@@ -161,6 +160,188 @@ const App = () => (
     </div>
   </>
 );
+```
+
+### Elevação
+
+Use o atributo `elevation` para definir explicitamente a intensidade de sombra desejada, sobrescrevendo a definição padrão dependente da `variant` em uso.
+
+```html preview
+<div class="sample-transparent-background">
+  <cps-label size="body" variant="secondary">Sem elevação</cps-label>
+  <cps-card elevation="none" variant="primary">Primário</cps-card>
+  <cps-card elevation="none" variant="secondary">Secundário</cps-card>
+  <cps-card elevation="none" variant="tertiary">Terciário</cps-card>
+  <cps-card elevation="none" variant="on-blurred">Sobre acrílico</cps-card>
+</div>
+
+<div class="sample-solid-background">
+  <cps-label size="body" variant="secondary">Elevação pequena</cps-label>
+  <cps-card elevation="sm" variant="primary">Primário</cps-card>
+  <cps-card elevation="sm" variant="secondary">Secundário</cps-card>
+  <cps-card elevation="sm" variant="tertiary">Terciário</cps-card>
+  <cps-card elevation="sm" variant="on-blurred">Sobre acrílico</cps-card>
+</div>
+
+<div class="sample-transparent-background">
+  <cps-label size="body" variant="secondary">Elevação média</cps-label>
+  <cps-card elevation="md" variant="primary">Primário</cps-card>
+  <cps-card elevation="md" variant="secondary">Secundário</cps-card>
+  <cps-card elevation="md" variant="tertiary">Terciário</cps-card>
+  <cps-card elevation="md" variant="on-blurred">Sobre acrílico</cps-card>
+</div>
+
+<div class="sample-solid-background">
+  <cps-label size="body" variant="secondary">Elevação grande</cps-label>
+  <cps-card elevation="lg" variant="primary">Primário</cps-card>
+  <cps-card elevation="lg" variant="secondary">Secundário</cps-card>
+  <cps-card elevation="lg" variant="tertiary">Terciário</cps-card>
+  <cps-card elevation="lg" variant="on-blurred">Sobre acrílico</cps-card>
+</div>
+
+<div class="sample-transparent-background">
+  <cps-label size="body" variant="secondary">Elevação extra-grande</cps-label>
+  <cps-card elevation="xl" variant="primary">Primário</cps-card>
+  <cps-card elevation="xl" variant="secondary">Secundário</cps-card>
+  <cps-card elevation="xl" variant="tertiary">Terciário</cps-card>
+  <cps-card elevation="xl" variant="on-blurred">Sobre acrílico</cps-card>
+</div>
+
+<div class="sample-solid-background">
+  <cps-label size="body" variant="secondary">Elevação extra-grande dupla</cps-label>
+  <cps-card elevation="2xl" variant="primary">Primário</cps-card>
+  <cps-card elevation="2xl" variant="secondary">Secundário</cps-card>
+  <cps-card elevation="2xl" variant="tertiary">Terciário</cps-card>
+  <cps-card elevation="2xl" variant="on-blurred">Sobre acrílico</cps-card>
+</div>
+```
+
+```jsx react
+import { CpsCard } from '@cps-elements/web/react/card';
+import { CpsLabel } from '@cps-elements/web/react/label';
+
+const App = () => (
+  <>
+    <div className="sample-transparent-background">
+      <CpsLabel size="body" variant="secondary">
+        Sem elevação
+      </CpsLabel>
+      <CpsCard elevation="none" variant="primary">
+        Primário
+      </CpsCard>
+      <CpsCard elevation="none" variant="secondary">
+        Secundário
+      </CpsCard>
+      <CpsCard elevation="none" variant="tertiary">
+        Terciário
+      </CpsCard>
+      <CpsCard elevation="none" variant="on-blurred">
+        Sobre acrílico
+      </CpsCard>
+    </div>
+
+    <div className="sample-solid-background">
+      <CpsLabel size="body" variant="secondary">
+        Elevação pequena
+      </CpsLabel>
+      <CpsCard elevation="sm" variant="primary">
+        Primário
+      </CpsCard>
+      <CpsCard elevation="sm" variant="secondary">
+        Secundário
+      </CpsCard>
+      <CpsCard elevation="sm" variant="tertiary">
+        Terciário
+      </CpsCard>
+      <CpsCard elevation="sm" variant="on-blurred">
+        Sobre acrílico
+      </CpsCard>
+    </div>
+
+    <div className="sample-transparent-background">
+      <CpsLabel size="body" variant="secondary">
+        Elevação média
+      </CpsLabel>
+      <CpsCard elevation="md" variant="primary">
+        Primário
+      </CpsCard>
+      <CpsCard elevation="md" variant="secondary">
+        Secundário
+      </CpsCard>
+      <CpsCard elevation="md" variant="tertiary">
+        Terciário
+      </CpsCard>
+      <CpsCard elevation="md" variant="on-blurred">
+        Sobre acrílico
+      </CpsCard>
+    </div>
+
+    <div className="sample-solid-background">
+      <CpsLabel size="body" variant="secondary">
+        Elevação grande
+      </CpsLabel>
+      <CpsCard elevation="lg" variant="primary">
+        Primário
+      </CpsCard>
+      <CpsCard elevation="lg" variant="secondary">
+        Secundário
+      </CpsCard>
+      <CpsCard elevation="lg" variant="tertiary">
+        Terciário
+      </CpsCard>
+      <CpsCard elevation="lg" variant="on-blurred">
+        Sobre acrílico
+      </CpsCard>
+    </div>
+
+    <div className="sample-transparent-background">
+      <CpsLabel size="body" variant="secondary">
+        Elevação extra-grande
+      </CpsLabel>
+      <CpsCard elevation="xl" variant="primary">
+        Primário
+      </CpsCard>
+      <CpsCard elevation="xl" variant="secondary">
+        Secundário
+      </CpsCard>
+      <CpsCard elevation="xl" variant="tertiary">
+        Terciário
+      </CpsCard>
+      <CpsCard elevation="xl" variant="on-blurred">
+        Sobre acrílico
+      </CpsCard>
+    </div>
+
+    <div className="sample-solid-background">
+      <CpsLabel size="body" variant="secondary">
+        Elevação extra-grande dupla
+      </CpsLabel>
+      <CpsCard elevation="2xl" variant="primary">
+        Primário
+      </CpsCard>
+      <CpsCard elevation="2xl" variant="secondary">
+        Secundário
+      </CpsCard>
+      <CpsCard elevation="2xl" variant="tertiary">
+        Terciário
+      </CpsCard>
+      <CpsCard elevation="2xl" variant="on-blurred">
+        Sobre acrílico
+      </CpsCard>
+    </div>
+  </>
+);
+```
+
+### Arredondamento de cantos
+
+Use o atributo `rounded` para ajustar o comportamento de arrendondamento de cantos do cartão sem precisar sobrescrever a estilização diretamente. Por padrão, todos os cantos são arredondados, mas modificar este comportamento pode ser útil ao se juntar cartões lado a lado.
+
+```html preview
+<div class="sample-acrylic-background no-gap">
+  <cps-card variant="primary" rounded="start">Cartão 1</cps-card>
+  <cps-card variant="on-blurred" rounded="end">Cartão 2</cps-card>
+</div>
 ```
 
 ### Com cabeçalho e rodapé
@@ -290,26 +471,51 @@ const App = () => (
 [component-metadata:cps-card]
 
 <style>
-.sample-transparent-background {
+.sample-transparent-background,
+.sample-solid-background,
+.sample-acrylic-background {
   display: flex;
+  flex-wrap: wrap;
   inset: 0;
   gap: 1.5rem;
-  align-items: center;
-  margin: -1.5rem -3.25rem 0 -1.5rem;
-  padding: 1.5rem 3.25rem 1.5rem 1.5rem;
+  align-items: start;
+  padding: 1.5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
   overflow: hidden;
 }
 
+.sample-solid-background {
+  background: var(--cps-color-fill-primary);
+  background-clip: border-box;
+  border: solid 1px var(--cps-color-stroke-card-secondary);
+  border-left: 0;
+  border-right: 0;
+}
+
+.sample-solid-background:first-of-type {
+  border-top: 0;
+}
+
+.sample-solid-background:last-of-type {
+  border-bottom: 0;
+}
+
 .sample-acrylic-background {
-  display: flex;
   position: relative;
-  inset: 0;
-  gap: 1.5rem;
-  align-items: center;
-  margin: 0 -3.25rem -1.5rem -1.5rem;
   background: url('./assets/images/background.jpg') center/cover fixed;
-  padding: 1.5rem 3.25rem 1.5rem 1.5rem;
-  overflow: hidden;
+}
+
+:is(.sample-transparent-background, .sample-solid-background, .sample-acrylic-background).no-gap {
+  gap: 0;
+}
+
+:is(.sample-transparent-background, .sample-solid-background, .sample-acrylic-background):first-of-type {
+  margin-top: -1.5rem;
+}
+
+:is(.sample-transparent-background, .sample-solid-background, .sample-acrylic-background):last-of-type {
+  margin-bottom: -1.5rem;
 }
 
 .sample-acrylic-background::before {
@@ -321,9 +527,13 @@ const App = () => (
   backdrop-filter: var(--cps-blur-large);
 }
 
-.sample-transparent-background > *,
-.sample-acrylic-background > * {
-  position: relative;
+:is(.sample-transparent-background, .sample-solid-background, .sample-acrylic-background) cps-label {
+  flex: 1 0 100%;
+  margin-bottom: -1rem;
+  z-index: 1;
+}
+
+:is(.sample-transparent-background, .sample-solid-background, .sample-acrylic-background) cps-card {
   flex: 1;
   z-index: 1;
 }

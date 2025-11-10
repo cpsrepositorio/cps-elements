@@ -230,9 +230,9 @@
             <div class="code-block ${isExpanded ? 'code-block--expanded' : ''}">
               <div class="code-block__preview">
                 ${code.textContent}
-                <div class="code-block__resizer">
+                <span class="code-block__resizer">
                   <cps-icon name="re-order-dots-vertical"></cps-icon>
-                </div>
+                </span>
               </div>
 
               <div class="code-block__source-group" id="${sourceGroupId}">

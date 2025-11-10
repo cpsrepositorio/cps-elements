@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Adição das propriedades `elevation` e `rounded` no componente `<cps-card>`.
+
 ### Fixed
 
 - Corrigido `<cps-label>` quanto à renderização da _tag_ HTML correta, relativa ao valor da propriedade `tag`.

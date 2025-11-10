@@ -11,7 +11,6 @@ export default css`
   .card {
     display: block;
     border: 1px solid var(--cps-color-stroke-card-primary);
-    border-radius: var(--cps-border-radius-large);
     box-shadow: var(--cps-shadow);
     background: var(--cps-color-fill-card-primary);
     padding: var(--cps-spacing-6);
@@ -85,5 +84,96 @@ export default css`
     margin-top: var(--cps-spacing-4);
     border-top: 1px solid var(--cps-color-stroke-separator);
     padding-top: var(--cps-spacing-4);
+  }
+
+  /* Rounded */
+  .card--rounded-none {
+    border-radius: 0;
+  }
+
+  .card--rounded-full {
+    border-radius: var(--cps-border-radius-large);
+  }
+
+  .card--rounded-start {
+    border-top-left-radius: var(--cps-border-radius-large);
+    border-bottom-left-radius: var(--cps-border-radius-large);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .card--rounded-end {
+    border-top-right-radius: var(--cps-border-radius-large);
+    border-bottom-right-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .card--rounded-top {
+    border-top-left-radius: var(--cps-border-radius-large);
+    border-top-right-radius: var(--cps-border-radius-large);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .card--rounded-bottom {
+    border-bottom-left-radius: var(--cps-border-radius-large);
+    border-bottom-right-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .card--rounded-top-start {
+    border-top-left-radius: var(--cps-border-radius-large);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .card--rounded-top-end {
+    border-top-right-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .card--rounded-bottom-start {
+    border-bottom-left-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .card--rounded-bottom-end {
+    border-bottom-right-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /* Elevations */
+
+  .card--elevation-none {
+    box-shadow: none;
+  }
+
+  .card--elevation-sm {
+    box-shadow: var(--cps-shadow);
+  }
+
+  .card--elevation-md {
+    box-shadow: var(--cps-shadow-md);
+  }
+
+  .card--elevation-lg {
+    box-shadow: var(--cps-shadow-lg);
+  }
+
+  .card--elevation-xl {
+    box-shadow: var(--cps-shadow-xl);
+  }
+
+  .card--elevation-2xl {
+    box-shadow: var(--cps-shadow-2xl);
   }
 `;

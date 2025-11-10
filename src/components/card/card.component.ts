@@ -25,6 +25,22 @@ export default class CpsCard extends BaseElement {
 
   @query('.card') card: HTMLDivElement;
 
+  /** Opcionalmente sobrescreve a elevação usada para projeção de sombra, mudando a aparência padrão definida pela variante. */
+  @property({ reflect: true }) elevation?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' = undefined;
+
+  /** Define o padrão de arredondamento dos cantos do _card_. */
+  @property({ reflect: true }) rounded:
+    | 'none'
+    | 'full'
+    | 'start'
+    | 'end'
+    | 'top'
+    | 'bottom'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end' = 'full';
+
   /** O tipo de variação visual do _card_. */
   @property({ reflect: true }) variant: 'primary' | 'secondary' | 'tertiary' | 'on-blurred' = 'primary';
 
@@ -66,6 +82,12 @@ export default class CpsCard extends BaseElement {
 
           // Variants
           [`card--${this.variant}`]: true,
+
+          // Rounded
+          [`card--rounded-${this.rounded}`]: true,
+
+          // Elevation
+          [`card--elevation-${this.elevation}`]: this.elevation !== undefined,
 
           // Interaction
           'card--actionable': this.actionable,
