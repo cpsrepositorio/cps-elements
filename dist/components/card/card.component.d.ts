@@ -4,6 +4,8 @@ export default class CpsCard extends BaseElement {
     static styles: CSSResultGroup;
     private readonly hasSlotController;
     card: HTMLDivElement;
+    elevation?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+    rounded: 'none' | 'full' | 'start' | 'end' | 'top' | 'bottom' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
     variant: 'primary' | 'secondary' | 'tertiary' | 'on-blurred';
     actionable: boolean;
     click(event?: MouseEvent): void;

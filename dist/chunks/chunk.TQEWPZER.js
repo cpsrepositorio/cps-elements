@@ -1,8 +1,0 @@
-import{a as o}from"./chunk.WT45D3HF.js";import{a as b}from"./chunk.TU57SENY.js";import{a as n}from"./chunk.MESFKACX.js";import{a as l,b as t,e as d}from"./chunk.HETV6G5Q.js";import{e as s}from"./chunk.QJBMNVJB.js";import{c as i,e as a}from"./chunk.K3RV6SX6.js";var e=class extends d{constructor(){super(...arguments);this.variant="primary";this.size="body";this.tag="span"}render(){let r=b(this.tag);return s`
-      <${r}
-        part="base"
-        class=${n({label:!0,"label--primary":this.variant==="primary","label--secondary":this.variant==="secondary","label--tertiary":this.variant==="tertiary","label--disabled":this.variant==="disabled","label--brand-primary":this.variant==="brand-primary","label--brand-secondary":this.variant==="brand-secondary","label--brand-tertiary":this.variant==="brand-tertiary","label--inverted-primary":this.variant==="inverted-primary","label--inverted-secondary":this.variant==="inverted-secondary","label--inverted-disabled":this.variant==="inverted-disabled","label--stamp":this.size==="stamp","label--caption":this.size==="caption","label--label":this.size==="label","label--body":this.size==="body","label--body-em":this.size==="body-emphasized","label--body-strong":this.size==="body-strong","label--body-large":this.size==="body-large","label--subtitle":this.size==="subtitle","label--title":this.size==="title","label--heading":this.size==="heading","label--display":this.size==="display"})}
-      >
-        <slot part="content" class="label__content"></slot>
-      </${r}>
-    `}};i(e,"CpsLabel"),e.styles=o,a([t({reflect:!0})],e.prototype,"variant",2),a([t({reflect:!0})],e.prototype,"size",2),a([t({reflect:!0})],e.prototype,"tag",2),e=a([l("cps-label")],e);export{e as a};

@@ -1,0 +1,176 @@
+import{a as o}from"./chunk.M4ACP6KD.js";import{c as r}from"./chunk.QJBMNVJB.js";var t=r`
+  ${o}
+
+  :host {
+    display: block;
+  }
+
+  .card {
+    display: block;
+    border: 1px solid var(--cps-color-stroke-card-primary);
+    box-shadow: var(--cps-shadow);
+    background: var(--cps-color-fill-card-primary);
+    padding: var(--cps-spacing-6);
+    min-height: 0;
+    overflow: auto;
+  }
+
+  /* Variants */
+
+  .card--primary {
+    backdrop-filter: var(--cps-blur-small);
+  }
+
+  .card--secondary {
+    border-color: var(--cps-color-stroke-card-secondary);
+    background: var(--cps-color-fill-card-secondary);
+    backdrop-filter: var(--cps-blur-small);
+  }
+
+  .card--tertiary {
+    border-color: var(--cps-color-stroke-card-primary);
+    background: var(--cps-color-fill-card-tertiary);
+  }
+
+  .card--on-blurred {
+    border-color: var(--cps-color-stroke-card-primary);
+    background: var(--cps-color-fill-on-blurred);
+    backdrop-filter: var(--cps-blur-medium);
+  }
+
+  /* Interaction */
+
+  .card--actionable:focus {
+    outline: none;
+  }
+
+  .card--actionable {
+    transition: background-color var(--cps-transition-fast), box-shadow var(--cps-transition-fast),
+      transform var(--cps-transition-fast);
+    cursor: pointer;
+  }
+
+  .card--actionable:focus-visible {
+    outline: var(--cps-focus-ring);
+  }
+
+  .card--actionable:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--cps-shadow-md);
+  }
+
+  .card--actionable:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  /* Slots */
+
+  .card__header {
+    display: block;
+    margin-bottom: var(--cps-spacing-4);
+    border-bottom: 1px solid var(--cps-color-stroke-separator);
+    padding-bottom: var(--cps-spacing-4);
+  }
+
+  .card__footer {
+    display: flex;
+    gap: var(--cps-spacing-4);
+    align-items: center;
+    justify-content: end;
+    margin-top: var(--cps-spacing-4);
+    border-top: 1px solid var(--cps-color-stroke-separator);
+    padding-top: var(--cps-spacing-4);
+  }
+
+  /* Rounded */
+  .card--rounded-none {
+    border-radius: 0;
+  }
+
+  .card--rounded-full {
+    border-radius: var(--cps-border-radius-large);
+  }
+
+  .card--rounded-start {
+    border-top-left-radius: var(--cps-border-radius-large);
+    border-bottom-left-radius: var(--cps-border-radius-large);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .card--rounded-end {
+    border-top-right-radius: var(--cps-border-radius-large);
+    border-bottom-right-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .card--rounded-top {
+    border-top-left-radius: var(--cps-border-radius-large);
+    border-top-right-radius: var(--cps-border-radius-large);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .card--rounded-bottom {
+    border-bottom-left-radius: var(--cps-border-radius-large);
+    border-bottom-right-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .card--rounded-top-start {
+    border-top-left-radius: var(--cps-border-radius-large);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .card--rounded-top-end {
+    border-top-right-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .card--rounded-bottom-start {
+    border-bottom-left-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .card--rounded-bottom-end {
+    border-bottom-right-radius: var(--cps-border-radius-large);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /* Elevations */
+
+  .card--elevation-none {
+    box-shadow: none;
+  }
+
+  .card--elevation-sm {
+    box-shadow: var(--cps-shadow);
+  }
+
+  .card--elevation-md {
+    box-shadow: var(--cps-shadow-md);
+  }
+
+  .card--elevation-lg {
+    box-shadow: var(--cps-shadow-lg);
+  }
+
+  .card--elevation-xl {
+    box-shadow: var(--cps-shadow-xl);
+  }
+
+  .card--elevation-2xl {
+    box-shadow: var(--cps-shadow-2xl);
+  }
+`;export{t as a};

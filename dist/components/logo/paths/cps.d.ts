@@ -1,1 +1,1 @@
-export declare const CPS: import("lit/static-html.js").StaticValue;
+export declare const Cps: import("lit/static-html.js").StaticValue;

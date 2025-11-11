@@ -1,1 +1,0 @@
-import{a as o}from"./chunk.PN6WTKUI.js";import*as p from"react";import{createComponent as e}from"@lit-labs/react";var t=e({tagName:"cps-radio-group",elementClass:o,react:p,events:{onCpsChange:"cps-change",onCpsInput:"cps-input",onCpsInvalid:"cps-invalid"}});var r=t;export{t as a,r as b};

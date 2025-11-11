@@ -1,0 +1,1 @@
+import{a as e}from"./chunk.MQL2J6KG.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var a=o({tagName:"cps-label",elementClass:e,react:t,events:{}});var p=a;export{a,p as b};

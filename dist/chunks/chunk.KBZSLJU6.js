@@ -1,0 +1,1 @@
+import{a as o}from"./chunk.BJCV3UU3.js";import*as t from"react";import{createComponent as e}from"@lit-labs/react";var p=e({tagName:"cps-tab-group",elementClass:o,react:t,events:{onCpsTabShow:"cps-tab-show",onCpsTabHide:"cps-tab-hide"}});var s=p;export{p as a,s as b};

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.23.0",
+  "version": "0.23.1",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -1233,6 +1233,20 @@
                 }
               },
               {
+                "name": "elevation",
+                "description": "Opcionalmente sobrescreve a elevação usada para projeção de sombra, mudando a aparência padrão definida pela variante.",
+                "value": {
+                  "type": "'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | undefined"
+                }
+              },
+              {
+                "name": "rounded",
+                "description": "Define o padrão de arredondamento dos cantos do _card_.",
+                "value": {
+                  "type": "| 'none'\n    | 'full'\n    | 'start'\n    | 'end'\n    | 'top'\n    | 'bottom'\n    | 'top-start'\n    | 'top-end'\n    | 'bottom-start'\n    | 'bottom-end'"
+                }
+              },
+              {
                 "name": "variant",
                 "description": "O tipo de variação visual do _card_.",
                 "value": {
@@ -1265,6 +1279,20 @@
             "events": []
           },
           "attributes": [
+            {
+              "name": "elevation",
+              "description": "Opcionalmente sobrescreve a elevação usada para projeção de sombra, mudando a aparência padrão definida pela variante.",
+              "value": {
+                "type": "'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | undefined"
+              }
+            },
+            {
+              "name": "rounded",
+              "description": "Define o padrão de arredondamento dos cantos do _card_.",
+              "value": {
+                "type": "| 'none'\n    | 'full'\n    | 'start'\n    | 'end'\n    | 'top'\n    | 'bottom'\n    | 'top-start'\n    | 'top-end'\n    | 'bottom-start'\n    | 'bottom-end'"
+              }
+            },
             {
               "name": "variant",
               "description": "O tipo de variação visual do _card_.",
@@ -4554,46 +4582,6 @@
           ]
         },
         {
-          "name": "cps-logo",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
-          "js": {
-            "properties": [
-              {
-                "name": "type",
-                "description": "O tipo de _logo_ a ser renderizado.",
-                "value": {
-                  "type": "'area-di' | 'cps' | 'elements' | 'sp-horizontal' | 'sp-vertical'"
-                }
-              },
-              {
-                "name": "variant",
-                "description": "A variante temática do _logo_.",
-                "value": {
-                  "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "type",
-              "description": "O tipo de _logo_ a ser renderizado.",
-              "value": {
-                "type": "'area-di' | 'cps' | 'elements' | 'sp-horizontal' | 'sp-vertical'"
-              }
-            },
-            {
-              "name": "variant",
-              "description": "A variante temática do _logo_.",
-              "value": {
-                "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-menu",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
@@ -6349,6 +6337,46 @@
           ]
         },
         {
+          "name": "cps-logo",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
+          "js": {
+            "properties": [
+              {
+                "name": "type",
+                "description": "O tipo de _logo_ a ser renderizado.",
+                "value": {
+                  "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
+                }
+              },
+              {
+                "name": "variant",
+                "description": "A variante temática do _logo_.",
+                "value": {
+                  "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "type",
+              "description": "O tipo de _logo_ a ser renderizado.",
+              "value": {
+                "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
+              }
+            },
+            {
+              "name": "variant",
+              "description": "A variante temática do _logo_.",
+              "value": {
+                "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-select",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/select",
@@ -6939,21 +6967,6 @@
               }
             }
           ]
-        },
-        {
-          "name": "cps-spinner",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": []
         },
         {
           "name": "cps-tab-group",
@@ -8241,6 +8254,37 @@
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-spinner",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              }
+            ],
             "events": []
           },
           "attributes": []

@@ -1,0 +1,1 @@
+import{a as e}from"./chunk.ME3GDF2P.js";import*as o from"react";import{createComponent as n}from"@lit-labs/react";var p=n({tagName:"cps-range",elementClass:e,react:o,events:{onCpsChange:"cps-change",onCpsFocus:"cps-focus",onCpsBlur:"cps-blur",onCpsInvalid:"cps-invalid"}});var a=p;export{p as a,a as b};
