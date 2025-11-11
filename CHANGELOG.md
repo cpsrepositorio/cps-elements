@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Changed
 
 - Adição das propriedades `elevation` e `rounded` no componente `<cps-card>`.
+- Atualização de logotipos disponíveis no componente `<cps-logo>` removendo `area-di` e adicionando `cps-asscom`, `cps-cgtic` e `cps-sucar`.
 
 ### Fixed
 

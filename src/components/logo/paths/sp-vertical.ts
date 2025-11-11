@@ -1,6 +1,6 @@
 import { literal } from 'lit/static-html.js';
 
-export const SPVertical = literal`
+export const SpVertical = literal`
   <path
     class="text"
     d="M26.87 15.23a26.86 26.86 0 1 0 0 53.74H0v53.74h80.61a26.86 26.86 0 1 0 0-53.74h26.87V15.23H26.87Z"

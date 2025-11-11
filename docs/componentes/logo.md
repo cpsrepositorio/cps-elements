@@ -12,7 +12,9 @@ import { CpsLogo } from '@cps-elements/web/react/logo';
 const App = () => <CpsLogo style={{ fontSize: '64px' }} type="elements" />;
 ```
 
-?> Sendo um componente propositalmente opinativo, `<cps-logo>` tem um número limitado de tipos de logotipo disponíveis para renderização. Se você está usando CPS Elements em um projeto personalizado e precisa apresentar um logotipo próprio, recomendamos que renderize diretamente o SVG desejado.
+?> Propositalmente opinativo, `<cps-logo>` tem um número limitado de tipos de logotipo disponíveis, especificamente para atender necessidades corriqueiras do Centro Paula "Souza". Se a aparência que você precisa não está disponível neste componente, recomendamos que renderize diretamente o SVG desejado diretamente em sua aplicação.
+
+!> Há diversos [Logotipos de Departamentos](https://www.cps.sp.gov.br/asscom/manuais-assessoria-de-comunicacao/departamentos/) do CPS disponíveis no portal da [ASSCOM](https://www.cps.sp.gov.br/asscom/). Por enquanto, CPS Elements não disponibiliza todos eles através deste componente, mas é previsto que futuramente todos estejam disponíveis por aqui.
 
 ## Exemplos
 
@@ -24,9 +26,11 @@ Use o atributo `type` para definir o tipo de logotipo a ser renderizado.
 <div style="display: flex; flex-wrap: wrap; gap: 3rem">
   <cps-logo type="elements" style="font-size: 64px"></cps-logo>
   <cps-logo type="cps" style="font-size: 90px"></cps-logo>
-  <cps-logo type="area-di" style="font-size: 90px"></cps-logo>
   <cps-logo type="sp-vertical" style="font-size: 96px"></cps-logo>
   <cps-logo type="sp-horizontal" style="font-size: 64px"></cps-logo>
+  <cps-logo type="cps-asscom" style="font-size: 90px"></cps-logo>
+  <cps-logo type="cps-cgtic" style="font-size: 90px"></cps-logo>
+  <cps-logo type="cps-sucar" style="font-size: 90px"></cps-logo>
 </div>
 ```
 
@@ -37,9 +41,11 @@ const App = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem' }}>
     <CpsLogo type="elements" style={{ fontSize: '64px' }} />
     <CpsLogo type="cps" style={{ fontSize: '90px' }} />
-    <CpsLogo type="area-di" style={{ fontSize: '90px' }} />
     <CpsLogo type="sp-vertical" style={{ fontSize: '96px' }} />
     <CpsLogo type="sp-horizontal" style={{ fontSize: '64px' }} />
+    <CpsLogo type="cps-asscom" style={{ fontSize: '90px' }} />
+    <CpsLogo type="cps-cgtic" style={{ fontSize: '90px' }} />
+    <CpsLogo type="cps-sucar" style={{ fontSize: '90px' }} />
   </div>
 );
 ```
@@ -52,9 +58,11 @@ Use o atributo `variant` para definir a variação visual do logotipo. Um uso co
 <div style="display: flex; flex-wrap: wrap; gap: 3rem">
   <cps-logo type="elements" variant="monochromatic" style="font-size: 64px"></cps-logo>
   <cps-logo type="cps" variant="monochromatic" style="font-size: 90px"></cps-logo>
-  <cps-logo type="area-di" variant="monochromatic" style="font-size: 90px"></cps-logo>
   <cps-logo type="sp-vertical" variant="monochromatic" style="font-size: 96px"></cps-logo>
   <cps-logo type="sp-horizontal" variant="monochromatic" style="font-size: 64px"></cps-logo>
+  <cps-logo type="cps-asscom" variant="monochromatic" style="font-size: 90px"></cps-logo>
+  <cps-logo type="cps-cgtic" variant="monochromatic" style="font-size: 90px"></cps-logo>
+  <cps-logo type="cps-sucar" variant="monochromatic" style="font-size: 90px"></cps-logo>
 </div>
 ```
 
@@ -65,9 +73,11 @@ const App = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem' }}>
     <CpsLogo type="elements" variant="monochromatic" style={{ fontSize: '64px' }} />
     <CpsLogo type="cps" variant="monochromatic" style={{ fontSize: '90px' }} />
-    <CpsLogo type="area-di" variant="monochromatic" style={{ fontSize: '90px' }} />
     <CpsLogo type="sp-vertical" variant="monochromatic" style={{ fontSize: '96px' }} />
     <CpsLogo type="sp-horizontal" variant="monochromatic" style={{ fontSize: '64px' }} />
+    <CpsLogo type="cps-asscom" variant="monochromatic" style={{ fontSize: '90px' }} />
+    <CpsLogo type="cps-cgtic" variant="monochromatic" style={{ fontSize: '90px' }} />
+    <CpsLogo type="cps-sucar" variant="monochromatic" style={{ fontSize: '90px' }} />
   </div>
 );
 ```
@@ -80,9 +90,11 @@ Monocromático invertido também está disponível, caso aplique o logotipo por 
 <div style="display: flex; flex-wrap: wrap; gap: 3rem; background-color: var(--cps-color-fill-accent)">
   <cps-logo type="elements" variant="monochromatic-inverted" style="font-size: 64px"></cps-logo>
   <cps-logo type="cps" variant="monochromatic-inverted" style="font-size: 90px"></cps-logo>
-  <cps-logo type="area-di" variant="monochromatic-inverted" style="font-size: 90px"></cps-logo>
   <cps-logo type="sp-vertical" variant="monochromatic-inverted" style="font-size: 96px"></cps-logo>
   <cps-logo type="sp-horizontal" variant="monochromatic-inverted" style="font-size: 64px"></cps-logo>
+  <cps-logo type="cps-asscom" variant="monochromatic-inverted" style="font-size: 90px"></cps-logo>
+  <cps-logo type="cps-cgtic" variant="monochromatic-inverted" style="font-size: 90px"></cps-logo>
+  <cps-logo type="cps-sucar" variant="monochromatic-inverted" style="font-size: 90px"></cps-logo>
 </div>
 ```
 
@@ -93,9 +105,11 @@ const App = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', backgroundColor: 'var(--cps-color-fill-accent)' }}>
     <CpsLogo type="elements" variant="monochromatic-inverted" style={{ fontSize: '64px' }} />
     <CpsLogo type="cps" variant="monochromatic-inverted" style={{ fontSize: '90px' }} />
-    <CpsLogo type="area-di" variant="monochromatic-inverted" style={{ fontSize: '90px' }} />
     <CpsLogo type="sp-vertical" variant="monochromatic-inverted" style={{ fontSize: '96px' }} />
     <CpsLogo type="sp-horizontal" variant="monochromatic-inverted" style={{ fontSize: '64px' }} />
+    <CpsLogo type="cps-asscom" variant="monochromatic-inverted" style={{ fontSize: '90px' }} />
+    <CpsLogo type="cps-cgtic" variant="monochromatic-inverted" style={{ fontSize: '90px' }} />
+    <CpsLogo type="cps-sucar" variant="monochromatic-inverted" style={{ fontSize: '90px' }} />
   </div>
 );
 ```

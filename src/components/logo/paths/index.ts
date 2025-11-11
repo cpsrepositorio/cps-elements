@@ -1,13 +1,17 @@
-import { AreaDI } from './area-di.js';
-import { CPS } from './cps.js';
+import { Cps } from './cps.js';
+import { CpsAsscom } from './cps-asscom.js';
+import { CpsCgtic } from './cps-cgtic.js';
+import { CpsSucar } from './cps-sucar.js';
 import { Elements } from './elements.js';
-import { SPHorizontal } from './sp-horizontal.js';
-import { SPVertical } from './sp-vertical.js';
+import { SpHorizontal } from './sp-horizontal.js';
+import { SpVertical } from './sp-vertical.js';
 
 export default {
-  AreaDI,
-  CPS,
+  Cps,
+  CpsAsscom,
+  CpsCgtic,
+  CpsSucar,
   Elements,
-  SPHorizontal,
-  SPVertical
+  SpHorizontal,
+  SpVertical
 };

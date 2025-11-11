@@ -19,7 +19,14 @@ export default class CpsLogo extends BaseElement {
   static styles: CSSResultGroup = styles;
 
   /** O tipo de _logo_ a ser renderizado. */
-  @property({ reflect: true }) type: 'area-di' | 'cps' | 'elements' | 'sp-horizontal' | 'sp-vertical' = 'cps';
+  @property({ reflect: true }) type:
+    | 'cps'
+    | 'cps-asscom'
+    | 'cps-cgtic'
+    | 'cps-sucar'
+    | 'elements'
+    | 'sp-horizontal'
+    | 'sp-vertical' = 'cps';
 
   /** A variante temática do _logo_. */
   @property({ reflect: true }) variant: 'default' | 'monochromatic' | 'monochromatic-inverted' = 'default';
@@ -32,19 +39,35 @@ export default class CpsLogo extends BaseElement {
     });
 
     switch (this.type) {
-      case 'area-di':
-        return html`
-          <svg class=${classes} viewBox="0 0 87 108">
-            <title>DI - Divisão de Informática</title>
-            ${paths.AreaDI}
-          </svg>
-        `;
-
       case 'cps':
         return html`
           <svg class=${classes} viewBox="0 0 167 108">
             <title>Centro Paula Souza</title>
-            ${paths.CPS}
+            ${paths.Cps}
+          </svg>
+        `;
+
+      case 'cps-asscom':
+        return html`
+          <svg class=${classes} viewBox="0 0 278 90">
+            <title>ASSCOM - Assessoria de Comunicação</title>
+            ${paths.CpsAsscom}
+          </svg>
+        `;
+
+      case 'cps-cgtic':
+        return html`
+          <svg class=${classes} viewBox="0 0 232 90">
+            <title>CGTIC - Coordenadoria Geral de Tecnologia da Informação e Comunicação</title>
+            ${paths.CpsCgtic}
+          </svg>
+        `;
+
+      case 'cps-sucar':
+        return html`
+          <svg class=${classes} viewBox="0 0 220 90">
+            <title>SUCAR - Superintendência de Carreiras</title>
+            ${paths.CpsSucar}
           </svg>
         `;
 
@@ -60,7 +83,7 @@ export default class CpsLogo extends BaseElement {
         return html`
           <svg class=${classes} viewBox="0 0 714 128">
             <title>São Paulo - Governo do Estado</title>
-            ${paths.SPHorizontal}
+            ${paths.SpHorizontal}
           </svg>
         `;
 
@@ -68,7 +91,7 @@ export default class CpsLogo extends BaseElement {
         return html`
           <svg class=${classes} viewBox="0 0 461 189">
             <title>São Paulo - Governo do Estado</title>
-            ${paths.SPVertical}
+            ${paths.SpVertical}
           </svg>
         `;
 

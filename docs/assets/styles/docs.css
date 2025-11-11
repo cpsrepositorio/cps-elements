@@ -759,3 +759,7 @@ body[data-page^='/variáveis-de-estilo/'] .table-wrapper td:first-child code {
   margin: 2rem 0;
   max-width: 620px;
 }
+
+cps-notification + cps-notification {
+  margin-top: 1rem;
+}
