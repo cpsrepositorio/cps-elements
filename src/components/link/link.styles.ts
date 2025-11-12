@@ -20,10 +20,6 @@ export default css`
     font: inherit;
   }
 
-  .link slot {
-    display: inline-flex;
-  }
-
   .link__content {
     display: inline-block;
     transition: var(--cps-transition-fast) text-decoration-color;
