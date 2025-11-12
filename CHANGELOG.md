@@ -8,6 +8,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Changed
 
+- Atualização do `<cps-label>` adicionando `inherit` como valor da propriedade `size` e definindo como novo padrão.
 - Atualização do `<cps-link>` adicionando `inherit` como valor da propriedade `size` e definindo como novo padrão.
 
 ### Fixed

@@ -44,7 +44,12 @@ export default css`
     color: var(--cps-color-text-inverted-disabled);
   }
 
-  /* Size modifiers */
+  /* Sizes */
+
+  .label--inherit {
+    font: inherit;
+  }
+
   .label--stamp {
     font: var(--cps-font-stamp);
   }

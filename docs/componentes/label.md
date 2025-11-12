@@ -154,6 +154,7 @@ Use o atributo `size` para definir o tamanho e o estilo do rótulo em conformida
 
 ```html preview
 <div class="label-sizes-example">
+  <cps-label size="inherit">Automático</cps-label>
   <cps-label size="stamp">Timbre</cps-label>
   <cps-label size="caption">Rubrica</cps-label>
   <cps-label size="label">Rótulo</cps-label>
@@ -190,6 +191,7 @@ const css = `
 const App = () => (
   <>
     <div class="label-sizes-example">
+      <CpsLabel size="inherit">Automático</CpsLabel>
       <CpsLabel size="stamp">Timbre</CpsLabel>
       <CpsLabel size="caption">Rubrica</CpsLabel>
       <CpsLabel size="label">Rótulo</CpsLabel>

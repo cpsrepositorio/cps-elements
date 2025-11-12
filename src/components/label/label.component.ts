@@ -33,8 +33,9 @@ export default class CpsLabel extends BaseElement {
     | 'inverted-secondary'
     | 'inverted-disabled' = 'primary';
 
-  /** O tamanho do _label_. */
+  /** O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai. */
   @property({ reflect: true }) size:
+    | 'inherit'
     | 'stamp'
     | 'caption'
     | 'label'
@@ -45,7 +46,7 @@ export default class CpsLabel extends BaseElement {
     | 'subtitle'
     | 'title'
     | 'heading'
-    | 'display' = 'body';
+    | 'display' = 'inherit';
 
   /** O elemento HTML desejado para a renderização do _label_. */
   @property({ reflect: true }) tag: 'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div' = 'span';
@@ -67,6 +68,7 @@ export default class CpsLabel extends BaseElement {
       'label--inverted-disabled': this.variant === 'inverted-disabled',
 
       // Sizes
+      'label--inherit': this.size === 'inherit',
       'label--stamp': this.size === 'stamp',
       'label--caption': this.size === 'caption',
       'label--label': this.size === 'label',
