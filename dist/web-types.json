@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.23.1",
+  "version": "0.23.2",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -872,64 +872,6 @@
           ]
         },
         {
-          "name": "cps-button-group",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button-group",
-          "js": {
-            "properties": [
-              {
-                "name": "defaultSlot",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "disableRole",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "label",
-                "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleMouseOver",
-                "value": {}
-              },
-              {
-                "name": "handleMouseOut",
-                "value": {}
-              },
-              {
-                "name": "handleSlotChange",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "label",
-              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-              "value": {
-                "type": "string"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-calendar",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/calendar",
@@ -1305,6 +1247,64 @@
               "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
               "value": {
                 "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-button-group",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button-group",
+          "js": {
+            "properties": [
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "disableRole",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "label",
+                "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleMouseOver",
+                "value": {}
+              },
+              {
+                "name": "handleMouseOut",
+                "value": {}
+              },
+              {
+                "name": "handleSlotChange",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "label",
+              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "value": {
+                "type": "string"
               }
             }
           ]
@@ -3778,6 +3778,371 @@
           "attributes": []
         },
         {
+          "name": "cps-label",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
+          "js": {
+            "properties": [
+              {
+                "name": "variant",
+                "description": "A variante temática do _label_.",
+                "value": {
+                  "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
+                "value": {
+                  "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+                }
+              },
+              {
+                "name": "tag",
+                "description": "O elemento HTML desejado para a renderização do _label_.",
+                "value": {
+                  "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "A variante temática do _label_.",
+              "value": {
+                "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
+              "value": {
+                "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              }
+            },
+            {
+              "name": "tag",
+              "description": "O elemento HTML desejado para a renderização do _label_.",
+              "value": {
+                "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-link",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/link",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "link",
+                "value": {
+                  "type": "HTMLAnchorElement"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o _link_.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "href",
+                "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do texto do _link_. Por padrão, o tamanho é herdado do elemento pai.",
+                "value": {
+                  "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+                }
+              },
+              {
+                "name": "target",
+                "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no elemento.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no _link_.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do _link_.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o _link_ perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o _link_ obtém o foco."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "disabled",
+              "description": "Desabilita o _link_.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "href",
+              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do texto do _link_. Por padrão, o tamanho é herdado do elemento pai.",
+              "value": {
+                "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              }
+            },
+            {
+              "name": "target",
+              "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+              "value": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-menu",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
+          "js": {
+            "properties": [
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handleMouseDown",
+                "value": {}
+              },
+              {
+                "name": "handleSlotChange",
+                "value": {}
+              },
+              {
+                "name": "isMenuItem",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-select",
+                "description": "Emitido quando um item de menu interno é selecionado."
+              }
+            ]
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-menu-item",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-item",
+          "js": {
+            "properties": [
+              {
+                "name": "cachedTextLabel",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "menuItem",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "type",
+                "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+                "value": {
+                  "type": "'normal' | 'checkbox'"
+                }
+              },
+              {
+                "name": "checked",
+                "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "value",
+                "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o item de menu.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleHostClick",
+                "value": {}
+              },
+              {
+                "name": "handleDefaultSlotChange",
+                "value": {}
+              },
+              {
+                "name": "handleCheckedChange",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "handleTypeChange",
+                "value": {}
+              },
+              {
+                "name": "getTextLabel",
+                "description": "Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "type",
+              "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+              "value": {
+                "type": "'normal' | 'checkbox'"
+              }
+            },
+            {
+              "name": "checked",
+              "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "value",
+              "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o item de menu.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-logo",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
+          "js": {
+            "properties": [
+              {
+                "name": "type",
+                "description": "O tipo de _logo_ a ser renderizado.",
+                "value": {
+                  "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
+                }
+              },
+              {
+                "name": "variant",
+                "description": "A variante temática do _logo_.",
+                "value": {
+                  "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "type",
+              "description": "O tipo de _logo_ a ser renderizado.",
+              "value": {
+                "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
+              }
+            },
+            {
+              "name": "variant",
+              "description": "A variante temática do _logo_.",
+              "value": {
+                "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-input",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/input",
@@ -4410,341 +4775,6 @@
           ]
         },
         {
-          "name": "cps-label",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
-          "js": {
-            "properties": [
-              {
-                "name": "variant",
-                "description": "A variante temática do _label_.",
-                "value": {
-                  "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do _label_.",
-                "value": {
-                  "type": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-                }
-              },
-              {
-                "name": "tag",
-                "description": "O elemento HTML desejado para a renderização do _label_.",
-                "value": {
-                  "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "variant",
-              "description": "A variante temática do _label_.",
-              "value": {
-                "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do _label_.",
-              "value": {
-                "type": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              }
-            },
-            {
-              "name": "tag",
-              "description": "O elemento HTML desejado para a renderização do _label_.",
-              "value": {
-                "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-link",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/link",
-          "js": {
-            "properties": [
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "link",
-                "value": {
-                  "type": "HTMLAnchorElement"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o _link_.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "href",
-                "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do _link_.",
-                "value": {
-                  "type": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-                }
-              },
-              {
-                "name": "target",
-                "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "click",
-                "description": "Simula um _click_ no elemento.",
-                "value": {}
-              },
-              {
-                "name": "focus",
-                "description": "Coloca o foco no _link_.",
-                "value": {}
-              },
-              {
-                "name": "blur",
-                "description": "Remove o foco do _link_.",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-blur",
-                "description": "Emitido quando o _link_ perde o foco."
-              },
-              {
-                "name": "cps-focus",
-                "description": "Emitido quando o _link_ obtém o foco."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "disabled",
-              "description": "Desabilita o _link_.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "href",
-              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do _link_.",
-              "value": {
-                "type": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              }
-            },
-            {
-              "name": "target",
-              "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
-              "value": {
-                "type": "string"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-menu",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
-          "js": {
-            "properties": [
-              {
-                "name": "defaultSlot",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleKeyDown",
-                "value": {}
-              },
-              {
-                "name": "handleMouseDown",
-                "value": {}
-              },
-              {
-                "name": "handleSlotChange",
-                "value": {}
-              },
-              {
-                "name": "isMenuItem",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-select",
-                "description": "Emitido quando um item de menu interno é selecionado."
-              }
-            ]
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-menu-item",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-item",
-          "js": {
-            "properties": [
-              {
-                "name": "cachedTextLabel",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "defaultSlot",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "menuItem",
-                "value": {
-                  "type": "HTMLElement"
-                }
-              },
-              {
-                "name": "type",
-                "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
-                "value": {
-                  "type": "'normal' | 'checkbox'"
-                }
-              },
-              {
-                "name": "checked",
-                "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "value",
-                "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o item de menu.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "handleHostClick",
-                "value": {}
-              },
-              {
-                "name": "handleDefaultSlotChange",
-                "value": {}
-              },
-              {
-                "name": "handleCheckedChange",
-                "value": {}
-              },
-              {
-                "name": "handleDisabledChange",
-                "value": {}
-              },
-              {
-                "name": "handleTypeChange",
-                "value": {}
-              },
-              {
-                "name": "getTextLabel",
-                "description": "Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "type",
-              "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
-              "value": {
-                "type": "'normal' | 'checkbox'"
-              }
-            },
-            {
-              "name": "checked",
-              "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "value",
-              "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "disabled",
-              "description": "Desabilita o item de menu.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-menu-label",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
           "name": "cps-notification",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/notification",
@@ -4907,6 +4937,16 @@
           "attributes": []
         },
         {
+          "name": "cps-menu-label",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
           "name": "cps-option",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/option",
@@ -5001,71 +5041,6 @@
               "description": "Desabilita a opção.",
               "value": {
                 "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-progress",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/progress",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "value",
-                "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
-                "value": {
-                  "type": "number | undefined"
-                }
-              },
-              {
-                "name": "status",
-                "description": "O estado de progresso, para coloração contextual da barra de progresso.",
-                "value": {
-                  "type": "'default' | 'pause' | 'success' | 'error'"
-                }
-              },
-              {
-                "name": "label",
-                "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "indeterminate",
-                "description": "É possível setar programaticamente o estado `indeterminate` como `true`, o que causa a remoção do atributo `value`. Não tem efeito como atributo, pois simplesmente não informar o atributo `value` já é suficiente.",
-                "value": {
-                  "type": "boolean"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "value",
-              "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
-              "value": {
-                "type": "number | undefined"
-              }
-            },
-            {
-              "name": "status",
-              "description": "O estado de progresso, para coloração contextual da barra de progresso.",
-              "value": {
-                "type": "'default' | 'pause' | 'success' | 'error'"
-              }
-            },
-            {
-              "name": "label",
-              "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-              "value": {
-                "type": "string"
               }
             }
           ]
@@ -5971,6 +5946,71 @@
           ]
         },
         {
+          "name": "cps-progress",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/progress",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "value",
+                "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
+                "value": {
+                  "type": "number | undefined"
+                }
+              },
+              {
+                "name": "status",
+                "description": "O estado de progresso, para coloração contextual da barra de progresso.",
+                "value": {
+                  "type": "'default' | 'pause' | 'success' | 'error'"
+                }
+              },
+              {
+                "name": "label",
+                "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "indeterminate",
+                "description": "É possível setar programaticamente o estado `indeterminate` como `true`, o que causa a remoção do atributo `value`. Não tem efeito como atributo, pois simplesmente não informar o atributo `value` já é suficiente.",
+                "value": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "value",
+              "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
+              "value": {
+                "type": "number | undefined"
+              }
+            },
+            {
+              "name": "status",
+              "description": "O estado de progresso, para coloração contextual da barra de progresso.",
+              "value": {
+                "type": "'default' | 'pause' | 'success' | 'error'"
+              }
+            },
+            {
+              "name": "label",
+              "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "value": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-rating",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/rating",
@@ -6332,46 +6372,6 @@
               "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
               "value": {
                 "type": "string"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-logo",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
-          "js": {
-            "properties": [
-              {
-                "name": "type",
-                "description": "O tipo de _logo_ a ser renderizado.",
-                "value": {
-                  "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
-                }
-              },
-              {
-                "name": "variant",
-                "description": "A variante temática do _logo_.",
-                "value": {
-                  "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "type",
-              "description": "O tipo de _logo_ a ser renderizado.",
-              "value": {
-                "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
-              }
-            },
-            {
-              "name": "variant",
-              "description": "A variante temática do _logo_.",
-              "value": {
-                "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
               }
             }
           ]
@@ -6967,6 +6967,21 @@
               }
             }
           ]
+        },
+        {
+          "name": "cps-spinner",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": []
         },
         {
           "name": "cps-tab-group",
@@ -8270,21 +8285,6 @@
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-spinner",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              }
-            ],
             "events": []
           },
           "attributes": []

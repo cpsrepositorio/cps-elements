@@ -2701,160 +2701,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/button-group/button-group.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsButtonGroup",
-          "cssParts": [
-            {
-              "description": "O elemento base que embrulha o grupo.",
-              "name": "base"
-            }
-          ],
-          "slots": [
-            {
-              "description": "Um ou mais elementos `<cps-button>` a exibir dentro do grupo de botões.",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "defaultSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "disableRole",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false"
-            },
-            {
-              "kind": "field",
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-              "attribute": "label"
-            },
-            {
-              "kind": "method",
-              "name": "handleFocus",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleBlur",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleMouseOver",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleMouseOut",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleSlotChange",
-              "privacy": "private"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-              "fieldName": "label"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Grupos de botões podem ser usados para agrupar botões relacionados em seções.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button-group",
-          "status": "stable",
-          "since": "0.1",
-          "tagName": "cps-button-group",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsButtonGroup",
-            "module": "components/button-group/button-group.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-button-group",
-          "declaration": {
-            "name": "CpsButtonGroup",
-            "module": "components/button-group/button-group.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsButtonGroup",
-          "declaration": {
-            "name": "CpsButtonGroup",
-            "module": "components/button-group/button-group.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/calendar/calendar.component.js",
       "declarations": [
         {
@@ -3431,6 +3277,16 @@
           "kind": "class",
           "description": "",
           "name": "CpsCard",
+          "cssProperties": [
+            {
+              "description": "O espaçamento interno do _card_. Padrão: `var(--cps-spacing-6)`.",
+              "name": "--padding"
+            },
+            {
+              "description": "O nível de arredondamento da borda do _card_. Padrão: `var(--cps-border-radius-large)`.",
+              "name": "--border-radius"
+            }
+          ],
           "cssParts": [
             {
               "description": "O elemento principal propriamente dito (um `<div>`).",
@@ -3617,6 +3473,160 @@
           "declaration": {
             "name": "CpsCard",
             "module": "components/card/card.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/button-group/button-group.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsButtonGroup",
+          "cssParts": [
+            {
+              "description": "O elemento base que embrulha o grupo.",
+              "name": "base"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Um ou mais elementos `<cps-button>` a exibir dentro do grupo de botões.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disableRole",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "attribute": "label"
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseOver",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseOut",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "fieldName": "label"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Grupos de botões podem ser usados para agrupar botões relacionados em seções.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button-group",
+          "status": "stable",
+          "since": "0.1",
+          "tagName": "cps-button-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsButtonGroup",
+            "module": "components/button-group/button-group.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-button-group",
+          "declaration": {
+            "name": "CpsButtonGroup",
+            "module": "components/button-group/button-group.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsButtonGroup",
+          "declaration": {
+            "name": "CpsButtonGroup",
+            "module": "components/button-group/button-group.component.js"
           }
         }
       ]
@@ -8250,6 +8260,803 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/label/label.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsLabel",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (por padrão um `<span>`, podendo ser modificado com o atributo `tag`).",
+              "name": "base"
+            },
+            {
+              "description": "O `<slot>` de conteúdo interno do _label_.",
+              "name": "content"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo do _label_.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+              },
+              "default": "'primary'",
+              "description": "A variante temática do _label_.",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              },
+              "default": "'inherit'",
+              "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "tag",
+              "type": {
+                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+              },
+              "default": "'span'",
+              "description": "O elemento HTML desejado para a renderização do _label_.",
+              "attribute": "tag",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+              },
+              "default": "'primary'",
+              "description": "A variante temática do _label_.",
+              "fieldName": "variant"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              },
+              "default": "'inherit'",
+              "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
+              "fieldName": "size"
+            },
+            {
+              "name": "tag",
+              "type": {
+                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+              },
+              "default": "'span'",
+              "description": "O elemento HTML desejado para a renderização do _label_.",
+              "fieldName": "tag"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Rótulos (_labels_) representam uma etiqueta textual para um item na interface.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
+          "status": "stable",
+          "since": "0.6",
+          "tagName": "cps-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsLabel",
+            "module": "components/label/label.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-label",
+          "declaration": {
+            "name": "CpsLabel",
+            "module": "components/label/label.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsLabel",
+          "declaration": {
+            "name": "CpsLabel",
+            "module": "components/label/label.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/link/link.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsLink",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<a>`).",
+              "name": "base"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
+              "name": "prefix"
+            },
+            {
+              "description": "O elemento que embrulha o conteúdo principal, normalmente o texto do _link_.",
+              "name": "content"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `suffix`.",
+              "name": "suffix"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasSlotController",
+              "privacy": "private",
+              "default": "new HasSlotController(this, '[default]', 'prefix', 'suffix')"
+            },
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "link",
+              "type": {
+                "text": "HTMLAnchorElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o _link_.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+              "attribute": "href"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              },
+              "default": "'inherit'",
+              "description": "O tamanho do texto do _link_. Por padrão, o tamanho é herdado do elemento pai.",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "default": "'_self'",
+              "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+              "attribute": "target"
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "click",
+              "description": "Simula um _click_ no elemento."
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Coloca o foco no _link_."
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Remove o foco do _link_."
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o _link_ perde o foco.",
+              "name": "cps-blur",
+              "reactName": "onCpsBlur"
+            },
+            {
+              "description": "Emitido quando o _link_ obtém o foco.",
+              "name": "cps-focus",
+              "reactName": "onCpsFocus"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o _link_.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+              "fieldName": "href"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              },
+              "default": "'inherit'",
+              "description": "O tamanho do texto do _link_. Por padrão, o tamanho é herdado do elemento pai.",
+              "fieldName": "size"
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "default": "'_self'",
+              "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+              "fieldName": "target"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "_Links_ são usados para navegação entre páginas ou para abrir URLs externas.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/link",
+          "status": "stable",
+          "since": "0.11",
+          "tagName": "cps-link",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsLink",
+            "module": "components/link/link.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-link",
+          "declaration": {
+            "name": "CpsLink",
+            "module": "components/link/link.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsLink",
+          "declaration": {
+            "name": "CpsLink",
+            "module": "components/link/link.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/menu/menu.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsMenu",
+          "slots": [
+            {
+              "description": "Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "isMenuItem",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "item",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "{ item: CpsMenuItem }"
+              },
+              "description": "Emitido quando um item de menu interno é selecionado.",
+              "name": "cps-select",
+              "reactName": "onCpsSelect"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Menus oferecem uma lista de opções para o usuário escolher.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
+          "status": "stable",
+          "since": "0.7",
+          "tagName": "cps-menu",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsMenu",
+            "module": "components/menu/menu.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-menu",
+          "declaration": {
+            "name": "CpsMenu",
+            "module": "components/menu/menu.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsMenu",
+          "declaration": {
+            "name": "CpsMenu",
+            "module": "components/menu/menu.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/menu-item/menu-item.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsMenuItem",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<div>`).",
+              "name": "base"
+            },
+            {
+              "description": "O elemento que embrulha o ícone de checagem (caso o item de menu seja do tipo `checkbox`), visível apenas quando o item de menu está marcado.",
+              "name": "check"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
+              "name": "prefix"
+            },
+            {
+              "description": "O elemento que embrulha o conteúdo principal, normalmente um texto literal.",
+              "name": "label"
+            },
+            {
+              "description": "O elemento que embrulha a renderização do _slot_ `suffix`.",
+              "name": "suffix"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O texto interno do item de menu.",
+              "name": ""
+            },
+            {
+              "description": "Um ícone ou elemento similar antes do conteúdo principal.",
+              "name": "prefix"
+            },
+            {
+              "description": "Um ícone ou elemento similar após o conteúdo principal.",
+              "name": "suffix"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "cachedTextLabel",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "defaultSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "menuItem",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'normal' | 'checkbox'"
+              },
+              "default": "'normal'",
+              "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+              "attribute": "type"
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+              "attribute": "checked",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o item de menu.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleHostClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleDefaultSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleCheckedChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleTypeChange"
+            },
+            {
+              "kind": "method",
+              "name": "getTextLabel",
+              "description": "Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu."
+            }
+          ],
+          "attributes": [
+            {
+              "name": "type",
+              "type": {
+                "text": "'normal' | 'checkbox'"
+              },
+              "default": "'normal'",
+              "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+              "fieldName": "type"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+              "fieldName": "checked"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+              "fieldName": "value"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desabilita o item de menu.",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Itens de menu fornecem opções para o usuário escolher em um menu.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-item",
+          "status": "stable",
+          "since": "0.7",
+          "dependencies": [
+            "cps-icon"
+          ],
+          "tagName": "cps-menu-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsMenuItem",
+            "module": "components/menu-item/menu-item.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-menu-item",
+          "declaration": {
+            "name": "CpsMenuItem",
+            "module": "components/menu-item/menu-item.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsMenuItem",
+          "declaration": {
+            "name": "CpsMenuItem",
+            "module": "components/menu-item/menu-item.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/logo/logo.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsLogo",
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
+              },
+              "default": "'cps'",
+              "description": "O tipo de _logo_ a ser renderizado.",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+              },
+              "default": "'default'",
+              "description": "A variante temática do _logo_.",
+              "attribute": "variant",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "type",
+              "type": {
+                "text": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
+              },
+              "default": "'cps'",
+              "description": "O tipo de _logo_ a ser renderizado.",
+              "fieldName": "type"
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+              },
+              "default": "'default'",
+              "description": "A variante temática do _logo_.",
+              "fieldName": "variant"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
+          "status": "stable",
+          "since": "0.15.0",
+          "tagName": "cps-logo",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsLogo",
+            "module": "components/logo/logo.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-logo",
+          "declaration": {
+            "name": "CpsLogo",
+            "module": "components/logo/logo.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsLogo",
+          "declaration": {
+            "name": "CpsLogo",
+            "module": "components/logo/logo.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/input/input.component.js",
       "declarations": [
         {
@@ -9286,772 +10093,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/label/label.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsLabel",
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (por padrão um `<span>`, podendo ser modificado com o atributo `tag`).",
-              "name": "base"
-            },
-            {
-              "description": "O `<slot>` de conteúdo interno do _label_.",
-              "name": "content"
-            }
-          ],
-          "slots": [
-            {
-              "description": "O conteúdo do _label_.",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-              },
-              "default": "'primary'",
-              "description": "A variante temática do _label_.",
-              "attribute": "variant",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "size",
-              "type": {
-                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              },
-              "default": "'body'",
-              "description": "O tamanho do _label_.",
-              "attribute": "size",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "tag",
-              "type": {
-                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-              },
-              "default": "'span'",
-              "description": "O elemento HTML desejado para a renderização do _label_.",
-              "attribute": "tag",
-              "reflects": true
-            }
-          ],
-          "attributes": [
-            {
-              "name": "variant",
-              "type": {
-                "text": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-              },
-              "default": "'primary'",
-              "description": "A variante temática do _label_.",
-              "fieldName": "variant"
-            },
-            {
-              "name": "size",
-              "type": {
-                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              },
-              "default": "'body'",
-              "description": "O tamanho do _label_.",
-              "fieldName": "size"
-            },
-            {
-              "name": "tag",
-              "type": {
-                "text": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-              },
-              "default": "'span'",
-              "description": "O elemento HTML desejado para a renderização do _label_.",
-              "fieldName": "tag"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Rótulos (_labels_) representam uma etiqueta textual para um item na interface.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
-          "status": "stable",
-          "since": "0.6",
-          "tagName": "cps-label",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsLabel",
-            "module": "components/label/label.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-label",
-          "declaration": {
-            "name": "CpsLabel",
-            "module": "components/label/label.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsLabel",
-          "declaration": {
-            "name": "CpsLabel",
-            "module": "components/label/label.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/link/link.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsLink",
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<a>`).",
-              "name": "base"
-            },
-            {
-              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
-              "name": "prefix"
-            },
-            {
-              "description": "O elemento que embrulha o conteúdo principal, normalmente o texto do _link_.",
-              "name": "content"
-            },
-            {
-              "description": "O elemento que embrulha a renderização do _slot_ `suffix`.",
-              "name": "suffix"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "hasSlotController",
-              "privacy": "private",
-              "default": "new HasSlotController(this, '[default]', 'prefix', 'suffix')"
-            },
-            {
-              "kind": "field",
-              "name": "localize",
-              "privacy": "private",
-              "default": "new LocalizeController(this)"
-            },
-            {
-              "kind": "field",
-              "name": "link",
-              "type": {
-                "text": "HTMLAnchorElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Desabilita o _link_.",
-              "attribute": "disabled",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "href",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
-              "attribute": "href"
-            },
-            {
-              "kind": "field",
-              "name": "size",
-              "type": {
-                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              },
-              "default": "'body'",
-              "description": "O tamanho do _link_.",
-              "attribute": "size",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "target",
-              "type": {
-                "text": "string"
-              },
-              "default": "'_self'",
-              "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
-              "attribute": "target"
-            },
-            {
-              "kind": "method",
-              "name": "handleClick",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "MouseEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleBlur",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "handleFocus",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "click",
-              "description": "Simula um _click_ no elemento."
-            },
-            {
-              "kind": "method",
-              "name": "focus",
-              "parameters": [
-                {
-                  "name": "options",
-                  "optional": true,
-                  "type": {
-                    "text": "FocusOptions"
-                  }
-                }
-              ],
-              "description": "Coloca o foco no _link_."
-            },
-            {
-              "kind": "method",
-              "name": "blur",
-              "description": "Remove o foco do _link_."
-            }
-          ],
-          "events": [
-            {
-              "description": "Emitido quando o _link_ perde o foco.",
-              "name": "cps-blur",
-              "reactName": "onCpsBlur"
-            },
-            {
-              "description": "Emitido quando o _link_ obtém o foco.",
-              "name": "cps-focus",
-              "reactName": "onCpsFocus"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Desabilita o _link_.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "href",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
-              "fieldName": "href"
-            },
-            {
-              "name": "size",
-              "type": {
-                "text": "| 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              },
-              "default": "'body'",
-              "description": "O tamanho do _link_.",
-              "fieldName": "size"
-            },
-            {
-              "name": "target",
-              "type": {
-                "text": "string"
-              },
-              "default": "'_self'",
-              "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
-              "fieldName": "target"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "_Links_ são usados para navegação entre páginas ou para abrir URLs externas.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/link",
-          "status": "stable",
-          "since": "0.11",
-          "tagName": "cps-link",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsLink",
-            "module": "components/link/link.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-link",
-          "declaration": {
-            "name": "CpsLink",
-            "module": "components/link/link.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsLink",
-          "declaration": {
-            "name": "CpsLink",
-            "module": "components/link/link.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/menu/menu.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsMenu",
-          "slots": [
-            {
-              "description": "Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "defaultSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "handleClick",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "MouseEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleKeyDown",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleMouseDown",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "MouseEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleSlotChange",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "isMenuItem",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "item",
-                  "type": {
-                    "text": "HTMLElement"
-                  }
-                }
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": {
-                "text": "{ item: CpsMenuItem }"
-              },
-              "description": "Emitido quando um item de menu interno é selecionado.",
-              "name": "cps-select",
-              "reactName": "onCpsSelect"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Menus oferecem uma lista de opções para o usuário escolher.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
-          "status": "stable",
-          "since": "0.7",
-          "tagName": "cps-menu",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsMenu",
-            "module": "components/menu/menu.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-menu",
-          "declaration": {
-            "name": "CpsMenu",
-            "module": "components/menu/menu.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsMenu",
-          "declaration": {
-            "name": "CpsMenu",
-            "module": "components/menu/menu.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/menu-item/menu-item.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsMenuItem",
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<div>`).",
-              "name": "base"
-            },
-            {
-              "description": "O elemento que embrulha o ícone de checagem (caso o item de menu seja do tipo `checkbox`), visível apenas quando o item de menu está marcado.",
-              "name": "check"
-            },
-            {
-              "description": "O elemento que embrulha a renderização do _slot_ `prefix`.",
-              "name": "prefix"
-            },
-            {
-              "description": "O elemento que embrulha o conteúdo principal, normalmente um texto literal.",
-              "name": "label"
-            },
-            {
-              "description": "O elemento que embrulha a renderização do _slot_ `suffix`.",
-              "name": "suffix"
-            }
-          ],
-          "slots": [
-            {
-              "description": "O texto interno do item de menu.",
-              "name": ""
-            },
-            {
-              "description": "Um ícone ou elemento similar antes do conteúdo principal.",
-              "name": "prefix"
-            },
-            {
-              "description": "Um ícone ou elemento similar após o conteúdo principal.",
-              "name": "suffix"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "cachedTextLabel",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "defaultSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "menuItem",
-              "type": {
-                "text": "HTMLElement"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "'normal' | 'checkbox'"
-              },
-              "default": "'normal'",
-              "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
-              "attribute": "type"
-            },
-            {
-              "kind": "field",
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
-              "attribute": "checked",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
-              "attribute": "value"
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Desabilita o item de menu.",
-              "attribute": "disabled",
-              "reflects": true
-            },
-            {
-              "kind": "method",
-              "name": "handleHostClick",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "MouseEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleDefaultSlotChange",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "handleCheckedChange"
-            },
-            {
-              "kind": "method",
-              "name": "handleDisabledChange"
-            },
-            {
-              "kind": "method",
-              "name": "handleTypeChange"
-            },
-            {
-              "kind": "method",
-              "name": "getTextLabel",
-              "description": "Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu."
-            }
-          ],
-          "attributes": [
-            {
-              "name": "type",
-              "type": {
-                "text": "'normal' | 'checkbox'"
-              },
-              "default": "'normal'",
-              "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
-              "fieldName": "type"
-            },
-            {
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
-              "fieldName": "checked"
-            },
-            {
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
-              "fieldName": "value"
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Desabilita o item de menu.",
-              "fieldName": "disabled"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Itens de menu fornecem opções para o usuário escolher em um menu.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-item",
-          "status": "stable",
-          "since": "0.7",
-          "dependencies": [
-            "cps-icon"
-          ],
-          "tagName": "cps-menu-item",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsMenuItem",
-            "module": "components/menu-item/menu-item.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-menu-item",
-          "declaration": {
-            "name": "CpsMenuItem",
-            "module": "components/menu-item/menu-item.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsMenuItem",
-          "declaration": {
-            "name": "CpsMenuItem",
-            "module": "components/menu-item/menu-item.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/menu-label/menu-label.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsMenuLabel",
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<slot>`).",
-              "name": "base"
-            }
-          ],
-          "slots": [
-            {
-              "description": "O texto interno do rótulo de menu.",
-              "name": ""
-            }
-          ],
-          "members": [],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Rótulos de menu são usados para descrever um grupo de itens de menu.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
-          "status": "stable",
-          "since": "0.7",
-          "tagName": "cps-menu-label",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsMenuLabel",
-            "module": "components/menu-label/menu-label.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-menu-label",
-          "declaration": {
-            "name": "CpsMenuLabel",
-            "module": "components/menu-label/menu-label.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsMenuLabel",
-          "declaration": {
-            "name": "CpsMenuLabel",
-            "module": "components/menu-label/menu-label.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/notification/notification.component.js",
       "declarations": [
         {
@@ -10367,6 +10408,66 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/menu-label/menu-label.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsMenuLabel",
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<slot>`).",
+              "name": "base"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O texto interno do rótulo de menu.",
+              "name": ""
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Rótulos de menu são usados para descrever um grupo de itens de menu.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
+          "status": "stable",
+          "since": "0.7",
+          "tagName": "cps-menu-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsMenuLabel",
+            "module": "components/menu-label/menu-label.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-menu-label",
+          "declaration": {
+            "name": "CpsMenuLabel",
+            "module": "components/menu-label/menu-label.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsMenuLabel",
+          "declaration": {
+            "name": "CpsMenuLabel",
+            "module": "components/menu-label/menu-label.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/option/option.component.js",
       "declarations": [
         {
@@ -10563,173 +10664,6 @@
           "declaration": {
             "name": "CpsOption",
             "module": "components/option/option.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/progress/progress.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsProgress",
-          "cssProperties": [
-            {
-              "description": "A altura do indicador.",
-              "name": "--indicator-height"
-            },
-            {
-              "description": "A altura da trilha.",
-              "name": "--track-height"
-            },
-            {
-              "description": "A cor do indicador, quando em estado padrão.",
-              "name": "--indicator-color"
-            },
-            {
-              "description": "A cor do indicador, quando em estado de pausa.",
-              "name": "--indicator-pause-color"
-            },
-            {
-              "description": "A cor do indicador, quando em estado de sucesso.",
-              "name": "--indicator-success-color"
-            },
-            {
-              "description": "A cor do indicador, quando em estado de erro.",
-              "name": "--indicator-error-color"
-            },
-            {
-              "description": "A cor da trilha.",
-              "name": "--track-color"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "O elemento base do componente.",
-              "name": "base"
-            },
-            {
-              "description": "O indicador da barra de progresso.",
-              "name": "indicator"
-            },
-            {
-              "description": "A trilha de fundo da barra de progresso.",
-              "name": "track"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "localize",
-              "privacy": "private",
-              "default": "new LocalizeController(this)"
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "number | undefined"
-              },
-              "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
-              "attribute": "value",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "status",
-              "type": {
-                "text": "'default' | 'pause' | 'success' | 'error'"
-              },
-              "default": "'default'",
-              "description": "O estado de progresso, para coloração contextual da barra de progresso.",
-              "attribute": "status",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-              "attribute": "label"
-            },
-            {
-              "kind": "field",
-              "name": "indeterminate",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "description": "É possível setar programaticamente o estado `indeterminate` como `true`, o que causa a remoção do atributo `value`. Não tem efeito como atributo, pois simplesmente não informar o atributo `value` já é suficiente."
-            }
-          ],
-          "attributes": [
-            {
-              "name": "value",
-              "type": {
-                "text": "number | undefined"
-              },
-              "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
-              "fieldName": "value"
-            },
-            {
-              "name": "status",
-              "type": {
-                "text": "'default' | 'pause' | 'success' | 'error'"
-              },
-              "default": "'default'",
-              "description": "O estado de progresso, para coloração contextual da barra de progresso.",
-              "fieldName": "status"
-            },
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-              "fieldName": "label"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Barras de progresso (_progress_) são usadas para mostrar a situação de uma operação em andamento.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/progress",
-          "status": "stable",
-          "since": "0.19",
-          "tagName": "cps-progress",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsProgress",
-            "module": "components/progress/progress.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-progress",
-          "declaration": {
-            "name": "CpsProgress",
-            "module": "components/progress/progress.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsProgress",
-          "declaration": {
-            "name": "CpsProgress",
-            "module": "components/progress/progress.component.js"
           }
         }
       ]
@@ -12257,6 +12191,173 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/progress/progress.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsProgress",
+          "cssProperties": [
+            {
+              "description": "A altura do indicador.",
+              "name": "--indicator-height"
+            },
+            {
+              "description": "A altura da trilha.",
+              "name": "--track-height"
+            },
+            {
+              "description": "A cor do indicador, quando em estado padrão.",
+              "name": "--indicator-color"
+            },
+            {
+              "description": "A cor do indicador, quando em estado de pausa.",
+              "name": "--indicator-pause-color"
+            },
+            {
+              "description": "A cor do indicador, quando em estado de sucesso.",
+              "name": "--indicator-success-color"
+            },
+            {
+              "description": "A cor do indicador, quando em estado de erro.",
+              "name": "--indicator-error-color"
+            },
+            {
+              "description": "A cor da trilha.",
+              "name": "--track-color"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento base do componente.",
+              "name": "base"
+            },
+            {
+              "description": "O indicador da barra de progresso.",
+              "name": "indicator"
+            },
+            {
+              "description": "A trilha de fundo da barra de progresso.",
+              "name": "track"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "status",
+              "type": {
+                "text": "'default' | 'pause' | 'success' | 'error'"
+              },
+              "default": "'default'",
+              "description": "O estado de progresso, para coloração contextual da barra de progresso.",
+              "attribute": "status",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "public",
+              "description": "É possível setar programaticamente o estado `indeterminate` como `true`, o que causa a remoção do atributo `value`. Não tem efeito como atributo, pois simplesmente não informar o atributo `value` já é suficiente."
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
+              "fieldName": "value"
+            },
+            {
+              "name": "status",
+              "type": {
+                "text": "'default' | 'pause' | 'success' | 'error'"
+              },
+              "default": "'default'",
+              "description": "O estado de progresso, para coloração contextual da barra de progresso.",
+              "fieldName": "status"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "fieldName": "label"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Barras de progresso (_progress_) são usadas para mostrar a situação de uma operação em andamento.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/progress",
+          "status": "stable",
+          "since": "0.19",
+          "tagName": "cps-progress",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsProgress",
+            "module": "components/progress/progress.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-progress",
+          "declaration": {
+            "name": "CpsProgress",
+            "module": "components/progress/progress.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsProgress",
+          "declaration": {
+            "name": "CpsProgress",
+            "module": "components/progress/progress.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/rating/rating.component.js",
       "declarations": [
         {
@@ -12882,97 +12983,6 @@
           "declaration": {
             "name": "CpsRating",
             "module": "components/rating/rating.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/logo/logo.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsLogo",
-          "members": [
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
-              },
-              "default": "'cps'",
-              "description": "O tipo de _logo_ a ser renderizado.",
-              "attribute": "type",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "'default' | 'monochromatic' | 'monochromatic-inverted'"
-              },
-              "default": "'default'",
-              "description": "A variante temática do _logo_.",
-              "attribute": "variant",
-              "reflects": true
-            }
-          ],
-          "attributes": [
-            {
-              "name": "type",
-              "type": {
-                "text": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
-              },
-              "default": "'cps'",
-              "description": "O tipo de _logo_ a ser renderizado.",
-              "fieldName": "type"
-            },
-            {
-              "name": "variant",
-              "type": {
-                "text": "'default' | 'monochromatic' | 'monochromatic-inverted'"
-              },
-              "default": "'default'",
-              "description": "A variante temática do _logo_.",
-              "fieldName": "variant"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
-          "status": "stable",
-          "since": "0.15.0",
-          "tagName": "cps-logo",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsLogo",
-            "module": "components/logo/logo.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-logo",
-          "declaration": {
-            "name": "CpsLogo",
-            "module": "components/logo/logo.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsLogo",
-          "declaration": {
-            "name": "CpsLogo",
-            "module": "components/logo/logo.component.js"
           }
         }
       ]
@@ -14158,6 +14168,85 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/spinner/spinner.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsSpinner",
+          "cssProperties": [
+            {
+              "description": "A espessura da linha de apresentação do indicador.",
+              "name": "--track-width"
+            },
+            {
+              "description": "A cor da linha de caminho ao fundo do _spinner_.",
+              "name": "--track-color"
+            },
+            {
+              "description": "A cor do indicador giratório do _spinner_.",
+              "name": "--indicator-color"
+            },
+            {
+              "description": "O tempo que leva para o indicador completa um ciclo de animação giratório.",
+              "name": "--speed"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<svg>`).",
+              "name": "base"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "localize",
+              "privacy": "private",
+              "default": "new LocalizeController(this)"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
+          "status": "stable",
+          "since": "0.1",
+          "tagName": "cps-spinner",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsSpinner",
+            "module": "components/spinner/spinner.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-spinner",
+          "declaration": {
+            "name": "CpsSpinner",
+            "module": "components/spinner/spinner.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsSpinner",
+          "declaration": {
+            "name": "CpsSpinner",
+            "module": "components/spinner/spinner.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/tab-group/tab-group.component.js",
       "declarations": [
         {
@@ -14901,7 +14990,7 @@
           "name": "CpsTabPanel",
           "cssProperties": [
             {
-              "description": "O espaçamento interno do painel. Padrão: `var(--cps-spacing-4)`.",
+              "description": "O espaçamento interno do painel. Padrão: `var(--cps-spacing-6)`.",
               "name": "--padding"
             },
             {
@@ -16710,91 +16799,12 @@
           }
         }
       ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/spinner/spinner.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsSpinner",
-          "cssProperties": [
-            {
-              "description": "A espessura da linha de apresentação do indicador.",
-              "name": "--track-width"
-            },
-            {
-              "description": "A cor da linha de caminho ao fundo do _spinner_.",
-              "name": "--track-color"
-            },
-            {
-              "description": "A cor do indicador giratório do _spinner_.",
-              "name": "--indicator-color"
-            },
-            {
-              "description": "O tempo que leva para o indicador completa um ciclo de animação giratório.",
-              "name": "--speed"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<svg>`).",
-              "name": "base"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "localize",
-              "privacy": "private",
-              "default": "new LocalizeController(this)"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/spinner",
-          "status": "stable",
-          "since": "0.1",
-          "tagName": "cps-spinner",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsSpinner",
-            "module": "components/spinner/spinner.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-spinner",
-          "declaration": {
-            "name": "CpsSpinner",
-            "module": "components/spinner/spinner.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsSpinner",
-          "declaration": {
-            "name": "CpsSpinner",
-            "module": "components/spinner/spinner.component.js"
-          }
-        }
-      ]
     }
   ],
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.23.1",
+    "version": "0.23.2",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

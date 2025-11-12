@@ -1,0 +1,1 @@
+import{a as s}from"./chunk.K7IQTUDR.js";import{a as o,e as l}from"./chunk.WBB6ER6A.js";import{e as m}from"./chunk.QJBMNVJB.js";import{c as e,e as r}from"./chunk.K3RV6SX6.js";var t=class extends l{render(){return m` <slot></slot> `}};e(t,"CpsVisuallyHidden"),t.styles=s,t=r([o("cps-visually-hidden")],t);export{t as a};

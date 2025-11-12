@@ -339,10 +339,16 @@ Use o atributo `rounded` para ajustar o comportamento de arrendondamento de cant
 
 ```html preview
 <div class="sample-acrylic-background no-gap">
-  <cps-card variant="primary" rounded="start">Cartão 1</cps-card>
-  <cps-card variant="on-blurred" rounded="end">Cartão 2</cps-card>
+  <cps-card variant="primary" rounded="start" style="--border-radius: var(--cps-border-radius-medium)"
+    >Cartão 1</cps-card
+  >
+  <cps-card variant="on-blurred" rounded="end" style="--border-radius: var(--cps-border-radius-pill)"
+    >Cartão 2</cps-card
+  >
 </div>
 ```
+
+?> Use em conjunto com a propriedade CSS `--border-radius` para personalizar ainda mais o nível de arredondamento de bordas aplicado ao cartão, permitindo que cartões diferentes tenham um nível de arredondamento diferente.
 
 ### Com cabeçalho e rodapé
 

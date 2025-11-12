@@ -62,6 +62,71 @@ const App = () => (
 );
 ```
 
+### Conteúdos diversos
+
+O conteúdo principal de um _link_ não é restrito apenas a textos. Outros conteúdos HTML ou mesmo outros componentes CPS Elements são permitidos.
+
+```html preview
+<div class="link-content-example">
+  <cps-link href="https://www.cps.sp.gov.br/" target="_blank">
+    <cps-logo type="cps"></cps-logo>
+  </cps-link>
+
+  <cps-link href="https://cgtic.cps.sp.gov.br/" target="_blank">
+    <cps-logo type="cps-cgtic"></cps-logo>
+  </cps-link>
+</div>
+
+<style>
+  .link-content-example {
+    display: flex;
+    align-items: start;
+    gap: 1.75rem;
+    font-size: 4rem;
+  }
+
+  .link-content-example cps-link:last-child {
+    margin-top: 0.94%;
+    font-size: 4.48rem;
+  }
+</style>
+```
+
+```jsx react
+import { CpsLink } from '@cps-elements/web/react/link';
+import { CpsLogo } from '@cps-elements/web/react/logo';
+
+const css = `
+  .link-content-example {
+    display: flex;
+    align-items: start;
+    gap: 1.75rem;
+    font-size: 4rem;
+  }
+
+  .link-content-example cps-link:last-child {
+    margin-top: 0.94%;
+    font-size: 4.48rem;
+  }
+`;
+
+const App = () => (
+  <>
+    <div class="link-content-example">
+      <CpsLink href="https://www.cps.sp.gov.br/" target="_blank">
+        <CpsLogo type="cps"></CpsLogo>
+      </CpsLink>
+
+      <CpsLink href="https://cgtic.cps.sp.gov.br/" target="_blank">
+        <CpsLogo type="cps-cgtic"></CpsLogo>
+      </CpsLink>
+    </div>
+
+    <style>{css}</style>
+  </>
+);
+```
+
 ### Ícones como prefixo ou sufixo
 
 Use os _slots_ `prefix` e `suffix` para adicionar ícones.
@@ -123,11 +188,14 @@ const App = () => (
 
 Use o atributo `size` para definir o tamanho e o estilo do rótulo em conformidade à pilha tipografia.
 
+Ao omitir o atributo, o valor padrão `inherit` é usado, fazendo com que o _link_ herde o tamanho de seu contêiner, ou seja, equivalente a aplicar o estilo CSS `font-size: inherit`.
+
 ```html preview
 <div class="link-sizes-example">
+  <cps-link size="inherit">Automático</cps-link>
   <cps-link size="stamp">Timbre</cps-link>
   <cps-link size="caption">Rubrica</cps-link>
-  <cps-link size="link">Rótulo</cps-link>
+  <cps-link size="label">Rótulo</cps-link>
   <cps-link size="body">Corpo</cps-link>
   <cps-link size="body-emphasized">Corpo enfatizado</cps-link>
   <cps-link size="body-strong">Corpo destacado</cps-link>
@@ -161,9 +229,10 @@ const css = `
 const App = () => (
   <>
     <div class="link-sizes-example">
+      <CpsLink size="inherit">Automático</CpsLink>
       <CpsLink size="stamp">Timbre</CpsLink>
       <CpsLink size="caption">Rubrica</CpsLink>
-      <CpsLink size="link">Rótulo</CpsLink>
+      <CpsLink size="label">Rótulo</CpsLink>
       <CpsLink size="body">Corpo</CpsLink>
       <CpsLink size="body-emphasized">Corpo enfatizado</CpsLink>
       <CpsLink size="body-strong">Corpo destacado</CpsLink>

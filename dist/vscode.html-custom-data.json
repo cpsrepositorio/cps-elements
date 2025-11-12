@@ -264,18 +264,6 @@
       "references": []
     },
     {
-      "name": "cps-button-group",
-      "description": "Grupos de botões podem ser usados para agrupar botões relacionados em seções.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - Um ou mais elementos `<cps-button>` a exibir dentro do grupo de botões.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o grupo.",
-      "attributes": [
-        {
-          "name": "label",
-          "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
       "name": "cps-calendar",
       "description": "Calendários permitem aos usuários selecionar datas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando o valor selecionado muda ou quando o mês/ano visualizado é alterado.\n\n### **Methods:**\n - **previous()** - Navega para o mês, ano ou década anterior, dependendo da visualização atual.\n- **next()** - Navega para o próximo mês, ano ou década, dependendo da visualização atual.\n- **clear()** - Limpa a data selecionada no calendário.\n- **today()** - Define a data atual como a data selecionada no calendário.\n\n### **CSS Parts:**\n - **base** - O elemento base do calendário.\n- **header** - O cabeçalho do calendário.\n- **title** - O título do calendário.\n- **navigation** - O container dos botões de navegação.\n- **previous-button** - O botão para navegar para o anterior.\n- **next-button** - O botão para navegar para o próximo.\n- **grid** - O container da grade de células (dias, meses ou anos).\n- **weekday** - Uma célula de dia da semana.\n- **cell** - Uma célula do calendário.\n- **cell--today** - Aplicado na célula correspondente à data atual.\n- **cell--selected** - Aplicado na célula selecionada.\n- **cell--outside** - Aplicado em células fora do intervalo principal.\n- **cell--disabled** - Aplicado em células desabilitadas.\n- **footer** - O rodapé do calendário.\n- **clear-link** - O botão estilizado como link para limpar a data selecionada.\n- **today-link** - O botão estilizado como link para selecionar a data atual.",
       "attributes": [
@@ -332,7 +320,7 @@
     },
     {
       "name": "cps-card",
-      "description": "_Cards_ são utilizados para exibir informações de forma estruturada e destacada.\n\n\n---\n\n\n\n\n### **Methods:**\n - **click(event: _MouseEvent_)** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no elemento.\n- **blur()** - Remove o foco do elemento.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo principal do _card_.\n- **header** - O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.\n- **footer** - O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.",
+      "description": "_Cards_ são utilizados para exibir informações de forma estruturada e destacada.\n\n\n---\n\n\n\n\n### **Methods:**\n - **click(event: _MouseEvent_)** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no elemento.\n- **blur()** - Remove o foco do elemento.\n\n### **CSS Properties:**\n - **--padding** - O espaçamento interno do _card_. Padrão: `var(--cps-spacing-6)`. _(default: undefined)_\n- **--border-radius** - O nível de arredondamento da borda do _card_. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **content** - O conteúdo principal do _card_.\n- **header** - O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.\n- **footer** - O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.",
       "attributes": [
         {
           "name": "elevation",
@@ -376,6 +364,18 @@
         {
           "name": "actionable",
           "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-button-group",
+      "description": "Grupos de botões podem ser usados para agrupar botões relacionados em seções.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - Um ou mais elementos `<cps-button>` a exibir dentro do grupo de botões.\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o grupo.",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Um rótulo descritivo para o grupo de botões. Este não será exibido na interface, mas será anunciado\npor dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
           "values": []
         }
       ],
@@ -1081,6 +1081,168 @@
       "references": []
     },
     {
+      "name": "cps-label",
+      "description": "Rótulos (_labels_) representam uma etiqueta textual para um item na interface.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do _label_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (por padrão um `<span>`, podendo ser modificado com o atributo `tag`).\n- **content** - O `<slot>` de conteúdo interno do _label_.",
+      "attributes": [
+        {
+          "name": "variant",
+          "description": "A variante temática do _label_.",
+          "values": [
+            { "name": "" },
+            { "name": "primary" },
+            { "name": "secondary" },
+            { "name": "tertiary" },
+            { "name": "disabled" },
+            { "name": "brand-primary" },
+            { "name": "brand-secondary" },
+            { "name": "brand-tertiary" },
+            { "name": "inverted-primary" },
+            { "name": "inverted-secondary" },
+            { "name": "inverted-disabled" }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
+          "values": [
+            { "name": "" },
+            { "name": "inherit" },
+            { "name": "stamp" },
+            { "name": "caption" },
+            { "name": "label" },
+            { "name": "body" },
+            { "name": "body-emphasized" },
+            { "name": "body-strong" },
+            { "name": "body-large" },
+            { "name": "subtitle" },
+            { "name": "title" },
+            { "name": "heading" },
+            { "name": "display" }
+          ]
+        },
+        {
+          "name": "tag",
+          "description": "O elemento HTML desejado para a renderização do _label_.",
+          "values": [
+            { "name": "span" },
+            { "name": "small" },
+            { "name": "i" },
+            { "name": "b" },
+            { "name": "em" },
+            { "name": "strong" },
+            { "name": "label" },
+            { "name": "p" },
+            { "name": "div" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-link",
+      "description": "_Links_ são usados para navegação entre páginas ou para abrir URLs externas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o _link_ perde o foco.\n- **cps-focus** - Emitido quando o _link_ obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no _link_.\n- **blur()** - Remove o foco do _link_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<a>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o texto do _link_.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "Desabilita o _link_.",
+          "values": []
+        },
+        {
+          "name": "href",
+          "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
+          "values": []
+        },
+        {
+          "name": "size",
+          "description": "O tamanho do texto do _link_. Por padrão, o tamanho é herdado do elemento pai.",
+          "values": [
+            { "name": "" },
+            { "name": "inherit" },
+            { "name": "stamp" },
+            { "name": "caption" },
+            { "name": "label" },
+            { "name": "body" },
+            { "name": "body-emphasized" },
+            { "name": "body-strong" },
+            { "name": "body-large" },
+            { "name": "subtitle" },
+            { "name": "title" },
+            { "name": "heading" },
+            { "name": "display" }
+          ]
+        },
+        {
+          "name": "target",
+          "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-menu",
+      "description": "Menus oferecem uma lista de opções para o usuário escolher.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-select** - Emitido quando um item de menu interno é selecionado.\n\n### **Slots:**\n - _default_ - Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
+      "attributes": [],
+      "references": []
+    },
+    {
+      "name": "cps-menu-item",
+      "description": "Itens de menu fornecem opções para o usuário escolher em um menu.\n\n\n---\n\n\n\n\n### **Methods:**\n - **getTextLabel()** - Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.\n\n### **Slots:**\n - _default_ - O texto interno do item de menu.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **check** - O elemento que embrulha o ícone de checagem (caso o item de menu seja do tipo `checkbox`), visível apenas quando o item de menu está marcado.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **label** - O elemento que embrulha o conteúdo principal, normalmente um texto literal.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
+      "attributes": [
+        {
+          "name": "type",
+          "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+          "values": [{ "name": "normal" }, { "name": "checkbox" }]
+        },
+        {
+          "name": "checked",
+          "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+          "values": []
+        },
+        {
+          "name": "value",
+          "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Desabilita o item de menu.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
+      "name": "cps-logo",
+      "description": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.\n\n\n---\n\n\n",
+      "attributes": [
+        {
+          "name": "type",
+          "description": "O tipo de _logo_ a ser renderizado.",
+          "values": [
+            { "name": "" },
+            { "name": "cps" },
+            { "name": "cps-asscom" },
+            { "name": "cps-cgtic" },
+            { "name": "cps-sucar" },
+            { "name": "elements" },
+            { "name": "sp-horizontal" },
+            { "name": "sp-vertical" }
+          ]
+        },
+        {
+          "name": "variant",
+          "description": "A variante temática do _logo_.",
+          "values": [
+            { "name": "default" },
+            { "name": "monochromatic" },
+            { "name": "monochromatic-inverted" }
+          ]
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-input",
       "description": "Caixas de entrada (_inputs_) coletam dados preenchidos pelos usuários.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n- **select()** - Seleciona todo o texto existente no campo.\n- **setSelectionRange(selectionStart: _number_, selectionEnd: _number_, selectionDirection: _'forward' | 'backward' | 'none'_)** - Define as posições de início e término da seleção de texto do campo (índices baseados em `0`).\n- **setRangeText(replacement: _string_, start: _number_, end: _number_, selectMode: _'select' | 'start' | 'end' | 'preserve'_)** - Atualiza um intervalo de texto do campo com o novo valor informado (índices baseados em `0`).\n- **showPicker()** - Exibe o menu seletor de opções nativo do navegador, de acordo com o `type` do campo (funciona apenas se o navegador suportar um menu seletor para o tipo de entrada em questão).\n- **stepUp()** - Incrementa o valor de um campo numérico pelo valor do atributo `step` (somente se o `type` definido for `number`).\n- **stepDown()** - Decrementa o valor de um campo numérico pelo valor do atributo `step` (somente se o `type` definido for `number`).\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **base** - O elemento base que embrulha o `<input>` e eventuais prefixo e sufixo.\n- **input** - O controle `<input>` interno propriamente dito.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **password-toggle-button** - O botão de alternar visibilidade de senha (caso `password-toggle` esteja em uso).\n- **password-toggle-button__base** - A parte `base` re-exportada do botão de visibilidade de senha.\n- **password-toggle-button__icon** - A parte `icon` re-exportada do botão de visibilidade de senha.",
       "attributes": [
@@ -1274,142 +1436,6 @@
       "references": []
     },
     {
-      "name": "cps-label",
-      "description": "Rótulos (_labels_) representam uma etiqueta textual para um item na interface.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do _label_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (por padrão um `<span>`, podendo ser modificado com o atributo `tag`).\n- **content** - O `<slot>` de conteúdo interno do _label_.",
-      "attributes": [
-        {
-          "name": "variant",
-          "description": "A variante temática do _label_.",
-          "values": [
-            { "name": "" },
-            { "name": "primary" },
-            { "name": "secondary" },
-            { "name": "tertiary" },
-            { "name": "disabled" },
-            { "name": "brand-primary" },
-            { "name": "brand-secondary" },
-            { "name": "brand-tertiary" },
-            { "name": "inverted-primary" },
-            { "name": "inverted-secondary" },
-            { "name": "inverted-disabled" }
-          ]
-        },
-        {
-          "name": "size",
-          "description": "O tamanho do _label_.",
-          "values": [
-            { "name": "" },
-            { "name": "stamp" },
-            { "name": "caption" },
-            { "name": "label" },
-            { "name": "body" },
-            { "name": "body-emphasized" },
-            { "name": "body-strong" },
-            { "name": "body-large" },
-            { "name": "subtitle" },
-            { "name": "title" },
-            { "name": "heading" },
-            { "name": "display" }
-          ]
-        },
-        {
-          "name": "tag",
-          "description": "O elemento HTML desejado para a renderização do _label_.",
-          "values": [
-            { "name": "span" },
-            { "name": "small" },
-            { "name": "i" },
-            { "name": "b" },
-            { "name": "em" },
-            { "name": "strong" },
-            { "name": "label" },
-            { "name": "p" },
-            { "name": "div" }
-          ]
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-link",
-      "description": "_Links_ são usados para navegação entre páginas ou para abrir URLs externas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o _link_ perde o foco.\n- **cps-focus** - Emitido quando o _link_ obtém o foco.\n\n### **Methods:**\n - **click()** - Simula um _click_ no elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no _link_.\n- **blur()** - Remove o foco do _link_.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<a>`).\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **content** - O elemento que embrulha o conteúdo principal, normalmente o texto do _link_.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
-      "attributes": [
-        {
-          "name": "disabled",
-          "description": "Desabilita o _link_.",
-          "values": []
-        },
-        {
-          "name": "href",
-          "description": "O destino do _link_, podendo ser tanto um caminho relativo ao documento atual,\npara navegação interna, quanto um caminho absoluto para navegação externa.",
-          "values": []
-        },
-        {
-          "name": "size",
-          "description": "O tamanho do _link_.",
-          "values": [
-            { "name": "" },
-            { "name": "stamp" },
-            { "name": "caption" },
-            { "name": "label" },
-            { "name": "body" },
-            { "name": "body-emphasized" },
-            { "name": "body-strong" },
-            { "name": "body-large" },
-            { "name": "subtitle" },
-            { "name": "title" },
-            { "name": "heading" },
-            { "name": "display" }
-          ]
-        },
-        {
-          "name": "target",
-          "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-menu",
-      "description": "Menus oferecem uma lista de opções para o usuário escolher.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-select** - Emitido quando um item de menu interno é selecionado.\n\n### **Slots:**\n - _default_ - Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
-      "attributes": [],
-      "references": []
-    },
-    {
-      "name": "cps-menu-item",
-      "description": "Itens de menu fornecem opções para o usuário escolher em um menu.\n\n\n---\n\n\n\n\n### **Methods:**\n - **getTextLabel()** - Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.\n\n### **Slots:**\n - _default_ - O texto interno do item de menu.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **check** - O elemento que embrulha o ícone de checagem (caso o item de menu seja do tipo `checkbox`), visível apenas quando o item de menu está marcado.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **label** - O elemento que embrulha o conteúdo principal, normalmente um texto literal.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
-      "attributes": [
-        {
-          "name": "type",
-          "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
-          "values": [{ "name": "normal" }, { "name": "checkbox" }]
-        },
-        {
-          "name": "checked",
-          "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
-          "values": []
-        },
-        {
-          "name": "value",
-          "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
-          "values": []
-        },
-        {
-          "name": "disabled",
-          "description": "Desabilita o item de menu.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-menu-label",
-      "description": "Rótulos de menu são usados para descrever um grupo de itens de menu.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O texto interno do rótulo de menu.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
-      "attributes": [],
-      "references": []
-    },
-    {
       "name": "cps-notification",
       "description": "Notificações são usadas para exibir mensagens importantes de forma pontual, localmente ou como _toast_.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando a notificação aparece.\n- **cps-after-show** - Emitido após a notificação aparecer e todas as animações terem sido completadas.\n- **cps-hide** - Emitido quando a notificação some.\n- **cps-after-hide** - Emitido após a notificação sumir e todas as animações terem sido completadas.\n\n### **Methods:**\n - **show()** - Exibe a notificação, no local onde foi definida através de seu HTML e CSS.\n- **hide()** - Oculta a notificação, caso esta esteja visível.\n- **toast()** - Exibe a notificação como um _toast_. Isto irá mover a notificação para fora de sua posição no DOM e, quando ocultada, ela será removida do DOM completamente. Ao armazenar uma referência à notificação, você pode reutilizá-la chamando este método novamente. Retorna uma `Promise`que será resolvida após a notificação ser ocultada.\n\n### **Slots:**\n - _default_ - O conteúdo principal da notificação, usualmente uma mensagem a ser exibida.\n- **icon** - Um ícone personalizado a ser exibido junto à notificação (utilize um `<cps-icon>` para melhor apresentação). Não possui efeito se o atributo `icon` estiver em uso.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **icon** - O elemento que embrulha o ícone opcional (um `<div>`) no qual se aplica a cor de fundo de acordo com a variante da notificação, seja ele gerado automaticamente ou informado com _slot_.\n- **message** - O elemento que embrulha o conteúdo principal da notificação, usualmente contendo um ou mais elementos que definem a mensagem de exibição.\n- **close-button** - O botão de fechar a notificação (caso `closable` esteja em uso).\n- **close-button__base** - A parte `base` re-exportada do botão de fechar.\n- **close-button__icon** - A parte `icon` re-exportada do botão de fechar.",
       "attributes": [
@@ -1448,6 +1474,12 @@
       "references": []
     },
     {
+      "name": "cps-menu-label",
+      "description": "Rótulos de menu são usados para descrever um grupo de itens de menu.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O texto interno do rótulo de menu.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
+      "attributes": [],
+      "references": []
+    },
+    {
       "name": "cps-option",
       "description": "Opções definem os itens selecionáveis dentro de controles de formulário, como no [Select](/componentes/select).\n\n\n---\n\n\n\n\n### **Methods:**\n - **getTextLabel()** - Obtém o texto literal a partir do conteúdo do _slot_ padrão da opção.\n\n### **Slots:**\n - _default_ - O texto interno da opção.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **check** - O elemento que embrulha o ícone de checagem (caso a opção esteja dentro de uma caixa de seleção múltipla), visível apenas quando a opção está marcada.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **label** - O elemento que embrulha o conteúdo principal, normalmente um texto literal.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
       "attributes": [
@@ -1459,33 +1491,6 @@
         {
           "name": "disabled",
           "description": "Desabilita a opção.",
-          "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-progress",
-      "description": "Barras de progresso (_progress_) são usadas para mostrar a situação de uma operação em andamento.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--indicator-height** - A altura do indicador. _(default: undefined)_\n- **--track-height** - A altura da trilha. _(default: undefined)_\n- **--indicator-color** - A cor do indicador, quando em estado padrão. _(default: undefined)_\n- **--indicator-pause-color** - A cor do indicador, quando em estado de pausa. _(default: undefined)_\n- **--indicator-success-color** - A cor do indicador, quando em estado de sucesso. _(default: undefined)_\n- **--indicator-error-color** - A cor do indicador, quando em estado de erro. _(default: undefined)_\n- **--track-color** - A cor da trilha. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento base do componente.\n- **indicator** - O indicador da barra de progresso.\n- **track** - A trilha de fundo da barra de progresso.",
-      "attributes": [
-        {
-          "name": "value",
-          "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
-          "values": []
-        },
-        {
-          "name": "status",
-          "description": "O estado de progresso, para coloração contextual da barra de progresso.",
-          "values": [
-            { "name": "default" },
-            { "name": "pause" },
-            { "name": "success" },
-            { "name": "error" }
-          ]
-        },
-        {
-          "name": "label",
-          "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
           "values": []
         }
       ],
@@ -1671,6 +1676,33 @@
       "references": []
     },
     {
+      "name": "cps-progress",
+      "description": "Barras de progresso (_progress_) são usadas para mostrar a situação de uma operação em andamento.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--indicator-height** - A altura do indicador. _(default: undefined)_\n- **--track-height** - A altura da trilha. _(default: undefined)_\n- **--indicator-color** - A cor do indicador, quando em estado padrão. _(default: undefined)_\n- **--indicator-pause-color** - A cor do indicador, quando em estado de pausa. _(default: undefined)_\n- **--indicator-success-color** - A cor do indicador, quando em estado de sucesso. _(default: undefined)_\n- **--indicator-error-color** - A cor do indicador, quando em estado de erro. _(default: undefined)_\n- **--track-color** - A cor da trilha. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento base do componente.\n- **indicator** - O indicador da barra de progresso.\n- **track** - A trilha de fundo da barra de progresso.",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
+          "values": []
+        },
+        {
+          "name": "status",
+          "description": "O estado de progresso, para coloração contextual da barra de progresso.",
+          "values": [
+            { "name": "default" },
+            { "name": "pause" },
+            { "name": "success" },
+            { "name": "error" }
+          ]
+        },
+        {
+          "name": "label",
+          "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-rating",
       "description": "Campos de classificação (_rating_) permitem aos usuários classificar um conteúdo.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n\n### **Slots:**\n - **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Properties:**\n - **--symbol-color** - Cor do símbolo quando não está ativo. Por padrão, `var(--cps-color-text-secondary)`. _(default: undefined)_\n- **--symbol-color-active** - Cor do símbolo quando está ativo. Por padrão, `var(--cps-color-fill-accent)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **base** - O elemento principal que envolve os símbolos de classificação.\n- **symbol** - O contêiner base envolvendo cada símbolo de classificação renderizado.\n- **symbol--active** - Aplicado a um símbolo quando ele está ativo (selecionado), ainda que parcialmente.",
       "attributes": [
@@ -1742,36 +1774,6 @@
           "name": "form",
           "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
           "values": []
-        }
-      ],
-      "references": []
-    },
-    {
-      "name": "cps-logo",
-      "description": "Logotipos (_logos_) representam tipografia e símbolos gráficos que identificam uma marca.\nNo contexto desta biblioteca, simplificam a inserção de alguns dos _logos_ comuns no ecossistema de aplicações internas do CPS.\n\n\n---\n\n\n",
-      "attributes": [
-        {
-          "name": "type",
-          "description": "O tipo de _logo_ a ser renderizado.",
-          "values": [
-            { "name": "" },
-            { "name": "cps" },
-            { "name": "cps-asscom" },
-            { "name": "cps-cgtic" },
-            { "name": "cps-sucar" },
-            { "name": "elements" },
-            { "name": "sp-horizontal" },
-            { "name": "sp-vertical" }
-          ]
-        },
-        {
-          "name": "variant",
-          "description": "A variante temática do _logo_.",
-          "values": [
-            { "name": "default" },
-            { "name": "monochromatic" },
-            { "name": "monochromatic-inverted" }
-          ]
         }
       ],
       "references": []
@@ -1906,6 +1908,12 @@
       "references": []
     },
     {
+      "name": "cps-spinner",
+      "description": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--track-width** - A espessura da linha de apresentação do indicador. _(default: undefined)_\n- **--track-color** - A cor da linha de caminho ao fundo do _spinner_. _(default: undefined)_\n- **--indicator-color** - A cor do indicador giratório do _spinner_. _(default: undefined)_\n- **--speed** - O tempo que leva para o indicador completa um ciclo de animação giratório. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<svg>`).",
+      "attributes": [],
+      "references": []
+    },
+    {
       "name": "cps-tab-group",
       "description": "Grupos de abas organizam o conteúdo em um contêiner que mostra uma seção por vez.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-tab-show** - Emitido quando o painel de uma aba é exibido.\n- **cps-tab-hide** - Emitido quando o painel de uma aba é ocultado.\n\n### **Methods:**\n - **show(panel: _string_)** - Força a seleção da aba especificada, através do nome de seu painel.\n\n### **Slots:**\n - _default_ - Usado para agrupar painéis de abas dentro do grupo. Utilize apenas elementos `<cps-tab-panel>`.\n- **nav** - Usado para especificar as abas existentes dentro do grupo. Utilize apenas elementos `<cps-tab-item>`.\n\n### **CSS Properties:**\n - **--background-navigation** - A cor de fundo da área de navegação, onde as abas são dispostas. Padrão: `var(--cps-color-background-solid-primary)`. _(default: undefined)_\n- **--background-selection** - A cor de fundo das áreas selecionadas, ou seja, tanto a aba selecionada quanto o respectivo painel selecionado. Padrão: `var(--cps-color-background-solid-tertiary)`. _(default: undefined)_\n- **--border-color** - Cor de borda utilizada em todo o grupo, incluindo área de navegação, aba selecionada, e o respectivo painel selecionado. Padrão: `var(--cps-color-stroke-primary)`. _(default: undefined)_\n- **--border-width** - Espessura da borda da área de navegação. Padrão: `1px`. _(default: undefined)_\n- **--border-radius** - Arredondamento de bordas, incluindo área de navegação e painel selecionado. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n- **--indicator-color** - Cor do indicador de aba atualmente selecionada. Invisível por padrão. _(default: undefined)_\n- **--padding-navigation** - Espaçamentos internos da área de navegação. Padrão: `var(--cps-spacing-2)`. _(default: undefined)_\n- **--track-color** - Cor da área de posicionamento de indicador de seleção. Padrão: `var(--border-color)`. _(default: undefined)_\n- **--track-width** - Espessura da área de posicionamento de indicador de seleção. Padrão: `1px`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **nav** - O contêiner da área de navegação (um `<div>`), o qual contém a lista de abas, e eventuais elementos auxiliares como os botões de rolagem automática.\n- **tabs** - O contêiner que embrulha as abas propriamente ditas (um `<div>`).\n- **active-tab-indicator** - O elemento indicativa de seleção atual, por padrão uma linha não apresentada visual, mas que pode ser ativada através da propriedade CSS `--indicator-color`.\n- **body** - O contêiner que embrulha o corpo do grupo, onde os painéis de abas são dispostos.\n- **scroll-button** - Seletor que intercepta tanto o botão de rolagem em direção ao início quanto em direção ao final da lista de abas (ambos `<cps-icon-button>`), exibidos quando existem abas transbordando, causando rolagem automática da lista de abas.\n- **scroll-button--start** - O botão de rolagem em direção ao início da lista de abas.\n- **scroll-button--start__base** - A parte `base` re-exportada do botão de rolagem em direção ao início da lista de abas.\n- **scroll-button--start__icon** - A parte `icon` re-exportada do botão de rolagem em direção ao início da lista de abas.\n- **scroll-button--end** - O botão de rolagem em direção ao final da lista de abas.\n- **scroll-button--end__base** - A parte `base` re-exportada do botão de rolagem em direção ao final da lista de abas.\n- **scroll-button--end__icon** - A parte `icon` re-exportada do botão de rolagem em direção ao final da lista de abas.",
       "attributes": [
@@ -1972,7 +1980,7 @@
     },
     {
       "name": "cps-tab-panel",
-      "description": "Painéis de abas (_tab panels_) são usados dentro de [grupos de abas](/componentes/tab-group) para exibir conteúdo em abas.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do painel.\n\n### **CSS Properties:**\n - **--padding** - O espaçamento interno do painel. Padrão: `var(--cps-spacing-4)`. _(default: undefined)_\n- **--background** - A cor de fundo do painel. Padrão: `var(--cps-color-background-solid-tertiary)`. _(default: undefined)_\n- **--border-color** - A cor da borda do painel. Padrão: `var(--cps-color-stroke-primary)`. _(default: undefined)_\n- **--border-radius** - O arredondamento da borda do painel. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
+      "description": "Painéis de abas (_tab panels_) são usados dentro de [grupos de abas](/componentes/tab-group) para exibir conteúdo em abas.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do painel.\n\n### **CSS Properties:**\n - **--padding** - O espaçamento interno do painel. Padrão: `var(--cps-spacing-6)`. _(default: undefined)_\n- **--background** - A cor de fundo do painel. Padrão: `var(--cps-color-background-solid-tertiary)`. _(default: undefined)_\n- **--border-color** - A cor da borda do painel. Padrão: `var(--cps-color-stroke-primary)`. _(default: undefined)_\n- **--border-radius** - O arredondamento da borda do painel. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
       "attributes": [
         {
           "name": "name",
@@ -2241,12 +2249,6 @@
     {
       "name": "cps-visually-hidden",
       "description": "O utilitário visualmente oculto (_visually hidden_) torna seu conteúdo acessível sem exibir na interface.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo a ser visualmente oculto.",
-      "attributes": [],
-      "references": []
-    },
-    {
-      "name": "cps-spinner",
-      "description": "_Spinners_ são usados para exibir o andamento de uma operação de tempo indeterminado.\n\n\n---\n\n\n\n\n### **CSS Properties:**\n - **--track-width** - A espessura da linha de apresentação do indicador. _(default: undefined)_\n- **--track-color** - A cor da linha de caminho ao fundo do _spinner_. _(default: undefined)_\n- **--indicator-color** - A cor do indicador giratório do _spinner_. _(default: undefined)_\n- **--speed** - O tempo que leva para o indicador completa um ciclo de animação giratório. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<svg>`).",
       "attributes": [],
       "references": []
     }

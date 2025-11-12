@@ -1,1 +1,0 @@
-import{a as e}from"./chunk.IIWFFF3D.js";import*as t from"react";import{createComponent as a}from"@lit-labs/react";var o=a({tagName:"cps-calendar",elementClass:e,react:t,events:{onCpsChange:"cps-change"}});var p=o;export{o as a,p as b};

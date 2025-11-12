@@ -7,7 +7,7 @@ export default class CpsLink extends BaseElement {
     link: HTMLAnchorElement;
     disabled: boolean;
     href: string;
-    size: 'stamp' | 'caption' | 'label' | 'body' | 'body-emphasized' | 'body-strong' | 'body-large' | 'subtitle' | 'title' | 'heading' | 'display';
+    size: 'inherit' | 'stamp' | 'caption' | 'label' | 'body' | 'body-emphasized' | 'body-strong' | 'body-large' | 'subtitle' | 'title' | 'heading' | 'display';
     target: string;
     private handleClick;
     private handleBlur;
