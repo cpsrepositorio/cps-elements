@@ -4,6 +4,10 @@ import componentStyles from '../../styles/component.styles.js';
 export default css`
   ${componentStyles}
 
+  :host {
+    display: inherit;
+  }
+
   .link {
     display: inline-flex;
     gap: var(--cps-spacing-0-5);
@@ -14,6 +18,10 @@ export default css`
     text-decoration: none;
     color: var(--cps-color-text-accent-primary);
     font: inherit;
+  }
+
+  .link slot {
+    display: inline-flex;
   }
 
   .link__content {

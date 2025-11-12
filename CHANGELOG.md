@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Fixed
+
+- Corrigido `<cps-link>`, garantindo que todos os nós renderizados respeitam o `display`em uso.
+
 ## 0.23.1 - 2025-11-11
 
 ### Changed
