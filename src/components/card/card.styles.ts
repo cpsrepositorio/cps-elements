@@ -5,6 +5,9 @@ export default css`
   ${componentStyles}
 
   :host {
+    --padding: var(--cps-spacing-6);
+    --border-radius: var(--cps-border-radius-large);
+
     display: block;
   }
 
@@ -13,7 +16,7 @@ export default css`
     border: 1px solid var(--cps-color-stroke-card-primary);
     box-shadow: var(--cps-shadow);
     background: var(--cps-color-fill-card-primary);
-    padding: var(--cps-spacing-6);
+    padding: var(--padding);
     min-height: 0;
     overflow: auto;
   }
@@ -71,9 +74,9 @@ export default css`
 
   .card__header {
     display: block;
-    margin-bottom: var(--cps-spacing-4);
+    margin-bottom: var(--padding);
     border-bottom: 1px solid var(--cps-color-stroke-separator);
-    padding-bottom: var(--cps-spacing-4);
+    padding-bottom: var(--padding);
   }
 
   .card__footer {
@@ -81,9 +84,9 @@ export default css`
     gap: var(--cps-spacing-4);
     align-items: center;
     justify-content: end;
-    margin-top: var(--cps-spacing-4);
+    margin-top: var(--padding);
     border-top: 1px solid var(--cps-color-stroke-separator);
-    padding-top: var(--cps-spacing-4);
+    padding-top: var(--padding);
   }
 
   /* Rounded */
@@ -92,60 +95,60 @@ export default css`
   }
 
   .card--rounded-full {
-    border-radius: var(--cps-border-radius-large);
+    border-radius: var(--border-radius);
   }
 
   .card--rounded-start {
-    border-top-left-radius: var(--cps-border-radius-large);
-    border-bottom-left-radius: var(--cps-border-radius-large);
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 
   .card--rounded-end {
-    border-top-right-radius: var(--cps-border-radius-large);
-    border-bottom-right-radius: var(--cps-border-radius-large);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   .card--rounded-top {
-    border-top-left-radius: var(--cps-border-radius-large);
-    border-top-right-radius: var(--cps-border-radius-large);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 
   .card--rounded-bottom {
-    border-bottom-left-radius: var(--cps-border-radius-large);
-    border-bottom-right-radius: var(--cps-border-radius-large);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
 
   .card--rounded-top-start {
-    border-top-left-radius: var(--cps-border-radius-large);
+    border-top-left-radius: var(--border-radius);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   .card--rounded-top-end {
-    border-top-right-radius: var(--cps-border-radius-large);
+    border-top-right-radius: var(--border-radius);
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   .card--rounded-bottom-start {
-    border-bottom-left-radius: var(--cps-border-radius-large);
+    border-bottom-left-radius: var(--border-radius);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 
   .card--rounded-bottom-end {
-    border-bottom-right-radius: var(--cps-border-radius-large);
+    border-bottom-right-radius: var(--border-radius);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;

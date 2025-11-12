@@ -16,6 +16,9 @@ import type { CSSResultGroup } from 'lit';
  * @csspart content - O conteúdo principal do _card_.
  * @csspart header - O cabeçalho (opcional) a ser exibido antes do conteúdo principal do _card_.
  * @csspart footer - O rodapé (opcional) a ser exibido após o conteúdo principal do _card_.
+ *
+ * @cssproperty --padding - O espaçamento interno do _card_. Padrão: `var(--cps-spacing-6)`.
+ * @cssproperty --border-radius - O nível de arredondamento da borda do _card_. Padrão: `var(--cps-border-radius-large)`.
  */
 @customElement('cps-card')
 export default class CpsCard extends BaseElement {

@@ -8,6 +8,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Changed
 
+- Atualização do `<cps-card>` para que as propriedades CSS `--padding` e `--border-radius` sejam suportadas.
 - Atualização do `<cps-label>` adicionando `inherit` como valor da propriedade `size` e definindo como novo padrão.
 - Atualização do `<cps-link>` adicionando `inherit` como valor da propriedade `size` e definindo como novo padrão.
 - Atualização do `<cps-tab-panel>` para que seu `padding` padrão seja correspondente ao valor utilizado no `<cps-card>`.
