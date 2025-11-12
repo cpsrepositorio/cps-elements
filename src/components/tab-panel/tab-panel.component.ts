@@ -18,7 +18,7 @@ let id = 0;
  *
  * @csspart base - O elemento principal propriamente dito (um `<slot>`).
  *
- * @cssproperty --padding - O espaçamento interno do painel. Padrão: `var(--cps-spacing-4)`.
+ * @cssproperty --padding - O espaçamento interno do painel. Padrão: `var(--cps-spacing-6)`.
  * @cssproperty --background - A cor de fundo do painel. Padrão: `var(--cps-color-background-solid-tertiary)`.
  * @cssproperty --border-color - A cor da borda do painel. Padrão: `var(--cps-color-stroke-primary)`.
  * @cssproperty --border-radius - O arredondamento da borda do painel. Padrão: `var(--cps-border-radius-large)`.

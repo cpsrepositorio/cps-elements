@@ -10,10 +10,11 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 - Atualização do `<cps-label>` adicionando `inherit` como valor da propriedade `size` e definindo como novo padrão.
 - Atualização do `<cps-link>` adicionando `inherit` como valor da propriedade `size` e definindo como novo padrão.
+- Atualização do `<cps-tab-panel>` para que seu `padding` padrão seja correspondente ao valor utilizado no `<cps-card>`.
 
 ### Fixed
 
-- Corrigido `<cps-link>`, garantindo que todos os nós renderizados respeitam o `display`em uso.
+- Corrigido `<cps-link>`, garantindo que todos os nós renderizados respeitem o `display` em uso.
 
 ## 0.23.1 - 2025-11-11
 

@@ -5,7 +5,7 @@ export default css`
   ${componentStyles}
 
   :host {
-    --padding: var(--cps-spacing-4);
+    --padding: var(--cps-spacing-6);
     --background: var(--cps-color-background-solid-tertiary);
     --border-color: var(--cps-color-stroke-primary);
 
