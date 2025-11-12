@@ -37,8 +37,9 @@ export default class CpsLink extends BaseElement {
    * para navegação interna, quanto um caminho absoluto para navegação externa. */
   @property() href = '';
 
-  /** O tamanho do _link_. */
+  /** O tamanho do texto do _link_. Por padrão, o tamanho é herdado do elemento pai. */
   @property({ reflect: true }) size:
+    | 'inherit'
     | 'stamp'
     | 'caption'
     | 'label'
@@ -49,7 +50,7 @@ export default class CpsLink extends BaseElement {
     | 'subtitle'
     | 'title'
     | 'heading'
-    | 'display' = 'body';
+    | 'display' = 'inherit';
 
   /** O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico. */
   @property() target = '_self';
@@ -107,6 +108,7 @@ export default class CpsLink extends BaseElement {
           'link--has-suffix': this.hasSlotController.test('suffix'),
 
           // Sizes
+          'link--inherit': this.size === 'inherit',
           'link--stamp': this.size === 'stamp',
           'link--caption': this.size === 'caption',
           'link--label': this.size === 'label',

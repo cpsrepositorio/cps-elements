@@ -69,7 +69,12 @@ export default css`
     text-decoration-color: transparent;
   }
 
-  /* Size modifiers */
+  /* Sizes */
+
+  .link--inherit {
+    font: inherit;
+  }
+
   .link--stamp {
     font: var(--cps-font-stamp);
   }

@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Atualização do `<cps-link>` adicionando `inherit` como valor da propriedade `size` e definindo como novo padrão.
+
 ### Fixed
 
 - Corrigido `<cps-link>`, garantindo que todos os nós renderizados respeitam o `display`em uso.
