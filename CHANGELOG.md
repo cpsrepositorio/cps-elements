@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Atualização nos temas padrão, tornando `--cps-color-fill-accent-secondary` e `--cps-color-fill-accent-tertiary` calculados a partir de `--cps-color-fill-accent-primary`, facilitando criar temas personalizados apenas através do ajuste da paleta de cores _accent_.
+
 ## 0.23.2 - 2025-11-12
 
 ### Changed
