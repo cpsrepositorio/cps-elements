@@ -119,7 +119,7 @@ export default css`
     --cps-color-fill-disabled: rgb(255 255 255 / 4.19%);
 
     --cps-color-fill-control-solid: rgb(69 69 69);
-    --cps-color-fill-control-disabled-solid: rgb(110, 110, 110);
+    --cps-color-fill-control-disabled-solid: rgb(110 110 110);
 
     --cps-color-fill-card-primary: rgb(255 255 255 / 5.12%);
     --cps-color-fill-card-secondary: rgb(255 255 255 / 3.26%);
@@ -138,8 +138,16 @@ export default css`
     --cps-color-fill-subtle-tertiary: rgb(255 255 255 / 4.19%);
 
     --cps-color-fill-accent-primary: var(--cps-palette-accent-700);
-    --cps-color-fill-accent-secondary: rgb(71 212 240 / 90%);
-    --cps-color-fill-accent-tertiary: rgb(11 169 208 / 80%);
+    --cps-color-fill-accent-secondary: color-mix(
+      in srgb,
+      var(--cps-palette-accent-600) 90%,
+      transparent
+    );
+    --cps-color-fill-accent-tertiary: color-mix(
+      in srgb,
+      var(--cps-palette-accent-500) 80%,
+      transparent
+    );
     --cps-color-fill-accent-disabled: rgb(255 255 255 / 15.81%);
 
     --cps-color-text-primary: var(--cps-palette-neutral-1000);

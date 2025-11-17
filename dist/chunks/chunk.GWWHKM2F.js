@@ -1,0 +1,1 @@
+import{a as o}from"./chunk.HVLKDKO4.js";import*as e from"react";import{createComponent as t}from"@lit-labs/react";var p=t({tagName:"cps-notification",elementClass:o,react:e,events:{onCpsShow:"cps-show",onCpsAfterShow:"cps-after-show",onCpsHide:"cps-hide",onCpsAfterHide:"cps-after-hide"}});var r=p;export{p as a,r as b};

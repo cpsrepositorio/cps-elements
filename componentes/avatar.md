@@ -18,27 +18,35 @@ const App = () => <CpsAvatar label="Alguma pessoa desconhecida" />;
 
 ### Imagens
 
-Para usar uma imagem para o avatar, defina o atributo `image` (mas não deixe de informar um `label` ainda assim).
+Para usar uma imagem para o avatar, defina o atributo `src` (mas não deixe de informar um `label` ainda assim). Opcionalmente, utilize também o atributo `srcset` para fornecer múltiplas resoluções, como em um `<img>` nativo.
 
 ```html preview
-<cps-avatar image="https://i.pravatar.cc/48?img=3" label="John Doe" loading="lazy"></cps-avatar>
-<cps-avatar image="https://i.pravatar.cc/48?img=5" label="Jane Doe" loading="lazy"></cps-avatar>
-<cps-avatar image="https://i.pravatar.cc/48?img=999" label="Erro proposital" loading="lazy"></cps-avatar>
+<cps-avatar
+  src="https://i.pravatar.cc/48?img=3"
+  srcset="https://i.pravatar.cc/48?img=3 1x, https://i.pravatar.cc/96?img=3 2x"
+  label="John Doe"
+></cps-avatar>
+<cps-avatar
+  src="https://i.pravatar.cc/48?img=5"
+  srcset="https://i.pravatar.cc/48?img=5 1x, https://i.pravatar.cc/96?img=5 2x"
+  label="Jane Doe"
+></cps-avatar>
+<cps-avatar src="https://i.pravatar.cc/48?img=999" label="Erro proposital"></cps-avatar>
 ```
 
 ```jsx react
 import { CpsAvatar } from '@cps-elements/web/react/avatar';
 
 const App = () => (
-  <CpsAvatar image="https://i.pravatar.cc/48?img=3" label="John Doe" loading="lazy" />
-  <CpsAvatar image="https://i.pravatar.cc/48?img=5" label="Jane Doe" loading="lazy" />
-  <CpsAvatar image="https://i.pravatar.cc/48?img=999" label="Erro proposital" loading="lazy" />
+  <CpsAvatar src="https://i.pravatar.cc/48?img=3" srcset="https://i.pravatar.cc/48?img=3 1x, https://i.pravatar.cc/96?img=3 2x" label="John Doe" />
+  <CpsAvatar src="https://i.pravatar.cc/48?img=5" srcset="https://i.pravatar.cc/48?img=5 1x, https://i.pravatar.cc/96?img=5 2x" label="Jane Doe" />
+  <CpsAvatar src="https://i.pravatar.cc/48?img=999" label="Erro proposital" />
 );
 ```
 
-Quando definida, a imagem tem prioridade sobre iniciais e ícones personalizados, ainda que estes também sejam informados. Caso ocorra um erro no carregamento da imagem, o avatar exibirá iniciais ou ícone como estratégia de _fallback_, dependendo do que tiver sido fornecido. Caso nenhum dos dois tenha sido informado, o avatar exibirá o ícone padrão.
+Quando definidos, os atributos `src` e `srcset` têm prioridade sobre iniciais e ícones personalizados, ainda que estes também sejam informados. Caso ocorra um erro no carregamento da imagem, o avatar exibirá iniciais ou ícone como estratégia de _fallback_, dependendo do que tiver sido fornecido. Caso nenhum dos dois tenha sido informado, o avatar exibirá o ícone padrão.
 
-?> Assim como imagens nativas, por padrão as imagens de avatar são carregadas durante o carregamento inicial da página (todos os avatares existentes de uma vez, independentemente de estarem em exibição ou não). Embora isso possa ser útil às vezes (e é o comportamento padrão por ser o comportamento legado de `<img>`), normalmente significa carregar muitos dados potencialmente desnecessários.<br><br>Assim, é recomendado usar o atributo `loading` como `lazy` para garantir o carregamento sob demanda apenas quando o avatar se tornar visível durante a rolagem da página. Leia mais sobre [Carregamento lento de imagens](https://web.dev/browser-level-image-lazy-loading/).
+?> Ao contrário de imagens nativas `<img>`, este componente por padrão [têm carregamento tardio](https://web.dev/browser-level-image-lazy-loading/). Isso normalmente evita requisições desnecessárias caso avatares estejam inicialmente fora da área visível, durante o carregamento da página. Mude para `loading="eager"` somente se houver alto nível de certeza sobre o avatar estar visível no _viewport_ logo que a página abre.
 
 ### Iniciais automáticas
 
@@ -112,36 +120,100 @@ const App = () => (
 );
 ```
 
+### Dica de ferramenta automática
+
+Por padrão, uma [dica de ferramenta](/componentes/tooltip) é exibida automaticamente ao interagir com o avatar, exibindo o conteúdo do `label`. Use o atributo `no-tooltip` se quiser desativar completamente a exibição automática de dica de ferramenta.
+
+```html preview
+<cps-avatar label="Estou aqui só para acessibilidade" no-tooltip></cps-avatar>
+```
+
+```jsx react
+import { CpsAvatar } from '@cps-elements/web/react/avatar';
+
+const App = () => <CpsAvatar label="Estou aqui só para acessibilidade" no-tooltip />;
+```
+
+?> Não é recomendado desativar a dica de ferramenta, a menos que extremamente necessário para seu caso específico, visto que sua apresentação automática aumenta significativamente a usabilidade.
+
 ### Tamanhos
 
-Um avatar padrão segue uma medida de `2em`, isto é, o dobro do tamanho da fonte atual do local em que está aplicado. Isso simplifica sua utilização em meio a outros conteúdos de diversos tamanhos tipográficos.
+Use o atributo `size` para definir o tamanho e o estilo do rótulo em conformidade à pilha tipografia.
 
-Entretanto, para um ajuste fino, o tamanho do avatar pode ser definido através da sobrescrita da propriedade CSS `--avatar-size`, seja em um avatar específico ou mesmo em qualquer contêiner superior com vários avatares dentro.
+```html preview
+<div class="avatar-sizes-example">
+  <cps-avatar size="inherit" label="Automático"></cps-avatar>
+  <cps-avatar size="stamp" label="Timbre"></cps-avatar>
+  <cps-avatar size="caption" label="Rubrica"></cps-avatar>
+  <cps-avatar size="label" label="Rótulo"></cps-avatar>
+  <cps-avatar size="body" label="Corpo"></cps-avatar>
+  <cps-avatar size="body-emphasized" label="Corpo enfatizado"></cps-avatar>
+  <cps-avatar size="body-strong" label="Corpo destacado"></cps-avatar>
+  <cps-avatar size="body-large" label="Corpo grande"></cps-avatar>
+  <cps-avatar size="subtitle" label="Subtítulo"></cps-avatar>
+  <cps-avatar size="title" label="Título"></cps-avatar>
+  <cps-avatar size="heading" label="Cabeçalho"></cps-avatar>
+  <cps-avatar size="display" label="Exibição"></cps-avatar>
+</div>
+
+<style>
+  .avatar-sizes-example {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>
+```
+
+```jsx react
+import { CpsAvatar } from '@cps-elements/web/react/avatar';
+
+const css = `
+  .avatar-sizes-example {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+`;
+
+const App = () => (
+  <>
+    <div class="avatar-sizes-example">
+      <CpsAvatar size="inherit" label="Automático"></CpsAvatar>
+      <CpsAvatar size="stamp" label="Timbre"></CpsAvatar>
+      <CpsAvatar size="caption" label="Rubrica"></CpsAvatar>
+      <CpsAvatar size="label" label="Rótulo"></CpsAvatar>
+      <CpsAvatar size="body" label="Corpo"></CpsAvatar>
+      <CpsAvatar size="body-emphasized" label="Corpo enfatizado"></CpsAvatar>
+      <CpsAvatar size="body-strong" label="Corpo destacado"></CpsAvatar>
+      <CpsAvatar size="body-large" label="Corpo grande"></CpsAvatar>
+      <CpsAvatar size="subtitle" label="Subtítulo"></CpsAvatar>
+      <CpsAvatar size="title" label="Título"></CpsAvatar>
+      <CpsAvatar size="heading" label="Cabeçalho"></CpsAvatar>
+      <CpsAvatar size="display" label="Exibição"></CpsAvatar>
+    </div>
+
+    <style>{css}</style>
+  </>
+);
+```
+
+Além dos valores explícitos, observe que o valor padrão do atributo `size` é `inherit`. Este valor faz com que o avatar tenha duas vezes o tamanho da fonte de seu contêiner superior.
+
+Para um ajuste ainda mais preciso, a propriedade CSS `--size` pode ser sobrescrita mudando este valor padrão de `2em` para qualquer outro valor. Tal ajuste pode ser feito tanto em um único avatar quanto em um contêiner com vários avatares.
 
 ```html preview
 <div>
-  <cps-label>Por avatar:</cps-label>
-  <cps-avatar label="Fulano de Tal" initials="auto" style="--avatar-size: 1.5rem"></cps-avatar>
-  <cps-avatar
-    image="https://i.pravatar.cc/48?img=8"
-    label="Ciclano da Silva"
-    loading="lazy"
-    style="--avatar-size: 3rem"
-  ></cps-avatar>
-  <cps-avatar label="Algum anônimo" style="--avatar-size: 4.5rem"></cps-avatar>
+  <cps-label>Por avatar:&nbsp;</cps-label>
+  <cps-avatar label="Fulano de Tal" initials="auto" style="--size: 1.5rem"></cps-avatar>
+  <cps-avatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" style="--size: 3rem"></cps-avatar>
+  <cps-avatar label="Algum anônimo" style="--size: 4.5rem"></cps-avatar>
 </div>
 <br />
-<div style="--avatar-size: 1.5rem">
-  <cps-label>No contêiner:</cps-label>
+<div style="--size: 4.5rem">
+  <cps-label>No contêiner:&nbsp;</cps-label>
   <cps-avatar label="Fulano de Tal" initials="auto"></cps-avatar>
-  <cps-avatar image="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" loading="lazy"></cps-avatar>
-  <cps-avatar label="Algum anônimo"></cps-avatar>
-</div>
-<br />
-<div style="--avatar-size: 4.5rem">
-  <cps-label>No contêiner:</cps-label>
-  <cps-avatar label="Fulano de Tal" initials="auto"></cps-avatar>
-  <cps-avatar image="https://i.pravatar.cc/72?img=8" label="Ciclano da Silva" loading="lazy"></cps-avatar>
+  <cps-avatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva"></cps-avatar>
   <cps-avatar label="Algum anônimo"></cps-avatar>
 </div>
 ```
@@ -154,34 +226,20 @@ const App = () => (
   <>
     <div>
       <CpsLabel>Por avatar:</CpsLabel>
-      <CpsAvatar label="Fulano de Tal" initials="auto" style={{ '--avatar-size': '1.5rem' }} />
-      <CpsAvatar
-        image="https://i.pravatar.cc/48?img=8"
-        label="Ciclano da Silva"
-        loading="lazy"
-        style={{ '--avatar-size': '3rem' }}
-      />
-      <CpsAvatar label="Algum anônimo" style={{ '--avatar-size': '4.5rem' }} />
+      <CpsAvatar label="Fulano de Tal" initials="auto" style={{ '--size': '1.5rem' }} />
+      <CpsAvatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" style={{ '--size': '3rem' }} />
+      <CpsAvatar label="Algum anônimo" style={{ '--size': '4.5rem' }} />
     </div>
     <br />
-    <div style={{ '--avatar-size': '1.5rem' }}>
+    <div style={{ '--size': '4.5rem' }}>
       <CpsLabel>No contêiner:</CpsLabel>
       <CpsAvatar label="Fulano de Tal" initials="auto" />
-      <CpsAvatar image="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" loading="lazy" />
-      <CpsAvatar label="Algum anônimo" />
-    </div>
-    <br />
-    <div style={{ '--avatar-size': '4.5rem' }}>
-      <CpsLabel>No contêiner:</CpsLabel>
-      <CpsAvatar label="Fulano de Tal" initials="auto" />
-      <CpsAvatar image="https://i.pravatar.cc/72?img=8" label="Ciclano da Silva" loading="lazy" />
+      <CpsAvatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" />
       <CpsAvatar label="Algum anônimo" />
     </div>
   </>
 );
 ```
-
-?> Embora qualquer tamanho possa ser utilizado na prática, recomendamos evitar avatares menores que `24px`, pois podem dificultar a leitura das iniciais ou a identificação de suas imagens. Além disso, atenção ao utilizar avatares maiores que `72px`, que podem acabar se tornando incompreensíveis como avatares, tornando-se meras imagens comuns no _layout_.
 
 ### Formatos
 
@@ -220,7 +278,7 @@ Entretanto, caso a geração de cores atrapalhe seu caso de uso específico, voc
   <cps-label>Cor automática (padrão):</cps-label>
   <cps-avatar label="João Ninguém"></cps-avatar>
   <cps-avatar label="Erick Petrucelli" initials="auto"></cps-avatar>
-  <cps-avatar image="https://i.pravatar.cc/48?img=11" label="Beltrano dos Santos" loading="lazy"></cps-avatar>
+  <cps-avatar src="https://i.pravatar.cc/48?img=11" label="Beltrano dos Santos"></cps-avatar>
 </div>
 
 <div>
@@ -228,9 +286,8 @@ Entretanto, caso a geração de cores atrapalhe seu caso de uso específico, voc
   <cps-avatar label="João Ninguém" color="var(--cps-palette-brand-500)"></cps-avatar>
   <cps-avatar label="Erick Petrucelli" initials="auto" color="var(--cps-palette-brand-500)"></cps-avatar>
   <cps-avatar
-    image="https://i.pravatar.cc/48?img=11"
+    src="https://i.pravatar.cc/48?img=11"
     label="Beltrano dos Santos"
-    loading="lazy"
     color="var(--cps-palette-brand-500)"
   ></cps-avatar>
 </div>
@@ -239,12 +296,7 @@ Entretanto, caso a geração de cores atrapalhe seu caso de uso específico, voc
   <cps-label>Forçando não usar cor:</cps-label>
   <cps-avatar label="João Ninguém" color="none"></cps-avatar>
   <cps-avatar label="Erick Petrucelli" initials="auto" color="none"></cps-avatar>
-  <cps-avatar
-    image="https://i.pravatar.cc/48?img=11"
-    label="Beltrano dos Santos"
-    loading="lazy"
-    color="none"
-  ></cps-avatar>
+  <cps-avatar src="https://i.pravatar.cc/48?img=11" label="Beltrano dos Santos" color="none"></cps-avatar>
 </div>
 ```
 
@@ -267,7 +319,7 @@ const App = () => (
 Um dos casos de uso mais comuns para distintivos ([_badges_](/componentes/badge)) é anexá-los a avatares. Para facilitar, os _badges_ serão posicionados automaticamente no canto superior direito quando forem filhos de um avatar. Utilize o _slot_ `badge` do avatar ao injetar este conteúdo, para não interferir no restante da renderização do avatar.
 
 ```html preview
-<cps-avatar image="https://i.pravatar.cc/48?img=17" label="Sawyer Hawkins">
+<cps-avatar src="https://i.pravatar.cc/48?img=17" label="Sawyer Hawkins">
   <cps-badge slot="badge">30</cps-badge>
 </cps-avatar>
 
@@ -286,7 +338,7 @@ import { CpsBadge } from '@cps-elements/web/react/badge';
 
 const App = () => (
   <>
-    <CpsAvatar image="https://i.pravatar.cc/48?img=17" label="Sawyer Hawkins">
+    <CpsAvatar src="https://i.pravatar.cc/48?img=17" label="Sawyer Hawkins">
       <CpsBadge slot="badge">30</CpsBadge>
     </CpsAvatar>
 
@@ -311,11 +363,11 @@ Uma apresentação comum de avatares é em grupos, como em uma lista de pessoas.
 
 ```html preview
 <div class="avatar-group">
-  <cps-avatar image="https://i.pravatar.cc/48?img=17" label="Sawyer Hawkins"></cps-avatar>
+  <cps-avatar src="https://i.pravatar.cc/48?img=17" label="Sawyer Hawkins"></cps-avatar>
   <cps-avatar label="Nathaniel Mendez" initials="auto"></cps-avatar>
-  <cps-avatar image="https://i.pravatar.cc/48?img=15" label="Kareem Sanchez"></cps-avatar>
-  <cps-avatar image="https://i.pravatar.cc/48?img=13" label="Landon Calderon"></cps-avatar>
-  <cps-avatar image="https://i.pravatar.cc/48?img=18" label="Shaun Mercado"></cps-avatar>
+  <cps-avatar src="https://i.pravatar.cc/48?img=15" label="Kareem Sanchez"></cps-avatar>
+  <cps-avatar src="https://i.pravatar.cc/48?img=13" label="Landon Calderon"></cps-avatar>
+  <cps-avatar src="https://i.pravatar.cc/48?img=18" label="Shaun Mercado"></cps-avatar>
   <cps-avatar label="Tara Valdez" initials="auto"></cps-avatar>
 </div>
 
@@ -347,22 +399,22 @@ const App = () => (
   <>
     <div className="avatar-group">
       <CpsAvatar
-        image="https://images.unsplash.com/photo-1490150028299-bf57d78394e0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80&crop=right"
+        src="https://images.unsplash.com/photo-1490150028299-bf57d78394e0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80&crop=right"
         label="Avatar 1 of 4"
       />
 
       <CpsAvatar
-        image="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=left&q=80"
+        src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=left&q=80"
         label="Avatar 2 of 4"
       />
 
       <CpsAvatar
-        image="https://images.unsplash.com/photo-1456439663599-95b042d50252?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=left&q=80"
+        src="https://images.unsplash.com/photo-1456439663599-95b042d50252?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=left&q=80"
         label="Avatar 3 of 4"
       />
 
       <CpsAvatar
-        image="https://images.unsplash.com/flagged/photo-1554078875-e37cb8b0e27d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=top&q=80"
+        src="https://images.unsplash.com/flagged/photo-1554078875-e37cb8b0e27d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&crop=top&q=80"
         label="Avatar 4 of 4"
       />
     </div>

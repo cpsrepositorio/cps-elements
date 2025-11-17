@@ -1,1 +1,0 @@
-import{a as o}from"./chunk.6JEAWBJE.js";import*as t from"react";import{createComponent as e}from"@lit-labs/react";var p=e({tagName:"cps-button",elementClass:o,react:t,events:{onCpsBlur:"cps-blur",onCpsFocus:"cps-focus",onCpsInvalid:"cps-invalid"}});var r=p;export{p as a,r as b};

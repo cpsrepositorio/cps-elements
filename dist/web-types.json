@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.23.2",
+  "version": "0.23.3",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -212,15 +212,22 @@
                 }
               },
               {
-                "name": "image",
-                "description": "O caminho da imagem a ser utilizada como avatar.",
+                "name": "src",
+                "description": "O caminho da imagem principal a ser utilizada como avatar.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "srcset",
+                "description": "O atributo `srcset` opcional do elemento `<img>`, para diferentes resoluções ou tamanhos de imagem.",
                 "value": {
                   "type": "string"
                 }
               },
               {
                 "name": "label",
-                "description": "Um rótulo que descreve a imagem, comumente o nome da entidade representada pelo avatar (por exemplo, o nome de uma pessoa). Também é utilizado para geração de iniciais, caso `initials` seja `auto`. Mesmo que não seja, considere como um atributo obrigatório, para que o avatar tenha acessibilidade apropriada.",
+                "description": "Um rótulo que descreve a imagem, comumente o nome da entidade representada pelo avatar (por exemplo,\no nome de uma pessoa). Também é utilizado para geração de iniciais, caso `initials` seja `auto`.\nMesmo que não seja, considere como um atributo obrigatório, para acessibilidade apropriada do avatar.",
                 "value": {
                   "type": "string"
                 }
@@ -254,7 +261,21 @@
                 }
               },
               {
-                "name": "handleImageChange",
+                "name": "noTooltip",
+                "description": "Se verdadeiro, desativa completamente a exibição de dica de ferramenta com o conteúdo do `label`.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do avatar. Por padrão, o tamanho é calculado como o dobro do tamanho de fonte do elemento pai.",
+                "value": {
+                  "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+                }
+              },
+              {
+                "name": "handleSrcChange",
                 "value": {}
               },
               {
@@ -290,15 +311,22 @@
           },
           "attributes": [
             {
-              "name": "image",
-              "description": "O caminho da imagem a ser utilizada como avatar.",
+              "name": "src",
+              "description": "O caminho da imagem principal a ser utilizada como avatar.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "srcset",
+              "description": "O atributo `srcset` opcional do elemento `<img>`, para diferentes resoluções ou tamanhos de imagem.",
               "value": {
                 "type": "string"
               }
             },
             {
               "name": "label",
-              "description": "Um rótulo que descreve a imagem, comumente o nome da entidade representada pelo avatar (por exemplo, o nome de uma pessoa). Também é utilizado para geração de iniciais, caso `initials` seja `auto`. Mesmo que não seja, considere como um atributo obrigatório, para que o avatar tenha acessibilidade apropriada.",
+              "description": "Um rótulo que descreve a imagem, comumente o nome da entidade representada pelo avatar (por exemplo,\no nome de uma pessoa). Também é utilizado para geração de iniciais, caso `initials` seja `auto`.\nMesmo que não seja, considere como um atributo obrigatório, para acessibilidade apropriada do avatar.",
               "value": {
                 "type": "string"
               }
@@ -329,6 +357,20 @@
               "description": "Quando `auto` (o padrão), a cor de fundo do avatar é gerada automaticamente a partir do `label`.\nQuando `none`, nenhuma cor de fundo é exibida (usando então um cinza neutro intermediário).\nCaso contrário, a cor de fundo é definida explicitamente neste atributo.",
               "value": {
                 "type": "'auto' | 'none' | string"
+              }
+            },
+            {
+              "name": "no-tooltip",
+              "description": "Se verdadeiro, desativa completamente a exibição de dica de ferramenta com o conteúdo do `label`.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do avatar. Por padrão, o tamanho é calculado como o dobro do tamanho de fonte do elemento pai.",
+              "value": {
+                "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
               }
             }
           ]
@@ -3220,6 +3262,206 @@
           ]
         },
         {
+          "name": "cps-icon-button",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon-button",
+          "js": {
+            "properties": [
+              {
+                "name": "button",
+                "value": {
+                  "type": "HTMLButtonElement | HTMLAnchorElement"
+                }
+              },
+              {
+                "name": "isFocused",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do botão.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "label",
+                "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\npor ferramentas de acessibilidade.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "library",
+                "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "src",
+                "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "href",
+                "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "target",
+                "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+                "value": {
+                  "type": "'_blank' | '_parent' | '_self' | '_top'"
+                }
+              },
+              {
+                "name": "rel",
+                "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "download",
+                "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o botão.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no botão.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no botão.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do botão.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o botão perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o botão obtém o foco."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "size",
+              "description": "O tamanho do botão.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "label",
+              "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\npor ferramentas de acessibilidade.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "library",
+              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "src",
+              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "href",
+              "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "target",
+              "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+              "value": {
+                "type": "'_blank' | '_parent' | '_self' | '_top'"
+              }
+            },
+            {
+              "name": "rel",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "download",
+              "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o botão.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-format-relative-time",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/format-relative-time",
@@ -3498,206 +3740,6 @@
           "attributes": []
         },
         {
-          "name": "cps-icon-button",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/icon-button",
-          "js": {
-            "properties": [
-              {
-                "name": "button",
-                "value": {
-                  "type": "HTMLButtonElement | HTMLAnchorElement"
-                }
-              },
-              {
-                "name": "isFocused",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do botão.",
-                "value": {
-                  "type": "'small' | 'medium' | 'large'"
-                }
-              },
-              {
-                "name": "label",
-                "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\npor ferramentas de acessibilidade.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "name",
-                "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
-                "value": {
-                  "type": "string | undefined"
-                }
-              },
-              {
-                "name": "library",
-                "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
-                "value": {
-                  "type": "string | undefined"
-                }
-              },
-              {
-                "name": "src",
-                "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
-                "value": {
-                  "type": "string | undefined"
-                }
-              },
-              {
-                "name": "href",
-                "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "target",
-                "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
-                "value": {
-                  "type": "'_blank' | '_parent' | '_self' | '_top'"
-                }
-              },
-              {
-                "name": "rel",
-                "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "download",
-                "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
-                "value": {
-                  "type": "string | undefined"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o botão.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "click",
-                "description": "Simula um _click_ no botão.",
-                "value": {}
-              },
-              {
-                "name": "focus",
-                "description": "Coloca o foco no botão.",
-                "value": {}
-              },
-              {
-                "name": "blur",
-                "description": "Remove o foco do botão.",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-blur",
-                "description": "Emitido quando o botão perde o foco."
-              },
-              {
-                "name": "cps-focus",
-                "description": "Emitido quando o botão obtém o foco."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "size",
-              "description": "O tamanho do botão.",
-              "value": {
-                "type": "'small' | 'medium' | 'large'"
-              }
-            },
-            {
-              "name": "label",
-              "description": "Descrição alternativa para ferramentas de acessibilidade. Não omita este atributo,\npois botões são elementos de interação e, desta forma, precisam ser lidos apropriadamente\npor ferramentas de acessibilidade.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "name",
-              "description": "Nome do ícone a renderizar. Os nomes disponíveis dependem da biblioteca de ícones que está sendo utilizada.",
-              "value": {
-                "type": "string | undefined"
-              }
-            },
-            {
-              "name": "library",
-              "description": "Nome da biblioteca previamente registrada, a ser utilizada para carregar este ícone,\natravés de seu `name`. Se omitido, a biblioteca `default` é utilizada.",
-              "value": {
-                "type": "string | undefined"
-              }
-            },
-            {
-              "name": "src",
-              "description": "URL de um arquivo SVG externo a carregar como ícone. Tenha certeza de confiar no conteúdo do arquivo que está\nincorporando, uma vez que seu código interno será executado pelo navegador, o que pode proporcionar ataques XSS\nse for carregado um arquivo malicioso.",
-              "value": {
-                "type": "string | undefined"
-              }
-            },
-            {
-              "name": "href",
-              "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "target",
-              "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
-              "value": {
-                "type": "'_blank' | '_parent' | '_self' | '_top'"
-              }
-            },
-            {
-              "name": "rel",
-              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "download",
-              "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
-              "value": {
-                "type": "string | undefined"
-              }
-            },
-            {
-              "name": "disabled",
-              "description": "Desabilita o botão.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-include",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/include",
@@ -3776,60 +3818,6 @@
             "events": []
           },
           "attributes": []
-        },
-        {
-          "name": "cps-label",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
-          "js": {
-            "properties": [
-              {
-                "name": "variant",
-                "description": "A variante temática do _label_.",
-                "value": {
-                  "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
-                "value": {
-                  "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-                }
-              },
-              {
-                "name": "tag",
-                "description": "O elemento HTML desejado para a renderização do _label_.",
-                "value": {
-                  "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "variant",
-              "description": "A variante temática do _label_.",
-              "value": {
-                "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
-              "value": {
-                "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              }
-            },
-            {
-              "name": "tag",
-              "description": "O elemento HTML desejado para a renderização do _label_.",
-              "value": {
-                "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-              }
-            }
-          ]
         },
         {
           "name": "cps-link",
@@ -3945,199 +3933,6 @@
               "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
               "value": {
                 "type": "string"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-menu",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
-          "js": {
-            "properties": [
-              {
-                "name": "defaultSlot",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleKeyDown",
-                "value": {}
-              },
-              {
-                "name": "handleMouseDown",
-                "value": {}
-              },
-              {
-                "name": "handleSlotChange",
-                "value": {}
-              },
-              {
-                "name": "isMenuItem",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-select",
-                "description": "Emitido quando um item de menu interno é selecionado."
-              }
-            ]
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-menu-item",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-item",
-          "js": {
-            "properties": [
-              {
-                "name": "cachedTextLabel",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "defaultSlot",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "menuItem",
-                "value": {
-                  "type": "HTMLElement"
-                }
-              },
-              {
-                "name": "type",
-                "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
-                "value": {
-                  "type": "'normal' | 'checkbox'"
-                }
-              },
-              {
-                "name": "checked",
-                "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "value",
-                "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o item de menu.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "handleHostClick",
-                "value": {}
-              },
-              {
-                "name": "handleDefaultSlotChange",
-                "value": {}
-              },
-              {
-                "name": "handleCheckedChange",
-                "value": {}
-              },
-              {
-                "name": "handleDisabledChange",
-                "value": {}
-              },
-              {
-                "name": "handleTypeChange",
-                "value": {}
-              },
-              {
-                "name": "getTextLabel",
-                "description": "Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.",
-                "value": {}
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "type",
-              "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
-              "value": {
-                "type": "'normal' | 'checkbox'"
-              }
-            },
-            {
-              "name": "checked",
-              "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "value",
-              "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "disabled",
-              "description": "Desabilita o item de menu.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-logo",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
-          "js": {
-            "properties": [
-              {
-                "name": "type",
-                "description": "O tipo de _logo_ a ser renderizado.",
-                "value": {
-                  "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
-                }
-              },
-              {
-                "name": "variant",
-                "description": "A variante temática do _logo_.",
-                "value": {
-                  "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "type",
-              "description": "O tipo de _logo_ a ser renderizado.",
-              "value": {
-                "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
-              }
-            },
-            {
-              "name": "variant",
-              "description": "A variante temática do _logo_.",
-              "value": {
-                "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
               }
             }
           ]
@@ -4775,6 +4570,253 @@
           ]
         },
         {
+          "name": "cps-logo",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/logo",
+          "js": {
+            "properties": [
+              {
+                "name": "type",
+                "description": "O tipo de _logo_ a ser renderizado.",
+                "value": {
+                  "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
+                }
+              },
+              {
+                "name": "variant",
+                "description": "A variante temática do _logo_.",
+                "value": {
+                  "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "type",
+              "description": "O tipo de _logo_ a ser renderizado.",
+              "value": {
+                "type": "| 'cps'\n    | 'cps-asscom'\n    | 'cps-cgtic'\n    | 'cps-sucar'\n    | 'elements'\n    | 'sp-horizontal'\n    | 'sp-vertical'"
+              }
+            },
+            {
+              "name": "variant",
+              "description": "A variante temática do _logo_.",
+              "value": {
+                "type": "'default' | 'monochromatic' | 'monochromatic-inverted'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-label",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
+          "js": {
+            "properties": [
+              {
+                "name": "variant",
+                "description": "A variante temática do _label_.",
+                "value": {
+                  "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
+                "value": {
+                  "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+                }
+              },
+              {
+                "name": "tag",
+                "description": "O elemento HTML desejado para a renderização do _label_.",
+                "value": {
+                  "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "A variante temática do _label_.",
+              "value": {
+                "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
+              "value": {
+                "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              }
+            },
+            {
+              "name": "tag",
+              "description": "O elemento HTML desejado para a renderização do _label_.",
+              "value": {
+                "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-menu",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
+          "js": {
+            "properties": [
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handleMouseDown",
+                "value": {}
+              },
+              {
+                "name": "handleSlotChange",
+                "value": {}
+              },
+              {
+                "name": "isMenuItem",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-select",
+                "description": "Emitido quando um item de menu interno é selecionado."
+              }
+            ]
+          },
+          "attributes": []
+        },
+        {
+          "name": "cps-menu-item",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-item",
+          "js": {
+            "properties": [
+              {
+                "name": "cachedTextLabel",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "menuItem",
+                "value": {
+                  "type": "HTMLElement"
+                }
+              },
+              {
+                "name": "type",
+                "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+                "value": {
+                  "type": "'normal' | 'checkbox'"
+                }
+              },
+              {
+                "name": "checked",
+                "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "value",
+                "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o item de menu.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleHostClick",
+                "value": {}
+              },
+              {
+                "name": "handleDefaultSlotChange",
+                "value": {}
+              },
+              {
+                "name": "handleCheckedChange",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "handleTypeChange",
+                "value": {}
+              },
+              {
+                "name": "getTextLabel",
+                "description": "Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "type",
+              "description": "O tipo de item de menu a ser renderizado. Para usar o estado `checked`, o valor deste atributo deve ter sido definido como `checkbox`.",
+              "value": {
+                "type": "'normal' | 'checkbox'"
+              }
+            },
+            {
+              "name": "checked",
+              "description": "Determina se o _checkbox_ do item de menu está selecionado (aplicável somente se o atributo `type` for `checked`).",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "value",
+              "description": "Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o item de menu.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-notification",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/notification",
@@ -5046,189 +5088,6 @@
           ]
         },
         {
-          "name": "cps-radio",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/radio",
-          "js": {
-            "properties": [
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "hasFocus",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "generatedId",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "title",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "id",
-                "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "name",
-                "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "label",
-                "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do campo.",
-                "value": {
-                  "type": "'small' | 'medium' | 'large'"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o campo.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "checked",
-                "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "handleIdChange",
-                "value": {}
-              },
-              {
-                "name": "addEventListeners",
-                "value": {}
-              },
-              {
-                "name": "removeEventListeners",
-                "value": {}
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "setInitialAttributes",
-                "value": {}
-              },
-              {
-                "name": "handleCheckedChange",
-                "value": {}
-              },
-              {
-                "name": "handleDisabledChange",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-blur",
-                "description": "Emitido quando o controle perde o foco."
-              },
-              {
-                "name": "cps-focus",
-                "description": "Emitido quando o controle obtém o foco."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "title",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "id",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "value",
-              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "name",
-              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "label",
-              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do campo.",
-              "value": {
-                "type": "'small' | 'medium' | 'large'"
-              }
-            },
-            {
-              "name": "disabled",
-              "description": "Desabilita o campo.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "checked",
-              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-radio-group",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/radio-group",
@@ -5489,6 +5348,254 @@
             {
               "name": "required",
               "description": "Torna o campo como sendo de preenchimento obrigatório, garantindo que um `<cps-radio>` ou um `<cps-toggle-button>` internos esteja marcado.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-progress",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/progress",
+          "js": {
+            "properties": [
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "value",
+                "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
+                "value": {
+                  "type": "number | undefined"
+                }
+              },
+              {
+                "name": "status",
+                "description": "O estado de progresso, para coloração contextual da barra de progresso.",
+                "value": {
+                  "type": "'default' | 'pause' | 'success' | 'error'"
+                }
+              },
+              {
+                "name": "label",
+                "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "indeterminate",
+                "description": "É possível setar programaticamente o estado `indeterminate` como `true`, o que causa a remoção do atributo `value`. Não tem efeito como atributo, pois simplesmente não informar o atributo `value` já é suficiente.",
+                "value": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "value",
+              "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
+              "value": {
+                "type": "number | undefined"
+              }
+            },
+            {
+              "name": "status",
+              "description": "O estado de progresso, para coloração contextual da barra de progresso.",
+              "value": {
+                "type": "'default' | 'pause' | 'success' | 'error'"
+              }
+            },
+            {
+              "name": "label",
+              "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
+              "value": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-radio",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/radio",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "hasFocus",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "generatedId",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "title",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "id",
+                "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "label",
+                "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do campo.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o campo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "checked",
+                "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleIdChange",
+                "value": {}
+              },
+              {
+                "name": "addEventListeners",
+                "value": {}
+              },
+              {
+                "name": "removeEventListeners",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "setInitialAttributes",
+                "value": {}
+              },
+              {
+                "name": "handleCheckedChange",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o controle perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o controle obtém o foco."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "id",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "label",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do campo.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o campo.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "checked",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.",
               "value": {
                 "type": "boolean"
               }
@@ -5941,71 +6048,6 @@
               "description": "Se verdadeiro, desativa completamente a exibição de dica de ferramenta durante a interação com o campo.",
               "value": {
                 "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "cps-progress",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/progress",
-          "js": {
-            "properties": [
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "value",
-                "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
-                "value": {
-                  "type": "number | undefined"
-                }
-              },
-              {
-                "name": "status",
-                "description": "O estado de progresso, para coloração contextual da barra de progresso.",
-                "value": {
-                  "type": "'default' | 'pause' | 'success' | 'error'"
-                }
-              },
-              {
-                "name": "label",
-                "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "indeterminate",
-                "description": "É possível setar programaticamente o estado `indeterminate` como `true`, o que causa a remoção do atributo `value`. Não tem efeito como atributo, pois simplesmente não informar o atributo `value` já é suficiente.",
-                "value": {
-                  "type": "boolean"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "value",
-              "description": "O progresso atual como uma porcentagem, de `0` a `100`. Se não informado, considera-se que a barra de progresso está em estado `indeterminate`.",
-              "value": {
-                "type": "number | undefined"
-              }
-            },
-            {
-              "name": "status",
-              "description": "O estado de progresso, para coloração contextual da barra de progresso.",
-              "value": {
-                "type": "'default' | 'pause' | 'success' | 'error'"
-              }
-            },
-            {
-              "name": "label",
-              "description": "Um rótulo descritivo para a barra de progresso. Este não será exibido na interface, mas será anunciado por dispositivos de acessibilidade durante a interação com o controle, sendo fortemente recomendado.",
-              "value": {
-                "type": "string"
               }
             }
           ]
@@ -6899,36 +6941,6 @@
           ]
         },
         {
-          "name": "cps-separator",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/separator",
-          "js": {
-            "properties": [
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "vertical",
-                "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
-                "value": {
-                  "type": "boolean"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "vertical",
-              "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-skeleton",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/skeleton",
@@ -6964,6 +6976,36 @@
               "description": "Arredondamento dos cantos, com o padrão sendo bordas arredondas em `4px`.",
               "value": {
                 "type": "'default' | 'corner' | 'full' | 'none'"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-separator",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/separator",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "vertical",
+                "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
+                "value": {
+                  "type": "boolean"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "vertical",
+              "description": "Desenha o separador em uma orientação vertical, ao invés do padrão horizontal.",
+              "value": {
+                "type": "boolean"
               }
             }
           ]
@@ -7364,6 +7406,150 @@
               "description": "Quando verdadeiro, o painel é exibido.",
               "value": {
                 "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-toggle-button",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/toggle-button",
+          "js": {
+            "properties": [
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "input",
+                "value": {
+                  "type": "HTMLInputElement"
+                }
+              },
+              {
+                "name": "hiddenInput",
+                "value": {
+                  "type": "HTMLInputElement"
+                }
+              },
+              {
+                "name": "hasFocus",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "checked",
+                "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\n\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "value",
+                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\n\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o botão alternável.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do botão alternável.\n\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "rounded",
+                "description": "Arredondamento dos cantos do botão alternável, com o padrão sendo bordas arredondas em `4px`.",
+                "value": {
+                  "type": "'default' | 'corner' | 'full'"
+                }
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no botão alternável.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no botão alternável.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do botão alternável.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o botão perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o botão obtém o foco."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "checked",
+              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\n\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "value",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\n\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o botão alternável.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do botão alternável.\n\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "rounded",
+              "description": "Arredondamento dos cantos do botão alternável, com o padrão sendo bordas arredondas em `4px`.",
+              "value": {
+                "type": "'default' | 'corner' | 'full'"
               }
             }
           ]
@@ -7861,150 +8047,6 @@
           ]
         },
         {
-          "name": "cps-toggle-button",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/toggle-button",
-          "js": {
-            "properties": [
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "input",
-                "value": {
-                  "type": "HTMLInputElement"
-                }
-              },
-              {
-                "name": "hiddenInput",
-                "value": {
-                  "type": "HTMLInputElement"
-                }
-              },
-              {
-                "name": "hasFocus",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "checked",
-                "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\n\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "value",
-                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\n\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o botão alternável.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do botão alternável.\n\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
-                "value": {
-                  "type": "'small' | 'medium' | 'large'"
-                }
-              },
-              {
-                "name": "rounded",
-                "description": "Arredondamento dos cantos do botão alternável, com o padrão sendo bordas arredondas em `4px`.",
-                "value": {
-                  "type": "'default' | 'corner' | 'full'"
-                }
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "handleDisabledChange",
-                "value": {}
-              },
-              {
-                "name": "click",
-                "description": "Simula um _click_ no botão alternável.",
-                "value": {}
-              },
-              {
-                "name": "focus",
-                "description": "Coloca o foco no botão alternável.",
-                "value": {}
-              },
-              {
-                "name": "blur",
-                "description": "Remove o foco do botão alternável.",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-blur",
-                "description": "Emitido quando o botão perde o foco."
-              },
-              {
-                "name": "cps-focus",
-                "description": "Emitido quando o botão obtém o foco."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "checked",
-              "description": "Determina o estado de checagem do campo, ou seja, quando presente, o campo encontra-se marcado.\n\nQuando utilizado dentro de um `RadioGroup`, o valor do grupo sobrepõe o estado de checagem individual do botão alternável, ou seja, não utilize este atributo quando o botão fizer parte de um _radio group_.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "value",
-              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\n\nQuando utilizado dentro de um `RadioGroup`, o valor é também utilizado como critério de marcação, mantendo-se o grupo e seus botões em sincronia. Desta forma, o valor deve ser único para cada botão alternável dentro do mesmo grupo.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "disabled",
-              "description": "Desabilita o botão alternável.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do botão alternável.\n\nQuando usado dentro de um `RadioGroup`, o tamanho será determinado pelo tamanho do grupo, portanto, tipicamente esse atributo pode ser omitido.",
-              "value": {
-                "type": "'small' | 'medium' | 'large'"
-              }
-            },
-            {
-              "name": "rounded",
-              "description": "Arredondamento dos cantos do botão alternável, com o padrão sendo bordas arredondas em `4px`.",
-              "value": {
-                "type": "'default' | 'corner' | 'full'"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-tooltip",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tooltip",
@@ -8224,65 +8266,65 @@
           ]
         },
         {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
           "name": "cps-visually-hidden",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/visually-hidden",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
           "js": {
             "properties": [],
             "events": []

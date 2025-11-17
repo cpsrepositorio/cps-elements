@@ -8,13 +8,16 @@ export default class CpsAvatar extends BaseElement {
     private hasError;
     private generatedInitials;
     private generatedBackground;
-    image: string;
+    src: string;
+    srcset: string;
     label: string;
     initials: 'auto' | string;
     loading: 'eager' | 'lazy';
     shape: 'circle' | 'square' | 'rounded';
     color: 'auto' | 'none' | string;
-    handleImageChange(): void;
+    noTooltip: boolean;
+    size: 'inherit' | 'stamp' | 'caption' | 'label' | 'body' | 'body-emphasized' | 'body-strong' | 'body-large' | 'subtitle' | 'title' | 'heading' | 'display';
+    handleSrcChange(): void;
     handleImageError(): void;
     handleLabelChange(): void;
     handleRangeChanges(): void;
