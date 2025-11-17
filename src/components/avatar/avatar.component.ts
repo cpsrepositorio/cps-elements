@@ -38,21 +38,28 @@ export default class CpsAvatar extends BaseElement {
   @state() private generatedInitials = '';
   @state() private generatedBackground = '';
 
-  /** O caminho da imagem a ser utilizada como avatar. */
-  @property() image = '';
+  /** O caminho da imagem principal a ser utilizada como avatar. */
+  @property({ reflect: true }) src = '';
 
-  /** Um rótulo que descreve a imagem, comumente o nome da entidade representada pelo avatar (por exemplo, o nome de uma pessoa). Também é utilizado para geração de iniciais, caso `initials` seja `auto`. Mesmo que não seja, considere como um atributo obrigatório, para que o avatar tenha acessibilidade apropriada. */
-  @property() label = '';
+  /** O atributo `srcset` opcional do elemento `<img>`, para diferentes resoluções ou tamanhos de imagem. */
+  @property({ reflect: true }) srcset = '';
+
+  /**
+   * Um rótulo que descreve a imagem, comumente o nome da entidade representada pelo avatar (por exemplo,
+   * o nome de uma pessoa). Também é utilizado para geração de iniciais, caso `initials` seja `auto`.
+   * Mesmo que não seja, considere como um atributo obrigatório, para acessibilidade apropriada do avatar.
+   */
+  @property({ reflect: true }) label = '';
 
   /**
    * Quando vazio (o padrão), nenhuma inicial é exibida, e o _slot_ `icon` é utilizado.
    * Quando `auto`, as iniciais são geradas automaticamente a partir do `label`.
    * Caso contrário, as iniciais são definidas explicitamente neste atributo.
    */
-  @property() initials: 'auto' | string = '';
+  @property({ reflect: true }) initials: 'auto' | string = '';
 
   /** O atributo `loading` do elemento `<img>` que exibe a imagem do avatar. */
-  @property() loading: 'eager' | 'lazy' = 'eager';
+  @property({ reflect: true }) loading: 'eager' | 'lazy' = 'lazy';
 
   /** Define a forma do avatar, circular por padrão. */
   @property({ reflect: true }) shape: 'circle' | 'square' | 'rounded' = 'circle';
@@ -64,8 +71,11 @@ export default class CpsAvatar extends BaseElement {
    */
   @property({ reflect: true }) color: 'auto' | 'none' | string = 'auto';
 
-  @watch('image')
-  handleImageChange() {
+  /** Se verdadeiro, desativa completamente a exibição de dica de ferramenta com o conteúdo do `label`. */
+  @property({ type: Boolean, attribute: 'no-tooltip', reflect: true }) noTooltip = false;
+
+  @watch('src')
+  handleSrcChange() {
     this.hasError = false;
   }
 
@@ -78,7 +88,7 @@ export default class CpsAvatar extends BaseElement {
     this.updateInitials();
   }
 
-  @watch(['image', 'label', 'color', 'hasError'])
+  @watch(['src', 'label', 'color', 'hasError'])
   handleRangeChanges() {
     this.updateBackground();
   }
@@ -97,7 +107,7 @@ export default class CpsAvatar extends BaseElement {
   }
 
   private updateBackground() {
-    if ((this.image && !this.hasError) || this.color === 'none') {
+    if ((this.src && !this.hasError) || this.color === 'none') {
       this.generatedBackground = '';
     } else if (this.color !== 'auto') {
       this.generatedBackground = this.color;
@@ -130,7 +140,8 @@ export default class CpsAvatar extends BaseElement {
       <img
         part="image"
         class="avatar__image"
-        src="${this.image}"
+        src="${this.src}"
+        srcset="${this.srcset}"
         loading="${this.loading}"
         alt=""
         @error=${this.handleImageError}
@@ -150,7 +161,7 @@ export default class CpsAvatar extends BaseElement {
     }
 
     return html`
-      <cps-tooltip content=${this.label}>
+      <cps-tooltip content=${this.label} ?disabled=${this.noTooltip || !this.label}>
         <div
           part="base"
           class=${classMap({
@@ -166,7 +177,7 @@ export default class CpsAvatar extends BaseElement {
           style=${this.generatedBackground ? `--avatar-background: ${this.generatedBackground}` : ''}
         >
           <slot name="badge"></slot>
-          ${this.image && !this.hasError ? avatarWithImage : avatarWithoutImage}
+          ${this.src && !this.hasError ? avatarWithImage : avatarWithoutImage}
         </div>
       </cps-tooltip>
     `;
