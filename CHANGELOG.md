@@ -8,7 +8,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ### Added
 
-- Atualização do `<cps-avatar>` para suportar propriedades `srcset` e `no-tooltip`.
+- Atualização do `<cps-avatar>` para suportar propriedades `srcset`, `sizes`, e `no-tooltip`.
 
 ### Changed
 

@@ -26,7 +26,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart initials - O elemento que embrulha a renderização das iniciais.
  * @csspart image - A imagem do avatar (um `<img>`). Exibido apenas quando o atributo `image` está presente.
  *
- * @cssproperty --avatar-size - A medida de tamanho do avatar, utilizada tanto como `width` quanto `height`.
+ * @cssproperty --size - A medida de tamanho do avatar. Utilizada tanto como `width` quanto `height`, corresponde a `2em` quando o atributo `size` é igual a `inherit`.
  */
 @customElement('cps-avatar')
 export default class CpsAvatar extends BaseElement {
@@ -73,6 +73,21 @@ export default class CpsAvatar extends BaseElement {
 
   /** Se verdadeiro, desativa completamente a exibição de dica de ferramenta com o conteúdo do `label`. */
   @property({ type: Boolean, attribute: 'no-tooltip', reflect: true }) noTooltip = false;
+
+  /** O tamanho do avatar. Por padrão, o tamanho é calculado como o dobro do tamanho de fonte do elemento pai. */
+  @property({ reflect: true }) size:
+    | 'inherit'
+    | 'stamp'
+    | 'caption'
+    | 'label'
+    | 'body'
+    | 'body-emphasized'
+    | 'body-strong'
+    | 'body-large'
+    | 'subtitle'
+    | 'title'
+    | 'heading'
+    | 'display' = 'inherit';
 
   @watch('src')
   handleSrcChange() {
@@ -166,10 +181,26 @@ export default class CpsAvatar extends BaseElement {
           part="base"
           class=${classMap({
             avatar: true,
+            'avatar--rtl': this.localize.dir() === 'rtl',
+
+            // Shapes
             'avatar--circle': this.shape === 'circle',
             'avatar--rounded': this.shape === 'rounded',
             'avatar--square': this.shape === 'square',
-            'avatar--rtl': this.localize.dir() === 'rtl'
+
+            // Sizes
+            'avatar--inherit': this.size === 'inherit',
+            'avatar--stamp': this.size === 'stamp',
+            'avatar--caption': this.size === 'caption',
+            'avatar--label': this.size === 'label',
+            'avatar--body': this.size === 'body',
+            'avatar--body-em': this.size === 'body-emphasized',
+            'avatar--body-strong': this.size === 'body-strong',
+            'avatar--body-large': this.size === 'body-large',
+            'avatar--subtitle': this.size === 'subtitle',
+            'avatar--title': this.size === 'title',
+            'avatar--heading': this.size === 'heading',
+            'avatar--display': this.size === 'display'
           })}
           role="img"
           tabindex="0"

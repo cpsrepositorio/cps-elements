@@ -138,29 +138,82 @@ const App = () => <CpsAvatar label="Estou aqui só para acessibilidade" no-toolt
 
 ### Tamanhos
 
-Um avatar padrão segue uma medida de `2em`, isto é, o dobro do tamanho da fonte atual do local em que está aplicado. Isso simplifica sua utilização em meio a outros conteúdos de diversos tamanhos tipográficos.
+Use o atributo `size` para definir o tamanho e o estilo do rótulo em conformidade à pilha tipografia.
 
-Entretanto, para um ajuste fino, o tamanho do avatar pode ser definido através da sobrescrita da propriedade CSS `--avatar-size`, seja em um avatar específico ou mesmo em qualquer contêiner superior com vários avatares dentro.
+```html preview
+<div class="avatar-sizes-example">
+  <cps-avatar size="inherit" label="Automático"></cps-avatar>
+  <cps-avatar size="stamp" label="Timbre"></cps-avatar>
+  <cps-avatar size="caption" label="Rubrica"></cps-avatar>
+  <cps-avatar size="label" label="Rótulo"></cps-avatar>
+  <cps-avatar size="body" label="Corpo"></cps-avatar>
+  <cps-avatar size="body-emphasized" label="Corpo enfatizado"></cps-avatar>
+  <cps-avatar size="body-strong" label="Corpo destacado"></cps-avatar>
+  <cps-avatar size="body-large" label="Corpo grande"></cps-avatar>
+  <cps-avatar size="subtitle" label="Subtítulo"></cps-avatar>
+  <cps-avatar size="title" label="Título"></cps-avatar>
+  <cps-avatar size="heading" label="Cabeçalho"></cps-avatar>
+  <cps-avatar size="display" label="Exibição"></cps-avatar>
+</div>
+
+<style>
+  .avatar-sizes-example {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>
+```
+
+```jsx react
+import { CpsAvatar } from '@cps-elements/web/react/avatar';
+
+const css = `
+  .avatar-sizes-example {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+`;
+
+const App = () => (
+  <>
+    <div class="avatar-sizes-example">
+      <CpsAvatar size="inherit" label="Automático"></CpsAvatar>
+      <CpsAvatar size="stamp" label="Timbre"></CpsAvatar>
+      <CpsAvatar size="caption" label="Rubrica"></CpsAvatar>
+      <CpsAvatar size="label" label="Rótulo"></CpsAvatar>
+      <CpsAvatar size="body" label="Corpo"></CpsAvatar>
+      <CpsAvatar size="body-emphasized" label="Corpo enfatizado"></CpsAvatar>
+      <CpsAvatar size="body-strong" label="Corpo destacado"></CpsAvatar>
+      <CpsAvatar size="body-large" label="Corpo grande"></CpsAvatar>
+      <CpsAvatar size="subtitle" label="Subtítulo"></CpsAvatar>
+      <CpsAvatar size="title" label="Título"></CpsAvatar>
+      <CpsAvatar size="heading" label="Cabeçalho"></CpsAvatar>
+      <CpsAvatar size="display" label="Exibição"></CpsAvatar>
+    </div>
+
+    <style>{css}</style>
+  </>
+);
+```
+
+Além dos valores explícitos, observe que o valor padrão do atributo `size` é `inherit`. Este valor faz com que o avatar tenha duas vezes o tamanho da fonte de seu contêiner superior.
+
+Para um ajuste ainda mais preciso, a propriedade CSS `--size` pode ser sobrescrita mudando este valor padrão de `2em` para qualquer outro valor. Tal ajuste pode ser feito tanto em um único avatar quanto em um contêiner com vários avatares.
 
 ```html preview
 <div>
-  <cps-label>Por avatar:</cps-label>
-  <cps-avatar label="Fulano de Tal" initials="auto" style="--avatar-size: 1.5rem"></cps-avatar>
-  <cps-avatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" style="--avatar-size: 3rem"></cps-avatar>
-  <cps-avatar label="Algum anônimo" style="--avatar-size: 4.5rem"></cps-avatar>
+  <cps-label>Por avatar:&nbsp;</cps-label>
+  <cps-avatar label="Fulano de Tal" initials="auto" style="--size: 1.5rem"></cps-avatar>
+  <cps-avatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" style="--size: 3rem"></cps-avatar>
+  <cps-avatar label="Algum anônimo" style="--size: 4.5rem"></cps-avatar>
 </div>
 <br />
-<div style="--avatar-size: 1.5rem">
-  <cps-label>No contêiner:</cps-label>
+<div style="--size: 4.5rem">
+  <cps-label>No contêiner:&nbsp;</cps-label>
   <cps-avatar label="Fulano de Tal" initials="auto"></cps-avatar>
   <cps-avatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva"></cps-avatar>
-  <cps-avatar label="Algum anônimo"></cps-avatar>
-</div>
-<br />
-<div style="--avatar-size: 4.5rem">
-  <cps-label>No contêiner:</cps-label>
-  <cps-avatar label="Fulano de Tal" initials="auto"></cps-avatar>
-  <cps-avatar src="https://i.pravatar.cc/72?img=8" label="Ciclano da Silva"></cps-avatar>
   <cps-avatar label="Algum anônimo"></cps-avatar>
 </div>
 ```
@@ -173,29 +226,20 @@ const App = () => (
   <>
     <div>
       <CpsLabel>Por avatar:</CpsLabel>
-      <CpsAvatar label="Fulano de Tal" initials="auto" style={{ '--avatar-size': '1.5rem' }} />
-      <CpsAvatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" style={{ '--avatar-size': '3rem' }} />
-      <CpsAvatar label="Algum anônimo" style={{ '--avatar-size': '4.5rem' }} />
+      <CpsAvatar label="Fulano de Tal" initials="auto" style={{ '--size': '1.5rem' }} />
+      <CpsAvatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" style={{ '--size': '3rem' }} />
+      <CpsAvatar label="Algum anônimo" style={{ '--size': '4.5rem' }} />
     </div>
     <br />
-    <div style={{ '--avatar-size': '1.5rem' }}>
+    <div style={{ '--size': '4.5rem' }}>
       <CpsLabel>No contêiner:</CpsLabel>
       <CpsAvatar label="Fulano de Tal" initials="auto" />
       <CpsAvatar src="https://i.pravatar.cc/48?img=8" label="Ciclano da Silva" />
       <CpsAvatar label="Algum anônimo" />
     </div>
-    <br />
-    <div style={{ '--avatar-size': '4.5rem' }}>
-      <CpsLabel>No contêiner:</CpsLabel>
-      <CpsAvatar label="Fulano de Tal" initials="auto" />
-      <CpsAvatar src="https://i.pravatar.cc/72?img=8" label="Ciclano da Silva" />
-      <CpsAvatar label="Algum anônimo" />
-    </div>
   </>
 );
 ```
-
-?> Embora qualquer tamanho possa ser utilizado na prática, recomendamos evitar avatares menores que `24px`, pois podem dificultar a leitura das iniciais ou a identificação de suas imagens. Além disso, atenção ao utilizar avatares maiores que `72px`, que podem acabar se tornando incompreensíveis como avatares, tornando-se meras imagens comuns no _layout_.
 
 ### Formatos
 

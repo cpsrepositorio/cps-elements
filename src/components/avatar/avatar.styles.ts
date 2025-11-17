@@ -14,8 +14,8 @@ export default css`
     align-items: center;
     justify-content: center;
     background: var(--avatar-background, var(--cps-palette-neutral-500));
-    width: var(--avatar-size, 2em);
-    height: var(--avatar-size, 2em);
+    width: var(--size, 2em);
+    height: var(--size, 2em);
     vertical-align: middle;
     color: rgb(255 255 255 / 78.6%);
     font-family: var(--cps-font-family-sans);
@@ -52,7 +52,7 @@ export default css`
 
   .avatar__icon,
   .avatar__initials {
-    font-size: calc(var(--avatar-size, 2em) * 0.5);
+    font-size: calc(var(--size, 2em) * 0.5);
   }
 
   .avatar__icon {
@@ -103,5 +103,51 @@ export default css`
     right: auto;
     left: 1.5px;
     translate: -50% -50%;
+  }
+
+  /* Sizes */
+
+  .avatar--stamp {
+    --size: calc(var(--cps-font-size-3xs) * 2);
+  }
+
+  .avatar--caption {
+    --size: calc(var(--cps-font-size-2xs) * 2);
+  }
+
+  .avatar--label {
+    --size: calc(var(--cps-font-size-xs) * 2);
+  }
+
+  .avatar--body {
+    --size: calc(var(--cps-font-size-sm) * 2);
+  }
+
+  .avatar--body-em {
+    --size: calc(var(--cps-font-size-lt) * 2);
+  }
+
+  .avatar--body-strong {
+    --size: calc(var(--cps-font-size-lt) * 2);
+  }
+
+  .avatar--body-large {
+    --size: calc(var(--cps-font-size-base) * 2);
+  }
+
+  .avatar--subtitle {
+    --size: calc(var(--cps-font-size-lg) * 2);
+  }
+
+  .avatar--title {
+    --size: calc(var(--cps-font-size-xl) * 2);
+  }
+
+  .avatar--heading {
+    --size: calc(var(--cps-font-size-4xl) * 2);
+  }
+
+  .avatar--display {
+    --size: calc(var(--cps-font-size-7xl) * 2);
   }
 `;
