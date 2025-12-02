@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do componente `<cps-switch>`.
+
 ## 0.23.3 - 2025-11-17
 
 ### Added

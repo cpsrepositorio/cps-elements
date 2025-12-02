@@ -53,7 +53,7 @@ De fato, usar o _slot_ ao invés do atributo, mesmo para textos puros, pode ser 
 
 ### Checagem
 
-Use o atributo `checked` para definir o campo como marcado/checado. Este atributo reage a alterações em tempo real, assim como um campo de entrada padrão nativo (`<input type="checkbox">`).
+Use o atributo `checked` para definir o campo como marcado/checado. Este atributo reage a alterações em tempo real, assim como um campo de entrada nativo padrão (`<input type="checkbox">`).
 
 ```html preview
 <cps-checkbox checked>Lembrar-me</cps-checkbox>
