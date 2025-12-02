@@ -1,0 +1,1 @@
+import{a as e}from"./chunk.4MANNGUD.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var m=o({tagName:"cps-menu-label",elementClass:e,react:t,events:{}});var n=m;export{m as a,n as b};

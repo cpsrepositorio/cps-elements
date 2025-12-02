@@ -54,7 +54,7 @@
   - [Spinner](/componentes/spinner)
   - [Split Button](/componentes/split-button)
   - [Stepper <small>(em breve)</small>](/componentes/stepper)
-  - [Switch <small>(em breve)</small>](/componentes/switch)
+  - [Switch](/componentes/switch)
   - [Tab Group](/componentes/tab-group)
   - [Tab Item](/componentes/tab-item)
   - [Tab Panel](/componentes/tab-panel)

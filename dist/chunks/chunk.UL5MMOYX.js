@@ -1,0 +1,1 @@
+import{a as p}from"./chunk.2D6DC3QL.js";import*as o from"react";import{createComponent as s}from"@lit-labs/react";var t=s({tagName:"cps-switch",elementClass:p,react:o,events:{onCpsBlur:"cps-blur",onCpsChange:"cps-change",onCpsFocus:"cps-focus",onCpsInput:"cps-input",onCpsInvalid:"cps-invalid"}});var c=t;export{t as a,c as b};
