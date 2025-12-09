@@ -9,6 +9,7 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 ### Added
 
 - Criação do utilitário `<cps-mutation-observer>`.
+- Criação do utilitário `<cps-resize-observer>`.
 
 ## 0.24.0 - 2025-12-02
 

@@ -16,6 +16,7 @@ export { default as CpsMutationEvent } from './cps-mutation.js';
 export { default as CpsRemoveEvent } from './cps-remove.js';
 export { default as CpsReposition } from './cps-reposition.js';
 export { default as CpsRequestClose } from './cps-request-close.js';
+export { default as CpsResizeEvent } from './cps-resize.js';
 export { default as CpsSelect } from './cps-select.js';
 export { default as CpsShow } from './cps-show.js';
 export { default as CpsTabHide } from './cps-tab-hide.js';

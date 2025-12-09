@@ -35,6 +35,7 @@ export { CpsProgress } from './components/progress.js';
 export { CpsRadio } from './components/radio.js';
 export { CpsRange } from './components/range.js';
 export { CpsRating } from './components/rating.js';
+export { CpsResizeObserver } from './components/resize-observer.js';
 export { CpsRadioGroup } from './components/radio-group.js';
 export { CpsSelect } from './components/select.js';
 export { CpsSeparator } from './components/separator.js';
