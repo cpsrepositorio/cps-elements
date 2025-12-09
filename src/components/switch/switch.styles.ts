@@ -15,10 +15,10 @@ export default css`
   .switch {
     display: inline-flex;
     position: relative;
+    gap: var(--cps-spacing-2);
     align-items: flex-start;
     cursor: pointer;
     vertical-align: middle;
-    gap: var(--cps-spacing-2);
   }
 
   .switch--small {
@@ -42,36 +42,36 @@ export default css`
     flex: 0 0 auto;
     align-items: center;
     justify-content: flex-start;
-    width: calc(var(--height) * 2 - var(--padding) * 2);
-    height: var(--height);
-    border-radius: var(--cps-border-radius-pill);
     transition: var(--cps-transition-fast) background-color, var(--cps-transition-fast) border-color;
     border: solid var(--border) var(--cps-color-text-secondary);
+    border-radius: var(--cps-border-radius-pill);
     background-color: var(--cps-color-fill-alt-secondary);
     padding: var(--padding);
+    width: calc(var(--height) * 2 - var(--padding) * 2);
+    height: var(--height);
   }
 
   .switch__knob {
     display: inline-flex;
+    transition: var(--cps-transition-fast) transform, var(--cps-transition-fast) background-color;
     z-index: 1;
+    border-radius: var(--cps-border-radius-full);
+    box-shadow: var(--cps-shadow-md);
+    background-color: var(--cps-color-text-secondary);
     width: calc(var(--height) - var(--padding) * 2 - var(--border) * 2);
     height: calc(var(--height) - var(--padding) * 2 - var(--border) * 2);
-    border-radius: var(--cps-border-radius-full);
-    background-color: var(--cps-color-text-secondary);
-    box-shadow: var(--cps-shadow-md);
-    transition: var(--cps-transition-fast) transform, var(--cps-transition-fast) background-color;
   }
 
   .switch__input {
     position: absolute;
-    opacity: 0;
-    margin: 0;
     top: calc(var(--padding) + var(--border));
     left: calc(var(--padding) + var(--border));
-    width: calc(var(--height) - var(--padding) * 2 - var(--border) * 2);
-    height: calc(var(--height) - var(--padding) * 2 - var(--border) * 2);
+    opacity: 0;
+    margin: 0;
     outline: none;
     padding: 0;
+    width: calc(var(--height) - var(--padding) * 2 - var(--border) * 2);
+    height: calc(var(--height) - var(--padding) * 2 - var(--border) * 2);
     pointer-events: none;
   }
 
@@ -154,9 +154,9 @@ export default css`
 
   .switch--fluid {
     display: flex;
+    gap: var(--cps-spacing-2-5);
     justify-content: space-between;
     width: 100%;
-    gap: var(--cps-spacing-2-5);
   }
 
   .switch--fluid .switch__label {

@@ -100,16 +100,16 @@ export default css`
 
   .card--rounded-start {
     border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
     border-top-right-radius: 0;
+    border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: 0;
   }
 
   .card--rounded-end {
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
     border-top-left-radius: 0;
+    border-top-right-radius: var(--border-radius);
     border-bottom-left-radius: 0;
+    border-bottom-right-radius: var(--border-radius);
   }
 
   .card--rounded-top {
@@ -120,38 +120,38 @@ export default css`
   }
 
   .card--rounded-bottom {
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
   }
 
   .card--rounded-top-start {
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .card--rounded-top-end {
-    border-top-right-radius: var(--border-radius);
     border-top-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: var(--border-radius);
     border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .card--rounded-bottom-start {
-    border-bottom-left-radius: var(--border-radius);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: 0;
   }
 
   .card--rounded-bottom-end {
-    border-bottom-right-radius: var(--border-radius);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;
+    border-bottom-right-radius: var(--border-radius);
   }
 
   /* Elevations */

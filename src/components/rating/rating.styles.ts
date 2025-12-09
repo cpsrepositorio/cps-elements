@@ -20,38 +20,38 @@ export default css`
   }
 
   .rating {
+    display: inline-flex;
+    position: relative;
+    flex-wrap: wrap;
     border-radius: var(--cps-border-radius-medium);
     cursor: pointer;
-    display: inline-flex;
-    flex-wrap: wrap;
-    position: relative;
     vertical-align: middle;
   }
 
   .rating--focused:focus-visible {
-    outline-offset: var(--cps-focus-ring-offset);
     outline: var(--cps-focus-ring);
+    outline-offset: var(--cps-focus-ring-offset);
   }
 
   .rating__control {
-    height: 100%;
-    left: 0;
-    opacity: 0;
     position: absolute;
     top: 0;
-    width: 100%;
+    left: 0;
+    opacity: 0;
     z-index: -1;
+    width: 100%;
+    height: 100%;
   }
 
   .rating__symbol {
     box-sizing: content-box;
-    color: var(--symbol-color);
-    cursor: inherit;
     display: inline-grid;
-    padding: calc(var(--cps-spacing-0-5) + var(--cps-spacing-px));
-    place-items: center;
     position: relative;
+    place-items: center;
     transition: var(--cps-transition-fast) transform;
+    cursor: inherit;
+    padding: calc(var(--cps-spacing-0-5) + var(--cps-spacing-px));
+    color: var(--symbol-color);
   }
 
   .rating__symbol cps-icon {
@@ -59,9 +59,9 @@ export default css`
   }
 
   .rating__symbol svg .filled {
-    color: inherit;
-    opacity: 0;
     transition: var(--cps-transition-fast) opacity;
+    opacity: 0;
+    color: inherit;
   }
 
   .rating__symbol--half svg .filled,
@@ -75,11 +75,11 @@ export default css`
   }
 
   .rating__symbol ::slotted([slot='filled']) {
-    color: inherit;
-    fill: inherit;
-    opacity: 0;
     transition: var(--cps-transition-fast) opacity;
+    opacity: 0;
+    color: inherit;
     pointer-events: none;
+    fill: inherit;
   }
 
   .rating__symbol--full ::slotted([slot='filled']),
@@ -104,25 +104,25 @@ export default css`
   }
 
   .rating--disabled .rating__symbol {
-    color: var(--cps-color-text-disabled);
     isolation: isolate;
+    color: var(--cps-color-text-disabled);
   }
 
   .rating--small .rating__symbol,
   .rating--small .rating__symbol svg {
-    height: var(--cps-font-size-sm);
     width: var(--cps-font-size-sm);
+    height: var(--cps-font-size-sm);
   }
 
   .rating--medium .rating__symbol,
   .rating--medium .rating__symbol svg {
-    height: var(--cps-font-size-lg);
     width: var(--cps-font-size-lg);
+    height: var(--cps-font-size-lg);
   }
 
   .rating--large .rating__symbol,
   .rating--large .rating__symbol svg {
-    height: var(--cps-font-size-2xl);
     width: var(--cps-font-size-2xl);
+    height: var(--cps-font-size-2xl);
   }
 `;

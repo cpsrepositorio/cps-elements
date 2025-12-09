@@ -423,8 +423,8 @@ export default css`
 
   /* Grouped dropdown without placeholder has fine-tuned padding */
   :host(.cps-button-group__button) .dropdown:not(.dropdown--placeholder-visible) .dropdown__display-span {
-    padding-left: var(--cps-spacing-1-5);
     padding-right: 0;
+    padding-left: var(--cps-spacing-1-5);
   }
 
   :host(.cps-button-group__button) .dropdown:not(.dropdown--placeholder-visible) .dropdown__expand-icon {

@@ -18,38 +18,37 @@ export default css`
   }
 
   .progress-bar {
-    position: relative;
-    height: max(var(--indicator-height), var(--track-height));
-    overflow: hidden;
     display: flex;
+    position: relative;
     align-items: center;
     border-radius: var(--cps-border-radius-pill);
+    height: max(var(--indicator-height), var(--track-height));
+    overflow: hidden;
   }
 
   .progress-bar__track {
+    border-radius: var(--cps-border-radius-pill);
+    background-color: var(--track-color);
     width: 100%;
     height: var(--track-height);
-    background-color: var(--track-color);
-    border-radius: var(--cps-border-radius-pill);
   }
 
   .progress-bar__indicator {
     position: absolute;
-    height: var(--indicator-height);
-    font: var(--cps-font-body);
-    color: var(--label-color);
+    transition: 10ms width, 250ms background-color;
     border-radius: var(--cps-border-radius-pill);
+    height: var(--indicator-height);
+    overflow: hidden;
     text-align: center;
     white-space: nowrap;
-    overflow: hidden;
-    transition: 10ms width, 250ms background-color;
-    user-select: none;
+    color: var(--label-color);
+    font: var(--cps-font-body);
     -webkit-user-select: none;
+    user-select: none;
   }
 
   /* Sheen effect */
   .progress-bar__indicator::before {
-    content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -63,6 +62,7 @@ export default css`
     );
     background-size: 200vw 100vw;
     animation: sheen 4s linear infinite;
+    content: '';
   }
 
   /* Status */
