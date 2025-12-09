@@ -28,6 +28,7 @@ export { CpsLogo } from './components/logo.js';
 export { CpsMenu } from './components/menu.js';
 export { CpsMenuItem } from './components/menu-item.js';
 export { CpsMenuLabel } from './components/menu-label.js';
+export { CpsMutationObserver } from './components/mutation-observer.js';
 export { CpsNotification, toast } from './components/notification.js';
 export { CpsOption } from './components/option.js';
 export { CpsProgress } from './components/progress.js';

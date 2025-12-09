@@ -12,6 +12,7 @@ export { default as CpsInitialFocus } from './cps-initial-focus.js';
 export { default as CpsInputEvent } from './cps-input.js';
 export { default as CpsInvalidEvent } from './cps-invalid.js';
 export { default as CpsLoadEvent } from './cps-load.js';
+export { default as CpsMutationEvent } from './cps-mutation.js';
 export { default as CpsRemoveEvent } from './cps-remove.js';
 export { default as CpsReposition } from './cps-reposition.js';
 export { default as CpsRequestClose } from './cps-request-close.js';

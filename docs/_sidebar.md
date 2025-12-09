@@ -73,7 +73,7 @@
   - [Format Number](/utilitários/format-number)
   - [Format Relative Time](/utilitários/format-relative-time)
   - [Include](/utilitários/include)
-  - [Mutation Observer <small>(em breve)</small>](/utilitários/mutation-observer)
+  - [Mutation Observer](/utilitários/mutation-observer)
   - [Resize Observer <small>(em breve)</small>](/utilitários/resize-observer)
   - [Visually Hidden](/utilitários/visually-hidden)
   - [<code>...</code> <small>(em breve)</small>](/404)

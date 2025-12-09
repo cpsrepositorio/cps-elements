@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- Criação do utilitário `<cps-mutation-observer>`.
+
 ## 0.24.0 - 2025-12-02
 
 ### Added
