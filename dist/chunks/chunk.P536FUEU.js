@@ -1,0 +1,1 @@
+import{a as e}from"./chunk.AFGPN5O4.js";import*as r from"react";import{createComponent as o}from"@lit-labs/react";var s=o({tagName:"cps-resize-observer",elementClass:e,react:r,events:{onCpsResize:"cps-resize"}});var m=s;export{s as a,m as b};

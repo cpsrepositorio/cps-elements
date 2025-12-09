@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-types",
   "name": "@cps-elements/web",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "description-markup": "markdown",
   "framework-config": {
     "enable-when": {
@@ -3740,6 +3740,86 @@
           ]
         },
         {
+          "name": "cps-include",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/include",
+          "js": {
+            "properties": [
+              {
+                "name": "src",
+                "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "mode",
+                "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
+                "value": {
+                  "type": "'cors' | 'no-cors' | 'same-origin'"
+                }
+              },
+              {
+                "name": "allowScripts",
+                "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "executeScript",
+                "value": {}
+              },
+              {
+                "name": "handleSrcChange",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-load",
+                "description": "Emitido quando o arquivo incluído foi carregado."
+              },
+              {
+                "name": "cps-error",
+                "description": "Emitido quando o arquivo incluído falha durante o carregamento."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "src",
+              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "mode",
+              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
+              "value": {
+                "type": "'cors' | 'no-cors' | 'same-origin'"
+              }
+            },
+            {
+              "name": "allow-scripts",
+              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
           "name": "cps-input",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/input",
@@ -4584,6 +4664,48 @@
           ]
         },
         {
+          "name": "cps-menu",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
+          "js": {
+            "properties": [
+              {
+                "name": "defaultSlot",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handleMouseDown",
+                "value": {}
+              },
+              {
+                "name": "handleSlotChange",
+                "value": {}
+              },
+              {
+                "name": "isMenuItem",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-select",
+                "description": "Emitido quando um item de menu interno é selecionado."
+              }
+            ]
+          },
+          "attributes": []
+        },
+        {
           "name": "cps-menu-item",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-item",
@@ -4695,48 +4817,6 @@
           ]
         },
         {
-          "name": "cps-menu",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
-          "js": {
-            "properties": [
-              {
-                "name": "defaultSlot",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleKeyDown",
-                "value": {}
-              },
-              {
-                "name": "handleMouseDown",
-                "value": {}
-              },
-              {
-                "name": "handleSlotChange",
-                "value": {}
-              },
-              {
-                "name": "isMenuItem",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-select",
-                "description": "Emitido quando um item de menu interno é selecionado."
-              }
-            ]
-          },
-          "attributes": []
-        },
-        {
           "name": "cps-menu-label",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu-label",
@@ -4747,84 +4827,131 @@
           "attributes": []
         },
         {
-          "name": "cps-include",
+          "name": "cps-mutation-observer",
           "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/include",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/mutation-observer",
           "js": {
             "properties": [
               {
-                "name": "src",
-                "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
+                "name": "mutationObserver",
+                "value": {
+                  "type": "MutationObserver"
+                }
+              },
+              {
+                "name": "attr",
+                "description": "Observa alterações em atributos.\nPara observar todos os atributos, use `*`.\nPara atributos específicos, separe-os por vírgula, por exemplo, `attr=\"class,id,title\"`.",
                 "value": {
                   "type": "string"
                 }
               },
               {
-                "name": "mode",
-                "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
-                "value": {
-                  "type": "'cors' | 'no-cors' | 'same-origin'"
-                }
-              },
-              {
-                "name": "allowScripts",
-                "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
+                "name": "attrOldValue",
+                "description": "Indica se o valor anterior do atributo deve ser registrado ao monitorar alterações.",
                 "value": {
                   "type": "boolean"
                 }
               },
               {
-                "name": "executeScript",
+                "name": "charData",
+                "description": "Observa alterações nos dados de caracteres textuais contidos no nó.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "charDataOldValue",
+                "description": "Indica se o valor anterior do texto do nó deve ser registrado.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "childList",
+                "description": "Observa a adição ou remoção de novos nós filhos.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desativa o observador.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleMutation",
                 "value": {}
               },
               {
-                "name": "handleSrcChange",
+                "name": "startObserver",
+                "value": {}
+              },
+              {
+                "name": "stopObserver",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "handleChange",
                 "value": {}
               }
             ],
             "events": [
               {
-                "name": "cps-load",
-                "description": "Emitido quando o arquivo incluído foi carregado."
-              },
-              {
-                "name": "cps-error",
-                "description": "Emitido quando o arquivo incluído falha durante o carregamento."
+                "name": "cps-mutation",
+                "description": "Emitido quando ocorre uma mutação."
               }
             ]
           },
           "attributes": [
             {
-              "name": "src",
-              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
+              "name": "attr",
+              "description": "Observa alterações em atributos.\nPara observar todos os atributos, use `*`.\nPara atributos específicos, separe-os por vírgula, por exemplo, `attr=\"class,id,title\"`.",
               "value": {
                 "type": "string"
               }
             },
             {
-              "name": "mode",
-              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
+              "name": "attr-old-value",
+              "description": "Indica se o valor anterior do atributo deve ser registrado ao monitorar alterações.",
               "value": {
-                "type": "'cors' | 'no-cors' | 'same-origin'"
+                "type": "boolean"
               }
             },
             {
-              "name": "allow-scripts",
-              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
+              "name": "char-data",
+              "description": "Observa alterações nos dados de caracteres textuais contidos no nó.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "char-data-old-value",
+              "description": "Indica se o valor anterior do texto do nó deve ser registrado.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "child-list",
+              "description": "Observa a adição ou remoção de novos nós filhos.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desativa o observador.",
               "value": {
                 "type": "boolean"
               }
             }
           ]
-        },
-        {
-          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once.",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
         },
         {
           "name": "cps-notification",
@@ -6419,6 +6546,65 @@
           ]
         },
         {
+          "name": "cps-resize-observer",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/resize-observer",
+          "js": {
+            "properties": [
+              {
+                "name": "resizeObserver",
+                "value": {
+                  "type": "ResizeObserver"
+                }
+              },
+              {
+                "name": "observedElements",
+                "value": {
+                  "type": "HTMLElement[]"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desativa o observador.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleSlotChange",
+                "value": {}
+              },
+              {
+                "name": "startObserver",
+                "value": {}
+              },
+              {
+                "name": "stopObserver",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-resize",
+                "description": "Emitido quando um elemento é redimensionado."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "disabled",
+              "description": "Desativa o observador.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-select",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/select",
@@ -7652,6 +7838,60 @@
           ]
         },
         {
+          "name": "cps-tab-panel",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-panel",
+          "js": {
+            "properties": [
+              {
+                "name": "attrId",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "componentId",
+                "value": {}
+              },
+              {
+                "name": "name",
+                "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "selected",
+                "description": "Quando verdadeiro, o painel é exibido.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "handleSelectedChanged",
+                "value": {}
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "name",
+              "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "selected",
+              "description": "Quando verdadeiro, o painel é exibido.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
           "name": "cps-textarea",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/textarea",
@@ -8288,16 +8528,6 @@
           ]
         },
         {
-          "name": "cps-visually-hidden",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/visually-hidden",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
           "name": "cps-tooltip",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tooltip",
@@ -8517,114 +8747,70 @@
           ]
         },
         {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
-        },
-        {
-          "name": "cps-tab-panel",
+          "name": "cps-visually-hidden",
           "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-panel",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/visually-hidden",
           "js": {
-            "properties": [
-              {
-                "name": "attrId",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "componentId",
-                "value": {}
-              },
-              {
-                "name": "name",
-                "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "selected",
-                "description": "Quando verdadeiro, o painel é exibido.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "handleSelectedChanged",
-                "value": {}
-              }
-            ],
+            "properties": [],
             "events": []
           },
-          "attributes": [
-            {
-              "name": "name",
-              "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "selected",
-              "description": "Quando verdadeiro, o painel é exibido.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
         }
       ]
     }

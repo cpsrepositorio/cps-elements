@@ -80,8 +80,8 @@ O conteúdo principal de um _link_ não é restrito apenas a textos. Outros cont
 <style>
   .link-content-example {
     display: flex;
-    align-items: start;
     gap: 1.75rem;
+    align-items: start;
     font-size: 4rem;
   }
 

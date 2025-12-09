@@ -1,1 +1,0 @@
-import{a as e}from"./chunk.Q332XGKX.js";import*as o from"react";import{createComponent as t}from"@lit-labs/react";var r=t({tagName:"cps-progress",elementClass:e,react:o,events:{}});var p=r;export{r as a,p as b};

@@ -1,1 +1,0 @@
-import{a as o}from"./chunk.6ZHSIDEE.js";import*as e from"react";import{createComponent as n}from"@lit-labs/react";var p=n({tagName:"cps-rating",elementClass:o,react:e,events:{onCpsChange:"cps-change",onCpsFocus:"cps-focus",onCpsBlur:"cps-blur",onCpsInvalid:"cps-invalid"}});var a=p;export{p as a,a as b};

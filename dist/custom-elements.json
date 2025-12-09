@@ -671,6 +671,29 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/mutation-observer.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./mutation-observer/mutation-observer.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "default",
+            "module": "./mutation-observer/mutation-observer.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/notification.js",
       "declarations": [],
       "exports": [
@@ -826,6 +849,29 @@
           "declaration": {
             "name": "default",
             "module": "./rating/rating.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/resize-observer.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./resize-observer/resize-observer.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "default",
+            "module": "./resize-observer/resize-observer.component.js"
           }
         }
       ]
@@ -8168,6 +8214,185 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/include/include.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsInclude",
+          "members": [
+            {
+              "kind": "field",
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
+              "attribute": "src"
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "type": {
+                "text": "'cors' | 'no-cors' | 'same-origin'"
+              },
+              "default": "'cors'",
+              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
+              "attribute": "mode"
+            },
+            {
+              "kind": "field",
+              "name": "allowScripts",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
+              "attribute": "allow-scripts"
+            },
+            {
+              "kind": "method",
+              "name": "executeScript",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "script",
+                  "type": {
+                    "text": "HTMLScriptElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleSrcChange"
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitido quando o arquivo incluído foi carregado.",
+              "name": "cps-load",
+              "reactName": "onCpsLoad"
+            },
+            {
+              "type": {
+                "text": "{ status: number }"
+              },
+              "description": "Emitido quando o arquivo incluído falha durante o carregamento.",
+              "name": "cps-error",
+              "reactName": "onCpsError"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
+              "fieldName": "src"
+            },
+            {
+              "name": "mode",
+              "type": {
+                "text": "'cors' | 'no-cors' | 'same-origin'"
+              },
+              "default": "'cors'",
+              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
+              "fieldName": "mode"
+            },
+            {
+              "name": "allow-scripts",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
+              "fieldName": "allowScripts"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/include",
+          "status": "stable",
+          "since": "0.1",
+          "tagName": "cps-include",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsInclude",
+            "module": "components/include/include.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-include",
+          "declaration": {
+            "name": "CpsInclude",
+            "module": "components/include/include.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsInclude",
+          "declaration": {
+            "name": "CpsInclude",
+            "module": "components/include/include.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/include/request.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "requestInclude",
+          "return": {
+            "type": {
+              "text": "Promise<IncludeFile>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "src",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "mode",
+              "default": "'cors'",
+              "type": {
+                "text": "'cors' | 'no-cors' | 'same-origin'"
+              }
+            }
+          ],
+          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "requestInclude",
+          "declaration": {
+            "name": "requestInclude",
+            "module": "components/include/request.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/input/input.component.js",
       "declarations": [
         {
@@ -9647,6 +9872,135 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/menu/menu.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsMenu",
+          "slots": [
+            {
+              "description": "Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "isMenuItem",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "item",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "{ item: CpsMenuItem }"
+              },
+              "description": "Emitido quando um item de menu interno é selecionado.",
+              "name": "cps-select",
+              "reactName": "onCpsSelect"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Menus oferecem uma lista de opções para o usuário escolher.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
+          "status": "stable",
+          "since": "0.7",
+          "tagName": "cps-menu",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsMenu",
+            "module": "components/menu/menu.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-menu",
+          "declaration": {
+            "name": "CpsMenu",
+            "module": "components/menu/menu.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsMenu",
+          "declaration": {
+            "name": "CpsMenu",
+            "module": "components/menu/menu.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/menu-item/menu-item.component.js",
       "declarations": [
         {
@@ -9872,135 +10226,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/menu/menu.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsMenu",
-          "slots": [
-            {
-              "description": "Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "defaultSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "handleClick",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "MouseEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleKeyDown",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleMouseDown",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "event",
-                  "type": {
-                    "text": "MouseEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleSlotChange",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "isMenuItem",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "item",
-                  "type": {
-                    "text": "HTMLElement"
-                  }
-                }
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": {
-                "text": "{ item: CpsMenuItem }"
-              },
-              "description": "Emitido quando um item de menu interno é selecionado.",
-              "name": "cps-select",
-              "reactName": "onCpsSelect"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Menus oferecem uma lista de opções para o usuário escolher.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/menu",
-          "status": "stable",
-          "since": "0.7",
-          "tagName": "cps-menu",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsMenu",
-            "module": "components/menu/menu.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-menu",
-          "declaration": {
-            "name": "CpsMenu",
-            "module": "components/menu/menu.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsMenu",
-          "declaration": {
-            "name": "CpsMenu",
-            "module": "components/menu/menu.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/menu-label/menu-label.component.js",
       "declarations": [
         {
@@ -10061,112 +10286,198 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/include/include.component.js",
+      "path": "components/mutation-observer/mutation-observer.component.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "CpsInclude",
+          "name": "CpsMutationObserver",
+          "slots": [
+            {
+              "description": "O conteúdo a ser observado para mutações.",
+              "name": ""
+            }
+          ],
           "members": [
             {
               "kind": "field",
-              "name": "src",
+              "name": "mutationObserver",
+              "type": {
+                "text": "MutationObserver"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "attr",
               "type": {
                 "text": "string"
               },
-              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
-              "attribute": "src"
+              "description": "Observa alterações em atributos.\nPara observar todos os atributos, use `*`.\nPara atributos específicos, separe-os por vírgula, por exemplo, `attr=\"class,id,title\"`.",
+              "attribute": "attr",
+              "reflects": true
             },
             {
               "kind": "field",
-              "name": "mode",
-              "type": {
-                "text": "'cors' | 'no-cors' | 'same-origin'"
-              },
-              "default": "'cors'",
-              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
-              "attribute": "mode"
-            },
-            {
-              "kind": "field",
-              "name": "allowScripts",
+              "name": "attrOldValue",
               "type": {
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
-              "attribute": "allow-scripts"
+              "description": "Indica se o valor anterior do atributo deve ser registrado ao monitorar alterações.",
+              "attribute": "attr-old-value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "charData",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Observa alterações nos dados de caracteres textuais contidos no nó.",
+              "attribute": "char-data",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "charDataOldValue",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o valor anterior do texto do nó deve ser registrado.",
+              "attribute": "char-data-old-value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "childList",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Observa a adição ou remoção de novos nós filhos.",
+              "attribute": "child-list",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desativa o observador.",
+              "attribute": "disabled",
+              "reflects": true
             },
             {
               "kind": "method",
-              "name": "executeScript",
+              "name": "handleMutation",
               "privacy": "private",
               "parameters": [
                 {
-                  "name": "script",
+                  "name": "mutationList",
                   "type": {
-                    "text": "HTMLScriptElement"
+                    "text": "MutationRecord[]"
                   }
                 }
               ]
             },
             {
               "kind": "method",
-              "name": "handleSrcChange"
+              "name": "startObserver",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "stopObserver",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            },
+            {
+              "kind": "method",
+              "name": "handleChange"
             }
           ],
           "events": [
             {
-              "description": "Emitido quando o arquivo incluído foi carregado.",
-              "name": "cps-load",
-              "reactName": "onCpsLoad"
-            },
-            {
               "type": {
-                "text": "{ status: number }"
+                "text": "{ mutationList: MutationRecord[] }"
               },
-              "description": "Emitido quando o arquivo incluído falha durante o carregamento.",
-              "name": "cps-error",
-              "reactName": "onCpsError"
+              "description": "Emitido quando ocorre uma mutação.",
+              "name": "cps-mutation",
+              "reactName": "onCpsMutation"
             }
           ],
           "attributes": [
             {
-              "name": "src",
+              "name": "attr",
               "type": {
                 "text": "string"
               },
-              "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
-              "fieldName": "src"
+              "description": "Observa alterações em atributos.\nPara observar todos os atributos, use `*`.\nPara atributos específicos, separe-os por vírgula, por exemplo, `attr=\"class,id,title\"`.",
+              "fieldName": "attr"
             },
             {
-              "name": "mode",
-              "type": {
-                "text": "'cors' | 'no-cors' | 'same-origin'"
-              },
-              "default": "'cors'",
-              "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
-              "fieldName": "mode"
-            },
-            {
-              "name": "allow-scripts",
+              "name": "attr-old-value",
               "type": {
                 "text": "boolean"
               },
               "default": "false",
-              "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
-              "fieldName": "allowScripts"
+              "description": "Indica se o valor anterior do atributo deve ser registrado ao monitorar alterações.",
+              "fieldName": "attrOldValue"
+            },
+            {
+              "name": "char-data",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Observa alterações nos dados de caracteres textuais contidos no nó.",
+              "fieldName": "charData"
+            },
+            {
+              "name": "char-data-old-value",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indica se o valor anterior do texto do nó deve ser registrado.",
+              "fieldName": "charDataOldValue"
+            },
+            {
+              "name": "child-list",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Observa a adição ou remoção de novos nós filhos.",
+              "fieldName": "childList"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desativa o observador.",
+              "fieldName": "disabled"
             }
           ],
           "superclass": {
             "name": "BaseElement",
             "module": "/src/internal/base-element.js"
           },
-          "summary": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/include",
+          "summary": "O utilitário observador de mutação (_mutation observer_) oferece uma alternativa com sintaxe declarativa para a API nativa [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/mutation-observer",
           "status": "stable",
-          "since": "0.1",
-          "tagName": "cps-include",
+          "since": "0.25.0",
+          "tagName": "cps-mutation-observer",
           "customElement": true
         }
       ],
@@ -10175,65 +10486,24 @@
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "CpsInclude",
-            "module": "components/include/include.component.js"
+            "name": "CpsMutationObserver",
+            "module": "components/mutation-observer/mutation-observer.component.js"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "cps-include",
+          "name": "cps-mutation-observer",
           "declaration": {
-            "name": "CpsInclude",
-            "module": "components/include/include.component.js"
+            "name": "CpsMutationObserver",
+            "module": "components/mutation-observer/mutation-observer.component.js"
           }
         },
         {
           "kind": "js",
-          "name": "CpsInclude",
+          "name": "CpsMutationObserver",
           "declaration": {
-            "name": "CpsInclude",
-            "module": "components/include/include.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/include/request.js",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "requestInclude",
-          "return": {
-            "type": {
-              "text": "Promise<IncludeFile>"
-            }
-          },
-          "parameters": [
-            {
-              "name": "src",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "name": "mode",
-              "default": "'cors'",
-              "type": {
-                "text": "'cors' | 'no-cors' | 'same-origin'"
-              }
-            }
-          ],
-          "description": "Fetches an include file from a remote source. Caching is enabled so the origin is only pinged once."
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "requestInclude",
-          "declaration": {
-            "name": "requestInclude",
-            "module": "components/include/request.js"
+            "name": "CpsMutationObserver",
+            "module": "components/mutation-observer/mutation-observer.component.js"
           }
         }
       ]
@@ -13076,6 +13346,129 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/resize-observer/resize-observer.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsResizeObserver",
+          "slots": [
+            {
+              "description": "Um ou mais elementos para observar redimensionamentos.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "resizeObserver",
+              "type": {
+                "text": "ResizeObserver"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "observedElements",
+              "type": {
+                "text": "HTMLElement[]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desativa o observador.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "startObserver",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "stopObserver",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange"
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "{ entries: ResizeObserverEntry[] }"
+              },
+              "description": "Emitido quando um elemento é redimensionado.",
+              "name": "cps-resize",
+              "reactName": "onCpsResize"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Desativa o observador.",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "O utilitário observador de redimensionamento (_resize observer_) oferece uma alternativa com sintaxe declarativa para a API nativa [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver).",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/resize-observer",
+          "status": "stable",
+          "since": "0.25.0",
+          "tagName": "cps-resize-observer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsResizeObserver",
+            "module": "components/resize-observer/resize-observer.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-resize-observer",
+          "declaration": {
+            "name": "CpsResizeObserver",
+            "module": "components/resize-observer/resize-observer.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsResizeObserver",
+          "declaration": {
+            "name": "CpsResizeObserver",
+            "module": "components/resize-observer/resize-observer.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/select/select.component.js",
       "declarations": [
         {
@@ -15558,6 +15951,146 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/tab-panel/tab-panel.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsTabPanel",
+          "cssProperties": [
+            {
+              "description": "O espaçamento interno do painel. Padrão: `var(--cps-spacing-6)`.",
+              "name": "--padding"
+            },
+            {
+              "description": "A cor de fundo do painel. Padrão: `var(--cps-color-background-solid-tertiary)`.",
+              "name": "--background"
+            },
+            {
+              "description": "A cor da borda do painel. Padrão: `var(--cps-color-stroke-primary)`.",
+              "name": "--border-color"
+            },
+            {
+              "description": "O arredondamento da borda do painel. Padrão: `var(--cps-border-radius-large)`.",
+              "name": "--border-radius"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "O elemento principal propriamente dito (um `<slot>`).",
+              "name": "base"
+            }
+          ],
+          "slots": [
+            {
+              "description": "O conteúdo do painel.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "attrId",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "++id"
+            },
+            {
+              "kind": "field",
+              "name": "componentId",
+              "privacy": "private",
+              "default": "`cps-tab-panel-${this.attrId}`"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
+              "attribute": "name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Quando verdadeiro, o painel é exibido.",
+              "attribute": "selected",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "handleSelectedChanged"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
+              "fieldName": "name"
+            },
+            {
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Quando verdadeiro, o painel é exibido.",
+              "fieldName": "selected"
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "Painéis de abas (_tab panels_) são usados dentro de [grupos de abas](/componentes/tab-group) para exibir conteúdo em abas.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-panel",
+          "status": "stable",
+          "since": "0.9",
+          "tagName": "cps-tab-panel",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsTabPanel",
+            "module": "components/tab-panel/tab-panel.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-tab-panel",
+          "declaration": {
+            "name": "CpsTabPanel",
+            "module": "components/tab-panel/tab-panel.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsTabPanel",
+          "declaration": {
+            "name": "CpsTabPanel",
+            "module": "components/tab-panel/tab-panel.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/textarea/textarea.component.js",
       "declarations": [
         {
@@ -16633,60 +17166,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/visually-hidden/visually-hidden.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsVisuallyHidden",
-          "slots": [
-            {
-              "description": "O conteúdo a ser visualmente oculto.",
-              "name": ""
-            }
-          ],
-          "members": [],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "O utilitário visualmente oculto (_visually hidden_) torna seu conteúdo acessível sem exibir na interface.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/visually-hidden",
-          "status": "stable",
-          "since": "0.18",
-          "tagName": "cps-visually-hidden",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsVisuallyHidden",
-            "module": "components/visually-hidden/visually-hidden.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-visually-hidden",
-          "declaration": {
-            "name": "CpsVisuallyHidden",
-            "module": "components/visually-hidden/visually-hidden.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsVisuallyHidden",
-          "declaration": {
-            "name": "CpsVisuallyHidden",
-            "module": "components/visually-hidden/visually-hidden.component.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/tooltip/tooltip.component.js",
       "declarations": [
         {
@@ -17077,6 +17556,60 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/visually-hidden/visually-hidden.component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CpsVisuallyHidden",
+          "slots": [
+            {
+              "description": "O conteúdo a ser visualmente oculto.",
+              "name": ""
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/internal/base-element.js"
+          },
+          "summary": "O utilitário visualmente oculto (_visually hidden_) torna seu conteúdo acessível sem exibir na interface.",
+          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/utilitários/visually-hidden",
+          "status": "stable",
+          "since": "0.18",
+          "tagName": "cps-visually-hidden",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "CpsVisuallyHidden",
+            "module": "components/visually-hidden/visually-hidden.component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cps-visually-hidden",
+          "declaration": {
+            "name": "CpsVisuallyHidden",
+            "module": "components/visually-hidden/visually-hidden.component.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CpsVisuallyHidden",
+          "declaration": {
+            "name": "CpsVisuallyHidden",
+            "module": "components/visually-hidden/visually-hidden.component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/logo/paths/cps-asscom.js",
       "declarations": [
         {
@@ -17235,152 +17768,12 @@
           }
         }
       ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/tab-panel/tab-panel.component.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "CpsTabPanel",
-          "cssProperties": [
-            {
-              "description": "O espaçamento interno do painel. Padrão: `var(--cps-spacing-6)`.",
-              "name": "--padding"
-            },
-            {
-              "description": "A cor de fundo do painel. Padrão: `var(--cps-color-background-solid-tertiary)`.",
-              "name": "--background"
-            },
-            {
-              "description": "A cor da borda do painel. Padrão: `var(--cps-color-stroke-primary)`.",
-              "name": "--border-color"
-            },
-            {
-              "description": "O arredondamento da borda do painel. Padrão: `var(--cps-border-radius-large)`.",
-              "name": "--border-radius"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "O elemento principal propriamente dito (um `<slot>`).",
-              "name": "base"
-            }
-          ],
-          "slots": [
-            {
-              "description": "O conteúdo do painel.",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "attrId",
-              "type": {
-                "text": "number"
-              },
-              "privacy": "private",
-              "default": "++id"
-            },
-            {
-              "kind": "field",
-              "name": "componentId",
-              "privacy": "private",
-              "default": "`cps-tab-panel-${this.attrId}`"
-            },
-            {
-              "kind": "field",
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
-              "attribute": "name",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Quando verdadeiro, o painel é exibido.",
-              "attribute": "selected",
-              "reflects": true
-            },
-            {
-              "kind": "method",
-              "name": "handleSelectedChanged"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
-              "fieldName": "name"
-            },
-            {
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Quando verdadeiro, o painel é exibido.",
-              "fieldName": "selected"
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/internal/base-element.js"
-          },
-          "summary": "Painéis de abas (_tab panels_) são usados dentro de [grupos de abas](/componentes/tab-group) para exibir conteúdo em abas.",
-          "documentation": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tab-panel",
-          "status": "stable",
-          "since": "0.9",
-          "tagName": "cps-tab-panel",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "CpsTabPanel",
-            "module": "components/tab-panel/tab-panel.component.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cps-tab-panel",
-          "declaration": {
-            "name": "CpsTabPanel",
-            "module": "components/tab-panel/tab-panel.component.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CpsTabPanel",
-          "declaration": {
-            "name": "CpsTabPanel",
-            "module": "components/tab-panel/tab-panel.component.js"
-          }
-        }
-      ]
     }
   ],
   "package": {
     "name": "@cps-elements/web",
     "description": "Web Components de ponta, sem complicação.",
-    "version": "0.24.0",
+    "version": "0.25.0",
     "author": "Erick Eduardo Petrucelli <erickpetru@gmail.com>",
     "homepage": "https://github.com/cpsrepositorio/cps-elements",
     "license": "MIT"

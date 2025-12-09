@@ -481,22 +481,22 @@ const App = () => (
 .sample-solid-background,
 .sample-acrylic-background {
   display: flex;
-  flex-wrap: wrap;
   inset: 0;
+  flex-wrap: wrap;
   gap: 1.5rem;
   align-items: start;
-  padding: 1.5rem;
-  margin-left: -1.5rem;
   margin-right: -1.5rem;
+  margin-left: -1.5rem;
+  padding: 1.5rem;
   overflow: hidden;
 }
 
 .sample-solid-background {
+  border: solid 1px var(--cps-color-stroke-card-secondary);
+  border-right: 0;
+  border-left: 0;
   background: var(--cps-color-fill-primary);
   background-clip: border-box;
-  border: solid 1px var(--cps-color-stroke-card-secondary);
-  border-left: 0;
-  border-right: 0;
 }
 
 .sample-solid-background:first-of-type {
@@ -535,8 +535,8 @@ const App = () => (
 
 :is(.sample-transparent-background, .sample-solid-background, .sample-acrylic-background) cps-label {
   flex: 1 0 100%;
-  margin-bottom: -1rem;
   z-index: 1;
+  margin-bottom: -1rem;
 }
 
 :is(.sample-transparent-background, .sample-solid-background, .sample-acrylic-background) cps-card {

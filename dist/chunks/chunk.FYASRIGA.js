@@ -1,0 +1,1 @@
+import{a as e}from"./chunk.XXRUZ2BL.js";import*as o from"react";import{createComponent as t}from"@lit-labs/react";var p=t({tagName:"cps-chip",elementClass:e,react:o,events:{onCpsRemove:"cps-remove"}});var s=p;export{p as a,s as b};

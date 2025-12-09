@@ -1,1 +1,0 @@
-import{a as e}from"./chunk.LGCUJAXW.js";import*as t from"react";import{createComponent as o}from"@lit-labs/react";var m=o({tagName:"cps-menu",elementClass:e,react:t,events:{onCpsSelect:"cps-select"}});var r=m;export{m as a,r as b};

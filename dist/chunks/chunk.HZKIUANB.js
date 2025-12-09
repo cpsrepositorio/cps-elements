@@ -1,0 +1,1 @@
+import{a as t}from"./chunk.I7SJYL2S.js";import*as e from"react";import{createComponent as o}from"@lit-labs/react";var r=o({tagName:"cps-mutation-observer",elementClass:t,react:e,events:{onCpsMutation:"cps-mutation"}});var n=r;export{r as a,n as b};

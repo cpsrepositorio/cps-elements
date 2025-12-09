@@ -1084,6 +1084,32 @@
       "references": []
     },
     {
+      "name": "cps-include",
+      "description": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o arquivo incluído foi carregado.\n- **cps-error** - Emitido quando o arquivo incluído falha durante o carregamento.",
+      "attributes": [
+        {
+          "name": "src",
+          "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
+          "values": []
+        },
+        {
+          "name": "mode",
+          "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
+          "values": [
+            { "name": "cors" },
+            { "name": "no-cors" },
+            { "name": "same-origin" }
+          ]
+        },
+        {
+          "name": "allow-scripts",
+          "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-input",
       "description": "Caixas de entrada (_inputs_) coletam dados preenchidos pelos usuários.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n- **select()** - Seleciona todo o texto existente no campo.\n- **setSelectionRange(selectionStart: _number_, selectionEnd: _number_, selectionDirection: _'forward' | 'backward' | 'none'_)** - Define as posições de início e término da seleção de texto do campo (índices baseados em `0`).\n- **setRangeText(replacement: _string_, start: _number_, end: _number_, selectMode: _'select' | 'start' | 'end' | 'preserve'_)** - Atualiza um intervalo de texto do campo com o novo valor informado (índices baseados em `0`).\n- **showPicker()** - Exibe o menu seletor de opções nativo do navegador, de acordo com o `type` do campo (funciona apenas se o navegador suportar um menu seletor para o tipo de entrada em questão).\n- **stepUp()** - Incrementa o valor de um campo numérico pelo valor do atributo `step` (somente se o `type` definido for `number`).\n- **stepDown()** - Decrementa o valor de um campo numérico pelo valor do atributo `step` (somente se o `type` definido for `number`).\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **base** - O elemento base que embrulha o `<input>` e eventuais prefixo e sufixo.\n- **input** - O controle `<input>` interno propriamente dito.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **password-toggle-button** - O botão de alternar visibilidade de senha (caso `password-toggle` esteja em uso).\n- **password-toggle-button__base** - A parte `base` re-exportada do botão de visibilidade de senha.\n- **password-toggle-button__icon** - A parte `icon` re-exportada do botão de visibilidade de senha.",
       "attributes": [
@@ -1406,6 +1432,12 @@
       "references": []
     },
     {
+      "name": "cps-menu",
+      "description": "Menus oferecem uma lista de opções para o usuário escolher.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-select** - Emitido quando um item de menu interno é selecionado.\n\n### **Slots:**\n - _default_ - Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
+      "attributes": [],
+      "references": []
+    },
+    {
       "name": "cps-menu-item",
       "description": "Itens de menu fornecem opções para o usuário escolher em um menu.\n\n\n---\n\n\n\n\n### **Methods:**\n - **getTextLabel()** - Obtém o texto literal a partir do conteúdo do _slot_ padrão do item de menu.\n\n### **Slots:**\n - _default_ - O texto interno do item de menu.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **suffix** - Um ícone ou elemento similar após o conteúdo principal.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<div>`).\n- **check** - O elemento que embrulha o ícone de checagem (caso o item de menu seja do tipo `checkbox`), visível apenas quando o item de menu está marcado.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **label** - O elemento que embrulha o conteúdo principal, normalmente um texto literal.\n- **suffix** - O elemento que embrulha a renderização do _slot_ `suffix`.",
       "attributes": [
@@ -1433,38 +1465,43 @@
       "references": []
     },
     {
-      "name": "cps-menu",
-      "description": "Menus oferecem uma lista de opções para o usuário escolher.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-select** - Emitido quando um item de menu interno é selecionado.\n\n### **Slots:**\n - _default_ - Conteúdo do menu, incluindo itens de menu, rótulos de menu e Separadores.",
-      "attributes": [],
-      "references": []
-    },
-    {
       "name": "cps-menu-label",
       "description": "Rótulos de menu são usados para descrever um grupo de itens de menu.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O texto interno do rótulo de menu.\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
       "attributes": [],
       "references": []
     },
     {
-      "name": "cps-include",
-      "description": "Possibilita a inclusão de arquivos HTML externos diretamente no conteúdo da página.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-load** - Emitido quando o arquivo incluído foi carregado.\n- **cps-error** - Emitido quando o arquivo incluído falha durante o carregamento.",
+      "name": "cps-mutation-observer",
+      "description": "O utilitário observador de mutação (_mutation observer_) oferece uma alternativa com sintaxe declarativa para a API nativa [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-mutation** - Emitido quando ocorre uma mutação.\n\n### **Slots:**\n - _default_ - O conteúdo a ser observado para mutações.",
       "attributes": [
         {
-          "name": "src",
-          "description": "A localização do arquivo HTML a ser incluído. Tenha certeza de que pode confiar no conteúdo\nque você está incluindo, já que será executado como código no navegador após o carregamento,\no que implica em possíveis ataques XSS.",
+          "name": "attr",
+          "description": "Observa alterações em atributos.\nPara observar todos os atributos, use `*`.\nPara atributos específicos, separe-os por vírgula, por exemplo, `attr=\"class,id,title\"`.",
           "values": []
         },
         {
-          "name": "mode",
-          "description": "O modo _cross origin_ a ser utilizado para o carregamento do arquivo.",
-          "values": [
-            { "name": "cors" },
-            { "name": "no-cors" },
-            { "name": "same-origin" }
-          ]
+          "name": "attr-old-value",
+          "description": "Indica se o valor anterior do atributo deve ser registrado ao monitorar alterações.",
+          "values": []
         },
         {
-          "name": "allow-scripts",
-          "description": "Permite que _scripts_ incluídos no HTML importado sejam executados. Tenha certeza de que pode\nconfiar no conteúdo que você está incluindo, já que será executado como código no navegador\napós o carregamento, o que implica em possíveis ataques XSS.",
+          "name": "char-data",
+          "description": "Observa alterações nos dados de caracteres textuais contidos no nó.",
+          "values": []
+        },
+        {
+          "name": "char-data-old-value",
+          "description": "Indica se o valor anterior do texto do nó deve ser registrado.",
+          "values": []
+        },
+        {
+          "name": "child-list",
+          "description": "Observa a adição ou remoção de novos nós filhos.",
+          "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Desativa o observador.",
           "values": []
         }
       ],
@@ -1808,6 +1845,18 @@
       "references": []
     },
     {
+      "name": "cps-resize-observer",
+      "description": "O utilitário observador de redimensionamento (_resize observer_) oferece uma alternativa com sintaxe declarativa para a API nativa [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver).\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-resize** - Emitido quando um elemento é redimensionado.\n\n### **Slots:**\n - _default_ - Um ou mais elementos para observar redimensionamentos.",
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "Desativa o observador.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-select",
       "description": "Caixas de seleção permitem escolher itens de um menu de opções predefinidas.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-clear** - Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso).\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-show** - Emitido quando a lista suspensa de opções começa a ser exibida.\n- **cps-after-show** - Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando a lista suspensa de opções começa a ser ocultada.\n- **cps-after-hide** - Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **show()** - Exibe o menu seletor de opções.\n- **hide()** - Oculta o menu seletor de opções.\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n- **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n\n### **Slots:**\n - _default_ - As opções da lista suspensa. Cada opção deve ser um `<cps-option>`. Opcionalmente, também pode conter `<cps-separator>` e `<cps-label>` para agrupar itens visualmente.\n- **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **prefix** - Um ícone ou elemento similar antes do conteúdo principal.\n- **expand-icon** - Indicador que demonstra se o controle está expandido ou contraído (idealmente, um `<cps-icon>`). Se rotaciona de acordo com a abertura e o fechamento da lista suspensa.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **field** - O elemento base que embrulha o campo de entrada de dados, o ícone de expansão, e eventuais prefixo e botão de limpar.\n- **prefix** - O elemento que embrulha a renderização do _slot_ `prefix`.\n- **input** - O controle interno propriamente dito (um `<input>`), o qual apresenta o texto da opção atualmente selecionada, ou um eventual _placeholder_.\n- **menu** - O elemento base que embrulha o menu contextual (um `<div>`), onde as opções injetadas são posicionadas.\n- **chips** - O elemento que embrulha a lista de _chips_ (um `<div>`), renderizado no lugar da parte `input`, quando `multiple` está em uso.\n- **chip** - Cada etiqueta individual (um `<cps-chip>`), que representa uma opção selecionada, quando `multiple` está em uso.\n- **chip__base** - A parte `base` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__content** - A parte `content` re-exportada de cada _chip_ de seleção múltipla.\n- **chip__remove-button** - O botão de remoção re-exportado de cada _chip_ de seleção múltipla.\n- **chip__remove-button__base** - A parte `base` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **chip__remove-button__icon** - A parte `icon` re-exportada do botão de remoção de cada _chip_ de seleção múltipla.\n- **clear-button** - O botão de limpar o campo (caso `clearable` esteja em uso).\n- **clear-button__base** - A parte `base` re-exportada do botão de limpar.\n- **clear-button__icon** - A parte `icon` re-exportada do botão de limpar.\n- **expand-icon** - O elemento que embrulha a renderização do _slot_ `expand-icon`.",
       "attributes": [
@@ -2070,6 +2119,23 @@
       "references": []
     },
     {
+      "name": "cps-tab-panel",
+      "description": "Painéis de abas (_tab panels_) são usados dentro de [grupos de abas](/componentes/tab-group) para exibir conteúdo em abas.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do painel.\n\n### **CSS Properties:**\n - **--padding** - O espaçamento interno do painel. Padrão: `var(--cps-spacing-6)`. _(default: undefined)_\n- **--background** - A cor de fundo do painel. Padrão: `var(--cps-color-background-solid-tertiary)`. _(default: undefined)_\n- **--border-color** - A cor da borda do painel. Padrão: `var(--cps-color-stroke-primary)`. _(default: undefined)_\n- **--border-radius** - O arredondamento da borda do painel. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
+      "attributes": [
+        {
+          "name": "name",
+          "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
+          "values": []
+        },
+        {
+          "name": "selected",
+          "description": "Quando verdadeiro, o painel é exibido.",
+          "values": []
+        }
+      ],
+      "references": []
+    },
+    {
       "name": "cps-textarea",
       "description": "Caixas de texto (_textareas_) coletam dados do usuário e permitem múltiplas linhas de texto.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-blur** - Emitido quando o controle perde o foco.\n- **cps-change** - Emitido quando a alteração do valor do controle é confirmada pelo usuário.\n- **cps-focus** - Emitido quando o controle obtém o foco.\n- **cps-input** - Emitido quando o controle recebe entrada de dados.\n- **cps-invalid** - Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas.\n\n### **Methods:**\n - **focus(options: _FocusOptions_)** - Coloca o foco no campo.\n- **blur()** - Remove o foco do campo.\n- **select()** - Seleciona todo o texto existente no campo.\n- **scrollPosition(position: _{ top?: number; left?: number }_): _{ top: number; left: number } | undefined_** - Obtém ou atribui a posição de rolagem do campo.\n- **setSelectionRange(selectionStart: _number_, selectionEnd: _number_, selectionDirection: _'forward' | 'backward' | 'none'_)** - Define as posições de início e término da seleção de texto do campo (índices baseados em `0`).\n- **setRangeText(replacement: _string_, start: _number_, end: _number_, selectMode: _'select' | 'start' | 'end' | 'preserve'_)** - Atualiza um intervalo de texto do campo com o novo valor informado (índices baseados em `0`).\n- **checkValidity()** - Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.\n- **getForm(): _HTMLFormElement | null_** - Obtém o formulário associado com este componente, se algum estiver.\n- **reportValidity()** - Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.\n- **setCustomValidity(message: _string_)** - Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.\n\n### **Slots:**\n - **label** - Rótulo informativo do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `label`.\n- **help-text** - Texto de apoio para auxílio ao preenchimento do campo. Caso a injeção de conteúdos complexos não seja necessária, alternativamente utilize apenas o atributo `help-text`.\n\n### **CSS Parts:**\n - **form-control** - O agrupamento de controle de formulário que engloba todos os elementos, como rótulo, caixa de entrada, e texto de apoio.\n- **form-control-label** - Elemento que embrulha o rótulo do controle de formulário.\n- **form-control-input** - Elemento que embrulha o campo do controle de formulário.\n- **form-control-help-text** - Elemento que embrulha o texto de apoio do controle de formulário.\n- **base** - O elemento base que embrulha o `<textarea>`.\n- **textarea** - O controle `<textarea>` interno propriamente dito.",
       "attributes": [
@@ -2260,12 +2326,6 @@
       "references": []
     },
     {
-      "name": "cps-visually-hidden",
-      "description": "O utilitário visualmente oculto (_visually hidden_) torna seu conteúdo acessível sem exibir na interface.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo a ser visualmente oculto.",
-      "attributes": [],
-      "references": []
-    },
-    {
       "name": "cps-tooltip",
       "description": "Dicas de ferramenta (_tooltips_) exibem informações adicionais contextuais.\n\n\n---\n\n\n\n\n### **Events:**\n - **cps-show** - Emitido quando a dica de ferramenta começa a ser exibida.\n- **cps-after-show** - Emitido após a dica de ferramenta ser exibida e todas as animações terem sido concluídas.\n- **cps-hide** - Emitido quando a dica de ferramenta começa a ser ocultada.\n- **cps-after-hide** - Emitido após a dica de ferramenta ser ocultada e todas as animações terem sido concluídas.\n\n### **Methods:**\n - **show()** - Força a exibição imediata da dica de ferramenta.\n- **hide()** - Força a ocultação imediata da dica de ferramenta.\n\n### **Slots:**\n - _default_ - O elemento alvo da dica de ferramenta. Evite ter mais de um elemento alvo na hierarquia, pois os subsequentes serão ignorados (neste caso, embrulhe os vários elementos em uma _tag_ principal, como `<span>` ou `<div>`).\n- **content** - O conteúdo a ser renderizado na dica de ferramenta. Alternativamente, você pode usar o atributo `content`.\n\n### **CSS Properties:**\n - **--max-width** - O tamanho máximo da dica de ferramenta, antes que seu conteúdo seja quebrado em outra linha. _(default: undefined)_\n- **--hide-delay** - A quantidade de tempo a esperar antes de ocultar a dica de ferramenta, ao tirar o ponteiro. _(default: undefined)_\n- **--show-delay** - A quantidade de tempo a esperar antes de exibir a dica de ferramenta, ao colocar o ponteiro sobre. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento base que embrulha o componente (um elemento `<cps-flyout>`).\n- **base__container** - A parte CSS `container` exportada do _flyout_ base. Use-a para atingir o contêiner do elemento `<cps-flyout>` base, para estilizações avançadas deste.\n- **base__container** - A parte CSS `arrow` exportada do _flyout_ base. Use-a para atingir a seta do elemento `<cps-flyout>` base, para estilizações avançadas desta.\n- **body** - O corpo da dica de ferramenta, onde seu conteúdo é renderizado.",
       "attributes": [
@@ -2327,20 +2387,9 @@
       "references": []
     },
     {
-      "name": "cps-tab-panel",
-      "description": "Painéis de abas (_tab panels_) são usados dentro de [grupos de abas](/componentes/tab-group) para exibir conteúdo em abas.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo do painel.\n\n### **CSS Properties:**\n - **--padding** - O espaçamento interno do painel. Padrão: `var(--cps-spacing-6)`. _(default: undefined)_\n- **--background** - A cor de fundo do painel. Padrão: `var(--cps-color-background-solid-tertiary)`. _(default: undefined)_\n- **--border-color** - A cor da borda do painel. Padrão: `var(--cps-color-stroke-primary)`. _(default: undefined)_\n- **--border-radius** - O arredondamento da borda do painel. Padrão: `var(--cps-border-radius-large)`. _(default: undefined)_\n\n### **CSS Parts:**\n - **base** - O elemento principal propriamente dito (um `<slot>`).",
-      "attributes": [
-        {
-          "name": "name",
-          "description": "O nome do painel, deve ser único dentro de um mesmo grupo de abas.",
-          "values": []
-        },
-        {
-          "name": "selected",
-          "description": "Quando verdadeiro, o painel é exibido.",
-          "values": []
-        }
-      ],
+      "name": "cps-visually-hidden",
+      "description": "O utilitário visualmente oculto (_visually hidden_) torna seu conteúdo acessível sem exibir na interface.\n\n\n---\n\n\n\n\n### **Slots:**\n - _default_ - O conteúdo a ser visualmente oculto.",
+      "attributes": [],
       "references": []
     }
   ]
