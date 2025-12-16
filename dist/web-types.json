@@ -504,416 +504,6 @@
           ]
         },
         {
-          "name": "cps-button",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button",
-          "js": {
-            "properties": [
-              {
-                "name": "formControlController",
-                "value": {}
-              },
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "button",
-                "value": {
-                  "type": "HTMLButtonElement | HTMLAnchorElement"
-                }
-              },
-              {
-                "name": "isFocused",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "invalid",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "title",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "variant",
-                "description": "A variante visual para apresentação do botão.",
-                "value": {
-                  "type": "'default' | 'accent' | 'transparent'"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do botão.",
-                "value": {
-                  "type": "'small' | 'medium' | 'large'"
-                }
-              },
-              {
-                "name": "caret",
-                "description": "Apresenta um sinalizador de menu ao final do botão. Usado para indicar que o botão dispara um menu de contexto ou algum comportamento similar.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o botão.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "waiting",
-                "description": "Apresenta o botão em estado de carregamento.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "rounded",
-                "description": "Arredondamento dos cantos do botão, com o padrão sendo bordas arredondas em `4px`.",
-                "value": {
-                  "type": "'default' | 'corner' | 'full'"
-                }
-              },
-              {
-                "name": "type",
-                "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
-                "value": {
-                  "type": "'button' | 'submit' | 'reset'"
-                }
-              },
-              {
-                "name": "name",
-                "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "href",
-                "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "target",
-                "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
-                "value": {
-                  "type": "'_blank' | '_parent' | '_self' | '_top'"
-                }
-              },
-              {
-                "name": "rel",
-                "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "download",
-                "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
-                "value": {
-                  "type": "string | undefined"
-                }
-              },
-              {
-                "name": "form",
-                "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "formAction",
-                "description": "Usado para sobrescrever o atributo `action` do formulário \"dono\" deste botão.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "formEnctype",
-                "description": "Usado para sobrescrever o atributo `enctype` do formulário \"dono\" deste botão.",
-                "value": {
-                  "type": "'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain'"
-                }
-              },
-              {
-                "name": "formMethod",
-                "description": "Usado para sobrescrever o atributo `method` do formulário \"dono\" deste botão.",
-                "value": {
-                  "type": "'post' | 'get'"
-                }
-              },
-              {
-                "name": "formNoValidate",
-                "description": "Usado para sobrescrever o atributo `novalidate` do formulário \"dono\" deste botão.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "formTarget",
-                "description": "Usado para sobrescrever o atributo `target` do formulário \"dono\" deste botão.",
-                "value": {
-                  "type": "'_self' | '_blank' | '_parent' | '_top' | string"
-                }
-              },
-              {
-                "name": "validity",
-                "description": "Obtém o objeto de estado de validade do botão.",
-                "value": {}
-              },
-              {
-                "name": "validationMessage",
-                "description": "Obtém a mensagem de validação do botão.",
-                "value": {}
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "handleClick",
-                "value": {}
-              },
-              {
-                "name": "handleHostClick",
-                "value": {}
-              },
-              {
-                "name": "handleInvalid",
-                "value": {}
-              },
-              {
-                "name": "isButton",
-                "value": {}
-              },
-              {
-                "name": "isLink",
-                "value": {}
-              },
-              {
-                "name": "handleDisabledChange",
-                "value": {}
-              },
-              {
-                "name": "click",
-                "description": "Simula um _click_ no botão.",
-                "value": {}
-              },
-              {
-                "name": "focus",
-                "description": "Coloca o foco no botão.",
-                "value": {}
-              },
-              {
-                "name": "blur",
-                "description": "Remove o foco do botão.",
-                "value": {}
-              },
-              {
-                "name": "checkValidity",
-                "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.",
-                "value": {}
-              },
-              {
-                "name": "getForm",
-                "description": "Obtém o formulário associado com este componente, se algum estiver.",
-                "value": {}
-              },
-              {
-                "name": "reportValidity",
-                "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.",
-                "value": {}
-              },
-              {
-                "name": "setCustomValidity",
-                "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-blur",
-                "description": "Emitido quando o botão perde o foco."
-              },
-              {
-                "name": "cps-focus",
-                "description": "Emitido quando o botão obtém o foco."
-              },
-              {
-                "name": "cps-invalid",
-                "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "title",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "variant",
-              "description": "A variante visual para apresentação do botão.",
-              "value": {
-                "type": "'default' | 'accent' | 'transparent'"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do botão.",
-              "value": {
-                "type": "'small' | 'medium' | 'large'"
-              }
-            },
-            {
-              "name": "caret",
-              "description": "Apresenta um sinalizador de menu ao final do botão. Usado para indicar que o botão dispara um menu de contexto ou algum comportamento similar.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "disabled",
-              "description": "Desabilita o botão.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "waiting",
-              "description": "Apresenta o botão em estado de carregamento.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "rounded",
-              "description": "Arredondamento dos cantos do botão, com o padrão sendo bordas arredondas em `4px`.",
-              "value": {
-                "type": "'default' | 'corner' | 'full'"
-              }
-            },
-            {
-              "name": "type",
-              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
-              "value": {
-                "type": "'button' | 'submit' | 'reset'"
-              }
-            },
-            {
-              "name": "name",
-              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "value",
-              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "href",
-              "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "target",
-              "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
-              "value": {
-                "type": "'_blank' | '_parent' | '_self' | '_top'"
-              }
-            },
-            {
-              "name": "rel",
-              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "download",
-              "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
-              "value": {
-                "type": "string | undefined"
-              }
-            },
-            {
-              "name": "form",
-              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "formaction",
-              "description": "Usado para sobrescrever o atributo `action` do formulário \"dono\" deste botão.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "formenctype",
-              "description": "Usado para sobrescrever o atributo `enctype` do formulário \"dono\" deste botão.",
-              "value": {
-                "type": "'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain'"
-              }
-            },
-            {
-              "name": "formmethod",
-              "description": "Usado para sobrescrever o atributo `method` do formulário \"dono\" deste botão.",
-              "value": {
-                "type": "'post' | 'get'"
-              }
-            },
-            {
-              "name": "formnovalidate",
-              "description": "Usado para sobrescrever o atributo `novalidate` do formulário \"dono\" deste botão.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "formtarget",
-              "description": "Usado para sobrescrever o atributo `target` do formulário \"dono\" deste botão.",
-              "value": {
-                "type": "'_self' | '_blank' | '_parent' | '_top' | string"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-button-group",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button-group",
@@ -1347,6 +937,416 @@
               "description": "Indica se o _card_ é acionável pelo usuário (podendo ser interagido,\npor exemplo, com _mouse_ e teclado).",
               "value": {
                 "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-button",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/button",
+          "js": {
+            "properties": [
+              {
+                "name": "formControlController",
+                "value": {}
+              },
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "button",
+                "value": {
+                  "type": "HTMLButtonElement | HTMLAnchorElement"
+                }
+              },
+              {
+                "name": "isFocused",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "title",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "variant",
+                "description": "A variante visual para apresentação do botão.",
+                "value": {
+                  "type": "'default' | 'accent' | 'transparent'"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do botão.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "caret",
+                "description": "Apresenta um sinalizador de menu ao final do botão. Usado para indicar que o botão dispara um menu de contexto ou algum comportamento similar.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o botão.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "waiting",
+                "description": "Apresenta o botão em estado de carregamento.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "rounded",
+                "description": "Arredondamento dos cantos do botão, com o padrão sendo bordas arredondas em `4px`.",
+                "value": {
+                  "type": "'default' | 'corner' | 'full'"
+                }
+              },
+              {
+                "name": "type",
+                "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+                "value": {
+                  "type": "'button' | 'submit' | 'reset'"
+                }
+              },
+              {
+                "name": "name",
+                "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "href",
+                "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "target",
+                "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+                "value": {
+                  "type": "'_blank' | '_parent' | '_self' | '_top'"
+                }
+              },
+              {
+                "name": "rel",
+                "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "download",
+                "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+                "value": {
+                  "type": "string | undefined"
+                }
+              },
+              {
+                "name": "form",
+                "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "formAction",
+                "description": "Usado para sobrescrever o atributo `action` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "formEnctype",
+                "description": "Usado para sobrescrever o atributo `enctype` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain'"
+                }
+              },
+              {
+                "name": "formMethod",
+                "description": "Usado para sobrescrever o atributo `method` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "'post' | 'get'"
+                }
+              },
+              {
+                "name": "formNoValidate",
+                "description": "Usado para sobrescrever o atributo `novalidate` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "formTarget",
+                "description": "Usado para sobrescrever o atributo `target` do formulário \"dono\" deste botão.",
+                "value": {
+                  "type": "'_self' | '_blank' | '_parent' | '_top' | string"
+                }
+              },
+              {
+                "name": "validity",
+                "description": "Obtém o objeto de estado de validade do botão.",
+                "value": {}
+              },
+              {
+                "name": "validationMessage",
+                "description": "Obtém a mensagem de validação do botão.",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleClick",
+                "value": {}
+              },
+              {
+                "name": "handleHostClick",
+                "value": {}
+              },
+              {
+                "name": "handleInvalid",
+                "value": {}
+              },
+              {
+                "name": "isButton",
+                "value": {}
+              },
+              {
+                "name": "isLink",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "click",
+                "description": "Simula um _click_ no botão.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no botão.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do botão.",
+                "value": {}
+              },
+              {
+                "name": "checkValidity",
+                "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.",
+                "value": {}
+              },
+              {
+                "name": "getForm",
+                "description": "Obtém o formulário associado com este componente, se algum estiver.",
+                "value": {}
+              },
+              {
+                "name": "reportValidity",
+                "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.",
+                "value": {}
+              },
+              {
+                "name": "setCustomValidity",
+                "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o botão perde o foco."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o botão obtém o foco."
+              },
+              {
+                "name": "cps-invalid",
+                "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "title",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "variant",
+              "description": "A variante visual para apresentação do botão.",
+              "value": {
+                "type": "'default' | 'accent' | 'transparent'"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do botão.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "caret",
+              "description": "Apresenta um sinalizador de menu ao final do botão. Usado para indicar que o botão dispara um menu de contexto ou algum comportamento similar.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o botão.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "waiting",
+              "description": "Apresenta o botão em estado de carregamento.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "rounded",
+              "description": "Arredondamento dos cantos do botão, com o padrão sendo bordas arredondas em `4px`.",
+              "value": {
+                "type": "'default' | 'corner' | 'full'"
+              }
+            },
+            {
+              "name": "type",
+              "description": "O tipo do botão. Observe que o valor padrão é `button` ao invés de `submit`, o oposto de como um\n`<button>` nativo se comporta. Quando `submit`, o botão auto-submete o `<form>` em que estiver contido.",
+              "value": {
+                "type": "'button' | 'submit' | 'reset'"
+              }
+            },
+            {
+              "name": "name",
+              "description": "O nome do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "O valor do botão, submetido em par _name_/_value_ com os dados do formulário,\nsomente se este botão for o submissor. Ignorado quando `href` está presente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "href",
+              "description": "Quando definido, o botão será renderizado como um elemento `<a>` com este `href` definido, ao invés de um elemento `<button>`.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "target",
+              "description": "Informa o navegador qual o alvo de abertura do _link_. Usado somente se `href` estiver presente.",
+              "value": {
+                "type": "'_blank' | '_parent' | '_self' | '_top'"
+              }
+            },
+            {
+              "name": "rel",
+              "description": "Quando usando `href`, este atributo irá mapear o valor do atributo `rel` subjacente com o valor\npadrão `noreferrer noopener`, por questões de segurança. No entanto, se você estiver usando `target`\npara apontar para uma guia/janela específica, isso impedirá que ele funcione corretamente.\nPara este cenário específico, defina como vazio ou altere o valor de `rel` para outro valor.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "download",
+              "description": "Informa o navegador para baixar o arquivo vinculado, com o nome definido aqui. Usado somente se `href` estiver presente.",
+              "value": {
+                "type": "string | undefined"
+              }
+            },
+            {
+              "name": "form",
+              "description": "O formulário \"dono\" deste botão. Se não informado, o formulário mais próximo na hierarquia\naté este botão será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "formaction",
+              "description": "Usado para sobrescrever o atributo `action` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "formenctype",
+              "description": "Usado para sobrescrever o atributo `enctype` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain'"
+              }
+            },
+            {
+              "name": "formmethod",
+              "description": "Usado para sobrescrever o atributo `method` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "'post' | 'get'"
+              }
+            },
+            {
+              "name": "formnovalidate",
+              "description": "Usado para sobrescrever o atributo `novalidate` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "formtarget",
+              "description": "Usado para sobrescrever o atributo `target` do formulário \"dono\" deste botão.",
+              "value": {
+                "type": "'_self' | '_blank' | '_parent' | '_top' | string"
               }
             }
           ]
@@ -4452,60 +4452,6 @@
           ]
         },
         {
-          "name": "cps-label",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
-          "js": {
-            "properties": [
-              {
-                "name": "variant",
-                "description": "A variante temática do _label_.",
-                "value": {
-                  "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
-                "value": {
-                  "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-                }
-              },
-              {
-                "name": "tag",
-                "description": "O elemento HTML desejado para a renderização do _label_.",
-                "value": {
-                  "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-                }
-              }
-            ],
-            "events": []
-          },
-          "attributes": [
-            {
-              "name": "variant",
-              "description": "A variante temática do _label_.",
-              "value": {
-                "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
-              "value": {
-                "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
-              }
-            },
-            {
-              "name": "tag",
-              "description": "O elemento HTML desejado para a renderização do _label_.",
-              "value": {
-                "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-link",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/link",
@@ -4619,6 +4565,60 @@
               "description": "O alvo do _link_, podendo ser `_self`, `_blank`, `_parent`, `_top`, ou um nome de janela ou _frame_ específico.",
               "value": {
                 "type": "string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-label",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/label",
+          "js": {
+            "properties": [
+              {
+                "name": "variant",
+                "description": "A variante temática do _label_.",
+                "value": {
+                  "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
+                "value": {
+                  "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+                }
+              },
+              {
+                "name": "tag",
+                "description": "O elemento HTML desejado para a renderização do _label_.",
+                "value": {
+                  "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
+                }
+              }
+            ],
+            "events": []
+          },
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "A variante temática do _label_.",
+              "value": {
+                "type": "| 'primary'\n    | 'secondary'\n    | 'tertiary'\n    | 'disabled'\n    | 'brand-primary'\n    | 'brand-secondary'\n    | 'brand-tertiary'\n    | 'inverted-primary'\n    | 'inverted-secondary'\n    | 'inverted-disabled'"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do texto do _label_. Por padrão, o tamanho é herdado do elemento pai.",
+              "value": {
+                "type": "| 'inherit'\n    | 'stamp'\n    | 'caption'\n    | 'label'\n    | 'body'\n    | 'body-emphasized'\n    | 'body-strong'\n    | 'body-large'\n    | 'subtitle'\n    | 'title'\n    | 'heading'\n    | 'display'"
+              }
+            },
+            {
+              "name": "tag",
+              "description": "O elemento HTML desejado para a renderização do _label_.",
+              "value": {
+                "type": "'span' | 'small' | 'i' | 'b' | 'em' | 'strong' | 'label' | 'p' | 'div'"
               }
             }
           ]
@@ -6605,528 +6605,6 @@
           ]
         },
         {
-          "name": "cps-select",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/select",
-          "js": {
-            "properties": [
-              {
-                "name": "formControlController",
-                "value": {}
-              },
-              {
-                "name": "hasSlotController",
-                "value": {}
-              },
-              {
-                "name": "localize",
-                "value": {}
-              },
-              {
-                "name": "typeToSelectString",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "typeToSelectTimeout",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "flyout",
-                "value": {
-                  "type": "CpsFlyout"
-                }
-              },
-              {
-                "name": "field",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "displayInput",
-                "value": {
-                  "type": "HTMLInputElement"
-                }
-              },
-              {
-                "name": "valueInput",
-                "value": {
-                  "type": "HTMLInputElement"
-                }
-              },
-              {
-                "name": "menu",
-                "value": {
-                  "type": "HTMLSlotElement"
-                }
-              },
-              {
-                "name": "hasFocus",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "generatedId",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "displayLabel",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "currentOption",
-                "value": {
-                  "type": "CpsOption"
-                }
-              },
-              {
-                "name": "selectedOptions",
-                "value": {
-                  "type": "CpsOption[]"
-                }
-              },
-              {
-                "name": "id",
-                "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "name",
-                "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
-                "value": {
-                  "type": "string | string[]"
-                }
-              },
-              {
-                "name": "defaultValue",
-                "description": "O valor padrão do controle de formulário. Usado principalmente para redefinir o campo.",
-                "value": {
-                  "type": "string | string[]"
-                }
-              },
-              {
-                "name": "size",
-                "description": "O tamanho do campo.",
-                "value": {
-                  "type": "'small' | 'medium' | 'large'"
-                }
-              },
-              {
-                "name": "placeholder",
-                "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "multiple",
-                "description": "Habilita a possibilidade de selecionar mais de uma opção.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "maxOptionsVisible",
-                "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
-                "value": {
-                  "type": "number"
-                }
-              },
-              {
-                "name": "disabled",
-                "description": "Desabilita o campo.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "clearable",
-                "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "open",
-                "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "strategy",
-                "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
-                "value": {
-                  "type": "'absolute' | 'fixed'"
-                }
-              },
-              {
-                "name": "label",
-                "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "placement",
-                "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
-                "value": {
-                  "type": "'top' | 'bottom'"
-                }
-              },
-              {
-                "name": "helpText",
-                "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "form",
-                "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
-                "value": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "required",
-                "description": "Torna o campo como sendo de preenchimento obrigatório.",
-                "value": {
-                  "type": "boolean"
-                }
-              },
-              {
-                "name": "validity",
-                "description": "Obtém o objeto de estado de validade do campo.",
-                "value": {}
-              },
-              {
-                "name": "validationMessage",
-                "description": "Obtém a mensagem de validação do campo.",
-                "value": {}
-              },
-              {
-                "name": "handleIdChange",
-                "value": {}
-              },
-              {
-                "name": "addOpenListeners",
-                "value": {}
-              },
-              {
-                "name": "removeOpenListeners",
-                "value": {}
-              },
-              {
-                "name": "handleFocus",
-                "value": {}
-              },
-              {
-                "name": "handleBlur",
-                "value": {}
-              },
-              {
-                "name": "handleDocumentFocusIn",
-                "value": {}
-              },
-              {
-                "name": "handleDocumentKeyDown",
-                "value": {}
-              },
-              {
-                "name": "handleDocumentMouseDown",
-                "value": {}
-              },
-              {
-                "name": "handleComboboxMouseDown",
-                "value": {}
-              },
-              {
-                "name": "handleComboboxKeyDown",
-                "value": {}
-              },
-              {
-                "name": "handleClearClick",
-                "value": {}
-              },
-              {
-                "name": "handleClearMouseDown",
-                "value": {}
-              },
-              {
-                "name": "handleOptionClick",
-                "value": {}
-              },
-              {
-                "name": "handleDefaultSlotChange",
-                "value": {}
-              },
-              {
-                "name": "handleTagRemove",
-                "value": {}
-              },
-              {
-                "name": "getAllLabels",
-                "value": {}
-              },
-              {
-                "name": "getAllOptions",
-                "value": {}
-              },
-              {
-                "name": "getFirstOption",
-                "value": {}
-              },
-              {
-                "name": "setCurrentOption",
-                "value": {}
-              },
-              {
-                "name": "setSelectedOptions",
-                "value": {}
-              },
-              {
-                "name": "toggleOptionSelection",
-                "value": {}
-              },
-              {
-                "name": "selectionChanged",
-                "value": {}
-              },
-              {
-                "name": "handleInvalid",
-                "value": {}
-              },
-              {
-                "name": "handleDisabledChange",
-                "value": {}
-              },
-              {
-                "name": "handleValueChange",
-                "value": {}
-              },
-              {
-                "name": "handleOpenChange",
-                "value": {}
-              },
-              {
-                "name": "show",
-                "description": "Exibe o menu seletor de opções.",
-                "value": {}
-              },
-              {
-                "name": "hide",
-                "description": "Oculta o menu seletor de opções.",
-                "value": {}
-              },
-              {
-                "name": "checkValidity",
-                "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.",
-                "value": {}
-              },
-              {
-                "name": "getForm",
-                "description": "Obtém o formulário associado com este componente, se algum estiver.",
-                "value": {}
-              },
-              {
-                "name": "reportValidity",
-                "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.",
-                "value": {}
-              },
-              {
-                "name": "setCustomValidity",
-                "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.",
-                "value": {}
-              },
-              {
-                "name": "focus",
-                "description": "Coloca o foco no campo.",
-                "value": {}
-              },
-              {
-                "name": "blur",
-                "description": "Remove o foco do campo.",
-                "value": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "cps-change",
-                "description": "Emitido quando a alteração do valor do controle é confirmada pelo usuário."
-              },
-              {
-                "name": "cps-clear",
-                "description": "Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso)."
-              },
-              {
-                "name": "cps-input",
-                "description": "Emitido quando o controle recebe entrada de dados."
-              },
-              {
-                "name": "cps-focus",
-                "description": "Emitido quando o controle obtém o foco."
-              },
-              {
-                "name": "cps-blur",
-                "description": "Emitido quando o controle perde o foco."
-              },
-              {
-                "name": "cps-show",
-                "description": "Emitido quando a lista suspensa de opções começa a ser exibida."
-              },
-              {
-                "name": "cps-after-show",
-                "description": "Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas."
-              },
-              {
-                "name": "cps-hide",
-                "description": "Emitido quando a lista suspensa de opções começa a ser ocultada."
-              },
-              {
-                "name": "cps-after-hide",
-                "description": "Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas."
-              },
-              {
-                "name": "cps-invalid",
-                "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas."
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "name": "id",
-              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "name",
-              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "value",
-              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
-              "value": {
-                "type": "string | string[]"
-              }
-            },
-            {
-              "name": "size",
-              "description": "O tamanho do campo.",
-              "value": {
-                "type": "'small' | 'medium' | 'large'"
-              }
-            },
-            {
-              "name": "placeholder",
-              "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "multiple",
-              "description": "Habilita a possibilidade de selecionar mais de uma opção.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "max-options-visible",
-              "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
-              "value": {
-                "type": "number"
-              }
-            },
-            {
-              "name": "disabled",
-              "description": "Desabilita o campo.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "clearable",
-              "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "open",
-              "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
-              "value": {
-                "type": "boolean"
-              }
-            },
-            {
-              "name": "strategy",
-              "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
-              "value": {
-                "type": "'absolute' | 'fixed'"
-              }
-            },
-            {
-              "name": "label",
-              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "placement",
-              "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
-              "value": {
-                "type": "'top' | 'bottom'"
-              }
-            },
-            {
-              "name": "help-text",
-              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "form",
-              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
-              "value": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "required",
-              "description": "Torna o campo como sendo de preenchimento obrigatório.",
-              "value": {
-                "type": "boolean"
-              }
-            }
-          ]
-        },
-        {
           "name": "cps-separator",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/separator",
@@ -8528,6 +8006,538 @@
           ]
         },
         {
+          "name": "cps-select",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/select",
+          "js": {
+            "properties": [
+              {
+                "name": "formControlController",
+                "value": {}
+              },
+              {
+                "name": "hasSlotController",
+                "value": {}
+              },
+              {
+                "name": "localize",
+                "value": {}
+              },
+              {
+                "name": "typeToSelectString",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "typeToSelectTimeout",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "flyout",
+                "value": {
+                  "type": "CpsFlyout"
+                }
+              },
+              {
+                "name": "field",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "displayInput",
+                "value": {
+                  "type": "HTMLInputElement"
+                }
+              },
+              {
+                "name": "valueInput",
+                "value": {
+                  "type": "HTMLInputElement"
+                }
+              },
+              {
+                "name": "menu",
+                "value": {
+                  "type": "HTMLSlotElement"
+                }
+              },
+              {
+                "name": "hasFocus",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "generatedId",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "displayLabel",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "currentOption",
+                "value": {
+                  "type": "CpsOption"
+                }
+              },
+              {
+                "name": "selectedOptions",
+                "value": {
+                  "type": "CpsOption[]"
+                }
+              },
+              {
+                "name": "id",
+                "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
+                "value": {
+                  "type": "string | string[]"
+                }
+              },
+              {
+                "name": "defaultValue",
+                "description": "O valor padrão do controle de formulário. Usado principalmente para redefinir o campo.",
+                "value": {
+                  "type": "string | string[]"
+                }
+              },
+              {
+                "name": "size",
+                "description": "O tamanho do campo.",
+                "value": {
+                  "type": "'small' | 'medium' | 'large'"
+                }
+              },
+              {
+                "name": "placeholder",
+                "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "multiple",
+                "description": "Habilita a possibilidade de selecionar mais de uma opção.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "maxOptionsVisible",
+                "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
+                "value": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "disabled",
+                "description": "Desabilita o campo.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "clearable",
+                "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "open",
+                "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "strategy",
+                "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+                "value": {
+                  "type": "'absolute' | 'fixed'"
+                }
+              },
+              {
+                "name": "label",
+                "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "placement",
+                "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+                "value": {
+                  "type": "'top' | 'bottom'"
+                }
+              },
+              {
+                "name": "helpText",
+                "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "form",
+                "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+                "value": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "required",
+                "description": "Torna o campo como sendo de preenchimento obrigatório.",
+                "value": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "validity",
+                "description": "Obtém o objeto de estado de validade do campo.",
+                "value": {}
+              },
+              {
+                "name": "validationMessage",
+                "description": "Obtém a mensagem de validação do campo.",
+                "value": {}
+              },
+              {
+                "name": "handleIdChange",
+                "value": {}
+              },
+              {
+                "name": "addOpenListeners",
+                "value": {}
+              },
+              {
+                "name": "removeOpenListeners",
+                "value": {}
+              },
+              {
+                "name": "handleFocus",
+                "value": {}
+              },
+              {
+                "name": "handleBlur",
+                "value": {}
+              },
+              {
+                "name": "handleDocumentFocusIn",
+                "value": {}
+              },
+              {
+                "name": "handleDocumentKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handleDocumentMouseDown",
+                "value": {}
+              },
+              {
+                "name": "handleComboboxMouseDown",
+                "value": {}
+              },
+              {
+                "name": "handleComboboxKeyDown",
+                "value": {}
+              },
+              {
+                "name": "handleClearClick",
+                "value": {}
+              },
+              {
+                "name": "handleClearMouseDown",
+                "value": {}
+              },
+              {
+                "name": "handleOptionClick",
+                "value": {}
+              },
+              {
+                "name": "handleDefaultSlotChange",
+                "value": {}
+              },
+              {
+                "name": "handleTagRemove",
+                "value": {}
+              },
+              {
+                "name": "getAllLabels",
+                "value": {}
+              },
+              {
+                "name": "getAllOptions",
+                "value": {}
+              },
+              {
+                "name": "getFirstOption",
+                "value": {}
+              },
+              {
+                "name": "setCurrentOption",
+                "value": {}
+              },
+              {
+                "name": "setSelectedOptions",
+                "value": {}
+              },
+              {
+                "name": "toggleOptionSelection",
+                "value": {}
+              },
+              {
+                "name": "selectionChanged",
+                "value": {}
+              },
+              {
+                "name": "handleInvalid",
+                "value": {}
+              },
+              {
+                "name": "handleDisabledChange",
+                "value": {}
+              },
+              {
+                "name": "handleValueChange",
+                "value": {}
+              },
+              {
+                "name": "handleOpenChange",
+                "value": {}
+              },
+              {
+                "name": "show",
+                "description": "Exibe o menu seletor de opções.",
+                "value": {}
+              },
+              {
+                "name": "hide",
+                "description": "Oculta o menu seletor de opções.",
+                "value": {}
+              },
+              {
+                "name": "checkValidity",
+                "description": "Verifica a validade em um formulário, sem exibir uma mensagem de validação. Retorna `true` quando válido, e `false` quando inválido.",
+                "value": {}
+              },
+              {
+                "name": "getForm",
+                "description": "Obtém o formulário associado com este componente, se algum estiver.",
+                "value": {}
+              },
+              {
+                "name": "reportValidity",
+                "description": "Verifica a validade em um formulário, e exibe as mensagem de validação do navegador caso o resultado seja inválido.",
+                "value": {}
+              },
+              {
+                "name": "setCustomValidity",
+                "description": "Define uma mensagem de validação personalizada. Passar uma `string` vazia como argumento restaura a validade do elemento.",
+                "value": {}
+              },
+              {
+                "name": "focus",
+                "description": "Coloca o foco no campo.",
+                "value": {}
+              },
+              {
+                "name": "blur",
+                "description": "Remove o foco do campo.",
+                "value": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "cps-change",
+                "description": "Emitido quando a alteração do valor do controle é confirmada pelo usuário."
+              },
+              {
+                "name": "cps-clear",
+                "description": "Emitido quando o botão de limpar é ativado (caso `clearable` esteja em uso)."
+              },
+              {
+                "name": "cps-input",
+                "description": "Emitido quando o controle recebe entrada de dados."
+              },
+              {
+                "name": "cps-focus",
+                "description": "Emitido quando o controle obtém o foco."
+              },
+              {
+                "name": "cps-blur",
+                "description": "Emitido quando o controle perde o foco."
+              },
+              {
+                "name": "cps-show",
+                "description": "Emitido quando a lista suspensa de opções começa a ser exibida."
+              },
+              {
+                "name": "cps-after-show",
+                "description": "Emitido após a lista suspensa de opções ser exibida e todas as animações terem sido concluídas."
+              },
+              {
+                "name": "cps-hide",
+                "description": "Emitido quando a lista suspensa de opções começa a ser ocultada."
+              },
+              {
+                "name": "cps-after-hide",
+                "description": "Emitido após a lista suspensa de opções ser ocultada e todas as animações terem sido concluídas."
+              },
+              {
+                "name": "cps-invalid",
+                "description": "Emitido quando o elemento de formulário foi checado sobre sua validade, e suas condições não foram satisfeitas."
+              }
+            ]
+          },
+          "attributes": [
+            {
+              "name": "id",
+              "description": "O identificador único do campo, usado como estratégia de vinculação ao rótulo e/ou texto de apoio anexado.\nSe não for fornecido, um UUID é gerado automaticamente.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "description": "O nome do campo, submetido em par _name_/_value_ com os dados do formulário.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "O valor do campo, submetido em par _name_/_value_ com os dados do formulário.\nQuando `multiple` é habilitado, o valor será uma lista de valores delimitados por espaço com base nas opções selecionadas.",
+              "value": {
+                "type": "string | string[]"
+              }
+            },
+            {
+              "name": "size",
+              "description": "O tamanho do campo.",
+              "value": {
+                "type": "'small' | 'medium' | 'large'"
+              }
+            },
+            {
+              "name": "placeholder",
+              "description": "Texto de espaço reservado para exibir uma dica quando o campo estiver vazio.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "multiple",
+              "description": "Habilita a possibilidade de selecionar mais de uma opção.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "max-options-visible",
+              "description": "O número máximo de opções selecionadas a serem exibidas no campo principal, quando `multiple` é usado.\nApós o limite, apresenta um _chip_ exibindo `+n` (sendo `n` o número de opções selecionadas mas não exibidas).\nO valor padrão é `0`, e significa nenhum limite (todas as opções selecionadas são exibidas).",
+              "value": {
+                "type": "number"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Desabilita o campo.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "clearable",
+              "description": "Adiciona um botão de limpar exibido quando o campo não estiver vazio.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "open",
+              "description": "Indica se o menu de seleção de opções está aberto. Você pode alternar este atributo, manualmente ou reativamente, para mostrar e ocultar o menu. Opcionalmente, pode utilizar os métodos `show()` e `hide()` se preferir uma abordagem imperativa, e este atributo refletirá o estado aberto do menu em tempo real.",
+              "value": {
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "strategy",
+              "description": "Estratégia a nível de CSS do posicionamento do menu. A estratégia `absolute` funciona bem na maioria dos casos, mas se rolagem externa causar o corte do menu (se um elemento pai for `overflow` igual a `auto` ou `scroll`), usar uma estratégia de posição `fixed` pode contornar o problema. Entretanto, posicionamento fixo pode não funcionar em todos os cenários, portanto deve ser habilitado apenas quando necessário, e testado com atenção.",
+              "value": {
+                "type": "'absolute' | 'fixed'"
+              }
+            },
+            {
+              "name": "label",
+              "description": "O rótulo do campo. Se você precisar injetar HTML, use o _slot_ `label` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "placement",
+              "description": "O posicionamento preferido do menu de seleção em relação ao campo base. Observe que o posicionamento real poderá variar, se o posicionamento desejado não for viável, no intuito de manter o painel dentro da área de visualização.",
+              "value": {
+                "type": "'top' | 'bottom'"
+              }
+            },
+            {
+              "name": "help-text",
+              "description": "O texto de apoio do campo. Se você precisar injetar HTML, use o _slot_ `help-text` em vez disso.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "form",
+              "description": "O formulário \"dono\" deste controle de formulário. Se não informado, o formulário mais próximo na hierarquia\naté este elemento será utilizado. Se informado, o valor deve ser um `id` único de um formulário\nexistente no documento.",
+              "value": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "required",
+              "description": "Torna o campo como sendo de preenchimento obrigatório.",
+              "value": {
+                "type": "boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "cps-visually-hidden",
+          "description": "",
+          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/visually-hidden",
+          "js": {
+            "properties": [],
+            "events": []
+          },
+          "attributes": []
+        },
+        {
           "name": "cps-tooltip",
           "description": "",
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/tooltip",
@@ -8745,16 +8755,6 @@
               }
             }
           ]
-        },
-        {
-          "name": "cps-visually-hidden",
-          "description": "",
-          "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/visually-hidden",
-          "js": {
-            "properties": [],
-            "events": []
-          },
-          "attributes": []
         },
         {
           "doc-url": "https://cpsrepositorio.github.io/cps-elements/#/componentes/",
