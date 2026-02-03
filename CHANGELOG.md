@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Changed
+
+- Atualização do `<cps-button>` para suportar preenchimento de altura do contêiner pai e centralização de conteúdo com _flexbox_.
+
 ### Fixed
 
 - Corrigido `<cps-flyout>` quanto ao `z-index` (agora usa `--cps-z-index-dropdown`) e ao momento de emissão do evento `cps-reposition`.

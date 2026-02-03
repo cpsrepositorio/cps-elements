@@ -23,6 +23,7 @@ export default css`
     cursor: inherit;
     padding: 0;
     width: 100%;
+    height: 100%;
     vertical-align: middle;
     text-decoration: none;
     white-space: nowrap;
@@ -62,7 +63,9 @@ export default css`
   }
 
   .button__content {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .button__content::slotted(cps-icon) {
@@ -201,21 +204,18 @@ export default css`
   */
 
   .button--small {
-    height: auto;
     min-height: var(--cps-button-height-small);
     line-height: calc(var(--cps-button-height-small) - var(--cps-button-border-width) * 2);
     font-size: var(--cps-button-font-size-small);
   }
 
   .button--medium {
-    height: auto;
     min-height: var(--cps-button-height-medium);
     line-height: calc(var(--cps-button-height-medium) - var(--cps-button-border-width) * 2);
     font-size: var(--cps-button-font-size-medium);
   }
 
   .button--large {
-    height: auto;
     min-height: var(--cps-button-height-large);
     line-height: calc(var(--cps-button-height-large) - var(--cps-button-border-width) * 2);
     font-size: var(--cps-button-font-size-large);
