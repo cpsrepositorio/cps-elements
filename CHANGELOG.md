@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Fixed
+
+- Corrigido `<cps-flyout>` quanto ao `z-index` (agora usa `--cps-z-index-dropdown`) e ao momento de emissão do evento `cps-reposition`.
+
 ## 0.25.0 - 2025-12-09
 
 ### Added

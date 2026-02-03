@@ -475,9 +475,9 @@ export default class CpsFlyout extends BaseElement {
           [staticSide]: staticSideValue
         });
       }
-    });
 
-    this.emit('cps-reposition');
+      this.emit('cps-reposition');
+    });
   }
 
   render() {

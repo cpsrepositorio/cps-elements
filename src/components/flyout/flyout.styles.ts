@@ -17,6 +17,7 @@ export default css`
 
   .flyout {
     position: absolute;
+    z-index: var(--cps-z-index-dropdown);
     outline: 1px solid var(--border-color);
     isolation: isolate;
     background: var(--background-color);
