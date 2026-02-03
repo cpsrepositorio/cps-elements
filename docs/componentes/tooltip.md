@@ -33,190 +33,331 @@ Use o atributo `placement` para informar ao _tooltip_ seu posicionamento preferi
 
 ```html preview
 <div class="tooltip-placement-example">
-  <div class="tooltip-placement-example-row">
+  <div class="tooltip-top-start">
     <cps-tooltip content="Superior inicial" placement="top-start">
-      <cps-button></cps-button>
+      <cps-button
+        ><cps-icon name="arrow-step-in-left-fill" style="border-bottom: 1px solid currentColor"></cps-icon
+      ></cps-button>
     </cps-tooltip>
+  </div>
 
+  <div class="tooltip-top">
     <cps-tooltip content="Superior" placement="top">
-      <cps-button></cps-button>
+      <cps-button
+        ><cps-icon
+          name="arrow-step-in-fill"
+          style="transform: rotate(180deg); border-top: 1px solid currentColor"
+        ></cps-icon
+      ></cps-button>
     </cps-tooltip>
+  </div>
 
+  <div class="tooltip-top-end">
     <cps-tooltip content="Superior final" placement="top-end">
-      <cps-button></cps-button>
+      <cps-button
+        ><cps-icon name="arrow-step-in-right-fill" style="border-bottom: 1px solid currentColor"></cps-icon
+      ></cps-button>
     </cps-tooltip>
   </div>
 
-  <div class="tooltip-placement-example-row">
+  <div class="tooltip-left-start">
     <cps-tooltip content="Esquerda inicial" placement="left-start">
-      <cps-button></cps-button>
-    </cps-tooltip>
-
-    <cps-tooltip content="Direita inicial" placement="right-start">
-      <cps-button></cps-button>
+      <cps-button
+        ><cps-icon
+          name="arrow-step-in-left-fill"
+          style="transform: rotate(90deg); border-top: 1px solid currentColor"
+        ></cps-icon
+      ></cps-button>
     </cps-tooltip>
   </div>
 
-  <div class="tooltip-placement-example-row">
+  <div class="tooltip-left">
     <cps-tooltip content="Esquerda" placement="left">
-      <cps-button></cps-button>
-    </cps-tooltip>
-
-    <cps-tooltip content="Direita" placement="right">
-      <cps-button></cps-button>
+      <cps-button
+        ><cps-icon name="arrow-step-in-left-fill" style="border-right: 1px solid currentColor"></cps-icon
+      ></cps-button>
     </cps-tooltip>
   </div>
 
-  <div class="tooltip-placement-example-row">
+  <div class="tooltip-left-end">
     <cps-tooltip content="Esquerda final" placement="left-end">
-      <cps-button></cps-button>
-    </cps-tooltip>
-
-    <cps-tooltip content="Direita final" placement="right-end">
-      <cps-button></cps-button>
+      <cps-button
+        ><cps-icon
+          name="arrow-step-in-left-fill"
+          style="transform: rotate(270deg); border-bottom: 1px solid currentColor"
+        ></cps-icon
+      ></cps-button>
     </cps-tooltip>
   </div>
 
-  <div class="tooltip-placement-example-row">
+  <div class="tooltip-right-start">
+    <cps-tooltip content="Direita inicial" placement="right-start">
+      <cps-button
+        ><cps-icon
+          name="arrow-step-in-left-fill"
+          style="transform: rotate(90deg); border-bottom: 1px solid currentColor"
+        ></cps-icon
+      ></cps-button>
+    </cps-tooltip>
+  </div>
+
+  <div class="tooltip-right">
+    <cps-tooltip content="Direita" placement="right">
+      <cps-button
+        ><cps-icon name="arrow-step-in-right-fill" style="border-left: 1px solid currentColor"></cps-icon
+      ></cps-button>
+    </cps-tooltip>
+  </div>
+
+  <div class="tooltip-right-end">
+    <cps-tooltip content="Direita final" placement="right-end">
+      <cps-button
+        ><cps-icon
+          name="arrow-step-in-left-fill"
+          style="transform: rotate(270deg); border-top: 1px solid currentColor"
+        ></cps-icon
+      ></cps-button>
+    </cps-tooltip>
+  </div>
+
+  <div class="tooltip-bottom-start">
     <cps-tooltip content="Inferior inicial" placement="bottom-start">
-      <cps-button></cps-button>
+      <cps-button
+        ><cps-icon name="arrow-step-in-left-fill" style="border-top: 1px solid currentColor"></cps-icon
+      ></cps-button>
     </cps-tooltip>
+  </div>
 
+  <div class="tooltip-bottom">
     <cps-tooltip content="Inferior" placement="bottom">
-      <cps-button></cps-button>
+      <cps-button
+        ><cps-icon name="arrow-step-in-fill" style="border-top: 1px solid currentColor"></cps-icon
+      ></cps-button>
     </cps-tooltip>
+  </div>
 
+  <div class="tooltip-bottom-end">
     <cps-tooltip content="Inferior final" placement="bottom-end">
-      <cps-button></cps-button>
+      <cps-button
+        ><cps-icon name="arrow-step-in-right-fill" style="border-top: 1px solid currentColor"></cps-icon
+      ></cps-button>
     </cps-tooltip>
   </div>
 </div>
 
 <style>
   .tooltip-placement-example {
-    margin: 1rem;
-    width: 250px;
+    display: grid;
+    grid-template-rows: 32px 60px 60px 60px 32px;
+    grid-template-columns: 32px 60px 60px 60px 32px;
+    gap: 4px;
   }
 
-  .tooltip-placement-example-row:after {
-    display: table;
-    clear: both;
-    content: '';
+  .tooltip-placement-example .tooltip-top-start {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .tooltip-placement-example .tooltip-top {
+    grid-row: 1;
+    grid-column: 3;
+  }
+  .tooltip-placement-example .tooltip-top-end {
+    grid-row: 1;
+    grid-column: 4;
+  }
+
+  .tooltip-placement-example .tooltip-right-start {
+    grid-row: 2;
+    grid-column: 5;
+  }
+  .tooltip-placement-example .tooltip-right {
+    grid-row: 3;
+    grid-column: 5;
+  }
+  .tooltip-placement-example .tooltip-right-end {
+    grid-row: 4;
+    grid-column: 5;
+  }
+
+  .tooltip-placement-example .tooltip-bottom-start {
+    grid-row: 5;
+    grid-column: 2;
+  }
+  .tooltip-placement-example .tooltip-bottom {
+    grid-row: 5;
+    grid-column: 3;
+  }
+  .tooltip-placement-example .tooltip-bottom-end {
+    grid-row: 5;
+    grid-column: 4;
+  }
+
+  .tooltip-placement-example .tooltip-left-start {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .tooltip-placement-example .tooltip-left {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .tooltip-placement-example .tooltip-left-end {
+    grid-row: 4;
+    grid-column: 1;
   }
 
   .tooltip-placement-example cps-button {
-    float: left;
-    margin-right: 0.25rem;
-    margin-bottom: 0.25rem;
-    width: 2.5rem;
-  }
-
-  .tooltip-placement-example-row:nth-child(1) cps-tooltip:first-child cps-button,
-  .tooltip-placement-example-row:nth-child(5) cps-tooltip:first-child cps-button {
-    margin-left: calc(40px + 0.25rem);
-  }
-
-  .tooltip-placement-example-row:nth-child(2) cps-tooltip:nth-child(2) cps-button,
-  .tooltip-placement-example-row:nth-child(3) cps-tooltip:nth-child(2) cps-button,
-  .tooltip-placement-example-row:nth-child(4) cps-tooltip:nth-child(2) cps-button {
-    margin-left: calc((40px * 3) + (0.25rem * 3));
+    width: 100%;
+    height: 100%;
   }
 </style>
 ```
 
 ```jsx react
 import { CpsButton } from '@cps-elements/web/react/button';
+import { CpsIcon } from '@cps-elements/web/react/icon';
 import { CpsTooltip } from '@cps-elements/web/react/tooltip';
 
 const css = `
   .tooltip-placement-example {
-    margin: 1rem;
-    width: 250px;
+    display: grid;
+    grid-template-rows: 32px 60px 60px 60px 32px;
+    grid-template-columns: 32px 60px 60px 60px 32px;
+    gap: 4px;
   }
 
-  .tooltip-placement-example-row:after {
-    display: table;
-    clear: both;
-    content: '';
-  }
+  .tooltip-placement-example .tooltip-top-start { grid-row: 1; grid-column: 2; }
+  .tooltip-placement-example .tooltip-top { grid-row: 1; grid-column: 3; }
+  .tooltip-placement-example .tooltip-top-end { grid-row: 1; grid-column: 4; }
+
+  .tooltip-placement-example .tooltip-right-start { grid-row: 2; grid-column: 5; }
+  .tooltip-placement-example .tooltip-right { grid-row: 3; grid-column: 5; }
+  .tooltip-placement-example .tooltip-right-end { grid-row: 4; grid-column: 5; }
+
+  .tooltip-placement-example .tooltip-bottom-start { grid-row: 5; grid-column: 2; }
+  .tooltip-placement-example .tooltip-bottom { grid-row: 5; grid-column: 3; }
+  .tooltip-placement-example .tooltip-bottom-end { grid-row: 5; grid-column: 4; }
+
+  .tooltip-placement-example .tooltip-left-start { grid-row: 2; grid-column: 1; }
+  .tooltip-placement-example .tooltip-left { grid-row: 3; grid-column: 1; }
+  .tooltip-placement-example .tooltip-left-end { grid-row: 4; grid-column: 1; }
 
   .tooltip-placement-example cps-button {
-    float: left;
-    margin-right: 0.25rem;
-    margin-bottom: 0.25rem;
-    width: 2.5rem;
-  }
-
-  .tooltip-placement-example-row:nth-child(1) cps-tooltip:first-child cps-button,
-  .tooltip-placement-example-row:nth-child(5) cps-tooltip:first-child cps-button {
-    margin-left: calc(40px + 0.25rem);
-  }
-
-  .tooltip-placement-example-row:nth-child(2) cps-tooltip:nth-child(2) cps-button,
-  .tooltip-placement-example-row:nth-child(3) cps-tooltip:nth-child(2) cps-button,
-  .tooltip-placement-example-row:nth-child(4) cps-tooltip:nth-child(2) cps-button {
-    margin-left: calc((40px * 3) + (0.25rem * 3));
+    width: 100%;
+    height: 100%;
   }
 `;
 
 const App = () => (
   <>
     <div className="tooltip-placement-example">
-      <div className="tooltip-placement-example-row">
+      <div className="tooltip-top-start">
         <CpsTooltip content="Superior inicial" placement="top-start">
-          <CpsButton />
+          <CpsButton>
+            <CpsIcon name="arrow-step-in-left-fill" style={{ borderBottom: '1px solid currentColor' }} />
+          </CpsButton>
         </CpsTooltip>
+      </div>
 
+      <div className="tooltip-top">
         <CpsTooltip content="Superior" placement="top">
-          <CpsButton />
+          <CpsButton>
+            <CpsIcon
+              name="arrow-step-in-fill"
+              style={{ transform: 'rotate(180deg)', borderTop: '1px solid currentColor' }}
+            />
+          </CpsButton>
         </CpsTooltip>
+      </div>
 
+      <div className="tooltip-top-end">
         <CpsTooltip content="Superior final" placement="top-end">
-          <CpsButton />
+          <CpsButton>
+            <CpsIcon name="arrow-step-in-right-fill" style={{ borderBottom: '1px solid currentColor' }} />
+          </CpsButton>
         </CpsTooltip>
       </div>
 
-      <div className="tooltip-placement-example-row">
+      <div className="tooltip-left-start">
         <CpsTooltip content="Esquerda inicial" placement="left-start">
-          <CpsButton />
-        </CpsTooltip>
-
-        <CpsTooltip content="Direita inicial" placement="right-start">
-          <CpsButton />
+          <CpsButton>
+            <CpsIcon
+              name="arrow-step-in-left-fill"
+              style={{ transform: 'rotate(90deg)', borderTop: '1px solid currentColor' }}
+            />
+          </CpsButton>
         </CpsTooltip>
       </div>
 
-      <div className="tooltip-placement-example-row">
+      <div className="tooltip-left">
         <CpsTooltip content="Esquerda" placement="left">
-          <CpsButton />
-        </CpsTooltip>
-
-        <CpsTooltip content="Direita" placement="right">
-          <CpsButton />
+          <CpsButton>
+            <CpsIcon name="arrow-step-in-left-fill" style={{ borderRight: '1px solid currentColor' }} />
+          </CpsButton>
         </CpsTooltip>
       </div>
 
-      <div className="tooltip-placement-example-row">
+      <div className="tooltip-left-end">
         <CpsTooltip content="Esquerda final" placement="left-end">
-          <CpsButton />
-        </CpsTooltip>
-
-        <CpsTooltip content="Direita final" placement="right-end">
-          <CpsButton />
+          <CpsButton>
+            <CpsIcon
+              name="arrow-step-in-left-fill"
+              style={{ transform: 'rotate(270deg)', borderBottom: '1px solid currentColor' }}
+            />
+          </CpsButton>
         </CpsTooltip>
       </div>
 
-      <div className="tooltip-placement-example-row">
+      <div className="tooltip-right-start">
+        <CpsTooltip content="Direita inicial" placement="right-start">
+          <CpsButton>
+            <CpsIcon
+              name="arrow-step-in-left-fill"
+              style={{ transform: 'rotate(90deg)', borderBottom: '1px solid currentColor' }}
+            />
+          </CpsButton>
+        </CpsTooltip>
+      </div>
+
+      <div className="tooltip-right">
+        <CpsTooltip content="Direita" placement="right">
+          <CpsButton>
+            <CpsIcon name="arrow-step-in-right-fill" style={{ borderLeft: '1px solid currentColor' }} />
+          </CpsButton>
+        </CpsTooltip>
+      </div>
+
+      <div className="tooltip-right-end">
+        <CpsTooltip content="Direita final" placement="right-end">
+          <CpsButton>
+            <CpsIcon
+              name="arrow-step-in-left-fill"
+              style={{ transform: 'rotate(270deg)', borderTop: '1px solid currentColor' }}
+            />
+          </CpsButton>
+        </CpsTooltip>
+      </div>
+
+      <div className="tooltip-bottom-start">
         <CpsTooltip content="Inferior inicial" placement="bottom-start">
-          <CpsButton />
+          <CpsButton>
+            <CpsIcon name="arrow-step-in-left-fill" style={{ borderTop: '1px solid currentColor' }} />
+          </CpsButton>
         </CpsTooltip>
+      </div>
 
+      <div className="tooltip-bottom">
         <CpsTooltip content="Inferior" placement="bottom">
-          <CpsButton />
+          <CpsButton>
+            <CpsIcon name="arrow-step-in-fill" style={{ borderTop: '1px solid currentColor' }} />
+          </CpsButton>
         </CpsTooltip>
+      </div>
 
+      <div className="tooltip-bottom-end">
         <CpsTooltip content="Inferior final" placement="bottom-end">
-          <CpsButton />
+          <CpsButton>
+            <CpsIcon name="arrow-step-in-right-fill" style={{ borderTop: '1px solid currentColor' }} />
+          </CpsButton>
         </CpsTooltip>
       </div>
     </div>
