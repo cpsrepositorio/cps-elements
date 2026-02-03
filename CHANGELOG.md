@@ -6,6 +6,10 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- **Reconstrução completa** do `<cps-menu>`, adicionando modo flutuante com suporte a _slot_ `anchor`, permitindo menus suspensos, menus de contexto (locais e globais), múltiplos tipos de acionamento (`click`, `focus`, `hover`, `contextmenu`), e controle programático de abertura/fechamento.
+
 ### Changed
 
 - Atualização do `<cps-button>` para suportar preenchimento de altura do contêiner pai e centralização de conteúdo com _flexbox_.
