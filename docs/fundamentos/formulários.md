@@ -24,7 +24,7 @@ const data = new FormData(form);
 Entretanto, algumas pessoas acham a `FormData` complicada de trabalhar, especialmente se precisam enviar uma carga em formato JSON para o servidor. Para simplificar este caso de uso típico, CPS Elements oferece um utilitário de serialização que coleta dados de formulário e retorna um objeto JavaScript.
 
 ```js
-import { serialize } from '@cps/web/utilities/form.js';
+import { serialize } from '@cgtic-cps/web/utilities/form.js';
 
 const form = document.querySelector('form');
 const data = serialize(form);
@@ -71,7 +71,7 @@ Para tornar um campo obrigatório, use o atributo [`required`](https://developer
 </form>
 
 <script type="module">
-  import { toast } from '@cps/web/components/notification.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const form = document.querySelector('.input-validation-required');
   form.addEventListener('submit', event => {
@@ -88,13 +88,13 @@ Para tornar um campo obrigatório, use o atributo [`required`](https://developer
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
-import { CpsCheckbox } from '@cps/web/react/checkbox';
-import { CpsInput } from '@cps/web/react/input';
-import { CpsOption } from '@cps/web/react/option';
-import { CpsSelect } from '@cps/web/react/select';
-import { CpsTextarea } from '@cps/web/react/textarea';
-import { toast } from '@cps/web/components/notification.js';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsInput } from '@cgtic-cps/web/react/input';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
+import { CpsTextarea } from '@cgtic-cps/web/react/textarea';
+import { toast } from '@cgtic-cps/web/components/notification.js';
 
 const App = () => {
   function handleSubmit(event) {
@@ -136,13 +136,13 @@ const App = () => {
 
 ```html vue
 <script setup>
-  import { CpsButton } from '@cps/web/components/button';
-  import { CpsCheckbox } from '@cps/web/components/checkbox';
-  import { CpsInput } from '@cps/web/components/input';
-  import { CpsOption } from '@cps/web/components/option';
-  import { CpsSelect } from '@cps/web/components/select';
-  import { CpsTextarea } from '@cps/web/components/textarea';
-  import { toast } from '@cps/web/components/notification.js';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsCheckbox } from '@cgtic-cps/web/components/checkbox';
+  import { CpsInput } from '@cgtic-cps/web/components/input';
+  import { CpsOption } from '@cgtic-cps/web/components/option';
+  import { CpsSelect } from '@cgtic-cps/web/components/select';
+  import { CpsTextarea } from '@cgtic-cps/web/components/textarea';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const onSubmit = event => {
     // Limpa o formulário simulando o envio.
@@ -190,7 +190,7 @@ Para restringir um valor a um formato específico, use o atributo [`pattern`](ht
 </form>
 
 <script type="module">
-  import { toast } from '@cps/web/components/notification.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const form = document.querySelector('.input-validation-pattern');
   form.addEventListener('submit', event => {
@@ -202,9 +202,9 @@ Para restringir um valor a um formato específico, use o atributo [`pattern`](ht
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
-import { CpsInput } from '@cps/web/react/input';
-import { toast } from '@cps/web/components/notification.js';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsInput } from '@cgtic-cps/web/react/input';
+import { toast } from '@cgtic-cps/web/components/notification.js';
 
 const App = () => {
   function handleSubmit(event) {
@@ -228,9 +228,9 @@ const App = () => {
 
 ```html vue
 <script setup>
-  import { CpsButton } from '@cps/web/components/button';
-  import { CpsInput } from '@cps/web/components/input';
-  import { toast } from '@cps/web/components/notification.js';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsInput } from '@cgtic-cps/web/components/input';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const onSubmit = event => {
     event.target.reset();
@@ -263,7 +263,7 @@ Alguns tipos de entrada, como `email` e `url`, possuem validação embutida. Ist
 </form>
 
 <script type="module">
-  import { toast } from '@cps/web/components/notification.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const form = document.querySelector('.input-validation-type');
   form.addEventListener('submit', event => {
@@ -275,9 +275,9 @@ Alguns tipos de entrada, como `email` e `url`, possuem validação embutida. Ist
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
-import { CpsInput } from '@cps/web/react/input';
-import { toast } from '@cps/web/components/notification.js';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsInput } from '@cgtic-cps/web/react/input';
+import { toast } from '@cgtic-cps/web/components/notification.js';
 
 const App = () => {
   function handleSubmit(event) {
@@ -303,9 +303,9 @@ const App = () => {
 
 ```html vue
 <script setup>
-  import { CpsButton } from '@cps/web/components/button';
-  import { CpsInput } from '@cps/web/components/input';
-  import { toast } from '@cps/web/components/notification.js';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsInput } from '@cgtic-cps/web/components/input';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const onSubmit = event => {
     event.target.reset();
@@ -340,7 +340,7 @@ O formulário não será enviado quando uma validação personalizada estiver de
 </form>
 
 <script type="module">
-  import { toast } from '@cps/web/components/notification.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const form = document.querySelector('.input-validation-custom');
   const input = form.querySelector('cps-input');
@@ -370,9 +370,9 @@ O formulário não será enviado quando uma validação personalizada estiver de
 
 ```jsx react
 import { useEffect, useRef, useState } from 'react';
-import { CpsButton } from '@cps/web/react/button';
-import { CpsInput } from '@cps/web/react/input';
-import { toast } from '@cps/web/components/notification.js';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsInput } from '@cgtic-cps/web/react/input';
+import { toast } from '@cgtic-cps/web/components/notification.js';
 
 const App = () => {
   const input = useRef(null);
@@ -427,9 +427,9 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref, onMounted } from 'vue';
-  import { CpsButton } from '@cps/web/components/button';
-  import { CpsInput } from '@cps/web/components/input';
-  import { toast } from '@cps/web/components/notification.js';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsInput } from '@cgtic-cps/web/components/input';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const input = ref();
   const value = ref('');
@@ -523,7 +523,7 @@ Observe como este exemplo estiliza os estados `data-user-invalid` e `data-user-v
 </form>
 
 <script type="module">
-  import { toast } from '@cps/web/components/notification.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const form = document.querySelector('.validity-styles');
   form.addEventListener('submit', event => {
@@ -564,7 +564,7 @@ Em resumo, para desabilitar as mensagens de erro nativas, você precisa cancelar
 </form>
 
 <script type="module">
-  import { toast } from '@cps/web/components/notification.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const form = document.querySelector('.inline-validation');
   const input = form.querySelector('cps-input');
@@ -623,7 +623,7 @@ No momento, a propriedade nativa [`HTMLFormElement.elements`](https://developer.
 Para simplificar esta complicação, CPS Elements fornece uma função `getFormControls()` em seu utilitário de formulários. Entretanto, ao invés de retornar uma coleção de controles de formulário do tipo [`HTMLFormControlsCollection`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormControlsCollection), esta função retorna um _array_ de controles de formulário HTML e CPS Elements juntos, exatamente na ordem em que aparecem no DOM. Isto para facilitar a manipulação de formulários que envolvam controles HTML nativos e componentes CPS Elements juntos.
 
 ```js
-import { getFormControls } from '@cps/web/utilities/form.js';
+import { getFormControls } from '@cgtic-cps/web/utilities/form.js';
 
 const form = document.querySelector('form');
 const formControls = getFormControls(form);

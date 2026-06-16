@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => <CpsButton>Botão</CpsButton>;
 ```
@@ -25,7 +25,7 @@ Use o atributo `variant` para definir a variação visual do botão.
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -47,7 +47,7 @@ Use o atributo `size` para alterar o tamanho do botão.
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -119,8 +119,8 @@ Use os _slots_ `prefix` e `suffix` para adicionar ícones.
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
-import { CpsIcon } from '@cps/web/react/icon';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
 
 const App = () => (
   <>
@@ -198,7 +198,7 @@ Use o atributo `rounded` como `default` (ou simplesmente não informe tal atribu
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -224,7 +224,7 @@ Use arrendondamento `corner` para manter a aparência retangular, mas arredondar
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -280,7 +280,7 @@ Use arredondamento `full` para garantir um botão completamente circular, o qual
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -336,7 +336,7 @@ Use o atributo `caret` para forçar um sinalizador de menu ao final do botão, e
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -374,7 +374,7 @@ Isto também permitirá que todos os comportamentos padrão que o navegador prov
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -408,7 +408,7 @@ Assim, as medidas horizontais (ou mesmo outras coisas, como margens e reposicion
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -448,7 +448,7 @@ Como também é de se esperar, se você estiver construindo um _layout_ complexo
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '1rem' }}>
@@ -492,7 +492,7 @@ Ainda que o conteúdo do botão fique oculto para exibição do `<cps-spinner>`,
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -535,7 +535,7 @@ Use o atributo `disabled` para desabilitar o botão. Cliques serão suprimidos, 
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -576,8 +576,8 @@ Um dos casos de uso mais comuns para distintivos ([_badges_](/componentes/badge)
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps/web/react/badge';
-import { CpsButton } from '@cps/web/react/button';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>

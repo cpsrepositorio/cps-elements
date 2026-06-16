@@ -15,10 +15,10 @@
 
   function convertModuleLinks(html) {
     html = html
-      .replace(/@cps-elements\/web/gi, `https://esm.sh/@cps/web`)
+      .replace(/@cps-elements\/web/gi, `https://esm.sh/@cgtic-cps/web`)
       .replace(
         /@cps-elements\/web\/(utilities|translations)\/([\w|-]+)(?!\.js)('|")/gim,
-        '@cps/web/$1/$2.js$3'
+        '@cgtic-cps/web/$1/$2.js$3'
       )
       .replace(/from 'react'/g, `from 'https://cdn.skypack.dev/react@${reactVersion}'`)
       .replace(/from "react"/g, `from "https://cdn.skypack.dev/react@${reactVersion}"`)
@@ -62,7 +62,7 @@
       .map(c => c.replace(/^cps-/g, ''))
       .map(c => {
         const camel = c.replace(/\b\w/g, w => w[0].toUpperCase() + w.substring(1)).replace(/-/g, '');
-        return `import { Cps${camel} } from '@cps/web/components/${c}';`;
+        return `import { Cps${camel} } from '@cgtic-cps/web/components/${c}';`;
       })
       .join('\n');
 
@@ -462,11 +462,11 @@
         head:
           '<meta charset="UTF-8">\n' +
           '<meta name="viewport" content="width=device-width">\n' +
-          '<script type="module" src="https://cdn.jsdelivr.net/npm/@cps/web/autoloader.js"></script>',
+          '<script type="module" src="https://cdn.jsdelivr.net/npm/@cgtic-cps/web/autoloader.js"></script>',
         html_classes: `cps-theme-${isDark ? 'dark' : 'light'}`,
         css_external: [
           'https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap',
-          `https://cdn.jsdelivr.net/npm/@cps/web/themes/${isDark ? 'dark' : 'light'}.css`
+          `https://cdn.jsdelivr.net/npm/@cgtic-cps/web/themes/${isDark ? 'dark' : 'light'}.css`
         ],
         html: htmlTemplate,
         css: cssTemplate,

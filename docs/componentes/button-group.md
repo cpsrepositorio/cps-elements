@@ -11,8 +11,8 @@
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
-import { CpsButtonGroup } from '@cps/web/react/button-group';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsButtonGroup } from '@cgtic-cps/web/react/button-group';
 
 const App = () => (
   <CpsButtonGroup label="Alinhamento">
@@ -54,8 +54,8 @@ Use o atributo `size` para definir um tamanho unificado para todos os botões qu
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
-import { CpsButtonGroup } from '@cps/web/react/button-group';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsButtonGroup } from '@cgtic-cps/web/react/button-group';
 
 const App = () => (
   <>
@@ -117,8 +117,8 @@ Botões com aparências variadas são suportados através do atributo `variant` 
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
-import { CpsButtonGroup } from '@cps/web/react/button-group';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsButtonGroup } from '@cgtic-cps/web/react/button-group';
 
 const App = () => (
   <>
@@ -178,8 +178,8 @@ Grupos com botões arredondados são suportados, basta usar o atributo `rounded`
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
-import { CpsButtonGroup } from '@cps/web/react/button-group';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsButtonGroup } from '@cgtic-cps/web/react/button-group';
 
 const App = () => (
   <>
@@ -295,12 +295,12 @@ Crie barras de ferramentas interativas misturando grupos de botões, [botões co
 ```
 
 ```jsx react
-import { CpsButton } from '@cps/web/react/button';
-import { CpsButtonGroup } from '@cps/web/react/button-group';
-import { CpsIcon } from '@cps/web/react/icon';
-import { CpsRadioGroup } from '@cps/web/react/radio-group';
-import { CpsToggleButton } from '@cps/web/react/toggle-button';
-import { CpsTooltip } from '@cps/web/react/tooltip';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsButtonGroup } from '@cgtic-cps/web/react/button-group';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
+import { CpsToggleButton } from '@cgtic-cps/web/react/toggle-button';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const css = `
   .button-group-toolbar {

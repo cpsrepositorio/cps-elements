@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsInput } from '@cps/web/react/input';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => <CpsInput />;
 ```
@@ -25,7 +25,7 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsInput } from '@cps/web/react/input';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => <CpsInput label="Qual seu nome?" />;
 ```
@@ -39,8 +39,8 @@ Use o atributo `help-text` para adicionar texto de apoio para auxílio ao preenc
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps/web/react/icon';
-import { CpsInput } from '@cps/web/react/input';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => <CpsInput label="Apelido" help-text="Como você gosta que as pessoas te chamem?" />;
 ```
@@ -54,7 +54,7 @@ Use o atributo `placeholder` para adicionar um texto de espaço reservado.
 ```
 
 ```jsx react
-import { CpsInput } from '@cps/web/react/input';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => <CpsInput placeholder="O que você procura?" />;
 ```
@@ -70,7 +70,7 @@ Use o atributo `clearable` para exibir um botão de limpar quando o campo possui
 ```
 
 ```jsx react
-import { CpsInput } from '@cps/web/react/input';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => <CpsInput placeholder="Preencha algo e me limpe depois" clearable />;
 ```
@@ -86,7 +86,7 @@ Use o atributo `password-toggle` para exibir um botão de alternância que exibi
 ```
 
 ```jsx react
-import { CpsInput } from '@cps/web/react/input';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => (
   <>
@@ -108,7 +108,7 @@ Use o atributo `disabled` para desabilitar o campo. Cliques serão suprimidos, e
 ```
 
 ```jsx react
-import { CpsInput } from '@cps/web/react/input';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => <CpsInput placeholder="Desabilitado" disabled />;
 ```
@@ -126,7 +126,7 @@ Use o atributo `size` para alterar o tamanho do campo.
 ```
 
 ```jsx react
-import { CpsInput } from '@cps/web/react/input';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => (
   <>
@@ -222,7 +222,7 @@ A seguir, veja como o `<cps-input>` opera com cada um dos `type` disponíveis em
 </style>
 
 <script type="module">
-  import { showConfirm } from '@cps/web/components/dialog.js';
+  import { showConfirm } from '@cgtic-cps/web/components/dialog.js';
 
   const form = document.querySelector('form.input-types');
   const hidden = form.querySelector('[type="hidden"]');
@@ -267,8 +267,8 @@ Use os _slots_ `prefix` e `suffix` para adicionar ícones.
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps/web/react/icon';
-import { CpsInput } from '@cps/web/react/input';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => (
   <>

@@ -9,7 +9,7 @@
 ```
 
 ```jsx react
-import { CpsBackground } from '@cps/web/react/background';
+import { CpsBackground } from '@cgtic-cps/web/react/background';
 
 const App = () => <CpsBackground></CpsBackground>;
 ```

@@ -14,8 +14,8 @@
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsDropdown } from '@cps/web/react/dropdown';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsDropdown } from '@cgtic-cps/web/react/dropdown';
 
 const App = () => (
   <CpsDropdown placeholder="Selecione uma opção">
@@ -49,8 +49,8 @@ Use o atributo `placeholder` para adicionar um texto de espaço reservado, o qua
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsDropdown } from '@cps/web/react/dropdown';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsDropdown } from '@cgtic-cps/web/react/dropdown';
 
 const App = () => (
   <CpsDropdown placeholder="Selecione uma opção">
@@ -80,8 +80,8 @@ Use o atributo `keep-placeholder` para definir que o texto de espaço reservado 
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsDropdown } from '@cps/web/react/dropdown';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsDropdown } from '@cgtic-cps/web/react/dropdown';
 
 const App = () => (
   <CpsDropdown keep-placeholder placeholder="Selecione uma opção">
@@ -111,8 +111,8 @@ Use o atributo `clearable` para exibir um botão de limpar quando o campo possui
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsDropdown } from '@cps/web/react/dropdown';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsDropdown } from '@cgtic-cps/web/react/dropdown';
 
 const App = () => (
   <CpsDropdown clearable placeholder="Selecione uma opção" value="option-1">
@@ -144,8 +144,8 @@ Use o atributo `disabled` para desabilitar o campo. Cliques serão suprimidos, e
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsDropdown } from '@cps/web/react/dropdown';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsDropdown } from '@cgtic-cps/web/react/dropdown';
 
 const App = () => (
   <CpsDropdown placeholder="Desabilitado" disabled>
@@ -199,8 +199,8 @@ Use o atributo `size` para alterar o tamanho do campo. isto não afeta o tamanho
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsDropdown } from '@cps/web/react/dropdown';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsDropdown } from '@cgtic-cps/web/react/dropdown';
 
 const App = () => (
   <>
@@ -272,7 +272,7 @@ Use o _slot_ `prefix` para adicionar ícone.
 ```
 
 ```jsx react
-import { CpsIcon, CpsOption, CpsDropdown } from '@cps/web/react';
+import { CpsIcon, CpsOption, CpsDropdown } from '@cgtic-cps/web/react';
 
 const App = () => (
   <>
@@ -382,10 +382,10 @@ Use `<cps-separator>` para agrupar visualmente as opções do _dropdown_. Você 
 ```
 
 ```jsx react
-import { CpsLabel } from '@cps/web/react/label';
-import { CpsOption } from '@cps/web/react/option';
-import { CpsDropdown } from '@cps/web/react/dropdown';
-import { CpsSeparator } from '@cps/web/react/separator';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsDropdown } from '@cgtic-cps/web/react/dropdown';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => (
   <CpsDropdown placeholder="Comida saudável preferida" clearable>
@@ -418,8 +418,8 @@ Use o atributo `placement` para definir o posicionamento preferido da lista susp
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsDropdown } from '@cps/web/react/dropdown';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsDropdown } from '@cgtic-cps/web/react/dropdown';
 
 const App = () => (
   <CpsDropdown placement="top" placeholder="Se houver espaço, eu prefiro abrir para cima...">
@@ -455,8 +455,8 @@ Use o atributo `value` para definir o valor inicial do campo, ou seja, qual opç
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsDropdown } from '@cps/web/react/dropdown';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsDropdown } from '@cgtic-cps/web/react/dropdown';
 
 const App = () => (
   <CpsDropdown placeholder="Selecione uma opção" value="skill-2" clearable>

@@ -14,8 +14,8 @@
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsSelect } from '@cps/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect>
@@ -49,8 +49,8 @@ Use o atributo `disabled` para desabilitar uma opção. Cliques serão suprimido
 ```
 
 ```jsx react
-import { CpsOption } from '@cps/web/react/option';
-import { CpsSelect } from '@cps/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect>
@@ -95,9 +95,9 @@ Use os _slots_ `prefix` e `suffix` para adicionar ícones.
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps/web/react/icon';
-import { CpsOption } from '@cps/web/react/option';
-import { CpsSelect } from '@cps/web/react/select';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect label="Canal de comunicação" placeholder="Escolha uma opção">

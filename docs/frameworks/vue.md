@@ -19,19 +19,19 @@ Já o restante desta página se concentra em projetos complexos envolvendo Vue e
 Para começar com CPS Elements e Vue, primeiramente você precisa instalar nosso pacote NPM.
 
 ```bash
-npm install @cps/web
+npm install @cgtic-cps/web
 ```
 
 Em seguida, em seu arquivo principal (usualmente, `main.js` ou `.ts`), [inclua um tema](/fundamentos/temas) e defina o [caminho base](/fundamentos/instalação#configurando-o-caminho-base) para ícones e outros recursos. Por exemplo, se você quiser usar somente o tema claro e carregar ativos através do CDN:
 
 ```js
-import '@cps/web/themes/light.css';
-import { setBasePath } from '@cps/web/utilities/base-path';
+import '@cgtic-cps/web/themes/light.css';
+import { setBasePath } from '@cgtic-cps/web/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@cps/web');
+setBasePath('https://cdn.jsdelivr.net/npm/@cgtic-cps/web');
 ```
 
-?> Se preferir não usar o CDN para ativos, você pode criar uma tarefa de tempo de compilação que copia `node_modules/@cps/web/assets` para a pasta pública servida pelo Vite, bastando apontar o caminho base para essa pasta em seu arquivo principal. Mais detalhes sobre isso em [empacotando com Vite](/fundamentos/instalação#empacotando-com-vite).
+?> Se preferir não usar o CDN para ativos, você pode criar uma tarefa de tempo de compilação que copia `node_modules/@cgtic-cps/web/assets` para a pasta pública servida pelo Vite, bastando apontar o caminho base para essa pasta em seu arquivo principal. Mais detalhes sobre isso em [empacotando com Vite](/fundamentos/instalação#empacotando-com-vite).
 
 ## Configuração
 
@@ -68,7 +68,7 @@ Cada componente CPS Elements está disponível para importação individual no p
 
 ```html
 <script setup>
-  import { CpsButton } from '@cps/web/components/button';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
 </script>
 
 <template>
@@ -78,7 +78,7 @@ Cada componente CPS Elements está disponível para importação individual no p
 
 Você pode encontrar a linha de importação de um componente, pronta para apenas _copiar e colar_, na seção _"Importação"_ da própria documentação de cada componente.
 
-!> Assim como descrito em [importações individuais](/fundamentos/instalação#importações-individuais), é possível importar componentes diretamente por desestruturação do diretório raiz (por exemplo, `import { CpsButton } from '@cps/web'`). Isso não é necessariamente incorreto quando se usa um empacotador, mas deixará para ele a responsabilidade de varrer e eliminar importações desnecessárias do diretório raiz (processo conhecido como _three-shaking_).<br><br>Escolher a dedo os arquivos específicos dos componentes, como demonstrado acima, garante que o funcionamento e as configurações do empacotador não interfiram na exata inclusão, em seu _bundle_ final, de apenas os _scripts_ mínimos necessários dos componentes CPS Elements que você efetivamente está usando.
+!> Assim como descrito em [importações individuais](/fundamentos/instalação#importações-individuais), é possível importar componentes diretamente por desestruturação do diretório raiz (por exemplo, `import { CpsButton } from '@cgtic-cps/web'`). Isso não é necessariamente incorreto quando se usa um empacotador, mas deixará para ele a responsabilidade de varrer e eliminar importações desnecessárias do diretório raiz (processo conhecido como _three-shaking_).<br><br>Escolher a dedo os arquivos específicos dos componentes, como demonstrado acima, garante que o funcionamento e as configurações do empacotador não interfiram na exata inclusão, em seu _bundle_ final, de apenas os _scripts_ mínimos necessários dos componentes CPS Elements que você efetivamente está usando.
 
 ### Vinculando dados e eventos
 
@@ -87,8 +87,8 @@ Tudo que você já sabe sobre a [sintaxe de `<template>`](https://vuejs.org/guid
 ```html
 <script setup>
   // Importando componentes CPS Elements individualmente.
-  import { CpsButton } from '@cps/web/components/button';
-  import { CpsIcon } from '@cps/web/components/icon';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsIcon } from '@cgtic-cps/web/components/icon';
 
   // O resto é Vue 3 como de costume.
   import { ref } from 'vue';

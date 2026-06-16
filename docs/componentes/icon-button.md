@@ -9,7 +9,7 @@ Para uma lista completa de ícones que vêm com o CPS Elements, consulte o [comp
 ```
 
 ```jsx react
-import { CpsIconButton } from '@cps/web/react/icon-button';
+import { CpsIconButton } from '@cgtic-cps/web/react/icon-button';
 
 const App = () => <CpsIconButton name="search-fill" label="Pesquisar" />;
 ```
@@ -29,7 +29,7 @@ Use o atributo `size` para alterar o tamanho do botão.
 ```
 
 ```jsx react
-import { CpsIconButton } from '@cps/web/react/icon-button';
+import { CpsIconButton } from '@cgtic-cps/web/react/icon-button';
 
 const App = () => (
   <>
@@ -53,7 +53,7 @@ O tamanho dos botões de ícone serve como um limitador de `width` e `height`, g
 ```
 
 ```jsx react
-import { CpsIconButton } from '@cps/web/react/icon-button';
+import { CpsIconButton } from '@cgtic-cps/web/react/icon-button';
 
 const css = `
   .sample-icon-size::part(icon) {
@@ -97,7 +97,7 @@ Botões de ícone são projetados para ter uma aparência uniforme, portanto sua
 ```
 
 ```jsx react
-import { CpsIconButton } from '@cps/web/react/icon-button';
+import { CpsIconButton } from '@cgtic-cps/web/react/icon-button';
 
 const css = `
   .sample-button-color cps-icon-button::part(base) {
@@ -144,7 +144,7 @@ Isto também permitirá que todos os comportamentos padrão que o navegador prov
 ```
 
 ```jsx react
-import { CpsIconButton } from '@cps/web/react/icon-button';
+import { CpsIconButton } from '@cgtic-cps/web/react/icon-button';
 
 const App = () => (
   <CpsIconButton name="settings-fill" label="Configurações" href="https://example.com" target="_blank" />
@@ -160,7 +160,7 @@ Use o atributo `disabled` para desabilitar o botão. Cliques serão suprimidos, 
 ```
 
 ```jsx react
-import { CpsIconButton } from '@cps/web/react/icon-button';
+import { CpsIconButton } from '@cgtic-cps/web/react/icon-button';
 
 const App = () => <CpsIconButton name="settings-fill" label="Configurações" disabled />;
 ```

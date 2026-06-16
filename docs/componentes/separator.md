@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps/web/react/separator';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => <CpsSeparator />;
 ```
@@ -31,9 +31,9 @@ Provavelmente o caso de uso mais comum dos separadores, para ajudar a agrupar vi
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps/web/react/separator';
-import { CpsMenu } from '@cps/web/react/menu';
-import { CpsMenuItem } from '@cps/web/react/menu-item';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu style={{ maxWidth: '200px' }}>
@@ -63,7 +63,7 @@ Use o atributo `vertical` para desenhar o separador na orientação vertical. O 
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps/web/react/separator';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => (
   <div
@@ -95,7 +95,7 @@ Use o _slot_ padrão para adicionar texto ao separador.
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps/web/react/separator';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => (
   <>
@@ -125,7 +125,7 @@ Use o _slot_ padrão para adicionar `<cps-icon>` ao separador.
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps/web/react/separator';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => (
   <>
@@ -151,7 +151,7 @@ Ua a propriedade CSS personalizada `--spacing` para alterar o espaço entre o se
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps/web/react/separator';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => (
   <div style={{ 'text-align': 'center' }}>
@@ -171,7 +171,7 @@ Ua a propriedade CSS personalizada `--thickness` para alterar a espessura do sep
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps/web/react/separator';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => <CpsSeparator style={{ '--thickness': '4px' }} />;
 ```
@@ -187,7 +187,7 @@ Ua a propriedade CSS personalizada `--color` para alterar a cor do separador.
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps/web/react/separator';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => <CpsSeparator style={{ '--color': 'tomato' }} />;
 ```

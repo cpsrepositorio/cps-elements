@@ -17,10 +17,10 @@
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps/web/react/separator';
-import { CpsMenu } from '@cps/web/react/menu';
-import { CpsMenuLabel } from '@cps/web/react/menu-label';
-import { CpsMenuItem } from '@cps/web/react/menu-item';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuLabel } from '@cgtic-cps/web/react/menu-label';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu style={{ maxWidth: '200px' }}>

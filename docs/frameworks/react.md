@@ -21,19 +21,19 @@ Embora um biblioteca simples, React se baseia em uma sintaxe de marcação próp
 Para começar com CPS Elements e React, primeiramente você precisa instalar nosso pacote NPM.
 
 ```bash
-npm install @cps/web
+npm install @cgtic-cps/web
 ```
 
 Em seguida, em seu arquivo principal (usualmente, `main.jsx` ou `.tsx`), [inclua um tema](/fundamentos/temas) e defina o [caminho base](/fundamentos/instalação#configurando-o-caminho-base) para ícones e outros recursos. Por exemplo, se você quiser usar somente o tema claro e carregar ativos através do CDN:
 
 ```js
-import '@cps/web/themes/light.css';
-import { setBasePath } from '@cps/web/utilities/base-path';
+import '@cgtic-cps/web/themes/light.css';
+import { setBasePath } from '@cgtic-cps/web/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@cps/web');
+setBasePath('https://cdn.jsdelivr.net/npm/@cgtic-cps/web');
 ```
 
-?> Se preferir não usar o CDN para ativos, você pode criar uma tarefa de tempo de compilação que copia `node_modules/@cps/web/assets` para a pasta pública servida pelo Vite, bastando apontar o caminho base para essa pasta em seu arquivo principal. Mais detalhes sobre isso em [empacotando com Vite](/fundamentos/instalação#empacotando-com-vite).
+?> Se preferir não usar o CDN para ativos, você pode criar uma tarefa de tempo de compilação que copia `node_modules/@cgtic-cps/web/assets` para a pasta pública servida pelo Vite, bastando apontar o caminho base para essa pasta em seu arquivo principal. Mais detalhes sobre isso em [empacotando com Vite](/fundamentos/instalação#empacotando-com-vite).
 
 Agora você já pode usar os componentes CPS Elements embrulhados para React nos JSX de sua aplicação!
 
@@ -46,7 +46,7 @@ Usar CPS Elements com React é certamente familiar para quem está acostumado co
 Cada componente CPS Elements está disponível para importação como um componente React, em um diretório `/react` do pacote NPM instalado. Observe que você deve importar o _componente embrulhado para React_ em notação `<CpsComponent>`, em vez do `<cps-component>` que representa o _elemento customizado_ nativo.
 
 ```jsx
-import { CpsButton } from '@cps/web/react/button';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const MyApp = () => <CpsButton variant="accent">Clique</CpsButton>;
 
@@ -55,7 +55,7 @@ export default MyApp;
 
 Você pode encontrar a linha de importação de um componente, pronta para apenas _copiar e colar_, na seção _"Importação"_ da própria documentação de cada componente.
 
-!> Assim como descrito em [importações individuais](/fundamentos/instalação#importações-individuais), é possível importar componentes diretamente por desestruturação do diretório raiz (por exemplo, `import { CpsButton } from '@cps/web/react'`). Isso não é necessariamente incorreto quando se usa um empacotador, mas deixará para ele a responsabilidade de varrer e eliminar importações desnecessárias do diretório raiz (processo conhecido como _three-shaking_).<br><br>Escolher a dedo os arquivos específicos dos componentes, como demonstrado acima, garante que o funcionamento e as configurações do empacotador não interfiram na exata inclusão, em seu _bundle_ final, de apenas os _scripts_ mínimos necessários dos componentes CPS Elements que você efetivamente está usando.
+!> Assim como descrito em [importações individuais](/fundamentos/instalação#importações-individuais), é possível importar componentes diretamente por desestruturação do diretório raiz (por exemplo, `import { CpsButton } from '@cgtic-cps/web/react'`). Isso não é necessariamente incorreto quando se usa um empacotador, mas deixará para ele a responsabilidade de varrer e eliminar importações desnecessárias do diretório raiz (processo conhecido como _three-shaking_).<br><br>Escolher a dedo os arquivos específicos dos componentes, como demonstrado acima, garante que o funcionamento e as configurações do empacotador não interfiram na exata inclusão, em seu _bundle_ final, de apenas os _scripts_ mínimos necessários dos componentes CPS Elements que você efetivamente está usando.
 
 ### Vinculando dados e eventos
 
@@ -63,8 +63,8 @@ Tudo que você já sabe sobre [escrever _marktup_ com JSX](https://react.dev/lea
 
 ```jsx
 // Importando componentes CPS Elements embrulhados para React.
-import { CpsButton } from '@cps/web/react/button';
-import { CpsIcon } from '@cps/web/react/icon';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
 
 // O resto é React como de costume.
 import { useState } from 'react';

@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsCheckbox } from '@cps/web/react/checkbox';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
 
 const App = () => <CpsCheckbox />;
 ```
@@ -25,7 +25,7 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsCheckbox } from '@cps/web/react/checkbox';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
 
 const App = () => <CpsCheckbox label="Concordo com os termos de uso" />;
 ```
@@ -37,7 +37,7 @@ Através do uso do _slot_ `label`, é possível adicionar elementos adicionais a
 ```
 
 ```jsx react
-import { CpsCheckbox } from '@cps/web/react/checkbox';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
 
 const App = () => (
   <CpsCheckbox>
@@ -60,7 +60,7 @@ Use o atributo `checked` para definir o campo como marcado/checado. Este atribut
 ```
 
 ```jsx react
-import { CpsCheckbox } from '@cps/web/react/checkbox';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
 
 const App = () => <CpsCheckbox checked>Lembrar-me</CpsCheckbox>;
 ```
@@ -74,7 +74,7 @@ Use o atributo `indeterminate` para definir o campo como indeterminado. Este est
 ```
 
 ```jsx react
-import { CpsCheckbox } from '@cps/web/react/checkbox';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
 
 const App = () => <CpsCheckbox indeterminate>Selecionar todos</CpsCheckbox>;
 ```
@@ -90,7 +90,7 @@ Use o atributo `disabled` para desabilitar o campo. Cliques serão suprimidos, e
 ```
 
 ```jsx react
-import { CpsCheckbox } from '@cps/web/react/checkbox';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
 
 const App = () => (
   <>
@@ -120,7 +120,7 @@ Use o atributo `size` para alterar o tamanho do campo.
 ```
 
 ```jsx react
-import { CpsCheckbox } from '@cps/web/react/checkbox';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
 
 const App = () => (
   <>
@@ -170,8 +170,8 @@ Use o método `setCustomValidity()` para definir uma mensagem de validação per
 
 ```jsx react
 import { useEffect, useRef } from 'react';
-import { CpsButton } from '@cps/web/react/button';
-import { CpsCheckbox } from '@cps/web/react/checkbox';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
 
 const App = () => {
   const checkbox = useRef(null);

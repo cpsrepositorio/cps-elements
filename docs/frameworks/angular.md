@@ -17,24 +17,24 @@ Por baixo dos panos, aplicações Angular são por padrão empacotadas com Webpa
 Para começar com CPS Elements e Angular, primeiramente você precisa instalar nosso pacote NPM.
 
 ```bash
-npm install @cps/web
+npm install @cgtic-cps/web
 ```
 
 Como próximo passo, [inclua um tema](/fundamentos/temas) importando-o diretamente no arquivo de estilos principal (usualmente, `styles.css`). Por exemplo, se você quiser usar somente o tema claro:
 
 ```css
-@import '@cps/web/themes/light.css';
+@import '@cgtic-cps/web/themes/light.css';
 ```
 
 Em seguida, em seu arquivo principal (usualmente, `main.ts`), defina o [caminho base](/fundamentos/instalação#configurando-o-caminho-base) para ícones e outros recursos. Por exemplo, se você quiser carregar ativos através do CDN:
 
 ```js
-import { setBasePath } from '@cps/web/utilities/base-path';
+import { setBasePath } from '@cgtic-cps/web/utilities/base-path';
 
-setBasePath('https://cdn.jsdelivr.net/npm/@cps/web');
+setBasePath('https://cdn.jsdelivr.net/npm/@cgtic-cps/web');
 ```
 
-?> Se preferir não usar o CDN para ativos, você pode criar uma tarefa de tempo de compilação que copia `node_modules/@cps/web/assets` para a pasta pública servida pelo Webpack, bastando apontar o caminho base para essa pasta em seu arquivo principal. Mais detalhes sobre isso em [empacotando com Webpack](/fundamentos/instalação#empacotando-com-webpack).
+?> Se preferir não usar o CDN para ativos, você pode criar uma tarefa de tempo de compilação que copia `node_modules/@cgtic-cps/web/assets` para a pasta pública servida pelo Webpack, bastando apontar o caminho base para essa pasta em seu arquivo principal. Mais detalhes sobre isso em [empacotando com Webpack](/fundamentos/instalação#empacotando-com-webpack).
 
 ## Configuração
 
@@ -70,7 +70,7 @@ Em um cenário típico em que seus componentes Angular estarão organizados em v
 
 ```js
 // No arquivo [nome].component.ts...
-export { CpsButton } from '@cps/web/components/button';
+export { CpsButton } from '@cgtic-cps/web/components/button';
 ```
 
 ```html
@@ -80,14 +80,14 @@ export { CpsButton } from '@cps/web/components/button';
 
 Você pode encontrar a linha de importação de um componente, pronta para apenas _copiar e colar_, na seção _"Importação"_ da própria documentação de cada componente. Neste caso em que o componente não é utilizado dentro do código TypeScript do componente Angular, você pode simplesmente alterar `import` por `export`, conforme exemplificado.
 
-!> Assim como descrito em [importações individuais](/fundamentos/instalação#importações-individuais), é possível re-exportar componentes diretamente por desestruturação do diretório raiz (por exemplo, `export { CpsButton } from '@cps/web'`). Isso não é necessariamente incorreto quando se usa um empacotador, mas deixará para ele a responsabilidade de varrer e eliminar importações desnecessárias do diretório raiz (processo conhecido como _three-shaking_).<br><br>Escolher a dedo os arquivos específicos dos componentes, como demonstrado acima, garante que o funcionamento e as configurações do empacotador não interfiram na exata inclusão, em seu _bundle_ final, de apenas os _scripts_ mínimos necessários dos componentes CPS Elements que você efetivamente está usando.
+!> Assim como descrito em [importações individuais](/fundamentos/instalação#importações-individuais), é possível re-exportar componentes diretamente por desestruturação do diretório raiz (por exemplo, `export { CpsButton } from '@cgtic-cps/web'`). Isso não é necessariamente incorreto quando se usa um empacotador, mas deixará para ele a responsabilidade de varrer e eliminar importações desnecessárias do diretório raiz (processo conhecido como _three-shaking_).<br><br>Escolher a dedo os arquivos específicos dos componentes, como demonstrado acima, garante que o funcionamento e as configurações do empacotador não interfiram na exata inclusão, em seu _bundle_ final, de apenas os _scripts_ mínimos necessários dos componentes CPS Elements que você efetivamente está usando.
 
 ### Importando e referenciando componentes
 
 Em determinadas situações, você pode precisar acessar programaticamente um componente CPS Elements utilizado em seu componente Angular. Para isso, você pode importar o componente (ao invés de re-exportar) no arquivo `[nome].component.ts` e referenciá-lo em uma propriedade do componente com o _decorator_ [`@ViewChild`](https://angular.io/api/core/ViewChild).
 
 ```js
-import { CpsButton } from '@cps/web/components/button';
+import { CpsButton } from '@cgtic-cps/web/components/button';
 
 @Component({
   selector: 'app-root',
@@ -117,8 +117,8 @@ Tudo que você já sabe sobre [escrever _templates_ HTML](https://angular.io/gui
 
 ```js
 // Re-exportando componentes CPS Elements para acesso no template HTML.
-export { CpsButton } from '@cps/web/components/button';
-export { CpsIcon } from '@cps/web/components/icon';
+export { CpsButton } from '@cgtic-cps/web/components/button';
+export { CpsIcon } from '@cgtic-cps/web/components/icon';
 
 // O resto é Angular como de costume.
 import { Component } from '@angular/core';
