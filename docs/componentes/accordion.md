@@ -9,8 +9,8 @@
 ```
 
 ```jsx react
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAccordion } from '@cps/web/react/accordion';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => (
   <CpsAccordion title="Informações adicionais">
@@ -34,8 +34,8 @@ Use o atributo `open` para definir se o _accordion_ deve ser exibido aberto ou f
 ```
 
 ```jsx react
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAccordion } from '@cps/web/react/accordion';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => (
   <CpsAccordion title="Informações adicionais" open>
@@ -71,9 +71,9 @@ Sendo um atributo reativo, você pode alterar programaticamente o valor de `open
 
 ```jsx react
 import { useState } from 'react';
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAccordion } from '@cps/web/react/accordion';
+import { CpsButton } from '@cps/web/react/button';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -96,9 +96,9 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsAccordion } from '@cps-elements/web/components/accordion';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsLabel } from '@cps-elements/web/components/label';
+  import { CpsAccordion } from '@cps/web/components/accordion';
+  import { CpsButton } from '@cps/web/components/button';
+  import { CpsLabel } from '@cps/web/components/label';
 
   const isOpen = ref(true);
 
@@ -132,8 +132,8 @@ Use o atributo `subtitle` para adicionar um subtítulo ao cabeçalho do _accordi
 ```
 
 ```jsx react
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAccordion } from '@cps/web/react/accordion';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => (
   <CpsAccordion title="Informações adicionais" subtitle="Leia mais conteúdo relevante aqui">
@@ -154,9 +154,9 @@ Use o _slot_ `icon` para adicionar um ícone ao cabeçalho do _accordion_.
 ```
 
 ```jsx react
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAccordion } from '@cps/web/react/accordion';
+import { CpsIcon } from '@cps/web/react/icon';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => (
   <CpsAccordion title="Configurações gerais" subtitle="Ajustes generalizados que valem para tudo">
@@ -246,12 +246,12 @@ Para simplificar os casos mais comuns, há um `padding` padrão de `24px` no _co
 ```
 
 ```jsx react
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsDropdown } from '@cps-elements/web/react/dropdown';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsLabel } from '@cps-elements/web/react/label';
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSeparator } from '@cps-elements/web/react/separator';
+import { CpsAccordion } from '@cps/web/react/accordion';
+import { CpsDropdown } from '@cps/web/react/dropdown';
+import { CpsIcon } from '@cps/web/react/icon';
+import { CpsLabel } from '@cps/web/react/label';
+import { CpsOption } from '@cps/web/react/option';
+import { CpsSeparator } from '@cps/web/react/separator';
 
 const css = `
   .styled-content::part(content) {

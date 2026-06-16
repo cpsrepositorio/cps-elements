@@ -19,9 +19,9 @@ Grupos de abas utilizam [abas](/componentes/tab-item) e [painéis de abas](/comp
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <CpsTabGroup>
@@ -67,9 +67,9 @@ Grupos de abas podem ser criados sem vínculos explícitos entre abas e painéis
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <CpsTabGroup>
@@ -109,9 +109,9 @@ Use o atributo `placement` com o valor `bottom` para exibir as abas abaixo do co
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <CpsTabGroup placement="bottom">
@@ -155,9 +155,9 @@ Use o atributo `placement` com o valor `start` para exibir as abas em uma posiç
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <CpsTabGroup placement="start">
@@ -201,9 +201,9 @@ Use o atributo `placement` com o valor `end` para exibir as abas em uma posiçã
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <CpsTabGroup placement="end">
@@ -325,9 +325,9 @@ Quando há mais abas do que espaço permite, a navegação terá rolagem automá
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <CpsTabGroup>
@@ -435,9 +435,9 @@ Quando focadas, usuários de teclado podem pressionar <kbd>Left</kbd> ou <kbd>Ri
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <CpsTabGroup activation="manual">
@@ -491,9 +491,9 @@ const App = () => (
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const css = `
   .indicator-color {
@@ -577,9 +577,9 @@ Assim como com a personalização dos [Tab Item](/componentes/tab-item) e [Tab P
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const css = `
   .custom-selected-colors {

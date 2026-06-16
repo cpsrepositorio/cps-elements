@@ -9,7 +9,7 @@ Por padrão, um ícone genérico de silhueta de pessoa será exibido. Você pode
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
+import { CpsAvatar } from '@cps/web/react/avatar';
 
 const App = () => <CpsAvatar label="Alguma pessoa desconhecida" />;
 ```
@@ -35,7 +35,7 @@ Para usar uma imagem para o avatar, defina o atributo `src` (mas não deixe de i
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
+import { CpsAvatar } from '@cps/web/react/avatar';
 
 const App = () => (
   <CpsAvatar src="https://i.pravatar.cc/48?img=3" srcset="https://i.pravatar.cc/48?img=3 1x, https://i.pravatar.cc/96?img=3 2x" label="John Doe" />
@@ -57,7 +57,7 @@ Caso você não tenha uma imagem para usar, utilize o atributo `initials` como `
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
+import { CpsAvatar } from '@cps/web/react/avatar';
 
 const App = () => <CpsAvatar initials="auto" label="Erick Petrucelli" />;
 ```
@@ -71,7 +71,7 @@ Você também pode definir iniciais explicitamente, usando o atributo `initials`
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
+import { CpsAvatar } from '@cps/web/react/avatar';
 
 const App = () => <CpsAvatar initials="X" label="Antigo Twitter" />;
 ```
@@ -101,7 +101,7 @@ Quando nenhuma imagem ou iniciais são definidas, um ícone padrão será exibid
 ```
 
 ```jsx react
-import { CpsAvatar, CpsIcon } from '@cps-elements/web/react';
+import { CpsAvatar, CpsIcon } from '@cps/web/react';
 
 const App = () => (
   <>
@@ -129,7 +129,7 @@ Por padrão, uma [dica de ferramenta](/componentes/tooltip) é exibida automatic
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
+import { CpsAvatar } from '@cps/web/react/avatar';
 
 const App = () => <CpsAvatar label="Estou aqui só para acessibilidade" no-tooltip />;
 ```
@@ -166,7 +166,7 @@ Use o atributo `size` para definir o tamanho e o estilo do rótulo em conformida
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
+import { CpsAvatar } from '@cps/web/react/avatar';
 
 const css = `
   .avatar-sizes-example {
@@ -219,8 +219,8 @@ Para um ajuste ainda mais preciso, a propriedade CSS `--size` pode ser sobrescri
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAvatar } from '@cps/web/react/avatar';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => (
   <>
@@ -252,7 +252,7 @@ Use o atributo `shape` para definir o formato do avatar, sendo que o padrão é 
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
+import { CpsAvatar } from '@cps/web/react/avatar';
 
 const App = () => (
   <>
@@ -301,7 +301,7 @@ Entretanto, caso a geração de cores atrapalhe seu caso de uso específico, voc
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
+import { CpsAvatar } from '@cps/web/react/avatar';
 
 const App = () => (
   <>
@@ -333,8 +333,8 @@ Um dos casos de uso mais comuns para distintivos ([_badges_](/componentes/badge)
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
-import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsAvatar } from '@cps/web/react/avatar';
+import { CpsBadge } from '@cps/web/react/badge';
 
 const App = () => (
   <>
@@ -383,7 +383,7 @@ Uma apresentação comum de avatares é em grupos, como em uma lista de pessoas.
 ```
 
 ```jsx react
-import { CpsAvatar, CpsIcon } from '@cps-elements/web/react';
+import { CpsAvatar, CpsIcon } from '@cps/web/react';
 
 const css = `
   .avatar-group cps-avatar:not(:first-of-type) {

@@ -26,9 +26,9 @@ Sendo assim, este utilitário é simplesmente um _wrapper_ sobre a implementaç�
 
 ```jsx react
 import { useState } from 'react';
-import { CpsFormatNumber } from '@cps-elements/web/react/format-number';
-import { CpsInput } from '@cps-elements/web/react/input';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatNumber } from '@cps/web/react/format-number';
+import { CpsInput } from '@cps/web/react/input';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => {
   const [value, setValue] = useState(1000);
@@ -67,7 +67,7 @@ Use o atributo `type` como `percent` para exibir o valor como porcentagem.
 ```
 
 ```jsx react
-import { CpsFormatNumber } from '@cps-elements/web/react/format-number';
+import { CpsFormatNumber } from '@cps/web/react/format-number';
 
 const App = () => (
   <>
@@ -114,7 +114,7 @@ O idioma atualmente em uso no navegador do usuário é utilizado para a formata�
 ```
 
 ```jsx react
-import { CpsFormatNumber } from '@cps-elements/web/react/format-number';
+import { CpsFormatNumber } from '@cps/web/react/format-number';
 
 const App = () => <></>;
 ```
@@ -155,7 +155,7 @@ Para formatar um número como valor monetário, defina o atributo `type` como `c
 ```
 
 ```jsx react
-import { CpsFormatNumber } from '@cps-elements/web/react/format-number';
+import { CpsFormatNumber } from '@cps/web/react/format-number';
 
 const App = () => <></>;
 ```

@@ -11,7 +11,7 @@
 ```
 
 ```jsx react
-import { CpsChip } from '@cps-elements/web/react/chip';
+import { CpsChip } from '@cps/web/react/chip';
 
 const App = () => (
   <>
@@ -37,7 +37,7 @@ Use o atributo `size` para alterar o tamanho do _chip_.
 ```
 
 ```jsx react
-import { CpsChip } from '@cps-elements/web/react/chip';
+import { CpsChip } from '@cps/web/react/chip';
 
 const App = () => (
   <>
@@ -77,7 +77,7 @@ Use o atributo `removable` para adicionar um botão interno que permite remover 
 ```
 
 ```jsx react
-import { CpsChip } from '@cps-elements/web/react/chip';
+import { CpsChip } from '@cps/web/react/chip';
 
 const css = `
   .removable-chips cps-chip {

@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsProgress } from '@cps-elements/web/react/progress';
+import { CpsProgress } from '@cps/web/react/progress';
 
 const App = () => {
   return <CpsProgress value={50} />;
@@ -71,9 +71,9 @@ Use o atributo `value` para determinar o percentual de progressão da barra de p
 
 ```jsx react
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { CpsProgress } from '@cps-elements/web/react/progress';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsProgress } from '@cps/web/react/progress';
+import { CpsButton } from '@cps/web/react/button';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => {
   const [value, setValue] = useState(0);
@@ -150,9 +150,9 @@ const App = () => {
 
 <script setup>
   import { computed, reactive, onUnmounted } from 'vue';
-  import { CpsProgress } from '@cps-elements/web/vue/progress';
-  import { CpsButton } from '@cps-elements/web/vue/button';
-  import { CpsLabel } from '@cps-elements/web/vue/label';
+  import { CpsProgress } from '@cps/web/vue/progress';
+  import { CpsButton } from '@cps/web/vue/button';
+  import { CpsLabel } from '@cps/web/vue/label';
 
   const state = reactive({
     value: 0,
@@ -231,8 +231,8 @@ Use o atributo `state` para o estado de progresso, para definir uma coloração 
 ```
 
 ```jsx react
-import { CpsLabel } from '@cps-elements/web/react/label';
-import { CpsProgress } from '@cps-elements/web/react/progress';
+import { CpsLabel } from '@cps/web/react/label';
+import { CpsProgress } from '@cps/web/react/progress';
 
 const App = () => {
   return (
@@ -271,7 +271,7 @@ Quando não há um `value` definido, a barra de progresso se apresenta em estado
 ```
 
 ```jsx react
-import { CpsProgress } from '@cps-elements/web/react/progress';
+import { CpsProgress } from '@cps/web/react/progress';
 
 const App = () => {
   return (
@@ -327,9 +327,9 @@ Não existe um atributo `indeterminate` a ser definido diretamente no HTML, vist
 
 ```jsx react
 import { useState, useRef, useEffect, useMemo } from 'react';
-import { CpsProgress } from '@cps-elements/web/react/progress';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsProgress } from '@cps/web/react/progress';
+import { CpsButton } from '@cps/web/react/button';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => {
   const [progress, setProgress] = useState(0);
@@ -398,9 +398,9 @@ const App = () => {
 
 <script setup>
   import { computed, reactive, onUnmounted } from 'vue';
-  import { CpsButton } from '@cps-elements/web/vue/button';
-  import { CpsLabel } from '@cps-elements/web/vue/label';
-  import { CpsProgress } from '@cps-elements/web/vue/progress';
+  import { CpsButton } from '@cps/web/vue/button';
+  import { CpsLabel } from '@cps/web/vue/label';
+  import { CpsProgress } from '@cps/web/vue/progress';
 
   const state = reactive({
     progress: 0,
@@ -463,8 +463,8 @@ Entretanto, como uma barra de progresso comumente representa que uma determinada
 ```
 
 ```jsx react
-import { CpsLabel } from '@cps-elements/web/react/label';
-import { CpsProgress } from '@cps-elements/web/react/progress';
+import { CpsLabel } from '@cps/web/react/label';
+import { CpsProgress } from '@cps/web/react/progress';
 
 const App = () => {
   return (
@@ -492,7 +492,7 @@ Use a propriedade CSS `--indicator-height` para ajustar a dimensão vertical do 
 ```
 
 ```jsx react
-import { CpsProgress } from '@cps-elements/web/react/progress';
+import { CpsProgress } from '@cps/web/react/progress';
 
 const App = () => {
   return <CpsProgress style={{ '--indicator-height': '1rem', '--track-height': '1rem' }} />;
@@ -536,7 +536,7 @@ Através de uma mistura de técnicas com partes CSS e propriedades CSS com valor
 ```
 
 ```jsx react
-import { CpsProgress } from '@cps-elements/web/react/progress';
+import { CpsProgress } from '@cps/web/react/progress';
 
 const css = `
   cps-progress.fancy {

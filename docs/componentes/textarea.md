@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsTextarea } from '@cps-elements/web/react/textarea';
+import { CpsTextarea } from '@cps/web/react/textarea';
 
 const App = () => <CpsTextarea />;
 ```
@@ -25,7 +25,7 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsTextarea } from '@cps-elements/web/react/textarea';
+import { CpsTextarea } from '@cps/web/react/textarea';
 
 const App = () => <CpsTextarea label="Comentários" />;
 ```
@@ -39,7 +39,7 @@ Use o atributo `help-text` para adicionar texto de apoio para auxílio ao preenc
 ```
 
 ```jsx react
-import { CpsTextarea } from '@cps-elements/web/react/textarea';
+import { CpsTextarea } from '@cps/web/react/textarea';
 
 const App = () => <CpsTextarea label="Comentários" help-text="Por favor, nos conte o que você achou." />;
 ```
@@ -53,7 +53,7 @@ Use o atributo `rows` para alterar o número de linhas de texto que serão exibi
 ```
 
 ```jsx react
-import { CpsTextarea } from '@cps-elements/web/react/textarea';
+import { CpsTextarea } from '@cps/web/react/textarea';
 
 const App = () => <CpsTextarea rows={2} />;
 ```
@@ -67,7 +67,7 @@ Use o atributo `placeholder` para adicionar um texto de espaço reservado.
 ```
 
 ```jsx react
-import { CpsTextarea } from '@cps-elements/web/react/textarea';
+import { CpsTextarea } from '@cps/web/react/textarea';
 
 const App = () => <CpsTextarea placeholder="Informe o que você acha" />;
 ```
@@ -83,7 +83,7 @@ Use o atributo `disabled` para desabilitar o campo. Cliques serão suprimidos, e
 ```
 
 ```jsx react
-import { CpsTextarea } from '@cps-elements/web/react/textarea';
+import { CpsTextarea } from '@cps/web/react/textarea';
 
 const App = () => <CpsTextarea placeholder="Desabilitado" disabled />;
 ```
@@ -101,7 +101,7 @@ Use o atributo `size` para alterar o tamanho do campo.
 ```
 
 ```jsx react
-import { CpsTextarea } from '@cps-elements/web/react/textarea';
+import { CpsTextarea } from '@cps/web/react/textarea';
 
 const App = () => (
   <>
@@ -123,7 +123,7 @@ Por padrão, caixas de texto de múltiplas linhas podem ser redimensionadas vert
 ```
 
 ```jsx react
-import { CpsTextarea } from '@cps-elements/web/react/textarea';
+import { CpsTextarea } from '@cps/web/react/textarea';
 
 const App = () => <CpsTextarea resize="none" placeholder="Informe o que você acha" />;
 ```
@@ -139,7 +139,7 @@ Utilize em conjunto com `rows` para definir um número pequeno de linhas inicial
 ```
 
 ```jsx react
-import { CpsTextarea } from '@cps-elements/web/react/textarea';
+import { CpsTextarea } from '@cps/web/react/textarea';
 
 const App = () => <CpsTextarea rows="2" resize="auto" placeholder="Informe o que você acha" />;
 ```

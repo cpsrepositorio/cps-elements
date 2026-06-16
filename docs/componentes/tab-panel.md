@@ -17,9 +17,9 @@
 ```
 
 ```jsx react
-import { CpsTabGroup } from '@cps-elements/web/react/tab-group';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabGroup } from '@cps/web/react/tab-group';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <CpsTabGroup>
@@ -58,7 +58,7 @@ Apenas painéis selecionados são visíveis. É possível forçar a visibilidade
 ```
 
 ```jsx react
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <>
@@ -107,8 +107,8 @@ Assim como com a personalização dos [Tab Item](/componentes/tab-item), é poss
 ```
 
 ```jsx react
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const css = `
   .custom-selected-colors cps-tab-item {

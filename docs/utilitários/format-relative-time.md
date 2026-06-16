@@ -14,7 +14,7 @@ Sendo assim, este utilitário é simplesmente um _wrapper_ sobre a implementaç�
 ```
 
 ```jsx react
-import { CpsFormatRelativeTime } from '@cps-elements/web/react/format-relative-time';
+import { CpsFormatRelativeTime } from '@cps/web/react/format-relative-time';
 
 const App = () => (
   <p class="relative-time-example">
@@ -44,7 +44,7 @@ Se você ficar olhando para o exemplo abaixo por ao menos um minuto, poderá obs
 ```
 
 ```jsx react
-import { CpsFormatRelativeTime } from '@cps-elements/web/react/format-relative-time';
+import { CpsFormatRelativeTime } from '@cps/web/react/format-relative-time';
 
 const App = () => (
   <p class="relative-time-example">
@@ -80,8 +80,8 @@ O idioma atualmente em uso no navegador do usuário é utilizado para a formata�
 ```
 
 ```jsx react
-import { CpsFormatRelativeTime } from '@cps-elements/web/react/format-relative-time';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatRelativeTime } from '@cps/web/react/format-relative-time';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => <></>;
 ```
@@ -129,8 +129,8 @@ Use o atributo `numeric` para determinar quando uma apresentação numérica exp
 ```
 
 ```jsx react
-import { CpsFormatRelativeTime } from '@cps-elements/web/react/format-relative-time';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatRelativeTime } from '@cps/web/react/format-relative-time';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => <></>;
 ```
@@ -186,8 +186,8 @@ Use o atributo `format` para alterar como o tempo relativo é formatado para exi
 ```
 
 ```jsx react
-import { CpsFormatRelativeTime } from '@cps-elements/web/react/format-relative-time';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatRelativeTime } from '@cps/web/react/format-relative-time';
+import { CpsLabel } from '@cps/web/react/label';
 
 const App = () => <></>;
 ```

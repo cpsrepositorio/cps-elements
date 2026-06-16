@@ -19,7 +19,7 @@ Use o atributo `href` para definir o endereço de destino do _link_. O valor pod
 ```
 
 ```jsx react
-import { CpsLink } from '@cps-elements/web/react/link';
+import { CpsLink } from '@cps/web/react/link';
 
 const App = () => <CpsLink href="https://www.cps.sp.gov.br/">Navegar para portal CPS</CpsLink>;
 ```
@@ -33,7 +33,7 @@ Use o atributo `target` para definir o alvo de navegação do _link_. O valor pa
 ```
 
 ```jsx react
-import { CpsLink } from '@cps-elements/web/react/link';
+import { CpsLink } from '@cps/web/react/link';
 
 const App = () => (
   <CpsLink href="https://www.cps.sp.gov.br/" target="_blank">
@@ -51,7 +51,7 @@ Use o atributo `disabled` para desabilitar o _link_. Cliques serão suprimidos, 
 ```
 
 ```jsx react
-import { CpsLink } from '@cps-elements/web/react/link';
+import { CpsLink } from '@cps/web/react/link';
 
 const App = () => (
   <>
@@ -93,8 +93,8 @@ O conteúdo principal de um _link_ não é restrito apenas a textos. Outros cont
 ```
 
 ```jsx react
-import { CpsLink } from '@cps-elements/web/react/link';
-import { CpsLogo } from '@cps-elements/web/react/logo';
+import { CpsLink } from '@cps/web/react/link';
+import { CpsLogo } from '@cps/web/react/logo';
 
 const css = `
   .link-content-example {
@@ -154,8 +154,8 @@ Use os _slots_ `prefix` e `suffix` para adicionar ícones.
 ```
 
 ```jsx react
-import { CpsLink } from '@cps-elements/web/react/link';
-import { CpsIcon } from '@cps-elements/web/react/icon';
+import { CpsLink } from '@cps/web/react/link';
+import { CpsIcon } from '@cps/web/react/icon';
 
 const App = () => (
   <>
@@ -216,7 +216,7 @@ Ao omitir o atributo, o valor padrão `inherit` é usado, fazendo com que o _lin
 ```
 
 ```jsx react
-import { CpsLink } from '@cps-elements/web/react/link';
+import { CpsLink } from '@cps/web/react/link';
 
 const css = `
   .link-sizes-example {

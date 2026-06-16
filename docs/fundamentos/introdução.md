@@ -25,8 +25,8 @@
 </div>
 </div>
 
-[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@cps-elements/web/badge)](https://www.jsdelivr.com/package/npm/@cps-elements/web)
-[![npm](https://img.shields.io/npm/dw/@cps-elements/web?label=npm&style=flat-square)](https://www.npmjs.com/package/@cps-elements/web)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@cps/web/badge)](https://www.jsdelivr.com/package/npm/@cps/web)
+[![npm](https://img.shields.io/npm/dw/@cps/web?label=npm&style=flat-square)](https://www.npmjs.com/package/@cps/web)
 <br />
 [![Licença](https://img.shields.io/badge/license-MIT-232323.svg?style=flat-square)](https://github.com/cpsrepositorio/cps-elements/blob/next/LICENSE.md)
 [![Repositório](https://img.shields.io/badge/GitHub-Code-232323.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/cpsrepositorio/cps-elements)
@@ -37,8 +37,8 @@
 Adicione o seguinte código ao `<head>` de sua página.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/autoloader.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps/web/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@cps/web/autoloader.js"></script>
 ```
 
 Agora você pode começar a usar componentes CPS Elements! Tente adicionar um botão:
@@ -66,7 +66,7 @@ Além da tipografia, é provável querer carregar um tema visual diferente, espe
 Ao invés de carregar o tema claro, basta importar os estilos do tema escuro:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/dark.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps/web/themes/dark.css" />
 ```
 
 Observe que carregar diretamente outro tema funciona, mas não habilita alternância de temas. Para detecção e alternância entre modo claro e modo escuro, recomendamos que leia nossa [documentação detalhada sobre temas](fundamentos/temas#modo-escuro).

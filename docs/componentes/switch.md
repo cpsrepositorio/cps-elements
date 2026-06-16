@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsSwitch } from '@cps-elements/web/react/switch';
+import { CpsSwitch } from '@cps/web/react/switch';
 
 const App = () => <CpsSwitch />;
 ```
@@ -25,7 +25,7 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsSwitch } from '@cps-elements/web/react/switch';
+import { CpsSwitch } from '@cps/web/react/switch';
 
 const App = () => <CpsSwitch label="Ativar notificações" />;
 ```
@@ -37,7 +37,7 @@ Através do uso do _slot_ `label`, é possível adicionar elementos adicionais a
 ```
 
 ```jsx react
-import { CpsSwitch } from '@cps-elements/web/react/switch';
+import { CpsSwitch } from '@cps/web/react/switch';
 
 const App = () => (
   <CpsSwitch>
@@ -59,7 +59,7 @@ Use o atributo `fluid` para adicionar um posicionamento fluido ao rótulo, permi
 ```
 
 ```jsx react
-import { CpsSwitch } from '@cps-elements/web/react/switch';
+import { CpsSwitch } from '@cps/web/react/switch';
 
 const App = () => (
   <div style={{ maxWidth: '380px' }}>
@@ -80,7 +80,7 @@ Use o atributo `checked` para definir o campo como ligado/desligado. Este atribu
 ```
 
 ```jsx react
-import { CpsSwitch } from '@cps-elements/web/react/switch';
+import { CpsSwitch } from '@cps/web/react/switch';
 
 const App = () => <CpsSwitch checked>Ligado</CpsSwitch>;
 ```
@@ -95,7 +95,7 @@ Use o atributo `disabled` para desabilitar o campo. Cliques serão suprimidos, e
 ```
 
 ```jsx react
-import { CpsSwitch } from '@cps-elements/web/react/switch';
+import { CpsSwitch } from '@cps/web/react/switch';
 
 const App = () => (
   <>
@@ -120,7 +120,7 @@ Use o atributo `size` para alterar o tamanho do campo.
 ```
 
 ```jsx react
-import { CpsSwitch } from '@cps-elements/web/react/switch';
+import { CpsSwitch } from '@cps/web/react/switch';
 
 const App = () => (
   <>
@@ -167,8 +167,8 @@ Use o método `setCustomValidity()` para definir uma mensagem de validação per
 
 ```jsx react
 import { useEffect, useRef } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsSwitch } from '@cps-elements/web/react/switch';
+import { CpsButton } from '@cps/web/react/button';
+import { CpsSwitch } from '@cps/web/react/switch';
 
 const App = () => {
   const switchRef = useRef(null);

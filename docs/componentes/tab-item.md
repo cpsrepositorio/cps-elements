@@ -16,8 +16,8 @@
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
+import { CpsIcon } from '@cps/web/react/icon';
+import { CpsTabItem } from '@cps/web/react/tab-item';
 
 const App = () => (
   <div className="tab-items">
@@ -103,8 +103,8 @@ Use o atributo `selected` para marcar a aba como selecionada. Individualmente, i
 ```
 
 ```jsx react
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const App = () => (
   <div className="selected-sample">
@@ -149,8 +149,8 @@ A cor de fundo e de borda da aba selecionada deve idealmente ser equivalente à 
 ```
 
 ```jsx react
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
-import { CpsTabPanel } from '@cps-elements/web/react/tab-panel';
+import { CpsTabItem } from '@cps/web/react/tab-item';
+import { CpsTabPanel } from '@cps/web/react/tab-panel';
 
 const css = `
   .custom-selected-colors cps-tab-item {
@@ -205,8 +205,8 @@ Use o _slot_ `prefix` para adicionar um ícone antes do conteúdo principal.
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
+import { CpsIcon } from '@cps/web/react/icon';
+import { CpsTabItem } from '@cps/web/react/tab-item';
 
 const App = () => (
   <div className="tab-items">
@@ -247,7 +247,7 @@ Use o atributo `closable` para exibir um botão de fechar que oculta a notifica�
 
 ```jsx react
 import { useState } from 'react';
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
+import { CpsTabItem } from '@cps/web/react/tab-item';
 
 const App = () => {
   const [isHidden1, setHidden1] = useState(false);
@@ -280,7 +280,7 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsTabItem } from '@cps-elements/web/components/tab-item';
+  import { CpsTabItem } from '@cps/web/components/tab-item';
 
   const isHidden1 = ref(false);
   const isHidden2 = ref(false);
@@ -314,7 +314,7 @@ Use o atributo `disabled` para desabilitar a aba. Cliques serão suprimidos, e n
 ```
 
 ```jsx react
-import { CpsTabItem } from '@cps-elements/web/react/tab-item';
+import { CpsTabItem } from '@cps/web/react/tab-item';
 
 const App = () => (
   <div className="tab-items">

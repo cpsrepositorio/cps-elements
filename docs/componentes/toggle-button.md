@@ -10,7 +10,7 @@ Botões alternáveis podem servir como uma extensão dos [botões](/componentes/
 ```
 
 ```jsx react
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   <>
@@ -33,8 +33,8 @@ Botões alternáveis podem ser utilizados em [Radio Group](/componentes/radio-gr
 ```
 
 ```jsx react
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsRadioGroup } from '@cps/web/react/radio-group';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   <CpsRadioGroup label="Selecione uma opção" name="meal">
@@ -67,7 +67,7 @@ Quando o botão alternável estiver sendo usado individualmente, use o atributo 
 ```
 
 ```jsx react
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   const [checked, setChecked] = useState(true);
@@ -89,7 +89,7 @@ const App = () => (
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsToggleButton } from '@cps-elements/web/components/toggle-button';
+  import { CpsToggleButton } from '@cps/web/components/toggle-button';
 
   const isChecked = ref(true);
   const buttonText = ref('Sim');
@@ -121,8 +121,8 @@ Caso utilize botões alternáveis em um [Radio Group](/componentes/radio-group),
 ```
 
 ```jsx react
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsRadioGroup } from '@cps/web/react/radio-group';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   <CpsRadioGroup label="Selecione uma opção" name="meal" value="3">
@@ -143,7 +143,7 @@ Use o atributo `disabled` para desabilitar o botão. Cliques serão suprimidos, 
 ```
 
 ```jsx react
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   <>
@@ -164,8 +164,8 @@ const App = () => (
 ```
 
 ```jsx react
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsRadioGroup } from '@cps/web/react/radio-group';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   <CpsRadioGroup label="Selecione uma opção" name="meal" value="1">
@@ -207,7 +207,7 @@ Use o atributo `size` para alterar o tamanho do campo.
 ```
 
 ```jsx react
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   <>
@@ -275,8 +275,8 @@ Assim como em [Button](/componentes/button), é possível controlar o arredondam
 ```
 
 ```jsx react
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsRadioGroup } from '@cps/web/react/radio-group';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   <>
@@ -350,9 +350,9 @@ Use os _slots_ `prefix` e `suffix` para adicionar ícones.
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsIcon } from '@cps/web/react/icon';
+import { CpsRadioGroup } from '@cps/web/react/radio-group';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   <CpsRadioGroup label="O que fazer com este produto?">
@@ -400,9 +400,9 @@ Se você omitir o conteúdo textual de um botão alternável e inserir dentro de
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsIcon } from '@cps/web/react/icon';
+import { CpsRadioGroup } from '@cps/web/react/radio-group';
+import { CpsToggleButton } from '@cps/web/react/toggle-button';
 
 const App = () => (
   <CpsRadioGroup label="Alinhamento do texto:" value="left">
