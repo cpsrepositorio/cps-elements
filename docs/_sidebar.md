@@ -48,6 +48,7 @@
   - [Radio Group](/componentes/radio-group)
   - [Range](/componentes/range)
   - [Rating](/componentes/rating)
+  - [Rich Text](/componentes/rich-text)
   - [Select](/componentes/select)
   - [Separator](/componentes/separator)
   - [Skeleton](/componentes/skeleton)
