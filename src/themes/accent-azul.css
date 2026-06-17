@@ -1,0 +1,22 @@
+/*
+ * Paleta de acento "Azul" — cor de sistema do CPS.
+ * Uso: incluir APOS themes/light.css (ou dark.css). Redefine a rampa de
+ * acento; todos os componentes e o app-shell recolorem automaticamente.
+ *
+ *   <link rel="stylesheet" href=".../themes/light.css">
+ *   <link rel="stylesheet" href=".../themes/accent-azul.css">
+ */
+:root,
+:host {
+  --cps-palette-accent-50: #EAF2FE;
+  --cps-palette-accent-100: #D2E2FD;
+  --cps-palette-accent-200: #AAC8FB;
+  --cps-palette-accent-300: #79A6F7;
+  --cps-palette-accent-400: #4F86F0;
+  --cps-palette-accent-500: #2E6AE6;
+  --cps-palette-accent-600: #1F55CC;
+  --cps-palette-accent-700: #1A45A6;
+  --cps-palette-accent-800: #173A85;
+  --cps-palette-accent-900: #142F6A;
+  --cps-palette-accent-950: #0E2049;
+}

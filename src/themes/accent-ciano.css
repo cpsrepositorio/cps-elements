@@ -1,0 +1,22 @@
+/*
+ * Paleta de acento "Ciano (principal)" — cor de sistema do CPS.
+ * Uso: incluir APOS themes/light.css (ou dark.css). Redefine a rampa de
+ * acento; todos os componentes e o app-shell recolorem automaticamente.
+ *
+ *   <link rel="stylesheet" href=".../themes/light.css">
+ *   <link rel="stylesheet" href=".../themes/accent-ciano.css">
+ */
+:root,
+:host {
+  --cps-palette-accent-50: #8AFFFF;
+  --cps-palette-accent-100: #57F7FF;
+  --cps-palette-accent-200: #00EAF9;
+  --cps-palette-accent-300: #00D4E6;
+  --cps-palette-accent-400: #05BBCB;
+  --cps-palette-accent-500: #0AA1AD;
+  --cps-palette-accent-600: #078B99;
+  --cps-palette-accent-700: #047686;
+  --cps-palette-accent-800: #016274;
+  --cps-palette-accent-900: #005363;
+  --cps-palette-accent-950: #004754;
+}

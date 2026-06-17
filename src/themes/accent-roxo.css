@@ -1,0 +1,22 @@
+/*
+ * Paleta de acento "Roxo" — cor de sistema do CPS.
+ * Uso: incluir APOS themes/light.css (ou dark.css). Redefine a rampa de
+ * acento; todos os componentes e o app-shell recolorem automaticamente.
+ *
+ *   <link rel="stylesheet" href=".../themes/light.css">
+ *   <link rel="stylesheet" href=".../themes/accent-roxo.css">
+ */
+:root,
+:host {
+  --cps-palette-accent-50: #F3EEFC;
+  --cps-palette-accent-100: #E6DBFF;
+  --cps-palette-accent-200: #D0BAFF;
+  --cps-palette-accent-300: #B79AF5;
+  --cps-palette-accent-400: #9E7AEC;
+  --cps-palette-accent-500: #8A5AE6;
+  --cps-palette-accent-600: #7B45DD;
+  --cps-palette-accent-700: #6A2FC9;
+  --cps-palette-accent-800: #5714A6;
+  --cps-palette-accent-900: #45108A;
+  --cps-palette-accent-950: #2C0A5C;
+}

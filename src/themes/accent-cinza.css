@@ -1,0 +1,22 @@
+/*
+ * Paleta de acento "Cinza" — cor de sistema do CPS.
+ * Uso: incluir APOS themes/light.css (ou dark.css). Redefine a rampa de
+ * acento; todos os componentes e o app-shell recolorem automaticamente.
+ *
+ *   <link rel="stylesheet" href=".../themes/light.css">
+ *   <link rel="stylesheet" href=".../themes/accent-cinza.css">
+ */
+:root,
+:host {
+  --cps-palette-accent-50: #F8F9FA;
+  --cps-palette-accent-100: #F1F3F5;
+  --cps-palette-accent-200: #E5E8EB;
+  --cps-palette-accent-300: #CCD2D8;
+  --cps-palette-accent-400: #9AA4AE;
+  --cps-palette-accent-500: #6B7682;
+  --cps-palette-accent-600: #515B66;
+  --cps-palette-accent-700: #3E4751;
+  --cps-palette-accent-800: #2F3741;
+  --cps-palette-accent-900: #232A33;
+  --cps-palette-accent-950: #171C22;
+}

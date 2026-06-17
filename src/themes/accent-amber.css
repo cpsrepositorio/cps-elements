@@ -1,0 +1,22 @@
+/*
+ * Paleta de acento "Âmbar" — cor de sistema do CPS.
+ * Uso: incluir APOS themes/light.css (ou dark.css). Redefine a rampa de
+ * acento; todos os componentes e o app-shell recolorem automaticamente.
+ *
+ *   <link rel="stylesheet" href=".../themes/light.css">
+ *   <link rel="stylesheet" href=".../themes/accent-amber.css">
+ */
+:root,
+:host {
+  --cps-palette-accent-50: #FFF6E8;
+  --cps-palette-accent-100: #FCE8C3;
+  --cps-palette-accent-200: #F7D08C;
+  --cps-palette-accent-300: #EFB152;
+  --cps-palette-accent-400: #E2962A;
+  --cps-palette-accent-500: #C8801C;
+  --cps-palette-accent-600: #A96A15;
+  --cps-palette-accent-700: #885413;
+  --cps-palette-accent-800: #6E4413;
+  --cps-palette-accent-900: #5A3811;
+  --cps-palette-accent-950: #3E2609;
+}
