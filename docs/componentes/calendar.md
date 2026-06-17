@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsCalendar } from '@cps-elements/web/react/calendar';
+import { CpsCalendar } from '@cgtic-cps/web/react/calendar';
 
 const App = () => <CpsCalendar />;
 ```
@@ -24,7 +24,7 @@ Use o atributo `value` para definir a data selecionada inicialmente.
 ```
 
 ```jsx react
-import { CpsCalendar } from '@cps-elements/web/react/calendar';
+import { CpsCalendar } from '@cgtic-cps/web/react/calendar';
 
 const App = () => <CpsCalendar value="2023-03-21" />;
 ```
@@ -44,8 +44,8 @@ Seria possível sobrescrever os estilos usando [partes CSS](#partes-css), entret
 ```
 
 ```jsx react
-import { CpsCard } from '@cps-elements/web/react/card';
-import { CpsCalendar } from '@cps-elements/web/react/calendar';
+import { CpsCard } from '@cgtic-cps/web/react/card';
+import { CpsCalendar } from '@cgtic-cps/web/react/calendar';
 
 const App = () => (
   <CpsCard style={{ maxWidth: 380 }}>
@@ -63,7 +63,7 @@ Use os atributos `min` e `max` para restringir o intervalo de datas selecionáve
 ```
 
 ```jsx react
-import { CpsCalendar } from '@cps-elements/web/react/calendar';
+import { CpsCalendar } from '@cgtic-cps/web/react/calendar';
 
 const App = () => <CpsCalendar min="2023-03-20" max="2023-03-24" value="2023-03-21" />;
 ```
@@ -77,7 +77,7 @@ Use o atributo `first-day-of-week` para alterar o primeiro dia da semana exibido
 ```
 
 ```jsx react
-import { CpsCalendar } from '@cps-elements/web/react/calendar';
+import { CpsCalendar } from '@cgtic-cps/web/react/calendar';
 
 const App = () => <CpsCalendar firstDayOfWeek="monday" />;
 ```
@@ -96,7 +96,7 @@ No exemplo a seguir, selecionar datas nos finais de semana está desabilitado.
 ```
 
 ```jsx react
-import { CpsCalendar } from '@cps-elements/web/react/calendar';
+import { CpsCalendar } from '@cgtic-cps/web/react/calendar';
 
 const App = () => <CpsCalendar disableWeekdays="saturday,sunday" />;
 ```
@@ -114,7 +114,7 @@ No exemplo a seguir, selecionar os dias 13, 14 ou 24 do mês de março de 2023 e
 ```
 
 ```jsx react
-import { CpsCalendar } from '@cps-elements/web/react/calendar';
+import { CpsCalendar } from '@cgtic-cps/web/react/calendar';
 
 const App = () => <CpsCalendar disableDates="2023-03-13,2023-03-14,2023-03-24" value="2023-03-21" />;
 ```
@@ -132,7 +132,7 @@ Se estiver visualizando um mês, dias de meses adjacentes não serão exibidos. 
 ```
 
 ```jsx react
-import { CpsCalendar } from '@cps-elements/web/react/calendar';
+import { CpsCalendar } from '@cgtic-cps/web/react/calendar';
 
 const App = () => <CpsCalendar hideOutside />;
 ```
@@ -148,7 +148,7 @@ Por padrão, o calendário exibe um rodapé com _links_ de interação rápida p
 ```
 
 ```jsx react
-import { CpsCalendar } from '@cps-elements/web/react/calendar';
+import { CpsCalendar } from '@cgtic-cps/web/react/calendar';
 
 const App = () => <CpsCalendar hideFooter />;
 ```

@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange />;
 ```
@@ -25,7 +25,7 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange label="Nível de felicidade" />;
 ```
@@ -39,7 +39,7 @@ Neste caso, garanta que o atributo `aria-label` está presente, definindo um ró
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange ariaLabel="Nível de felicidade" />;
 ```
@@ -53,7 +53,7 @@ Por padrão, uma [dica de ferramenta](/componentes/tooltip) é exibida automatic
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange label="Nível de felicidade" no-tooltip />;
 ```
@@ -90,8 +90,8 @@ Use o atributo `value` para definir o valor inicial do intervalo. Também é pos
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => {
   const [value, setValue] = useState(50);
@@ -117,8 +117,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsRange } from '@cps-elements/web/components/range';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsRange } from '@cgtic-cps/web/components/range';
 
   const range = ref(50);
 </script>
@@ -145,7 +145,7 @@ Use o atributo `min` para definir o valor mínimo aceito para intervalo, por pad
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange label="Nível de felicidade" min={50} help-text="Exigimos ao menos 50 aqui" />;
 ```
@@ -157,7 +157,7 @@ Valores negativos também são possíveis no atributo `min`.
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange label="Nível de felicidade" min={-100} help-text="Aceitamos de -100 a 100 neste caso" />;
 ```
@@ -171,7 +171,7 @@ Use o atributo `max` para definir o valor mínimo aceito para intervalo, por pad
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange label="Qual sua nota, de 1 a 10?" min={1} max={10} />;
 ```
@@ -183,7 +183,7 @@ Valores negativos também são possíveis no atributo `max`, desde que ele se ma
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange help-text="Valores entre -10 e -1" label="Escala invertida" min={-10} max={-1} />;
 ```
@@ -203,7 +203,7 @@ Use o atributo `step` para estipular um incremento em decimais.
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => (
   <CpsRange help-text="Avaliação com precisão 0,5" label="Qual sua nota, de 1 a 10?" precision={0.5} min={1} max={5} />
@@ -217,7 +217,7 @@ Mesmo quando somente inteiros são desejados, o atributo `step` pode ser usado p
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange label="Qual sua centena preferida?" precision={100} min={100} max={900} />;
 ```
@@ -235,7 +235,7 @@ Use o atributo `size` para alterar o tamanho dos símbolos de avaliação.
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => (
   <>
@@ -259,7 +259,7 @@ Use o atributo `readonly` para tornar a avaliação somente leitura e não inter
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange label="Intervalo somente leitura" readonly />;
 ```
@@ -273,7 +273,7 @@ Use o atributo `disabled` para desabilitar o campo. Cliques serão suprimidos, e
 ```
 
 ```jsx react
-import { CpsRange } from '@cps-elements/web/react/range';
+import { CpsRange } from '@cgtic-cps/web/react/range';
 
 const App = () => <CpsRange label="Intervalo desabilitado" disabled />;
 ```

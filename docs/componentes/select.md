@@ -14,8 +14,8 @@
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect>
@@ -49,8 +49,8 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect label="Fruta preferida">
@@ -78,8 +78,8 @@ Use o atributo `help-text` para adicionar texto de apoio para auxílio ao preenc
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect label="Experiência" help-text="Por favor, nos conte seu nível com esta tecnologia.">
@@ -107,8 +107,8 @@ Use o atributo `placeholder` para adicionar um texto de espaço reservado.
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect placeholder="Selecione uma opção">
@@ -140,8 +140,8 @@ Use o atributo `clearable` para exibir um botão de limpar quando o campo possui
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect clearable placeholder="Selecione uma opção" value="option-1">
@@ -173,8 +173,8 @@ Use o atributo `disabled` para desabilitar o campo. Cliques serão suprimidos, e
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect placeholder="Desabilitado" disabled>
@@ -228,8 +228,8 @@ Use o atributo `size` para alterar o tamanho do campo. isto não afeta o tamanho
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <>
@@ -299,7 +299,7 @@ Use o _slot_ `prefix` para adicionar ícone.
 ```
 
 ```jsx react
-import { CpsIcon, CpsOption, CpsSelect } from '@cps-elements/web/react';
+import { CpsIcon, CpsOption, CpsSelect } from '@cgtic-cps/web/react';
 
 const App = () => (
   <>
@@ -407,10 +407,10 @@ Use `<cps-separator>` para agrupar visualmente as opções da caixa de seleção
 ```
 
 ```jsx react
-import { CpsLabel } from '@cps-elements/web/react/label';
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
-import { CpsSeparator } from '@cps-elements/web/react/separator';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => (
   <CpsSelect label="Comida saudável preferida" placeholder="Selecione uma opção" clearable>
@@ -443,8 +443,8 @@ Use o atributo `placement` para definir o posicionamento preferido da lista susp
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect placement="top" placeholder="Se houver espaço, eu prefiro abrir para cima...">
@@ -480,8 +480,8 @@ Use o atributo `multiple` para permitir a seleção de múltiplas opções. É u
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect label="Competências" placeholder="Selecione uma ou mais opções" multiple clearable>
@@ -525,8 +525,8 @@ Use o atributo `value` para definir o valor inicial do campo, ou seja, qual opç
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect
@@ -579,8 +579,8 @@ Use o atributo `max-options-visible` para controlar o número máximo de opçõe
 ```
 
 ```jsx react
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const App = () => (
   <CpsSelect

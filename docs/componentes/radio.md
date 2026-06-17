@@ -11,7 +11,7 @@ Embora esta documentação apresente seus atributos fundamentais, _radios_ são 
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
 
 const App = () => <CpsRadio />;
 ```
@@ -29,7 +29,7 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
 
 const App = () => <CpsRadio label="Me marque para nunca mais mudar de ideia" />;
 ```
@@ -43,7 +43,7 @@ Através do uso do _slot_ `label`, é possível adicionar elementos adicionais a
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
 
 const App = () => (
   <CpsRadio>
@@ -68,7 +68,7 @@ Use o atributo `value` para definir o valor interno do campo, o qual não precis
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
 
 const App = () => (
   <>
@@ -95,7 +95,7 @@ Use o atributo `disabled` para desabilitar o campo. Cliques serão suprimidos, e
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
 
 const App = () => (
   <>
@@ -138,7 +138,7 @@ Use o atributo `size` para alterar o tamanho do campo.
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
 
 const App = () => (
   <>

@@ -25,8 +25,8 @@
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDialog } from '@cps-elements/web/react/dialog';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDialog } from '@cgtic-cps/web/react/dialog';
 
 const App = () => {
   const [isOpen, setOpen] = useState(false);
@@ -49,8 +49,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDialog } from '@cps-elements/web/components/dialog';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDialog } from '@cgtic-cps/web/components/dialog';
 
   const isOpen = ref(false);
 </script>
@@ -98,8 +98,8 @@ Esta abordagem é menos conveniente em programação imperativa, pois exige prog
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDialog } from '@cps-elements/web/react/dialog';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDialog } from '@cgtic-cps/web/react/dialog';
 
 const App = () => {
   // A reatividade do React torna o uso do atributo `open` intuitivo.
@@ -122,8 +122,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDialog } from '@cps-elements/web/components/dialog';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDialog } from '@cgtic-cps/web/components/dialog';
 
   // A reatividade do Vue torna o uso do atributo `open` intuitivo.
   const isOpen = ref(false);
@@ -165,8 +165,8 @@ Esta abordagem normalmente facilita a construção e melhora a legibilidade de _
 
 ```jsx react
 import { useRef } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDialog } from '@cps-elements/web/react/dialog';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDialog } from '@cgtic-cps/web/react/dialog';
 
 const App = () => {
   // Precisa de useRef para acessar a instância do CpsDialog diretamente.
@@ -193,8 +193,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDialog } from '@cps-elements/web/components/dialog';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDialog } from '@cgtic-cps/web/components/dialog';
 
   // Precisa de uma referência para a instância do elemento <cps-dialog>.
   const dialogRef = ref(null);
@@ -250,8 +250,8 @@ Se realmente desejado, é possível obter o resultado equivalente ao método [`s
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDialog } from '@cps-elements/web/react/dialog';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDialog } from '@cgtic-cps/web/react/dialog';
 
 const css = `
   .dialog-no-backdrop cps-dialog::part(backdrop) {
@@ -284,8 +284,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDialog } from '@cps-elements/web/components/dialog';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDialog } from '@cgtic-cps/web/components/dialog';
 
   const isOpen = ref(false);
 </script>
@@ -333,8 +333,8 @@ Use o atributo `closable` para exibir um botão de fechar no cabeçalho, como um
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDialog } from '@cps-elements/web/react/dialog';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDialog } from '@cgtic-cps/web/react/dialog';
 
 const App = () => {
   const [isOpen, setOpen] = useState(false);
@@ -356,8 +356,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDialog } from '@cps-elements/web/components/dialog';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDialog } from '@cgtic-cps/web/components/dialog';
 
   const isOpen = ref(false);
 </script>
@@ -567,7 +567,7 @@ Use o _slot_ `footer` para designar os elementos a serem exibidos no rodapé de 
   <cps-button>Abrir caixa de diálogo</cps-button>
 
   <script type="module">
-    import { toast } from '@cps-elements/web/components/notification.js';
+    import { toast } from '@cgtic-cps/web/components/notification.js';
 
     const container = document.querySelector('.dialog-example-footer-slot');
     const dialogs = container.querySelectorAll('cps-dialog');
@@ -769,7 +769,7 @@ Este exemplo demonstra o uso de `returnValue` com um formulário contendo um ele
 </div>
 
 <script type="module">
-  import { toast } from '@cps-elements/web/components/notification.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const container = document.querySelector('.dialog-example-return-value');
   const dialog = container.querySelector('cps-dialog');
@@ -820,8 +820,8 @@ Use a função `showAlert` para exibir uma caixa de diálogo com uma mensagem e 
 </div>
 
 <script type="module">
-  import { toast } from '@cps-elements/web/components/notification.js';
-  import { showAlert } from '@cps-elements/web/components/dialog.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
+  import { showAlert } from '@cgtic-cps/web/components/dialog.js';
 
   const container = document.querySelector('.dialog-example-showAlert');
   const openButtons = container.querySelectorAll('cps-button');
@@ -855,8 +855,8 @@ Use a função `showConfirm` para exibir uma caixa de diálogo com dois botões:
 </div>
 
 <script type="module">
-  import { toast } from '@cps-elements/web/components/notification.js';
-  import { showConfirm } from '@cps-elements/web/components/dialog.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
+  import { showConfirm } from '@cgtic-cps/web/components/dialog.js';
 
   const container = document.querySelector('.dialog-example-showConfirm');
   const openButtons = container.querySelectorAll('cps-button');

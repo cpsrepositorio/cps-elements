@@ -17,9 +17,9 @@
 ```
 
 ```jsx react
-import { CpsCard } from '@cps-elements/web/react/card';
-import { CpsLabel } from '@cps-elements/web/react/label';
-import { CpsLink } from '@cps-elements/web/react/link';
+import { CpsCard } from '@cgtic-cps/web/react/card';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
+import { CpsLink } from '@cgtic-cps/web/react/link';
 
 const App = () => (
   <CpsCard>
@@ -65,7 +65,7 @@ Use o atributo `variant` para definir a variação visual do cartão. Atente-se 
 ```
 
 ```jsx react
-import { CpsCard } from '@cps-elements/web/react/card';
+import { CpsCard } from '@cgtic-cps/web/react/card';
 
 const App = () => (
   <>
@@ -119,7 +119,7 @@ Use o atributo `actionable` para tornar o cartão acionável, ou seja, que pode 
 ```
 
 ```jsx react
-import { CpsCard } from '@cps-elements/web/react/card';
+import { CpsCard } from '@cgtic-cps/web/react/card';
 
 const App = () => (
   <>
@@ -217,8 +217,8 @@ Use o atributo `elevation` para definir explicitamente a intensidade de sombra d
 ```
 
 ```jsx react
-import { CpsCard } from '@cps-elements/web/react/card';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsCard } from '@cgtic-cps/web/react/card';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <>
@@ -408,11 +408,11 @@ Use os _slots_ `header` e `footer` para adicionar cabeçalho e rodapé ao cartã
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsCard } from '@cps-elements/web/react/card';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAvatar } from '@cgtic-cps/web/react/avatar';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsCard } from '@cgtic-cps/web/react/card';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const css = `
   .example-header-layout {

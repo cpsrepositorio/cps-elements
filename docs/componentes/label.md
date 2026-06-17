@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => <CpsLabel>Rótulo de texto típico...</CpsLabel>;
 ```
@@ -30,7 +30,7 @@ Use o atributo `tag` para definir o elemento HTML desejado para renderização d
 ```
 
 ```jsx react
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <>
@@ -95,7 +95,7 @@ Use o atributo `variant` para definir a variação visual do rótulo.
 ```
 
 ```jsx react
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const css = `
   .label-variants-example {
@@ -178,7 +178,7 @@ Use o atributo `size` para definir o tamanho e o estilo do rótulo em conformida
 ```
 
 ```jsx react
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const css = `
   .label-sizes-example {

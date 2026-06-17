@@ -23,10 +23,10 @@
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps-elements/web/react/separator';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu style={{ maxWidth: '200px' }}>
@@ -66,8 +66,8 @@ Use o atributo `disabled` para desabilitar o item de menu. Cliques serão suprim
 ```
 
 ```jsx react
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu style={{ maxWidth: '200px' }}>
@@ -111,11 +111,11 @@ Use os _slots_ `prefix` e `suffix` para adicionar conteúdos antes ou depois do 
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps-elements/web/react/badge';
-import { CpsSeparator } from '@cps-elements/web/react/separator';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu style={{ maxWidth: '200px' }}>
@@ -161,8 +161,8 @@ Use o atributo `type` com o valor `checkbox` para criar um item de menu que pode
 ```
 
 ```jsx react
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu style={{ maxWidth: '200px' }}>
@@ -195,7 +195,7 @@ O atributo `value` pode ser utilizado para atribuir um valor oculto, como um ide
 </cps-menu>
 
 <script type="module">
-  import { toast } from '@cps-elements/web/components/notification.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const menu = document.querySelector('.menu-value');
 
@@ -212,10 +212,10 @@ O atributo `value` pode ser utilizado para atribuir um valor oculto, como um ide
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps-elements/web/react/separator';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
-import { toast } from '@cps-elements/web/react/notification';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
+import { toast } from '@cgtic-cps/web/react/notification';
 
 const App = () => {
   function handleSelect(event) {
@@ -250,10 +250,10 @@ const App = () => {
 
 ```html vue
 <script setup>
-  import { CpsSeparator } from '@cps-elements/web/components/separator';
-  import { CpsMenu } from '@cps-elements/web/components/menu';
-  import { CpsMenuItem } from '@cps-elements/web/components/menu-item';
-  import { toast } from '@cps-elements/web/components/notification';
+  import { CpsSeparator } from '@cgtic-cps/web/components/separator';
+  import { CpsMenu } from '@cgtic-cps/web/components/menu';
+  import { CpsMenuItem } from '@cgtic-cps/web/components/menu-item';
+  import { toast } from '@cgtic-cps/web/components/notification';
 
   const onSelect = event => {
     const item = event.detail.item;

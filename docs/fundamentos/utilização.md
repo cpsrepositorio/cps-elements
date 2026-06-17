@@ -202,7 +202,7 @@ CPS Elements vem com um arquivo chamado `vscode.html-custom-data.json`, que pode
 
 ```js
 {
-  "html.customData": ["./node_modules/@cps-elements/web/vscode.html-custom-data.json"]
+  "html.customData": ["./node_modules/@cgtic-cps/web/vscode.html-custom-data.json"]
 }
 ```
 

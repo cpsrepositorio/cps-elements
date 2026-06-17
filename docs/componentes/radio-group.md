@@ -13,8 +13,8 @@ Ao embrulhar vários _radio_ ou vários _toggle button_ em um grupo de opções 
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
 
 const App = () => (
   <CpsRadioGroup>
@@ -42,8 +42,8 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
 
 const App = () => (
   <CpsRadioGroup label="Qual sua refeição preferida?" name="meal" value="1">
@@ -76,8 +76,8 @@ Use o atributo `help-text` para adicionar texto de apoio para auxílio ao preenc
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
 
 const App = () => (
   <CpsRadioGroup
@@ -113,8 +113,8 @@ Preencha o grupo de opções com elementos [Toggle Button](/componentes/toggle-b
 ```
 
 ```jsx react
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
+import { CpsToggleButton } from '@cgtic-cps/web/react/toggle-button';
 
 const App = () => (
   <CpsRadioGroup
@@ -197,12 +197,12 @@ Crie barras de ferramentas interativas misturando [grupos de botões](/component
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsButtonGroup } from '@cps-elements/web/react/button-group';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
-import { CpsTooltip } from '@cps-elements/web/react/tooltip';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsButtonGroup } from '@cgtic-cps/web/react/button-group';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
+import { CpsToggleButton } from '@cgtic-cps/web/react/toggle-button';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const css = `
   .button-group-toolbar {
@@ -296,8 +296,8 @@ Use o atributo `disabled` para desabilitar o botão. Cliques serão suprimidos, 
 ```
 
 ```jsx react
-import { CpsRadio } from '@cps-elements/web/react/radio';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
 
 const App = () => (
   <CpsRadioGroup label="Pedra, papel ou tesoura?">
@@ -349,9 +349,9 @@ Use o atributo `size` para alterar o tamanho do campo de todas as opções inter
 
 ```jsx react
 import { useState } from 'react';
-import { CpsRadio } from '@cps-elements/web/react/radio';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
-import { CpsToggleButton } from '@cps-elements/web/react/toggle-button';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
+import { CpsToggleButton } from '@cgtic-cps/web/react/toggle-button';
 
 const App = () => {
   const [size, setSize] = useState('medium');
@@ -391,9 +391,9 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsRadio } from '@cps-elements/web/components/radio';
-  import { CpsRadioGroup } from '@cps-elements/web/components/radio-group';
-  import { CpsToggleButton } from '@cps-elements/web/components/toggle-button';
+  import { CpsRadio } from '@cgtic-cps/web/components/radio';
+  import { CpsRadioGroup } from '@cgtic-cps/web/components/radio-group';
+  import { CpsToggleButton } from '@cgtic-cps/web/components/toggle-button';
 
   const size = ref('medium');
 
@@ -461,9 +461,9 @@ Use o atributo `required` para tornar a seleção de uma opção obrigatória. C
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsRadio } from '@cps-elements/web/react/radio';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
 
 const App = () => {
   function handleSubmit(event) {
@@ -491,8 +491,8 @@ const App = () => {
 
 ```html vue
 <script setup>
-  import { CpsRadio } from '@cps-elements/web/components/radio';
-  import { CpsRadioGroup } from '@cps-elements/web/components/radio-group';
+  import { CpsRadio } from '@cgtic-cps/web/components/radio';
+  import { CpsRadioGroup } from '@cgtic-cps/web/components/radio-group';
 
   const handleSubmit = () => {
     alert('Está tudo válido, parabéns!');
@@ -557,9 +557,9 @@ Você pode implementar sua própria lógica de validação com JavaScript e usar
 
 ```jsx react
 import { useEffect, useRef } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsRadio } from '@cps-elements/web/react/radio';
-import { CpsRadioGroup } from '@cps-elements/web/react/radio-group';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsRadio } from '@cgtic-cps/web/react/radio';
+import { CpsRadioGroup } from '@cgtic-cps/web/react/radio-group';
 
 const App = () => {
   const radioGroup = useRef(null);
@@ -602,8 +602,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref, onMounted } from 'vue';
-  import { CpsRadio } from '@cps-elements/web/components/radio';
-  import { CpsRadioGroup } from '@cps-elements/web/components/radio-group';
+  import { CpsRadio } from '@cgtic-cps/web/components/radio';
+  import { CpsRadioGroup } from '@cgtic-cps/web/components/radio-group';
 
   const radioGroup = ref();
   const errorMessage = 'Você deve escolher a última opção!';

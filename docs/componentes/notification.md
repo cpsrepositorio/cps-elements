@@ -10,8 +10,8 @@
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsNotification } from '@cps-elements/web/react/notification';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsNotification } from '@cgtic-cps/web/react/notification';
 
 const App = () => (
   <CpsNotification open>
@@ -65,7 +65,7 @@ Use o atributo `variant` para definir a variação visual da notificação.
 ```
 
 ```jsx react
-import { CpsNotification } from '@cps-elements/web/react/notification';
+import { CpsNotification } from '@cgtic-cps/web/react/notification';
 
 const App = () => (
   <>
@@ -150,7 +150,7 @@ Use o atributo `icon` para a notificação apresente automaticamente ícone cont
 ```
 
 ```jsx react
-import { CpsNotification } from '@cps-elements/web/react/notification';
+import { CpsNotification } from '@cgtic-cps/web/react/notification';
 
 const App = () => (
   <>
@@ -208,8 +208,8 @@ Use o _slot_ `icon` informando um `<cps-icon>` como único elemento filho.
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsNotification } from '@cps-elements/web/react/notification';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsNotification } from '@cgtic-cps/web/react/notification';
 
 const App = () => (
   <CpsNotification variant="informative" open>
@@ -232,7 +232,7 @@ const App = () => (
 ```
 
 ```jsx react
-import { CpsNotification } from '@cps-elements/web/react/notification';
+import { CpsNotification } from '@cgtic-cps/web/react/notification';
 
 const App = () => (
   <CpsNotification variant="informative" open>
@@ -260,7 +260,7 @@ Use o atributo `closable` para exibir um botão de fechar que oculta a notifica�
 
 ```jsx react
 import { useState } from 'react';
-import { CpsNotification } from '@cps-elements/web/react/notification';
+import { CpsNotification } from '@cgtic-cps/web/react/notification';
 
 const App = () => {
   const [open, setOpen] = useState(true);
@@ -281,7 +281,7 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsNotification } from '@cps-elements/web/components/notification';
+  import { CpsNotification } from '@cgtic-cps/web/components/notification';
 
   const isOpen = ref(true);
 
@@ -328,8 +328,8 @@ Use o atributo `duration` para ocultar automaticamente a notificação após um 
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsNotification } from '@cps-elements/web/react/notification';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsNotification } from '@cgtic-cps/web/react/notification';
 
 const css = `
   .notification-duration cps-notification {
@@ -366,8 +366,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsNotification } from '@cps-elements/web/components/notification';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsNotification } from '@cgtic-cps/web/components/notification';
 
   const isOpen = ref(true);
 
@@ -449,8 +449,8 @@ Você sempre deve usar o atributo `closable` para que os usuários possam dispen
 
 ```jsx react
 import { useRef } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsNotification } from '@cps-elements/web/react/notification';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsNotification } from '@cgtic-cps/web/react/notification';
 
 const App = () => {
   const informative = useRef(null);
@@ -508,8 +508,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsNotification } from '@cps-elements/web/components/notification';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsNotification } from '@cgtic-cps/web/components/notification';
 
   const neutral = ref();
   const informative = ref();
@@ -562,7 +562,7 @@ Para conveniência, oferecemos um método utilitário que emite notificações _
 </div>
 
 <script type="module">
-  import { toast } from '@cps-elements/web/components/notification.js';
+  import { toast } from '@cgtic-cps/web/components/notification.js';
 
   const button = document.querySelector('.notification-toast-wrapper cps-button');
   let count = 0;
@@ -575,8 +575,8 @@ Para conveniência, oferecemos um método utilitário que emite notificações _
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { toast } from '@cps-elements/web/react/notification';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { toast } from '@cgtic-cps/web/react/notification';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -596,8 +596,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { toast } from '@cps-elements/web/components/notification';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { toast } from '@cgtic-cps/web/components/notification';
 
   const count = ref(0);
 

@@ -19,9 +19,9 @@
 ```
 
 ```jsx react
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsAccordionGroup } from '@cps-elements/web/react/accordion-group';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAccordion } from '@cgtic-cps/web/react/accordion';
+import { CpsAccordionGroup } from '@cgtic-cps/web/react/accordion-group';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <CpsAccordionGroup>
@@ -63,9 +63,9 @@ Para definir um item aberto inicialmente, use o atributo `open` no próprio `cps
 ```
 
 ```jsx react
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsAccordionGroup } from '@cps-elements/web/react/accordion-group';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAccordion } from '@cgtic-cps/web/react/accordion';
+import { CpsAccordionGroup } from '@cgtic-cps/web/react/accordion-group';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <CpsAccordionGroup>
@@ -105,9 +105,9 @@ Use o atributo `multiple` para permitir que múltiplos itens sejam abertos simul
 ```
 
 ```jsx react
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsAccordionGroup } from '@cps-elements/web/react/accordion-group';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAccordion } from '@cgtic-cps/web/react/accordion';
+import { CpsAccordionGroup } from '@cgtic-cps/web/react/accordion-group';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <CpsAccordionGroup multiple>
@@ -171,9 +171,9 @@ No exemplo a seguir, o espaçamento entre _accordions_ foi completamente zerado,
 ```
 
 ```jsx react
-import { CpsAccordion } from '@cps-elements/web/react/accordion';
-import { CpsAccordionGroup } from '@cps-elements/web/react/accordion-group';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsAccordion } from '@cgtic-cps/web/react/accordion';
+import { CpsAccordionGroup } from '@cgtic-cps/web/react/accordion-group';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const css = `
   .custom-gap {

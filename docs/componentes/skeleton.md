@@ -86,7 +86,7 @@ Indicadores esqueleto tentam não ser excessivamente opinativos, pois há infini
 ```
 
 ```jsx react
-import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
+import { CpsSkeleton } from '@cgtic-cps/web/react/skeleton';
 
 const css = `
   .sample-layout {
@@ -202,7 +202,7 @@ Há dois efeitos pré-concebidos, `sheen` (o valor padrão) e `pulse`. Efeitos s
 ```
 
 ```jsx react
-import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
+import { CpsSkeleton } from '@cgtic-cps/web/react/skeleton';
 
 const css = `
   .skeleton-effect cps-skeleton {
@@ -261,7 +261,7 @@ Use o atributo `rounded` para definir o arredondamento de cantos do indicador.
 ```
 
 ```jsx react
-import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
+import { CpsSkeleton } from '@cgtic-cps/web/react/skeleton';
 
 const css = `
   .skeleton-rounded cps-skeleton {
@@ -328,7 +328,7 @@ Basta usar múltiplos indicadores e alguns estilos de forma inteligente para sim
 ```
 
 ```jsx react
-import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
+import { CpsSkeleton } from '@cgtic-cps/web/react/skeleton';
 
 const css = `
   .skeleton-paragraphs {
@@ -386,7 +386,7 @@ Medidas `width` e `height` iguais criam um indicador esqueleto que simula um ava
 ```
 
 ```jsx react
-import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
+import { CpsSkeleton } from '@cgtic-cps/web/react/skeleton';
 
 const css = `
   .skeleton-avatars cps-skeleton {
@@ -446,7 +446,7 @@ Através do atributo `rounded` é possível criar formas personalizadas simples,
 <!-- prettier-ignore-end -->
 
 ```jsx react
-import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
+import { CpsSkeleton } from '@cgtic-cps/web/react/skeleton';
 
 const css = `
   .skeleton-shapes cps-skeleton {
@@ -491,7 +491,7 @@ const App = () => (
 ```
 
 ```jsx react
-import { CpsSkeleton } from '@cps-elements/web/react/skeleton';
+import { CpsSkeleton } from '@cgtic-cps/web/react/skeleton';
 
 const App = () => <CpsSkeleton style={{ '--color': 'tomato', '--accent-color': '#ffb094' }} />;
 ```

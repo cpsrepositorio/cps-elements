@@ -15,8 +15,8 @@ Dicas de ferramentas usam `display: contents` para que não interfiram na forma 
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsTooltip } from '@cps-elements/web/react/tooltip';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const App = () => (
   <CpsTooltip content="Aqui está sua explicação de uso.">
@@ -213,9 +213,9 @@ Use o atributo `placement` para informar ao _tooltip_ seu posicionamento preferi
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsTooltip } from '@cps-elements/web/react/tooltip';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const css = `
   .tooltip-placement-example {
@@ -378,8 +378,8 @@ Use o atributo `trigger` com o valor `click` para acionar o _tooltip_ ao clicar,
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsTooltip } from '@cps-elements/web/react/tooltip';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const App = () => (
   <CpsTooltip content="Clique novamente para ocultar esta dica." trigger="click">
@@ -412,8 +412,8 @@ Use o atributo `trigger` com o valor `manual` para controlar o _tooltip_ program
 
 ```jsx react
 import { useState } from 'react';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsTooltip } from '@cps-elements/web/react/tooltip';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -435,8 +435,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsCheckbox } from '@cps-elements/web/components/checkbox';
-  import { CpsTooltip } from '@cps-elements/web/components/tooltip';
+  import { CpsCheckbox } from '@cgtic-cps/web/components/checkbox';
+  import { CpsTooltip } from '@cgtic-cps/web/components/tooltip';
 
   const isOpen = ref(false);
 </script>
@@ -463,8 +463,8 @@ Por padrão, as dicas de ferramenta têm um estilo de balão. Para removê-lo po
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsTooltip } from '@cps-elements/web/react/tooltip';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const App = () => (
   <CpsTooltip content="Sou uma dica sem seta." style={{ '--cps-tooltip-arrow-size': '0' }}>
@@ -499,8 +499,8 @@ Use o _slot_ `content` para criar dicas de ferramenta com conteúdo HTML. Ainda 
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsTooltip } from '@cps-elements/web/react/tooltip';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const App = () => (
   <CpsTooltip>
@@ -527,8 +527,8 @@ Use a variável CSS `--max-width` para definir a largura máxima que a dica de f
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsTooltip } from '@cps-elements/web/react/tooltip';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const App = () => (
   <CpsTooltip style={{ '--max-width': '100px' }} content="Aqui se quebra em apenas 100 pixels de largura.">
@@ -573,8 +573,8 @@ Quando içada, a dica de ferramenta será posicionada em relação ao elemento s
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsTooltip } from '@cps-elements/web/react/tooltip';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsTooltip } from '@cgtic-cps/web/react/tooltip';
 
 const css = `
   .tooltip-hoist {

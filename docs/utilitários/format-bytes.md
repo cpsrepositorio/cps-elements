@@ -21,8 +21,8 @@
 
 ```jsx react
 import { useState } from 'react';
-import { CpsFormatBytes } from '@cps-elements/web/react/format-bytes';
-import { CpsInput } from '@cps-elements/web/react/input';
+import { CpsFormatBytes } from '@cgtic-cps/web/react/format-bytes';
+import { CpsInput } from '@cgtic-cps/web/react/input';
 
 const App = () => {
   const [value, setValue] = useState(1024);
@@ -79,8 +79,8 @@ Use o atributo `value` como um número bruto em _bytes_, para obter um resultado
 ```
 
 ```jsx react
-import { CpsFormatBytes } from '@cps-elements/web/react/format-bytes';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatBytes } from '@cgtic-cps/web/react/format-bytes';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <>
@@ -161,8 +161,8 @@ Use o atributo `unit` como `bit` se preferir informar um valor bruto em _bits_ a
 ```
 
 ```jsx react
-import { CpsFormatBytes } from '@cps-elements/web/react/format-bytes';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatBytes } from '@cgtic-cps/web/react/format-bytes';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <>
@@ -271,8 +271,8 @@ O idioma atualmente em uso no navegador do usuário é utilizado para a formata�
 ```
 
 ```jsx react
-import { CpsFormatBytes } from '@cps-elements/web/react/format-bytes';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatBytes } from '@cgtic-cps/web/react/format-bytes';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <>

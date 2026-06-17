@@ -12,7 +12,7 @@ Sendo assim, este utilitário é simplesmente um _wrapper_ sobre a implementaç�
 ```
 
 ```jsx react
-import { CpsFormatDate } from '@cps-elements/web/react/format-date';
+import { CpsFormatDate } from '@cgtic-cps/web/react/format-date';
 
 const App = () => <CpsFormatDate date="2023-03-21T21:00:00-03:00" />;
 ```
@@ -57,8 +57,8 @@ As opções de formatação são baseadas naquelas encontradas na API [`Intl.Dat
 ```
 
 ```jsx react
-import { CpsFormatDate } from '@cps-elements/web/react/format-date';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatDate } from '@cgtic-cps/web/react/format-date';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <>
@@ -119,8 +119,8 @@ Por padrão, o navegador determinará automaticamente se deve usar o formato de 
 ```
 
 ```jsx react
-import { CpsFormatDate } from '@cps-elements/web/react/format-date';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatDate } from '@cgtic-cps/web/react/format-date';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <>
@@ -209,8 +209,8 @@ Como já observado, o idioma atualmente em uso no navegador do usuário é utili
 ```
 
 ```jsx react
-import { CpsFormatDate } from '@cps-elements/web/react/format-date';
-import { CpsLabel } from '@cps-elements/web/react/label';
+import { CpsFormatDate } from '@cgtic-cps/web/react/format-date';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
 
 const App = () => (
   <>

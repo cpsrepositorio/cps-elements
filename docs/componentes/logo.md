@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsLogo } from '@cps-elements/web/react/logo';
+import { CpsLogo } from '@cgtic-cps/web/react/logo';
 
 const App = () => <CpsLogo style={{ fontSize: '64px' }} type="elements" />;
 ```
@@ -35,7 +35,7 @@ Use o atributo `type` para definir o tipo de logotipo a ser renderizado.
 ```
 
 ```jsx react
-import { CpsLogo } from '@cps-elements/web/react/logo';
+import { CpsLogo } from '@cgtic-cps/web/react/logo';
 
 const App = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem' }}>
@@ -67,7 +67,7 @@ Use o atributo `variant` para definir a variação visual do logotipo. Um uso co
 ```
 
 ```jsx react
-import { CpsLogo } from '@cps-elements/web/react/logo';
+import { CpsLogo } from '@cgtic-cps/web/react/logo';
 
 const App = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem' }}>
@@ -99,7 +99,7 @@ Monocromático invertido também está disponível, caso aplique o logotipo por 
 ```
 
 ```jsx react
-import { CpsLogo } from '@cps-elements/web/react/logo';
+import { CpsLogo } from '@cgtic-cps/web/react/logo';
 
 const App = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', backgroundColor: 'var(--cps-color-fill-accent)' }}>

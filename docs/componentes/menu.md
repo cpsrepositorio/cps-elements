@@ -42,10 +42,10 @@ O conteúdo de um menu pode incluir qualquer elemento, mas tipicamente é compos
 ```
 
 ```jsx react
-import { CpsSeparator } from '@cps-elements/web/react/separator';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu style={{ maxWidth: '200px' }}>
@@ -118,11 +118,11 @@ O modo flutuante é ideal para menus contextuais que precisam aparecer ao intera
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
-import { CpsSeparator } from '@cps-elements/web/react/separator';
+import { CpsAvatar } from '@cgtic-cps/web/react/avatar';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => (
   <CpsMenu>
@@ -184,12 +184,12 @@ O menu aceita qualquer conteúdo em seu _slot_ padrão, não apenas itens de men
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsLabel } from '@cps-elements/web/react/label';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
-import { CpsSeparator } from '@cps-elements/web/react/separator';
+import { CpsAvatar } from '@cgtic-cps/web/react/avatar';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsLabel } from '@cgtic-cps/web/react/label';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const css = `
   .menu-header {
@@ -273,10 +273,10 @@ Neste caso, o _slot_ `anchor` delimita a área de acionamento do menu de context
 ```
 
 ```jsx react
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
-import { CpsSeparator } from '@cps-elements/web/react/separator';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const css = `
   .context-area {
@@ -371,10 +371,10 @@ Quando o atributo `trigger` inclui `contextmenu` mas não há elemento no _slot_
 
 ```jsx react
 import { useRef, useCallback } from 'react';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
-import { CpsSeparator } from '@cps-elements/web/react/separator';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
+import { CpsSeparator } from '@cgtic-cps/web/react/separator';
 
 const App = () => {
   const backRef = useRef(null);
@@ -424,10 +424,10 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsIcon } from '@cps-elements/web/components/icon';
-  import { CpsMenu } from '@cps-elements/web/components/menu';
-  import { CpsMenuItem } from '@cps-elements/web/components/menu-item';
-  import { CpsSeparator } from '@cps-elements/web/components/separator';
+  import { CpsIcon } from '@cgtic-cps/web/components/icon';
+  import { CpsMenu } from '@cgtic-cps/web/components/menu';
+  import { CpsMenuItem } from '@cgtic-cps/web/components/menu-item';
+  import { CpsSeparator } from '@cgtic-cps/web/components/separator';
 
   const backRef = ref(null);
   const forwardRef = ref(null);
@@ -488,9 +488,9 @@ Além do acionamento padrão por clique e foco, você pode combinar diferentes v
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu trigger="click focus hover">
@@ -713,10 +713,10 @@ Use o atributo `placement` para definir o posicionamento preferido do menu flutu
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsIcon } from '@cps-elements/web/react/icon';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const css = `
   .menu-placement-example {
@@ -906,9 +906,9 @@ Use o atributo `sync` com valor `min-width` para garantir que o menu tenha pelo 
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu sync="min-width">
@@ -973,9 +973,9 @@ Menus flutuantes podem ser cortados se estiverem dentro de um contêiner que ten
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const css = `
   .menu-hoist-container {
@@ -1061,10 +1061,10 @@ Use o atributo `trigger` com o valor `manual` para controlar o menu programatica
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -1088,10 +1088,10 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsCheckbox } from '@cps-elements/web/components/checkbox';
-  import { CpsMenu } from '@cps-elements/web/components/menu';
-  import { CpsMenuItem } from '@cps-elements/web/components/menu-item';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsCheckbox } from '@cgtic-cps/web/components/checkbox';
+  import { CpsMenu } from '@cgtic-cps/web/components/menu';
+  import { CpsMenuItem } from '@cgtic-cps/web/components/menu-item';
 
   const open = ref(false);
 </script>
@@ -1126,9 +1126,9 @@ Experimente marcar e desmarcar as opções abaixo. Note que o menu permanece abe
 ```
 
 ```jsx react
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsMenu } from '@cps-elements/web/react/menu';
-import { CpsMenuItem } from '@cps-elements/web/react/menu-item';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
 
 const App = () => (
   <CpsMenu sync="min-width" noAutoClose>

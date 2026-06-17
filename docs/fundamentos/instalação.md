@@ -1,6 +1,6 @@
 # Instalação
 
-CPS Elements pode ser instalado e configurado de maneiras alternativas, projetadas para diferentes caso de uso, como através do carregamento direto a partir de um [CDN](https://www.jsdelivr.com/package/npm/@cps-elements/web) ou através da instalação local como uma dependência [NPM](https://www.npmjs.com/package/@cps-elements/web).
+CPS Elements pode ser instalado e configurado de maneiras alternativas, projetadas para diferentes caso de uso, como através do carregamento direto a partir de um [CDN](https://www.jsdelivr.com/package/npm/@cgtic-cps/web) ou através da instalação local como uma dependência [NPM](https://www.npmjs.com/package/@cgtic-cps/web).
 
 Se a sua pretensão é utilizar CPS Elements em conjunto com um _framework_, recomenda-se ler também os guias específicos para [React](/frameworks/react), [Vue](/frameworks/vue), ou [Angular](/frameworks/angular), de acordo com sua escolha.
 
@@ -17,15 +17,15 @@ Sem instalações locais, sem _downloads_ manuais salvos em seu projeto, até me
 Já foi abordado no [início rápido](/#início-rápido), mas vale reforçar: carregar o tema padrão CPS Elements é fundamental tanto para a estética quanto para o funcionamento adequado dos componentes.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/light.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web/themes/light.css" />
 ```
 
 E também reforçando, em projetos reais aderentes ao [CPS Design System](https://cpsrepositorio.github.io/cps-design-system/) é provável que se queira carregar também a tipografia e o tema de modo de cor escuro.
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/light.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/dark.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web/themes/light.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web/themes/dark.css" />
 ```
 
 Considere estes estilos CSS como primordiais para o prosseguimento da instalação por CDN. Os exemplos dos tópicos a seguir não apresentarão estas importações para evitar repetições, mas se tentar replicá-los, coloque-as primeiro.
@@ -35,7 +35,7 @@ Considere estes estilos CSS como primordiais para o prosseguimento da instalaç�
 O auto-carregamento (em inglês, _autoloader_) é a solução mais simples e, em geral, a mais eficiente para usar CPS Elements a partir de CDN. Trata-se de um _script_ que registra um observador no [DOM](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model) em busca de elementos iniciados com `<cps-` e ainda não registrados. Quando encontrados, realiza as requisições necessárias para carregá-los sob demanda (até mesmo se eles forem adicionados dinamicamente após o carregamento inicial da página).
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/autoloader.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@cgtic-cps/web/autoloader.js"></script>
 ```
 
 Embora conveniente, auto-carregamento pode fazer elementos ainda não carregados serem exibidos como texto puro, um efeito desagradável conhecido como [Flash of Undefined Custom Elements](https://www.abeautifulsite.net/posts/flash-of-undefined-custom-elements/). Este artigo vinculado descreve como isto pode ser aliviado de algumas maneiras, sendo nossa recomendação adicionar ao arquivo CSS global de seu projeto:
@@ -60,7 +60,7 @@ O exemplo embutido a seguir foi construído no CodePen usando a abordagem por CD
 O pacote completo por CDN forçará o _download_ e o registro dos elementos customizados de uma só vez. Observe que isto pode ser conveniente para prototipação rápida, ou para casos onde você possa estar utilizando em sua aplicação praticamente tudo que o CPS Elements oferece. Caso contrário, você estará forçando seus usuários a baixarem muitos códigos não utilizados por sua aplicação, uma sobrecarga desnecessária e custosa.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@cps-elements/web/all.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@cgtic-cps/web/all.js"></script>
 ```
 
 O exemplo embutido a seguir foi construído no CodePen usando a abordagem por CDN com importação do pacote completo e, de fato, apresentará visualmente o mesmo resultado que o exemplo anterior.
@@ -82,7 +82,7 @@ Eventualmente, sua aplicação pode precisar fazer uso apenas do tema em modo es
 <html class="cps-theme-dark">
   <!-- ... restante do arquivo ... -->
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/dark.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web/themes/dark.css" />
 
   <!-- ... restante do arquivo ... -->
 </html>
@@ -98,13 +98,13 @@ Além do atributo `media` para a detecção em si, também é possível tirar pr
 <link
   rel="stylesheet"
   media="(prefers-color-scheme: light)"
-  href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/light.css"
+  href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web/themes/light.css"
 />
 
 <link
   rel="stylesheet"
   media="(prefers-color-scheme: dark)"
-  href="https://cdn.jsdelivr.net/npm/@cps-elements/web/themes/dark.css"
+  href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web/themes/dark.css"
   onload="document.documentElement.classList.add('cps-theme-dark')"
 />
 ```
@@ -122,12 +122,12 @@ Se você não quiser usar o CDN, poderá instalar CPS Elements localmente. Você
 Considerando que os requisitos já estejam atendidos, navegue até a raiz de seu projeto usando o terminal de sua preferência, e execute o comando a seguir.
 
 ```bash
-npm install @cps-elements/web
+npm install @cgtic-cps/web
 ```
 
 NPM funciona basicamente baixando e disponibilizando no diretório `node_modules` de seu projeto todos os pacotes instalados, tanto as referências diretas que seu projeto explicitamente utiliza, quanto as inter-dependências utilizadas por estas. Você deve encontrar um diretório denominado `@cps-elements` ali dentro seu muito esforço.
 
-A partir daí, cabe a você disponibilizar os arquivos de origem para seu aplicativo. Uma maneira é criar uma rota em seu aplicativo chamada `/cps-elements` que serve arquivos estáticos de `node_modules/@cps-elements/web`. Como fazer isso depende profundamente das tecnologias utilizadas em seu projeto, especialmente os servidores Web (tanto de desenvolvimento local, quanto de produção) e, portanto, foge do escopo deste guia detalhar tais passos.
+A partir daí, cabe a você disponibilizar os arquivos de origem para seu aplicativo. Uma maneira é criar uma rota em seu aplicativo chamada `/cps-elements` que serve arquivos estáticos de `node_modules/@cgtic-cps/web`. Como fazer isso depende profundamente das tecnologias utilizadas em seu projeto, especialmente os servidores Web (tanto de desenvolvimento local, quanto de produção) e, portanto, foge do escopo deste guia detalhar tais passos.
 
 Considerando que você configurou adequadamente a rota, poderá realizar as importações típicas de estilos e _scripts_ nas páginas HTML desejadas. Certifique-se de atualizar `href` e `src` para que eles apontem para a rota local criada.
 
@@ -138,7 +138,7 @@ Considerando que você configurou adequadamente a rota, poderá realizar as impo
 
 Criar esta rota apontando para `node_modules`, ou um _link_ simbólico em seu sistema operacional, ou mesmo mover pastas e arquivos manualmente em seu projeto, são ações viáveis mas que podem se tornar repetitivas. Alternativamente, você pode associar uma instalação local à [utilização com um empacotador (_bundler_)](#instalação-com-empacotador) para uma integração mais avançada.
 
-?> Para maior clareza e simplicidade, as importações de componentes ao longo desta documentação mostração caminhos a partir de `@cps-elements/web` ao invés de um caminho completo. Se você estiver usando CDN, ou uma instalação local sem um resolvedor ou empacotador de módulos, precisará ajustar esses caminhos para apontar para a pasta em que CPS Elements está sendo servido, ou ao caminho completo por CDN.
+?> Para maior clareza e simplicidade, as importações de componentes ao longo desta documentação mostração caminhos a partir de `@cgtic-cps/web` ao invés de um caminho completo. Se você estiver usando CDN, ou uma instalação local sem um resolvedor ou empacotador de módulos, precisará ajustar esses caminhos para apontar para a pasta em que CPS Elements está sendo servido, ou ao caminho completo por CDN.
 
 !> Você verá arquivos chamados `chunk.[hash].js` no diretório `chunks` da instalação local desta biblioteca. Nunca importe esses arquivos diretamente, pois eles são gerados durante a compilação e mudam de versão para versão.
 
@@ -155,7 +155,7 @@ No entanto, se você for [importar componentes individualmente](#importações-i
 <!-- Opção 2: O método setBasePath(). -->
 <script src="custom-bundle.js"></script>
 <script type="module">
-  import { setBasePath } from '@cps-elements/web/utilities/base-path.js';
+  import { setBasePath } from '@cgtic-cps/web/utilities/base-path.js';
   setBasePath('/path/to/cps-elements/web');
 </script>
 ```
@@ -184,7 +184,7 @@ Ao longo desta documentação, você encontrará o código para importar individ
 
 Observe que alguns componentes têm dependências a outros, e estas são importadas automaticamente junto. Se um componente tiver dependências, elas serão listadas na seção _"Dependências"_ documentação do referido componente, para que você tenha ciência do peso adicional que o componente adicionará ao seu aplicativo.
 
-!> Nunca importe por desestruturação (como em `import { CpsButton } from '@cps-elements/web'`) a partir da raiz dos diretórios, ou a partir de `all.js`. Isto fará com que o navegador carregue toda a biblioteca, anulando a ideia de importação individual. Em vez disso, escolha a dedo os arquivos específicos, como demonstrado acima.
+!> Nunca importe por desestruturação (como em `import { CpsButton } from '@cgtic-cps/web'`) a partir da raiz dos diretórios, ou a partir de `all.js`. Isto fará com que o navegador carregue toda a biblioteca, anulando a ideia de importação individual. Em vez disso, escolha a dedo os arquivos específicos, como demonstrado acima.
 
 ## Instalação com empacotador
 
@@ -194,7 +194,7 @@ Independentemente do _bundler_ que escolher, você começará instalando CPS Ele
 
 Além disso, observe que muitas ferramentas de empacotamento possuem grande flexibilidade, portanto nenhuma configuração em especial é inquestionável para todos os casos. Tome as instruções a seguir como pontos de partida, os quais eventualmente podem precisar de configurações adicionais para seu caso de uso específico.
 
-!> Os módulos dos componentes incluem efeitos colaterais para fins de registro. Por isso, importar com desestruturação, diretamente de `@cps-elements/web` ou `@cps-elements/web/all.js`, pode resultar em um tamanho de pacote maior do que o necessário. Para otimizar o processo de _three-shaking_ realizado pelos empacotadores, sempre opte por [importações individuais](#importações-individuais), ou seja, importe componentes e utilitários de seus respectivos arquivos.
+!> Os módulos dos componentes incluem efeitos colaterais para fins de registro. Por isso, importar com desestruturação, diretamente de `@cgtic-cps/web` ou `@cgtic-cps/web/all.js`, pode resultar em um tamanho de pacote maior do que o necessário. Para otimizar o processo de _three-shaking_ realizado pelos empacotadores, sempre opte por [importações individuais](#importações-individuais), ou seja, importe componentes e utilitários de seus respectivos arquivos.
 
 ### Empacotando com Vite
 
@@ -203,7 +203,7 @@ Além disso, observe que muitas ferramentas de empacotamento possuem grande flex
 Fundamentalmente, instalar CPS Elements e Vite como dependências de seu projeto (sendo Vite uma dependência de desenvolvimento), são os únicos requisitos mínimos para funcionar.
 
 ```bash
-npm install @cps-elements/web
+npm install @cgtic-cps/web
 npm install -D vite
 ```
 
@@ -223,7 +223,7 @@ Com isto feito, basta importar os arquivos desejados do CPS Elements (já que é
   <a href="https://stackblitz.com">StackBlitz</a>.
 </iframe>
 
-_Opcionalmente_, recursos extras como [ícones da biblioteca padrão](../componentes/icon#bibliotecas-padrão) podem ser mantidos em carregamento por CDN, ou podem ser copiados da instalação local e carregados com o _bundler_. No caso do Vite, se trata de copiar `node_modules/@cps-elements/web/assets` para `assets` de seu próprio projeto, com `vite-plugin-static-copy` para automação da tarefa.
+_Opcionalmente_, recursos extras como [ícones da biblioteca padrão](../componentes/icon#bibliotecas-padrão) podem ser mantidos em carregamento por CDN, ou podem ser copiados da instalação local e carregados com o _bundler_. No caso do Vite, se trata de copiar `node_modules/@cgtic-cps/web/assets` para `assets` de seu próprio projeto, com `vite-plugin-static-copy` para automação da tarefa.
 
 ```bash
 # Instalar 'vite-plugin-static-copy' como uma dependência adicional.
@@ -238,7 +238,7 @@ import { viteStaticCopy as copy } from 'vite-plugin-static-copy';
 export default {
   plugins: [
     copy({
-      targets: [{ src: 'node_modules/@cps-elements/web/assets/icons', dest: 'assets' }]
+      targets: [{ src: 'node_modules/@cgtic-cps/web/assets/icons', dest: 'assets' }]
     })
   ]
 };

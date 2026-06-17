@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
 
 const App = () => <CpsBadge></CpsBadge>;
 ```
@@ -23,7 +23,7 @@ Um cenário mais recorrente de utilização de _badge_ é para indicar a quantid
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
 
 const App = () => (
   <>
@@ -51,7 +51,7 @@ Use o atributo `variant` para definir a variação visual do distintivo.
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
 
 const App = () => (
   <>
@@ -77,7 +77,7 @@ Por padrão, _badges_ são circulares. Use o atributo `square` para forçar bord
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
 
 const App = () => (
   <>
@@ -113,7 +113,7 @@ Use o atributo `icon` para que um _badge_ vazio apresente automaticamente ícone
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
 
 const App = () => (
   <>
@@ -139,8 +139,8 @@ Use o _slot_ padrão informando um `<cps-icon>` como único elemento filho.
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps-elements/web/react/badge';
-import { CpsIcon } from '@cps-elements/web/react/icon';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
 
 const App = () => (
   <>
@@ -184,7 +184,7 @@ Use o atributo `pulse` para chamar atenção para o _badge_ com uma animação s
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
 
 const css = `
   .badge-pulse cps-badge:not(:last-of-type) {
@@ -239,8 +239,8 @@ Um dos casos de uso mais comuns para _badges_ é anexá-los a botões. Para faci
 ```
 
 ```jsx react
-import { CpsBadge } from '@cps-elements/web/react/badge';
-import { CpsButton } from '@cps-elements/web/react/button';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
+import { CpsButton } from '@cgtic-cps/web/react/button';
 
 const App = () => (
   <>
@@ -283,8 +283,8 @@ Outro caso de uso comum para _badges_ é anexá-los a avatares. Para facilitar, 
 ```
 
 ```jsx react
-import { CpsAvatar } from '@cps-elements/web/react/avatar';
-import { CpsBadge } from '@cps-elements/web/react/badge';
+import { CpsAvatar } from '@cgtic-cps/web/react/avatar';
+import { CpsBadge } from '@cgtic-cps/web/react/badge';
 
 const App = () => (
   <>

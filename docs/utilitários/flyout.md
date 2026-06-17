@@ -101,11 +101,11 @@ O utilitário _flyout_ não provê estilização, apenas posicionamento! O posic
 
 ```jsx react
 import { useState } from 'react';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
-import { CpsInput } from '@cps-elements/web/react/input';
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
+import { CpsInput } from '@cgtic-cps/web/react/input';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const css = `
   .flyout-overview cps-flyout {
@@ -267,8 +267,8 @@ _Flyouts_ são inativos e ocultos até que o atributo `active` seja aplicado. Re
 
 ```jsx react
 import { useState } from 'react';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
 
 const css = `
   .flyout-active span[slot='anchor'] {
@@ -336,7 +336,7 @@ Por padrão, âncoras são injetadas no _flyout_ através do _slot_ `anchor`. Se
 ```
 
 ```jsx react
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
 
 const css = `
   #external-anchor {
@@ -429,9 +429,9 @@ Uma vez que o posicionamento automaticamente ajustado estiver em uso, você pode
 
 ```jsx react
 import { useState } from 'react';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const css = `
   .flyout-placement span[slot='anchor'] {
@@ -532,7 +532,7 @@ Use o atributo `distance` para alterar a distância entre o _flyout_ e sua ânco
 
 ```jsx react
 import { useState } from 'react';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
 
 const css = `
   .flyout-distance span[slot='anchor'] {
@@ -626,7 +626,7 @@ Use o atributo `skidding` para alterar o deslocamento do _flyout_ ao longo do ei
 
 ```jsx react
 import { useState } from 'react';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
 
 const css = `
   .flyout-skidding span[slot='anchor'] {
@@ -763,10 +763,10 @@ Por padrão, a seta será alinhada o mais próximo possível do centro da âncor
 
 ```jsx react
 import { useState } from 'react';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const css = `
   .flyout-arrow span[slot='anchor'] {
@@ -961,10 +961,10 @@ Caso esteja utilizando o _flyout_ com estilo balão, a seta automaticamente util
 
 ```jsx react
 import { useState } from 'react';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const css = `
   .flyout-custom cps-flyout {
@@ -1129,9 +1129,9 @@ Use o atributo `sync` para fazer com que o _flyout_ tenha a mesma largura ou alt
 
 ```jsx react
 import { useState } from 'react';
-import { CpsFlyout } from '@cps-elements/web/react';
-import { CpsOption } from '@cps-elements/web/react/option';
-import { CpsSelect } from '@cps-elements/web/react/select';
+import { CpsFlyout } from '@cgtic-cps/web/react';
+import { CpsOption } from '@cgtic-cps/web/react/option';
+import { CpsSelect } from '@cgtic-cps/web/react/select';
 
 const css = `
   .flyout-sync span[slot='anchor'] {
@@ -1244,8 +1244,8 @@ Alterne a estratégia de posicionamento e role o contêiner para ver a diferenç
 
 ```jsx react
 import { useState } from 'react';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
 
 const css = `
   .flyout-strategy .overflow {
@@ -1347,8 +1347,8 @@ Role o contêiner para ver como o _flyout_ gira para evitar seu corte.
 
 ```jsx react
 import { useState } from 'react';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
 
 const css = `
   .flyout-flip .overflow {
@@ -1439,7 +1439,7 @@ Role o contêiner para ver como o _flyout_ vai mudando para seus posicionamentos
 ```
 
 ```jsx react
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
 
 const css = `
   .flyout-flip-fallbacks .overflow {
@@ -1539,8 +1539,8 @@ Alterne a caixa de seleção para ver a diferença.
 
 ```jsx react
 import { useState } from 'react';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
 
 const css = `
   .flyout-shift .overflow {
@@ -1646,8 +1646,8 @@ Role o contêiner para ver o _flyout_ se auto-dimensionar conforme o espaço dis
 
 ```jsx react
 import { useState } from 'react';
-import { CpsCheckbox } from '@cps-elements/web/react/checkbox';
-import { CpsFlyout } from '@cps-elements/web/react/flyout';
+import { CpsCheckbox } from '@cgtic-cps/web/react/checkbox';
+import { CpsFlyout } from '@cgtic-cps/web/react/flyout';
 
 const css = `
   .flyout-auto-size .overflow {

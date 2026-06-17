@@ -7,7 +7,7 @@
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => <CpsRating />;
 ```
@@ -23,7 +23,7 @@ Use o atributo `label` para exibir um rótulo acessível no campo. Para rótulos
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => <CpsRating label="Avalie o serviço" value={4} />;
 ```
@@ -37,7 +37,7 @@ Neste caso, garanta que o atributo `aria-label` está presente, definindo um ró
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => <CpsRating ariaLabel="Avalie o serviço" value={4} />;
 ```
@@ -72,8 +72,8 @@ Use o atributo `value` para definir o valor inicial da avaliação. Também é p
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => {
   const [value, setValue] = useState(3);
@@ -99,8 +99,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsRating } from '@cps-elements/web/components/rating';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsRating } from '@cgtic-cps/web/components/rating';
 
   const rating = ref(3);
 </script>
@@ -127,7 +127,7 @@ Use o atributo `max` para definir o valor máximo aceito para classificação, p
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => <CpsRating label="Qual sua nota, de 1 a 10?" max={10} value={8} />;
 ```
@@ -139,7 +139,7 @@ O mínimo aceito é `1`, o que transforma o controle de classificação em um si
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => <CpsRating ariaLabel="Selecione se gostou do nosso site" max={1} />;
 ```
@@ -155,7 +155,7 @@ Use o atributo `step` para permitir avaliações com valores decimais.
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => <CpsRating label="Avaliação com precisão 0.5" step={0.5} value={2.5} />;
 ```
@@ -167,7 +167,7 @@ Embora unusual, valores decimais ainda mais reduzidos são possíveis.
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => <CpsRating label="Avaliação com precisão 0.25" step={0.25} value={2.25} />;
 ```
@@ -191,7 +191,7 @@ Se desejado, você também pode aproveitar a [propriedade CSS](?id=propriedades-
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => (
   <CpsRating
@@ -225,7 +225,7 @@ Use o atributo `size` para alterar o tamanho dos símbolos de avaliação.
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => (
   <>
@@ -255,7 +255,7 @@ Use o atributo `readonly` para tornar a avaliação somente leitura e não inter
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => <CpsRating label="Classificação somente leitura" readonly value="2.5" />;
 ```
@@ -269,7 +269,7 @@ Use o atributo `disabled` para desabilitar o campo. Cliques serão suprimidos, e
 ```
 
 ```jsx react
-import { CpsRating } from '@cps-elements/web/react/rating';
+import { CpsRating } from '@cgtic-cps/web/react/rating';
 
 const App = () => <CpsRating label="Classificação desabilitada" disabled value="2.5" />;
 ```

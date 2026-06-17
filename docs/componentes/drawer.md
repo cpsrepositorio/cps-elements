@@ -25,8 +25,8 @@
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDrawer } from '@cps-elements/web/react/drawer';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDrawer } from '@cgtic-cps/web/react/drawer';
 
 const App = () => {
   const [isOpen, setOpen] = useState(false);
@@ -49,8 +49,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDrawer } from '@cps-elements/web/components/drawer';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDrawer } from '@cgtic-cps/web/components/drawer';
 
   const isOpen = ref(false);
 </script>
@@ -98,8 +98,8 @@ Esta abordagem é menos conveniente em programação imperativa, pois exige prog
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDrawer } from '@cps-elements/web/react/drawer';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDrawer } from '@cgtic-cps/web/react/drawer';
 
 const App = () => {
   // A reatividade do React torna o uso do atributo `open` intuitivo.
@@ -122,8 +122,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDrawer } from '@cps-elements/web/components/drawer';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDrawer } from '@cgtic-cps/web/components/drawer';
 
   // A reatividade do Vue torna o uso do atributo `open` intuitivo.
   const isOpen = ref(false);
@@ -165,8 +165,8 @@ Esta abordagem normalmente facilita a construção e melhora a legibilidade de _
 
 ```jsx react
 import { useRef } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDrawer } from '@cps-elements/web/react/drawer';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDrawer } from '@cgtic-cps/web/react/drawer';
 
 const App = () => {
   // Precisa de useRef para acessar a instância do CpsDrawer diretamente.
@@ -193,8 +193,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDrawer } from '@cps-elements/web/components/drawer';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDrawer } from '@cgtic-cps/web/components/drawer';
 
   // Precisa de uma referência para a instância do elemento <cps-drawer>.
   const drawerRef = ref(null);
@@ -250,8 +250,8 @@ Se realmente desejado, é possível obter o resultado equivalente ao método [`s
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDrawer } from '@cps-elements/web/react/drawer';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDrawer } from '@cgtic-cps/web/react/drawer';
 
 const css = `
   cps-drawer::part(backdrop) {
@@ -284,8 +284,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDrawer } from '@cps-elements/web/components/drawer';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDrawer } from '@cgtic-cps/web/components/drawer';
 
   const isOpen = ref(false);
 </script>
@@ -333,8 +333,8 @@ Use o atributo `closable` para exibir um botão de fechar no cabeçalho, como um
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDrawer } from '@cps-elements/web/react/drawer';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDrawer } from '@cgtic-cps/web/react/drawer';
 
 const App = () => {
   const [isOpen, setOpen] = useState(false);
@@ -355,8 +355,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDrawer } from '@cps-elements/web/components/drawer';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDrawer } from '@cgtic-cps/web/components/drawer';
 
   const isOpen = ref(false);
 </script>
@@ -448,8 +448,8 @@ Use o atributo `contained` para que a gaveta de navegação apareça contida em 
 
 ```jsx react
 import { useState } from 'react';
-import { CpsButton } from '@cps-elements/web/react/button';
-import { CpsDrawer } from '@cps-elements/web/react/drawer';
+import { CpsButton } from '@cgtic-cps/web/react/button';
+import { CpsDrawer } from '@cgtic-cps/web/react/drawer';
 
 const css = `
   .position-relative-container {
@@ -483,8 +483,8 @@ const App = () => {
 ```html vue
 <script setup>
   import { ref } from 'vue';
-  import { CpsButton } from '@cps-elements/web/components/button';
-  import { CpsDrawer } from '@cps-elements/web/components/drawer';
+  import { CpsButton } from '@cgtic-cps/web/components/button';
+  import { CpsDrawer } from '@cgtic-cps/web/components/drawer';
 
   const isOpen = ref(false);
 </script>
@@ -699,7 +699,7 @@ Use o _slot_ `footer` para designar os elementos a serem exibidos no rodapé de 
   <cps-button>Abrir gaveta de navegação</cps-button>
 
   <script type="module">
-    import { toast } from '@cps-elements/web/components/notification.js';
+    import { toast } from '@cgtic-cps/web/components/notification.js';
 
     const container = document.querySelector('.drawer-example-footer-slot');
     const dialogs = container.querySelectorAll('cps-drawer');

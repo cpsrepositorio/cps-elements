@@ -51,8 +51,8 @@ jobs:
       # Git configuration
       - name: Git configuration
         run: |
-          git config --global user.email "erickpetru@gmail.com"
-          git config --global user.name "Erick Eduardo Petrucelli"
+          git config --global user.email "cgtic@cps.sp.gov.br"
+          git config --global user.name "CGTIC CPS"
 
       # Bump package version
       # Use tag latest
