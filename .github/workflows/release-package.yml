@@ -14,10 +14,10 @@ jobs:
     steps:
       # Checkout project main and setup environment
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           registry-url: https://registry.npmjs.org/
           node-version: '24.11'
@@ -25,7 +25,7 @@ jobs:
       # Use cache for node modules
       - name: Cache node modules
         id: cache-npm
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
         with:
@@ -124,7 +124,7 @@ jobs:
 
       # Update release documentation
       - name: Update release documentation
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.NEW_VERSION }}
           body: ${{ steps.get-changelog.outputs.changelog }}
