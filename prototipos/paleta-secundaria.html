@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR" class="cps-theme-light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protótipo — Paleta secundária · CPS Elements</title>
+
+  <!-- CPS Elements publicado (a paleta PRINCIPAL/vermelho+ciano já está no pacote) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web@1/themes/light.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@cgtic-cps/web@1/autoloader.js"></script>
+
+  <style>
+    /*
+     * PROTÓTIPO. As cores secundárias NÃO estão no pacote ainda — aqui elas são
+     * aplicadas reaproveitando a rampa "accent" (--cps-palette-accent-*) dentro de
+     * cada bloco. Em produção, viraria um conjunto próprio de tokens. É só para
+     * visualizar e decidir a arquitetura.
+     */
+    body {
+      font-family: var(--cps-font-family-sans);
+      color: var(--cps-color-text-primary);
+      background: var(--cps-color-background-solid-primary);
+      margin: 0;
+    }
+    main { max-width: 1100px; margin: 0 auto; padding: var(--cps-spacing-8) var(--cps-spacing-6); }
+    h2 { font: var(--cps-font-title); margin: var(--cps-spacing-10) 0 var(--cps-spacing-2); }
+    h3 { font: var(--cps-font-subtitle); margin: 0 0 var(--cps-spacing-3); }
+    p.lead { font: var(--cps-font-body-large); color: var(--cps-color-text-secondary); margin-top: 0; }
+
+    /* ===== Rampas secundárias (override de accent por bloco) ===== */
+    .acc-amber  { --cps-palette-accent-50:#FFF5EB;--cps-palette-accent-100:#FFDFB7;--cps-palette-accent-200:#FFCE8C;--cps-palette-accent-300:#FEC165;--cps-palette-accent-400:#F5B834;--cps-palette-accent-500:#E9AB36;--cps-palette-accent-600:#DB9E40;--cps-palette-accent-700:#C9932C;--cps-palette-accent-800:#B9881F;--cps-palette-accent-900:#A57A16;--cps-palette-accent-950:#8C6912; }
+    .acc-purple { --cps-palette-accent-50:#E6DBFF;--cps-palette-accent-100:#DAC9FF;--cps-palette-accent-200:#D0BAFF;--cps-palette-accent-300:#C5A6FE;--cps-palette-accent-400:#A778F3;--cps-palette-accent-500:#8E56E4;--cps-palette-accent-600:#7C39E1;--cps-palette-accent-700:#760FFB;--cps-palette-accent-800:#6310C9;--cps-palette-accent-900:#490F8F;--cps-palette-accent-950:#29055C; }
+    .acc-blue   { --cps-palette-accent-50:#D6EDFF;--cps-palette-accent-100:#C5E2FF;--cps-palette-accent-200:#B2D7FF;--cps-palette-accent-300:#9DC9FF;--cps-palette-accent-400:#83B1FF;--cps-palette-accent-500:#6299F1;--cps-palette-accent-600:#437CE9;--cps-palette-accent-700:#1955FC;--cps-palette-accent-800:#2458CF;--cps-palette-accent-900:#1D4D9D;--cps-palette-accent-950:#032B73; }
+    .acc-pink   { --cps-palette-accent-50:#FFE3F7;--cps-palette-accent-100:#FFD6F4;--cps-palette-accent-200:#FFC8EE;--cps-palette-accent-300:#FFB4E5;--cps-palette-accent-400:#FD88D2;--cps-palette-accent-500:#F260B6;--cps-palette-accent-600:#ED3B9C;--cps-palette-accent-700:#FD118A;--cps-palette-accent-800:#CC2378;--cps-palette-accent-900:#921F5D;--cps-palette-accent-950:#5C0838; }
+    .acc-green  { --cps-palette-accent-50:#DFF4C6;--cps-palette-accent-100:#D9F3B6;--cps-palette-accent-200:#D2F3A7;--cps-palette-accent-300:#C9F492;--cps-palette-accent-400:#A9F34C;--cps-palette-accent-500:#A5E650;--cps-palette-accent-600:#A6D364;--cps-palette-accent-700:#96C05D;--cps-palette-accent-800:#86AA52;--cps-palette-accent-900:#6E8B43;--cps-palette-accent-950:#506331; }
+
+    /* ===== Topbar roxo ===== */
+    .topbar {
+      background: var(--cps-palette-accent-900);
+      color: #fff;
+      display: flex; align-items: center; gap: var(--cps-spacing-4);
+      padding: var(--cps-spacing-3) var(--cps-spacing-6);
+    }
+    .topbar .brand { font: var(--cps-font-title); margin-right: auto; }
+    .topbar nav { display: flex; gap: var(--cps-spacing-2); }
+    .topbar a { color: #fff; text-decoration: none; opacity: .85; font: var(--cps-font-body-strong); padding: var(--cps-spacing-1) var(--cps-spacing-2); border-radius: var(--cps-border-radius-medium); }
+    .topbar a:hover { opacity: 1; background: rgba(255,255,255,.12); }
+
+    /* ===== Destaques ===== */
+    .destaques { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--cps-spacing-4); }
+    .callout { border-left: 4px solid var(--cps-palette-accent-600); padding: var(--cps-spacing-4); }
+    .callout .tag { display:inline-block; font: var(--cps-font-label); padding: 2px 8px; border-radius: var(--cps-border-radius-pill); background: var(--cps-palette-accent-100); color: var(--cps-palette-accent-950); margin-bottom: var(--cps-spacing-2); }
+
+    /* ===== Quadro de componentes ===== */
+    .board { display: grid; grid-template-columns: 120px repeat(5, 1fr); gap: var(--cps-spacing-3); align-items: center; }
+    .board .colhead { font: var(--cps-font-body-strong); text-align: center; padding-bottom: var(--cps-spacing-1); }
+    .board .rowlabel { font: var(--cps-font-label); color: var(--cps-color-text-secondary); }
+    .board .cell { display:flex; justify-content:center; align-items:center; min-height: 40px; }
+    .swatch { height: 28px; border-radius: var(--cps-border-radius-medium); border: 1px solid var(--cps-color-stroke-secondary); }
+    .note { font: var(--cps-font-label); color: var(--cps-color-text-tertiary); background: var(--cps-color-fill-alt-tertiary); padding: var(--cps-spacing-3) var(--cps-spacing-4); border-radius: var(--cps-border-radius-large); margin-top: var(--cps-spacing-4); }
+  </style>
+</head>
+<body>
+  <!-- TOPBAR ROXO -->
+  <header class="topbar acc-purple">
+    <span class="brand">CPS · Sistema</span>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Processos</a>
+      <a href="#">Relatórios</a>
+    </nav>
+    <cps-avatar initials="DO" label="Douglas Oliveira"></cps-avatar>
+  </header>
+
+  <main>
+    <h2>Protótipo — Paleta secundária</h2>
+    <p class="lead">Topbar em <strong>roxo</strong>, destaques em <strong>laranja</strong>, <strong>verde</strong> e <strong>rosa</strong>, e um quadro com os componentes reais em cada cor. Serve para decidirmos como organizar essas cores antes de criar os tokens.</p>
+
+    <!-- DESTAQUES -->
+    <h2>Destaques</h2>
+    <div class="destaques">
+      <div class="callout acc-amber">
+        <span class="tag">Laranja</span>
+        <h3>Pendência</h3>
+        <p>3 itens aguardando sua aprovação nesta semana.</p>
+        <cps-button variant="accent">Revisar</cps-button>
+        <cps-switch checked>Lembrar</cps-switch>
+      </div>
+      <div class="callout acc-green">
+        <span class="tag">Verde</span>
+        <h3>Concluído</h3>
+        <p>O processo 2026/0481 foi finalizado com sucesso.</p>
+        <cps-button variant="accent">Ver recibo</cps-button>
+        <cps-switch checked>Notificar</cps-switch>
+      </div>
+      <div class="callout acc-pink">
+        <span class="tag">Rosa</span>
+        <h3>Novidade</h3>
+        <p>Um novo módulo de indicadores está disponível.</p>
+        <cps-button variant="accent">Explorar</cps-button>
+        <cps-switch checked>Seguir</cps-switch>
+      </div>
+    </div>
+
+    <!-- QUADRO COMPARATIVO -->
+    <h2>Componentes em cada cor secundária</h2>
+    <div class="board">
+      <div class="rowlabel"></div>
+      <div class="colhead acc-amber"><span class="swatch" style="display:block;background:var(--cps-palette-accent-600)"></span>Laranja</div>
+      <div class="colhead acc-purple"><span class="swatch" style="display:block;background:var(--cps-palette-accent-700)"></span>Roxo</div>
+      <div class="colhead acc-blue"><span class="swatch" style="display:block;background:var(--cps-palette-accent-700)"></span>Azul</div>
+      <div class="colhead acc-pink"><span class="swatch" style="display:block;background:var(--cps-palette-accent-600)"></span>Rosa</div>
+      <div class="colhead acc-green"><span class="swatch" style="display:block;background:var(--cps-palette-accent-800)"></span>Verde</div>
+
+      <div class="rowlabel">Botão</div>
+      <div class="cell acc-amber"><cps-button variant="accent">Ação</cps-button></div>
+      <div class="cell acc-purple"><cps-button variant="accent">Ação</cps-button></div>
+      <div class="cell acc-blue"><cps-button variant="accent">Ação</cps-button></div>
+      <div class="cell acc-pink"><cps-button variant="accent">Ação</cps-button></div>
+      <div class="cell acc-green"><cps-button variant="accent">Ação</cps-button></div>
+
+      <div class="rowlabel">Switch</div>
+      <div class="cell acc-amber"><cps-switch checked></cps-switch></div>
+      <div class="cell acc-purple"><cps-switch checked></cps-switch></div>
+      <div class="cell acc-blue"><cps-switch checked></cps-switch></div>
+      <div class="cell acc-pink"><cps-switch checked></cps-switch></div>
+      <div class="cell acc-green"><cps-switch checked></cps-switch></div>
+
+      <div class="rowlabel">Checkbox</div>
+      <div class="cell acc-amber"><cps-checkbox checked></cps-checkbox></div>
+      <div class="cell acc-purple"><cps-checkbox checked></cps-checkbox></div>
+      <div class="cell acc-blue"><cps-checkbox checked></cps-checkbox></div>
+      <div class="cell acc-pink"><cps-checkbox checked></cps-checkbox></div>
+      <div class="cell acc-green"><cps-checkbox checked></cps-checkbox></div>
+
+      <div class="rowlabel">Progresso</div>
+      <div class="cell acc-amber"><cps-progress value="65" style="width:100%"></cps-progress></div>
+      <div class="cell acc-purple"><cps-progress value="65" style="width:100%"></cps-progress></div>
+      <div class="cell acc-blue"><cps-progress value="65" style="width:100%"></cps-progress></div>
+      <div class="cell acc-pink"><cps-progress value="65" style="width:100%"></cps-progress></div>
+      <div class="cell acc-green"><cps-progress value="65" style="width:100%"></cps-progress></div>
+
+      <div class="rowlabel">Range</div>
+      <div class="cell acc-amber"><cps-range value="60" style="width:100%"></cps-range></div>
+      <div class="cell acc-purple"><cps-range value="60" style="width:100%"></cps-range></div>
+      <div class="cell acc-blue"><cps-range value="60" style="width:100%"></cps-range></div>
+      <div class="cell acc-pink"><cps-range value="60" style="width:100%"></cps-range></div>
+      <div class="cell acc-green"><cps-range value="60" style="width:100%"></cps-range></div>
+
+      <div class="rowlabel">Rating</div>
+      <div class="cell acc-amber"><cps-rating value="4" label="Avaliação"></cps-rating></div>
+      <div class="cell acc-purple"><cps-rating value="4" label="Avaliação"></cps-rating></div>
+      <div class="cell acc-blue"><cps-rating value="4" label="Avaliação"></cps-rating></div>
+      <div class="cell acc-pink"><cps-rating value="4" label="Avaliação"></cps-rating></div>
+      <div class="cell acc-green"><cps-rating value="4" label="Avaliação"></cps-rating></div>
+    </div>
+
+    <div class="note">
+      <strong>Como ler este protótipo:</strong> a paleta <em>principal</em> (vermelho/brand + ciano/accent)
+      já está publicada em <code>@cgtic-cps/web@1</code>. As 5 cores secundárias aqui são aplicadas
+      <em>reaproveitando</em> a rampa <code>--cps-palette-accent-*</code> dentro de cada bloco — não são
+      tokens próprios ainda. Se gostarmos do resultado, o passo seguinte é decidir a organização
+      (cores de estado vs. decorativas vs. rampas completas) e criar os tokens de verdade.
+    </div>
+  </main>
+</body>
+</html>

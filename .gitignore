@@ -7,3 +7,5 @@ cps-elements
 node_modules
 src/react
 desktop.ini
+__pycache__/
+dist-test
