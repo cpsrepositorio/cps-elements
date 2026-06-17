@@ -10,8 +10,8 @@ import { watch } from '../../internal/watch.js';
 import BaseElement from '../../internal/base-element.js';
 import styles from './menu.styles.js';
 import type { CSSResultGroup } from 'lit';
-import type CpsFlyout from '../flyout.js';
 import type { VirtualElement } from '../flyout.js';
+import type CpsFlyout from '../flyout.js';
 import type CpsMenuItem from '../menu-item.js';
 
 /**
@@ -255,8 +255,8 @@ export default class CpsMenu extends BaseElement {
 
   private createVirtualAnchorAtCursor(event: MouseEvent): VirtualElement {
     return {
-      getBoundingClientRect: () =>
-        ({
+      getBoundingClientRect: (): DOMRect => {
+        const rect: DOMRect = {
           width: 0,
           height: 0,
           x: event.clientX,
@@ -266,7 +266,9 @@ export default class CpsMenu extends BaseElement {
           right: event.clientX,
           bottom: event.clientY,
           toJSON: () => ({})
-        } as DOMRect)
+        };
+        return rect;
+      }
     };
   }
 
@@ -713,6 +715,10 @@ export default class CpsMenu extends BaseElement {
     const isGlobalContextMenu = !hasAnchor && this.hasTrigger('contextmenu');
     const useFixedStrategy = this.hoist || isGlobalContextMenu;
 
+    // Navegação por teclado é provida por @keydown (handleKeyDown) no corpo do menu;
+    // @mouseover/@mouseout apenas realçam itens com o ponteiro. Por isso não exigem
+    // @focus/@blur — a regra é suprimida para não alterar comportamento.
+    // eslint-disable-next-line lit-a11y/mouse-events-have-key-events
     return html`
       <slot name="anchor" @slotchange=${this.handleAnchorSlotChange}></slot>
       <cps-flyout
