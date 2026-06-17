@@ -1,0 +1,159 @@
+/*
+ * CPS App Shell — casca padronizada de aplicação (topbar + sidebar + cards).
+ *
+ * Modelo de 2 eixos:
+ *   1. COR    -> escolha um accent-*.css (define --cps-palette-accent-*).
+ *   2. CHROME -> classe na raiz: padrão = topbar COLORIDA; .chrome-branca = topbar branca.
+ *
+ * Inclusão (após o tema base e a paleta):
+ *   <link rel="stylesheet" href=".../themes/light.css">
+ *   <link rel="stylesheet" href=".../themes/accent-roxo.css">
+ *   <link rel="stylesheet" href=".../themes/app-shell.css">
+ *   <body class="cps-app">                 (topbar colorida)
+ *   <body class="cps-app chrome-branca">   (topbar branca)
+ *
+ * Os papéis abaixo são DERIVADOS da rampa de acento — troque a paleta e tudo segue.
+ * As classes canônicas são .cps-app-*; aliases para as telas do SAL acompanham.
+ */
+
+:root {
+  /* Papéis derivados da rampa de acento */
+  --cps-app-chrome: var(--cps-palette-accent-900); /* topbar: cor mais forte */
+  --cps-app-button: var(--cps-palette-accent-800); /* botão: topbar um pouco mais claro */
+  --cps-app-card: var(--cps-palette-accent-50); /* cards: pastel claro */
+  --cps-app-header: var(--cps-palette-accent-100); /* topo de listas/tabelas: pastel */
+  --cps-app-ink: var(--cps-palette-accent-700); /* texto de acento / links / item ativo */
+
+  /* Botões e acento dos componentes seguem o papel "button" (mais forte que o padrão) */
+  --cps-color-fill-accent: var(--cps-app-button);
+  --cps-color-fill-accent-primary: var(--cps-app-button);
+  --cps-color-text-accent-primary: var(--cps-app-ink);
+
+  /* Atalhos legados usados por alguns apps */
+  --cps-color-accent: var(--cps-app-ink);
+  --cps-color-border: var(--cps-color-stroke-secondary, rgba(0, 0, 0, 0.1));
+
+  /* Fundo da página sempre branco */
+  --cps-color-background-solid-primary: #ffffff;
+}
+
+.cps-app,
+body.cps-app,
+.main-content,
+.main {
+  background: #ffffff;
+}
+
+/* ===== TOPBAR — chrome colorido (padrão) ===== */
+.cps-app-topbar,
+.topbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--cps-app-chrome);
+  color: #fff;
+}
+.cps-app-topbar a,
+.topbar .tsys,
+.topbar-system,
+.tpage,
+.topbar-page,
+.uname,
+.user-name,
+.msw span,
+.module-switcher span {
+  color: #fff;
+}
+.cps-app-topbar cps-icon,
+.topbar cps-icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+.tdiv,
+.topbar-divider {
+  background: rgba(255, 255, 255, 0.22);
+}
+.cps-app-topbar :is(button, .module-switcher, .msw, .user-btn, .ubtn, .hamburger-btn):hover,
+.module-switcher:hover,
+.msw:hover,
+.user-btn:hover,
+.ubtn:hover,
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== TOPBAR — chrome branco (.chrome-branca na raiz) ===== */
+.chrome-branca .cps-app-topbar,
+.chrome-branca .topbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  background: #fff;
+  color: var(--cps-color-text-primary);
+}
+.chrome-branca .topbar .tsys,
+.chrome-branca .topbar-system,
+.chrome-branca .tpage,
+.chrome-branca .topbar-page,
+.chrome-branca .uname,
+.chrome-branca .user-name {
+  color: var(--cps-color-text-primary);
+}
+.chrome-branca .topbar .msw span,
+.chrome-branca .module-switcher span {
+  color: var(--cps-app-ink);
+}
+.chrome-branca .topbar cps-icon {
+  color: rgba(0, 0, 0, 0.55);
+}
+.chrome-branca .tdiv,
+.chrome-branca .topbar-divider {
+  background: rgba(0, 0, 0, 0.1);
+}
+.chrome-branca :is(.module-switcher, .msw, .user-btn, .ubtn, .hamburger-btn):hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* ===== SIDEBAR — sempre branca ===== */
+.cps-app-sidebar,
+.sidebar,
+.sb {
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+/* Item ativo: barra lateral na cor forte + texto na cor (sem fundo colorido) */
+.cps-app-nav-item.is-active,
+.sidebar-item.active,
+.si.active {
+  box-shadow: inset 3px 0 0 var(--cps-app-chrome);
+  background: #fff;
+  color: var(--cps-app-ink);
+  font-weight: 600;
+}
+.cps-app-nav-item.is-active cps-icon,
+.sidebar-item.active cps-icon,
+.si.active cps-icon {
+  color: var(--cps-app-ink);
+}
+.module-menu-item.active {
+  background: #fff;
+  color: var(--cps-app-ink);
+  font-weight: 600;
+}
+
+/* ===== SUPERFÍCIES ===== */
+/* Cards: pastel claro */
+.cps-app-card,
+.metric-card,
+.kcard {
+  border-color: rgba(0, 0, 0, 0.07);
+  background: var(--cps-app-card);
+}
+/* Painéis/tabelas com cabeçalho: corpo branco, topo em pastel */
+.cps-app-panel,
+.calendar-section,
+.card {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+.cps-app-panel-header,
+.card-hdr,
+th {
+  background: var(--cps-app-header);
+}
