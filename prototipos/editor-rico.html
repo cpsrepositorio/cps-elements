@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editor rico — padrão CPS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web@1/themes/light.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web@1/themes/accent-ciano.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@cgtic-cps/web@1/autoloader.js"></script>
+  <style>
+    body{ font-family: var(--cps-font-family-sans); color: var(--cps-color-text-primary); background: var(--cps-color-background-solid-primary); margin:0; padding:24px; }
+    .wrap{ max-width: 880px; margin:0 auto; }
+    h1{ font: var(--cps-font-title); margin:0 0 4px; }
+    p.lead{ font: var(--cps-font-body); color: var(--cps-color-text-secondary); margin:0 0 16px; }
+
+    /* ===== Editor rico (cps-rte) ===== */
+    .cps-rte{ border:1px solid var(--cps-color-stroke-secondary); border-radius: var(--cps-border-radius-large); overflow:hidden; background:#fff; }
+    .cps-rte-toolbar{
+      display:flex; flex-wrap:wrap; align-items:center; gap:3px;
+      padding:6px 8px; border-bottom:1px solid var(--cps-color-stroke-secondary);
+      background: var(--cps-color-background-solid-secondary);
+    }
+    .cps-rte-sep{ width:1px; align-self:stretch; margin:2px 4px; background: var(--cps-color-stroke-secondary); }
+    .tbtn{
+      display:inline-flex; align-items:center; justify-content:center; gap:4px;
+      min-width:30px; height:30px; padding:0 7px; cursor:pointer;
+      border:1px solid transparent; border-radius: var(--cps-border-radius-medium);
+      background:transparent; color: var(--cps-color-text-primary);
+      font-family:inherit; font-size:13px; line-height:1;
+    }
+    .tbtn:hover{ background: var(--cps-color-background-solid-tertiary); }
+    .tbtn.is-active{ background: var(--cps-palette-accent-100); color: var(--cps-palette-accent-800); border-color: var(--cps-palette-accent-200); }
+    .tbtn b{ font-weight:700; } .tbtn i{ font-style:italic; } .tbtn u{ text-decoration:underline; }
+    .tbtn svg{ display:block; }
+    select.tbtn{ height:30px; }
+    .color-field{ display:inline-flex; align-items:center; gap:4px; }
+    .color-field label{ font-size:12px; color: var(--cps-color-text-secondary); cursor:pointer; }
+    .color-field input[type=color]{ width:26px; height:26px; border:1px solid var(--cps-color-stroke-secondary); border-radius:6px; background:none; cursor:pointer; padding:0; }
+
+    .cps-rte-content{ min-height: 300px; padding:16px 18px; outline:none; font: var(--cps-font-body-large); line-height: var(--cps-leading-relaxed); }
+    .cps-rte-content:focus{ box-shadow: inset 0 0 0 2px var(--cps-palette-accent-200); }
+    .cps-rte-content h2{ font: var(--cps-font-title); margin: .4em 0; }
+    .cps-rte-content h3{ font: var(--cps-font-subtitle); margin: .4em 0; }
+    .cps-rte-content p{ margin: .5em 0; }
+    .cps-rte-content ul, .cps-rte-content ol{ margin: .5em 0; padding-left: 1.6em; }
+    .cps-rte-content a{ color: var(--cps-palette-accent-700); text-decoration: underline; }
+    .cps-rte-content table{ border-collapse: collapse; margin:.6em 0; min-width: 60%; }
+    .cps-rte-content th, .cps-rte-content td{ border:1px solid var(--cps-color-stroke-secondary); padding:6px 10px; min-width:48px; }
+    .cps-rte-content th{ background: var(--cps-color-background-solid-secondary); font-weight:600; text-align:left; }
+
+    .note{ font: var(--cps-font-label); color: var(--cps-color-text-tertiary); background: var(--cps-color-fill-alt-tertiary); padding:12px 14px; border-radius: var(--cps-border-radius-large); margin-top:16px; }
+    code{ font-family: var(--cps-font-family-mono); font-size:12px; background: var(--cps-color-background-solid-tertiary); padding:1px 5px; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Editor de texto rico — padrão CPS</h1>
+    <p class="lead">Componente de mockup, estilizado com os tokens do CPS Elements. Selecione o texto e use a barra de ferramentas.</p>
+
+    <div class="cps-rte">
+      <div class="cps-rte-toolbar" id="toolbar">
+        <select class="tbtn" id="blockSelect" title="Estilo do parágrafo" aria-label="Estilo do parágrafo">
+          <option value="p">Texto</option>
+          <option value="h2">Título</option>
+          <option value="h3">Subtítulo</option>
+        </select>
+        <span class="cps-rte-sep"></span>
+
+        <button type="button" class="tbtn" data-cmd="bold" title="Negrito (Ctrl+B)" aria-label="Negrito"><b>N</b></button>
+        <button type="button" class="tbtn" data-cmd="italic" title="Itálico (Ctrl+I)" aria-label="Itálico"><i>I</i></button>
+        <button type="button" class="tbtn" data-cmd="underline" title="Sublinhado (Ctrl+U)" aria-label="Sublinhado"><u>S</u></button>
+        <span class="cps-rte-sep"></span>
+
+        <button type="button" class="tbtn" data-cmd="justifyLeft" title="Alinhar à esquerda" aria-label="Alinhar à esquerda"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 4h11M2.5 8h7M2.5 12h9"/></svg></button>
+        <button type="button" class="tbtn" data-cmd="justifyCenter" title="Centralizar" aria-label="Centralizar"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 4h11M4.5 8h7M3.5 12h9"/></svg></button>
+        <button type="button" class="tbtn" data-cmd="justifyRight" title="Alinhar à direita" aria-label="Alinhar à direita"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 4h11M6.5 8h7M4.5 12h9"/></svg></button>
+        <span class="cps-rte-sep"></span>
+
+        <button type="button" class="tbtn" data-cmd="insertUnorderedList" title="Lista com marcadores" aria-label="Lista com marcadores"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="3" cy="4" r="1" fill="currentColor" stroke="none"/><circle cx="3" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="3" cy="12" r="1" fill="currentColor" stroke="none"/><path d="M6.5 4h7.5M6.5 8h7.5M6.5 12h7.5"/></svg></button>
+        <button type="button" class="tbtn" data-cmd="insertOrderedList" title="Lista numerada" aria-label="Lista numerada"><b style="font-size:11px">1.</b></button>
+        <span class="cps-rte-sep"></span>
+
+        <button type="button" class="tbtn" id="linkBtn" title="Inserir link" aria-label="Inserir link"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M6.5 9.5l3-3M7.2 4.6l.9-.9a2.4 2.4 0 013.4 3.4l-.9.9M8.8 11.4l-.9.9a2.4 2.4 0 01-3.4-3.4l.9-.9"/></svg></button>
+        <span class="color-field" title="Cor da fonte">
+          <label for="foreColor"><b>A</b></label>
+          <input type="color" id="foreColor" value="#1a1a1a" />
+        </span>
+        <span class="color-field" title="Cor de fundo">
+          <label for="backColor">Fundo</label>
+          <input type="color" id="backColor" value="#fff3a3" />
+        </span>
+        <span class="cps-rte-sep"></span>
+
+        <button type="button" class="tbtn" data-cmd="undo" title="Desfazer (Ctrl+Z)" aria-label="Desfazer" style="font-size:16px">↶</button>
+        <button type="button" class="tbtn" data-cmd="redo" title="Refazer (Ctrl+Y)" aria-label="Refazer" style="font-size:16px">↷</button>
+        <button type="button" class="tbtn" id="clearBtn" title="Limpar formatação" aria-label="Limpar formatação">Limpar</button>
+        <span class="cps-rte-sep"></span>
+
+        <button type="button" class="tbtn" id="tblInsert" title="Inserir tabela">⊞ Tabela</button>
+        <button type="button" class="tbtn" id="rowAdd" title="Inserir linha abaixo">+ Linha</button>
+        <button type="button" class="tbtn" id="colAdd" title="Inserir coluna à direita">+ Coluna</button>
+        <button type="button" class="tbtn" id="rowDel" title="Excluir linha">− Linha</button>
+        <button type="button" class="tbtn" id="colDel" title="Excluir coluna">− Coluna</button>
+      </div>
+
+      <div class="cps-rte-content" id="editor" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Editor de texto rico">
+        <h2>Título do documento</h2>
+        <p>Comece a escrever aqui. Selecione um trecho e aplique <b>negrito</b>, <i>itálico</i> ou <u>sublinhado</u>, crie listas, insira <a href="#">links</a> e tabelas.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Padrão de mockup.</strong> Usa <code>contenteditable</code> + <code>execCommand</code> — funciona em todos os navegadores e é ideal para protótipos.
+      Na implementação real, encapsular uma lib (TipTap/Lexical/Quill) como um <code>cps-rich-text</code> oficial, mantendo estes tokens.
+    </div>
+  </div>
+
+  <script>
+    const editor = document.getElementById('editor');
+    const toolbar = document.getElementById('toolbar');
+    let savedRange = null;
+
+    try { document.execCommand('styleWithCSS', false, true); } catch (e) {}
+
+    function saveSelection() {
+      const sel = window.getSelection();
+      if (sel.rangeCount && editor.contains(sel.anchorNode)) savedRange = sel.getRangeAt(0).cloneRange();
+    }
+    function restoreSelection() {
+      if (!savedRange) { editor.focus(); return; }
+      const sel = window.getSelection();
+      sel.removeAllRanges(); sel.addRange(savedRange); editor.focus();
+    }
+    document.addEventListener('selectionchange', saveSelection);
+
+    function exec(cmd, val) { restoreSelection(); document.execCommand(cmd, false, val || null); editor.focus(); saveSelection(); syncActive(); }
+
+    // Mantém foco/seleção ao clicar na barra (exceto inputs de cor)
+    toolbar.addEventListener('mousedown', e => { if (!e.target.closest('input[type=color]')) e.preventDefault(); });
+
+    // Inline, alinhamento, listas, desfazer/refazer (delegação por data-cmd)
+    toolbar.querySelectorAll('button[data-cmd]').forEach(b => b.addEventListener('click', () => exec(b.dataset.cmd)));
+
+    // Bloco
+    document.getElementById('blockSelect').addEventListener('change', e => exec('formatBlock', e.target.value));
+
+    // Link
+    document.getElementById('linkBtn').addEventListener('click', () => {
+      const url = prompt('Endereço do link (URL):', 'https://');
+      if (url) exec('createLink', url);
+    });
+
+    // Limpar formatação (inline + link)
+    document.getElementById('clearBtn').addEventListener('click', () => { restoreSelection(); document.execCommand('removeFormat'); document.execCommand('unlink'); editor.focus(); saveSelection(); syncActive(); });
+
+    // Cores
+    document.getElementById('foreColor').addEventListener('input', e => exec('foreColor', e.target.value));
+    document.getElementById('backColor').addEventListener('input', e => {
+      restoreSelection();
+      if (!document.execCommand('hiliteColor', false, e.target.value)) document.execCommand('backColor', false, e.target.value);
+      editor.focus(); saveSelection();
+    });
+
+    // Estado ativo
+    function syncActive() {
+      ['bold','italic','underline','justifyLeft','justifyCenter','justifyRight','insertUnorderedList','insertOrderedList'].forEach(c => {
+        const btn = toolbar.querySelector('button[data-cmd="'+c+'"]');
+        if (btn) { try { btn.classList.toggle('is-active', document.queryCommandState(c)); } catch (e) {} }
+      });
+      const block = (document.queryCommandValue('formatBlock') || 'p').toLowerCase().replace(/[<>]/g,'');
+      document.getElementById('blockSelect').value = ['h2','h3'].includes(block) ? block : 'p';
+    }
+    editor.addEventListener('keyup', syncActive);
+    editor.addEventListener('mouseup', syncActive);
+
+    // ===== Tabela =====
+    function currentCell() {
+      const n = savedRange ? savedRange.startContainer : window.getSelection().anchorNode;
+      const el = n && n.nodeType === 3 ? n.parentNode : n;
+      return el && el.closest ? el.closest('td,th') : null;
+    }
+    function needCell() { const c = currentCell(); if (!c) alert('Coloque o cursor dentro de uma célula da tabela.'); return c; }
+
+    document.getElementById('tblInsert').addEventListener('click', () => {
+      exec('insertHTML',
+        '<table><thead><tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead>' +
+        '<tbody><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>' +
+        '<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table><p>&nbsp;</p>');
+    });
+    document.getElementById('rowAdd').addEventListener('click', () => {
+      const cell = needCell(); if (!cell) return;
+      const tr = cell.parentNode, novo = tr.cloneNode(true);
+      novo.querySelectorAll('th,td').forEach(c => { c.innerHTML = '&nbsp;'; });
+      tr.after(novo);
+    });
+    document.getElementById('colAdd').addEventListener('click', () => {
+      const cell = needCell(); if (!cell) return;
+      const i = cell.cellIndex, table = cell.closest('table');
+      [...table.rows].forEach(r => {
+        const ref = r.cells[i];
+        const c = document.createElement(ref && ref.tagName === 'TH' ? 'th' : 'td');
+        c.innerHTML = '&nbsp;';
+        ref ? ref.after(c) : r.appendChild(c);
+      });
+    });
+    document.getElementById('rowDel').addEventListener('click', () => {
+      const cell = needCell(); if (!cell) return;
+      const table = cell.closest('table');
+      if (table.rows.length > 1) cell.parentNode.remove(); else alert('A tabela precisa de pelo menos uma linha.');
+    });
+    document.getElementById('colDel').addEventListener('click', () => {
+      const cell = needCell(); if (!cell) return;
+      const i = cell.cellIndex, table = cell.closest('table');
+      if (table.rows[0].cells.length > 1) [...table.rows].forEach(r => r.cells[i] && r.cells[i].remove());
+      else alert('A tabela precisa de pelo menos uma coluna.');
+    });
+  </script>
+</body>
+</html>
