@@ -390,6 +390,9 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
             part="base"
             class=${classMap({
               'rich-text': true,
+              'rich-text--small': this.size === 'small',
+              'rich-text--medium': this.size === 'medium',
+              'rich-text--large': this.size === 'large',
               'rich-text--focused': this.hasFocus,
               'rich-text--disabled': this.disabled
             })}
