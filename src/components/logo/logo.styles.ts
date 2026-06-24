@@ -1,8 +1,7 @@
 import { css } from 'lit';
 import componentStyles from '../../styles/component.styles.js';
 
-export default css`
-  ${componentStyles}
+export default css`  ${componentStyles}
 
   :host {
     display: inline-flex;
@@ -35,5 +34,11 @@ export default css`
 
   .logo--monochromatic-inverted {
     fill: var(--cps-color-text-inverted-primary);
+  }
+
+  .logo__caption {
+    font-family: var(--cps-font-family-sans);
+    font-size: 32px;
+    font-weight: var(--cps-font-weight-bold);
   }
 `;
