@@ -31,8 +31,15 @@ Use o atributo `type` para definir o tipo de logotipo a ser renderizado.
   <cps-logo type="cps-asscom" style="font-size: 90px"></cps-logo>
   <cps-logo type="cps-cgtic" style="font-size: 90px"></cps-logo>
   <cps-logo type="cps-sucar" style="font-size: 90px"></cps-logo>
+  <cps-logo type="cps-symbol" style="font-size: 64px"></cps-logo>
+  <cps-logo type="sp-brasao" style="font-size: 96px"></cps-logo>
+  <cps-logo type="sp-brasao-texto" style="font-size: 120px"></cps-logo>
 </div>
 ```
+
+?> O `cps-symbol` é o símbolo do CPS **sem o texto** "Centro Paula Souza", indicado para reduções pequenas. O `sp-brasao` é o **brasão oficial do Estado de São Paulo** (sem a marca "Governo do Estado"), apropriado para usos em que a identidade do Governo não pode ser aplicada — por exemplo, durante o período eleitoral. O `sp-brasao-texto` acrescenta "Governo do Estado de São Paulo".
+
+!> O brasão é arte multicolor fixa: **não muda com `variant`** (mantém sempre as cores oficiais). Nas versões `cps-symbol` e demais logotipos, as variantes continuam valendo.
 
 ```jsx react
 import { CpsLogo } from '@cgtic-cps/web/react/logo';

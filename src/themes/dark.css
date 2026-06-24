@@ -414,4 +414,24 @@
   --cps-z-index-tooltip: 1000;
 }
 
+/* Scrollbar fino padrão CPS — todas as áreas roláveis do light DOM (sidebar, listas, conteúdo) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cps-color-stroke-secondary) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--cps-color-stroke-secondary);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--cps-color-stroke-tertiary);
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 /* _utility.css */

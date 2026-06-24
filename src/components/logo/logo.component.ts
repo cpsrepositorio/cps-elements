@@ -24,7 +24,10 @@ export default class CpsLogo extends BaseElement {
     | 'cps-asscom'
     | 'cps-cgtic'
     | 'cps-sucar'
+    | 'cps-symbol'
     | 'elements'
+    | 'sp-brasao'
+    | 'sp-brasao-texto'
     | 'sp-horizontal'
     | 'sp-vertical' = 'cps';
 
@@ -92,6 +95,32 @@ export default class CpsLogo extends BaseElement {
           <svg class=${classes} viewBox="0 0 461 189">
             <title>São Paulo - Governo do Estado</title>
             ${paths.SpVertical}
+          </svg>
+        `;
+
+      case 'cps-symbol':
+        return html`
+          <svg class=${classes} viewBox="0 0 167 108">
+            <title>Centro Paula Souza</title>
+            ${paths.CpsSymbol}
+          </svg>
+        `;
+
+      case 'sp-brasao':
+        return html`
+          <svg class=${classes} viewBox="0 0 370.2 430.1">
+            <title>Brasão do Estado de São Paulo</title>
+            ${paths.SpBrasao}
+          </svg>
+        `;
+
+      case 'sp-brasao-texto':
+        return html`
+          <svg class=${classes} viewBox="0 0 370.2 545">
+            <title>Brasão do Estado de São Paulo — Governo do Estado</title>
+            ${paths.SpBrasao}
+            <text class="logo__caption" x="185.1" y="483" text-anchor="middle">GOVERNO DO ESTADO</text>
+            <text class="logo__caption" x="185.1" y="523" text-anchor="middle">DE SÃO PAULO</text>
           </svg>
         `;
 
