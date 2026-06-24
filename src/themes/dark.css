@@ -424,8 +424,8 @@
   height: 10px;
 }
 *::-webkit-scrollbar-thumb {
-  background: var(--cps-color-stroke-secondary);
   border-radius: 10px;
+  background: var(--cps-color-stroke-secondary);
 }
 *::-webkit-scrollbar-thumb:hover {
   background: var(--cps-color-stroke-tertiary);
