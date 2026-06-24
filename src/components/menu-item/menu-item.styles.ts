@@ -38,6 +38,16 @@ export default css`
     pointer-events: none;
   }
 
+  /* Item atual (aria-current="page"): página/seção em exibição. */
+  .menu-item.menu-item--current {
+    color: var(--cps-color-text-accent-primary);
+    font: var(--cps-font-body-strong);
+  }
+
+  .menu-item.menu-item--current .menu-item__prefix {
+    color: var(--cps-color-text-accent-primary);
+  }
+
   .menu-item .menu-item__label {
     display: inline-block;
     flex: 1 1 auto;

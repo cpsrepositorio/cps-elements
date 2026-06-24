@@ -150,6 +150,98 @@ body.cps-app,
   font-weight: 600;
 }
 
+/* ===== SIDEBAR DE APLICAÇÃO — navegação agrupada e colapsável =====
+ * Padrão canônico para sistemas com muitas telas: em vez de uma "parede" de
+ * dezenas de links, agrupa a navegação em seções colapsáveis usando os
+ * componentes nativos:
+ *   cps-accordion-group > cps-accordion   -> grupos colapsáveis (1 aberto por vez)
+ *   cps-menu (inline) > cps-menu-item     -> itens, com ícone no slot prefix
+ * O tema "achata" esses componentes dentro da casca para que pareçam navegação
+ * (sem moldura de card, sem sombra/acrílico) e marca a tela atual com o filete
+ * de acento (cps-menu-item[current], que reflete aria-current="page"). */
+
+:is(.cps-app-sidebar, .sidebar, .sb) cps-accordion-group {
+  --gap: var(--cps-spacing-1);
+}
+
+/* Grupo: o cabeçalho do accordion vira um rótulo de seção leve (sem card). */
+:is(.cps-app-sidebar, .sidebar, .sb) cps-accordion::part(header) {
+  border-radius: var(--cps-border-radius-medium);
+  border-color: transparent;
+  background: transparent;
+  padding: 0 var(--cps-spacing-3);
+  height: var(--cps-spacing-11);
+  letter-spacing: var(--cps-tracking-wide);
+  color: var(--cps-color-text-secondary);
+  font: var(--cps-font-label);
+}
+:is(.cps-app-sidebar, .sidebar, .sb) cps-accordion::part(header):hover {
+  background: var(--cps-color-fill-subtle-secondary);
+}
+:is(.cps-app-sidebar, .sidebar, .sb) cps-accordion::part(content) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: var(--cps-spacing-0-5) 0 var(--cps-spacing-2);
+}
+
+/* Itens: achata o corpo do cps-menu inline (sem borda/sombra/acrílico/padding). */
+:is(.cps-app-sidebar, .sidebar, .sb) cps-menu::part(body) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  filter: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* Item atual (cps-menu-item[current] -> aria-current="page"): filete reto de
+ * acento à esquerda, igual ao .sidebar-item.active da casca. */
+:is(.cps-app-sidebar, .sidebar, .sb) cps-menu-item[current]::part(base) {
+  position: relative;
+  background: var(--cps-color-fill-subtle-secondary);
+}
+:is(.cps-app-sidebar, .sidebar, .sb) cps-menu-item[current]::part(base)::before {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 0;
+  background: var(--cps-app-chrome);
+  width: 2px;
+  content: '';
+}
+
+/* ----- Modo "rail" (ícones): sidebar recolhida que expande no hover -----
+ * Aplique a classe .cps-app-sidebar--icons (ou .sidebar--icons). No estado
+ * recolhido só os ícones aparecem; ao passar o mouse (ou focar dentro), a
+ * sidebar expande e revela os rótulos e o cabeçalho dos grupos. */
+.cps-app-sidebar--icons,
+.sidebar--icons {
+  transition: width var(--cps-transition-medium);
+  width: var(--cps-spacing-16);
+  overflow: hidden;
+}
+.cps-app-sidebar--icons:hover,
+.cps-app-sidebar--icons:focus-within,
+.sidebar--icons:hover,
+.sidebar--icons:focus-within {
+  width: var(--cps-app-sidebar-expanded, 16rem);
+}
+/* Recolhido: esconde título do grupo, chevron e rótulo dos itens; centraliza ícones. */
+.cps-app-sidebar--icons:not(:hover, :focus-within) cps-accordion::part(title),
+.cps-app-sidebar--icons:not(:hover, :focus-within) cps-accordion::part(subtitle),
+.cps-app-sidebar--icons:not(:hover, :focus-within) cps-accordion::part(caret),
+.sidebar--icons:not(:hover, :focus-within) cps-accordion::part(title),
+.sidebar--icons:not(:hover, :focus-within) cps-accordion::part(subtitle),
+.sidebar--icons:not(:hover, :focus-within) cps-accordion::part(caret) {
+  opacity: 0;
+}
+.cps-app-sidebar--icons:not(:hover, :focus-within) cps-menu-item::part(label),
+.sidebar--icons:not(:hover, :focus-within) cps-menu-item::part(label) {
+  opacity: 0;
+}
+
 /* ===== SUPERFÍCIES ===== */
 /* Cards: pastel claro */
 .cps-app-card,

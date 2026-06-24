@@ -61,6 +61,16 @@ Canônicas (para telas novas): `.cps-app-topbar`, `.cps-app-sidebar`,
 telas do SAL (`.topbar`, `.sidebar`/`.sb`, `.sidebar-item`/`.si`, `.metric-card`/`.kcard`,
 `.card-hdr`), para adoção sem refatorar.
 
+## Navegação: sidebar de aplicação
+
+Para sistemas com muitas telas, **não** monte a navegação como uma lista plana de links
+(vira uma "parede") nem reescreva _accordion_ na mão. Use o padrão canônico com os
+componentes nativos — `cps-accordion-group` + `cps-accordion` (grupos colapsáveis) e
+`cps-menu` + `cps-menu-item` (itens, com `current` na tela atual). O `app-shell.css` já
+"achata" esses componentes dentro de `.cps-app-sidebar`/`.sidebar` e aplica o filete de
+acento no item atual, inclusive um modo "rail" de ícones (`.cps-app-sidebar--icons`).
+Markup, exemplo ao vivo e notas de acessibilidade: **[Sidebar de aplicação](docs/fundamentos/sidebar-de-aplicação.md)**.
+
 ## Criar uma paleta nova
 
 Edite `scripts/generate-palette-ramp.py` (lista `FAMILIES`) com os tons do guia e gere
