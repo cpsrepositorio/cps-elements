@@ -117,14 +117,27 @@ body.cps-app,
   border-right: 1px solid rgba(0, 0, 0, 0.08);
   background: #fff;
 }
-/* Item ativo: barra lateral na cor forte + texto na cor (sem fundo colorido) */
+/* Item ativo: filete reto fino na cor forte + texto na cor (sem fundo colorido).
+   O filete é desenhado via ::before para permanecer RETO mesmo com cantos
+   arredondados no item (um inset box-shadow acompanharia o raio e viraria "colchete"). */
 .cps-app-nav-item.is-active,
 .sidebar-item.active,
 .si.active {
-  box-shadow: inset 3px 0 0 var(--cps-app-chrome);
+  position: relative;
   background: #fff;
   color: var(--cps-app-ink);
   font-weight: 600;
+}
+.cps-app-nav-item.is-active::before,
+.sidebar-item.active::before,
+.si.active::before {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 0;
+  background: var(--cps-app-chrome);
+  width: 2px;
+  content: '';
 }
 .cps-app-nav-item.is-active cps-icon,
 .sidebar-item.active cps-icon,
