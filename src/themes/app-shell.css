@@ -185,12 +185,16 @@ body.cps-app,
   padding: var(--cps-spacing-0-5) 0 var(--cps-spacing-2);
 }
 
-/* Itens: achata o corpo do cps-menu inline (sem borda/sombra/acrílico/padding). */
+/* Itens: achata o corpo do cps-menu inline (sem borda/sombra/acrílico/padding).
+ * overflow: visible é importante — na sidebar o menu NÃO deve ser uma área de
+ * scroll própria (quem rola é o contêiner da sidebar). Sem isso, o overflow: auto
+ * padrão do menu gera barras de rolagem (inclusive horizontais no modo rail). */
 :is(.cps-app-sidebar, .sidebar, .sb) cps-menu::part(body) {
   border: 0;
   border-radius: 0;
   background: transparent;
   padding: 0;
+  overflow: visible;
   filter: none;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
