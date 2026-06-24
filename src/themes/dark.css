@@ -29,30 +29,32 @@
   --cps-palette-neutral-1000: rgb(255 255 255);
 
   /* Brand */
-  --cps-palette-brand-50: rgb(83 4 4);
-  --cps-palette-brand-100: rgb(114 3 3);
-  --cps-palette-brand-200: rgb(139 1 1);
-  --cps-palette-brand-300: rgb(178 0 0);
-  --cps-palette-brand-400: rgb(206 2 2);
-  --cps-palette-brand-500: rgb(230 16 15);
-  --cps-palette-brand-600: rgb(248 73 53);
-  --cps-palette-brand-700: rgb(255 121 97);
-  --cps-palette-brand-800: rgb(255 179 158);
-  --cps-palette-brand-900: rgb(255 220 204);
-  --cps-palette-brand-950: rgb(255 241 230);
+  /* Guia "Materiais de Comunicação · Cores" — PRINCIPAL/vermelho (rampa do tema claro, invertida). */
+  --cps-palette-brand-50: rgb(125 0 0);
+  --cps-palette-brand-100: rgb(162 0 1);
+  --cps-palette-brand-200: rgb(192 19 10);
+  --cps-palette-brand-300: rgb(216 36 24);
+  --cps-palette-brand-400: rgb(246 15 7);
+  --cps-palette-brand-500: rgb(253 63 45);
+  --cps-palette-brand-600: rgb(251 100 87);
+  --cps-palette-brand-700: rgb(255 125 120);
+  --cps-palette-brand-800: rgb(255 155 154);
+  --cps-palette-brand-900: rgb(255 185 184);
+  --cps-palette-brand-950: rgb(252 214 209);
 
   /* Accent */
-  --cps-palette-accent-50: rgb(9 50 60);
-  --cps-palette-accent-100: rgb(9 71 87);
-  --cps-palette-accent-200: rgb(8 91 110);
-  --cps-palette-accent-300: rgb(6 110 142);
-  --cps-palette-accent-400: rgb(4 133 169);
-  --cps-palette-accent-500: rgb(11 169 208);
-  --cps-palette-accent-600: rgb(71 212 240);
-  --cps-palette-accent-700: rgb(126 231 251);
-  --cps-palette-accent-800: rgb(165 243 253);
-  --cps-palette-accent-900: rgb(200 250 254);
-  --cps-palette-accent-950: rgb(235 255 255);
+  /* Guia "Materiais de Comunicação · Cores" — PRINCIPAL/ciano (rampa do tema claro, invertida). */
+  --cps-palette-accent-50: rgb(0 71 84);
+  --cps-palette-accent-100: rgb(0 83 99);
+  --cps-palette-accent-200: rgb(1 98 116);
+  --cps-palette-accent-300: rgb(4 118 134);
+  --cps-palette-accent-400: rgb(7 139 153);
+  --cps-palette-accent-500: rgb(10 161 173);
+  --cps-palette-accent-600: rgb(5 187 203);
+  --cps-palette-accent-700: rgb(0 212 230);
+  --cps-palette-accent-800: rgb(0 234 249);
+  --cps-palette-accent-900: rgb(87 247 255);
+  --cps-palette-accent-950: rgb(138 255 255);
 
   /*
    * State Colors
