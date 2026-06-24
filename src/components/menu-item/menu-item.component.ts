@@ -20,7 +20,7 @@ import type { CSSResultGroup } from 'lit';
  * @slot prefix - Um ícone ou elemento similar antes do conteúdo principal.
  * @slot suffix - Um ícone ou elemento similar após o conteúdo principal.
  *
- * @csspart base - O elemento principal propriamente dito (um `<div>`).
+ * @csspart base - O elemento principal propriamente dito (um `<div>`). Recebe o estado atual via `:host([current])`, podendo ser estilizado para destacar a página corrente.
  * @csspart check - O elemento que embrulha o ícone de checagem (caso o item de menu seja do tipo `checkbox`), visível apenas quando o item de menu está marcado.
  * @csspart prefix - O elemento que embrulha a renderização do _slot_ `prefix`.
  * @csspart label - O elemento que embrulha o conteúdo principal, normalmente um texto literal.
@@ -43,6 +43,9 @@ export default class CpsMenuItem extends BaseElement {
 
   /** Um valor único para identificar o item de menu, podendo programaticamente auxiliar na determinação de quando cada item de menu é selecionado, através do evento `cps-select` do `<cps-menu>` pai deste item. */
   @property() value = '';
+
+  /** Indica que este item representa a página ou seção atualmente em exibição. Reflete `aria-current="page"` para leitores de tela e aplica o destaque visual de item atual. Útil para menus de navegação (por exemplo, a barra lateral de uma aplicação). */
+  @property({ type: Boolean, reflect: true }) current = false;
 
   /** Desabilita o item de menu. */
   @property({ type: Boolean, reflect: true }) disabled = false;
@@ -99,6 +102,15 @@ export default class CpsMenuItem extends BaseElement {
     }
   }
 
+  @watch('current')
+  handleCurrentChange() {
+    if (this.current) {
+      this.setAttribute('aria-current', 'page');
+    } else {
+      this.removeAttribute('aria-current');
+    }
+  }
+
   @watch('disabled')
   handleDisabledChange() {
     this.setAttribute('aria-disabled', this.disabled ? 'true' : 'false');
@@ -128,6 +140,7 @@ export default class CpsMenuItem extends BaseElement {
           'menu-item': true,
           'menu-item--checkable': this.type === 'checkbox',
           'menu-item--checked': this.checked,
+          'menu-item--current': this.current,
           'menu-item--disabled': this.disabled
         })}
       >

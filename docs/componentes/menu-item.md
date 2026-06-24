@@ -78,6 +78,52 @@ const App = () => (
 );
 ```
 
+### Página atual
+
+Em menus de **navegação** (por exemplo, a [sidebar de aplicação](/fundamentos/sidebar-de-aplicação)), use o atributo `current` para marcar o item que corresponde à tela em exibição. Ele reflete `aria-current="page"` para leitores de tela e aplica um destaque visual de item atual (texto em acento e peso forte).
+
+```html preview
+<cps-menu style="max-width: 200px">
+  <cps-menu-item>
+    <cps-icon slot="prefix" name="home"></cps-icon>
+    Início
+  </cps-menu-item>
+  <cps-menu-item current>
+    <cps-icon slot="prefix" name="document"></cps-icon>
+    Relatórios
+  </cps-menu-item>
+  <cps-menu-item>
+    <cps-icon slot="prefix" name="settings"></cps-icon>
+    Configurações
+  </cps-menu-item>
+</cps-menu>
+```
+
+```jsx react
+import { CpsIcon } from '@cgtic-cps/web/react/icon';
+import { CpsMenu } from '@cgtic-cps/web/react/menu';
+import { CpsMenuItem } from '@cgtic-cps/web/react/menu-item';
+
+const App = () => (
+  <CpsMenu style={{ maxWidth: '200px' }}>
+    <CpsMenuItem>
+      <CpsIcon slot="prefix" name="home" />
+      Início
+    </CpsMenuItem>
+    <CpsMenuItem current>
+      <CpsIcon slot="prefix" name="document" />
+      Relatórios
+    </CpsMenuItem>
+    <CpsMenuItem>
+      <CpsIcon slot="prefix" name="settings" />
+      Configurações
+    </CpsMenuItem>
+  </CpsMenu>
+);
+```
+
+?> Use `current` apenas para indicar a **página/seção corrente** em navegação — não confunda com `type="checkbox"`/`checked` (seleção) nem com o realce temporário de foco/_hover_. Deve haver no máximo um item `current` por contexto de navegação.
+
 ### Conteúdo como prefixo ou sufixo
 
 Use os _slots_ `prefix` e `suffix` para adicionar conteúdos antes ou depois do conteúdo principal do item de menu. Comumente se utilizam ícones no prefixo, embora qualquer outro tipo de conteúdo também seja aceito. Já o sufixo é comumente utilizado para adicionar _badges_ ou indicadores de teclas de atalho.

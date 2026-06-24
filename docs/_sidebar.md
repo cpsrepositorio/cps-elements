@@ -4,6 +4,7 @@
   - [Instalação](/fundamentos/instalação)
   - [Utilização](/fundamentos/utilização)
   - [Temas](/fundamentos/temas)
+  - [Sidebar de aplicação](/fundamentos/sidebar-de-aplicação)
   - [Personalizando](/fundamentos/personalizando)
   - [Formulários](/fundamentos/formulários)
   - [Acessibilidade](/fundamentos/acessibilidade)
