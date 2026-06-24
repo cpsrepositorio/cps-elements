@@ -2,8 +2,7 @@ import { css } from 'lit';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles';
 
-export default css`
-  ${css`
+export default css`  ${css`
     ${componentStyles}
     ${formControlStyles}
   `}
@@ -43,6 +42,19 @@ export default css`
   .rich-text--disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  /* Tamanhos — espelham a fonte dos controles cps-input/cps-textarea */
+  .rich-text--small {
+    font: var(--cps-font-label);
+  }
+
+  .rich-text--medium {
+    font: var(--cps-font-body);
+  }
+
+  .rich-text--large {
+    font: var(--cps-font-body-large);
   }
 
   /* Toolbar */
@@ -139,7 +151,9 @@ export default css`
     padding: var(--cps-spacing-3) var(--cps-spacing-4);
     min-height: 12rem;
     overflow-y: auto;
-    font: var(--cps-font-body-large);
+    line-height: var(--cps-leading-normal);
+    font-family: inherit;
+    font-size: inherit;
   }
 
   .rich-text__content:empty::before {
