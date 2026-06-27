@@ -60,7 +60,7 @@
   - [Tab Group](/componentes/tab-group)
   - [Tab Item](/componentes/tab-item)
   - [Tab Panel](/componentes/tab-panel)
-  - [Table View <small>(em breve)</small>](/componentes/table-view)
+  - [Table View](/componentes/table-view)
   - [Textarea](/componentes/textarea)
   - [Toggle Button](/componentes/toggle-button)
   - [Tooltip](/componentes/tooltip)

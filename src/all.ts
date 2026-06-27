@@ -46,6 +46,7 @@ export { CpsSwitch } from './components/switch.js';
 export { CpsTabGroup } from './components/tab-group.js';
 export { CpsTabItem } from './components/tab-item.js';
 export { CpsTabPanel } from './components/tab-panel.js';
+export { CpsTableView } from './components/table-view.js';
 export { CpsTextarea } from './components/textarea.js';
 export { CpsToggleButton } from './components/toggle-button.js';
 export { CpsTooltip } from './components/tooltip.js';
