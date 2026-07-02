@@ -268,7 +268,7 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
   private currentCell(): HTMLTableCellElement | null {
     const node = this.savedRange ? this.savedRange.startContainer : this.getEditorSelection()?.anchorNode;
     const element = node && node.nodeType === Node.TEXT_NODE ? node.parentElement : (node as Element | null);
-    return element?.closest ? (element.closest('td, th') ) : null;
+    return element?.closest ? element.closest('td, th') : null;
   }
 
   private insertTable() {
@@ -397,7 +397,13 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
               'rich-text--disabled': this.disabled
             })}
           >
-            <div part="toolbar" class="rich-text__toolbar" role="toolbar" aria-label="Formatação" @mousedown=${this.handleToolbarMouseDown}>
+            <div
+              part="toolbar"
+              class="rich-text__toolbar"
+              role="toolbar"
+              aria-label="Formatação"
+              @mousedown=${this.handleToolbarMouseDown}
+            >
               <select
                 class="rich-text__block"
                 aria-label="Estilo do parágrafo"
@@ -410,30 +416,155 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
               </select>
               <span class="rich-text__separator"></span>
 
-              <button type="button" class="rich-text__button" data-command="bold" aria-label="Negrito" title="Negrito" @click=${() => this.exec('bold')}><b>N</b></button>
-              <button type="button" class="rich-text__button" data-command="italic" aria-label="Itálico" title="Itálico" @click=${() => this.exec('italic')}><i>I</i></button>
-              <button type="button" class="rich-text__button" data-command="underline" aria-label="Sublinhado" title="Sublinhado" @click=${() => this.exec('underline')}><u>S</u></button>
+              <button
+                type="button"
+                class="rich-text__button"
+                data-command="bold"
+                aria-label="Negrito"
+                title="Negrito"
+                @click=${() => this.exec('bold')}
+              >
+                <b>N</b>
+              </button>
+              <button
+                type="button"
+                class="rich-text__button"
+                data-command="italic"
+                aria-label="Itálico"
+                title="Itálico"
+                @click=${() => this.exec('italic')}
+              >
+                <i>I</i>
+              </button>
+              <button
+                type="button"
+                class="rich-text__button"
+                data-command="underline"
+                aria-label="Sublinhado"
+                title="Sublinhado"
+                @click=${() => this.exec('underline')}
+              >
+                <u>S</u>
+              </button>
               <span class="rich-text__separator"></span>
 
-              <button type="button" class="rich-text__button" data-command="justifyLeft" aria-label="Alinhar à esquerda" title="Esquerda" @click=${() => this.exec('justifyLeft')}>
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 4h11M2.5 8h7M2.5 12h9"></path></svg>
+              <button
+                type="button"
+                class="rich-text__button"
+                data-command="justifyLeft"
+                aria-label="Alinhar à esquerda"
+                title="Esquerda"
+                @click=${() => this.exec('justifyLeft')}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M2.5 4h11M2.5 8h7M2.5 12h9"></path>
+                </svg>
               </button>
-              <button type="button" class="rich-text__button" data-command="justifyCenter" aria-label="Centralizar" title="Centro" @click=${() => this.exec('justifyCenter')}>
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 4h11M4.5 8h7M3.5 12h9"></path></svg>
+              <button
+                type="button"
+                class="rich-text__button"
+                data-command="justifyCenter"
+                aria-label="Centralizar"
+                title="Centro"
+                @click=${() => this.exec('justifyCenter')}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M2.5 4h11M4.5 8h7M3.5 12h9"></path>
+                </svg>
               </button>
-              <button type="button" class="rich-text__button" data-command="justifyRight" aria-label="Alinhar à direita" title="Direita" @click=${() => this.exec('justifyRight')}>
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 4h11M6.5 8h7M4.5 12h9"></path></svg>
+              <button
+                type="button"
+                class="rich-text__button"
+                data-command="justifyRight"
+                aria-label="Alinhar à direita"
+                title="Direita"
+                @click=${() => this.exec('justifyRight')}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M2.5 4h11M6.5 8h7M4.5 12h9"></path>
+                </svg>
               </button>
               <span class="rich-text__separator"></span>
 
-              <button type="button" class="rich-text__button" data-command="insertUnorderedList" aria-label="Lista com marcadores" title="Marcadores" @click=${() => this.exec('insertUnorderedList')}>
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="3" cy="4" r="1" fill="currentColor" stroke="none"></circle><circle cx="3" cy="8" r="1" fill="currentColor" stroke="none"></circle><circle cx="3" cy="12" r="1" fill="currentColor" stroke="none"></circle><path d="M6.5 4h7.5M6.5 8h7.5M6.5 12h7.5"></path></svg>
+              <button
+                type="button"
+                class="rich-text__button"
+                data-command="insertUnorderedList"
+                aria-label="Lista com marcadores"
+                title="Marcadores"
+                @click=${() => this.exec('insertUnorderedList')}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                >
+                  <circle cx="3" cy="4" r="1" fill="currentColor" stroke="none"></circle>
+                  <circle cx="3" cy="8" r="1" fill="currentColor" stroke="none"></circle>
+                  <circle cx="3" cy="12" r="1" fill="currentColor" stroke="none"></circle>
+                  <path d="M6.5 4h7.5M6.5 8h7.5M6.5 12h7.5"></path>
+                </svg>
               </button>
-              <button type="button" class="rich-text__button" data-command="insertOrderedList" aria-label="Lista numerada" title="Numerada" @click=${() => this.exec('insertOrderedList')}><b style="font-size:11px">1.</b></button>
+              <button
+                type="button"
+                class="rich-text__button"
+                data-command="insertOrderedList"
+                aria-label="Lista numerada"
+                title="Numerada"
+                @click=${() => this.exec('insertOrderedList')}
+              >
+                <b style="font-size:11px">1.</b>
+              </button>
               <span class="rich-text__separator"></span>
 
-              <button type="button" class="rich-text__button" aria-label="Inserir link" title="Link" @click=${this.insertLink}>
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M6.5 9.5l3-3M7.2 4.6l.9-.9a2.4 2.4 0 013.4 3.4l-.9.9M8.8 11.4l-.9.9a2.4 2.4 0 01-3.4-3.4l.9-.9"></path></svg>
+              <button
+                type="button"
+                class="rich-text__button"
+                aria-label="Inserir link"
+                title="Link"
+                @click=${this.insertLink}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M6.5 9.5l3-3M7.2 4.6l.9-.9a2.4 2.4 0 013.4 3.4l-.9.9M8.8 11.4l-.9.9a2.4 2.4 0 01-3.4-3.4l.9-.9"
+                  ></path>
+                </svg>
               </button>
               <span class="rich-text__color" title="Cor da fonte">
                 <label>A</label>
@@ -445,16 +576,153 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
               </span>
               <span class="rich-text__separator"></span>
 
-              <button type="button" class="rich-text__button" aria-label="Desfazer" title="Desfazer" style="font-size:16px" @click=${() => this.exec('undo')}>↶</button>
-              <button type="button" class="rich-text__button" aria-label="Refazer" title="Refazer" style="font-size:16px" @click=${() => this.exec('redo')}>↷</button>
-              <button type="button" class="rich-text__button" aria-label="Limpar formatação" title="Limpar" @click=${this.clearFormatting}>Limpar</button>
+              <button
+                type="button"
+                class="rich-text__button"
+                aria-label="Desfazer"
+                title="Desfazer"
+                style="font-size:16px"
+                @click=${() => this.exec('undo')}
+              >
+                ↶
+              </button>
+              <button
+                type="button"
+                class="rich-text__button"
+                aria-label="Refazer"
+                title="Refazer"
+                style="font-size:16px"
+                @click=${() => this.exec('redo')}
+              >
+                ↷
+              </button>
+              <button
+                type="button"
+                class="rich-text__button"
+                aria-label="Limpar formatação"
+                title="Limpar formatação"
+                @click=${this.clearFormatting}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M6 13h7"></path>
+                  <path d="M4.2 10.3l4-4a1 1 0 0 1 1.4 0l1.9 1.9a1 1 0 0 1 0 1.4L8.6 13H6z"></path>
+                </svg>
+              </button>
               <span class="rich-text__separator"></span>
 
-              <button type="button" class="rich-text__button" title="Inserir tabela" @click=${this.insertTable}>⊞ Tabela</button>
-              <button type="button" class="rich-text__button" title="Inserir linha" @click=${this.addRow}>+ Linha</button>
-              <button type="button" class="rich-text__button" title="Inserir coluna" @click=${this.addColumn}>+ Coluna</button>
-              <button type="button" class="rich-text__button" title="Excluir linha" @click=${this.deleteRow}>− Linha</button>
-              <button type="button" class="rich-text__button" title="Excluir coluna" @click=${this.deleteColumn}>− Coluna</button>
+              <button
+                type="button"
+                class="rich-text__button"
+                aria-label="Inserir tabela"
+                title="Inserir tabela"
+                @click=${this.insertTable}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                >
+                  <rect x="2.5" y="3" width="11" height="10" rx="1.2"></rect>
+                  <path d="M2.5 8h11M8 3v10"></path>
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="rich-text__button"
+                aria-label="Inserir linha"
+                title="Inserir linha"
+                @click=${this.addRow}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                >
+                  <rect x="3" y="2.5" width="10" height="6" rx="1"></rect>
+                  <path d="M3 5.5h10"></path>
+                  <path d="M8 10.2v3.4M6.3 11.9h3.4"></path>
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="rich-text__button"
+                aria-label="Inserir coluna"
+                title="Inserir coluna"
+                @click=${this.addColumn}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                >
+                  <rect x="2.5" y="3" width="6" height="10" rx="1"></rect>
+                  <path d="M5.5 3v10"></path>
+                  <path d="M11.9 6.3v3.4M10.2 8h3.4"></path>
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="rich-text__button"
+                aria-label="Excluir linha"
+                title="Excluir linha"
+                @click=${this.deleteRow}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                >
+                  <rect x="3" y="2.5" width="10" height="6" rx="1"></rect>
+                  <path d="M3 5.5h10"></path>
+                  <path d="M6.3 11.9h3.4"></path>
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="rich-text__button"
+                aria-label="Excluir coluna"
+                title="Excluir coluna"
+                @click=${this.deleteColumn}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                >
+                  <rect x="2.5" y="3" width="6" height="10" rx="1"></rect>
+                  <path d="M5.5 3v10"></path>
+                  <path d="M10.2 8h3.4"></path>
+                </svg>
+              </button>
             </div>
 
             <div
@@ -486,7 +754,12 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
           </div>
         </div>
 
-        <div part="form-control-help-text" id=${`${this.generatedId}-help-text`} class="form-control__help-text" aria-hidden=${hasHelpText ? 'false' : 'true'}>
+        <div
+          part="form-control-help-text"
+          id=${`${this.generatedId}-help-text`}
+          class="form-control__help-text"
+          aria-hidden=${hasHelpText ? 'false' : 'true'}
+        >
           <slot name="help-text">${this.helpText}</slot>
         </div>
       </div>
