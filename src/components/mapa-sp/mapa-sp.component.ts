@@ -48,6 +48,7 @@ const CORES_NOMEADAS: Record<string, string> = {
 };
 
 const PESOS_MUNI = [0.3, 0.24, 0.18, 0.14, 0.09, 0.05];
+const COR_VAZIA = 'var(--cps-color-background-solid-tertiary)';
 
 let svgCache: Promise<SVGElement> | null = null;
 function carregarSvg(): Promise<SVGElement> {
@@ -98,8 +99,11 @@ const mixArr = (a: number[], b: number[], f: number): number[] => a.map((v, i) =
 export default class CpsMapaSp extends BaseElement {
   static styles: CSSResultGroup = styles;
 
-  /** O modo de coloração: `regiao` (cor institucional), `branco` (destaca ao selecionar) ou `calor` (mapa de calor por indicador). */
-  @property({ reflect: true }) modo: 'regiao' | 'branco' | 'calor' = 'regiao';
+  /**
+   * O modo de coloração: `regiao` (cor institucional), `branco` (destaca ao selecionar),
+   * `calor` (mapa de calor por indicador) ou `cores` (cor de cada região definida pelo consumidor via `.cores`).
+   */
+  @property({ reflect: true }) modo: 'regiao' | 'branco' | 'calor' | 'cores' = 'regiao';
 
   /** A cor principal (nome — azul, vermelho, verde, laranja, roxo, ciano — ou um hex como `#c0392b`). */
   @property({ reflect: true }) cor = 'azul';
@@ -121,6 +125,13 @@ export default class CpsMapaSp extends BaseElement {
 
   /** Principais municípios por região, para a quebra "onde ocorre" (`{ 'nra1': ['Bauru', ...] }`). */
   @property({ attribute: false }) municipios: Record<string, string[]> = {};
+
+  /**
+   * Cor de cada região, definida pelo consumidor — usada no modo `cores`.
+   * `{ 'nra1': '#2a78d6', 'nra9': '#e34948', ... }`. Regiões sem cor ficam neutras.
+   * O componente não interpreta o significado das cores.
+   */
+  @property({ attribute: false }) cores: Record<string, string> = {};
 
   @state() private pronto = false;
   @state() private erro = false;
@@ -204,7 +215,7 @@ export default class CpsMapaSp extends BaseElement {
 
   protected updated(changed: Map<string, unknown>): void {
     if (!this.svg) return;
-    if (changed.has('modo') || changed.has('cor') || changed.has('indicador') || changed.has('dados') || changed.has('indicadores')) {
+    if (['modo', 'cor', 'indicador', 'dados', 'indicadores', 'cores'].some(k => changed.has(k))) {
       this.recolorir();
     }
     if (changed.has('selKey')) {
@@ -263,6 +274,9 @@ export default class CpsMapaSp extends BaseElement {
         this.heat[o.k] = { v: o.v, c };
         (this.buckets[o.k] || []).forEach(p => (p.style.fill = c));
       });
+    } else if (this.modo === 'cores') {
+      // cor de cada região definida pelo consumidor; sem cor → neutra
+      this.keys.forEach(k => (this.buckets[k] || []).forEach(p => (p.style.fill = this.cores[k] || COR_VAZIA)));
     } else if (this.modo === 'regiao') {
       this.keys.forEach(k => (this.buckets[k] || []).forEach(p => (p.style.fill = REGIOES[k]?.cor || '#ccc')));
     } else {
@@ -275,10 +289,13 @@ export default class CpsMapaSp extends BaseElement {
   private corDe(k: string): string {
     if (this.modo === 'calor') return this.heat[k]?.c || '#94a3b8';
     if (this.modo === 'branco') return this.corPrincipal();
+    if (this.modo === 'cores') return this.cores[k] || COR_VAZIA;
     return REGIOES[k]?.cor || '#ccc';
   }
   private swatchDe(k: string): string {
-    return this.modo === 'calor' && this.heat[k] ? this.heat[k].c : REGIOES[k]?.cor || '#ccc';
+    if (this.modo === 'calor' && this.heat[k]) return this.heat[k].c;
+    if (this.modo === 'cores') return this.cores[k] || COR_VAZIA;
+    return REGIOES[k]?.cor || '#ccc';
   }
   private rotulo(k: string): string {
     const r = REGIOES[k];

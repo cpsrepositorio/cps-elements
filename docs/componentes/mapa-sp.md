@@ -24,6 +24,20 @@ O atributo `modo` define o tipo de gráfico:
   selecionar. Ideal para **seletor**.
 - **`calor`** — cada região pintada por **grau de um indicador**, numa **rampa sequencial
   de matiz único** (claro → forte). Ideal para **comparação**.
+- **`cores`** — **você define a cor de cada região** (via `.cores`); o componente só pinta e
+  avisa o clique. O significado das cores, os valores e o painel ficam por conta do sistema
+  cliente. Ideal quando a lógica de cor é externa.
+
+```html preview
+<cps-mapa-sp modo="cores" selecao id="mapa-cores"></cps-mapa-sp>
+<script type="module">
+  const m = document.getElementById('mapa-cores');
+  customElements.whenDefined('cps-mapa-sp').then(() => {
+    m.cores = { nra1: '#2a78d6', nra9: '#e34948', nra10: '#1baf7a', 'nra4-5-6': '#eda100' };
+    m.addEventListener('cps-mapa-selecionar', e => console.log('clicou:', e.detail.key));
+  });
+</script>
+```
 
 ```html preview
 <cps-mapa-sp modo="branco" cor="azul" selecao mostrar="menuRegioes regiaoSelecionada"></cps-mapa-sp>
@@ -56,6 +70,8 @@ Os dados ricos são passados por **propriedade** (JavaScript), não por atributo
 - **`indicadores`** — catálogo `{ key, label, get(registro) → número, fmt(valor) → texto }`.
 - **`municipios`** *(opcional)* — principais municípios por região, para a quebra
   "onde ocorre": `{ 'nra1': ['Bauru', 'Araçatuba', ...] }`.
+- **`cores`** *(modo `cores`)* — cor de cada região definida por você:
+  `{ 'nra1': '#2a78d6', 'nra9': '#e34948', ... }`. Regiões sem cor ficam neutras.
 
 ```html
 <cps-mapa-sp
