@@ -123,6 +123,7 @@ export default class CpsMapaSp extends BaseElement {
   private buckets: Record<string, SVGElement[]> = {};
   private heat: Record<string, { v: number; c: string }> = {};
   private stops: string[] = [];
+  private reprs: SVGElement[] = [];
 
   connectedCallback(): void {
     super.connectedCallback();
@@ -143,8 +144,45 @@ export default class CpsMapaSp extends BaseElement {
     this.pronto = true;
     await this.updateComplete;
     this.mapaEl.prepend(svg);
+    this.aplicarA11y();
     this.registrarEventos();
     this.recolorir();
+  }
+
+  /** Torna uma path representativa de cada região focável e rotulada (navegação por teclado). */
+  private aplicarA11y(): void {
+    if (!this.svg) return;
+    this.svg.setAttribute('role', 'group');
+    this.svg.setAttribute('aria-label', 'Mapa das Regionais de Administração do CPS');
+    this.reprs = [];
+    for (const k of this.keys) {
+      const paths = this.buckets[k] || [];
+      let best = paths[0];
+      let area = -1;
+      for (const p of paths) {
+        try {
+          const bb = (p as SVGGraphicsElement).getBBox();
+          const a = bb.width * bb.height;
+          if (a > area) {
+            area = a;
+            best = p;
+          }
+        } catch {
+          /* getBBox pode falhar em nós ocultos; ignora */
+        }
+      }
+      if (!best) continue;
+      best.classList.add('repr');
+      best.setAttribute('tabindex', '0');
+      best.setAttribute('role', 'button');
+      best.setAttribute('aria-label', this.rotulo(k));
+      this.reprs.push(best);
+    }
+  }
+
+  private focarRepr(i: number): void {
+    const n = (i + this.reprs.length) % this.reprs.length;
+    this.reprs[n]?.focus();
   }
 
   protected updated(changed: Map<string, unknown>): void {
@@ -250,6 +288,38 @@ export default class CpsMapaSp extends BaseElement {
         if (p) this.selecionar(p.getAttribute('data-nra')!);
       });
     }
+    // teclado: foco realça a região; Enter/Espaço seleciona; setas navegam entre regiões
+    el.addEventListener('focusin', e => {
+      const t = e.target as SVGElement;
+      if (!t.classList?.contains('repr')) return;
+      const k = t.getAttribute('data-nra')!;
+      this.hoverOn(k);
+      const r = t.getBoundingClientRect();
+      this.tipEl.style.left = `${r.left + r.width / 2}px`;
+      this.tipEl.style.top = `${r.top}px`;
+    });
+    el.addEventListener('focusout', () => this.hoverOff());
+    el.addEventListener('keydown', e => {
+      const t = e.target as SVGElement;
+      if (!t.classList?.contains('repr')) return;
+      const i = this.reprs.indexOf(t);
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (this.selecao) this.selecionar(t.getAttribute('data-nra')!);
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        this.focarRepr(i + 1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        this.focarRepr(i - 1);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        this.focarRepr(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        this.focarRepr(this.reprs.length - 1);
+      }
+    });
   }
   private hoverOn(k: string): void {
     if (!this.svg) return;
@@ -272,6 +342,8 @@ export default class CpsMapaSp extends BaseElement {
   selecionar(k: string): void {
     if (!this.selecao) return;
     this.selKey = k;
+    const live = this.renderRoot?.querySelector('.sr');
+    if (live) live.textContent = `${this.rotulo(k)} selecionada`;
     const ind = this.indAtivo;
     this.dispatchEvent(
       new CustomEvent('cps-mapa-selecionar', {
@@ -288,6 +360,18 @@ export default class CpsMapaSp extends BaseElement {
   /** Troca o indicador ativo do mapa de calor. */
   setIndicador(k: string): void {
     this.indicador = k;
+  }
+  private teclaSelecao(e: KeyboardEvent, k: string): void {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      this.selecionar(k);
+    }
+  }
+  private teclaIndicador(e: KeyboardEvent, k: string): void {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      this.setIndicador(k);
+    }
   }
   /** Metadados das regiões disponíveis. */
   get regioes(): Record<string, RegiaoMeta> {
@@ -316,9 +400,14 @@ export default class CpsMapaSp extends BaseElement {
             k => html`
               <div
                 class="mrow ${this.selKey === k ? 'on' : ''}"
+                role="button"
+                tabindex="0"
+                aria-pressed=${this.selKey === k}
+                aria-label=${this.rotulo(k)}
                 @mouseenter=${() => this.hoverOn(k)}
                 @mouseleave=${() => this.hoverOff()}
                 @click=${() => this.selecionar(k)}
+                @keydown=${(e: KeyboardEvent) => this.teclaSelecao(e, k)}
               >
                 <span class="sw" style="background:${this.swatchDe(k)}"></span>
                 <span class="nm"><b>${REGIOES[k]?.tag}</b> <small>${REGIOES[k]?.nome}</small></span>
@@ -386,7 +475,14 @@ export default class CpsMapaSp extends BaseElement {
         <h4 style="margin-top:14px">Indicadores da região</h4>
         <div class="menu">
           ${this.indicadores.map(
-            m => html`<div class="mrow ${m.key === ind?.key ? 'on' : ''}" @click=${() => this.setIndicador(m.key)}>
+            m => html`<div
+              class="mrow ${m.key === ind?.key ? 'on' : ''}"
+              role="button"
+              tabindex="0"
+              aria-pressed=${m.key === ind?.key}
+              @click=${() => this.setIndicador(m.key)}
+              @keydown=${(e: KeyboardEvent) => this.teclaIndicador(e, m.key)}
+            >
               <span class="nm">${m.label}</span><span class="vv">${m.fmt(m.get(d))}</span>
             </div>`
           )}
@@ -428,6 +524,7 @@ export default class CpsMapaSp extends BaseElement {
         ${temSide && this.pronto ? this.renderSide() : nothing}
       </div>
       <div class="tip"><span class="sw"></span><span class="tx"></span></div>
+      <div class="sr" aria-live="polite"></div>
     `;
   }
 }

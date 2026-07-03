@@ -36,16 +36,39 @@ export default css`
     cursor: pointer;
   }
   .mapa svg path.hot {
-    stroke: #1b1918;
+    stroke: var(--cps-color-text-primary);
     stroke-width: 1.1px;
     stroke-linejoin: round;
   }
   .mapa svg path.sel {
-    stroke: #1b1918;
+    stroke: var(--cps-color-text-primary);
     stroke-width: 1.7px;
   }
   .mapa svg path.nra-sede {
     stroke: none;
+  }
+  /* foco por teclado nas regiões (uma path representativa por região é focável) */
+  .mapa svg path.repr {
+    cursor: pointer;
+  }
+  .mapa svg path.repr:focus {
+    outline: none;
+  }
+  .mapa svg path.repr:focus-visible {
+    outline: solid 2px var(--cps-color-text-primary);
+    outline-offset: 1px;
+  }
+  /* leitor de tela: anúncio da região selecionada */
+  .sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
   }
   /* modo branco: regiões brancas; destaque na cor principal */
   :host([modo='branco']) .mapa svg path.nra-reg {
@@ -106,6 +129,10 @@ export default css`
   .mrow:hover,
   .mrow.on {
     background: var(--cps-color-fill-subtle-secondary);
+  }
+  .mrow:focus-visible {
+    outline: solid 2px var(--cps-color-text-primary);
+    outline-offset: -2px;
   }
   .mrow .sw {
     width: 15px;
