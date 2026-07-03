@@ -25,6 +25,7 @@ export { CpsInput } from './components/input.js';
 export { CpsLabel } from './components/label.js';
 export { CpsLink } from './components/link.js';
 export { CpsLogo } from './components/logo.js';
+export { CpsMapaSp } from './components/mapa-sp.js';
 export { CpsMenu } from './components/menu.js';
 export { CpsMenuItem } from './components/menu-item.js';
 export { CpsMenuLabel } from './components/menu-label.js';
