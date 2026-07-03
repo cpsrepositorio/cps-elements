@@ -39,6 +39,7 @@
   - [Link](/componentes/link)
   - [List View <small>(em breve)</small>](/componentes/list-view)
   - [Logo](/componentes/logo)
+  - [Mapa SP](/componentes/mapa-sp)
   - [Menu](/componentes/menu)
   - [Menu Item](/componentes/menu-item)
   - [Menu Label](/componentes/menu-label)

@@ -36,6 +36,9 @@ fs.mkdirSync(outdir, { recursive: true });
     execSync(`node scripts/make-web-types.js --outdir "${outdir}"`, { stdio: 'inherit' });
     execSync(`node scripts/make-themes.js --outdir "${outdir}"`, { stdio: 'inherit' });
     execSync(`node scripts/make-icons.js --outdir "${outdir}"`, { stdio: 'inherit' });
+    // Copy the São Paulo map asset consumed by <cps-mapa-sp> (fetched at runtime via getBasePath('assets/mapa-sp.svg'))
+    fs.mkdirSync(path.join(outdir, 'assets'), { recursive: true });
+    fs.copyFileSync('./src/components/mapa-sp/mapa-sp.svg', path.join(outdir, 'assets/mapa-sp.svg'));
     if (types) {
       console.log('Running the TypeScript compiler...');
       execSync(`tsc --project ./tsconfig.prod.json --outdir "${outdir}"`, { stdio: 'inherit' });
