@@ -109,4 +109,15 @@ por isso são tratadas juntas):
 | `limpar()` | Limpa a seleção, voltando ao resumo. |
 | `setIndicador(key)` | Troca o indicador ativo do mapa de calor. |
 
+## Acessibilidade
+
+- Cada região tem uma **área focável** (`role="button"`, `aria-label` com o nome do núcleo);
+  o SVG é um `role="group"` rotulado.
+- **Teclado:** `Tab` chega às regiões; `→ ↓ / ← ↑` navegam entre elas; `Home`/`End` vão à
+  primeira/última; `Enter`/`Espaço` seleciona. O menu de regiões e os indicadores também
+  são operáveis por teclado (`role="button"`, `aria-pressed`).
+- **Leitor de tela:** a seleção é anunciada por uma região `aria-live="polite"`.
+- **Identidade nunca só por cor:** o nome e o valor aparecem sempre no menu e no tooltip —
+  a cor é reforço, não o único canal.
+
 [component-metadata:cps-mapa-sp]
