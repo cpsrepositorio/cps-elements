@@ -53,10 +53,19 @@ let svgCache: Promise<SVGElement> | null = null;
 function carregarSvg(): Promise<SVGElement> {
   if (!svgCache) {
     svgCache = fetch(getBasePath('assets/mapa-sp.svg'))
-      .then(r => r.text())
+      .then(r => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.text();
+      })
       .then(t => {
-        const doc = new DOMParser().parseFromString(t, 'image/svg+xml');
-        return doc.querySelector('svg') as SVGElement;
+        const svg = new DOMParser().parseFromString(t, 'image/svg+xml').querySelector('svg');
+        if (!svg) throw new Error('SVG do mapa inválido');
+        return svg;
+      })
+      .catch(err => {
+        // Não cacheia a falha: permite nova tentativa (ex.: base path definido tardiamente).
+        svgCache = null;
+        throw err;
       });
   }
   return svgCache;
@@ -114,6 +123,7 @@ export default class CpsMapaSp extends BaseElement {
   @property({ attribute: false }) municipios: Record<string, string[]> = {};
 
   @state() private pronto = false;
+  @state() private erro = false;
   @state() private selKey: string | null = null;
 
   @query('.mapa') private mapaEl!: HTMLElement;
@@ -125,13 +135,20 @@ export default class CpsMapaSp extends BaseElement {
   private stops: string[] = [];
   private reprs: SVGElement[] = [];
 
-  connectedCallback(): void {
-    super.connectedCallback();
-    void this.carregar();
+  protected firstUpdated(): void {
+    // Só busca o SVG após o primeiro render — assim o `setBasePath` do consumidor
+    // (chamado logo após importar o all.js) já rodou e o asset resolve na URL certa.
+    if (!this.svg) void this.carregar();
   }
 
   private async carregar(): Promise<void> {
-    const base = await carregarSvg();
+    let base: SVGElement;
+    try {
+      base = await carregarSvg();
+    } catch {
+      this.erro = true;
+      return;
+    }
     const svg = base.cloneNode(true) as SVGElement;
     svg.removeAttribute('width');
     svg.removeAttribute('height');
@@ -520,7 +537,9 @@ export default class CpsMapaSp extends BaseElement {
     const temSide = f.has('menuRegioes') || f.has('regiaoSelecionada') || f.has('kpiTotais') || f.has('kpiRegiao') || f.has('escala');
     return html`
       <div class="wrap ${temSide ? 'has-side' : ''}" part="base">
-        <div class="mapa" part="mapa">${this.pronto ? nothing : html`<div class="carregando">Carregando mapa…</div>`}</div>
+        <div class="mapa" part="mapa">
+          ${this.pronto ? nothing : this.erro ? html`<div class="carregando">Não foi possível carregar o mapa. Verifique o <code>setBasePath()</code>.</div>` : html`<div class="carregando">Carregando mapa…</div>`}
+        </div>
         ${temSide && this.pronto ? this.renderSide() : nothing}
       </div>
       <div class="tip"><span class="sw"></span><span class="tx"></span></div>
