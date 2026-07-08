@@ -15,7 +15,13 @@ export default css`
     --track-color: var(--border-color);
     --track-width: 1px;
 
+    /*
+     * Preenche a largura do container por padrão — inclusive quando o grupo é um
+     * flex item em linha (onde, sem width, ele encolheria para a largura do painel
+     * ativo e a nav mudaria conforme o painel). Sobrescrevível pelo consumidor.
+     */
     display: block;
+    width: 100%;
     isolation: isolate;
   }
 

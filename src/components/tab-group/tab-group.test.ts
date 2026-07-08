@@ -446,4 +446,34 @@ describe('<cps-tab-group>', () => {
       });
     });
   });
+
+  describe('full width and exposed parts', () => {
+    it('fills the container width even inside a row flex parent', async () => {
+      const wrapper = await fixture<HTMLElement>(html`
+        <div style="display: flex; width: 600px;">
+          <cps-tab-group>
+            <cps-tab-item slot="nav" panel="a">A</cps-tab-item>
+            <cps-tab-item slot="nav" panel="b">B</cps-tab-item>
+            <cps-tab-panel name="a">curto</cps-tab-panel>
+            <cps-tab-panel name="b">painel B mais largo</cps-tab-panel>
+          </cps-tab-group>
+        </div>
+      `);
+      const tabGroup = wrapper.querySelector<CpsTabGroup>('cps-tab-group')!;
+      await elementUpdated(tabGroup);
+      expect(tabGroup.getBoundingClientRect().width).to.be.closeTo(wrapper.getBoundingClientRect().width, 2);
+    });
+
+    it('exposes base, nav and body parts for external styling', async () => {
+      const tabGroup = await fixture<CpsTabGroup>(html`
+        <cps-tab-group>
+          <cps-tab-item slot="nav" panel="a">A</cps-tab-item>
+          <cps-tab-panel name="a">A</cps-tab-panel>
+        </cps-tab-group>
+      `);
+      expect(tabGroup.shadowRoot!.querySelector('[part~="base"]')).to.exist;
+      expect(tabGroup.shadowRoot!.querySelector('[part~="nav"]')).to.exist;
+      expect(tabGroup.shadowRoot!.querySelector('[part~="body"]')).to.exist;
+    });
+  });
 });
