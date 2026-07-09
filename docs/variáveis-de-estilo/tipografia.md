@@ -53,6 +53,11 @@ Prefira as classes utilitárias — assim o HTML fica declarativo e livre de pix
 <span class="cps-text-caption">Rótulo auxiliar</span>
 ```
 
+!> Os tokens `--cps-text-*` **já incluem a família tipográfica**. Ao usar o token via `font`, **não**
+acrescente `var(--cps-font-family-sans)` depois: `font: var(--cps-text-body) var(--cps-font-family-sans)`
+gera um _shorthand_ com **duas** listas de família (inválido) e o texto **volta para 16px**. Use
+`font: var(--cps-text-body)` (sem família extra) ou, de preferência, a classe `.cps-text-body`.
+
 ### Ajuste de peso
 
 Para variar a ênfase de um degrau sem trocar o tamanho, combine com uma das classes de peso:
