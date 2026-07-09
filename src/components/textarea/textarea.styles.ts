@@ -168,7 +168,7 @@ export default css`
    */
 
   .textarea--small {
-    font: var(--cps-font-label);
+    font: var(--cps-text-caption);
   }
 
   .textarea--small .textarea__control {
@@ -177,7 +177,7 @@ export default css`
   }
 
   .textarea--medium {
-    font: var(--cps-font-body);
+    font: var(--cps-text-body);
   }
 
   .textarea--medium .textarea__control {
@@ -186,7 +186,9 @@ export default css`
   }
 
   .textarea--large {
-    font: var(--cps-font-body-large);
+    /* 16px na escala (subtitle), preservando o peso normal do controle */
+    font: var(--cps-text-subtitle);
+    font-weight: var(--cps-font-weight-normal);
   }
 
   .textarea--large .textarea__control {

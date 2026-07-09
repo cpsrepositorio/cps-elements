@@ -213,7 +213,7 @@ export default css`
 
   .input--small {
     height: var(--cps-input-height-small);
-    font: var(--cps-font-label);
+    font: var(--cps-text-caption);
   }
 
   .input--small .input__control {
@@ -236,7 +236,7 @@ export default css`
 
   .input--medium {
     height: var(--cps-input-height-medium);
-    font: var(--cps-font-body);
+    font: var(--cps-text-body);
   }
 
   .input--medium .input__control {
@@ -259,7 +259,9 @@ export default css`
 
   .input--large {
     height: var(--cps-input-height-large);
-    font: var(--cps-font-body-large);
+    /* 16px na escala (subtitle), preservando o peso normal do controle */
+    font: var(--cps-text-subtitle);
+    font-weight: var(--cps-font-weight-normal);
   }
 
   .input--large .input__control {

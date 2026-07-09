@@ -32,7 +32,7 @@ export default css`
     text-decoration: none;
     white-space: nowrap;
     color: var(--cps-color-text-secondary);
-    font: var(--cps-font-body);
+    font: var(--cps-text-body);
     user-select: none;
   }
 
