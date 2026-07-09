@@ -63,11 +63,11 @@ export default css`
   }
 
   .chip--medium {
-    font: var(--cps-font-label);
+    font: var(--cps-text-caption);
   }
 
   .chip--large {
-    font: var(--cps-font-body);
+    font: var(--cps-text-body);
   }
 
   /*

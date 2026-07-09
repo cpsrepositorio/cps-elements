@@ -232,7 +232,7 @@ export default css`
   /* Sizes */
   .select--small .select__field {
     min-height: var(--cps-input-height-small);
-    font: var(--cps-font-label);
+    font: var(--cps-text-caption);
   }
 
   .select--small .select__field .select__display-input {
@@ -258,7 +258,7 @@ export default css`
 
   .select--medium .select__field {
     min-height: var(--cps-input-height-medium);
-    font: var(--cps-font-body);
+    font: var(--cps-text-body);
   }
 
   .select--medium .select__field .select__display-input {
@@ -284,7 +284,9 @@ export default css`
 
   .select--large .select__field {
     min-height: var(--cps-input-height-large);
-    font: var(--cps-font-body-large);
+    /* 16px na escala (subtitle), preservando o peso normal do controle */
+    font: var(--cps-text-subtitle);
+    font-weight: var(--cps-font-weight-normal);
   }
 
   .select--large .select__field .select__display-input {
@@ -378,7 +380,7 @@ export default css`
     max-width: var(--auto-size-available-width);
     max-height: var(--auto-size-available-height);
     overflow: auto;
-    font: var(--cps-font-body);
+    font: var(--cps-text-body);
     overscroll-behavior: none;
   }
 

@@ -19,7 +19,7 @@ cps-table-view table {
   width: 100%;
   border-collapse: collapse;
   color: var(--cps-color-text-primary);
-  font: var(--cps-font-body);
+  font: var(--cps-text-body);
 }
 cps-table-view :where(th, td) {
   padding: var(--cps-spacing-3) var(--cps-spacing-4);
@@ -29,7 +29,10 @@ cps-table-view :where(th, td) {
 }
 cps-table-view thead th {
   background: var(--cps-table-header-background, var(--cps-app-header, var(--cps-color-background-solid-secondary)));
-  font: var(--cps-font-body-strong);
+  /* Cabeçalho na escala: body (14) + peso semibold, sentence-case, cor primária.
+     Replicável no consumidor com class="cps-text-body cps-text-semibold". */
+  font: var(--cps-text-body);
+  font-weight: var(--cps-font-weight-semibold);
   white-space: nowrap;
 }
 cps-table-view[density='compact'] :where(th, td) {

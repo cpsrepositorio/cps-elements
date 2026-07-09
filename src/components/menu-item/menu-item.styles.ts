@@ -23,7 +23,7 @@ export default css`
     letter-spacing: var(--cps-tracking-normal);
     white-space: nowrap;
     color: var(--cps-color-text-primary);
-    font: var(--cps-font-body);
+    font: var(--cps-text-body);
     will-change: background-color, color;
     user-select: none;
   }
@@ -41,7 +41,9 @@ export default css`
   /* Item atual (aria-current="page"): página/seção em exibição. */
   .menu-item.menu-item--current {
     color: var(--cps-color-text-accent-primary);
-    font: var(--cps-font-body-strong);
+    /* 14px na escala + peso semibold (equivalente ao antigo body-strong, −1px) */
+    font: var(--cps-text-body);
+    font-weight: var(--cps-font-weight-semibold);
   }
 
   .menu-item.menu-item--current .menu-item__prefix {

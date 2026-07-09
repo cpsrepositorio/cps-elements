@@ -48,7 +48,7 @@ export default css`
     padding: var(--cps-spacing-10) var(--cps-spacing-6);
     text-align: center;
     color: var(--cps-color-text-secondary);
-    font: var(--cps-font-body);
+    font: var(--cps-text-body);
   }
 
   /* Camada de carregando sobre a tabela */

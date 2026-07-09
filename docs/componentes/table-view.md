@@ -332,6 +332,23 @@ O atributo `loading` exibe uma camada com _spinner_ sobre a tabela.
 </cps-table-view>
 ```
 
+## Tipografia
+
+O texto da tabela usa a [escala tipográfica](/variáveis-de-estilo/tipografia) — assim uma
+composição customizada em `<div>` bate 1:1 com a tabela nativa. Replique com estes tokens/classes:
+
+| Elemento         | Degrau da escala               | Peso            | Caixa    | Cor            | Classe equivalente                   |
+| ---------------- | ------------------------------ | --------------- | -------- | -------------- | ------------------------------------ |
+| Cabeçalho (`th`) | `--cps-text-body` (14/20)      | semibold (600)  | sentença | `text-primary` | `.cps-text-body .cps-text-semibold`  |
+| Célula (`td`)    | `--cps-text-body` (14/20)      | normal (400)    | —        | `text-primary` | `.cps-text-body`                     |
+
+O fundo do cabeçalho continua controlado por `--cps-table-header-background`, e densidade, zebra,
+_hover_ e cabeçalho/coluna fixos permanecem inalterados.
+
+?> Se preferir um cabeçalho no estilo _rótulo de coluna_ (menor, em caixa alta), aplique você mesmo
+no `th`: `text-transform: uppercase`, `--cps-text-caption` e `color: var(--cps-color-text-tertiary)`.
+O padrão do componente é o discreto acima (mesmo tamanho da célula, diferenciado só pelo peso).
+
 ## Acessibilidade
 
 - A semântica nativa da tabela é preservada — use `<th scope="col">` (e `scope="row"` na
