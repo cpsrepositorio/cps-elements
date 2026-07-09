@@ -9,6 +9,64 @@
   overflow: hidden !important;
 }
 
+/*
+ * Escala tipográfica — aplique um destes em qualquer elemento do light DOM em vez de
+ * cravar font-size/font-weight em px. Cada classe embala peso + tamanho + entrelinha + família.
+ * `.cps-text-body` (14px) é o padrão. Combine com as classes de peso abaixo para variar a ênfase.
+ */
+.cps-text-micro {
+  font: var(--cps-text-micro);
+}
+
+.cps-text-caption {
+  font: var(--cps-text-caption);
+}
+
+.cps-text-label {
+  font: var(--cps-text-label);
+}
+
+.cps-text-body {
+  font: var(--cps-text-body);
+}
+
+.cps-text-subtitle {
+  font: var(--cps-text-subtitle);
+}
+
+.cps-text-subtitle-lg {
+  font: var(--cps-text-subtitle-lg);
+}
+
+.cps-text-title {
+  font: var(--cps-text-title);
+}
+
+.cps-text-display {
+  font: var(--cps-text-display);
+}
+
+.cps-text-display-lg {
+  font: var(--cps-text-display-lg);
+}
+
+/* Ajuste de peso — aplique junto de um degrau acima quando precisar de mais/menos ênfase. */
+.cps-text-regular {
+  font-weight: var(--cps-font-weight-normal);
+}
+
+.cps-text-medium {
+  font-weight: var(--cps-font-weight-medium);
+}
+
+.cps-text-semibold {
+  font-weight: var(--cps-font-weight-semibold);
+}
+
+.cps-text-bold {
+  font-weight: var(--cps-font-weight-bold);
+}
+
 .cps-toast-stack {
   position: fixed;
   top: 0;

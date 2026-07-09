@@ -254,6 +254,7 @@
 
   /* Font weights */
   --cps-font-weight-normal: 400;
+  --cps-font-weight-medium: 500;
   --cps-font-weight-semibold: 600;
   --cps-font-weight-bold: 700;
 
@@ -296,6 +297,22 @@
     var(--cps-font-family-sans);
   --cps-font-display: var(--cps-font-weight-bold) var(--cps-font-size-7xl) / var(--cps-font-size-8xl)
     var(--cps-font-family-sans);
+
+  /*
+   * Escala tipográfica semântica — para uso direto nas telas em vez de cravar
+   * font-size/font-weight em px. Cada degrau embala peso + tamanho/entrelinha + família;
+   * aplique com `font: var(--cps-text-body)` ou pelas utility classes .cps-text-* (light DOM).
+   * `body` (14px) é o padrão. Pesos disponíveis: normal(400)/medium(500)/semibold(600)/bold(700).
+   */
+  --cps-text-micro: var(--cps-font-weight-normal) 0.6875rem / 1rem var(--cps-font-family-sans); /* 11 / 16 */
+  --cps-text-caption: var(--cps-font-weight-normal) 0.75rem / 1rem var(--cps-font-family-sans); /* 12 / 16 */
+  --cps-text-label: var(--cps-font-weight-normal) 0.8125rem / 1.125rem var(--cps-font-family-sans); /* 13 / 18 */
+  --cps-text-body: var(--cps-font-weight-normal) 0.875rem / 1.25rem var(--cps-font-family-sans); /* 14 / 20 — padrão */
+  --cps-text-subtitle: var(--cps-font-weight-semibold) 1rem / 1.375rem var(--cps-font-family-sans); /* 16 / 22 */
+  --cps-text-subtitle-lg: var(--cps-font-weight-semibold) 1.125rem / 1.5rem var(--cps-font-family-sans); /* 18 / 24 */
+  --cps-text-title: var(--cps-font-weight-bold) 1.25rem / 1.625rem var(--cps-font-family-sans); /* 20 / 26 */
+  --cps-text-display: var(--cps-font-weight-bold) 1.5rem / 1.875rem var(--cps-font-family-sans); /* 24 / 30 */
+  --cps-text-display-lg: var(--cps-font-weight-bold) 1.875rem / 2.375rem var(--cps-font-family-sans); /* 30 / 38 */
 
   /*
    * Spacings/Dimensions
