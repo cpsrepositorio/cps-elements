@@ -1,0 +1,23 @@
+/*
+ * Paleta de acento "Vermelho" — cor de sistema do CPS (o vermelho #b20000
+ * predominante nos sistemas legados; vira a cor da topbar via app-shell).
+ * Uso: incluir APOS themes/light.css (ou dark.css). Redefine a rampa de
+ * acento; todos os componentes e o app-shell recolorem automaticamente.
+ *
+ *   <link rel="stylesheet" href=".../themes/light.css">
+ *   <link rel="stylesheet" href=".../themes/accent-vermelho.css">
+ */
+:root,
+:host {
+  --cps-palette-accent-50: #FDEBEB;
+  --cps-palette-accent-100: #FAD0D0;
+  --cps-palette-accent-200: #F2A3A3;
+  --cps-palette-accent-300: #E97373;
+  --cps-palette-accent-400: #DD4B4B;
+  --cps-palette-accent-500: #CF2A2A;
+  --cps-palette-accent-600: #C41818;
+  --cps-palette-accent-700: #BC0C0C;
+  --cps-palette-accent-800: #B70505;
+  --cps-palette-accent-900: #B20000;
+  --cps-palette-accent-950: #7C0000;
+}
