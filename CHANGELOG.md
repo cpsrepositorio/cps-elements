@@ -6,6 +6,8 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+## 1.8.4 - 2026-08-06
+
 ## 1.8.3 - 2026-07-09
 
 ## 1.8.2 - 2026-07-09
