@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logos — cps-logo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web@1/themes/light.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@cgtic-cps/web@1/autoloader.js"></script>
+  <style>
+    body { font-family: var(--cps-font-family-sans); color: var(--cps-color-text-primary); padding: 24px; max-width: 1000px; margin: 0 auto; }
+    h1 { font: var(--cps-font-title); }
+    p.lead { color: var(--cps-color-text-secondary); }
+    table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+    th, td { border: 1px solid var(--cps-color-stroke-secondary); padding: 16px; text-align: center; vertical-align: middle; }
+    th { background: var(--cps-color-background-solid-secondary); font-size: 13px; }
+    td.name { text-align: left; font-weight: 600; font-size: 13px; white-space: nowrap; background: var(--cps-color-background-solid-tertiary); }
+    .dark { background: #1f2a37; }       /* tile escuro para o inverted */
+    cps-logo { font-size: 52px; }
+    code { font-family: var(--cps-font-family-mono); font-size: 11px; }
+  </style>
+</head>
+<body>
+  <h1>Logotipos do CPS Elements (<code>&lt;cps-logo&gt;</code>)</h1>
+  <p class="lead">7 tipos × 3 variantes. A 3ª coluna (monocromático invertido) é mostrada sobre fundo escuro.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>type</th>
+        <th>default</th>
+        <th>monochromatic</th>
+        <th>monochromatic-inverted<br /><small>(fundo escuro)</small></th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <script>
+    const types = ['cps', 'cps-asscom', 'cps-cgtic', 'cps-sucar', 'elements', 'sp-horizontal', 'sp-vertical'];
+    document.getElementById('rows').innerHTML = types.map(t => `
+      <tr>
+        <td class="name"><code>${t}</code></td>
+        <td><cps-logo type="${t}" variant="default"></cps-logo></td>
+        <td><cps-logo type="${t}" variant="monochromatic"></cps-logo></td>
+        <td class="dark"><cps-logo type="${t}" variant="monochromatic-inverted"></cps-logo></td>
+      </tr>
+    `).join('');
+  </script>
+</body>
+</html>

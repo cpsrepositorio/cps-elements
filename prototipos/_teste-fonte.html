@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Teste de fonte — cps-rich-text</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cgtic-cps/web@1/themes/light.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@cgtic-cps/web@1/autoloader.js"></script>
+  <style>
+    body { font-family: var(--cps-font-family-sans); padding: 24px; max-width: 760px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <p><b>Referência (fora do editor):</b> Esta linha usa a fonte do sistema (Roboto Flex).</p>
+
+  <h3>A) Editor com valor SIMPLES (sem fonte embutida):</h3>
+  <cps-rich-text label="Teste A" value="<p>Com o SAL, a coordenacao informal da lugar a uma plataforma unica.</p><ul><li>Agendamento</li><li>Laboratorios</li></ul>"></cps-rich-text>
+
+  <h3 style="margin-top:24px">B) Editor VAZIO — digite algo aqui:</h3>
+  <cps-rich-text label="Teste B" placeholder="Digite um texto..."></cps-rich-text>
+</body>
+</html>
