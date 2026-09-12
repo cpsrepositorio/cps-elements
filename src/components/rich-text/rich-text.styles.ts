@@ -2,7 +2,8 @@ import { css } from 'lit';
 import componentStyles from '../../styles/component.styles.js';
 import formControlStyles from '../../styles/form-control.styles';
 
-export default css`  ${css`
+export default css`
+  ${css`
     ${componentStyles}
     ${formControlStyles}
   `}
@@ -121,6 +122,80 @@ export default css`  ${css`
     color: var(--cps-color-text-primary);
     font-family: inherit;
     font-size: var(--cps-font-size-sm);
+  }
+
+  .rich-text__button--accent {
+    border-color: transparent;
+    background-color: var(--cps-color-fill-accent-primary);
+    color: var(--cps-color-text-inverted-primary);
+  }
+
+  .rich-text__button--accent:hover {
+    background-color: var(--cps-color-fill-accent-secondary, var(--cps-color-fill-accent-primary));
+  }
+
+  /* Painel do link — ocupa uma faixa entre a barra e o conteúdo em vez de flutuar:
+     o contêiner tem overflow:hidden (por causa do raio de borda) e cortaria um popover. */
+  .rich-text__linkbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--cps-spacing-2);
+    align-items: flex-end;
+    border-bottom: solid var(--cps-input-border-width) var(--cps-color-stroke-separator);
+    background-color: var(--cps-color-background-solid-secondary);
+    padding: var(--cps-spacing-2) var(--cps-spacing-1-5);
+  }
+
+  .rich-text__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cps-spacing-0-5);
+    min-width: 0;
+  }
+
+  .rich-text__field--grow {
+    flex: 1 1 12rem;
+  }
+
+  .rich-text__field span {
+    color: var(--cps-color-text-secondary);
+    font-size: var(--cps-font-size-xs);
+  }
+
+  .rich-text__field input,
+  .rich-text__field select {
+    border: solid var(--cps-input-border-width) var(--cps-input-border-color);
+    border-radius: var(--cps-border-radius-medium);
+    background-color: var(--cps-input-background);
+    padding: 0 var(--cps-spacing-1-5);
+    width: 100%;
+    height: 1.875rem;
+    color: var(--cps-color-text-primary);
+    font-family: inherit;
+    font-size: var(--cps-font-size-sm);
+  }
+
+  .rich-text__field input:focus-visible,
+  .rich-text__field select:focus-visible {
+    outline: var(--cps-focus-ring);
+    outline-offset: var(--cps-focus-ring-offset);
+  }
+
+  .rich-text__link-actions {
+    display: flex;
+    gap: var(--cps-spacing-1);
+    align-items: center;
+  }
+
+  /* Botões de texto numa linha de ação precisam de borda, senão leem como link */
+  .rich-text__link-actions .rich-text__button:not(.rich-text__button--accent) {
+    border-color: var(--cps-input-border-color);
+  }
+
+  .rich-text__link-error {
+    flex-basis: 100%;
+    color: var(--cps-color-state-critical);
+    font-size: var(--cps-font-size-xs);
   }
 
   .rich-text__color {

@@ -39,6 +39,29 @@ Defina o conteúdo inicial com o atributo `value`, que aceita HTML.
 ></cps-rich-text>
 ```
 
+### Link
+
+O botão de link abre uma faixa sob a barra de ferramentas com três campos: **Texto** (o rótulo exibido),
+**Endereço** e **Abrir em** (mesma aba ou nova aba).
+
+Com um trecho selecionado, o campo **Texto** já vem preenchido com a seleção; sem seleção, o texto informado é
+inserido como o rótulo do link. Se o cursor estiver **sobre um link existente**, a faixa carrega os valores atuais
+para edição e exibe o botão **Remover**. `Enter` aplica e `Esc` fecha.
+
+```html preview
+<cps-rich-text
+  label="Comunicado"
+  value='<p>Consulte o <a href="https://www.cps.sp.gov.br" target="_blank" rel="noopener noreferrer">portal institucional</a> para mais informações.</p>'
+></cps-rich-text>
+```
+
+?> **Nova aba inclui `rel="noopener noreferrer"` automaticamente.** Sem isso, a página aberta ganha acesso a
+`window.opener` e pode redirecionar a aba de origem.
+
+!> Apenas os esquemas `http`, `https`, `mailto` e `tel` são aceitos, além de caminhos relativos e âncoras
+(`/pagina`, `#secao`). Endereços sem esquema recebem `https://`. Como o valor do campo é **HTML persistido**,
+esquemas como `javascript:` são recusados — seriam um vetor de XSS armazenado.
+
 ### Espaço reservado
 
 Use `placeholder` para exibir uma dica quando o editor estiver vazio.

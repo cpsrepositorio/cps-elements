@@ -32,6 +32,7 @@ import type { CSSResultGroup } from 'lit';
  * @csspart form-control-help-text - Elemento que embrulha o texto de apoio.
  * @csspart base - O contêiner do editor (barra de ferramentas + área de edição).
  * @csspart toolbar - A barra de ferramentas.
+ * @csspart link-panel - A faixa de configuração do link (texto, endereço e destino), exibida sob a barra.
  * @csspart content - A área de edição (`contenteditable`).
  */
 @customElement('cps-rich-text')
@@ -45,12 +46,20 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
   private savedRange: Range | null = null;
   private valueOnFocus = '';
 
+  private linkEditing: HTMLAnchorElement | null = null;
+
   @query('.rich-text__content') editable: HTMLElement;
   @query('.rich-text__value-input') valueInput: HTMLInputElement;
   @query('.rich-text__toolbar') toolbar: HTMLElement;
+  @query('.rich-text__link-text') linkTextInput: HTMLInputElement;
 
   @state() private hasFocus = false;
   @state() private generatedId = '';
+  @state() private linkOpen = false;
+  @state() private linkText = '';
+  @state() private linkUrl = '';
+  @state() private linkTarget = '';
+  @state() private linkError = '';
 
   /** O identificador único do campo. Se não for fornecido, um UUID é gerado automaticamente. */
   @property() id = '';
@@ -250,9 +259,142 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
     this.saveSelection();
   }
 
-  private insertLink() {
-    const url = prompt('Endereço do link (URL):', 'https://');
-    if (url) this.exec('createLink', url);
+  /* ===== Link ===== */
+
+  /** Esquemas aceitos no `href`. O valor do editor é HTML e pode ser re-renderizado por quem consome o formulário,
+   * então `javascript:`, `data:` e afins não podem entrar — seriam um vetor de XSS armazenado. */
+  private static readonly LINK_ESQUEMAS = ['http:', 'https:', 'mailto:', 'tel:'];
+
+  private normalizeUrl(entrada: string): string | null {
+    let url = entrada.trim();
+    if (!url) return null;
+    // Âncora e caminho relativo passam direto (link interno ao próprio sistema).
+    if (/^[#/]/.test(url)) return url;
+    // Sem esquema explícito, assume https — "www.exemplo.gov.br" vira link válido em vez de caminho relativo.
+    if (!/^[a-z][a-z0-9+.-]*:/i.test(url)) url = `https://${url}`;
+    try {
+      return CpsRichText.LINK_ESQUEMAS.includes(new URL(url).protocol) ? url : null;
+    } catch {
+      return null;
+    }
+  }
+
+  private escapeHtml(texto: string) {
+    return texto.replace(
+      /[&<>"]/g,
+      caractere => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[caractere]!)
+    );
+  }
+
+  /** Âncora sob o cursor, se houver — permite editar um link já existente em vez de criar outro por cima. */
+  private currentAnchor(): HTMLAnchorElement | null {
+    const node = this.savedRange ? this.savedRange.startContainer : this.getEditorSelection()?.anchorNode;
+    const element = node && node.nodeType === Node.TEXT_NODE ? node.parentElement : (node as Element | null);
+    return element?.closest ? element.closest('a') : null;
+  }
+
+  private toggleLinkPanel() {
+    if (this.disabled || this.readonly) return;
+    if (this.linkOpen) {
+      this.closeLinkPanel();
+      return;
+    }
+    this.saveSelection();
+    const anchor = this.currentAnchor();
+    this.linkEditing = anchor;
+    this.linkText = anchor ? anchor.textContent ?? '' : this.savedRange?.toString() ?? '';
+    this.linkUrl = anchor?.getAttribute('href') ?? '';
+    this.linkTarget = anchor?.getAttribute('target') ?? '';
+    this.linkError = '';
+    this.linkOpen = true;
+    this.updateComplete.then(() => this.linkTextInput?.focus());
+  }
+
+  private closeLinkPanel() {
+    this.linkOpen = false;
+    this.linkEditing = null;
+    this.linkError = '';
+  }
+
+  private applyLinkAttributes(anchor: HTMLAnchorElement, href: string, target: string) {
+    anchor.setAttribute('href', href);
+    if (target) {
+      anchor.setAttribute('target', target);
+      // Sem `noopener`, a página aberta ganha acesso a `window.opener` e pode redirecionar a origem (tabnabbing).
+      anchor.setAttribute('rel', 'noopener noreferrer');
+    } else {
+      anchor.removeAttribute('target');
+      anchor.removeAttribute('rel');
+    }
+  }
+
+  private applyLink() {
+    if (this.disabled || this.readonly) return;
+    const href = this.normalizeUrl(this.linkUrl);
+    if (!href) {
+      this.linkError = 'Informe um endereço válido (http, https, mailto ou tel).';
+      return;
+    }
+    const texto = this.linkText.trim();
+    const target = this.linkTarget;
+
+    if (this.linkEditing) {
+      // Edição de link existente: preserva o conteúdo interno quando o texto não mudou.
+      if (texto && texto !== this.linkEditing.textContent) this.linkEditing.textContent = texto;
+      this.applyLinkAttributes(this.linkEditing, href, target);
+      this.editable.focus();
+    } else {
+      const selecionado = this.savedRange?.toString() ?? '';
+      // As âncoras já existentes são fotografadas antes: é o único jeito confiável de achar
+      // depois a que acabou de nascer (o `href` sozinho não a distingue de homônimas).
+      const anteriores = new Set(this.editable.querySelectorAll('a'));
+      this.restoreSelection();
+      if (selecionado && texto === selecionado) {
+        // Texto inalterado: `createLink` preserva a formatação de dentro da seleção.
+        document.execCommand('createLink', false, href);
+      } else {
+        document.execCommand(
+          'insertHTML',
+          false,
+          `<a href="${this.escapeHtml(href)}">${this.escapeHtml(texto || href)}</a>`
+        );
+      }
+      this.editable.querySelectorAll('a').forEach(anchor => {
+        if (anteriores.has(anchor)) return;
+        // O `insertHTML` do Chrome injeta `font-family`/`font-size` inline na âncora;
+        // como o valor do editor é HTML persistido, isso vira lixo no banco.
+        anchor.removeAttribute('style');
+        this.applyLinkAttributes(anchor, href, target);
+      });
+      this.editable.focus();
+    }
+
+    this.syncValue();
+    this.saveSelection();
+    this.updateActiveStates();
+    this.closeLinkPanel();
+  }
+
+  private removeLink() {
+    if (this.disabled || this.readonly) return;
+    this.restoreSelection();
+    document.execCommand('unlink');
+    this.editable.focus();
+    this.syncValue();
+    this.saveSelection();
+    this.updateActiveStates();
+    this.closeLinkPanel();
+  }
+
+  private handleLinkKeydown(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      this.applyLink();
+    } else if (event.key === 'Escape') {
+      event.preventDefault();
+      this.closeLinkPanel();
+      this.editable.focus();
+    }
   }
 
   private clearFormatting() {
@@ -547,10 +689,14 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
 
               <button
                 type="button"
-                class="rich-text__button"
+                class=${classMap({
+                  'rich-text__button': true,
+                  'rich-text__button--active': this.linkOpen
+                })}
                 aria-label="Inserir link"
+                aria-expanded=${this.linkOpen ? 'true' : 'false'}
                 title="Link"
-                @click=${this.insertLink}
+                @click=${this.toggleLinkPanel}
               >
                 <svg
                   width="15"
@@ -724,6 +870,67 @@ export default class CpsRichText extends BaseElement implements BaseFormControl 
                 </svg>
               </button>
             </div>
+
+            ${this.linkOpen
+              ? html`
+                  <div part="link-panel" class="rich-text__linkbar" role="group" aria-label="Configuração do link">
+                    <label class="rich-text__field">
+                      <span>Texto</span>
+                      <input
+                        class="rich-text__link-text"
+                        type="text"
+                        placeholder="Texto exibido"
+                        .value=${this.linkText}
+                        @input=${(event: Event) => (this.linkText = (event.target as HTMLInputElement).value)}
+                        @keydown=${this.handleLinkKeydown}
+                      />
+                    </label>
+                    <label class="rich-text__field rich-text__field--grow">
+                      <span>Endereço</span>
+                      <input
+                        type="text"
+                        inputmode="url"
+                        placeholder="https://"
+                        .value=${this.linkUrl}
+                        @input=${(event: Event) => {
+                          this.linkUrl = (event.target as HTMLInputElement).value;
+                          this.linkError = '';
+                        }}
+                        @keydown=${this.handleLinkKeydown}
+                      />
+                    </label>
+                    <label class="rich-text__field">
+                      <span>Abrir em</span>
+                      <select
+                        .value=${this.linkTarget}
+                        @change=${(event: Event) => (this.linkTarget = (event.target as HTMLSelectElement).value)}
+                        @keydown=${this.handleLinkKeydown}
+                      >
+                        <option value="">Mesma aba</option>
+                        <option value="_blank">Nova aba</option>
+                      </select>
+                    </label>
+                    <div class="rich-text__link-actions">
+                      <button
+                        type="button"
+                        class="rich-text__button rich-text__button--accent"
+                        @click=${this.applyLink}
+                      >
+                        Aplicar
+                      </button>
+                      ${this.linkEditing
+                        ? html`<button type="button" class="rich-text__button" @click=${this.removeLink}>
+                            Remover
+                          </button>`
+                        : ''}
+                      <button type="button" class="rich-text__button" @click=${this.closeLinkPanel}>Cancelar</button>
+                    </div>
+                    ${this.linkError
+                      ? html`<span class="rich-text__link-error" role="alert">${this.linkError}</span>`
+                      : ''}
+                  </div>
+                `
+              : ''}
 
             <div
               part="content"
