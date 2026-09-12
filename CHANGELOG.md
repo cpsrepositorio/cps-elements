@@ -6,12 +6,11 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+## 1.8.5 - 2026-09-12
 ### Added
-
 - `cps-rich-text`: o botão de link passa a abrir um painel com **Texto** (rótulo exibido), **Endereço** e **Abrir em** (mesma aba / nova aba), no lugar do `prompt()` de campo único. Com um trecho selecionado, o texto vem preenchido e a formatação interna é preservada; com o cursor sobre um link existente, o painel carrega os valores para edição e oferece **Remover**. Novo `::part` `link-panel`.
 
 ### Security
-
 - `cps-rich-text`: destino em nova aba recebe `rel="noopener noreferrer"` automaticamente, evitando que a página aberta acesse `window.opener` (_tabnabbing_). Endereços são validados por esquema — `http`, `https`, `mailto` e `tel`, além de caminhos relativos e âncoras —, recusando `javascript:` e similares, que seriam XSS armazenado no HTML persistido do campo.
 
 ## 1.8.4 - 2026-08-06
