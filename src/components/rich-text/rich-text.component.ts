@@ -34,6 +34,12 @@ import type { CSSResultGroup } from 'lit';
  * @csspart toolbar - A barra de ferramentas.
  * @csspart link-panel - A faixa de configuração do link (texto, endereço e destino), exibida sob a barra.
  * @csspart content - A área de edição (`contenteditable`).
+ *
+ * @cssproperty --max-height - Altura máxima do editor. Padrão: `28rem`. O editor cresce com o
+ *   conteúdo até esse teto e, a partir dali, a rolagem vertical passa para a área de edição,
+ *   mantendo a barra de ferramentas fixa no topo. Use `none` para crescimento ilimitado.
+ * @cssproperty --min-height - Altura mínima da área de edição. Padrão: `12rem`. Reduza este
+ *   valor se precisar de um editor mais baixo que o padrão.
  */
 @customElement('cps-rich-text')
 export default class CpsRichText extends BaseElement implements BaseFormControl {

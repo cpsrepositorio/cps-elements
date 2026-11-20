@@ -6,6 +6,14 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+### Added
+
+- `cps-rich-text`: novas propriedades CSS `--max-height` e `--min-height`, permitindo que o sistema cliente defina a dimensão do editor.
+
+### Changed
+
+- `cps-rich-text`: o editor deixa de crescer indefinidamente com o conteúdo. Passa a crescer até um teto padrão de `28rem` (448px) e, a partir dali, a rolagem vertical ocorre dentro da área de edição, mantendo a barra de ferramentas visível em textos longos — antes ela se distanciava conforme o texto aumentava, obrigando a rolar a página de volta ao topo para formatar a seleção. Para retomar o comportamento anterior, use `--max-height: none`.
+
 ## 1.8.5 - 2026-09-12
 ### Added
 - `cps-rich-text`: o botão de link passa a abrir um painel com **Texto** (rótulo exibido), **Endereço** e **Abrir em** (mesma aba / nova aba), no lugar do `prompt()` de campo único. Com um trecho selecionado, o texto vem preenchido e a formatação interna é preservada; com o cursor sobre um link existente, o painel carrega os valores para edição e oferece **Remover**. Novo `::part` `link-panel`.

@@ -108,4 +108,34 @@ Com `required`, o campo é inválido quando o conteúdo está vazio, integrando-
 </script>
 ```
 
+### Altura máxima
+
+O editor cresce junto com o conteúdo até um teto de `28rem` (448px). A partir dali ele para de
+crescer e a rolagem vertical passa para a área de edição, de modo que a barra de ferramentas
+permanece visível por mais longo que seja o texto — sem necessidade de voltar ao topo da página
+para formatar a seleção.
+
+```html preview
+<cps-rich-text
+  label="Parecer"
+  help-text="O editor para de crescer no teto padrão; o texto rola internamente."
+  value="<p>Cole ou digite um texto longo aqui para ver a rolagem interna.</p><p>A barra de ferramentas continua acessível em qualquer ponto do texto.</p>"
+></cps-rich-text>
+```
+
+Use `--max-height` quando o sistema cliente precisar de outra dimensão:
+
+```html preview
+<cps-rich-text label="Observação breve" style="--max-height: 14rem"></cps-rich-text>
+```
+
+A altura mínima da área de edição é de `12rem`. Para um editor mais baixo que isso, reduza também
+`--min-height` — do contrário `--max-height` não consegue encolher o campo além do piso padrão:
+
+```html preview
+<cps-rich-text label="Resumo" style="--max-height: 10rem; --min-height: 6rem"></cps-rich-text>
+```
+
+Para retomar o crescimento ilimitado de versões anteriores à 1.8.6, use `--max-height: none`.
+
 [component-metadata:cps-rich-text]

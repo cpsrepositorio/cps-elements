@@ -31,6 +31,11 @@ export default css`
     border: solid var(--cps-input-border-width) var(--cps-input-border-color);
     border-radius: var(--cps-border-radius-medium);
     background-color: var(--cps-input-background);
+    /* O editor cresce com o conteúdo até o teto e, a partir dali, apenas a área de
+       edição rola — a barra de ferramentas permanece visível em textos longos.
+       O padrão de 28rem (448px na raiz de 16px) é sobreposto por \`--max-height\`;
+       use \`none\` para retomar o crescimento ilimitado anterior à 1.8.6. */
+    max-height: var(--max-height, 28rem);
     overflow: hidden;
     color: var(--cps-color-text-primary);
   }
@@ -61,6 +66,7 @@ export default css`
   /* Toolbar */
   .rich-text__toolbar {
     display: flex;
+    flex-shrink: 0;
     flex-wrap: wrap;
     gap: var(--cps-spacing-0-5);
     align-items: center;
@@ -138,6 +144,7 @@ export default css`
      o contêiner tem overflow:hidden (por causa do raio de borda) e cortaria um popover. */
   .rich-text__linkbar {
     display: flex;
+    flex-shrink: 0;
     flex-wrap: wrap;
     gap: var(--cps-spacing-2);
     align-items: flex-end;
@@ -222,10 +229,15 @@ export default css`
 
   /* Editable area */
   .rich-text__content {
+    /* Único item flexível do contêiner: absorve a altura restante quando
+       \`--max-height\` está definida e é a região que rola. */
+    flex: 1 1 auto;
     outline: none;
     padding: var(--cps-spacing-3) var(--cps-spacing-4);
-    min-height: 12rem;
+    min-height: var(--min-height, 12rem);
     overflow-y: auto;
+    /* Evita que a rolagem "vaze" para a página ao chegar no fim do conteúdo. */
+    overscroll-behavior: contain;
     line-height: var(--cps-leading-normal);
     font-family: inherit;
     font-size: inherit;
