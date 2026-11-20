@@ -6,12 +6,11 @@ O versionamento deste projeto é aderente aos princípios de [Semantic Versionin
 
 ## Unreleased
 
+## 1.9.0 - 2026-11-20
 ### Added
-
 - `cps-rich-text`: novas propriedades CSS `--max-height` e `--min-height`, permitindo que o sistema cliente defina a dimensão do editor.
 
 ### Changed
-
 - `cps-rich-text`: o editor deixa de crescer indefinidamente com o conteúdo. Passa a crescer até um teto padrão de `28rem` (448px) e, a partir dali, a rolagem vertical ocorre dentro da área de edição, mantendo a barra de ferramentas visível em textos longos — antes ela se distanciava conforme o texto aumentava, obrigando a rolar a página de volta ao topo para formatar a seleção. Para retomar o comportamento anterior, use `--max-height: none`.
 
 ## 1.8.5 - 2026-09-12
